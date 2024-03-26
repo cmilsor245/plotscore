@@ -4,7 +4,7 @@
 
 ### English
 
-Click [here](https://christian-millan-soria.notion.site/plotscore-english-7b99f56524704e96b75dc91d74cd3039) to access the corresponding Notion page.
+Click [here](https://christian-millan-soria.notion.site/plotscore-7b99f56524704e96b75dc91d74cd3039) to access the corresponding Notion page.
 
 #### [Back to Top](#anteproyecto)
 
@@ -12,6 +12,6 @@ Click [here](https://christian-millan-soria.notion.site/plotscore-english-7b99f5
 
 ### Español
 
-Hacer clic [aqui](https://christian-millan-soria.notion.site/plotscore-espa-ol-93a62f5a1acf4c7289b809359ff0ccff) para acceder al Notion correspondiente al proyecto.
+Hacer clic [aquí](https://christian-millan-soria.notion.site/plotscore-93a62f5a1acf4c7289b809359ff0ccff) para acceder al Notion correspondiente al proyecto.
 
 #### [Volver Arriba](#anteproyecto)
