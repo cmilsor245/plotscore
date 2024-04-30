@@ -8,6 +8,7 @@
 4. [Ejecución del proyecto Next.js en segundo plano](#ejecución-del-proyecto-nextjs-en-segundo-plano)
 5. [Actualización del Flujo de Trabajo de GitHub Actions](#actualización-del-flujo-de-trabajo-de-github-actions)
 6. [Acceso al sitio](#acceso-al-sitio)
+7. [Automatización del despliegue tras reinicio](#automatización-del-despliegue-tras-reinicio)
 
 ### Creación de instancia AWS EC2
 
@@ -41,11 +42,11 @@ Una vez que tenemos nuestro proyecto en el repositorio de GitHub, necesitamos cr
 
 Para esto, creamos un **nuevo Runner de GitHub Actions**.
 
-![pestaña del runner de GitHub Actions](image-1.png)
+![pestaña del runner de github actions](image-1.png)
 
 Dentro de esta pestaña, hacemos clic en el botón `New self-hosted runner` para crear uno nuevo. Ahora tenemos que elegir una imagen de Linux para nuestro runner, dado que nuestra instancia EC2 está ejecutando Ubuntu Server, y ahora necesitamos **ejecutar los siguientes comandos resaltados** en nuestra terminal en la instancia EC2:
 
-![comandos del runner de GitHub Actions](image-2.png)
+![comandos del runner de github actions](image-2.png)
 
 Una vez que ejecutamos el último comando señalado, GitHub nos hace algunas preguntas sobre el nombre del nuevo runner y consultas similares. Especificamos un **nombre personalizado para el nuevo runner** y dejamos el resto como predeterminado.
 
@@ -62,7 +63,7 @@ Dentro de este archivo, estamos creando un nuevo trigger de GitHub. Usaremos el 
 > [!IMPORTANT]
 > Hay que tener en cuenta que, para no causar ningún error al implementar el proyecto por primera vez en nuestra instancia EC2, es crucial **comentar el último comando** de esta manera:
 
-![último comando comentado](image-5.png)
+![último comando resaltado](image-5.png)
 
 Ahora podemos crear un nuevo commit con estos cambios y enviarlos al repositorio. Luego, podemos visitar la pestaña **Actions** dentro de nuestro repositorio y observar el proceso de implementación que ocurre en nuestra instancia EC2.
 
@@ -105,5 +106,23 @@ Este proceso ejecutará nuevamente un script de compilación y de inicio y aplic
 Ahora podemos obtener la **Dirección IP Pública** de nuestra instancia EC2 y acceder al sitio especificando esta dirección IP en el navegador seguida del **puerto 3000**.
 
 Por defecto, la plantilla de AWS CloudFormation establece una regla de entrada para nuestro Grupo de Seguridad para permitir el acceso a nuestra máquina a través del puerto 3000. Esto puede ser útil al implementar el proyecto y dar los primeros pasos, pero puede ser buena idea cambiar esta regla en el futuro eliminándola y configurando nuestra instancia para servir el proyecto en el **puerto 80** o el **puerto 443**, que son los puertos referidos para **HTTP** y **HTTPS**.
+
+#### [Volver arriba](#pipeline-cicd-para-el-proyecto-nextjs-plotscore)
+
+### Automatización del despliegue tras reinicio
+
+Debido a la configuración de nuestro plan en AWS, el AWS Lab se apaga automáticamente cada 4 horas de uso. Esto causará que la implementación de la aplicación se detenga tras 4 horas de uso. Para solucionar este problema, necesitamos **automatizar el despliegue tras reinicio** de nuestra máquina.
+
+Para conseguir esto vamos a ejecutar una serie de comandos para establecer a PM2 **como un servicio**.
+
+Primeramente, con el comando `pm2 list` podemos ver todos los procesos que estén en corriendo segundo plano. Por el momento solo tenemos **un proceso**, llamado **plotscore**.
+
+Después de esto, podemos usar el comando `pm2 save` para guardar dicha lista.
+
+El siguiente paso es iniciar PM2 como un servicio, lo cual conseguiremos con el comando `pm2 startup`. Este comando genera a su vez otro comando que deberemos ejecutar para configurar el script que se encargará de ejecutar PM2 como un servicio de forma automática cada vez que se encienda la instancia EC2.
+
+![comando pm2 startup](image-7.png)
+
+![pm2 establecido como servicio con éxito](image-8.png)
 
 #### [Volver arriba](#pipeline-cicd-para-el-proyecto-nextjs-plotscore)
