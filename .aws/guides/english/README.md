@@ -1,4 +1,4 @@
-# CI/CD pipeline for plotscore Next.js project
+# CI/CD pipeline for **plotscore** Next.js project
 
 ## Table of contents
 
@@ -98,12 +98,12 @@ Now we have to come back to our local Github Actions Workflow file and remove th
 
 This proccess will run a build and start script once again and apply the changes to our Next.js production version.
 
-### [Back to top](#cicd-pipeline-for-plotscore-nextjs-project)
+#### [Back to top](#cicd-pipeline-for-plotscore-nextjs-project)
 
 ### Access the site
 
 We can now gather the **Public IP Address** of our EC2 instance and access the site specifying this IP address in the browser followed by the **port 3000**.
 
-By default, the AWS Cloudformation template sets up an inbound rule for our Security Group to allow access to our machine through port 3000. This may come in handy when deploying the project and taking the first steps, but it may be useful to change this rule in the future by deleting it and configuring our instance to serve the project on **port 80** or **port 443**, which are the refered ports for **HTTP** and **HTTPS**.
+By default, the AWS Cloudformation template sets up an inbound rule for our Security Group to allow access to our machine through port 3000. This may come in handy when deploying the project and taking the first steps, but it may be a good idea to change this rule in the future by deleting it and configuring our instance to serve the project on **port 80** or **port 443**, which are the refered ports for **HTTP** and **HTTPS**.
 
-### [Back to top](#cicd-pipeline-for-plotscore-nextjs-project)
+#### [Back to top](#cicd-pipeline-for-plotscore-nextjs-project)
