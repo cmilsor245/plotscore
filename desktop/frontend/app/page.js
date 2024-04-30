@@ -6,7 +6,7 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
-          hello world from plotscore!🎬&nbsp;
+          testing&nbsp;
           <code className={styles.code}>app/page.js</code>
         </p>
         <div>

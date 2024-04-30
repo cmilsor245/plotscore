@@ -119,7 +119,7 @@ Firstly, with the command `pm2 list` we'll get to see a full list of processes c
 
 After that, we can use the command `pm2 save` to save said list.
 
-The next step is to start PM2 as a service with the command `pm2 startup`. This command generates another command that we are going to need to get executed just the script that will handle running PM2 as a service automatically every time the EC2 instance starts up is correctly configured.
+The next step involves initiating PM2 as a service using the command `pm2 startup`. This command generates an additional command necessary for configuring the script to ensure PM2 runs as a service automatically upon every EC2 instance startup.
 
 ![pm2 startup command](image-7.png)
 
