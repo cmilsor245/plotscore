@@ -65,7 +65,7 @@ Inside this file, we are creating a new GitHub trigger. We will use the `push` e
 
 ![last command commented](image-5.png)
 
-Now we can create a now commit with this changes and push them to the repo. Then, we can visit the **Actions tab** inside our repository and watch the deployment process happening in our EC2 instance.
+Now we can create a now commit with these changes and push them to the repo. Then, we can visit the **Actions tab** inside our repository and watch the deployment process happening in our EC2 instance.
 
 ![action completed without errors](image-6.png)
 
@@ -75,7 +75,7 @@ While this process is running, the GitHub Actions Runner will switch to **Active
 
 ### Running Next.js project in background
 
-Usually, if a Next.js is running in a terminal, it's not possible to close said terminal. We need the production deployment to happen in the background in order to be able to access the site while not being locked in the terminal.
+Usually, if a Next.js app is running in a terminal, it's not possible to close said terminal. We need the production deployment to happen in the background in order to be able to access the site while not being locked in the terminal.
 
 To do this, we need to install `PM2`, which is a process manager that will manage our Next.js process in the background.
 
@@ -87,7 +87,7 @@ Then, we execute the following command:
 
 `sudo npm i -g pm2`
 
-And finally, we execute the following command, which will create a background process that wil firstly run the **build** script to compile our project and the the **start** script to generate a production accessible version of our Next.js project:
+And finally, we execute the following command, which will create a background process that will firstly run the **build** script to compile our project and the the **start** script to generate a production accessible version of our Next.js project:
 
 `pm2 start "npm run build && npm run start" --name=plotscore`
 
