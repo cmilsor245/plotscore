@@ -8,7 +8,7 @@ import '/styles/global.css'
 
 import { MainActionButton, CircleFlagsUk, CircleFlagsEs } from '/components/common/main-action-button'
 import Footer from '/components/common/footer'
-import Header from '../../components/common/header'
+import Header from '/components/common/header'
 
 export default function LandingPage() {
   // language handling

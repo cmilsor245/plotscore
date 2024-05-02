@@ -10,7 +10,7 @@ export default function Header({ lang, handleLanguageChange }) {
     <header>
       <section className = 'header--logo'>
         <Link href = '/'>
-          <Image className = 'header--logo-image' src = '/logo/logo.png' alt = 'plotscore logo' width={100} height={100} />
+          <Image className = 'header--logo-image' src = '/logo/logo.png' alt = 'plotscore logo' width = { 100 } height = { 100 } />
           <span className = 'header--logo-text'>plotscore</span>
         </Link>
       </section>
