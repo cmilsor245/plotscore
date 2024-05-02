@@ -17,10 +17,11 @@ export default function Header({ lang, handleLanguageChange }) {
 
       <nav className = 'nav--links--search-bar'>
         <ul className = 'nav--links'>
-          <li>{ translate(lang, 'LANDING_PAGE', 'NAV', 'SIGN_IN') }</li>
+          <li>
+            { translate(lang, 'LANDING_PAGE', 'NAV', 'SIGN_IN') }
+          </li>
         </ul>
       </nav>
     </header>
-  );
+  )
 }
-

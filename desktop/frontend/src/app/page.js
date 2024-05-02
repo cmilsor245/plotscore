@@ -1,40 +1,40 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import translate from './translation'
 import { IconBulbFilled, IconBulbOff } from '@tabler/icons-react'
 
 import '/styles/global.css'
 
-import Header from '/components/common/header'
 import { MainActionButton, CircleFlagsUk, CircleFlagsEs } from '/components/common/main-action-button'
 import Footer from '/components/common/footer'
+import Header from '../../components/common/header'
 
 export default function LandingPage() {
   // language handling
-  const [lang, setLang] = useState('en')
+  const [lang, setLang] = useState(() => {
+    return localStorage.getItem('lang') || 'en'
+  })
 
   const handleLanguageChange = () => {
-    setLang(lang === 'en' ? 'es' : 'en')
+    const newLang = lang === 'en' ? 'es' : 'en'
+    setLang(newLang)
+    localStorage.setItem('lang', newLang)
   }
 
-  /* -------------------------------------------------------------- */
+  /* ---------------------------------------------------------------------- */
 
   // color theme handling
-  let storedTheme = 'dark'
-  if (typeof window !== 'undefined') {
-    storedTheme = localStorage.getItem('theme') || 'dark'
-  }
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'dark'
+  })
 
-  const [theme, setTheme] = useState(storedTheme)
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      document.body.classList.add(theme + '-theme')
-      localStorage.setItem('theme', theme)
-    }
+    document.body.classList.add(theme + '-theme')
+    localStorage.setItem('theme', theme)
+
     return () => {
-      if (typeof window !== 'undefined') {
-        document.body.classList.remove(theme + '-theme')
-      }
+      document.body.classList.remove(theme + '-theme')
     }
   }, [theme])
 
@@ -43,24 +43,27 @@ export default function LandingPage() {
     setTheme(newTheme)
   }
 
-  /* -------------------------------------------------------------- */
+  /* ---------------------------------------------------------------------- */
 
   return (
     <>
+      {/* fixed elements */}
       <div className = 'main-actions-buttons'>
         <MainActionButton
           icon = { lang === 'en' ? CircleFlagsEs : CircleFlagsUk }
-          handleClick = { handleLanguageChange }
+          handleClick = { handleLanguageChange}
         />
         <MainActionButton
-          icon = { theme === 'dark' ? IconBulbFilled : IconBulbOff}
-          handleClick = { handleThemeChange }
+          icon = { theme === 'light' ? IconBulbOff : IconBulbFilled }
+          handleClick = { handleThemeChange}
         />
       </div>
 
+      {/* -------------------------------------------------------------------- */}
+
       <Header lang = { lang } handleLanguageChange = { handleLanguageChange } />
       <main>
-        
+
       </main>
       <Footer />
     </>
