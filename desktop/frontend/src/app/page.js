@@ -2,13 +2,12 @@
 
 import React, { useState, useEffect } from 'react'
 import translate from './translation'
-import { IconLanguage, IconBulbOff } from '@tabler/icons-react'
+import { IconLanguage, IconBulbFilled, IconBulbOff } from '@tabler/icons-react'
 
 import '/styles/global.css'
-
-import MainActionButton from '/components/common/main-action-button'
 import '/styles/common/main-action-buttons.css'
 
+import { MainActionButton, CircleFlagsUk, CircleFlagsEs } from '/components/common/main-action-button'
 import Footer from '/components/common/footer'
 
 export default function LandingPage() {
@@ -17,8 +16,6 @@ export default function LandingPage() {
   const handleLanguageChange = () => {
     setLang(lang === 'en' ? 'es' : 'en')
   }
-
-  /* ---------------------------------------------------------------------- */
 
   // color theme handling
   let storedTheme = 'dark'
@@ -44,26 +41,21 @@ export default function LandingPage() {
     setTheme(newTheme)
   }
 
-  /* ---------------------------------------------------------------------- */
-
   return (
     <>
-      {/* fixed elements */}
       <div className = 'main-actions-buttons'>
         <MainActionButton
-          icon = { IconLanguage }
+          icon = { lang === 'en' ? CircleFlagsUk : CircleFlagsEs }
           handleClick = { handleLanguageChange }
         />
         <MainActionButton
-          icon = { IconBulbOff }
+          icon = { theme === 'dark' ? IconBulbFilled : IconBulbOff}
           handleClick = { handleThemeChange }
         />
       </div>
 
-      {/* -------------------------------------------------------------------- */}
-
       <main>
-
+        
       </main>
       <Footer />
     </>
