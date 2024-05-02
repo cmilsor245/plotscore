@@ -9,6 +9,6 @@ const translationsES = {
       JOURNAL: "ponte al día"
     }
   }
-};
+}
 
-export default translationsES;
+export default translationsES

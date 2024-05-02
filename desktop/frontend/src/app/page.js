@@ -49,14 +49,14 @@ export default function LandingPage() {
   return (
     <>
       {/* fixed elements */}
-      <div className='main-action-buttons'>
+      <div className = 'main-actions-buttons'>
         <MainActionButton
-          icon={IconLanguage}
-          handleClick={handleLanguageChange}
+          icon = { IconLanguage }
+          handleClick = { handleLanguageChange }
         />
         <MainActionButton
-          icon={IconBulbOff}
-          handleClick={handleThemeChange}
+          icon = { IconBulbOff }
+          handleClick = { handleThemeChange }
         />
       </div>
 

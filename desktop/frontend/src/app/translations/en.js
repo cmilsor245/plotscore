@@ -9,6 +9,6 @@ const translationsEN = {
       JOURNAL: "journal"
     }
   }
-};
+}
 
-export default translationsEN;
+export default translationsEN
