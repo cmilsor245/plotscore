@@ -1,21 +1,23 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import translate from './translation'
-import { IconLanguage, IconBulbFilled, IconBulbOff } from '@tabler/icons-react'
+import { IconBulbFilled, IconBulbOff } from '@tabler/icons-react'
 
 import '/styles/global.css'
-import '/styles/common/main-action-buttons.css'
 
+import Header from '/components/common/header'
 import { MainActionButton, CircleFlagsUk, CircleFlagsEs } from '/components/common/main-action-button'
 import Footer from '/components/common/footer'
 
 export default function LandingPage() {
   // language handling
   const [lang, setLang] = useState('en')
+
   const handleLanguageChange = () => {
     setLang(lang === 'en' ? 'es' : 'en')
   }
+
+  /* -------------------------------------------------------------- */
 
   // color theme handling
   let storedTheme = 'dark'
@@ -41,11 +43,13 @@ export default function LandingPage() {
     setTheme(newTheme)
   }
 
+  /* -------------------------------------------------------------- */
+
   return (
     <>
       <div className = 'main-actions-buttons'>
         <MainActionButton
-          icon = { lang === 'en' ? CircleFlagsUk : CircleFlagsEs }
+          icon = { lang === 'en' ? CircleFlagsEs : CircleFlagsUk }
           handleClick = { handleLanguageChange }
         />
         <MainActionButton
@@ -54,6 +58,7 @@ export default function LandingPage() {
         />
       </div>
 
+      <Header lang = { lang } handleLanguageChange = { handleLanguageChange } />
       <main>
         
       </main>

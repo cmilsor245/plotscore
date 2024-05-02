@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
+
 :root {
   --color--primary-light-90: #ECEEF0;
   --color--primary-light-80: #DADDE0;
@@ -98,6 +100,10 @@
   --color--neutral-dark-70: #262626;
   --color--neutral-dark-80: #191919;
   --color--neutral-dark-90: #0D0D0D;
+
+  /* ------------------------------------------------------------------ */
+
+  --font--nav-logo: 400 5.5rem 'grape nuts', cursive;
 }
 
 .dark-theme {
@@ -150,6 +156,11 @@ body {
 
   display: flex;
   flex-direction: column;
+  gap: 7.5rem;
+
+  padding-inline: 25%;
 
   min-height: 100vh;
+
+  font-size: 1.6rem;
 }
