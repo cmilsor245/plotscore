@@ -1,11 +1,17 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+import translate from '/src/app/translation'
+import translationsEN from '/src/app/translations/en'
+import translationsES from '/src/app/translations/es'
+
+import NavTab from '/components/common/nav-tab'
+
 import '/styles/common/header.css'
 
-import translate from '/src/app/translation'
-
 export default function Header({ lang, handleLanguageChange }) {
+  const translations = lang === 'en' ? translationsEN : translationsES // Selecciona las traducciones según el idioma
+  
   return (
     <header>
       <section className = 'header--logo'>
@@ -17,10 +23,14 @@ export default function Header({ lang, handleLanguageChange }) {
 
       <nav className = 'nav--links--search-bar'>
         <ul className = 'nav--links'>
-          <li>
-            { translate(lang, 'LANDING_PAGE', 'NAV', 'SIGN_IN') }
-          </li>
+          {Object.keys(translations.LANDING_PAGE.NAV).map((key) => (
+            <NavTab key = { key } text = { translate(lang, 'LANDING_PAGE', 'NAV', key) } />
+          ))}
         </ul>
+
+        <div className = 'nav--search-bar'>
+          <input type = 'text' placeholder = 'search' />
+        </div>
       </nav>
     </header>
   )
