@@ -1,17 +1,17 @@
-# Anteproyecto
+# plotscore
 
-## [:us: English](#english) | [:es: Español](#español)
+# [:us: English](#english) | [:es: Español](#español)
 
-### English
+## English
 
-#### Table of contents
+### Table of contents
 
 1. [TODO list](#todo-list)
 2. [Notion page](#notion-page)
 3. [Figma design](#figma-design)
 4. [CI/CD pipeline guide](#cicd-pipeline-guide)
 
-#### [Back to top](#anteproyecto)
+#### [Back to top](#plotscore)
 
 ### TODO list
 
@@ -19,26 +19,26 @@
 - :yellow_circle: :point_right: Currently in process
 - :green_circle: :point_right: Already completed
 
-##### Anteproyecto
+#### Anteproyecto
 
 - [x] :green_circle: Notion page
 
-##### Design
+#### Design
 
 - [x] :green_circle: **Desktop version** Figma design
 - [ ] :red_circle: **Mobile version** Figma design
 
-##### Frontend
+#### Frontend
 
 - [ ] :yellow_circle: Frontend side of the **desktop version**
 - [ ] :red_circle: Frontend side of the **mobile version**
 
-##### Backend
+#### Backend
 
 - [ ] :red_circle: Backend side of the **desktop version**
 - [ ] :red_circle: Backend side of the **mobile version**
 
-##### Deployment
+#### Deployment
 
 - [x] :green_circle: Deployment of the **desktop version** using AWS EC2
 - [x] :green_circle: Automatic deployment process for the **desktop version** (frontend)
@@ -49,9 +49,9 @@
 - [ ] :red_circle: Creating a **custom domain** for the project
 - [ ] :red_circle: Enabling **HTTPS** connections to the website
 
-##### [Back to TODO list section](#english--todo-list)
+##### [Back to TODO list section](#todo-list)
 
-##### [Back to english section](#english)
+#### [Back to english section](#english)
 
 ---
 
@@ -59,7 +59,7 @@
 
 Click [here](https://christian-millan-soria.notion.site/plotscore-7b99f56524704e96b75dc91d74cd3039) to access the corresponding Notion page.
 
-##### [Back to english section](#english)
+#### [Back to english section](#english)
 
 ---
 
@@ -71,7 +71,7 @@ It is possible to **navigate through the atoms and different fidelities** by **c
 
 ![navigate through figma pages](./readme-img/image.png)
 
-##### [Back to english section](#english)
+#### [Back to english section](#english)
 
 ---
 
@@ -79,22 +79,22 @@ It is possible to **navigate through the atoms and different fidelities** by **c
 
 Click [here](https://github.com/cmilsor245/plotscore/tree/main/.aws/guides/english/README.md) to see a basic guide on how a CI/CD pipeline with AWS EC2 was implemented for the [`plotscore`  Next.js project](https://github.com/cmilsor245/plotscore/tree/main/desktop/frontend).
 
-##### [Back to english section](#english)
+#### [Back to english section](#english)
 
 ---
 
 ---
 
-### Español
+## Español
 
-#### Índice
+### Índice
 
 1. [Lista de tareas pendientes](#lista-de-tareas-pendientes)
 2. [Notion](#notion)
 3. [Diseño en Figma](#diseño-en-figma)
 4. [Guía del pipeline CI/CD](#guía-del-pipeline-cicd)
 
-#### [Volver arriba](#anteproyecto)
+#### [Volver arriba](#plotscore)
 
 ### Lista de tareas pendientes
 
@@ -102,26 +102,26 @@ Click [here](https://github.com/cmilsor245/plotscore/tree/main/.aws/guides/engli
 - :yellow_circle: :point_right: En proceso en este momento
 - :green_circle: :point_right: Completado
 
-##### Anteproyecto
+#### Anteproyecto
 
 - [x] :green_circle: Notion con información inicial del proyecto
 
-##### Diseño
+#### Diseño
 
 - [x] :green_circle: Diseño en Figma de la **versión desktop**
 - [ ] :red_circle: Diseño en Figma de la **versión mobile**
 
-##### Frontend
+#### Frontend
 
 - [ ] :yellow_circle: Parte frontend de la **versión desktop**
 - [ ] :red_circle: Parte frontend de la **versión mobile**
 
-##### Backend
+#### Backend
 
 - [ ] :red_circle: Parte backend de la **versión desktop**
 - [ ] :red_circle: Parte backend de la **versión mobile**
 
-##### Despliegue
+#### Despliegue
 
 - [x] :green_circle: Despliegue de la **versión desktop** haciendo uso de una AWS EC2
 - [x] :green_circle: Proceso de despliegue automático para la **versión desktop** (frontend)
@@ -134,7 +134,7 @@ Click [here](https://github.com/cmilsor245/plotscore/tree/main/.aws/guides/engli
 
 ##### [Volver a la sección de Lista de tareas](#lista-de-tareas-pendientes)
 
-##### [Volver a la sección en español](#español)
+#### [Volver a la sección en español](#español)
 
 ---
 
@@ -142,7 +142,7 @@ Click [here](https://github.com/cmilsor245/plotscore/tree/main/.aws/guides/engli
 
 Haz clic [aquí](https://christian-millan-soria.notion.site/plotscore-93a62f5a1acf4c7289b809359ff0ccff) para acceder al Notion correspondiente al proyecto.
 
-##### [Volver a la sección en español](#español)
+#### [Volver a la sección en español](#español)
 
 ---
 
@@ -154,7 +154,7 @@ Es posible **navegar entre los átomos y las diferentes fidelidades del proyecto
 
 ![navegar por las páginas de Figma](./readme-img/image.png)
 
-##### [Volver a la sección en español](#español)
+#### [Volver a la sección en español](#español)
 
 ---
 
@@ -162,4 +162,4 @@ Es posible **navegar entre los átomos y las diferentes fidelidades del proyecto
 
 Haz clic [aquí](https://github.com/cmilsor245/plotscore/tree/main/.aws/guides/spanish/README.md) para ver una guía básica sobre cómo se implementó un pipeline CI/CD con AWS EC2 para el proyecto [`plotscore` en Next.js](https://github.com/cmilsor245/plotscore/tree/main/desktop/frontend).
 
-##### [Volver a la sección en español](#español)
+#### [Volver a la sección en español](#español)
