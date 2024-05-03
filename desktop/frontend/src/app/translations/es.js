@@ -3,7 +3,7 @@ const translationsES = {
     NAV: {
       SIGN_IN: "iniciar sesión",
       CREATE_ACCOUNT: "crear cuenta",
-      MEDIA: "contenidos",
+      MEDIA: "contenido",
       LISTS: "listas",
       MEMBERS: "miembros",
       JOURNAL: "ponte al día"

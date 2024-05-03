@@ -6,10 +6,12 @@ import cookie from 'js-cookie'
 import { IconBulbFilled, IconBulbOff } from '@tabler/icons-react'
 
 import { MainActionButton, CircleFlagsUk, CircleFlagsEs } from '/components/common/main-action-button'
-import Footer from '/components/common/footer'
 import Header from '/components/common/header'
+import Backdrop from '/components/common/backdrop'
+import Footer from '/components/common/footer'
 
 import '/styles/global.css'
+import '/styles/common/landing-page--specific-media.css'
 
 export default function LandingPage() {
   const [lang, setLang] = useState('en')
@@ -54,9 +56,15 @@ export default function LandingPage() {
         />
       </div>
 
-      <Header lang = { lang } />
-      <main></main>
-      <Footer />
+      <section>
+        <Header lang = { lang } />
+
+        <article className = 'landing-page--specific-media--bottom'>
+          <Backdrop />
+          <main></main>
+          <Footer />
+        </article>
+      </section>
     </>
   )
 }

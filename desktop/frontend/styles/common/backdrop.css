@@ -1,0 +1,53 @@
+.dark-theme {
+  --color--backdrop-edges: var(--color--primary-dark-70);
+  --color--media-title: var(--color--primary-light-40);
+}
+
+.light-theme {
+  --color--backdrop-edges: var(--color--primary-light-80);
+  --color--media-title: var(--color--primary-dark-40);
+}
+
+.backdrop--wrapper {
+  position: relative;
+  left: -11rem;
+  z-index: -1;
+  width: 120%;
+  height: 70rem;
+  background-size: cover;
+  background-image: url('/img/default-backdrop.webp');
+  background-position: center center;
+  box-shadow: 0 -5rem 1rem 5rem var(--color--backdrop-edges) inset;
+}
+
+.backdrop--wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 10rem);
+  height: 10rem;
+  background-image: linear-gradient(to bottom, var(--color--primary-dark-70), transparent);
+  z-index: -2;
+}
+
+.backdrop--wrapper:first-child {
+  cursor: pointer;
+}
+
+.backdrop--media-title {
+  --font: 1.3rem var(--font--graphik-regular);
+
+  position: absolute;
+  top: 50%;
+  right: -1.5rem;
+  transform: rotate(-90deg);
+  color: var(--color--media-title);
+  font: var(--font);
+  text-decoration: none;
+}
+
+.backdrop--media-title *{
+  cursor: pointer;
+}

@@ -20,7 +20,7 @@ export default function Header({ lang }) {
       <section>
         <Link className = 'header--logo' href = '/'>
           <Image className = 'header--logo-image' src = '/logo/logo.png' alt = 'plotscore logo' width = { 100 } height = { 100 } />
-          <span className = 'header--logo-text'>plotscore</span>
+          <h1 className = 'header--logo-text'>plotscore</h1>
         </Link>
       </section>
 
@@ -32,7 +32,8 @@ export default function Header({ lang }) {
         </ul>
 
         <div className = 'nav--search-bar'>
-          <input type = 'search' name = 'q' onFocus = { e => e.target.select() } />
+          <label htmlFor = 'nav-query' className = 'hidden'>search:</label>
+          <input id = 'nav-query' type = 'search' name = 'q' onFocus = { e => e.target.select() } />
           <button type = 'submit'>
             <IconZoom />
           </button>
