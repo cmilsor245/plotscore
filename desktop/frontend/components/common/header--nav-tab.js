@@ -1,7 +1,9 @@
+import Link from 'next/link'
+
 export default function NavTab({ text }) {
   return (
     <li className = 'nav--link'>
-      <span>{ text }</span>
+      <Link href = '/'>{ text }</Link>
     </li>
   )
 }

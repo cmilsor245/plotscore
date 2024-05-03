@@ -32,7 +32,7 @@ export default function Header({ lang }) {
         </ul>
 
         <div className = 'nav--search-bar'>
-          <input type = 'search' name = 'q' />
+          <input type = 'search' name = 'q' onFocus = { e => e.target.select() } />
           <button type = 'submit'>
             <IconZoom />
           </button>
