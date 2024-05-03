@@ -5,8 +5,6 @@ import cookie from 'js-cookie'
 
 import { IconBulbFilled, IconBulbOff } from '@tabler/icons-react'
 
-import translate from './translation'
-
 import { MainActionButton, CircleFlagsUk, CircleFlagsEs } from '/components/common/main-action-button'
 import Footer from '/components/common/footer'
 import Header from '/components/common/header'
@@ -56,7 +54,7 @@ export default function LandingPage() {
         />
       </div>
 
-      <Header lang = { lang } handleLanguageChange = { handleLanguageChange } />
+      <Header lang = { lang } />
       <main></main>
       <Footer />
     </>

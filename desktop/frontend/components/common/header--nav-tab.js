@@ -1,6 +1,6 @@
 export default function NavTab({ text }) {
   return (
-    <li>
+    <li className = 'nav--link'>
       <span>{ text }</span>
     </li>
   )

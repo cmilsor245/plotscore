@@ -16,23 +16,25 @@
   right: 10vw;
 
   display: flex;
-  gap: 1rem;
   align-items: center;
+
+  gap: 1rem;
 }
 
 .main-action-button {
-  background-color: var(--color--accent-main);
-  box-shadow: 0 .1rem .3rem var(--color--drop-shadow);
-
-  border-radius: 1.7rem;
-  border: none;
-
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+
+  background-color: var(--color--accent-main);
+  box-shadow: 0 .1rem .3rem var(--color--drop-shadow);
+
+  border: none;
+  border-radius: 1.7rem;
+
   width: 5rem;
   height: 5rem;
+  padding: 1rem;
 
   cursor: pointer;
 

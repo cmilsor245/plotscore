@@ -1,5 +1,201 @@
 @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
 
+@font-face {
+  font-family: 'graphik thin';
+  src: url('/public/fonts/graphik/thin.woff2');
+}
+
+@font-face {
+  font-family: 'graphik thin - italic';
+  src: url('/public/fonts/graphik/thin-italic.woff2');
+}
+
+@font-face {
+  font-family: 'graphik thin - compatible';
+  src: url('/public/fonts/graphik/thin-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik thin - italic - compatible';
+  src: url('/public/fonts/graphik/thin-italic-compatibility.woff');
+}
+
+/* ------------------------------------ */
+
+@font-face {
+  font-family: 'graphik extralight';
+  src: url('/public/fonts/graphik/extralight.woff2');
+}
+
+@font-face {
+  font-family: 'graphik extralight - italic';
+  src: url('/public/fonts/graphik/extralight-italic.woff2');
+}
+
+@font-face {
+  font-family: 'graphik extralight - compatible';
+  src: url('/public/fonts/graphik/extralight-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik extralight - italic - compatible';
+  src: url('/public/fonts/graphik/extralight-italic-compatibility.woff');
+}
+
+/* ------------------------------------ */
+
+@font-face {
+  font-family: 'graphik light';
+  src: url('/public/fonts/graphik/light.woff2');
+}
+
+@font-face {
+  font-family: 'graphik light - italic';
+  src: url('/public/fonts/graphik/light-italic.woff2');
+}
+
+@font-face {
+  font-family: 'graphik light - compatible';
+  src: url('/public/fonts/graphik/light-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik light - italic - compatible';
+  src: url('/public/fonts/graphik/light-italic-compatibility.woff');
+}
+
+/* ------------------------------------ */
+
+@font-face {
+  font-family: 'graphik regular';
+  src: url('/public/fonts/graphik/regular.woff2');
+}
+
+@font-face {
+  font-family: 'graphik regular - italic';
+  src: url('/public/fonts/graphik/regular-italic.woff2');
+}
+
+@font-face {
+  font-family: 'graphik regular - compatible';
+  src: url('/public/fonts/graphik/regular-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik regular - italic - compatible';
+  src: url('/public/fonts/graphik/regular-italic-compatibility.woff');
+}
+
+/* ------------------------------------ */
+
+@font-face {
+  font-family: 'graphik medium';
+  src: url('/public/fonts/graphik/medium.woff2');
+}
+
+@font-face {
+  font-family: 'graphik medium - italic';
+  src: url('/public/fonts/graphik/medium-italic.woff2');
+}
+
+@font-face {
+  font-family: 'graphik medium - compatible';
+  src: url('/public/fonts/graphik/medium-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik medium - italic - compatible';
+  src: url('/public/fonts/graphik/medium-italic-compatibility.woff');
+}
+
+/* ------------------------------------ */
+
+@font-face {
+  font-family: 'graphik semibold';
+  src: url('/public/fonts/graphik/semibold.woff2');
+}
+
+@font-face {
+  font-family: 'graphik semibold - italic';
+  src: url('/public/fonts/graphik/semibold-italic.woff2');
+}
+
+@font-face {
+  font-family: 'graphik semibold - compatible';
+  src: url('/public/fonts/graphik/semibold-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik semibold - italic - compatible';
+  src: url('/public/fonts/graphik/semibold-italic-compatibility.woff');
+}
+
+/* ------------------------------------ */
+
+@font-face {
+  font-family: 'graphik bold';
+  src: url('/public/fonts/graphik/bold.woff2');
+}
+
+@font-face {
+  font-family: 'graphik bold - italic';
+  src: url('/public/fonts/graphik/bold-italic.woff2');
+}
+
+@font-face {
+  font-family: 'graphik bold - compatible';
+  src: url('/public/fonts/graphik/bold-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik bold - italic - compatible';
+  src: url('/public/fonts/graphik/bold-italic-compatibility.woff');
+}
+
+/* ------------------------------------ */
+
+@font-face {
+  font-family: 'graphik black';
+  src: url('/public/fonts/graphik/black.woff2');
+}
+
+@font-face {
+  font-family: 'graphik black - italic';
+  src: url('/public/fonts/graphik/black-italic.woff2');
+}
+
+@font-face {
+  font-family: 'graphik black - compatible';
+  src: url('/public/fonts/graphik/black-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik black - italic - compatible';
+  src: url('/public/fonts/graphik/black-italic-compatibility.woff');
+}
+
+/* ------------------------------------ */
+
+@font-face {
+  font-family: 'graphik super';
+  src: url('/public/fonts/graphik/super.woff2');
+}
+
+@font-face {
+  font-family: 'graphik super - italic';
+  src: url('/public/fonts/graphik/super-italic.woff2');
+}
+
+@font-face {
+  font-family: 'graphik super - compatible';
+  src: url('/public/fonts/graphik/super-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik super - italic - compatible';
+  src: url('/public/fonts/graphik/super-italic-compatibility.woff');
+}
+
 :root {
   --color--primary-light-90: #ECEEF0;
   --color--primary-light-80: #DADDE0;
@@ -104,6 +300,53 @@
   /* ------------------------------------------------------------------ */
 
   --font--nav-logo: 400 5.5rem 'grape nuts', cursive;
+
+  /* ------------------------------- */
+
+  --font--graphik-thin: 'graphik thin', sans-serif;
+  --font--graphik-thin-italic: 'graphik thin - italic', sans-serif;
+  --font--graphik-thin-compatible: 'graphik thin - compatible', sans-serif;
+  --font--graphik-thin-italic-compatible: 'graphik thin - italic - compatible', sans-serif;
+
+  --font--graphik-extralight: 'graphik extralight', sans-serif;
+  --font--graphik-extralight-italic: 'graphik extralight - italic', sans-serif;
+  --font--graphik-extralight-compatible: 'graphik extralight - compatible', sans-serif;
+  --font--graphik-extralight-italic-compatible: 'graphik extralight - italic - compatible', sans-serif;
+
+  --font--graphik-light: 'graphik light', sans-serif;
+  --font--graphik-light-italic: 'graphik light - italic', sans-serif;
+  --font--graphik-light-compatible: 'graphik light - compatible', sans-serif;
+  --font--graphik-light-italic-compatible: 'graphik light - italic - compatible', sans-serif;
+
+  --font--graphik-regular: 'graphik regular', sans-serif;
+  --font--graphik-regular-italic: 'graphik regular - italic', sans-serif;
+  --font--graphik-regular-compatible: 'graphik regular - compatible', sans-serif;
+  --font--graphik-regular-italic-compatible: 'graphik regular - italic - compatible', sans-serif;
+
+  --font--graphik-medium: 'graphik medium', sans-serif;
+  --font--graphik-medium-italic: 'graphik medium - italic', sans-serif;
+  --font--graphik-medium-compatible: 'graphik medium - compatible', sans-serif;
+  --font--graphik-medium-italic-compatible: 'graphik medium - italic - compatible', sans-serif;
+
+  --font--graphik-semibold: 'graphik semibold', sans-serif;
+  --font--graphik-semibold-italic: 'graphik semibold - italic', sans-serif;
+  --font--graphik-semibold-compatible: 'graphik semibold - compatible', sans-serif;
+  --font--graphik-semibold-italic-compatible: 'graphik semibold - italic - compatible', sans-serif;
+
+  --font--graphik-bold: 'graphik bold', sans-serif;
+  --font--graphik-bold-italic: 'graphik bold - italic', sans-serif;
+  --font--graphik-bold-compatible: 'graphik bold - compatible', sans-serif;
+  --font--graphik-bold-italic-compatible: 'graphik bold - italic - compatible', sans-serif;
+
+  --font--graphik-black: 'graphik black', sans-serif;
+  --font--graphik-black-italic: 'graphik black - italic', sans-serif;
+  --font--graphik-black-compatible: 'graphik black - compatible', sans-serif;
+  --font--graphik-black-italic-compatible: 'graphik black - italic - compatible', sans-serif;
+
+  --font--graphik-super: 'graphik super', sans-serif;
+  --font--graphik-super-italic: 'graphik super - italic', sans-serif;
+  --font--graphik-super-compatible: 'graphik super - compatible', sans-serif;
+  --font--graphik-super-italic-compatible: 'graphik super - italic - compatible', sans-serif;
 }
 
 .dark-theme {
@@ -142,8 +385,10 @@
 
 * {
   box-sizing: border-box;
+
   margin: 0;
   padding: 0;
+
   cursor: default;
 }
 
@@ -152,15 +397,14 @@ html {
 }
 
 body {
-  background-color: var(--color--page-background);
-
   display: flex;
   flex-direction: column;
-  gap: 7.5rem;
-
-  padding-inline: 25%;
-
-  min-height: 100vh;
 
   font-size: 1.6rem;
+
+  background-color: var(--color--page-background);
+
+  min-height: 100vh;
+  gap: 7.5rem;
+  padding-inline: 20%;
 }
