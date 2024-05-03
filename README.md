@@ -132,7 +132,7 @@ Click [here](https://github.com/cmilsor245/plotscore/tree/main/.aws/guides/engli
 - [ ] :red_circle: Crear un **dominio personalizado** para el proyecto
 - [ ] :red_circle: Habilitando conexiones **HTTPS** hacia la página web
 
-##### [Volver a la sección de Lista de tareas](#lista-de-tareas-pendientes)
+##### [Volver a la sección de Lista de tareas pendientes](#lista-de-tareas-pendientes)
 
 #### [Volver a la sección en español](#español)
 

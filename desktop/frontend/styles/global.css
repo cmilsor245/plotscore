@@ -1,5 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
 
+/* --------------------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'tiempos headline light';
+  src: url('/fonts/tiempos-headline/light.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline light - italic';
+  src: url('/fonts/tiempos-headline/light-italic.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline regular';
+  src: url('/fonts/tiempos-headline/regular.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline regular - italic';
+  src: url('/fonts/tiempos-headline/regular-italic.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline medium';
+  src: url('/fonts/tiempos-headline/medium.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline medium - italic';
+  src: url('/fonts/tiempos-headline/medium-italic.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline semibold';
+  src: url('/fonts/tiempos-headline/semibold.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline semibold - italic';
+  src: url('/fonts/tiempos-headline/semibold-italic.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline bold';
+  src: url('/fonts/tiempos-headline/bold.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline bold - italic';
+  src: url('/fonts/tiempos-headline/bold-italic.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline black';
+  src: url('/fonts/tiempos-headline/black.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline black - italic';
+  src: url('/fonts/tiempos-headline/black-italic.otf');
+}
+
+/* --------------------------------------------------------------------------------------- */
+
 @font-face {
   font-family: 'graphik thin';
   src: url('/fonts/graphik/thin.woff2');
@@ -19,8 +83,6 @@
   font-family: 'graphik thin - italic - compatible';
   src: url('/fonts/graphik/thin-italic-compatibility.woff');
 }
-
-/* ------------------------------------ */
 
 @font-face {
   font-family: 'graphik extralight';
@@ -42,8 +104,6 @@
   src: url('/fonts/graphik/extralight-italic-compatibility.woff');
 }
 
-/* ------------------------------------ */
-
 @font-face {
   font-family: 'graphik light';
   src: url('/fonts/graphik/light.woff2');
@@ -63,8 +123,6 @@
   font-family: 'graphik light - italic - compatible';
   src: url('/fonts/graphik/light-italic-compatibility.woff');
 }
-
-/* ------------------------------------ */
 
 @font-face {
   font-family: 'graphik regular';
@@ -86,8 +144,6 @@
   src: url('/fonts/graphik/regular-italic-compatibility.woff');
 }
 
-/* ------------------------------------ */
-
 @font-face {
   font-family: 'graphik medium';
   src: url('/fonts/graphik/medium.woff2');
@@ -107,8 +163,6 @@
   font-family: 'graphik medium - italic - compatible';
   src: url('/fonts/graphik/medium-italic-compatibility.woff');
 }
-
-/* ------------------------------------ */
 
 @font-face {
   font-family: 'graphik semibold';
@@ -130,8 +184,6 @@
   src: url('/fonts/graphik/semibold-italic-compatibility.woff');
 }
 
-/* ------------------------------------ */
-
 @font-face {
   font-family: 'graphik bold';
   src: url('/fonts/graphik/bold.woff2');
@@ -152,8 +204,6 @@
   src: url('/fonts/graphik/bold-italic-compatibility.woff');
 }
 
-/* ------------------------------------ */
-
 @font-face {
   font-family: 'graphik black';
   src: url('/fonts/graphik/black.woff2');
@@ -173,8 +223,6 @@
   font-family: 'graphik black - italic - compatible';
   src: url('/fonts/graphik/black-italic-compatibility.woff');
 }
-
-/* ------------------------------------ */
 
 @font-face {
   font-family: 'graphik super';
@@ -303,6 +351,26 @@
 
   /* ------------------------------- */
 
+  --font--tiempos-headline-light: 'tiempos headline light', sans-serif;
+  --font--tiempos-headline-light-italic: 'tiempos headline light - italic', sans-serif;
+
+  --font--tiempos-headline-regular: 'tiempos headline regular', sans-serif;
+  --font--tiempos-headline-regular-italic: 'tiempos headline regular - italic', sans-serif;
+
+  --font--tiempos-headline-medium: 'tiempos headline medium', sans-serif;
+  --font--tiempos-headline-medium-italic: 'tiempos headline medium - italic', sans-serif;
+
+  --font--tiempos-headline-semibold: 'tiempos headline semibold', sans-serif;
+  --font--tiempos-headline-semibold-italic: 'tiempos headline semibold - italic', sans-serif;
+
+  --font--tiempos-headline-bold: 'tiempos headline bold', sans-serif;
+  --font--tiempos-headline-bold-italic: 'tiempos headline bold - italic', sans-serif;
+
+  --font--tiempos-headline-black: 'tiempos headline black', sans-serif;
+  --font--tiempos-headline-black-italic: 'tiempos headline black - italic', sans-serif;
+
+  /* ------------------------------- */
+
   --font--graphik-thin: 'graphik thin', sans-serif;
   --font--graphik-thin-italic: 'graphik thin - italic', sans-serif;
   --font--graphik-thin-compatible: 'graphik thin - compatible', sans-serif;
@@ -400,9 +468,17 @@ body {
   flex-direction: column;
   font-size: 1.6rem;
   background-color: var(--color--page-background);
-  min-height: 200vh;
+  min-height: 100vh;
   gap: 7.5rem;
   padding-inline: 20%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 7.5rem;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .hidden {

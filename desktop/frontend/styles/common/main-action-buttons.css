@@ -1,11 +1,11 @@
 .dark-theme {
-  --color--primary-light-90: rgba(236, 238, 240, .5);
-  --color--drop-shadow: var(--color--primary-light-90);
+  --color--primary-light-90--main-action-button--drop-shadow: rgba(236, 238, 240, .5);
+  --color--drop-shadow: var(--color--primary-light-90--main-action-button--drop-shadow);
 }
 
 .light-theme {
-  --color--primary-dark-90: rgba(7, 8, 10, .5);
-  --color--drop-shadow: var(--color--primary-dark-90);
+  --color--primary-dark-90--main-action-button--drop-shadow: rgba(7, 8, 10, .5);
+  --color--drop-shadow: var(--color--primary-dark-90--main-action-button--drop-shadow);
 }
 
 .main-actions-buttons {

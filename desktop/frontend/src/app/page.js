@@ -5,10 +5,11 @@ import cookie from 'js-cookie'
 
 import { IconBulbFilled, IconBulbOff } from '@tabler/icons-react'
 
+import translate from './translation.js'
 import { MainActionButton, CircleFlagsUk, CircleFlagsEs } from '/components/common/main-action-button'
-import Header from '/components/common/header'
-import Backdrop from '/components/common/backdrop'
-import Footer from '/components/common/footer'
+import Header from '/components/common/header.js'
+import Backdrop from '/components/common/backdrop.js'
+import Footer from '/components/common/footer.js'
 
 import '/styles/global.css'
 import '/styles/common/landing-page--specific-media.css'
@@ -59,9 +60,17 @@ export default function LandingPage() {
       <section>
         <Header lang = { lang } />
 
-        <article className = 'landing-page--specific-media--bottom'>
+        <article className = 'landing-page--specific-media--content'>
           <Backdrop />
-          <main></main>
+          <main>
+            <h2 className = 'usp--main-text'>
+              { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__FIRST_LINE') }
+              <br />
+              { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__SECOND_LINE') }
+              <br />
+              { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__THIRD_LINE') }
+            </h2>
+          </main>
           <Footer />
         </article>
       </section>

@@ -3,11 +3,11 @@ import Image from 'next/image'
 
 import { IconZoom } from '@tabler/icons-react'
 
-import translate from '/src/app/translation'
-import translationsEN from '/src/app/translations/en'
-import translationsES from '/src/app/translations/es'
+import translate from '/src/app/translation.js'
+import translationsEN from '/src/app/translations/en.js'
+import translationsES from '/src/app/translations/es.js'
 
-import NavTab from '/components/common/header--nav-tab'
+import NavTab from '/components/common/header--nav-tab.js'
 
 import '/styles/global.css'
 import '/styles/common/header.css'

@@ -1,3 +1,19 @@
-.landing-page--specific-media--bottom {
+.dark-theme {
+  --color--usp--main-text: var(--color--primary-light-90);
+}
+
+.light-theme {
+  --color--usp--main-text: var(--color--primary-dark-20);
+}
+
+.landing-page--specific-media--content {
   margin-top: -10rem;
+}
+
+.usp--main-text {
+  --font: 3.6rem var(--font--tiempos-headline-bold);
+  text-align: center;
+  margin-top: -10rem;
+  font: var(--font);
+  color: var(--color--usp--main-text);
 }

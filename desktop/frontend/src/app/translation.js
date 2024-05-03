@@ -1,5 +1,5 @@
-import translationsEN from './translations/en'
-import translationsES from './translations/es'
+import translationsEN from './translations/en.js'
+import translationsES from './translations/es.js'
 
 const translate = (lang, namespace, section, key) => {
   switch (lang) {
