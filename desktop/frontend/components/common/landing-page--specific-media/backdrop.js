@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import '/styles/common/backdrop.css'
+import '/styles/components/common/backdrop.css'
 
 export default function Backdrop() {
   return (

@@ -7,10 +7,10 @@ import translate from '/src/app/translation.js'
 import translationsEN from '/src/app/translations/en.js'
 import translationsES from '/src/app/translations/es.js'
 
-import NavTab from '/components/common/header--nav-tab.js'
+import NavTab from '/components/common/landing-page--specific-media/header--nav-tab.js'
 
 import '/styles/global.css'
-import '/styles/common/header.css'
+import '/styles/components/common/header.css'
 
 export default function Header({ lang }) {
   const translations = lang === 'en' ? translationsEN : translationsES

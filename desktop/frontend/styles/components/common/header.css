@@ -1,15 +1,15 @@
 header {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
 }
 
 .header--logo {
-  display: flex;
   align-items: center;
+  display: flex;
+  gap: .5rem;
   justify-content: left;
   text-decoration: none;
-  gap: .5rem;
 }
 
 .header--logo-image, .header--logo-text {
@@ -17,26 +17,26 @@ header {
 }
 
 .header--logo-text {
-  font: var(--font--nav-logo);
   color: var(--color--secondary-main);
+  font: var(--font--nav-logo);
 }
 
 /* ---------------------------------------------- */
 
 .nav--links--search-bar {
-  display: flex;
   align-items: center;
-  justify-content: right;
-  height: fit-content;
+  display: flex;
   gap: 1.5rem;
+  height: fit-content;
+  justify-content: right;
 }
 
 .nav--links {
-  display: flex;
   align-items: center;
-  justify-content: center;
-  height: 100%;
+  display: flex;
   gap: 1.5rem;
+  height: 100%;
+  justify-content: center;
 }
 
 .nav--link {
@@ -49,8 +49,8 @@ header {
 
 .nav--link * {
   color: var(--color--primary-light-70);
-  text-decoration: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .nav--link *:hover {
@@ -60,10 +60,10 @@ header {
 /* ---------------------------------------------- */
 
 .nav--search-bar {
-  position: relative;
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: right;
+  position: relative;
 }
 
 .nav--search-bar * {
@@ -72,16 +72,16 @@ header {
 
 .nav--search-bar input {
   --font: 1.4rem var(--font--graphik-regular);
-  width: 12rem;
-  height: 2.6rem;
-  padding-inline: .9rem 2.8rem;
-  font: var(--font);
   background-color: var(--color--neutral-dark-30);
-  border: none;
   border-radius: 2rem;
-  opacity: .6;
+  border: none;
   color: var(--color--neutral-light-90);
   cursor: text;
+  font: var(--font);
+  height: 2.6rem;
+  opacity: .6;
+  padding-inline: .9rem 2.8rem;
+  width: 12rem;
 }
 
 .nav--search-bar input::-webkit-search-decoration,
@@ -93,24 +93,24 @@ header {
 
 .nav--search-bar input:hover {
   background-color: var(--color--neutral-light-60);
+  color: var(--color--neutral-dark-30);
   opacity: 1;
-  color: var(--color--neutral-dark-30)
 }
 
 .nav--search-bar button {
-  position: absolute;
-  top: 50%;
-  right: .3rem;
-  transform: translateY(-50%);
-  height: 100%;
   background: none;
   border: none;
+  height: 100%;
+  position: absolute;
+  right: .3rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .nav--search-bar button * {
-  width: 2.5rem;
+  color: var(--color--neutral-light-60);
   height: 1.8rem;
-  color: var(--color--neutral-light-60)
+  width: 2.5rem;
 }
 
 .nav--search-bar input:hover + button * {

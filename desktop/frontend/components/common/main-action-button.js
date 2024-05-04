@@ -1,4 +1,4 @@
-import '/styles/common/main-action-buttons.css'
+import '/styles/components/common/main-action-buttons.css'
 
 export function MainActionButton({ icon: Icon, handleClick }) {
   return (

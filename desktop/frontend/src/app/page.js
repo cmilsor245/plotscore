@@ -6,17 +6,18 @@ import cookie from 'js-cookie'
 import { IconBulbFilled, IconBulbOff } from '@tabler/icons-react'
 
 import translate from './translation.js'
-import { MainActionButton, CircleFlagsUk, CircleFlagsEs } from '/components/common/main-action-button'
-import Header from '/components/common/header.js'
-import Backdrop from '/components/common/backdrop.js'
+import { MainActionButton, CircleFlagsUk, CircleFlagsEs } from '/components/common/main-action-button.js'
+import Header from '/components/common/landing-page--specific-media/header.js'
+import Backdrop from '/components/common/landing-page--specific-media/backdrop.js'
+import { MdiAppleDarkTheme, MdiAppleLightTheme, MaterialSymbolsAndroidDarkTheme, MaterialSymbolsAndroidLightTheme } from '/components/common/landing-page--specific-media/also-available.js'
 import Footer from '/components/common/footer.js'
 
 import '/styles/global.css'
-import '/styles/common/landing-page--specific-media.css'
+import '/styles/pages/landing-page--specific-media.css'
 
 export default function LandingPage() {
-  const [lang, setLang] = useState('en')
-  const [theme, setTheme] = useState('dark')
+  const [lang, setLang] = useState('en') // default language
+  const [theme, setTheme] = useState('dark') // default color theme
 
   useEffect(() => {
     const storedLang = cookie.get('lang')
@@ -52,7 +53,7 @@ export default function LandingPage() {
           handleClick = { handleLanguageChange }
         />
         <MainActionButton
-          icon = { theme === 'light' ? IconBulbOff : IconBulbFilled }
+          icon = { theme === 'dark' ? IconBulbFilled : IconBulbOff }
           handleClick = { handleThemeChange }
         />
       </div>
@@ -63,13 +64,27 @@ export default function LandingPage() {
         <article className = 'landing-page--specific-media--content'>
           <Backdrop />
           <main>
-            <h2 className = 'usp--main-text'>
-              { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__FIRST_LINE') }
-              <br />
-              { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__SECOND_LINE') }
-              <br />
-              { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__THIRD_LINE') }
-            </h2>
+            <section className = 'usp'>
+              <h2 className = 'usp--main-text'>
+                { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__FIRST_LINE') }
+                <br />
+                { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__SECOND_LINE') }
+                <br />
+                { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__THIRD_LINE') }
+              </h2>
+
+              <button className = 'usp--get-started-button'>
+                { translate(lang, 'LANDING_PAGE', 'USP', 'GET_STARTED_BUTTON') }
+              </button>
+
+              <div className = 'usp--also-available'>
+                <p>
+                  { translate(lang, 'LANDING_PAGE', 'USP', 'ALSO_AVAILABLE') }
+                </p>
+                <span className = 'usp--also-available--icon'>{ theme === 'dark' ? <MdiAppleDarkTheme /> : <MdiAppleLightTheme /> }</span>
+                <span className = 'usp--also-available--icon'>{ theme === 'dark' ? <MaterialSymbolsAndroidDarkTheme /> : <MaterialSymbolsAndroidLightTheme /> }</span>
+              </div>
+            </section>
           </main>
           <Footer />
         </article>

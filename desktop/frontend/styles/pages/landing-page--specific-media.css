@@ -1,0 +1,71 @@
+.dark-theme {
+  --color--usp--main-text: var(--color--primary-light-90);
+  --color--usp--also-available: var(--color--primary-light-80);
+}
+
+.light-theme {
+  --color--usp--main-text: var(--color--primary-dark-20);
+  --color--usp--also-available: var(--color--primary-dark-30);
+}
+
+.landing-page--specific-media--content {
+  margin-top: -10rem;
+}
+
+.usp {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: flex-start;
+}
+
+.usp--main-text {
+  --font: 3.6rem var(--font--tiempos-headline-bold);
+  color: var(--color--usp--main-text);
+  font: var(--font);
+  margin-top: -10rem;
+  text-align: center;
+}
+
+/* --------------------- */
+
+.usp--get-started-button {
+  --font: 1.8rem var(--font--graphik-black);
+  align-items: center;
+  background-color: var(--color--secondary-main);
+  border-radius: .3rem;
+  border: none;
+  color: var(--color--primary-light-90);
+  cursor: pointer;
+  display: flex;
+  font: var(--font);
+  justify-content: center;
+  padding: .7rem 3rem;
+  transition: .1s;
+}
+
+.usp--get-started-button:hover {
+  background-color: var(--color--secondary-dark-10);
+}
+
+/* --------------------- */
+
+.usp--also-available {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.usp--also-available p {
+  --font: 1.7rem var(--font--graphik-light);
+  color: var(--color--usp--also-available);
+  font: var(--font);
+}
+
+.usp--also-available--icon * {
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+}
