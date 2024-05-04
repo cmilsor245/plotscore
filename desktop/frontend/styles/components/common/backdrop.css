@@ -9,7 +9,6 @@
 }
 
 .backdrop--wrapper {
-  background-image: url('/img/default-backdrop.webp');
   background-position: center center;
   background-size: cover;
   box-shadow: 0 -5rem 1rem 5rem var(--color--backdrop-edges) inset;

@@ -7,7 +7,7 @@ import translate from '/src/app/translation.js'
 import translationsEN from '/src/app/translations/en.js'
 import translationsES from '/src/app/translations/es.js'
 
-import NavTab from '/components/common/landing-page--specific-media/header--nav-tab.js'
+import NavTab from '/components/landing-page--specific-media/header--nav-tab.js'
 
 import '/styles/global.css'
 import '/styles/components/common/header.css'
@@ -27,7 +27,7 @@ export default function Header({ lang }) {
       <nav className = 'nav--links--search-bar'>
         <ul className = 'nav--links'>
           { Object.keys(translations.LANDING_PAGE.NAV).map(( key ) => (
-            <NavTab key = { key } text = { translate(lang, 'LANDING_PAGE', 'NAV', key) } />
+            <NavTab text = { translate(lang, 'LANDING_PAGE', 'NAV', key) } />
           )) }
         </ul>
 

@@ -7,9 +7,10 @@ import { IconBulbFilled, IconBulbOff } from '@tabler/icons-react'
 
 import translate from './translation.js'
 import { MainActionButton, CircleFlagsUk, CircleFlagsEs } from '/components/common/main-action-button.js'
-import Header from '/components/common/landing-page--specific-media/header.js'
-import Backdrop from '/components/common/landing-page--specific-media/backdrop.js'
-import { MdiAppleDarkTheme, MdiAppleLightTheme, MaterialSymbolsAndroidDarkTheme, MaterialSymbolsAndroidLightTheme } from '/components/common/landing-page--specific-media/also-available.js'
+import Header from '/components/landing-page--specific-media/header.js'
+import Backdrop from '/components/landing-page--specific-media/backdrop.js'
+import { MdiAppleDarkTheme, MdiAppleLightTheme, MaterialSymbolsAndroidDarkTheme, MaterialSymbolsAndroidLightTheme } from '/components/landing-page--specific-media/also-available.js'
+import { MediaOnlyPoster } from '/components/common/media-normal-slot.js'
 import Footer from '/components/common/footer.js'
 
 import '/styles/global.css'
@@ -44,6 +45,14 @@ export default function LandingPage() {
     setTheme(newTheme)
     cookie.set('theme', newTheme, { expires: 365 })
   }
+
+  /* -------------------------------------------------------------------- */
+
+  const featuredMediaPosters = [
+    
+  ]
+
+  /* -------------------------------------------------------------------- */
 
   return (
     <>
@@ -81,9 +90,25 @@ export default function LandingPage() {
                 <p>
                   { translate(lang, 'LANDING_PAGE', 'USP', 'ALSO_AVAILABLE') }
                 </p>
-                <span className = 'usp--also-available--icon'>{ theme === 'dark' ? <MdiAppleDarkTheme /> : <MdiAppleLightTheme /> }</span>
-                <span className = 'usp--also-available--icon'>{ theme === 'dark' ? <MaterialSymbolsAndroidDarkTheme /> : <MaterialSymbolsAndroidLightTheme /> }</span>
+
+                <span className = 'usp--also-available--icon'>
+                  { theme === 'dark' ? <MdiAppleDarkTheme /> : <MdiAppleLightTheme /> }
+                </span>
+                <span className = 'usp--also-available--icon'>
+                  { theme === 'dark' ? <MaterialSymbolsAndroidDarkTheme /> : <MaterialSymbolsAndroidLightTheme /> }
+                </span>
               </div>
+            </section>
+
+            {/* ---------------------------------------------------- */}
+
+            <section className = 'featured-media'>
+              <MediaOnlyPoster />
+              <MediaOnlyPoster />
+              <MediaOnlyPoster />
+              <MediaOnlyPoster />
+              <MediaOnlyPoster />
+              <MediaOnlyPoster />
             </section>
           </main>
           <Footer />
