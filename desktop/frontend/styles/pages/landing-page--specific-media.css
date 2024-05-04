@@ -16,7 +16,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 3.5rem;
   justify-content: flex-start;
 }
 
@@ -68,4 +68,21 @@
   cursor: pointer;
   height: 2.5rem;
   width: 2.5rem;
+}
+
+/* ---------------------------------------------------------------- */
+
+.featured-media {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.featured-media--slot {
+  transition: .1s;
+}
+
+.featured-media--slot * {
+  cursor: pointer;
 }

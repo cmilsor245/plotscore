@@ -10,7 +10,7 @@ import { MainActionButton, CircleFlagsUk, CircleFlagsEs } from '/components/comm
 import Header from '/components/landing-page--specific-media/header.js'
 import Backdrop from '/components/landing-page--specific-media/backdrop.js'
 import { MdiAppleDarkTheme, MdiAppleLightTheme, MaterialSymbolsAndroidDarkTheme, MaterialSymbolsAndroidLightTheme } from '/components/landing-page--specific-media/also-available.js'
-import { MediaOnlyPoster } from '/components/common/media-normal-slot.js'
+import { MediaOnlyPoster } from '/components/common/media--normal-slot.js'
 import Footer from '/components/common/footer.js'
 
 import '/styles/global.css'
@@ -103,12 +103,24 @@ export default function LandingPage() {
             {/* ---------------------------------------------------- */}
 
             <section className = 'featured-media'>
-              <MediaOnlyPoster />
-              <MediaOnlyPoster />
-              <MediaOnlyPoster />
-              <MediaOnlyPoster />
-              <MediaOnlyPoster />
-              <MediaOnlyPoster />
+              <div className = 'featured-media--slot'>
+                <MediaOnlyPoster lowResImgSrc = '/img/landing-page/1--low-res-poster.webp' highResImgSrc = '/img/landing-page/1--high-res-poster.webp' />
+              </div>
+              <div className = 'featured-media--slot'>
+                <MediaOnlyPoster lowResImgSrc = '/img/landing-page/2--low-res-poster.webp' highResImgSrc = '/img/landing-page/2--high-res-poster.webp' />
+              </div>
+              <div className = 'featured-media--slot'>
+                <MediaOnlyPoster lowResImgSrc = '/img/landing-page/3--low-res-poster.webp' highResImgSrc = '/img/landing-page/3--high-res-poster.webp' />
+              </div>
+              <div className = 'featured-media--slot'>
+                <MediaOnlyPoster lowResImgSrc = '/img/landing-page/4--low-res-poster.webp' highResImgSrc = '/img/landing-page/4--high-res-poster.webp' />
+              </div>
+              <div className = 'featured-media--slot'>
+                <MediaOnlyPoster lowResImgSrc = '/img/landing-page/5--low-res-poster.webp' highResImgSrc = '/img/landing-page/5--high-res-poster.webp' />
+              </div>
+              <div className = 'featured-media--slot'>
+                <MediaOnlyPoster lowResImgSrc = '/img/landing-page/6--low-res-poster.webp' highResImgSrc = '/img/landing-page/6--high-res-poster.webp' />
+              </div>
             </section>
           </main>
           <Footer />

@@ -8,19 +8,19 @@ const Backdrop = () => {
 
   useEffect(() => {
     const highResImage = new Image()
-    highResImage.src = '/img/high-res-backdrop.webp'
+    highResImage.src = '/img/landing-page--specific-media/high-res-backdrop.webp'
     highResImage.onload = () => {
       setImageLoaded(true)
     }
-  }, [])
+  })
 
   const backdropStyle = {
-    backgroundImage: `url(${imageLoaded ? '/img/high-res-backdrop.webp' : '/img/low-res-backdrop.webp'})`
+    backgroundImage: `url(${ imageLoaded ? '/img/landing-page--specific-media/high-res-backdrop.webp' : '/img/landing-page--specific-media/low-res-backdrop.webp' })`
   }
 
   return (
-    <div className="backdrop--wrapper" style = { backdropStyle }>
-      <Link className="backdrop--media-title" href="/test">Star Wars (1977)</Link>
+    <div className = 'backdrop--wrapper' style = { backdropStyle }>
+      <Link className = 'backdrop--media-title' href = '/test'>Star Wars (1977)</Link>
     </div>
   )
 }
