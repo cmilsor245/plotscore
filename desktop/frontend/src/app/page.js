@@ -71,7 +71,10 @@ export default function LandingPage() {
         <Header lang = { lang } />
 
         <article className = 'landing-page--specific-media--content'>
-          <Backdrop />
+          <Backdrop lowResImgSrc = '/img/landing-page--specific-media/low-res-backdrop.webp' highResImgSrc = '/img/landing-page--specific-media/high-res-backdrop.webp' />
+
+          {/* ----------------------------------------------------------------------- */}
+
           <main>
             <section className = 'usp'>
               <h2 className = 'usp--main-text'>
@@ -123,6 +126,9 @@ export default function LandingPage() {
               </div>
             </section>
           </main>
+
+          {/* ----------------------------------------------------------------------- */}
+
           <Footer />
         </article>
       </section>

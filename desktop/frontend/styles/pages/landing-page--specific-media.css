@@ -1,13 +1,13 @@
 .dark-theme {
-  --color--usp--main-text: var(--color--primary-light-90);
-  --color--usp--also-available: var(--color--primary-light-80);
   --color--featured-media--outline: var(--color--secondary-main);
+  --color--usp--also-available: var(--color--primary-light-80);
+  --color--usp--main-text: var(--color--primary-light-90);
 }
 
 .light-theme {
-  --color--usp--main-text: var(--color--primary-dark-20);
-  --color--usp--also-available: var(--color--primary-dark-30);
   --color--featured-media--outline: var(--color--tertiary-main);
+  --color--usp--also-available: var(--color--primary-dark-30);
+  --color--usp--main-text: var(--color--primary-dark-20);
 }
 
 .landing-page--specific-media--content {

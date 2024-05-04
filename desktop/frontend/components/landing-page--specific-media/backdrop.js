@@ -3,26 +3,24 @@ import Link from 'next/link'
 
 import '/styles/components/common/backdrop.css'
 
-const Backdrop = () => {
+export default function Backdrop({ lowResImgSrc, highResImgSrc }) {
   const [imageLoaded, setImageLoaded] = useState(false)
 
   useEffect(() => {
     const highResImage = new Image()
-    highResImage.src = '/img/landing-page--specific-media/high-res-backdrop.webp'
+    highResImage.src = highResImgSrc
     highResImage.onload = () => {
       setImageLoaded(true)
     }
   })
 
   const backdropStyle = {
-    backgroundImage: `url(${ imageLoaded ? '/img/landing-page--specific-media/high-res-backdrop.webp' : '/img/landing-page--specific-media/low-res-backdrop.webp' })`
+    backgroundImage: `url(${ imageLoaded ? highResImgSrc : lowResImgSrc })`
   }
 
   return (
     <div className = 'backdrop--wrapper' style = { backdropStyle }>
-      <Link className = 'backdrop--media-title' href = '/test'>Star Wars (1977)</Link>
+      <Link className = 'backdrop--media-title' href = '/'>Star Wars (1977)</Link>
     </div>
   )
 }
-
-export default Backdrop
