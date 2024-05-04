@@ -1,11 +1,13 @@
 .dark-theme {
   --color--usp--main-text: var(--color--primary-light-90);
   --color--usp--also-available: var(--color--primary-light-80);
+  --color--featured-media--outline: var(--color--secondary-main);
 }
 
 .light-theme {
   --color--usp--main-text: var(--color--primary-dark-20);
   --color--usp--also-available: var(--color--primary-dark-30);
+  --color--featured-media--outline: var(--color--tertiary-main);
 }
 
 .landing-page--specific-media--content {
@@ -80,9 +82,14 @@
 }
 
 .featured-media--slot {
+  border-radius: .3rem;
   transition: .1s;
 }
 
 .featured-media--slot * {
   cursor: pointer;
+}
+
+.featured-media--slot:hover {
+  outline: .5rem solid var(--color--featured-media--outline);
 }
