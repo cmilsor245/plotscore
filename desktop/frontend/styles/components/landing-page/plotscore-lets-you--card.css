@@ -1,0 +1,42 @@
+.plotscore-lets-you--card {
+  align-items: center;
+  background-color: var(--color--primary-main);
+  border-radius: .4rem;
+  color: var(--color--primary-light-70);
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+  padding: 3rem 2rem;
+  transition: .03s;
+}
+
+.plotscore-lets-you--card--column-1:hover {
+  background-color: var(--color--secondary-main);
+  color: var(--color--primary-dark-70);
+}
+
+.plotscore-lets-you--card--column-2:hover {
+  background-color: var(--color--tertiary-main);
+  color: var(--color--primary-dark-70);
+}
+
+.plotscore-lets-you--card--column-3:hover {
+  background-color: var(--color--accent-main);
+  color: var(--color--primary-dark-70);
+}
+
+.plotscore-lets-you--card--icon {
+  height: 5.5rem;
+  width: 5.5rem;
+}
+
+.plotscore-lets-you--card--icon * {
+  height: 100%;
+  width: 100%;
+}
+
+.plotscore-lets-you--card p {
+  --font: 1.4rem var(--font--graphik-regular);
+  flex: 2;
+  font: var(--font);
+}

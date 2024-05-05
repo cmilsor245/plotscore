@@ -1,16 +1,15 @@
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { IconZoom } from '@tabler/icons-react'
 
+import NavTab from '/components/landing-page--specific-media/header--nav-tab.js'
 import translate from '/src/app/translation.js'
 import translationsEN from '/src/app/translations/en.js'
 import translationsES from '/src/app/translations/es.js'
 
-import NavTab from '/components/landing-page--specific-media/header--nav-tab.js'
-
-import '/styles/global.css'
 import '/styles/components/common/header.css'
+import '/styles/global.css'
 
 export default function Header({ lang }) {
   const translations = lang === 'en' ? translationsEN : translationsES

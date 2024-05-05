@@ -15,10 +15,12 @@ footer {
   background-color: var(--color--background);
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   gap: 1rem;
-  justify-content: top;
+  justify-content: flex-start;
   padding-block: 2rem 6rem;
   padding-inline: var(--padding-inline--global);
+  width: 100%;
 }
 
 .footer--top {
@@ -57,7 +59,6 @@ footer {
 }
 
 .footer--bottom {
-  align-items: center;
   align-items: center;
   display: flex;
   gap: .5rem;

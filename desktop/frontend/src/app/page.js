@@ -1,17 +1,36 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
 import cookie from 'js-cookie'
+import React, { useEffect, useState } from 'react'
 
 import { IconBulbFilled, IconBulbOff } from '@tabler/icons-react'
 
+import {
+  IconAlignLeft,
+  IconCalendarMonth,
+  IconEye,
+  IconHeartFilled,
+  IconLayoutGridFilled,
+  IconStarFilled
+} from '@tabler/icons-react'
 import translate from './translation.js'
-import { MainActionButton, CircleFlagsUk, CircleFlagsEs } from '/components/common/main-action-button.js'
-import Header from '/components/landing-page--specific-media/header.js'
-import Backdrop from '/components/landing-page--specific-media/backdrop.js'
-import { MdiAppleDarkTheme, MdiAppleLightTheme, MaterialSymbolsAndroidDarkTheme, MaterialSymbolsAndroidLightTheme } from '/components/landing-page--specific-media/also-available.js'
-import { MediaOnlyPoster } from '/components/common/media--normal-slot.js'
 import Footer from '/components/common/footer.js'
+import {
+  CircleFlagsEs,
+  CircleFlagsUk,
+  MainActionButton
+} from '/components/common/main-action-button.js'
+import { MediaOnlyPoster } from '/components/common/media--normal-slot.js'
+import SectionHeading from '/components/common/section-header.js'
+import {
+  MaterialSymbolsAndroidDarkTheme,
+  MaterialSymbolsAndroidLightTheme,
+  MdiAppleDarkTheme,
+  MdiAppleLightTheme
+} from '/components/landing-page--specific-media/also-available.js'
+import Backdrop from '/components/landing-page--specific-media/backdrop.js'
+import Header from '/components/landing-page--specific-media/header.js'
+import PlotscoreLetsYouCard from '/components/landing-page/plotscore-lets-you--card.js'
 
 import '/styles/global.css'
 import '/styles/pages/landing-page--specific-media.css'
@@ -67,8 +86,8 @@ export default function LandingPage() {
         />
       </div>
 
-      <section className = 'common--content--footer'>
-        <section className = 'common--content--footer--content'>
+      <section className = 'common--content-footer'>
+        <section className = 'common--content-footer--content'>
           <Header lang = { lang } />
 
           <section className = 'landing-page--specific-media--content'>
@@ -123,6 +142,51 @@ export default function LandingPage() {
                 <div className = 'featured-media--slot'>
                   <MediaOnlyPoster lowResImgSrc = '/img/landing-page/6--low-res-poster.webp' highResImgSrc = '/img/landing-page/6--high-res-poster.webp' />
                 </div>
+              </section>
+
+              {/* ---------------------------------------------------- */}
+
+              <section className = 'plotscore-lets-you'>
+                <SectionHeading />
+
+                <section className = 'section-content'>
+                  <article className = 'plotscore-lets-you--column'>
+                    <PlotscoreLetsYouCard
+                      column = { 1 }
+                      icon = { IconEye }
+                      text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_1_CARD_1') }
+                    />
+                    <PlotscoreLetsYouCard
+                      column = { 1 }
+                      icon = { IconStarFilled }
+                      text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_1_CARD_2') }
+                    />
+                  </article>
+                  <article className = 'plotscore-lets-you--column'>
+                    <PlotscoreLetsYouCard
+                      column = { 2 }
+                      icon = { IconHeartFilled }
+                      text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_2_CARD_1') }
+                    />
+                    <PlotscoreLetsYouCard
+                      column = { 2 }
+                      icon = { IconCalendarMonth }
+                      text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_2_CARD_2') }
+                    />
+                  </article>
+                  <article className = 'plotscore-lets-you--column'>
+                    <PlotscoreLetsYouCard
+                      column = { 3 }
+                      icon = { IconAlignLeft }
+                      text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_3_CARD_1') }
+                    />
+                    <PlotscoreLetsYouCard
+                      column = { 3 }
+                      icon = { IconLayoutGridFilled }
+                      text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_3_CARD_2') }
+                    />
+                  </article>
+                </section>
               </section>
             </main>
           </section>

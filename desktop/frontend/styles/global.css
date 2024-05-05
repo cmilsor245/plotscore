@@ -419,6 +419,7 @@
   /* -------------------------------------------------------------------------------------------------------- */
 
   --padding-inline--global: 20%;
+  --general-section-gap: 1rem;
 }
 
 .dark-theme {
@@ -489,16 +490,17 @@ main {
   display: none;
 }
 
-.common--content--footer {
+.common--content-footer {
   display: flex;
   flex-direction: column;
   gap: 7.5rem;
-  justify-content: flex-start;
+  min-height: 100vh;
 }
 
-.common--content--footer--content {
+.common--content-footer--content {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   gap: 7.5rem;
   justify-content: flex-start;
   padding-inline: var(--padding-inline--global);

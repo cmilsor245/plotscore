@@ -93,3 +93,24 @@
 .featured-media--slot:hover {
   outline: .5rem solid var(--color--featured-media--outline);
 }
+
+/* ---------------------------------------------------------------- */
+
+.plotscore-lets-you {
+  display: flex;
+  flex-direction: column;
+  gap: var(--general-section-gap);
+}
+
+.plotscore-lets-you .section-content {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.plotscore-lets-you--column {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

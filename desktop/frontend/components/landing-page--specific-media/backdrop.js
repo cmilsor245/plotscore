@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
-import '/styles/components/common/backdrop.css'
+import '/styles/components/landing-page--specific-media/backdrop.css'
 
 export default function Backdrop({ lowResImgSrc, highResImgSrc }) {
   const [imageLoaded, setImageLoaded] = useState(false)

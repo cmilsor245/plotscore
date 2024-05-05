@@ -1,16 +1,16 @@
-import translate from '/src/app/translation.js'
-
-import '/styles/components/common/footer.css'
-
 import {
-  IconBrandX,
-  IconBrandThreads,
   IconBrandFacebook,
   IconBrandInstagram,
+  IconBrandThreads,
   IconBrandTiktok,
+  IconBrandX,
   IconBrandYoutube,
   IconCopyright
 } from '@tabler/icons-react'
+
+import translate from '/src/app/translation.js'
+
+import '/styles/components/common/footer.css'
 
 export default function Footer({ lang }) {
   return (
