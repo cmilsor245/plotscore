@@ -31,30 +31,29 @@ footer {
 .footer--top--main-links {
   align-items: center;
   display: flex;
-  gap: 2rem;
+  gap: 1.8rem;
   justify-content: left;
 }
 
 .footer--top--main-links h5 {
-  --font: 1.8rem var(--font--graphik-semibold);
+  --font: 1.65rem var(--font--graphik-semibold);
   color: var(--color--main-link);
   cursor: pointer;
   font: var(--font);
-  text-transform: capitalize;
 }
 
 .footer--top--socials {
   align-items: center;
   display: flex;
-  gap: 1rem;
+  gap: .5rem;
   justify-content: right;
 }
 
 .footer--top--socials * {
   color: var(--color--social-icon--copyright);
   cursor: pointer;
-  height: 2.2rem;
-  width: 2.2rem;
+  height: 1.9rem;
+  width: 1.9rem;
 }
 
 .footer--bottom {

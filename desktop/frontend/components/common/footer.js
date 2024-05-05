@@ -5,9 +5,10 @@ import '/styles/components/common/footer.css'
 import {
   IconBrandX,
   IconBrandThreads,
-  IconBrandFacebookFilled,
+  IconBrandFacebook,
   IconBrandInstagram,
-  IconBrandYoutubeFilled,
+  IconBrandTiktok,
+  IconBrandYoutube,
   IconCopyright
 } from '@tabler/icons-react'
 
@@ -54,9 +55,10 @@ export default function Footer({ lang }) {
         <article className = 'footer--top--socials'>
           <IconBrandX />
           <IconBrandThreads />
-          <IconBrandFacebookFilled />
+          <IconBrandFacebook />
           <IconBrandInstagram />
-          <IconBrandYoutubeFilled />
+          <IconBrandTiktok />
+          <IconBrandYoutube />
         </article>
       </section>
 

@@ -20,19 +20,19 @@ const translationsES = {
   },
   COMMON: {
     FOOTER: {
-      ABOUT: 'about',
-      NEWS: 'news',
-      PRO: 'pro',
-      APPS: 'apps',
-      PODCAST: 'podcast',
-      YEAR_IN_REVIEW: 'year in review',
-      GIFT_GUIDE: 'gift guide',
-      HELP: 'help',
-      TERMS: 'terms',
-      API: 'api',
-      CONTACT: 'contact',
+      ABOUT: 'About',
+      NEWS: 'News',
+      PRO: 'Pro',
+      APPS: 'Apps',
+      PODCAST: 'Podcast',
+      YEAR_IN_REVIEW: 'Year in Review',
+      GIFT_GUIDE: 'Gift Guide',
+      HELP: 'Help',
+      TERMS: 'Terms',
+      API: 'API',
+      CONTACT: 'Contact',
 
-      COPYRIGHT: 'This project is developed by Christian Millán Soria for educational purposes only.'
+      COPYRIGHT: '2024 - This project is developed by Christian Millán Soria for educational purposes only.'
     }
   }
 }
