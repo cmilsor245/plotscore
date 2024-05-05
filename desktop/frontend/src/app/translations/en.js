@@ -18,6 +18,8 @@ const translationsES = {
       ALSO_AVAILABLE: 'The social network for film lovers. Also available on'
     },
     PLOTSCORE_LETS_YOU: {
+      SECTION_TITLE: 'plotscore lets you...',
+
       COLUMN_1_CARD_1: 'Keep track of every media you\'ve ever watched (or just start from the day you join)',
       COLUMN_1_CARD_2: 'Rate each media on a five-star scale (with halves) to record and share your reaction',
 
@@ -28,6 +30,8 @@ const translationsES = {
       COLUMN_3_CARD_2: 'Compile and share lists of media on any topic and keep a watchlist of media to see'
     }
   },
+
+  /* -------------------------------------------------------------------------------------------------- */
 
   COMMON: {
     FOOTER: {

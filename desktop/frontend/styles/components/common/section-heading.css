@@ -1,0 +1,28 @@
+.dark-theme {
+  --color--divider: var(--color--primary-light-30);
+  --color--title: var(--color--primary-light-30);
+}
+
+.light-theme {
+  --color--divider: var(--color--primary-dark-20);
+  --color--title: var(--color--primary-dark-20);
+}
+
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+}
+
+.section-heading--title {
+  --font: 1.4rem var(--font--graphik-regular);
+  color: var(--color--title);
+  font: var(--font);
+  text-transform: uppercase;
+}
+
+.section-heading--divider {
+  background-color: var(--color--divider);
+  height: .1rem;
+  width: 100%;
+}

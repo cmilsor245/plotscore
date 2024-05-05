@@ -147,7 +147,9 @@ export default function LandingPage() {
               {/* ---------------------------------------------------- */}
 
               <section className = 'plotscore-lets-you'>
-                <SectionHeading />
+                <SectionHeading
+                  title = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'SECTION_TITLE') }
+                />
 
                 <section className = 'section-content'>
                   <article className = 'plotscore-lets-you--column'>

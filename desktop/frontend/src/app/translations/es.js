@@ -18,16 +18,20 @@ const translationsES = {
       ALSO_AVAILABLE: 'La red social para cinéfil@s. También disponible en'
     },
     PLOTSCORE_LETS_YOU: {
-      COLUMN_1_CARD_1: 'Registra todo el contenido que hayas visto (o empieza desde el dís de registro)',
-      COLUMN_1_CARD_2: 'Puntúa basándote en una escala de cinco estrellas (y media) para registrar y compartir tu reacción',
+      SECTION_TITLE: 'plotscore te permite...',
 
-      COLUMN_2_CARD_1: 'Muestra tu amor por tus contenidos favoritos, listas y reviews con un "like"',
-      COLUMN_2_CARD_2: 'Mantén un diario de tus visionados (y conviértete en Pro para obtener estadísticas completas)',
+      COLUMN_1_CARD_1: 'Registrar todo el contenido que hayas visto (o empieza desde el dís de registro)',
+      COLUMN_1_CARD_2: 'Puntuar basándote en una escala de cinco estrellas (y media) para registrar y compartir tu reacción',
 
-      COLUMN_3_CARD_1: 'Escribe y comparte tus reviews, además de seguir a tus amigos y otros miembros para ver las suyas',
-      COLUMN_3_CARD_2: 'Crea y comparte listas de contenidos de cualquier género y añade otros a Ver más tarde'
+      COLUMN_2_CARD_1: 'Mostrar tu amor por tus contenidos favoritos, listas y reviews con un "like"',
+      COLUMN_2_CARD_2: 'Mantener un diario de tus visionados (y conviértete en Pro para obtener estadísticas completas)',
+
+      COLUMN_3_CARD_1: 'Escribir y comparte tus reviews, además de seguir a tus amigos y otros miembros para ver las suyas',
+      COLUMN_3_CARD_2: 'Crear y comparte listas de contenidos de cualquier género y añade otros a Ver más tarde'
     }
   },
+
+  /* -------------------------------------------------------------------------------------------------- */
 
   COMMON: {
     FOOTER: {
