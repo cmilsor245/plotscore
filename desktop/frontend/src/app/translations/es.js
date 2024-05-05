@@ -17,6 +17,23 @@ const translationsES = {
 
       ALSO_AVAILABLE: 'La red social para cinéfil@s. También disponible en'
     }
+  },
+  COMMON: {
+    FOOTER: {
+      ABOUT: 'sobre nosotros',
+      NEWS: 'noticias',
+      PRO: 'pro',
+      APPS: 'apps',
+      PODCAST: 'podcast',
+      YEAR_IN_REVIEW: 'un año en review',
+      GIFT_GUIDE: 'guía de regalo',
+      HELP: 'ayuda',
+      TERMS: 'términos',
+      API: 'api',
+      CONTACT: 'contacto',
+
+      COPYRIGHT: 'Este proyecto está desarrollado por Christian Millán Soria con fines educativos únicamente.'
+    }
   }
 }
 

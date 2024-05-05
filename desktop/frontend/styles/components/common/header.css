@@ -1,3 +1,13 @@
+.dark-theme {
+  --color--nav-link: var(--color--primary-light-70);
+  --color--nav-link--hover: var(--color--primary-light-80);
+}
+
+.light-theme {
+  --color--nav-link: var(--color--primary-dark-80);
+  --color--nav-link--hover: var(--color--primary-dark-30);
+}
+
 header {
   align-items: center;
   display: flex;
@@ -48,13 +58,14 @@ header {
 }
 
 .nav--link * {
-  color: var(--color--primary-light-70);
+  color: var(--color--nav-link);
   cursor: pointer;
   text-decoration: none;
+  transition: .1s;
 }
 
 .nav--link *:hover {
-  color: var(--color--primary-light-80);
+  color: var(--color--nav-link--hover);
 }
 
 /* ---------------------------------------------- */

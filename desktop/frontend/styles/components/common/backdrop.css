@@ -1,10 +1,12 @@
 .dark-theme {
   --color--backdrop-edges: var(--color--primary-dark-70);
+  --color--header--contrast-bg: var(--color--primary-dark-70);
   --color--media-title: var(--color--primary-light-40);
 }
 
 .light-theme {
   --color--backdrop-edges: var(--color--primary-light-80);
+  --color--header--contrast-bg: var(--color--primary-light-80);
   --color--media-title: var(--color--primary-dark-40);
 }
 
@@ -14,20 +16,22 @@
   box-shadow: 0 -5rem 1rem 5rem var(--color--backdrop-edges) inset;
   height: 70rem;
   left: -11rem;
+  margin-top: -10rem;
   position: relative;
   width: 120%;
   z-index: -1;
 }
 
 .backdrop--wrapper::before {
-  background-image: linear-gradient(to bottom, var(--color--primary-dark-70), transparent);
+  background-image: linear-gradient(to bottom, var(--color--header--contrast-bg), transparent);
   content: '';
-  height: 10rem;
+  height: 14rem;
   left: 50%;
+  padding-inline: var(--padding-inline--global);
   position: absolute;
   top: 0;
   transform: translateX(-50%);
-  width: calc(100% - 10rem);
+  width: 100%;
   z-index: -2;
 }
 

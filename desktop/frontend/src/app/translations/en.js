@@ -17,6 +17,23 @@ const translationsES = {
 
       ALSO_AVAILABLE: 'The social network for film lovers. Also available on'
     }
+  },
+  COMMON: {
+    FOOTER: {
+      ABOUT: 'about',
+      NEWS: 'news',
+      PRO: 'pro',
+      APPS: 'apps',
+      PODCAST: 'podcast',
+      YEAR_IN_REVIEW: 'year in review',
+      GIFT_GUIDE: 'gift guide',
+      HELP: 'help',
+      TERMS: 'terms',
+      API: 'api',
+      CONTACT: 'contact',
+
+      COPYRIGHT: 'This project is developed by Christian Millán Soria for educational purposes only.'
+    }
   }
 }
 

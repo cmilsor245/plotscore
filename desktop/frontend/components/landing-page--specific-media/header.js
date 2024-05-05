@@ -26,9 +26,24 @@ export default function Header({ lang }) {
 
       <nav className = 'nav--links--search-bar'>
         <ul className = 'nav--links'>
-          { Object.keys(translations.LANDING_PAGE.NAV).map(( key ) => (
-            <NavTab text = { translate(lang, 'LANDING_PAGE', 'NAV', key) } />
-          )) }
+          <NavTab
+            text = { translate(lang, 'LANDING_PAGE', 'NAV', 'SIGN_IN') }
+          />
+          <NavTab
+            text = { translate(lang, 'LANDING_PAGE', 'NAV', 'CREATE_ACCOUNT') }
+          />
+          <NavTab
+            text = { translate(lang, 'LANDING_PAGE', 'NAV', 'MEDIA') }
+          />
+          <NavTab
+            text = { translate(lang, 'LANDING_PAGE', 'NAV', 'LISTS') }
+          />
+          <NavTab
+            text = { translate(lang, 'LANDING_PAGE', 'NAV', 'MEMBERS') }
+          />
+          <NavTab
+            text = { translate(lang, 'LANDING_PAGE', 'NAV', 'JOURNAL') }
+          />
         </ul>
 
         <div className = 'nav--search-bar'>

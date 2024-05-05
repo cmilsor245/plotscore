@@ -345,7 +345,7 @@
   --color--neutral-dark-80: #191919;
   --color--neutral-dark-90: #0D0D0D;
 
-  /* ------------------------------------------------------------------ */
+  /* -------------------------------------------------------------------------------------------------------- */
 
   --font--nav-logo: 400 5.5rem 'grape nuts', cursive;
 
@@ -415,6 +415,10 @@
   --font--graphik-super-italic: 'graphik super - italic', sans-serif;
   --font--graphik-super-compatible: 'graphik super - compatible', sans-serif;
   --font--graphik-super-italic-compatible: 'graphik super - italic - compatible', sans-serif;
+
+  /* -------------------------------------------------------------------------------------------------------- */
+
+  --padding-inline--global: 20%;
 }
 
 .dark-theme {
@@ -470,7 +474,7 @@ body {
   font-size: 1.6rem;
   gap: 7.5rem;
   min-height: 100vh;
-  padding-inline: 20%;
+  overflow-x: hidden;
 }
 
 main {
@@ -483,4 +487,19 @@ main {
 
 .hidden {
   display: none;
+}
+
+.common--content--footer {
+  display: flex;
+  flex-direction: column;
+  gap: 7.5rem;
+  justify-content: flex-start;
+}
+
+.common--content--footer--content {
+  display: flex;
+  flex-direction: column;
+  gap: 7.5rem;
+  justify-content: flex-start;
+  padding-inline: var(--padding-inline--global);
 }

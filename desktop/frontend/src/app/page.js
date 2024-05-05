@@ -67,70 +67,70 @@ export default function LandingPage() {
         />
       </div>
 
-      <section>
-        <Header lang = { lang } />
+      <section className = 'common--content--footer'>
+        <section className = 'common--content--footer--content'>
+          <Header lang = { lang } />
 
-        <article className = 'landing-page--specific-media--content'>
-          <Backdrop lowResImgSrc = '/img/landing-page--specific-media/low-res-backdrop.webp' highResImgSrc = '/img/landing-page--specific-media/high-res-backdrop.webp' />
+          <section className = 'landing-page--specific-media--content'>
+            <Backdrop lowResImgSrc = '/img/landing-page--specific-media/low-res-backdrop.webp' highResImgSrc = '/img/landing-page--specific-media/high-res-backdrop.webp' />
 
-          {/* ----------------------------------------------------------------------- */}
+            <main>
+              <section className = 'usp'>
+                <h2 className = 'usp--main-text'>
+                  { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__FIRST_LINE') }
+                  <br />
+                  { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__SECOND_LINE') }
+                  <br />
+                  { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__THIRD_LINE') }
+                </h2>
 
-          <main>
-            <section className = 'usp'>
-              <h2 className = 'usp--main-text'>
-                { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__FIRST_LINE') }
-                <br />
-                { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__SECOND_LINE') }
-                <br />
-                { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__THIRD_LINE') }
-              </h2>
+                <button className = 'usp--get-started-button'>
+                  { translate(lang, 'LANDING_PAGE', 'USP', 'GET_STARTED_BUTTON') }
+                </button>
 
-              <button className = 'usp--get-started-button'>
-                { translate(lang, 'LANDING_PAGE', 'USP', 'GET_STARTED_BUTTON') }
-              </button>
+                <div className = 'usp--also-available'>
+                  <p>
+                    { translate(lang, 'LANDING_PAGE', 'USP', 'ALSO_AVAILABLE') }
+                  </p>
 
-              <div className = 'usp--also-available'>
-                <p>
-                  { translate(lang, 'LANDING_PAGE', 'USP', 'ALSO_AVAILABLE') }
-                </p>
+                  <span className = 'usp--also-available--icon'>
+                    { theme === 'dark' ? <MdiAppleDarkTheme /> : <MdiAppleLightTheme /> }
+                  </span>
+                  <span className = 'usp--also-available--icon'>
+                    { theme === 'dark' ? <MaterialSymbolsAndroidDarkTheme /> : <MaterialSymbolsAndroidLightTheme /> }
+                  </span>
+                </div>
+              </section>
 
-                <span className = 'usp--also-available--icon'>
-                  { theme === 'dark' ? <MdiAppleDarkTheme /> : <MdiAppleLightTheme /> }
-                </span>
-                <span className = 'usp--also-available--icon'>
-                  { theme === 'dark' ? <MaterialSymbolsAndroidDarkTheme /> : <MaterialSymbolsAndroidLightTheme /> }
-                </span>
-              </div>
-            </section>
+              {/* ---------------------------------------------------- */}
 
-            {/* ---------------------------------------------------- */}
+              <section className = 'featured-media'>
+                <div className = 'featured-media--slot'>
+                  <MediaOnlyPoster lowResImgSrc = '/img/landing-page/1--low-res-poster.webp' highResImgSrc = '/img/landing-page/1--high-res-poster.webp' />
+                </div>
+                <div className = 'featured-media--slot'>
+                  <MediaOnlyPoster lowResImgSrc = '/img/landing-page/2--low-res-poster.webp' highResImgSrc = '/img/landing-page/2--high-res-poster.webp' />
+                </div>
+                <div className = 'featured-media--slot'>
+                  <MediaOnlyPoster lowResImgSrc = '/img/landing-page/3--low-res-poster.webp' highResImgSrc = '/img/landing-page/3--high-res-poster.webp' />
+                </div>
+                <div className = 'featured-media--slot'>
+                  <MediaOnlyPoster lowResImgSrc = '/img/landing-page/4--low-res-poster.webp' highResImgSrc = '/img/landing-page/4--high-res-poster.webp' />
+                </div>
+                <div className = 'featured-media--slot'>
+                  <MediaOnlyPoster lowResImgSrc = '/img/landing-page/5--low-res-poster.webp' highResImgSrc = '/img/landing-page/5--high-res-poster.webp' />
+                </div>
+                <div className = 'featured-media--slot'>
+                  <MediaOnlyPoster lowResImgSrc = '/img/landing-page/6--low-res-poster.webp' highResImgSrc = '/img/landing-page/6--high-res-poster.webp' />
+                </div>
+              </section>
+            </main>
+          </section>
+        </section>
 
-            <section className = 'featured-media'>
-              <div className = 'featured-media--slot'>
-                <MediaOnlyPoster lowResImgSrc = '/img/landing-page/1--low-res-poster.webp' highResImgSrc = '/img/landing-page/1--high-res-poster.webp' />
-              </div>
-              <div className = 'featured-media--slot'>
-                <MediaOnlyPoster lowResImgSrc = '/img/landing-page/2--low-res-poster.webp' highResImgSrc = '/img/landing-page/2--high-res-poster.webp' />
-              </div>
-              <div className = 'featured-media--slot'>
-                <MediaOnlyPoster lowResImgSrc = '/img/landing-page/3--low-res-poster.webp' highResImgSrc = '/img/landing-page/3--high-res-poster.webp' />
-              </div>
-              <div className = 'featured-media--slot'>
-                <MediaOnlyPoster lowResImgSrc = '/img/landing-page/4--low-res-poster.webp' highResImgSrc = '/img/landing-page/4--high-res-poster.webp' />
-              </div>
-              <div className = 'featured-media--slot'>
-                <MediaOnlyPoster lowResImgSrc = '/img/landing-page/5--low-res-poster.webp' highResImgSrc = '/img/landing-page/5--high-res-poster.webp' />
-              </div>
-              <div className = 'featured-media--slot'>
-                <MediaOnlyPoster lowResImgSrc = '/img/landing-page/6--low-res-poster.webp' highResImgSrc = '/img/landing-page/6--high-res-poster.webp' />
-              </div>
-            </section>
-          </main>
+        {/* -------------------------------------------- */}
 
-          {/* ----------------------------------------------------------------------- */}
-
-          <Footer />
-        </article>
+        <Footer lang = { lang } />
       </section>
     </>
   )
