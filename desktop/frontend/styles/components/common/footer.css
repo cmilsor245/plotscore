@@ -1,12 +1,16 @@
 .dark-theme {
   --color--background: var(--color--primary-dark-20);
+  --color--main-link--hover: var(--color--primary-light-30);
   --color--main-link: var(--color--primary-light-60);
+  --color--social-icon--copyright--hover: var(--color--primary-light-10);
   --color--social-icon--copyright: var(--color--primary-light-40);
 }
 
 .light-theme {
   --color--background: var(--color--primary-light-70);
+  --color--main-link--hover: var(--color--primary-light-20);
   --color--main-link: var(--color--primary-main);
+  --color--social-icon--copyright--hover: var(--color--primary-dark-10);
   --color--social-icon--copyright: var(--color--primary-light-30);
 }
 
@@ -42,6 +46,11 @@ footer {
   color: var(--color--main-link);
   cursor: pointer;
   font: var(--font);
+  transition: .1s;
+}
+
+.footer--top--main-links h5:hover {
+  color: var(--color--main-link--hover);
 }
 
 .footer--top--socials {
@@ -51,11 +60,19 @@ footer {
   justify-content: right;
 }
 
-.footer--top--socials * {
+.footer--top--socials svg {
   color: var(--color--social-icon--copyright);
-  cursor: pointer;
   height: 1.9rem;
+  transition: .1s;
   width: 1.9rem;
+}
+
+.footer--top--socials svg:hover {
+  color: var(--color--social-icon--copyright--hover);
+}
+
+.footer--top--socials * {
+  cursor: pointer;
 }
 
 .footer--bottom {
