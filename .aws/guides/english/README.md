@@ -2,22 +2,13 @@
 
 ## Table of contents
 
-- [CI/CD pipeline for **plotscore** Next.js project](#cicd-pipeline-for-plotscore-nextjs-project)
-  - [Table of contents](#table-of-contents)
-    - [AWS EC2 instance creation](#aws-ec2-instance-creation)
-      - [Back to top](#back-to-top)
-    - [GitHub repository setup](#github-repository-setup)
-      - [Back to top](#back-to-top-1)
-    - [Setting up GitHub Actions Runner and Workflow](#setting-up-github-actions-runner-and-workflow)
-      - [Back to top](#back-to-top-2)
-    - [Running Next.js project in background](#running-nextjs-project-in-background)
-      - [Back to top](#back-to-top-3)
-    - [Updating GitHub Actions Workflow](#updating-github-actions-workflow)
-      - [Back to top](#back-to-top-4)
-    - [Access the site](#access-the-site)
-      - [Back to top](#back-to-top-5)
-    - [Automatically deploying after reboot](#automatically-deploying-after-reboot)
-      - [Back to top](#back-to-top-6)
+1. [AWS EC2 instance creation](#aws-ec2-instance-creation)
+2. [GitHub repository setup](#github-repository-setup)
+3. [Setting up GitHub Actions Runner and Workflow](#setting-up-github-actions-runner-and-workflow)
+4. [Running Next.js project in background](#running-nextjs-project-in-background)
+5. [Updating GitHub Actions Workflow](#updating-github-actions-workflow)
+6. [Access the site](#access-the-site)
+7. [Automatically deploying after reboot](#automatically-deploying-after-reboot)
 
 ### AWS EC2 instance creation
 
