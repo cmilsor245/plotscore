@@ -7,7 +7,7 @@
   gap: 1rem;
   justify-content: space-around;
   padding: 3rem 2rem;
-  transition: .03s;
+  transition: .05s;
 }
 
 .plotscore-lets-you--card--column-1:hover {

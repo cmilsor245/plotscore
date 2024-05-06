@@ -1,7 +1,7 @@
 'use client'
 
 import cookie from 'js-cookie'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { IconBulbFilled, IconBulbOff } from '@tabler/icons-react'
 
@@ -64,14 +64,6 @@ export default function LandingPage() {
     setTheme(newTheme)
     cookie.set('theme', newTheme, { expires: 365 })
   }
-
-  /* -------------------------------------------------------------------- */
-
-  const featuredMediaPosters = [
-    
-  ]
-
-  /* -------------------------------------------------------------------- */
 
   return (
     <>
@@ -146,9 +138,12 @@ export default function LandingPage() {
 
               {/* ---------------------------------------------------- */}
 
-              <section className = 'plotscore-lets-you'>
+              <section className = 'section-with--heading-and-content plotscore-lets-you'>
                 <SectionHeading
-                  title = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'SECTION_TITLE') }
+                  lang = { lang }
+                  namespace = 'LANDING_PAGE'
+                  section = 'PLOTSCORE_LETS_YOU'
+                  title = 'SECTION_TITLE'
                 />
 
                 <section className = 'section-content'>

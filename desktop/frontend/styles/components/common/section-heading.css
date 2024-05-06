@@ -1,11 +1,9 @@
 .dark-theme {
-  --color--divider: var(--color--primary-light-30);
-  --color--title: var(--color--primary-light-30);
+  --color--general: var(--color--primary-light-30);
 }
 
 .light-theme {
-  --color--divider: var(--color--primary-dark-20);
-  --color--title: var(--color--primary-dark-20);
+  --color--general: var(--color--primary-dark-20);
 }
 
 .section-heading {
@@ -14,15 +12,79 @@
   gap: .2rem;
 }
 
+.section-heading--upper {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
 .section-heading--title {
-  --font: 1.4rem var(--font--graphik-regular);
-  color: var(--color--title);
-  font: var(--font);
+  color: var(--color--general);
+  font: var(--font--section-heading--left);
   text-transform: uppercase;
 }
 
+.section-heading--tabs {
+  display: flex;
+  font: var(--font--section-heading--left);
+  gap: 1rem;
+  text-transform: uppercase;
+}
+
+.section-heading--tabs li {
+  color: var(--color--general);
+  list-style: none;
+}
+
+.section-heading--right-side--single-text {
+  color: var(--color--general);
+  font: var(--font--section-heading--right);
+}
+
+.section-heading--right-side--icon-and-text {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  color: var(--color--general);
+}
+
+.section-heading--right-side--icon-and-text--icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.section-heading--right-side--icon-and-text--icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.section-heading--right-side--icon-and-text--text {
+  font: var(--font--section-heading--right);
+}
+
+.section-heading--right-side--filters {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  color: var(--color--general);
+  gap: .5rem;
+}
+
+.section-heading--right-side--filters li {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  font: var(--font--section-heading--right);
+  color: var(--color--general);
+}
+
+.section-heading--right-side--filters--icon, .section-heading--right-side--views--icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
 .section-heading--divider {
-  background-color: var(--color--divider);
+  background-color: var(--color--general);
   height: .1rem;
   width: 100%;
 }

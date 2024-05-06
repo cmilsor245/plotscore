@@ -419,7 +419,11 @@
   /* -------------------------------------------------------------------------------------------------------- */
 
   --padding-inline--global: 20%;
-  --general-section-gap: 1rem;
+
+  --gap--general-section: 1rem;
+
+  --font--section-heading--left: 1.3rem var(--font--graphik-regular);
+  --font--section-heading--right: 1.2rem var(--font--graphik-light);
 }
 
 .dark-theme {
@@ -504,4 +508,10 @@ main {
   gap: 7.5rem;
   justify-content: flex-start;
   padding-inline: var(--padding-inline--global);
+}
+
+.section-with--heading-and-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap--general-section);
 }
