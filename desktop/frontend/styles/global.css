@@ -421,9 +421,6 @@
   --padding-inline--global: 20%;
 
   --gap--general-section: 1rem;
-
-  --font--section-heading--left: 1.3rem var(--font--graphik-regular);
-  --font--section-heading--right: 1.2rem var(--font--graphik-light);
 }
 
 .dark-theme {
@@ -461,7 +458,7 @@
 }
 
 * {
-  /* border: 1px dashed red; */
+  /* border: .1rem dashed red; */
   box-sizing: border-box;
   cursor: default;
   margin: 0;

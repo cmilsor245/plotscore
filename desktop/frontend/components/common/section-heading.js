@@ -6,13 +6,16 @@ export default function SectionHeading({
   lang,
   namespace,
   section,
+
   title,
-  hasDivider,
+  tabs,
+
   hasRightSideSingleText,
   hasRightSideIconAndText,
-  tabs,
   filters,
-  views
+  views,
+
+  hasDivider
 }) {
   let conditionalLeftSide
 

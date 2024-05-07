@@ -20,8 +20,8 @@ import {
   CircleFlagsUk,
   MainActionButton
 } from '/components/common/main-action-button.js'
-import { MediaOnlyPoster } from '/components/common/media--normal-slot.js'
-import SectionHeading from '/components/common/section-header.js'
+import MediaSlot from '/components/common/media-slot.js'
+import SectionHeading from '/components/common/section-heading.js'
 import {
   MaterialSymbolsAndroidDarkTheme,
   MaterialSymbolsAndroidLightTheme,
@@ -113,30 +113,54 @@ export default function LandingPage() {
                 </div>
               </section>
 
-              {/* ---------------------------------------------------- */}
+              { /* ---------------------------------------------------- */ }
 
               <section className = 'featured-media'>
                 <div className = 'featured-media--slot'>
-                  <MediaOnlyPoster lowResImgSrc = '/img/landing-page/1--low-res-poster.webp' highResImgSrc = '/img/landing-page/1--high-res-poster.webp' />
+                  <MediaSlot
+                    size = 'normal'
+                    lowResImgSrc = '/img/landing-page/1--low-res-poster.webp'
+                    highResImgSrc = '/img/landing-page/1--high-res-poster.webp'
+                  />
                 </div>
                 <div className = 'featured-media--slot'>
-                  <MediaOnlyPoster lowResImgSrc = '/img/landing-page/2--low-res-poster.webp' highResImgSrc = '/img/landing-page/2--high-res-poster.webp' />
+                  <MediaSlot 
+                    size = 'normal'
+                    lowResImgSrc = '/img/landing-page/2--low-res-poster.webp'
+                    highResImgSrc = '/img/landing-page/2--high-res-poster.webp'
+                  />
                 </div>
                 <div className = 'featured-media--slot'>
-                  <MediaOnlyPoster lowResImgSrc = '/img/landing-page/3--low-res-poster.webp' highResImgSrc = '/img/landing-page/3--high-res-poster.webp' />
+                  <MediaSlot
+                    size = 'normal'
+                    lowResImgSrc = '/img/landing-page/3--low-res-poster.webp'
+                    highResImgSrc = '/img/landing-page/3--high-res-poster.webp'
+                  />
                 </div>
                 <div className = 'featured-media--slot'>
-                  <MediaOnlyPoster lowResImgSrc = '/img/landing-page/4--low-res-poster.webp' highResImgSrc = '/img/landing-page/4--high-res-poster.webp' />
+                  <MediaSlot
+                    size = 'normal'
+                    lowResImgSrc = '/img/landing-page/4--low-res-poster.webp'
+                    highResImgSrc = '/img/landing-page/4--high-res-poster.webp'
+                  />
                 </div>
                 <div className = 'featured-media--slot'>
-                  <MediaOnlyPoster lowResImgSrc = '/img/landing-page/5--low-res-poster.webp' highResImgSrc = '/img/landing-page/5--high-res-poster.webp' />
+                  <MediaSlot
+                    size = 'normal'
+                    lowResImgSrc = '/img/landing-page/5--low-res-poster.webp'
+                    highResImgSrc = '/img/landing-page/5--high-res-poster.webp'
+                  />
                 </div>
                 <div className = 'featured-media--slot'>
-                  <MediaOnlyPoster lowResImgSrc = '/img/landing-page/6--low-res-poster.webp' highResImgSrc = '/img/landing-page/6--high-res-poster.webp' />
+                  <MediaSlot
+                    size = 'normal'
+                    lowResImgSrc = '/img/landing-page/6--low-res-poster.webp'
+                    highResImgSrc = '/img/landing-page/6--high-res-poster.webp'
+                  />
                 </div>
               </section>
 
-              {/* ---------------------------------------------------- */}
+              { /* ---------------------------------------------------- */ }
 
               <section className = 'section-with--heading-and-content plotscore-lets-you'>
                 <SectionHeading
@@ -185,11 +209,30 @@ export default function LandingPage() {
                   </article>
                 </section>
               </section>
+
+              { /* ---------------------------------------------------- */ }
+
+              <section className = 'section-with--heading-and-content just-reviewed'>
+                <SectionHeading
+                  lang = { lang }
+                  namespace = 'LANDING_PAGE'
+                  section = 'JUST_REVIEWED'
+                  title = 'SECTION_TITLE'
+                  hasRightSideSingleText = 'MORE'
+                  hasDivider = { true }
+                />
+
+                <section className = 'section-content'>
+                  <div className = 'just-reviewed--slot'>
+                    
+                  </div>
+                </section>
+              </section>
             </main>
           </section>
         </section>
 
-        {/* -------------------------------------------- */}
+        { /* -------------------------------------------- */ }
 
         <Footer lang = { lang } />
       </section>

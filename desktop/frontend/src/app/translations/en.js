@@ -28,6 +28,10 @@ const translationsES = {
 
       COLUMN_3_CARD_1: 'Write and share reviews, and follow friends and other members to read theirs',
       COLUMN_3_CARD_2: 'Compile and share lists of media on any topic and keep a watchlist of media to see'
+    },
+    JUST_REVIEWED: {
+      SECTION_TITLE: 'just reviewed...',
+      MORE: 'MORE'
     }
   },
 

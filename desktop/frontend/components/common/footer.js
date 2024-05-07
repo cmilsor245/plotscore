@@ -62,7 +62,7 @@ export default function Footer({ lang }) {
         </article>
       </section>
 
-      {/* --------------------------------------------- */}
+      { /* --------------------------------------------- */ }
 
       <section className = 'footer--bottom'>
         <IconCopyright className = 'footer--bottom--copyright-icon' stroke = { 1 } />

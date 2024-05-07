@@ -1,0 +1,110 @@
+.dark-theme {
+  --color--already-watched--and--review-with-text: var(--color--primary-main);
+  --shadow--star-icon: var(--color--primary-light-80);
+}
+
+.light-theme {
+  --color--already-watched--and--review-with-text: var(--color--primary-main);
+  --shadow--star-icon: var(--color--primary-dark-70);
+}
+
+.media-slot {
+  --color--log-info--user: var(--color--primary-main);
+  --color--username: var(--color--primary-light-70);
+  --font--username: 1.3rem var(--font--graphik-semibold);
+}
+
+.media-slot--poster {
+  background: center/cover;
+  border-radius: .3rem .3rem 0 0;
+}
+
+.media-slot--small {
+  height: 16rem;
+  width: 10.5rem;
+}
+
+.media-slot--medium {
+  height: 22rem;
+  width: 14.5rem;
+}
+
+.media-slot--normal {
+  height: 28rem;
+  width: 18rem;
+}
+
+.media-slot--large {
+  height: 40rem;
+  width: 26rem;
+}
+
+.media-slot--log-info {
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  justify-content: center;
+}
+
+.media-slot--log-info--user {
+  align-items: center;
+  background-color: var(--color--log-info--user);
+  border-radius: 0 0 .1rem .1rem;
+  display: flex;
+  gap: .5rem;
+  padding: .5rem;
+}
+
+.media-slot--log-info--user--avatar {
+  background: center/cover;
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.media-slot--log-info--user--username {
+  color: var(--color--username);
+  font: var(--font--username);
+}
+
+.media-slot--log-info--details {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.media-slot--log-info--details--left-side {
+  display: flex;
+  justify-content: left;
+}
+
+.media-slot--log-info--details--stars svg, .media-slot--log-info--details--left-side--watched-before svg, .media-slot--log-info--details--left-side--review-text svg {
+  height: 1.8rem;
+  width: 1.8rem;
+}
+
+.media-slot--log-info--details--stars {
+  color: var(--color--accent-main);
+}
+
+.media-slot--log-info--details--stars svg {
+  filter: drop-shadow(0 .1rem .1rem var(--shadow--star-icon));
+}
+
+.media-slot--log-info--details--left-side--watched-before svg, .media-slot--log-info--details--left-side--review-text svg {
+  color: var(--color--already-watched--and--review-with-text);
+}
+
+.media-slot--log-info--details--right-side {
+  align-items: bottom;
+  display: flex;
+  justify-content: right;
+}
+
+.media-slot--log-info--details--right-side--date {
+  color: var(--color--primary-light-20);
+  --font: 1.3rem var(--font--graphik-regular);
+  font: var(--font);
+  text-align: right;
+}

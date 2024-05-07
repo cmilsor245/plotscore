@@ -7,6 +7,8 @@
 }
 
 .section-heading {
+  --font--left-side: 1.3rem var(--font--graphik-regular);
+  --font--right-side: 1.2rem var(--font--graphik-light);
   display: flex;
   flex-direction: column;
   gap: .2rem;
@@ -20,13 +22,13 @@
 
 .section-heading--title {
   color: var(--color--general);
-  font: var(--font--section-heading--left);
+  font: var(--font--left-side);
   text-transform: uppercase;
 }
 
 .section-heading--tabs {
   display: flex;
-  font: var(--font--section-heading--left);
+  font: var(--font--left-side);
   gap: 1rem;
   text-transform: uppercase;
 }
@@ -38,7 +40,7 @@
 
 .section-heading--right-side--single-text {
   color: var(--color--general);
-  font: var(--font--section-heading--right);
+  font: var(--font--right-side);
 }
 
 .section-heading--right-side--icon-and-text {
@@ -59,7 +61,7 @@
 }
 
 .section-heading--right-side--icon-and-text--text {
-  font: var(--font--section-heading--right);
+  font: var(--font--right-side);
 }
 
 .section-heading--right-side--filters {
@@ -74,7 +76,7 @@
   display: flex;
   align-items: center;
   list-style: none;
-  font: var(--font--section-heading--right);
+  font: var(--font--right-side);
   color: var(--color--general);
 }
 

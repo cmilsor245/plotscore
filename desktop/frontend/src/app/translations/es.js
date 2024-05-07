@@ -28,6 +28,10 @@ const translationsES = {
 
       COLUMN_3_CARD_1: 'Escribir y comparte tus reviews, además de seguir a tus amigos y otros miembros para ver las suyas',
       COLUMN_3_CARD_2: 'Crear y comparte listas de contenidos de cualquier género y añade otros a Ver más tarde'
+    },
+    JUST_REVIEWED: {
+      SECTION_TITLE: 'reviews recientes...',
+      MORE: 'VER MÁS'
     }
   },
 
