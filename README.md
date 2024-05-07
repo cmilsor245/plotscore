@@ -46,8 +46,10 @@
 - [ ] :red_circle: Deployment of the **mobile version** using an AWS EC2 instance
 - [ ] :red_circle: Automatic deployment process for the **mobile version** (frontend)
 - [ ] :red_circle: Automatic deployment process for the **mobile version** (backend)
-- [ ] :red_circle: Creating a **custom domain** for the project
-- [ ] :red_circle: Enabling **HTTPS** connections to the website
+- [x] :green_circle: Creating a **custom domain** for the desktop version :arrow_right: [Link](http://plotscore-desktop.duckdns.org:3000/) (still using port 3000)
+- [ ] :red_circle: Creating a **custom domain** for the **mobile version**
+- [ ] :red_circle: Enabling **HTTPS** connections to the **desktop version**
+- [ ] :red_circle: Enabling **HTTPS** connections to the **mobile version**
 
 ##### [Back to TODO list section](#todo-list)
 
@@ -129,8 +131,10 @@ Click [here](https://github.com/cmilsor245/plotscore/tree/main/.aws/guides/engli
 - [ ] :red_circle: Despliegue de la **versión mobile** haciendo uso de una AWS EC2
 - [ ] :red_circle: Proceso de despliegue automático para la **versión mobile** (frontend)
 - [ ] :red_circle: Proceso de despliegue automático para la **versión mobile** (backend)
-- [ ] :red_circle: Crear un **dominio personalizado** para el proyecto
-- [ ] :red_circle: Habilitando conexiones **HTTPS** hacia la página web
+- [x] :green_circle: Crear un **dominio personalizado** para la **versión desktop** :arrow_right: [Link](http://plotscore-desktop.duckdns.org:3000/) (todavía usa el puerto 3000)
+- [ ] :red_circle: Crear un **dominio personalizado** para la **versión mobile**
+- [ ] :red_circle: Habilitando conexiones **HTTPS** hacia la **versión desktop**
+- [ ] :red_circle: Habilitando conexiones **HTTPS** hacia la **versión mobile**
 
 ##### [Volver a la sección de Lista de tareas pendientes](#lista-de-tareas-pendientes)
 

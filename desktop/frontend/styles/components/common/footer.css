@@ -42,7 +42,7 @@ footer {
 }
 
 .footer--top--main-links h5 {
-  --font: 1.65rem var(--font--graphik-semibold);
+  --font: clamp(10px, 1.6rem, 15.5px) var(--font--graphik-semibold);
   color: var(--color--main-link);
   cursor: pointer;
   font: var(--font);
@@ -62,9 +62,9 @@ footer {
 
 .footer--top--socials svg {
   color: var(--color--social-icon--copyright);
-  height: 1.9rem;
+  height: 1.5rem;
   transition: .1s;
-  width: 1.9rem;
+  width: 1.5rem;
 }
 
 .footer--top--socials svg:hover {
