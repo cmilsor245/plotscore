@@ -347,7 +347,7 @@
 
   /* -------------------------------------------------------------------------------------------------------- */
 
-  --font--nav-logo: 400 5.5rem 'grape nuts', cursive;
+  --font--grape-nuts: 'grape nuts', cursive;
 
   /* ------------------------------- */
 
@@ -420,15 +420,17 @@
 
   --padding-inline--global: 20%;
 
-  --gap--general-section: 1rem;
+  --gap--general-section: 10px;
 }
 
 .dark-theme {
   --color--page-background: var(--color--primary-dark-70);
+  --color--scrollbar-background: var(--color--primary-dark-70);
 }
 
 .light-theme {
   --color--page-background: var(--color--primary-light-80);
+  --color--scrollbar-background: var(--color--primary-light-80);
 }
 
 ::selection {
@@ -437,12 +439,11 @@
 }
 
 ::-webkit-scrollbar {
-  height: .5rem;
-  width: .5rem;
+  width: 13px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color--neutral-light-90);
+  background: var(--color--scrollbar-background);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -458,7 +459,7 @@
 }
 
 * {
-  /* border: .1rem dashed red; */
+  /* border: 1px dashed red; */
   box-sizing: border-box;
   cursor: default;
   margin: 0;
@@ -473,8 +474,8 @@ body {
   background-color: var(--color--page-background);
   display: flex;
   flex-direction: column;
-  font-size: 1.6rem;
-  gap: 7.5rem;
+  font-size: 1rem;
+  gap: 75px;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -483,7 +484,7 @@ main {
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 7.5rem;
+  gap: 75px;
   justify-content: flex-start;
 }
 
@@ -494,7 +495,7 @@ main {
 .common--content-footer {
   display: flex;
   flex-direction: column;
-  gap: 7.5rem;
+  gap: 75px;
   min-height: 100vh;
 }
 
@@ -502,7 +503,7 @@ main {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  gap: 7.5rem;
+  gap: 75px;
   justify-content: flex-start;
   padding-inline: var(--padding-inline--global);
 }

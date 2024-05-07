@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { IconStarFilled, IconMath1Divide2, IconRefresh, IconAlignJustified } from '@tabler/icons-react'
 import '/styles/components/common/media-slot.css'
 
-function Poster({ size, lowResImgSrc, highResImgSrc }) {
+function Poster({ size, lowResImgSrc, highResImgSrc, hasLogInfo }) {
   const [imageLoaded, setImageLoaded] = useState(false)
 
   useEffect(() => {
@@ -39,7 +39,7 @@ function Poster({ size, lowResImgSrc, highResImgSrc }) {
       break
   }
 
-  conditionalSizeClassName += ' media-slot--poster'
+  conditionalSizeClassName += ` media-slot--poster ${ hasLogInfo && 'media-slot--poster--sharp-border' }`
 
   return <section className = { conditionalSizeClassName } style = { posterStyle }></section>
 }
@@ -152,7 +152,12 @@ export default function MediaSlot({
 }) {
   return (
     <div className = 'media-slot'>
-      <Poster size = { size } lowResImgSrc = { lowResImgSrc } highResImgSrc = { highResImgSrc } />
+      <Poster
+        size = { size }
+        lowResImgSrc = { lowResImgSrc }
+        highResImgSrc = { highResImgSrc }
+        hasLogInfo = { hasLogInfo }
+      />
       <LogInfo
         hasLogInfo = { hasLogInfo }
         avatarLowResImgSrc = { avatarLowResImgSrc }

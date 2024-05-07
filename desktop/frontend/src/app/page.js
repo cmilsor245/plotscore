@@ -29,7 +29,6 @@ import {
   MdiAppleLightTheme
 } from '/components/landing-page--specific-media/also-available.js'
 import Backdrop from '/components/landing-page--specific-media/backdrop.js'
-import Header from '/components/landing-page--specific-media/header.js'
 import PlotscoreLetsYouCard from '/components/landing-page/plotscore-lets-you--card.js'
 
 import '/styles/global.css'
@@ -80,156 +79,157 @@ export default function LandingPage() {
 
       <section className = 'common--content-footer'>
         <section className = 'common--content-footer--content'>
-          <Header lang = { lang } />
+          <Backdrop
+            lowResImgSrc = '/img/landing-page--specific-media/low-res-backdrop.webp'
+            highResImgSrc = '/img/landing-page--specific-media/high-res-backdrop.webp'
+            hasHeader = { true }
+            lang = { lang }
+          />
 
-          <section className = 'landing-page--specific-media--content'>
-            <Backdrop lowResImgSrc = '/img/landing-page--specific-media/low-res-backdrop.webp' highResImgSrc = '/img/landing-page--specific-media/high-res-backdrop.webp' />
+          <main>
+            <section className = 'usp'>
+              <h2 className = 'usp--main-text'>
+                { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__FIRST_LINE') }
+                <br />
+                { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__SECOND_LINE') }
+                <br />
+                { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__THIRD_LINE') }
+              </h2>
 
-            <main>
-              <section className = 'usp'>
-                <h2 className = 'usp--main-text'>
-                  { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__FIRST_LINE') }
-                  <br />
-                  { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__SECOND_LINE') }
-                  <br />
-                  { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__THIRD_LINE') }
-                </h2>
+              <button className = 'usp--get-started-button'>
+                { translate(lang, 'LANDING_PAGE', 'USP', 'GET_STARTED_BUTTON') }
+              </button>
 
-                <button className = 'usp--get-started-button'>
-                  { translate(lang, 'LANDING_PAGE', 'USP', 'GET_STARTED_BUTTON') }
-                </button>
+              <div className = 'usp--also-available'>
+                <p>
+                  { translate(lang, 'LANDING_PAGE', 'USP', 'ALSO_AVAILABLE') }
+                </p>
 
-                <div className = 'usp--also-available'>
-                  <p>
-                    { translate(lang, 'LANDING_PAGE', 'USP', 'ALSO_AVAILABLE') }
-                  </p>
+                <span className = 'usp--also-available--icon'>
+                  { theme === 'dark' ? <MdiAppleDarkTheme /> : <MdiAppleLightTheme /> }
+                </span>
+                <span className = 'usp--also-available--icon'>
+                  { theme === 'dark' ? <MaterialSymbolsAndroidDarkTheme /> : <MaterialSymbolsAndroidLightTheme /> }
+                </span>
+              </div>
+            </section>
 
-                  <span className = 'usp--also-available--icon'>
-                    { theme === 'dark' ? <MdiAppleDarkTheme /> : <MdiAppleLightTheme /> }
-                  </span>
-                  <span className = 'usp--also-available--icon'>
-                    { theme === 'dark' ? <MaterialSymbolsAndroidDarkTheme /> : <MaterialSymbolsAndroidLightTheme /> }
-                  </span>
-                </div>
-              </section>
+            { /* ---------------------------------------------------- */ }
 
-              { /* ---------------------------------------------------- */ }
-
-              <section className = 'featured-media'>
-                <div className = 'featured-media--slot'>
-                  <MediaSlot
-                    size = 'normal'
-                    lowResImgSrc = '/img/landing-page/1--low-res-poster.webp'
-                    highResImgSrc = '/img/landing-page/1--high-res-poster.webp'
-                  />
-                </div>
-                <div className = 'featured-media--slot'>
-                  <MediaSlot 
-                    size = 'normal'
-                    lowResImgSrc = '/img/landing-page/2--low-res-poster.webp'
-                    highResImgSrc = '/img/landing-page/2--high-res-poster.webp'
-                  />
-                </div>
-                <div className = 'featured-media--slot'>
-                  <MediaSlot
-                    size = 'normal'
-                    lowResImgSrc = '/img/landing-page/3--low-res-poster.webp'
-                    highResImgSrc = '/img/landing-page/3--high-res-poster.webp'
-                  />
-                </div>
-                <div className = 'featured-media--slot'>
-                  <MediaSlot
-                    size = 'normal'
-                    lowResImgSrc = '/img/landing-page/4--low-res-poster.webp'
-                    highResImgSrc = '/img/landing-page/4--high-res-poster.webp'
-                  />
-                </div>
-                <div className = 'featured-media--slot'>
-                  <MediaSlot
-                    size = 'normal'
-                    lowResImgSrc = '/img/landing-page/5--low-res-poster.webp'
-                    highResImgSrc = '/img/landing-page/5--high-res-poster.webp'
-                  />
-                </div>
-                <div className = 'featured-media--slot'>
-                  <MediaSlot
-                    size = 'normal'
-                    lowResImgSrc = '/img/landing-page/6--low-res-poster.webp'
-                    highResImgSrc = '/img/landing-page/6--high-res-poster.webp'
-                  />
-                </div>
-              </section>
-
-              { /* ---------------------------------------------------- */ }
-
-              <section className = 'section-with--heading-and-content plotscore-lets-you'>
-                <SectionHeading
-                  lang = { lang }
-                  namespace = 'LANDING_PAGE'
-                  section = 'PLOTSCORE_LETS_YOU'
-                  title = 'SECTION_TITLE'
+            <section className = 'featured-media'>
+              <div className = 'featured-media--slot'>
+                <MediaSlot
+                  size = 'normal'
+                  lowResImgSrc = '/img/landing-page/1--low-res-poster.webp'
+                  highResImgSrc = '/img/landing-page/1--high-res-poster.webp'
                 />
-
-                <section className = 'section-content'>
-                  <article className = 'plotscore-lets-you--column'>
-                    <PlotscoreLetsYouCard
-                      column = { 1 }
-                      icon = { IconEye }
-                      text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_1_CARD_1') }
-                    />
-                    <PlotscoreLetsYouCard
-                      column = { 1 }
-                      icon = { IconStarFilled }
-                      text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_1_CARD_2') }
-                    />
-                  </article>
-                  <article className = 'plotscore-lets-you--column'>
-                    <PlotscoreLetsYouCard
-                      column = { 2 }
-                      icon = { IconHeartFilled }
-                      text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_2_CARD_1') }
-                    />
-                    <PlotscoreLetsYouCard
-                      column = { 2 }
-                      icon = { IconCalendarMonth }
-                      text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_2_CARD_2') }
-                    />
-                  </article>
-                  <article className = 'plotscore-lets-you--column'>
-                    <PlotscoreLetsYouCard
-                      column = { 3 }
-                      icon = { IconAlignLeft }
-                      text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_3_CARD_1') }
-                    />
-                    <PlotscoreLetsYouCard
-                      column = { 3 }
-                      icon = { IconLayoutGridFilled }
-                      text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_3_CARD_2') }
-                    />
-                  </article>
-                </section>
-              </section>
-
-              { /* ---------------------------------------------------- */ }
-
-              <section className = 'section-with--heading-and-content just-reviewed'>
-                <SectionHeading
-                  lang = { lang }
-                  namespace = 'LANDING_PAGE'
-                  section = 'JUST_REVIEWED'
-                  title = 'SECTION_TITLE'
-                  hasRightSideSingleText = 'MORE'
-                  hasDivider = { true }
+              </div>
+              <div className = 'featured-media--slot'>
+                <MediaSlot 
+                  size = 'normal'
+                  lowResImgSrc = '/img/landing-page/2--low-res-poster.webp'
+                  highResImgSrc = '/img/landing-page/2--high-res-poster.webp'
                 />
+              </div>
+              <div className = 'featured-media--slot'>
+                <MediaSlot
+                  size = 'normal'
+                  lowResImgSrc = '/img/landing-page/3--low-res-poster.webp'
+                  highResImgSrc = '/img/landing-page/3--high-res-poster.webp'
+                />
+              </div>
+              <div className = 'featured-media--slot'>
+                <MediaSlot
+                  size = 'normal'
+                  lowResImgSrc = '/img/landing-page/4--low-res-poster.webp'
+                  highResImgSrc = '/img/landing-page/4--high-res-poster.webp'
+                />
+              </div>
+              <div className = 'featured-media--slot'>
+                <MediaSlot
+                  size = 'normal'
+                  lowResImgSrc = '/img/landing-page/5--low-res-poster.webp'
+                  highResImgSrc = '/img/landing-page/5--high-res-poster.webp'
+                />
+              </div>
+              <div className = 'featured-media--slot'>
+                <MediaSlot
+                  size = 'normal'
+                  lowResImgSrc = '/img/landing-page/6--low-res-poster.webp'
+                  highResImgSrc = '/img/landing-page/6--high-res-poster.webp'
+                />
+              </div>
+            </section>
 
-                <section className = 'section-content'>
-                  <div className = 'just-reviewed--slot'>
-                    
-                  </div>
-                </section>
+            { /* ---------------------------------------------------- */ }
+
+            <section className = 'section-with--heading-and-content plotscore-lets-you'>
+              <SectionHeading
+                lang = { lang }
+                namespace = 'LANDING_PAGE'
+                section = 'PLOTSCORE_LETS_YOU'
+                title = 'SECTION_TITLE'
+              />
+
+              <section className = 'section-content'>
+                <article className = 'plotscore-lets-you--column'>
+                  <PlotscoreLetsYouCard
+                    column = { 1 }
+                    icon = { IconEye }
+                    text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_1_CARD_1') }
+                  />
+                  <PlotscoreLetsYouCard
+                    column = { 1 }
+                    icon = { IconStarFilled }
+                    text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_1_CARD_2') }
+                  />
+                </article>
+                <article className = 'plotscore-lets-you--column'>
+                  <PlotscoreLetsYouCard
+                    column = { 2 }
+                    icon = { IconHeartFilled }
+                    text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_2_CARD_1') }
+                  />
+                  <PlotscoreLetsYouCard
+                    column = { 2 }
+                    icon = { IconCalendarMonth }
+                    text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_2_CARD_2') }
+                  />
+                </article>
+                <article className = 'plotscore-lets-you--column'>
+                  <PlotscoreLetsYouCard
+                    column = { 3 }
+                    icon = { IconAlignLeft }
+                    text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_3_CARD_1') }
+                  />
+                  <PlotscoreLetsYouCard
+                    column = { 3 }
+                    icon = { IconLayoutGridFilled }
+                    text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_3_CARD_2') }
+                  />
+                </article>
               </section>
-            </main>
-          </section>
+            </section>
+
+            { /* ---------------------------------------------------- */ }
+
+            <section className = 'section-with--heading-and-content just-reviewed'>
+              <SectionHeading
+                lang = { lang }
+                namespace = 'LANDING_PAGE'
+                section = 'JUST_REVIEWED'
+                title = 'SECTION_TITLE'
+                hasRightSideSingleText = 'MORE'
+                hasDivider = { true }
+              />
+
+              <section className = 'section-content'>
+                <div className = 'just-reviewed--slot'>
+                  
+                </div>
+              </section>
+            </section>
+          </main>
         </section>
 
         { /* -------------------------------------------- */ }

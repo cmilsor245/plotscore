@@ -20,9 +20,9 @@ footer {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  gap: 1rem;
+  gap: 10px;
   justify-content: flex-start;
-  padding-block: 2rem 6rem;
+  padding-block: 20px 60px;
   padding-inline: var(--padding-inline--global);
   width: 100%;
 }
@@ -37,7 +37,7 @@ footer {
 .footer--top--main-links {
   align-items: center;
   display: flex;
-  gap: 1.8rem;
+  gap: 18px;
   justify-content: left;
 }
 
@@ -56,7 +56,7 @@ footer {
 .footer--top--socials {
   align-items: center;
   display: flex;
-  gap: .5rem;
+  gap: 5px;
   justify-content: right;
 }
 
@@ -78,7 +78,7 @@ footer {
 .footer--bottom {
   align-items: center;
   display: flex;
-  gap: .5rem;
+  gap: 5px;
   justify-content: left;
   width: 100%;
 }

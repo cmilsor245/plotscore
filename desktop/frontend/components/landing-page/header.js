@@ -3,17 +3,13 @@ import Link from 'next/link'
 
 import { IconZoom } from '@tabler/icons-react'
 
-import NavTab from '/components/landing-page--specific-media/header--nav-tab.js'
+import NavTab from '/components/landing-page/header--nav-tab.js'
 import translate from '/src/app/translation.js'
-import translationsEN from '/src/app/translations/en.js'
-import translationsES from '/src/app/translations/es.js'
 
-import '/styles/components/common/header.css'
+import '/styles/components/landing-page/header.css'
 import '/styles/global.css'
 
 export default function Header({ lang }) {
-  const translations = lang === 'en' ? translationsEN : translationsES
-
   return (
     <header>
       <section>

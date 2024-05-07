@@ -1,25 +1,43 @@
 .dark-theme {
-  --color--nav-link: var(--color--primary-light-70);
+  --color--header--contrast-bg: var(--color--primary-dark-70);
   --color--nav-link--hover: var(--color--primary-light-80);
+  --color--nav-link: var(--color--primary-light-70);
 }
 
 .light-theme {
+  --color--header--contrast-bg: var(--color--primary-light-80);
+  --color--nav-link--hover: var(--color--primary-dark-10);
   --color--nav-link: var(--color--primary-dark-80);
-  --color--nav-link--hover: var(--color--primary-dark-30);
 }
 
 header {
   align-items: center;
   display: flex;
+  height: fit-content;
   justify-content: space-between;
+}
+
+header::before {
+  background-image: linear-gradient(to bottom, var(--color--header--contrast-bg), transparent);
+  content: '';
+  height: 100px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+header * {
+  z-index: 2;
 }
 
 .header--logo {
   align-items: center;
   display: flex;
-  gap: .5rem;
   justify-content: left;
   text-decoration: none;
+  width: fit-content;
 }
 
 .header--logo-image, .header--logo-text {
@@ -27,8 +45,9 @@ header {
 }
 
 .header--logo-text {
+  --font: 55px var(--font--grape-nuts);
   color: var(--color--secondary-main);
-  font: var(--font--nav-logo);
+  font: var(--font);
 }
 
 /* ---------------------------------------------- */
@@ -36,7 +55,7 @@ header {
 .nav--links--search-bar {
   align-items: center;
   display: flex;
-  gap: 1.5rem;
+  gap: 15px;
   height: fit-content;
   justify-content: right;
 }
@@ -44,13 +63,13 @@ header {
 .nav--links {
   align-items: center;
   display: flex;
-  gap: 1.5rem;
+  gap: 10px;
   height: 100%;
   justify-content: center;
 }
 
 .nav--link {
-  --font: 1.4rem var(--font--graphik-black);
+  --font: clamp(10px, 1.4rem, 14px) var(--font--graphik-black);
   font: var(--font);
   list-style: none;
   text-transform: uppercase;
@@ -89,9 +108,9 @@ header {
   color: var(--color--neutral-light-90);
   cursor: text;
   font: var(--font);
-  height: 2.6rem;
+  height: 26px;
   opacity: .6;
-  padding-inline: .9rem 2.8rem;
+  padding: 3px 30px 3px 9px;
   width: 12rem;
 }
 
@@ -113,15 +132,15 @@ header {
   border: none;
   height: 100%;
   position: absolute;
-  right: .3rem;
+  right: 3px;
   top: 50%;
   transform: translateY(-50%);
 }
 
 .nav--search-bar button * {
   color: var(--color--neutral-light-60);
-  height: 1.8rem;
-  width: 2.5rem;
+  height: 18px;
+  width: 25px;
 }
 
 .nav--search-bar input:hover + button * {

@@ -1,54 +1,30 @@
 .dark-theme {
   --color--backdrop-edges: var(--color--primary-dark-70);
-  --color--header--contrast-bg: var(--color--primary-dark-70);
   --color--media-title: var(--color--primary-light-40);
 }
 
 .light-theme {
   --color--backdrop-edges: var(--color--primary-light-80);
-  --color--header--contrast-bg: var(--color--primary-light-80);
   --color--media-title: var(--color--primary-dark-40);
 }
 
 .backdrop--wrapper {
-  background: center/cover;
-  box-shadow: 0 -5rem 1rem 5rem var(--color--backdrop-edges) inset;
-  height: 70rem;
-  left: -11rem;
-  margin-top: -10rem;
+  background: center / cover;
+  box-shadow: 0 -100px 10px 20px var(--color--backdrop-edges) inset;
+  height: 70vh;
+  padding-inline: 2% 3.5%;
   position: relative;
-  width: 120%;
-  z-index: -1;
-}
-
-.backdrop--wrapper::before {
-  background-image: linear-gradient(to bottom, var(--color--header--contrast-bg), transparent);
-  content: '';
-  height: 14rem;
-  left: 50%;
-  padding-inline: var(--padding-inline--global);
-  position: absolute;
-  top: 0;
-  transform: translateX(-50%);
-  width: 100%;
-  z-index: -2;
-}
-
-.backdrop--wrapper:first-child {
-  cursor: pointer;
+  width: 102%;
 }
 
 .backdrop--media-title {
   --font: 1.3rem var(--font--graphik-regular);
   color: var(--color--media-title);
+  cursor: pointer;
   font: var(--font);
   position: absolute;
-  right: -1.5rem;
+  right: -50px;
   text-decoration: none;
   top: 50%;
   transform: rotate(-90deg);
-}
-
-.backdrop--media-title * {
-  cursor: pointer;
 }
