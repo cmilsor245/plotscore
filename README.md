@@ -67,7 +67,7 @@ Click [here](https://christian-millan-soria.notion.site/plotscore-7b99f56524704e
 
 ### Figma design
 
-Click [here](https://www.figma.com/file/n4SCBhfrSxQZoQCxgk3bT0/plotscore---desktop-version?type=design&node-id=496%3A206&mode=design&t=YNZIFAdL6cYdkgz7-1) to visit the project's design (**desktop version**) on **Figma**.
+Click [here](https://www.figma.com/file/n4SCBhfrSxQZoQCxgk3bT0/plotscore---desktop-version?type=design&node-id=496%3A206&mode=design&t=YNZIFAdL6cYdkgz7-1) to visit the project's design (**desktop version**) on **Figma**. It is recommended to use the **playground mode** to be able to actually interact with the pages navigation or the components throughout the design.
 
 It is possible to **navigate through the atoms and different fidelities** by **clicking on the top-left icon**:
 
@@ -152,7 +152,7 @@ Haz clic [aquí](https://christian-millan-soria.notion.site/plotscore-93a62f5a1a
 
 ### Diseño en Figma
 
-Haz clic [aquí](https://www.figma.com/file/n4SCBhfrSxQZoQCxgk3bT0/plotscore---desktop-version?type=design&node-id=496%3A206&mode=design&t=YNZIFAdL6cYdkgz7-1) para visitar el diseño del proyecto (**versión desktop**) en **Figma**.
+Haz clic [aquí](https://www.figma.com/file/n4SCBhfrSxQZoQCxgk3bT0/plotscore---desktop-version?type=design&node-id=496%3A206&mode=design&t=YNZIFAdL6cYdkgz7-1) para visitar el diseño del proyecto (**versión desktop**) en **Figma**. Se recomienda entrar en el **modo playground** para poder interactuar con la navegación entre páginas y los componentes de forma dinámica.
 
 Es posible **navegar entre los átomos y las diferentes fidelidades del proyecto** utilizando el **desplegable de la esquina superior izquierda**:
 

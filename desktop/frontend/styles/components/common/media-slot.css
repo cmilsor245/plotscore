@@ -24,23 +24,33 @@
 }
 
 .media-slot--small {
-  height: 160px;
-  width: 105px;
+  height: var(--media-slot--small--height);
+  position: relative;
+  width: var(--media-slot--small--width);
 }
 
 .media-slot--medium {
-  height: 220px;
-  width: 145px;
+  height: var(--media-slot--medium--height);
+  position: relative;
+  width: var(--media-slot--medium--width);
 }
 
 .media-slot--normal {
-  height: 280px;
-  width: 180px;
+  height: var(--media-slot--normal--height);
+  position: relative;
+  width: var(--media-slot--normal--width);
 }
 
 .media-slot--large {
-  height: 400px;
-  width: 260px;
+  height: var(--media-slot--large--height);
+  position: relative;
+  width: var(--media-slot--large--width);
+}
+
+.media-slot--small *, .media-slot--medium *, .media-slot--normal *, .media-slot--large * {
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }
 
 .media-slot--log-info {

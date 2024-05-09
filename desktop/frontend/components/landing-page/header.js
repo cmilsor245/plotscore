@@ -22,12 +22,36 @@ import '/styles/components/landing-page/header.css'
 import '/styles/global.css'
 
 const navItems = [
-  { key: 'SIGN_IN', text: 'SIGN_IN', icon: IconUserFilled },
-  { key: 'CREATE_ACCOUNT', text: 'CREATE_ACCOUNT', icon: IconUserPlus },
-  { key: 'MEDIA', text: 'MEDIA', icon: IconMovie },
-  { key: 'LISTS', text: 'LISTS', icon: IconList },
-  { key: 'MEMBERS', text: 'MEMBERS', icon: IconUsersGroup },
-  { key: 'JOURNAL', text: 'JOURNAL', icon: IconNotes }
+  {
+    key: 'SIGN_IN',
+    text: 'SIGN_IN',
+    icon: IconUserFilled
+  },
+  {
+    key: 'CREATE_ACCOUNT',
+    text: 'CREATE_ACCOUNT',
+    icon: IconUserPlus
+  },
+  {
+    key: 'MEDIA',
+    text: 'MEDIA',
+    icon: IconMovie
+  },
+  {
+    key: 'LISTS',
+    text: 'LISTS',
+    icon: IconList
+  },
+  {
+    key: 'MEMBERS',
+    text: 'MEMBERS',
+    icon: IconUsersGroup
+  },
+  {
+    key: 'JOURNAL',
+    text: 'JOURNAL',
+    icon: IconNotes
+  }
 ]
 
 export default function Header({ lang, isInLandingPage }) {
@@ -48,9 +72,11 @@ export default function Header({ lang, isInLandingPage }) {
 
       <nav className = 'nav--links--search-bar'>
         <ul className = 'nav--links'>
-          { navItems.map(item => (
-            <NavTab key = { item.key} text = { translate(lang, 'LANDING_PAGE', 'NAV', item.text) } icon = { item.icon } />
-          )) }
+          {
+            navItems.map(item => (
+              <NavTab key = { item.key} text = { translate(lang, 'LANDING_PAGE', 'NAV', item.text) } icon = { item.icon } />
+            ))
+          }
         </ul>
 
         <div className = 'nav--search-bar'>
@@ -61,6 +87,8 @@ export default function Header({ lang, isInLandingPage }) {
           </button>
         </div>
       </nav>
+
+      {/* ---------------------------------------------- */}
 
       { isInLandingPage && (
         <>
@@ -85,14 +113,16 @@ export default function Header({ lang, isInLandingPage }) {
             </div>
 
             <ul className = 'nav--links--mobile'>
-              {navItems.map(item => (
-                <NavTab
-                  key = { item.key }
-                  text = { translate(lang, 'LANDING_PAGE', 'NAV', item.text) }
-                  icon = { item.icon }
-                  isMobile
-                />
-              ))}
+              {
+                navItems.map(item => (
+                  <NavTab
+                    key = { item.key }
+                    text = { translate(lang, 'LANDING_PAGE', 'NAV', item.text) }
+                    icon = { item.icon }
+                    isMobile
+                  />
+                ))
+              }
             </ul>
 
             <div className = 'nav--links--search-bar--mobile--additional'>

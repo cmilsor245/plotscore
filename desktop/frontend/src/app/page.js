@@ -65,6 +65,35 @@ export default function LandingPage() {
     cookie.set('theme', newTheme, { expires: 365 })
   }
 
+  /* ----------------------------------------------------------- */
+
+  const featuredMediaSlotsImgsSrcs = [
+    {
+      lowResImgSrc: '/img/landing-page/1--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/1--high-res-poster.webp'
+    },
+    {
+      lowResImgSrc: '/img/landing-page/2--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/2--high-res-poster.webp'
+    },
+    {
+      lowResImgSrc: '/img/landing-page/3--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/3--high-res-poster.webp'
+    },
+    {
+      lowResImgSrc: '/img/landing-page/4--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/4--high-res-poster.webp'
+    },
+    {
+      lowResImgSrc: '/img/landing-page/5--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/5--high-res-poster.webp'
+    },
+    {
+      lowResImgSrc: '/img/landing-page/6--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/6--high-res-poster.webp'
+    }
+  ]
+
   return (
     <>
       <div className = 'main-actions-buttons'>
@@ -131,48 +160,29 @@ export default function LandingPage() {
             { /* ---------------------------------------------------- */ }
 
             <section className = 'featured-media'>
-              <div className = 'featured-media--slot'>
-                <MediaSlot
-                  size = 'normal'
-                  lowResImgSrc = '/img/landing-page/1--low-res-poster.webp'
-                  highResImgSrc = '/img/landing-page/1--high-res-poster.webp'
-                />
-              </div>
-              <div className = 'featured-media--slot'>
-                <MediaSlot 
-                  size = 'normal'
-                  lowResImgSrc = '/img/landing-page/2--low-res-poster.webp'
-                  highResImgSrc = '/img/landing-page/2--high-res-poster.webp'
-                />
-              </div>
-              <div className = 'featured-media--slot'>
-                <MediaSlot
-                  size = 'normal'
-                  lowResImgSrc = '/img/landing-page/3--low-res-poster.webp'
-                  highResImgSrc = '/img/landing-page/3--high-res-poster.webp'
-                />
-              </div>
-              <div className = 'featured-media--slot'>
-                <MediaSlot
-                  size = 'normal'
-                  lowResImgSrc = '/img/landing-page/4--low-res-poster.webp'
-                  highResImgSrc = '/img/landing-page/4--high-res-poster.webp'
-                />
-              </div>
-              <div className = 'featured-media--slot'>
-                <MediaSlot
-                  size = 'normal'
-                  lowResImgSrc = '/img/landing-page/5--low-res-poster.webp'
-                  highResImgSrc = '/img/landing-page/5--high-res-poster.webp'
-                />
-              </div>
-              <div className = 'featured-media--slot'>
-                <MediaSlot
-                  size = 'normal'
-                  lowResImgSrc = '/img/landing-page/6--low-res-poster.webp'
-                  highResImgSrc = '/img/landing-page/6--high-res-poster.webp'
-                />
-              </div>
+              {
+                featuredMediaSlotsImgsSrcs.map((imgSrcs, index) => (
+                  <div className = 'featured-media--slot' key = { index }>
+                    <MediaSlot
+                      size = 'normal'
+                      lowResImgSrc = { imgSrcs.lowResImgSrc }
+                      highResImgSrc = { imgSrcs.highResImgSrc }
+                    />
+                  </div>
+                ))
+              }
+
+              {
+                featuredMediaSlotsImgsSrcs.map((imgSrcs, index) => (
+                  <div className = 'featured-media--slot--mobile' key = { index }>
+                    <MediaSlot
+                      size = 'small'
+                      lowResImgSrc = { imgSrcs.lowResImgSrc }
+                      highResImgSrc = { imgSrcs.highResImgSrc }
+                    />
+                  </div>
+                ))
+              }
             </section>
 
             { /* ---------------------------------------------------- */ }

@@ -420,7 +420,23 @@
 
   --padding-inline--global: 20%;
 
+  /* ----------------------------- */
+
   --gap--general-section: 10px;
+
+  /* ----------------------------- */
+
+  --media-slot--small--height: 160px;
+  --media-slot--small--width: 105px;
+
+  --media-slot--medium--height: 220px;
+  --media-slot--medium--width: 145px;
+
+  --media-slot--normal--height: 280px;
+  --media-slot--normal--width: 180px;
+
+  --media-slot--large--height: 400px;
+  --media-slot--large--width: 260px;
 }
 
 .dark-theme {

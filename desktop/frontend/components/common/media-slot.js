@@ -1,5 +1,8 @@
-import { IconAlignJustified, IconMath1Divide2, IconRefresh, IconStarFilled } from '@tabler/icons-react'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
+
+import { IconAlignJustified, IconMath1Divide2, IconRefresh, IconStarFilled } from '@tabler/icons-react'
+
 import '/styles/components/common/media-slot.css'
 
 function Poster({ size, lowResImgSrc, highResImgSrc, hasLogInfo }) {
@@ -41,7 +44,11 @@ function Poster({ size, lowResImgSrc, highResImgSrc, hasLogInfo }) {
 
   conditionalSizeClassName += ` media-slot--poster ${ hasLogInfo && 'media-slot--poster--sharp-border' }`
 
-  return <section className = { conditionalSizeClassName } style = { posterStyle }></section>
+  return (
+    <section className = { conditionalSizeClassName } style = { posterStyle }>
+      <Link href = '/' />
+    </section>
+  )
 }
 
 function LogInfo({
