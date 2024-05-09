@@ -67,6 +67,15 @@
   --font: 1.7rem var(--font--graphik-light);
   color: var(--color--usp--also-available);
   font: var(--font);
+  text-align: center;
+  text-wrap: wrap;
+}
+
+.usp--also-available--icons {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
 }
 
 .usp--also-available--icon * {
@@ -126,12 +135,23 @@
 @media (width <= 740px) {
   .usp--main-text {
     font-size: 2.8rem;
+    max-width: 90%;
+  }
+}
+
+@media (width <= 705px) {
+  .usp--also-available {
+    flex-direction: column;
+  }
+
+  .usp--also-available p {
+    max-width: 85%;
   }
 }
 
 @media (width <= 510px) {
   .usp {
-    margin-top: -50px;
+    margin-top: 50px;
   }
 
   .usp--main-text {
@@ -144,5 +164,11 @@
 
   .usp--main-text--mobile {
     display: block;
+  }
+}
+
+@media (width <= 460px) {
+  .usp--get-started-button {
+    font-size: 1.3rem;
   }
 }

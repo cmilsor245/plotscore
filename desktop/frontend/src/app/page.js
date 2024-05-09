@@ -117,12 +117,14 @@ export default function LandingPage() {
                   { translate(lang, 'LANDING_PAGE', 'USP', 'ALSO_AVAILABLE') }
                 </p>
 
-                <span className = 'usp--also-available--icon'>
-                  { theme === 'dark' ? <MdiAppleDarkTheme /> : <MdiAppleLightTheme /> }
-                </span>
-                <span className = 'usp--also-available--icon'>
-                  { theme === 'dark' ? <MaterialSymbolsAndroidDarkTheme /> : <MaterialSymbolsAndroidLightTheme /> }
-                </span>
+                <div className = 'usp--also-available--icons'>
+                  <span className = 'usp--also-available--icon'>
+                    { theme === 'dark' ? <MdiAppleDarkTheme /> : <MdiAppleLightTheme /> }
+                  </span>
+                  <span className = 'usp--also-available--icon'>
+                    { theme === 'dark' ? <MaterialSymbolsAndroidDarkTheme /> : <MaterialSymbolsAndroidLightTheme /> }
+                  </span>
+                </div>
               </div>
             </section>
 

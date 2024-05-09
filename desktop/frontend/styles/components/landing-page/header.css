@@ -430,6 +430,18 @@ header * {
   }
 }
 
+@media (width <= 510px) {
+  header {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-inline: 2% 3.5%;
+    backdrop-filter: blur(5px);
+  }
+}
+
 @media (width <= 480px) {
   .nav--search-bar--mobile {
     width: 220px;

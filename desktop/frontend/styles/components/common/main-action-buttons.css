@@ -15,6 +15,7 @@
   position: fixed;
   right: 10vw;
   top: 87vh;
+  transition: .05s;
   z-index: 2;
 }
 
@@ -49,4 +50,29 @@
   color: var(--color--primary-dark-90);
   height: 100%;
   width: 100%;
+}
+
+@media (width <= 1840px) {
+  .main-actions-buttons {
+    top: 93vh
+  }
+}
+
+@media (width <= 1420px) {
+  .main-actions-buttons {
+    right: 5vw;
+  }
+
+  .main-action-button {
+    height: 40px;
+    width: 40px;
+    padding: 7px;
+    border-radius: 14px;
+  }
+}
+
+@media (width <= 1160px) {
+  .main-actions-buttons {
+    right: 2vw
+  }
 }
