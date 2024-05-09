@@ -9,12 +9,17 @@ const translationsES = {
       JOURNAL: 'ponte al día'
     },
     NAV_MOBILE: {
-      SEARCH_BAR_PLACEHOLDER: 'Buscar...'
+      SEARCH_BAR_PLACEHOLDER: 'Buscar...',
+
+      LOGIN_BUTTON: 'iniciar sesión',
+      CREATE_ACCOUNT_BUTTON: 'crear cuenta'
     },
     USP: {
       MAIN_TEXT__FIRST_LINE: 'Lleva un registro de lo que ves.',
       MAIN_TEXT__SECOND_LINE: 'Guarda lo que quieres ver.',
       MAIN_TEXT__THIRD_LINE: 'Recomienda lo mejor a tus amigos.',
+
+      MOBILE_LINE: '¡Registra, guarda y recomienda a tus amigos el mejor contenido!',
 
       GET_STARTED_BUTTON: '¡Únete, es gratis!',
 

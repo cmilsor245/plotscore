@@ -91,11 +91,21 @@ export default function LandingPage() {
           <main>
             <section className = 'usp'>
               <h2 className = 'usp--main-text'>
-                { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__FIRST_LINE') }
-                <br />
-                { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__SECOND_LINE') }
-                <br />
-                { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__THIRD_LINE') }
+                <span className = 'usp--main-text--default'>
+                  { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__FIRST_LINE') }
+                </span>
+                <span className = 'usp--main-text--default'>
+                  { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__SECOND_LINE') }
+                </span>
+                <span className = 'usp--main-text--default'>
+                  { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__THIRD_LINE') }
+                </span>
+
+                {/* ------------------------------------------ */}
+
+                <span className = 'usp--main-text--mobile'>
+                  { translate(lang, 'LANDING_PAGE', 'USP', 'MOBILE_LINE') }
+                </span>
               </h2>
 
               <button className = 'usp--get-started-button'>

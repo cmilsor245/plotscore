@@ -1,8 +1,9 @@
-import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 
 import {
+  IconChevronsRight,
   IconList,
   IconMenu,
   IconMovie,
@@ -14,6 +15,7 @@ import {
 } from '@tabler/icons-react'
 
 import NavTab from '/components/landing-page/header--nav-tab.js'
+import SideMenuButton from '/components/landing-page/header--side-menu--button.js'
 import translate from '/src/app/translation.js'
 
 import '/styles/components/landing-page/header.css'
@@ -92,6 +94,21 @@ export default function Header({ lang, isInLandingPage }) {
                 />
               ))}
             </ul>
+
+            <div className = 'nav--links--search-bar--mobile--additional'>
+              <div className = 'nav--links--search-bar--mobile--additional--buttons'>
+                <SideMenuButton
+                  type = { 'login' }
+                  text = { translate(lang, 'LANDING_PAGE', 'NAV_MOBILE', 'LOGIN_BUTTON') }
+                />
+                <SideMenuButton
+                  type = { 'signup' }
+                  text = { translate(lang, 'LANDING_PAGE', 'NAV_MOBILE', 'CREATE_ACCOUNT_BUTTON') }
+                />
+              </div>
+
+              <IconChevronsRight className = 'nav--links--search-bar--mobile--additional--close-button'  onClick = { toggleMenu } />
+            </div>
           </nav>
 
           { isMenuOpen && <div className = 'nav--links--search-bar--mobile--overlay' onClick = { toggleMenu }></div> }

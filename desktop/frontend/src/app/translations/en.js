@@ -9,12 +9,17 @@ const translationsES = {
       JOURNAL: 'journal'
     },
     NAV_MOBILE: {
-      SEARCH_BAR_PLACEHOLDER: 'Search...'
+      SEARCH_BAR_PLACEHOLDER: 'Search...',
+
+      LOGIN_BUTTON: 'log in',
+      CREATE_ACCOUNT_BUTTON: 'sign up'
     },
     USP: {
       MAIN_TEXT__FIRST_LINE: 'Track media you\'ve watched.',
       MAIN_TEXT__SECOND_LINE: 'Save those you want to see.',
       MAIN_TEXT__THIRD_LINE: 'Tell you friends what\s good.',
+
+      MOBILE_LINE: 'Track, save and tell your friends about your favorite media!',
 
       GET_STARTED_BUTTON: 'Get started - it\'s free!',
 

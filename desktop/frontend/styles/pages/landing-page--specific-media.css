@@ -23,8 +23,14 @@
 .usp--main-text {
   --font: 3.6rem var(--font--tiempos-headline-bold);
   color: var(--color--usp--main-text);
+  display: flex;
+  flex-direction: column;
   font: var(--font);
   text-align: center;
+}
+
+.usp--main-text--mobile {
+  display: none;
 }
 
 /* --------------------- */
@@ -53,8 +59,8 @@
 .usp--also-available {
   align-items: center;
   display: flex;
-  justify-content: center;
   gap: 5px;
+  justify-content: center;
 }
 
 .usp--also-available p {
@@ -109,4 +115,34 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+@media (width <= 1380px) {
+  .usp--main-text {
+    font-size: 3.4rem;
+  }
+}
+
+@media (width <= 740px) {
+  .usp--main-text {
+    font-size: 2.8rem;
+  }
+}
+
+@media (width <= 510px) {
+  .usp {
+    margin-top: -50px;
+  }
+
+  .usp--main-text {
+    max-width: 80%;
+  }
+
+  .usp--main-text--default {
+    display: none;
+  }
+
+  .usp--main-text--mobile {
+    display: block;
+  }
 }
