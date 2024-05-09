@@ -468,6 +468,7 @@
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {
@@ -512,4 +513,22 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--gap--general-section);
+}
+
+@media (width <= 1840px) {
+  .common--content-footer--content {
+    --padding-inline--global: 10%;
+  }
+}
+
+@media (width <= 1420px) {
+  .common--content-footer--content {
+    --padding-inline--global: 5%;
+  }
+}
+
+@media (width <= 1160px) {
+  .common--content-footer--content {
+    --padding-inline--global: 2%;
+  }
 }

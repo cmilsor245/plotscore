@@ -10,6 +10,7 @@ export default function Backdrop({
   highResImgSrc,
 
   hasHeader,
+  isInLandingPage,
   lang
 }) {
   const [imageLoaded, setImageLoaded] = useState(false)
@@ -28,7 +29,7 @@ export default function Backdrop({
 
   return (
     <div className = 'backdrop--wrapper' style = { backdropStyle }>
-      { hasHeader && <Header lang = { lang } /> }
+      { hasHeader && <Header lang = { lang } isInLandingPage = { isInLandingPage } /> }
 
       <Link className = 'backdrop--media-title' href = '/'>Star Wars (1977)</Link>
     </div>

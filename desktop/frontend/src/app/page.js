@@ -3,16 +3,17 @@
 import cookie from 'js-cookie'
 import { useEffect, useState } from 'react'
 
-import { IconBulbFilled, IconBulbOff } from '@tabler/icons-react'
-
 import {
   IconAlignLeft,
+  IconBulbFilled,
+  IconBulbOff,
   IconCalendarMonth,
   IconEye,
   IconHeartFilled,
   IconLayoutGridFilled,
   IconStarFilled
 } from '@tabler/icons-react'
+
 import translate from './translation.js'
 import Footer from '/components/common/footer.js'
 import {
@@ -22,13 +23,13 @@ import {
 } from '/components/common/main-action-button.js'
 import MediaSlot from '/components/common/media-slot.js'
 import SectionHeading from '/components/common/section-heading.js'
+import Backdrop from '/components/landing-page--specific-media/backdrop.js'
 import {
   MaterialSymbolsAndroidDarkTheme,
   MaterialSymbolsAndroidLightTheme,
   MdiAppleDarkTheme,
   MdiAppleLightTheme
-} from '/components/landing-page--specific-media/also-available.js'
-import Backdrop from '/components/landing-page--specific-media/backdrop.js'
+} from '/components/landing-page/also-available.js'
 import PlotscoreLetsYouCard from '/components/landing-page/plotscore-lets-you--card.js'
 
 import '/styles/global.css'
@@ -82,7 +83,8 @@ export default function LandingPage() {
           <Backdrop
             lowResImgSrc = '/img/landing-page--specific-media/low-res-backdrop.webp'
             highResImgSrc = '/img/landing-page--specific-media/high-res-backdrop.webp'
-            hasHeader = { true }
+            hasHeader
+            isInLandingPage
             lang = { lang }
           />
 
@@ -220,7 +222,7 @@ export default function LandingPage() {
                 section = 'JUST_REVIEWED'
                 title = 'SECTION_TITLE'
                 hasRightSideSingleText = 'MORE'
-                hasDivider = { true }
+                hasDivider
               />
 
               <section className = 'section-content'>

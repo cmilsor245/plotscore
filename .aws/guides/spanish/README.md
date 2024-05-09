@@ -20,7 +20,7 @@ Para tener un entorno listo para producción, se recomienda utilizar una **plant
 
 Podemos usar la plantilla para crear una **nueva Pila AWS** que genere automáticamente todos estos recursos y configuraciones.
 
-![pila creada](image.png)
+![pila creada](readme-img/image.png)
 
 #### [Volver arriba](#pipeline-cicd-para-el-proyecto-nextjs-plotscore)
 
@@ -42,19 +42,19 @@ Una vez que tenemos nuestro proyecto en el repositorio de GitHub, necesitamos cr
 
 Para esto, creamos un **nuevo Runner de GitHub Actions**.
 
-![pestaña del runner de github actions](image-1.png)
+![pestaña del runner de github actions](readme-img/image-1.png)
 
 Dentro de esta pestaña, hacemos clic en el botón `New self-hosted runner` para crear uno nuevo. Ahora tenemos que elegir una imagen de Linux para nuestro runner, dado que nuestra instancia EC2 está ejecutando Ubuntu Server, y ahora necesitamos **ejecutar los siguientes comandos resaltados** en nuestra terminal en la instancia EC2:
 
-![comandos del runner de github actions](image-2.png)
+![comandos del runner de github actions](readme-img/image-2.png)
 
 Una vez que ejecutamos el último comando señalado, GitHub nos hace algunas preguntas sobre el nombre del nuevo runner y consultas similares. Especificamos un **nombre personalizado para el nuevo runner** y dejamos el resto como predeterminado.
 
-![nombre personalizado del runner de github actions](image-3.png)
+![nombre personalizado del runner de github actions](readme-img/image-3.png)
 
 Finalmente, los únicos comandos que quedan son `sudo ./svc.sh install` y `sudo ./svc.sh start` para tener el nuevo runner en modo **Idle**, esperando que se active cualquier Flujo de Trabajo de GitHub Actions.
 
-![nuevo runner en modo idle](image-4.png)
+![nuevo runner en modo idle](readme-img/image-4.png)
 
 Ahora nos dirigimos a nuestros archivos locales, al directorio raíz de nuestro repositorio en nuestra máquina local, y creamos el siguiente archivo: `.github/workflows/deploy.yml`.
 
@@ -63,11 +63,11 @@ Dentro de este archivo, estamos creando un nuevo trigger de GitHub. Usaremos el 
 > [!IMPORTANT]
 > Hay que tener en cuenta que, para no causar ningún error al implementar el proyecto por primera vez en nuestra instancia EC2, es crucial **comentar el último comando** de esta manera:
 
-![último comando resaltado](image-5.png)
+![último comando resaltado](readme-img/image-5.png)
 
 Ahora podemos crear un nuevo commit con estos cambios y enviarlos al repositorio. Luego, podemos visitar la pestaña **Actions** dentro de nuestro repositorio y observar el proceso de implementación que ocurre en nuestra instancia EC2.
 
-![acción completada sin errores](image-6.png)
+![acción completada sin errores](readme-img/image-6.png)
 
 Mientras este proceso se está ejecutando, el Runner de GitHub Actions cambiará a **Active**.
 
@@ -121,8 +121,8 @@ Después de esto, podemos usar el comando `pm2 save` para guardar dicha lista.
 
 El siguiente paso es iniciar PM2 como un servicio, lo cual conseguiremos con el comando `pm2 startup`. Este comando genera a su vez otro comando que deberemos ejecutar para configurar el script que se encargará de ejecutar PM2 como un servicio de forma automática cada vez que se encienda la instancia EC2.
 
-![comando pm2 startup](image-7.png)
+![comando pm2 startup](readme-img/image-7.png)
 
-![pm2 establecido como servicio con éxito](image-8.png)
+![pm2 establecido como servicio con éxito](readme-img/image-8.png)
 
 #### [Volver arriba](#pipeline-cicd-para-el-proyecto-nextjs-plotscore)

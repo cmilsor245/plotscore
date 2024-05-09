@@ -96,3 +96,21 @@ footer {
   --font: clamp(0, 1.2rem, 12px) var(--font--graphik-regular);
   font: var(--font);
 }
+
+@media (width <= 1840px) {
+  footer {
+    --padding-inline--global: 10%;
+  }
+}
+
+@media (width <= 1420px) {
+  footer {
+    --padding-inline--global: 5%;
+  }
+}
+
+@media (width <= 1160px) {
+  footer {
+    --padding-inline--global: 2%;
+  }
+}

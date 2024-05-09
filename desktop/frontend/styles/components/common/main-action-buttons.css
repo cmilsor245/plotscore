@@ -15,6 +15,7 @@
   position: fixed;
   right: 10vw;
   top: 87vh;
+  z-index: 2;
 }
 
 .main-action-button {

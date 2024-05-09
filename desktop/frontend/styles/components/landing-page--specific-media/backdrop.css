@@ -14,7 +14,7 @@
   height: 70vh;
   padding-inline: 2% 3.5%;
   position: relative;
-  width: 102%;
+  width: 100%;
 }
 
 .backdrop--media-title {
@@ -25,6 +25,13 @@
   position: absolute;
   right: -50px;
   text-decoration: none;
+  text-shadow: 0 0 5px var(--color--primary-light-80);
   top: 50%;
   transform: rotate(-90deg);
+}
+
+@media (width <= 1024px) {
+  .backdrop--wrapper {
+    box-shadow: -1px -115px 10px 5px var(--color--backdrop-edges) inset;
+  }
 }

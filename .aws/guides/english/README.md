@@ -20,7 +20,7 @@ In order to have a production ready environment, it is recommended to use an **A
 
 We can use the template to create a **new AWS Stack** which automatically generates all these resources and configurations.
 
-![stack created](image.png)
+![stack created](readme-img/image.png)
 
 #### [Back to top](#cicd-pipeline-for-plotscore-nextjs-project)
 
@@ -42,19 +42,19 @@ Once we have our project on our GitHub repository, we need to create an automati
 
 For this, we create a **new GitHub Actions Runner**.
 
-![github actions runner tab](image-1.png)
+![github actions runner tab](readme-img/image-1.png)
 
 Inside this tab we click on the `New self-hosted runner` button to create a new one. We now have to choose a Linux image for our runner, given that our EC2 instance is running in an Ubuntu Server, and now we need to **execute the following highlighted commands** in our terminal on the EC2 instance:
 
-![github actions runner commands](image-2.png)
+![github actions runner commands](readme-img/image-2.png)
 
 Once we execute the last highlighted command, GitHub asks us some questions about the name of the new runner and similar queries. We specify a **custom name for the new runner** and leave the rest as default.
 
-![custom github actions runner name](image-3.png)
+![custom github actions runner name](readme-img/image-3.png)
 
 Finally, the only commands that remain are `sudo ./svc.sh install` and `sudo ./svc.sh start` to have the new runner running in **Idle** mode, waiting for any GitHub Actions Workflow to be triggered.
 
-![new runner in idle mode](image-4.png)
+![new runner in idle mode](readme-img/image-4.png)
 
 Now we head to our local files, to the root directory of our repository in our local machine, and create the next file: `.github/workflows/deploy.yml`.
 
@@ -63,11 +63,11 @@ Inside this file, we are creating a new GitHub trigger. We will use the `push` e
 > [!IMPORTANT]
 > Please note that, in order to not cause any errors when deploying the project for the first time to our EC2 instance, it's crucial to **comment the last command** like so:
 
-![last command commented](image-5.png)
+![last command commented](readme-img/image-5.png)
 
 Now we can create a now commit with these changes and push them to the repo. Then, we can visit the **Actions tab** inside our repository and watch the deployment process happening in our EC2 instance.
 
-![action completed without errors](image-6.png)
+![action completed without errors](readme-img/image-6.png)
 
 While this process is running, the GitHub Actions Runner will switch to **Active** mode.
 
@@ -121,8 +121,8 @@ After that, we can use the command `pm2 save` to save said list.
 
 The next step involves initiating PM2 as a service using the command `pm2 startup`. This command generates an additional command necessary for configuring the script to ensure PM2 runs as a service automatically upon every EC2 instance startup.
 
-![pm2 startup command](image-7.png)
+![pm2 startup command](readme-img/image-7.png)
 
-![pm2 set as a service successfully](image-8.png)
+![pm2 set as a service successfully](readme-img/image-8.png)
 
 #### [Back to top](#cicd-pipeline-for-plotscore-nextjs-project)

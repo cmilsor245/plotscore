@@ -8,6 +8,9 @@ const translationsES = {
       MEMBERS: 'miembros',
       JOURNAL: 'ponte al día'
     },
+    NAV_MOBILE: {
+      SEARCH_BAR_PLACEHOLDER: 'Buscar...'
+    },
     USP: {
       MAIN_TEXT__FIRST_LINE: 'Lleva un registro de lo que ves.',
       MAIN_TEXT__SECOND_LINE: 'Guarda lo que quieres ver.',

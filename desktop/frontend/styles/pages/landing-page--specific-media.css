@@ -94,6 +94,10 @@
 
 /* ---------------------------------------------------------------- */
 
+.plotscore-lets-you {
+  width: 100%;
+}
+
 .plotscore-lets-you .section-content {
   display: grid;
   gap: 10px;

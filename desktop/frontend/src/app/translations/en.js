@@ -8,6 +8,9 @@ const translationsES = {
       MEMBERS: 'members',
       JOURNAL: 'journal'
     },
+    NAV_MOBILE: {
+      SEARCH_BAR_PLACEHOLDER: 'Search...'
+    },
     USP: {
       MAIN_TEXT__FIRST_LINE: 'Track media you\'ve watched.',
       MAIN_TEXT__SECOND_LINE: 'Save those you want to see.',
