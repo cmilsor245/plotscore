@@ -40,6 +40,18 @@ const translationsES = {
     JUST_REVIEWED: {
       SECTION_TITLE: 'reviews recientes...',
       MORE: 'VER MÁS'
+    },
+    ENCOURAGING_TEXT: {
+      MAIN_TEXT__FIRST_LINE: 'Escribe y comparte reviews.',
+      MAIN_TEXT__SECOND_LINE: 'Crea tus propias listas.',
+      MAIN_TEXT__THIRD_LINE: 'Comparte tu lado cinéfilo.',
+
+      MAIN_TEXT__MOBILE__FIRST_LINE: 'Escribe,',
+      MAIN_TEXT__MOBILE__SECOND_LINE: 'crea,',
+      MAIN_TEXT__MOBILE__THIRD_LINE: 'y comparte',
+
+      SECONDARY_TEXT__FIRST_LINE: 'Debajo encontrarás algunas reviews y listas populares de esta semana.',
+      SECONDARY_TEXT__SECOND_LINE: 'Regístrate para crear las tuyas propias.'
     }
   },
 

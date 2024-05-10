@@ -69,28 +69,79 @@ export default function LandingPage() {
 
   const featuredMediaSlotsImgsSrcs = [
     {
-      lowResImgSrc: '/img/landing-page/1--low-res-poster.webp',
-      highResImgSrc: '/img/landing-page/1--high-res-poster.webp'
+      lowResImgSrc: '/img/landing-page/featured-media/1--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/featured-media/1--high-res-poster.webp'
     },
     {
-      lowResImgSrc: '/img/landing-page/2--low-res-poster.webp',
-      highResImgSrc: '/img/landing-page/2--high-res-poster.webp'
+      lowResImgSrc: '/img/landing-page/featured-media/2--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/featured-media/2--high-res-poster.webp'
     },
     {
-      lowResImgSrc: '/img/landing-page/3--low-res-poster.webp',
-      highResImgSrc: '/img/landing-page/3--high-res-poster.webp'
+      lowResImgSrc: '/img/landing-page/featured-media/3--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/featured-media/3--high-res-poster.webp'
     },
     {
-      lowResImgSrc: '/img/landing-page/4--low-res-poster.webp',
-      highResImgSrc: '/img/landing-page/4--high-res-poster.webp'
+      lowResImgSrc: '/img/landing-page/featured-media/4--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/featured-media/4--high-res-poster.webp'
     },
     {
-      lowResImgSrc: '/img/landing-page/5--low-res-poster.webp',
-      highResImgSrc: '/img/landing-page/5--high-res-poster.webp'
+      lowResImgSrc: '/img/landing-page/featured-media/5--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/featured-media/5--high-res-poster.webp'
     },
     {
-      lowResImgSrc: '/img/landing-page/6--low-res-poster.webp',
-      highResImgSrc: '/img/landing-page/6--high-res-poster.webp'
+      lowResImgSrc: '/img/landing-page/featured-media/6--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/featured-media/6--high-res-poster.webp'
+    }
+  ]
+
+  const justReviewedSlotsImgsSrcs = [
+    {
+      lowResImgSrc: '/img/landing-page/just-reviewed/1--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/just-reviewed/1--high-res-poster.webp'
+    },
+    {
+      lowResImgSrc: '/img/landing-page/just-reviewed/2--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/just-reviewed/2--high-res-poster.webp'
+    },
+    {
+      lowResImgSrc: '/img/landing-page/just-reviewed/3--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/just-reviewed/3--high-res-poster.webp'
+    },
+    {
+      lowResImgSrc: '/img/landing-page/just-reviewed/4--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/just-reviewed/4--high-res-poster.webp'
+    },
+    {
+      lowResImgSrc: '/img/landing-page/just-reviewed/5--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/just-reviewed/5--high-res-poster.webp'
+    },
+    {
+      lowResImgSrc: '/img/landing-page/just-reviewed/6--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/just-reviewed/6--high-res-poster.webp'
+    },
+    {
+      lowResImgSrc: '/img/landing-page/just-reviewed/7--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/just-reviewed/7--high-res-poster.webp'
+    },
+    {
+      lowResImgSrc: '/img/landing-page/just-reviewed/8--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/just-reviewed/8--high-res-poster.webp'
+    },
+    {
+      lowResImgSrc: '/img/landing-page/just-reviewed/9--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/just-reviewed/9--high-res-poster.webp'
+    },
+    {
+      lowResImgSrc: '/img/landing-page/just-reviewed/10--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/just-reviewed/10--high-res-poster.webp'
+    },
+    {
+      lowResImgSrc: '/img/landing-page/just-reviewed/11--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/just-reviewed/11--high-res-poster.webp'
+    },
+    {
+      lowResImgSrc: '/img/landing-page/just-reviewed/12--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/just-reviewed/12--high-res-poster.webp'
     }
   ]
 
@@ -248,10 +299,55 @@ export default function LandingPage() {
               />
 
               <section className = 'section-content'>
-                <div className = 'just-reviewed--slot'>
-                  
-                </div>
+                {
+                  justReviewedSlotsImgsSrcs.map((imgSrcs, index) => (
+                    <div className = 'just-reviewed--slot' key = { index }>
+                      <MediaSlot
+                        size = 'small'
+                        lowResImgSrc = { imgSrcs.lowResImgSrc }
+                        highResImgSrc = { imgSrcs.highResImgSrc }
+                      />
+                    </div>
+                  ))
+                }
               </section>
+            </section>
+
+            {/* ---------------------------------------------------- */}
+
+            <section className = 'encouraging-text'>
+              <article className = 'encouraging-text--main'>
+                <h3>
+                  { translate(lang, 'LANDING_PAGE', 'ENCOURAGING_TEXT', 'MAIN_TEXT__FIRST_LINE') }
+                </h3>
+                <h3>
+                  { translate(lang, 'LANDING_PAGE', 'ENCOURAGING_TEXT', 'MAIN_TEXT__SECOND_LINE') }
+                </h3>
+                <h3>
+                  { translate(lang, 'LANDING_PAGE', 'ENCOURAGING_TEXT', 'MAIN_TEXT__THIRD_LINE') }
+                </h3>
+              </article>
+
+              <article className = 'encouraging-text--main--mobile'>
+                <h3>
+                  { translate(lang, 'LANDING_PAGE', 'ENCOURAGING_TEXT', 'MAIN_TEXT__MOBILE__FIRST_LINE') }
+                </h3>
+                <h3>
+                  { translate(lang, 'LANDING_PAGE', 'ENCOURAGING_TEXT', 'MAIN_TEXT__MOBILE__SECOND_LINE') }
+                </h3>
+                <h3>
+                  { translate(lang, 'LANDING_PAGE', 'ENCOURAGING_TEXT', 'MAIN_TEXT__MOBILE__THIRD_LINE') }
+                </h3>
+              </article>
+
+              <article className = 'encouraging-text--secondary'>
+                <h5>
+                  { translate(lang, 'LANDING_PAGE', 'ENCOURAGING_TEXT', 'SECONDARY_TEXT__FIRST_LINE') }
+                </h5>
+                <h5>
+                  { translate(lang, 'LANDING_PAGE', 'ENCOURAGING_TEXT', 'SECONDARY_TEXT__SECOND_LINE') }
+                </h5>
+              </article>
             </section>
           </main>
         </section>

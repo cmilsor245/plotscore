@@ -40,6 +40,18 @@ const translationsES = {
     JUST_REVIEWED: {
       SECTION_TITLE: 'just reviewed...',
       MORE: 'MORE'
+    },
+    ENCOURAGING_TEXT: {
+      MAIN_TEXT__FIRST_LINE: 'Write and share reviews.',
+      MAIN_TEXT__SECOND_LINE: 'Compile your own lists.',
+      MAIN_TEXT__THIRD_LINE: 'Share your life in film.',
+
+      MAIN_TEXT__MOBILE__FIRST_LINE: 'Write,',
+      MAIN_TEXT__MOBILE__SECOND_LINE: 'compile,',
+      MAIN_TEXT__MOBILE__THIRD_LINE: 'and share',
+
+      SECONDARY_TEXT__FIRST_LINE: 'Below are some popular reviews and lists from this week.',
+      SECONDARY_TEXT__SECOND_LINE: 'Sign up to create your own.'
     }
   },
 
