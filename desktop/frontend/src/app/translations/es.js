@@ -34,8 +34,8 @@ const translationsES = {
       COLUMN_2_CARD_1: 'Mostrar tu amor por tus contenidos favoritos, listas y reviews con un "like"',
       COLUMN_2_CARD_2: 'Mantener un diario de tus visionados (y conviértete en Pro para obtener estadísticas completas)',
 
-      COLUMN_3_CARD_1: 'Escribir y comparte tus reviews, además de seguir a tus amigos y otros miembros para ver las suyas',
-      COLUMN_3_CARD_2: 'Crear y comparte listas de contenidos de cualquier género y añade otros a Ver más tarde'
+      COLUMN_3_CARD_1: 'Escribir y compartir tus reviews, además de seguir a tus amigos y otros miembros para ver las suyas',
+      COLUMN_3_CARD_2: 'Crear y compartir listas de contenidos de cualquier género y añadir otros a Ver más tarde'
     },
     JUST_REVIEWED: {
       SECTION_TITLE: 'reviews recientes...',

@@ -65,9 +65,8 @@ export default function Footer({ lang }) {
       { /* --------------------------------------------- */ }
 
       <section className = 'footer--bottom'>
-        <IconCopyright className = 'footer--bottom--copyright-icon' stroke = { 1 } />
         <p>
-          { translate(lang, 'COMMON', 'FOOTER', 'COPYRIGHT') }
+          &copy; { translate(lang, 'COMMON', 'FOOTER', 'COPYRIGHT') }
         </p>
       </section>
     </footer>
