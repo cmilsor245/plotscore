@@ -96,14 +96,14 @@
 
 .featured-media--slot .media-slot {
   border-radius: 3px;
-  transition: .04s;
+  transition: .1s;
 }
 
 .featured-media--slot * {
   cursor: pointer;
 }
 
-.featured-media--slot .media-slot:hover, .featured-media--slot--mobile .media-slot:hover {
+.featured-media--slot .media-slot:hover {
   outline: 5px solid var(--color--featured-media--outline);
 }
 
@@ -113,7 +113,12 @@
 
 .featured-media--slot--mobile .media-slot {
   border-radius: 1px;
-  transition: .04s;
+  transition: .1s;
+}
+
+.featured-media--slot .media-slot:active, 
+.featured-media--slot--mobile .media-slot:active {
+  transform: scale(.9);
 }
 
 /* ---------------------------------------------------------------- */
@@ -153,6 +158,26 @@
     display: flex;
     justify-content: center;
   }
+
+  .featured-media--slot:nth-of-type(1),
+  .featured-media--slot:nth-of-type(4) {
+    justify-content: flex-start;
+  }
+
+  .featured-media--slot:nth-of-type(3),
+  .featured-media--slot:nth-of-type(6) {
+    justify-content: flex-end;
+  }
+
+  .featured-media--slot .media-slot:hover {
+    outline: none;
+  }
+}
+
+@media (width <= 980px) {
+  .plotscore-lets-you .section-content {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (width <= 740px) {
@@ -175,6 +200,10 @@
 @media (width <= 610px) {
   .featured-media {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured-media--slot {
+    justify-content: center !important;
   }
 }
 
@@ -203,10 +232,6 @@
 }
 
 @media (width <= 410px) {
-  main {
-    gap: 0;
-  }
-
   .featured-media {
     display: flex;
     gap: 10px;

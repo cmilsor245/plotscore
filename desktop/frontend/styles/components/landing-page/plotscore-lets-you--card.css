@@ -9,6 +9,7 @@
   padding: 3rem 2rem;
   transition: .05s;
   width: 100%;
+  transition: .2s;
 }
 
 .plotscore-lets-you--card--column-1:hover {
@@ -40,4 +41,30 @@
   --font: clamp(10px, 1.5rem, 15px) var(--font--graphik-regular);
   flex: 2;
   font: var(--font);
+  text-wrap: wrap;
+}
+
+@media (width <= 1248px) {
+  .plotscore-lets-you--card p {
+    font-size: clamp(10px, 1.4rem, 15px);
+  }
+
+  .plotscore-lets-you--card--column-1:hover,
+  .plotscore-lets-you--card--column-2:hover,
+  .plotscore-lets-you--card--column-3:hover {
+    background-color: var(--color--primary-main);
+    color: var(--color--primary-light-70);
+  }
+}
+
+@media (width <= 1192px) {
+  .plotscore-lets-you--card p {
+    font-size: clamp(10px, 1.3rem, 14px);
+  }
+}
+
+@media (width <= 980px) {
+  .plotscore-lets-you--card p {
+    font-size: 1.3rem;
+  }
 }
