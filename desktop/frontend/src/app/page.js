@@ -14,7 +14,6 @@ import {
   IconStarFilled
 } from '@tabler/icons-react'
 
-import translate from './translation.js'
 import Footer from '/components/common/footer.js'
 import {
   CircleFlagsEs,
@@ -22,6 +21,7 @@ import {
   MainActionButton
 } from '/components/common/main-action-button.js'
 import MediaSlot from '/components/common/media-slot.js'
+import Review from '/components/common/review.js'
 import SectionHeading from '/components/common/section-heading.js'
 import Backdrop from '/components/landing-page--specific-media/backdrop.js'
 import {
@@ -31,6 +31,7 @@ import {
   MdiAppleLightTheme
 } from '/components/landing-page/also-available.js'
 import PlotscoreLetsYouCard from '/components/landing-page/plotscore-lets-you--card.js'
+import translate from '/src/app/translation.js'
 
 import '/styles/global.css'
 import '/styles/pages/landing-page--specific-media.css'
@@ -94,6 +95,8 @@ export default function LandingPage() {
     }
   ]
 
+  /* ----------------------------------------------------------- */
+
   const justReviewedSlotsImgsSrcs = [
     {
       lowResImgSrc: '/img/landing-page/just-reviewed/1--low-res-poster.webp',
@@ -142,6 +145,31 @@ export default function LandingPage() {
     {
       lowResImgSrc: '/img/landing-page/just-reviewed/12--low-res-poster.webp',
       highResImgSrc: '/img/landing-page/just-reviewed/12--high-res-poster.webp'
+    }
+  ]
+
+  /* ----------------------------------------------------------- */
+
+  const popularReviewsSlotsData = [
+    {
+      lowResImgSrc: '/img/landing-page/popular-reviews/1--low-res-poster.webp',
+      highResImgSrc: '/img/landing-page/popular-reviews/1--high-res-poster.webp',
+
+      mediaTitle: 'The Last Of Us',
+      mediaYear: '2023',
+
+      avatarLowResImgSrc: '/img/landing-page/popular-reviews/1--low-res-avatar.webp',
+      avatarHighResImgSrc: '/img/landing-page/popular-reviews/1--high-res-avatar.webp',
+
+      username: 'jordi-wild',
+
+      rating: 4.5,
+
+      reviewText: 'pedro pascal as a lonely dad adopting a child you will always be famous',
+
+      commentCount: 13,
+
+      likeCount: 31,
     }
   ]
 
@@ -347,6 +375,82 @@ export default function LandingPage() {
                 <h5>
                   { translate(lang, 'LANDING_PAGE', 'ENCOURAGING_TEXT', 'SECONDARY_TEXT__SECOND_LINE') }
                 </h5>
+              </article>
+            </section>
+
+            {/* ---------------------------------------------------- */}
+
+            <section className = 'popular-reviews--lists'>
+              <article className = 'section-with--heading-and-content popular-reviews'>
+                <SectionHeading
+                  lang = { lang }
+                  namespace = 'LANDING_PAGE'
+                  section = 'POPULAR_REVIEWS'
+                  title = 'SECTION_TITLE'
+                  hasRightSideSingleText = 'MORE'
+                  hasDivider
+                />
+
+                <section className = 'section-content'>
+                  {/* <Review
+                    lang = { lang }
+
+                    hasPoster
+                    posterLowResImgSrc = { popularReviewsSlotsData[0].lowResPosterSrc }
+                    posterHighResImgSrc = { popularReviewsSlotsData[0].highResPosterSrc }
+
+                    mediaTitle = { popularReviewsSlotsData[0].mediaTitle }
+                    mediaYear = { popularReviewsSlotsData[0].mediaYear }
+
+                    hasAvatar
+                    avatarLowResImgSrc = { popularReviewsSlotsData[0].lowResAvatarSrc }
+                    avatarHighResImgSrc = { popularReviewsSlotsData[0].highResAvatarSrc }
+                    hasUsername
+                    username = { popularReviewsSlotsData[0].username }
+
+                    rating = { popularReviewsSlotsData[0].rating }
+
+                    hasText
+                    reviewText = { popularReviewsSlotsData[0].reviewText }
+
+                    hasCommentCount
+                    commentCount = { popularReviewsSlotsData[0].commentCount }
+
+                    hasLikeCount
+                    likeCount = { popularReviewsSlotsData[0].likeCount }
+
+                    type = 'horizontal-1'
+                  /> */}
+
+                  <Review
+                    lang = { lang }
+
+                    avatarLowResImgSrc = { popularReviewsSlotsData[0].lowResAvatarSrc }
+                    avatarHighResImgSrc = { popularReviewsSlotsData[0].highResAvatarSrc }
+                    username = { popularReviewsSlotsData[0].username }
+
+                    rating = { popularReviewsSlotsData[0].rating }
+
+                    hasText
+                    reviewText = { popularReviewsSlotsData[0].reviewText }
+
+                    hasCommentCount
+                    commentCount = { popularReviewsSlotsData[0].commentCount }
+
+                    likeCount = { popularReviewsSlotsData[0].likeCount }
+                  />
+                </section>
+              </article>
+
+              <article className = 'section-with--heading-and-content lists'>
+                <SectionHeading
+                  lang = { lang }
+                  namespace = 'LANDING_PAGE'
+                  section = 'POPULAR_LISTS'
+                  title = 'SECTION_TITLE'
+                  hasRightSideSingleText = 'MORE'
+                  hasDivider
+                />
               </article>
             </section>
           </main>

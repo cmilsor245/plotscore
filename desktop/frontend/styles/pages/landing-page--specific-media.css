@@ -102,7 +102,7 @@
 
 .featured-media--slot .media-slot {
   border-radius: 3px;
-  transition: .1s;
+  transition: .04s;
 }
 
 .featured-media--slot * {
@@ -118,8 +118,8 @@
 }
 
 .featured-media--slot--mobile .media-slot {
-  border-radius: 1px;
-  transition: .1s;
+  border-radius: 3px;
+  transition: .04s;
 }
 
 .featured-media--slot .media-slot:active, 
@@ -148,9 +148,13 @@
 
 /* ---------------------------------------------------------------- */
 
+.just-reviewed {
+  width: 100%;
+}
+
 .just-reviewed--slot .media-slot {
   border-radius: 3px;
-  transition: .1s;
+  transition: .04s;
 }
 
 .just-reviewed--slot .media-slot:hover {
@@ -159,10 +163,6 @@
 
 .just-reviewed--slot .media-slot:active {
   transform: scale(.95);
-}
-
-.just-reviewed {
-  width: 100%;
 }
 
 .just-reviewed .section-content {
@@ -222,6 +222,22 @@
   justify-content: flex-start;
 }
 
+/* ---------------------------------------------------------------- */
+
+.popular-reviews--lists {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.popular-reviews--lists .popular-reviews {
+  width: 60%;
+}
+
+.popular-reviews--lists .lists {
+  width: 35%;
+}
+
 @media (width <= 1380px) {
   .usp--main-text {
     font-size: 3.4rem;
@@ -268,7 +284,7 @@
   }
 
   .encouraging-text--secondary h5 {
-    font-size: clamp(7px, 1.2rem, 17px);
+    font-size: clamp(7px, 1.4rem, 17px);
   }
 }
 

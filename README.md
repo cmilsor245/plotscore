@@ -7,9 +7,10 @@
 ### Table of contents
 
 1. [TODO list](#todo-list)
-2. [Notion page](#notion-page)
-3. [Figma design](#figma-design)
-4. [CI/CD pipeline guide](#cicd-pipeline-guide)
+2. [Checkpoint video](#checkpoint-video)
+3. [Notion page](#notion-page)
+4. [Figma design](#figma-design)
+5. [CI/CD pipeline guide](#cicd-pipeline-guide)
 
 #### [Back to top](#plotscore)
 
@@ -57,6 +58,12 @@
 
 ---
 
+### Checkpoint video
+
+Click [here](https://youtu.be/hsr6cpZhtYg) to watch the checkpoint video.
+
+---
+
 ### Notion page
 
 Click [here](https://christian-millan-soria.notion.site/plotscore-7b99f56524704e96b75dc91d74cd3039) to access the corresponding Notion page.
@@ -92,9 +99,10 @@ Click [here](https://github.com/cmilsor245/plotscore/tree/main/.aws/guides/engli
 ### Índice
 
 1. [Lista de tareas pendientes](#lista-de-tareas-pendientes)
-2. [Notion](#notion)
-3. [Diseño en Figma](#diseño-en-figma)
-4. [Guía del pipeline CI/CD](#guía-del-pipeline-cicd)
+2. [Vídeo del checkpoint](#vídeo-del-checkpoint)
+3. [Notion](#notion)
+4. [Diseño en Figma](#diseño-en-figma)
+5. [Guía del pipeline CI/CD](#guía-del-pipeline-cicd)
 
 #### [Volver arriba](#plotscore)
 
@@ -139,6 +147,12 @@ Click [here](https://github.com/cmilsor245/plotscore/tree/main/.aws/guides/engli
 ##### [Volver a la sección de Lista de tareas pendientes](#lista-de-tareas-pendientes)
 
 #### [Volver a la sección en español](#español)
+
+---
+
+### Vídeo del checkpoint
+
+Haz clic [aquí](https://youtu.be/hsr6cpZhtYg) para ver el video del checkpoint.
 
 ---
 

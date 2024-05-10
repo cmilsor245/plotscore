@@ -143,6 +143,8 @@ function LogInfo({
   )
 }
 
+/* ------------------------------------------------------------------------------------ */
+
 export default function MediaSlot({
   size,
   lowResImgSrc,

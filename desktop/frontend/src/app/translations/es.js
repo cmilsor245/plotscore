@@ -52,6 +52,14 @@ const translationsES = {
 
       SECONDARY_TEXT__FIRST_LINE: 'Debajo encontrarás algunas reviews y listas populares de esta semana.',
       SECONDARY_TEXT__SECOND_LINE: 'Regístrate para crear las tuyas propias.'
+    },
+    POPULAR_REVIEWS: {
+      SECTION_TITLE: 'reviews populares esta semana',
+      MORE: 'VER MÁS'
+    },
+    POPULAR_LISTS: {
+      SECTION_TITLE: 'listas populares',
+      MORE: 'VER MÁS'
     }
   },
 
