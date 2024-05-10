@@ -230,6 +230,14 @@
   justify-content: space-between;
 }
 
+.popular-reviews .section-content, .popular-reviews--lists .lists {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
 .popular-reviews--lists .popular-reviews {
   width: 60%;
 }

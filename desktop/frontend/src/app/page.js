@@ -14,6 +14,7 @@ import {
   IconStarFilled
 } from '@tabler/icons-react'
 
+import Divider from '/components/common/divider.js'
 import Footer from '/components/common/footer.js'
 import {
   CircleFlagsEs,
@@ -152,20 +153,42 @@ export default function LandingPage() {
 
   const popularReviewsSlotsData = [
     {
-      lowResImgSrc: '/img/landing-page/popular-reviews/1--low-res-poster.webp',
-      highResImgSrc: '/img/landing-page/popular-reviews/1--high-res-poster.webp',
-
-      mediaTitle: 'The Last Of Us',
-      mediaYear: '2023',
-
-      avatarLowResImgSrc: '/img/landing-page/popular-reviews/1--low-res-avatar.webp',
-      avatarHighResImgSrc: '/img/landing-page/popular-reviews/1--high-res-avatar.webp',
+      avatarLowResImgSrc: '/img/landing-page/popular-reviews/1--low-res-avatar.jpg',
+      avatarHighResImgSrc: '/img/landing-page/popular-reviews/1--high-res-avatar.jpg',
 
       username: 'jordi-wild',
 
       rating: 4.5,
 
-      reviewText: 'pedro pascal as a lonely dad adopting a child you will always be famous',
+      reviewText: 'I can\'t even imagine what it felt like watching this in theaters for the first time in 1977. Being collectively consumed by this monumental space epic. It had to have been the coolest experience. A brand new special effects wonderland to lose yourself in. I\'ve had some pretty amazing theater experiences but I don\'t know if anything will ever come close to the impact A New Hope had on that entire generation.',
+
+      commentCount: 13,
+
+      likeCount: 31,
+    },
+    {
+      avatarLowResImgSrc: '/img/landing-page/popular-reviews/1--low-res-avatar.jpg',
+      avatarHighResImgSrc: '/img/landing-page/popular-reviews/1--high-res-avatar.jpg',
+
+      username: 'jordi-wild',
+
+      rating: 4.5,
+
+      reviewText: 'I can\'t even imagine what it felt like watching this in theaters for the first time in 1977. Being collectively consumed by this monumental space epic. It had to have been the coolest experience. A brand new special effects wonderland to lose yourself in. I\'ve had some pretty amazing theater experiences but I don\'t know if anything will ever come close to the impact A New Hope had on that entire generation.',
+
+      commentCount: 13,
+
+      likeCount: 31,
+    },
+    {
+      avatarLowResImgSrc: '/img/landing-page/popular-reviews/1--low-res-avatar.jpg',
+      avatarHighResImgSrc: '/img/landing-page/popular-reviews/1--high-res-avatar.jpg',
+
+      username: 'jordi-wild',
+
+      rating: 4.5,
+
+      reviewText: 'I can\'t even imagine what it felt like watching this in theaters for the first time in 1977. Being collectively consumed by this monumental space epic. It had to have been the coolest experience. A brand new special effects wonderland to lose yourself in. I\'ve had some pretty amazing theater experiences but I don\'t know if anything will ever come close to the impact A New Hope had on that entire generation.',
 
       commentCount: 13,
 
@@ -392,53 +415,22 @@ export default function LandingPage() {
                 />
 
                 <section className = 'section-content'>
-                  {/* <Review
-                    lang = { lang }
-
-                    hasPoster
-                    posterLowResImgSrc = { popularReviewsSlotsData[0].lowResPosterSrc }
-                    posterHighResImgSrc = { popularReviewsSlotsData[0].highResPosterSrc }
-
-                    mediaTitle = { popularReviewsSlotsData[0].mediaTitle }
-                    mediaYear = { popularReviewsSlotsData[0].mediaYear }
-
-                    hasAvatar
-                    avatarLowResImgSrc = { popularReviewsSlotsData[0].lowResAvatarSrc }
-                    avatarHighResImgSrc = { popularReviewsSlotsData[0].highResAvatarSrc }
-                    hasUsername
-                    username = { popularReviewsSlotsData[0].username }
-
-                    rating = { popularReviewsSlotsData[0].rating }
-
-                    hasText
-                    reviewText = { popularReviewsSlotsData[0].reviewText }
-
-                    hasCommentCount
-                    commentCount = { popularReviewsSlotsData[0].commentCount }
-
-                    hasLikeCount
-                    likeCount = { popularReviewsSlotsData[0].likeCount }
-
-                    type = 'horizontal-1'
-                  /> */}
-
-                  <Review
-                    lang = { lang }
-
-                    avatarLowResImgSrc = { popularReviewsSlotsData[0].lowResAvatarSrc }
-                    avatarHighResImgSrc = { popularReviewsSlotsData[0].highResAvatarSrc }
-                    username = { popularReviewsSlotsData[0].username }
-
-                    rating = { popularReviewsSlotsData[0].rating }
-
-                    hasText
-                    reviewText = { popularReviewsSlotsData[0].reviewText }
-
-                    hasCommentCount
-                    commentCount = { popularReviewsSlotsData[0].commentCount }
-
-                    likeCount = { popularReviewsSlotsData[0].likeCount }
-                  />
+                  {popularReviewsSlotsData.map((review, index) => [
+                    <Review
+                      key = { index }
+                      lang = { lang }
+                      hasPoster = { false }
+                      avatarLowResImgSrc = { review.avatarLowResImgSrc }
+                      avatarHighResImgSrc = { review.avatarHighResImgSrc }
+                      username = { review.username }
+                      rating = { review.rating }
+                      reviewText = { review.reviewText }
+                      hasCommentCount
+                      commentCount = { review.commentCount }
+                      likeCount = { review.likeCount }
+                    />,
+                    index !== popularReviewsSlotsData.length - 1 && <Divider key = { `divider-${index}` } />
+                  ])}
                 </section>
               </article>
 

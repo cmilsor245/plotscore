@@ -1,0 +1,111 @@
+.dark-theme {
+  --color--review--without-poster--details--user: var(--color--primary-light-40);
+  --color--review--without-poster--details: var(--color--primary-light-70);
+  --shadow--star-icon: var(--color--primary-light-80);
+}
+
+.light-theme {
+  --color--review--without-poster--details--user: var(--color--primary-dark-40);
+  --color--review--without-poster--details: var(--color--primary-dark-40);
+  --shadow--star-icon: var(--color--primary-dark-70);
+}
+
+.review--without-poster {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.review--without-poster--avatar {
+  background: center / cover;
+  border-radius: 50%;
+  height: 35px;
+  width: 37px;
+}
+
+.review--without-poster--details {
+  align-items: flex-start;
+  color: var(--color--review--without-poster--details);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.review--without-poster--details svg {
+  height: 14px;
+  width: 14px;
+}
+
+.review--without-poster--details--user-rating-and-comments {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  justify-content: flex-start;
+}
+
+.review--without-poster--details--user {
+  --font: clamp(10px, 1.4rem, 16px) var(--font--graphik-light);
+  color: var(--color--review--without-poster--details--user);
+  font: var(--font);
+}
+
+.review--without-poster--details--user span {
+  font-family: var(--font--graphik-semibold);
+}
+
+.review--without-poster--details--rating {
+  align-items: center;
+  color: var(--color--accent-main);
+  display: flex;
+  gap: 2px;
+}
+
+.review--without-poster--details--rating svg {
+  filter: drop-shadow(0 1px 1px var(--shadow--star-icon));
+}
+
+.review--without-poster--details--comments {
+  --font: clamp(10px, 1.1rem, 14px) var(--font--graphik-light);
+  align-items: center;
+  display: flex;
+  font: var(--font);
+  gap: 2px;
+  justify-content: flex-start;
+}
+
+.review--without-poster--details--text {
+  --font: clamp(10px, 1.4rem, 16px) var(--font--tiempos-headline-regular);
+  font: var(--font);
+  text-wrap: wrap;
+  width: 100%;
+}
+
+.review--without-poster--details--likes {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  justify-content: flex-start;
+}
+
+.review--without-poster--details--likes span {
+  display: flex;
+  gap: 2px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.review--without-poster--details--likes .action, 
+.review--without-poster--details--likes .count {
+  font-size: clamp(10px, 1.2rem, 15px);
+}
+
+.review--without-poster--details--likes .action {
+  font-family: var(--font--graphik-medium);
+}
+
+.review--without-poster--details--likes .count {
+  font-family: var(--font--graphik-light);
+}

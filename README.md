@@ -62,6 +62,8 @@
 
 Click [here](https://youtu.be/hsr6cpZhtYg) to watch the checkpoint video.
 
+#### [Back to english section](#english)
+
 ---
 
 ### Notion page
@@ -153,6 +155,8 @@ Click [here](https://github.com/cmilsor245/plotscore/tree/main/.aws/guides/engli
 ### Vídeo del checkpoint
 
 Haz clic [aquí](https://youtu.be/hsr6cpZhtYg) para ver el video del checkpoint.
+
+#### [Volver a la sección en español](#español)
 
 ---
 

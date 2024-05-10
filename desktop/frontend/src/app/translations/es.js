@@ -1,4 +1,23 @@
 const translationsES = {
+  COMMON: {
+    FOOTER: {
+      ABOUT: 'Sobre nosotros',
+      NEWS: 'Noticias',
+      PRO: 'Pro',
+      APPS: 'Apps',
+      PODCAST: 'Podcast',
+      YEAR_IN_REVIEW: 'Un año en Review',
+      GIFT_GUIDE: 'Guía de Regalo',
+      HELP: 'Ayuda',
+      TERMS: 'Términos',
+      API: 'API',
+      CONTACT: 'Contacto',
+
+      COPYRIGHT: '2024 - Este proyecto está desarrollado por Christian Millán Soria con fines educativos únicamente.'
+    }
+  },
+
+  /* -------------------------------------------------------------------------------------------------- */
   LANDING_PAGE: {
     NAV: {
       SIGN_IN: 'iniciar sesión',
@@ -65,21 +84,10 @@ const translationsES = {
 
   /* -------------------------------------------------------------------------------------------------- */
 
-  COMMON: {
-    FOOTER: {
-      ABOUT: 'Sobre nosotros',
-      NEWS: 'Noticias',
-      PRO: 'Pro',
-      APPS: 'Apps',
-      PODCAST: 'Podcast',
-      YEAR_IN_REVIEW: 'Un año en Review',
-      GIFT_GUIDE: 'Guía de Regalo',
-      HELP: 'Ayuda',
-      TERMS: 'Términos',
-      API: 'API',
-      CONTACT: 'Contacto',
-
-      COPYRIGHT: '2024 - Este proyecto está desarrollado por Christian Millán Soria con fines educativos únicamente.'
+  SPECIFIC_MEDIA:{
+    REVIEW: {
+      REVIEW_BY: 'Review por',
+      LIKE_ACTION: 'Dar me gusta'
     }
   }
 }

@@ -1,9 +1,16 @@
 import { useEffect, useState } from 'react'
 
-import { IconMath1Divide2, IconStarFilled } from '@tabler/icons-react'
+import {
+  IconMath1Divide2,
+  IconStarFilled,
+  IconMessage,
+  IconHeartFilled
+} from '@tabler/icons-react'
 
 import translate from '/src/app/translation.js'
 import MediaSlot from '/components/common/media-slot.js'
+
+import '/styles/components/common/review.css'
 
 function ReviewWithoutPoster({
   lang,
@@ -14,13 +21,11 @@ function ReviewWithoutPoster({
 
   rating,
 
-  hasText,
   reviewText,
 
   hasCommentCount,
   commentCount,
 
-  hasLikeCount,
   likeCount,
 }) {
   const [imageLoaded, setImageLoaded] = useState(false)
@@ -64,10 +69,33 @@ function ReviewWithoutPoster({
       <div className = 'review--without-poster--avatar' style = { avatarStyle }></div>
 
       <article className = 'review--without-poster--details'>
-        <section className = 'review--without-poster--details--username-rating-and-comments'>
-          <h6>
-            Review by { username }
+        <section className = 'review--without-poster--details--user-rating-and-comments'>
+          <h6 className = 'review--without-poster--details--user'>
+            { translate(lang, 'SPECIFIC_MEDIA', 'REVIEW', 'REVIEW_BY') } <span>{ username }</span>
           </h6>
+
+          <div className = 'review--without-poster--details--rating'>
+            { stars }
+          </div>
+
+          { hasCommentCount && (
+            <span className = 'review--without-poster--details--comments'>
+              <IconMessage />
+              { commentCount }
+            </span>
+          ) }
+        </section>
+
+        <p className = 'review--without-poster--details--text'>
+          { reviewText }
+        </p>
+
+        <section className = 'review--without-poster--details--likes'>
+          <span className = 'action'>
+            <IconHeartFilled />
+            { translate(lang, 'SPECIFIC_MEDIA', 'REVIEW', 'LIKE_ACTION') }
+          </span>
+          <span className = 'count'>{ likeCount } likes</span>
         </section>
       </article>
     </div>
@@ -152,7 +180,6 @@ export default function Review({
 
           rating = { rating }
 
-          hasText = { hasText }
           reviewText = { reviewText }
 
           hasCommentCount = { hasCommentCount }
@@ -161,6 +188,9 @@ export default function Review({
           likeCount = { likeCount }
         />
       break
+
+      /* ------------------------------------------ */
+
     case true:
       switch (type) {
         case 'vertical':
