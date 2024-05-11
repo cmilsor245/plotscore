@@ -442,16 +442,20 @@
 .dark-theme {
   --color--page-background: var(--color--primary-dark-70);
   --color--scrollbar-background: var(--color--primary-dark-70);
+  --color--selection-background: var(--color--primary-light-90);
+  --color--selection-selected: var(--color--primary-main);
 }
 
 .light-theme {
   --color--page-background: var(--color--primary-light-80);
   --color--scrollbar-background: var(--color--primary-light-80);
+  --color--selection-background: var(--color--primary-main);
+  --color--selection-selected: var(--color--primary-light-90);
 }
 
 ::selection {
-  background-color: var(--color--primary-main);
-  color: var(--color--primary-light-90);
+  background-color: var(--color--selection-background);
+  color: var(--color--selection-selected);
 }
 
 ::-webkit-scrollbar {

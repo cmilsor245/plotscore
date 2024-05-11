@@ -101,7 +101,6 @@
 }
 
 .featured-media--slot .media-slot {
-  border-radius: 3px;
   transition: .04s;
 }
 
@@ -110,6 +109,7 @@
 }
 
 .featured-media--slot .media-slot:hover {
+  border-radius: 3px;
   outline: 5px solid var(--color--media--outline);
 }
 
@@ -153,16 +153,16 @@
 }
 
 .just-reviewed--slot .media-slot {
-  border-radius: 3px;
   transition: .04s;
 }
 
 .just-reviewed--slot .media-slot:hover {
+  border-radius: 3px;
   outline: 5px solid var(--color--media--outline);
 }
 
 .just-reviewed--slot .media-slot:active {
-  transform: scale(.95);
+  transform: scale(.9);
 }
 
 .just-reviewed .section-content {

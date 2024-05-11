@@ -23,29 +23,27 @@ function ReviewWithoutPoster({
 
   reviewText,
 
-  hasCommentCount,
   commentCount,
-
   likeCount,
 }) {
-  const [imageLoaded, setImageLoaded] = useState(false)
+  const [avatarLoaded, setAvatarLoaded] = useState(false)
 
   useEffect(() => {
     const avatarImage = new Image()
     avatarImage.src = avatarHighResImgSrc
     avatarImage.onload = () => {
-      setImageLoaded(true)
+      setAvatarLoaded(true)
     }
   })
 
   const avatarStyle = {
-    backgroundImage: `url(${ imageLoaded ? avatarHighResImgSrc : avatarLowResImgSrc })`
+    backgroundImage: `url(${ avatarLoaded ? avatarHighResImgSrc : avatarLowResImgSrc })`
   }
 
   /* ---------------------------- */
 
   const fullStars = Math.floor(rating)
-  const hasHalfStar = rating % 1!== 0
+  const hasHalfStar = rating % 1 !== 0
   const stars = []
 
   for (let i = 0; i < fullStars; i++) {
@@ -78,7 +76,7 @@ function ReviewWithoutPoster({
             { stars }
           </div>
 
-          { hasCommentCount && (
+          { commentCount > 0 && (
             <span className = 'review--without-poster--details--comments'>
               <IconMessage />
               { commentCount }
@@ -114,11 +112,107 @@ function VerticalReview() {
 
 /* --------------------------------------------- */
 
-function HorizontalReviewType1() {
+function HorizontalReviewType1({
+  posterLowResImgSrc,
+  posterHighResImgSrc,
+
+  mediaTitle,
+  mediaYear,
+
+  avatarLowResImgSrc,
+  avatarHighResImgSrc,
+  username,
+
+  rating,
+
+  reviewText,
+
+  commentCount,
+  likeCount
+}) {
+  const [avatarLoaded, setAvatarLoaded] = useState(false)
+
+  useEffect(() => {
+    const avatarImage = new Image()
+    avatarImage.src = avatarHighResImgSrc
+    avatarImage.onload = () => {
+      setAvatarLoaded(true)
+    }
+  })
+
+  const avatarStyle = {
+    backgroundImage: `url(${ avatarLoaded ? avatarHighResImgSrc : avatarLowResImgSrc })`
+  }
+
+  /* ---------------------------- */
+
+  const fullStars = Math.floor(rating)
+  const hasHalfStar = rating % 1 !== 0
+  const stars = []
+
+  for (let i = 0; i < fullStars; i++) {
+    stars.push(
+      <span key = { i } className = 'horizontal-review--type-1--details--star'>
+        <IconStarFilled />
+      </span>
+    )
+  }
+
+  if (hasHalfStar) {
+    stars.push(
+      <span key = { fullStars } className = 'horizontal-review--type-1--details--star-half'>
+        <IconMath1Divide2 />
+      </span>
+    )
+  }
+
   return (
-    <>
-      
-    </>
+    <div className = 'horizontal-review--type-1'>
+      <MediaSlot
+        size = 'small'
+        lowResImgSrc = { posterLowResImgSrc }
+        highResImgSrc = { posterHighResImgSrc }
+      />
+
+      <article className = 'horizontal-review--type-1--details'>
+        <section className = 'horizontal-review--type-1--details--media-main-info'>
+          <h5>
+            { mediaTitle }
+          </h5>
+          <h6>
+            { mediaYear }
+          </h6>
+        </section>
+
+        <section className = 'horizontal-review--type-1--details--user-rating-and-comments'>
+          <div className = 'horizontal-review--type-1--details--avatar-and-username'>
+            <div className = 'horizontal-review--type-1--details--avatar' style = { avatarStyle }></div>
+
+            <h6 className = 'horizontal-review--type-1--details--username'>{ username }</h6>
+          </div>
+
+          <div className = 'horizontal-review--type-1--details--rating'>
+            { stars }
+          </div>
+
+          { commentCount > 0 && (
+            <span className = 'horizontal-review--type-1--details--comments'>
+              <IconMessage />
+              { commentCount }
+            </span>
+          ) }
+        </section>
+
+        <p className = 'horizontal-review--type-1--details--text'>
+          { reviewText }
+        </p>
+
+        <section className = 'horizontal-review--type-1--details--likes'>
+          <IconHeartFilled />
+          <span className = 'count'>{ likeCount } likes</span>
+        </section>
+      </article>
+    </div>
   )
 }
 
@@ -144,24 +238,17 @@ export default function Review({
   mediaTitle,
   mediaYear,
 
-  hasAvatar,
   avatarLowResImgSrc,
   avatarHighResImgSrc,
-  hasUsername,
   username,
 
   rating,
 
-  hasText,
   reviewText,
 
-  hasCommentCount,
   commentCount,
-
-  hasLikeCount,
   likeCount,
 
-  hasWatched_RewatchedMessage,
   hasWatchedBefore,
 
   type
@@ -170,7 +257,7 @@ export default function Review({
 
   switch (hasPoster) {
     case false:
-      conditionalReview = 
+      conditionalReview =
         <ReviewWithoutPoster
           lang = { lang }
 
@@ -182,9 +269,7 @@ export default function Review({
 
           reviewText = { reviewText }
 
-          hasCommentCount = { hasCommentCount }
           commentCount = { commentCount }
-
           likeCount = { likeCount }
         />
       break
@@ -194,13 +279,39 @@ export default function Review({
     case true:
       switch (type) {
         case 'vertical':
-          conditionalReview = <VerticalReview />
+          conditionalReview =
+            <VerticalReview
+              
+            />
           break
         case 'horizontal-1':
-          conditionalReview = <HorizontalReviewType1 />
+          conditionalReview =
+            <HorizontalReviewType1
+              lang = { lang }
+
+              posterLowResImgSrc = { posterLowResImgSrc }
+              posterHighResImgSrc = { posterHighResImgSrc }
+
+              mediaTitle = { mediaTitle }
+              mediaYear = { mediaYear }
+
+              avatarLowResImgSrc = { avatarLowResImgSrc }
+              avatarHighResImgSrc = { avatarHighResImgSrc }
+              username = { username }
+
+              rating = { rating }
+
+              reviewText = { reviewText }
+
+              commentCount = { commentCount }
+              likeCount = { likeCount }
+            />
           break
         case 'horizontal-2':
-          conditionalReview = <HorizontalReviewType2 />
+          conditionalReview =
+            <HorizontalReviewType2
+              
+            />
           break
       }
       break
