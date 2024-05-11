@@ -41,6 +41,7 @@
 .review--without-poster--avatar {
   background: center / cover;
   border-radius: 50%;
+  cursor: pointer;
   height: 35px;
   width: 37px;
 }
@@ -101,6 +102,7 @@
 .horizontal-review--type-1--details--avatar {
   background: center / cover;
   border-radius: 50%;
+  cursor: pointer;
   height: 28px;
   width: 28px;
 }
@@ -144,10 +146,11 @@
 .review--without-poster--details--text,
 .horizontal-review--type-1--details--text {
   --font: clamp(10px, 1.4rem, 16px) var(--font--tiempos-headline-regular);
+  cursor: text;
   font: var(--font);
+  line-height: 1.5;
   text-wrap: wrap;
   width: 100%;
-  cursor: text;
 }
 
 .review--without-poster--details--likes {

@@ -1,0 +1,108 @@
+.dark-theme {
+  --color--list-outline: var(--color--secondary-main);
+  --color--landing-page--list-title: var(--color--primary-light-90);
+  --color--landing-page--list-username: var(--color--primary-light-70);
+  --color--landing-page--list-ratings: var(--color--primary-light-20);
+}
+
+.light-theme {
+  --color--list-outline: var(--color--tertiary-main);
+  --color--landing-page--list-title: var(--color--primary-dark-40);
+  --color--landing-page--list-username: var(--color--primary-dark-70);
+  --color--landing-page--list-ratings: var(--color--primary-dark-30);
+}
+
+.landing-page--list {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.landing-page--list-posters {
+  display: flex;
+  justify-content: flex-start;
+  overflow-y: hidden;
+  transition: .04s;
+}
+
+.landing-page--list-posters:hover {
+  border-radius: 3px;
+  outline: 5px solid var(--color--list-outline);
+}
+
+.landing-page--list-posters .media-slot:first-of-type {
+  filter: drop-shadow(0 0 0);
+  margin-left: 0;
+}
+
+.landing-page--list-posters .media-slot {
+  filter: drop-shadow(-10px 0 7px var(--color--primary-dark-90));
+  margin-left: -20px;
+}
+
+.landing-page--list-info {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 5px;
+}
+
+.landing-page--list-title {
+  --font: clamp(10px, 1.6rem, 16px) var(--font--graphik-bold);
+  color: var(--color--landing-page--list-title);
+  font: var(--font);
+  text-wrap: wrap;
+}
+
+.landing-page--list-username-and-ratings {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.landing-page--list-username {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+}
+
+.landing-page--list-username-avatar {
+  background: center / cover;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 28px;
+  width: 28px;
+}
+
+.landing-page--list-username h4 {
+  --font: clamp(10px, 1.3rem, 15px) var(--font--graphik-medium);
+  color: var(--color--landing-page--list-username);
+  cursor: pointer;
+  font: var(--font);
+}
+
+.landing-page--list-ratings {
+  align-items: center;
+  color: var(--color--landing-page--list-ratings);
+  display: flex;
+  gap: 5px;
+}
+
+.landing-page--list-ratings span {
+  --font: clamp(10px, 1.3rem, 15px) var(--font--graphik-regular);
+  align-items: center;
+  display: flex;
+  font: var(--font);
+  gap: 2px;
+}
+
+.landing-page--list-ratings span svg {
+  height: 19px;
+  width: 19px;
+}

@@ -225,12 +225,13 @@
 /* ---------------------------------------------------------------- */
 
 .popular-reviews--lists {
-  width: 100%;
   display: flex;
+  gap: 50px;
   justify-content: space-between;
+  width: 100%;
 }
 
-.popular-reviews .section-content, .popular-reviews--lists .lists {
+.popular-reviews .section-content, .popular-reviews--lists .lists .section-content {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -239,11 +240,11 @@
 }
 
 .popular-reviews--lists .popular-reviews {
-  width: 60%;
+  width: 100%;
 }
 
 .popular-reviews--lists .lists {
-  width: 35%;
+  width: fit-content;
 }
 
 @media (width <= 1380px) {

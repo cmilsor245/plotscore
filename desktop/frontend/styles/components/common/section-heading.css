@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
+  width: 100%;
 }
 
 .section-heading--upper {
@@ -50,7 +51,7 @@
   color: var(--color--general);
   cursor: pointer;
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
 }
 
 .section-heading--right-side--icon-and-text--icon {
@@ -69,7 +70,7 @@
 
 .section-heading--right-side--filters {
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   align-items: center;
   color: var(--color--general);
   gap: 5px;

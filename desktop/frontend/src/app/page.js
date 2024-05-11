@@ -16,6 +16,7 @@ import {
 
 import Divider from '/components/common/divider.js'
 import Footer from '/components/common/footer.js'
+import List from '/components/common/list.js'
 import {
   CircleFlagsEs,
   CircleFlagsUk,
@@ -169,7 +170,6 @@ export default function LandingPage() {
       reviewText: 'daisy ridley serving flower lesbian aesthetics for almost 2 hours straight? sign me up',
 
       commentCount: 0,
-
       likeCount: 95,
     },
     {
@@ -189,7 +189,6 @@ export default function LandingPage() {
       reviewText: 'where\'s the emotion',
 
       commentCount: 0,
-
       likeCount: 13,
     },
     {
@@ -209,7 +208,6 @@ export default function LandingPage() {
       reviewText: 'Been sitting on this one for a bit of time and I just can\'t come to terms with my feelings. I really want(ed) to like this given how highly rated it is among my mutuals and good friends. I found most of this to be really corny and predictable, which made for an experience devoid of any really tension and urgency. It fell miserably flat for me and none of the pieces came together to create something worthwhile. I rolled my eyes quite a bit and every time that booming techno score played I almost walked out of the theater. I just found a lot of this to be very annoying with really whiney characters and tennis sequences that made me cringe. This core throuple wasn\'t explored enough for me to care about their journey and where this film ends. As that final sequence was unfolding I could feel my skin crawl with secondhand embarrassment. Idk. I\'ll rewatch it eventually, but as it stands I really did not enjoy my time with this.',
 
       commentCount: 153,
-
       likeCount: 2000,
     },
     {
@@ -229,7 +227,6 @@ export default function LandingPage() {
       reviewText: 'En caliente estoy por decir que es mejor que las de la anterior trilogía.<br /><br />Also, Raka te quiero',
 
       commentCount: 3,
-
       likeCount: 17,
     },
     {
@@ -249,7 +246,6 @@ export default function LandingPage() {
       reviewText: 'If I had a nickle for every time disney brought back a previously cancelled show and made it great again, I\'d have 2 nickles, which isn\'t a lot but it\'s weird that it happened twice',
 
       commentCount: 4,
-
       likeCount: 28,
     },
     {
@@ -269,8 +265,93 @@ export default function LandingPage() {
       reviewText: 'peak fiction 🍷🗿',
 
       commentCount: 1,
-
       likeCount: 39,
+    }
+  ]
+
+  /* ----------------------------------------------------------- */
+
+  const popularListsSlotsData = [
+    {
+      title: 'Definitely there was love, oh but the circumstances',
+
+      avatarLowResImgSrc: '/img/landing-page/popular-lists/first/low-res-avatar.webp',
+      avatarHighResImgSrc: '/img/landing-page/popular-lists/first/high-res-avatar.webp',
+      username: 'Carolina Vicari',
+
+      posters: {
+        poster1LowResSrc: '/img/landing-page/popular-lists/first/1--low-res-poster.webp',
+        poster1HighResSrc: '/img/landing-page/popular-lists/first/1--high-res-poster.webp',
+
+        poster2LowResSrc: '/img/landing-page/popular-lists/first/2--low-res-poster.webp',
+        poster2HighResSrc: '/img/landing-page/popular-lists/first/2--high-res-poster.webp',
+
+        poster3LowResSrc: '/img/landing-page/popular-lists/first/3--low-res-poster.webp',
+        poster3HighResSrc: '/img/landing-page/popular-lists/first/3--high-res-poster.webp',
+
+        poster4LowResSrc: '/img/landing-page/popular-lists/first/4--low-res-poster.webp',
+        poster4HighResSrc: '/img/landing-page/popular-lists/first/4--high-res-poster.webp',
+
+        poster5LowResSrc: '/img/landing-page/popular-lists/first/5--low-res-poster.webp',
+        poster5HighResSrc: '/img/landing-page/popular-lists/first/5--high-res-poster.webp'
+      },
+
+      likeCount: 19000,
+      commentCount: 194
+    },
+    {
+      title: 'classic movies/series for beginners.',
+
+      avatarLowResImgSrc: '/img/landing-page/popular-lists/second/low-res-avatar.webp',
+      avatarHighResImgSrc: '/img/landing-page/popular-lists/second/high-res-avatar.webp',
+      username: 'alanis',
+
+      posters: {
+        poster1LowResSrc: '/img/landing-page/popular-lists/second/1--low-res-poster.webp',
+        poster1HighResSrc: '/img/landing-page/popular-lists/second/1--high-res-poster.webp',
+
+        poster2LowResSrc: '/img/landing-page/popular-lists/second/2--low-res-poster.webp',
+        poster2HighResSrc: '/img/landing-page/popular-lists/second/2--high-res-poster.webp',
+
+        poster3LowResSrc: '/img/landing-page/popular-lists/second/3--low-res-poster.webp',
+        poster3HighResSrc: '/img/landing-page/popular-lists/second/3--high-res-poster.webp',
+
+        poster4LowResSrc: '/img/landing-page/popular-lists/second/4--low-res-poster.webp',
+        poster4HighResSrc: '/img/landing-page/popular-lists/second/4--high-res-poster.webp',
+
+        poster5LowResSrc: '/img/landing-page/popular-lists/second/5--low-res-poster.webp',
+        poster5HighResSrc: '/img/landing-page/popular-lists/second/5--high-res-poster.webp'
+      },
+
+      likeCount: 66000,
+      commentCount: 153
+    },
+    {
+      title: 'Movies everyone should watch at least once during their lifetime',
+
+      avatarLowResImgSrc: '/img/landing-page/popular-lists/third/low-res-avatar.webp',
+      avatarHighResImgSrc: '/img/landing-page/popular-lists/third/high-res-avatar.webp',
+      username: 'fcbarcelona',
+
+      posters: {
+        poster1LowResSrc: '/img/landing-page/popular-lists/third/1--low-res-poster.webp',
+        poster1HighResSrc: '/img/landing-page/popular-lists/third/1--high-res-poster.webp',
+
+        poster2LowResSrc: '/img/landing-page/popular-lists/third/2--low-res-poster.webp',
+        poster2HighResSrc: '/img/landing-page/popular-lists/third/2--high-res-poster.webp',
+
+        poster3LowResSrc: '/img/landing-page/popular-lists/third/3--low-res-poster.webp',
+        poster3HighResSrc: '/img/landing-page/popular-lists/third/3--high-res-poster.webp',
+
+        poster4LowResSrc: '/img/landing-page/popular-lists/third/4--low-res-poster.webp',
+        poster4HighResSrc: '/img/landing-page/popular-lists/third/4--high-res-poster.webp',
+
+        poster5LowResSrc: '/img/landing-page/popular-lists/third/5--low-res-poster.webp',
+        poster5HighResSrc: '/img/landing-page/popular-lists/third/5--high-res-poster.webp'
+      },
+
+      likeCount: 101000,
+      commentCount: 482
     }
   ]
 
@@ -499,6 +580,8 @@ export default function LandingPage() {
                 <section className = 'section-content'>
                   { popularReviewsSlotsData.map((review, index) => [
                     <Review
+                      key = { index }
+
                       lang = { lang }
 
                       hasPoster
@@ -535,6 +618,44 @@ export default function LandingPage() {
                   hasRightSideSingleText = 'MORE'
                   hasDivider
                 />
+
+                <section className = 'section-content'>
+                  { popularListsSlotsData.map((list, index) => [
+                    <List
+                      key = { index }
+
+                      lang = { lang }
+
+                      isInLandingPage = { true }
+
+                      title = { list.title }
+
+                      avatarLowResImgSrc = { list.avatarLowResImgSrc }
+                      avatarHighResImgSrc = { list.avatarHighResImgSrc }
+                      username = { list.username }
+
+                      posters = { [
+                        list.posters.poster1LowResSrc,
+                        list.posters.poster1HighResSrc,
+
+                        list.posters.poster2LowResSrc,
+                        list.posters.poster2HighResSrc,
+
+                        list.posters.poster3LowResSrc,
+                        list.posters.poster3HighResSrc,
+
+                        list.posters.poster4LowResSrc,
+                        list.posters.poster4HighResSrc,
+
+                        list.posters.poster5LowResSrc,
+                        list.posters.poster5HighResSrc
+                      ] }
+
+                      likeCount = { list.likeCount }
+                      commentCount = { list.commentCount }
+                    />
+                  ]) }
+                </section>
               </article>
             </section>
           </main>

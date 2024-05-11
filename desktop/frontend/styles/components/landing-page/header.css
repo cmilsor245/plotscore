@@ -76,7 +76,7 @@ header * {
   display: flex;
   gap: 15px;
   height: fit-content;
-  justify-content: right;
+  justify-content: flex-end;
 }
 
 .nav--links {
@@ -111,7 +111,7 @@ header * {
 .nav--search-bar {
   align-items: center;
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   position: relative;
 }
 
@@ -200,7 +200,7 @@ header * {
 .nav--search-bar--mobile {
   align-items: center;
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   position: relative;
   transition: .2s;
   width: 280px;

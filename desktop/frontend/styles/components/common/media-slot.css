@@ -111,9 +111,9 @@
 }
 
 .media-slot--log-info--details--right-side {
-  align-items: bottom;
+  align-items: flex-end;
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
 }
 
 .media-slot--log-info--details--right-side--date {

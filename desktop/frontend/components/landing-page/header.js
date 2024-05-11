@@ -74,7 +74,7 @@ export default function Header({ lang, isInLandingPage }) {
         <ul className = 'nav--links'>
           {
             navItems.map(item => (
-              <NavTab key = { item.key} text = { translate(lang, 'LANDING_PAGE', 'NAV', item.text) } icon = { item.icon } />
+              <NavTab key = { item.key } text = { translate(lang, 'LANDING_PAGE', 'NAV', item.text) } icon = { item.icon } />
             ))
           }
         </ul>
