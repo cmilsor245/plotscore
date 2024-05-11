@@ -203,9 +203,7 @@ function HorizontalReviewType1({
           ) }
         </section>
 
-        <p className = 'horizontal-review--type-1--details--text'>
-          { reviewText }
-        </p>
+        <p className = 'review--without-poster--details--text' dangerouslySetInnerHTML = {{ __html: reviewText }}></p>
 
         <section className = 'horizontal-review--type-1--details--likes'>
           <IconHeartFilled />

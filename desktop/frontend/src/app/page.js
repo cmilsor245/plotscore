@@ -196,7 +196,7 @@ export default function LandingPage() {
       posterLowResImgSrc: '/img/landing-page/popular-reviews/3--low-res-poster.webp',
       posterHighResImgSrc: '/img/landing-page/popular-reviews/3--high-res-poster.webp',
 
-      mediaTitle: 'The Idea of You',
+      mediaTitle: 'Challengers',
       mediaYear: '2024',
 
       avatarLowResImgSrc: '/img/landing-page/popular-reviews/3--low-res-avatar.webp',
@@ -226,7 +226,7 @@ export default function LandingPage() {
 
       rating: 2,
 
-      reviewText: 'En caliente estoy por decir que es mejor que las de la anterior trilogía.\n\nAlso, Raka te quiero',
+      reviewText: 'En caliente estoy por decir que es mejor que las de la anterior trilogía.<br /><br />Also, Raka te quiero',
 
       commentCount: 3,
 
@@ -457,6 +457,8 @@ export default function LandingPage() {
                 </h3>
               </article>
 
+              {/* ------------------------------- */}
+
               <article className = 'encouraging-text--main--mobile'>
                 <h3>
                   { translate(lang, 'LANDING_PAGE', 'ENCOURAGING_TEXT', 'MAIN_TEXT__MOBILE__FIRST_LINE') }
@@ -468,6 +470,8 @@ export default function LandingPage() {
                   { translate(lang, 'LANDING_PAGE', 'ENCOURAGING_TEXT', 'MAIN_TEXT__MOBILE__THIRD_LINE') }
                 </h3>
               </article>
+
+              {/* ------------------------------- */}
 
               <article className = 'encouraging-text--secondary'>
                 <h5>
