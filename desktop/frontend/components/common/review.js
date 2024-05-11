@@ -203,6 +203,7 @@ function HorizontalReviewType1({
           ) }
         </section>
 
+        {/* TODO: change this way to render the review's text once the text comes from the api */}
         <p className = 'review--without-poster--details--text' dangerouslySetInnerHTML = {{ __html: reviewText }}></p>
 
         <section className = 'horizontal-review--type-1--details--likes'>
