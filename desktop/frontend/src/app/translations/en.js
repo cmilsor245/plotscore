@@ -86,6 +86,18 @@ const translationsES = {
       MORE: 'MORE',
 
       WATCHED_MEDIA_COUNT: 'media watched'
+    },
+    RECENT_STORIES: {
+      SECTION_TITLE: 'recent stories',
+      MORE: 'MORE'
+    }
+  },
+
+  /* -------------------------------------------------------------------------------------------------- */
+
+  LANDING_PAGE__HOME: {
+    RECENT_STORIES: {
+      READ_MORE: 'read story'
     }
   },
 

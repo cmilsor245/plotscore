@@ -33,6 +33,10 @@
   outline: 5px solid var(--color--list-outline);
 }
 
+.landing-page--list-posters * {
+  cursor: pointer;
+}
+
 .landing-page--list-posters .media-slot:first-of-type {
   filter: drop-shadow(0 0 0);
   margin-left: 0;

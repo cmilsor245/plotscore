@@ -270,6 +270,28 @@
   justify-content: flex-start;
 }
 
+/* ---------------------------------------------------------------- */
+
+.recent-stories {
+  width: 100%;
+}
+
+.recent-stories .section-content {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.recent-stories--column-1,
+.recent-stories--column-2,
+.recent-stories--column-3 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
 @media (width <= 1380px) {
   .usp--main-text {
     font-size: 3.4rem;

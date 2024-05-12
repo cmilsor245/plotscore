@@ -38,6 +38,10 @@
   transform: scale(.9);
 }
 
+.horizontal-review--type-1 .media-slot * {
+  cursor: pointer;
+}
+
 .review--without-poster--avatar {
   background: center / cover;
   border-radius: 50%;
