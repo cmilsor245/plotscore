@@ -1,0 +1,77 @@
+.dark-theme {
+  --color--recent-showdown--badge: var(--color--secondary-main);
+  --color--recent-showdown-news--text: var(--color--primary-light-60);
+  --color--recent-showdown-news--title: var(--color--primary-light-90);
+}
+
+.light-theme {
+  --color--recent-showdown--badge: var(--color--tertiary-main);
+  --color--recent-showdown-news--text: var(--color--primary-dark-40);
+  --color--recent-showdown-news--title: var(--color--primary-dark-60);
+}
+
+.recent--showdown-news {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.recent--showdown-news--backdrop {
+  background: center / cover;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 210px;
+  width: 100%;
+}
+
+.recent--showdown-news--details {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: flex-start;
+  padding-top: 10px;
+}
+
+.recent--showdown-news--details h2 {
+  --font: clamp(10px, 2rem, 22px) var(--font--graphik-semibold);
+  color: var(--color--recent-showdown-news--title);
+  font: var(--font);
+  cursor: pointer;
+}
+
+.recent--showdown-news--details h6 {
+  --font: clamp(8px, 1.3rem, 14px) var(--font--graphik-medium);
+  color: var(--color--recent-showdown-news--text);
+  font: var(--font);
+}
+
+.recent-showdown--in-progress {
+  position: relative;
+}
+
+.recent-showdown--in-progress::after {
+  --font: clamp(8px, 1.3rem, 14px) var(--font--graphik-medium);
+  color: var(--color--primary-light-90);
+  font: var(--font);
+  background-color: var(--color--recent-showdown--badge);
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  padding: 5px;
+  border-radius: 2px;
+  z-index: 3;
+  width: fit-content;
+  height: fit-content;
+}
+
+.recent-showdown--in-progress.english::after {
+  content: 'IN PROGRESS';
+}
+
+.recent-showdown--in-progress.spanish::after {
+  content: 'EN PROCESO';
+}

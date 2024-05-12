@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 
-import translate from '/src/app/translation.js'
-
 import '/styles/components/landing-page--home/recent--showdown-news.css'
 
 export default function RecentShowdownNews({
+  className,
+
   lang,
 
   backdropLowResImgSrc,
@@ -29,7 +29,13 @@ export default function RecentShowdownNews({
   }
 
   return (
-    <article className = 'recent--showdown-news'>
+    <article
+      className = {
+        `recent--showdown-news
+        ${ className }
+        ${ lang === 'en' ? 'english' : 'spanish' }`
+      }
+    >
       <div className = 'recent--showdown-news--backdrop' style = { backdropStyle }></div>
 
       <section className = 'recent--showdown-news--details'>

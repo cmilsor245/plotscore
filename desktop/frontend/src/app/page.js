@@ -25,7 +25,7 @@ import {
 import MediaSlot from '/components/common/media-slot.js'
 import Review from '/components/common/review.js'
 import SectionHeading from '/components/common/section-heading.js'
-import RecentShowdownNews from '/components/landing-page--home/recent-showdown.js'
+import RecentShowdownNews from '/components/landing-page--home/recent--showdown-news.js'
 import RecentStory from '/components/landing-page--home/recent-story.js'
 import Backdrop from '/components/landing-page--specific-media/backdrop.js'
 import {
@@ -42,7 +42,7 @@ import popularListsSlotsData from '/src/app/static-info/landing-page/popularList
 import popularReviewersSlotsData from '/src/app/static-info/landing-page/popularReviewersSlotsData.js'
 import popularReviewsSlotsData from '/src/app/static-info/landing-page/popularReviewsSlotsData.js'
 import recentShowdownsSlotsData from '/src/app/static-info/landing-page/recentShowdownsSlotsData.js'
-import recentNewsSlotsData from '/src/app/static-info/landing-page/recentShowdownsSlotsData.js'
+import recentNewsSlotsData from '/src/app/static-info/landing-page/recentNewsSlotsData.js'
 import recentStoriesSlotsData from '/src/app/static-info/landing-page/recentStoriesSlotsData.js'
 import translate from '/src/app/translation.js'
 
@@ -466,7 +466,7 @@ export default function LandingPage() {
               <section className = 'section-content'>
                 { recentShowdownsSlotsData.map((showdown, index) => (
                   <RecentShowdownNews
-                    className = { showdown.inProgress ? 'in-progress' : '' }
+                    className = { showdown.inProgress ? 'recent-showdown--in-progress' : '' }
 
                     key = { index }
 

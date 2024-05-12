@@ -356,6 +356,13 @@
   }
 }
 
+@media (width <= 1092px) {
+  .recent-showdowns .section-content,
+  .recent-news .section-content {
+    /* grid-template-columns: repeat(2, 1fr); */
+  }
+}
+
 @media (width <= 1086px) {
   .just-reviewed .section-content {
     gap: 10px;
