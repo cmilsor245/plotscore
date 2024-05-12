@@ -389,6 +389,10 @@
   .popular-reviews--lists-reviewers .reviewers {
     display: none;
   }
+
+  .recent-stories {
+    display: none;
+  }
 }
 
 @media (width <= 740px) {

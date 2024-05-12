@@ -122,3 +122,12 @@
     align-items: flex-start;
   }
 }
+
+@media (width <= 358px) {
+  .landing-page--list-posters {
+    height: calc(var(--media-slot--small--height) + 10px);
+    overflow-x: scroll;
+    scrollbar-width: none;
+    width: 100%;
+  }
+}
