@@ -8,8 +8,8 @@
 }
 
 .recent-story *::selection {
-  background-color: var(--color--selection-selected);
-  color: var(--color--selection-background);
+  background-color: var(--color--primary-light-90);
+  color: var(--color--primary-main);
 }
 
 .recent-story--backdrop {

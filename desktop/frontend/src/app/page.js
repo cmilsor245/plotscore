@@ -25,6 +25,7 @@ import {
 import MediaSlot from '/components/common/media-slot.js'
 import Review from '/components/common/review.js'
 import SectionHeading from '/components/common/section-heading.js'
+import RecentShowdownNews from '/components/landing-page--home/recent-showdown.js'
 import RecentStory from '/components/landing-page--home/recent-story.js'
 import Backdrop from '/components/landing-page--specific-media/backdrop.js'
 import {
@@ -40,6 +41,8 @@ import justReviewedSlotsImgsSrcs from '/src/app/static-info/landing-page/justRev
 import popularListsSlotsData from '/src/app/static-info/landing-page/popularListsSlotsData.js'
 import popularReviewersSlotsData from '/src/app/static-info/landing-page/popularReviewersSlotsData.js'
 import popularReviewsSlotsData from '/src/app/static-info/landing-page/popularReviewsSlotsData.js'
+import recentShowdownsSlotsData from '/src/app/static-info/landing-page/recentShowdownsSlotsData.js'
+import recentNewsSlotsData from '/src/app/static-info/landing-page/recentShowdownsSlotsData.js'
 import recentStoriesSlotsData from '/src/app/static-info/landing-page/recentStoriesSlotsData.js'
 import translate from '/src/app/translation.js'
 
@@ -446,11 +449,59 @@ export default function LandingPage() {
                 </section>
               </section>
             </section>
+
+            
+            {/* ---------------------------------------------------- */}
+
+            <section className = 'section-with--heading-and-content recent-showdowns'>
+              <SectionHeading
+                lang = { lang }
+                namespace = 'LANDING_PAGE'
+                section = 'RECENT_SHOWDOWNS'
+                title = 'SECTION_TITLE'
+                hasRightSideSingleText = 'MORE'
+                hasDivider
+              />
+
+              <section className = 'section-content'>
+                { recentShowdownsSlotsData.map((showdown, index) => (
+                  <RecentShowdownNews
+                    className = { showdown.inProgress ? 'in-progress' : '' }
+
+                    key = { index }
+
+                    lang = { lang }
+
+                    { ...showdown }
+                  />
+                )) }
+              </section>
+            </section>
+
+            {/* ---------------------------------------------------- */}
+
+            <section className = 'section-with--heading-and-content recent-news'>
+              <SectionHeading
+                lang = { lang }
+                namespace = 'LANDING_PAGE'
+                section = 'RECENT_NEWS'
+                title = 'SECTION_TITLE'
+                hasRightSideSingleText = 'MORE'
+                hasDivider
+              />
+
+              <section className = 'section-content'>
+                { recentNewsSlotsData.map((news, index) => (
+                  <RecentShowdownNews
+                    key = { index }
+
+                    { ...news }
+                  />
+                )) }
+              </section>
+            </section>
           </main>
         </section>
-
-        { /* -------------------------------------------- */ }
-
         <Footer lang = { lang } />
       </section>
     </>

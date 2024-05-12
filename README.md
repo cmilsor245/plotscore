@@ -4,6 +4,8 @@
 
 ## English
 
+I've created a permanent deployment using Vercel just so everyone can visit the actual production version of the **desktop version** of the **plotscore** project in any moment without having to turn on the AWS EC2 machine. :point_right: [Link](https://plotscore-desktop.vercel.app/)
+
 ### Table of contents
 
 1. [TODO list](#todo-list)
@@ -97,6 +99,8 @@ Click [here](https://github.com/cmilsor245/plotscore/tree/main/.aws/guides/engli
 ---
 
 ## Español
+
+He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualquier pueda visitar la versión de producción de la **versión desktop** de **plotscore** en cualquier momento sin necesidad de que la máquina de AWS EC2 esté encendida. :point_right: [Link](https://plotscore-desktop.vercel.app/)
 
 ### Índice
 

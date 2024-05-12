@@ -89,6 +89,14 @@ const translationsES = {
     RECENT_STORIES: {
       SECTION_TITLE: 'historias recientes',
       MORE: 'VER MÁS'
+    },
+    RECENT_SHOWDOWNS: {
+      SECTION_TITLE: 'enfrentamientos recientes',
+      MORE: 'VER MÁS'
+    },
+    RECENT_NEWS: {
+      SECTION_TITLE: 'noticias recientes',
+      MORE: 'VER MÁS'
     }
   },
 
