@@ -156,6 +156,10 @@
   transition: .04s;
 }
 
+.just-reviewed--slot .media-slot * {
+  cursor: pointer;
+}
+
 .just-reviewed--slot .media-slot:hover {
   border-radius: 3px;
   outline: 5px solid var(--color--media--outline);
@@ -224,14 +228,15 @@
 
 /* ---------------------------------------------------------------- */
 
-.popular-reviews--lists {
+.popular-reviews--lists-reviewers {
   display: flex;
   gap: 50px;
   justify-content: space-between;
   width: 100%;
 }
 
-.popular-reviews .section-content, .popular-reviews--lists .lists .section-content {
+.popular-reviews .section-content,
+.popular-reviews--lists-reviewers .lists .section-content {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -239,12 +244,30 @@
   justify-content: flex-start;
 }
 
-.popular-reviews--lists .popular-reviews {
+.popular-reviews--lists-reviewers .popular-reviews {
   width: 100%;
 }
 
-.popular-reviews--lists .lists {
+.popular--lists-reviewers {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.popular-reviews--lists-reviewers .lists {
   width: fit-content;
+}
+
+.popular-reviews--lists-reviewers .reviewers {
+  width: 100%;
+}
+
+.popular-reviews--lists-reviewers .reviewers .section-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
 }
 
 @media (width <= 1380px) {

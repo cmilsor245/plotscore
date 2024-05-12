@@ -33,6 +33,7 @@ import {
   MdiAppleLightTheme
 } from '/components/landing-page/also-available.js'
 import PlotscoreLetsYouCard from '/components/landing-page/plotscore-lets-you--card.js'
+import PopularReviewer from '/components/landing-page/popular-reviewer.js'
 import translate from '/src/app/translation.js'
 
 import '/styles/global.css'
@@ -222,7 +223,7 @@ export default function LandingPage() {
 
       username: 'Albert',
 
-      rating: 2,
+      rating: 3,
 
       reviewText: 'En caliente estoy por decir que es mejor que las de la anterior trilogía.<br /><br />Also, Raka te quiero',
 
@@ -352,6 +353,51 @@ export default function LandingPage() {
 
       likeCount: 101000,
       commentCount: 482
+    }
+  ]
+
+  /* ----------------------------------------------------------- */
+
+  const popularReviewersSlotsData = [
+    {
+      avatarLowResImgSrc: '/img/landing-page/popular-reviewers/1--low-res-avatar.webp',
+      avatarHighResImgSrc: '/img/landing-page/popular-reviewers/1--high-res-avatar.webp',
+      username: 'carley thorne',
+
+      watchedMediaCount: 139,
+      reviewCount: 102
+    },
+    {
+      avatarLowResImgSrc: '/img/landing-page/popular-reviewers/2--low-res-avatar.webp',
+      avatarHighResImgSrc: '/img/landing-page/popular-reviewers/2--high-res-avatar.webp',
+      username: 'Zoë Rose Bryant',
+
+      watchedMediaCount: 4846,
+      reviewCount: 2358
+    },
+    {
+      avatarLowResImgSrc: '/img/landing-page/popular-reviewers/3--low-res-avatar.webp',
+      avatarHighResImgSrc: '/img/landing-page/popular-reviewers/3--high-res-avatar.webp',
+      username: 'James (Schaffrillas)',
+
+      watchedMediaCount: 1028,
+      reviewCount: 904
+    },
+    {
+      avatarLowResImgSrc: '/img/landing-page/popular-reviewers/4--low-res-avatar.webp',
+      avatarHighResImgSrc: '/img/landing-page/popular-reviewers/4--high-res-avatar.webp',
+      username: 'tyler',
+
+      watchedMediaCount: 2714,
+      reviewCount: 193
+    },
+    {
+      avatarLowResImgSrc: '/img/landing-page/popular-reviewers/5--low-res-avatar.webp',
+      avatarHighResImgSrc: '/img/landing-page/popular-reviewers/5--high-res-avatar.webp',
+      username: 'Sydney🚀',
+
+      watchedMediaCount: 2109,
+      reviewCount: 671
     }
   ]
 
@@ -566,7 +612,7 @@ export default function LandingPage() {
 
             {/* ---------------------------------------------------- */}
 
-            <section className = 'popular-reviews--lists'>
+            <section className = 'popular-reviews--lists-reviewers'>
               <article className = 'section-with--heading-and-content popular-reviews'>
                 <SectionHeading
                   lang = { lang }
@@ -609,54 +655,87 @@ export default function LandingPage() {
                 </section>
               </article>
 
-              <article className = 'section-with--heading-and-content lists'>
-                <SectionHeading
-                  lang = { lang }
-                  namespace = 'LANDING_PAGE'
-                  section = 'POPULAR_LISTS'
-                  title = 'SECTION_TITLE'
-                  hasRightSideSingleText = 'MORE'
-                  hasDivider
-                />
+              <section className = 'popular--lists-reviewers'>
+                <article className = 'section-with--heading-and-content lists'>
+                  <SectionHeading
+                    lang = { lang }
+                    namespace = 'LANDING_PAGE'
+                    section = 'POPULAR_LISTS'
+                    title = 'SECTION_TITLE'
+                    hasRightSideSingleText = 'MORE'
+                    hasDivider
+                  />
 
-                <section className = 'section-content'>
-                  { popularListsSlotsData.map((list, index) => [
-                    <List
-                      key = { index }
+                  <section className = 'section-content'>
+                    { popularListsSlotsData.map((list, index) => [
+                      <List
+                        key = { index }
 
-                      lang = { lang }
+                        lang = { lang }
 
-                      isInLandingPage = { true }
+                        isInLandingPage = { true }
 
-                      title = { list.title }
+                        title = { list.title }
 
-                      avatarLowResImgSrc = { list.avatarLowResImgSrc }
-                      avatarHighResImgSrc = { list.avatarHighResImgSrc }
-                      username = { list.username }
+                        avatarLowResImgSrc = { list.avatarLowResImgSrc }
+                        avatarHighResImgSrc = { list.avatarHighResImgSrc }
+                        username = { list.username }
 
-                      posters = { [
-                        list.posters.poster1LowResSrc,
-                        list.posters.poster1HighResSrc,
+                        posters = { [
+                          list.posters.poster1LowResSrc,
+                          list.posters.poster1HighResSrc,
 
-                        list.posters.poster2LowResSrc,
-                        list.posters.poster2HighResSrc,
+                          list.posters.poster2LowResSrc,
+                          list.posters.poster2HighResSrc,
 
-                        list.posters.poster3LowResSrc,
-                        list.posters.poster3HighResSrc,
+                          list.posters.poster3LowResSrc,
+                          list.posters.poster3HighResSrc,
 
-                        list.posters.poster4LowResSrc,
-                        list.posters.poster4HighResSrc,
+                          list.posters.poster4LowResSrc,
+                          list.posters.poster4HighResSrc,
 
-                        list.posters.poster5LowResSrc,
-                        list.posters.poster5HighResSrc
-                      ] }
+                          list.posters.poster5LowResSrc,
+                          list.posters.poster5HighResSrc
+                        ] }
 
-                      likeCount = { list.likeCount }
-                      commentCount = { list.commentCount }
-                    />
-                  ]) }
-                </section>
-              </article>
+                        likeCount = { list.likeCount }
+                        commentCount = { list.commentCount }
+                      />
+                    ]) }
+                  </section>
+                </article>
+
+                {/* ------------------------ */}
+
+                <article className = 'section-with--heading-and-content reviewers'>
+                  <SectionHeading
+                    lang = { lang }
+                    namespace = 'LANDING_PAGE'
+                    section = 'POPULAR_REVIEWERS'
+                    title = 'SECTION_TITLE'
+                    hasRightSideSingleText = 'MORE'
+                    hasDivider
+                  />
+
+                  <section className = 'section-content'>
+                    { popularReviewersSlotsData.map((reviewer, index) => [
+                      <PopularReviewer
+                        key = { index }
+
+                        lang = { lang }
+
+                        avatarLowResImgSrc = { reviewer.avatarLowResImgSrc }
+                        avatarHighResImgSrc = { reviewer.avatarHighResImgSrc }
+                        username = { reviewer.username }
+
+                        watchedMediaCount = { reviewer.watchedMediaCount }
+                        reviewCount = { reviewer.reviewCount }
+                      />,
+                      index !== popularReviewersSlotsData.length - 1 && <Divider key = { `divider-${ index }` } />
+                    ]) }
+                  </section>
+                </article>
+              </section>
             </section>
           </main>
         </section>

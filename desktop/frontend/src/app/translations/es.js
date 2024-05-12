@@ -79,6 +79,12 @@ const translationsES = {
     POPULAR_LISTS: {
       SECTION_TITLE: 'listas populares',
       MORE: 'VER MÁS'
+    },
+    POPULAR_REVIEWERS: {
+      SECTION_TITLE: 'usuarios populares',
+      MORE: 'VER MÁS',
+
+      WATCHED_MEDIA_COUNT: 'contenidos vistos'
     }
   },
 
