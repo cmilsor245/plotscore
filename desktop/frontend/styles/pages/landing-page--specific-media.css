@@ -366,6 +366,16 @@
   }
 }
 
+@media (width <= 1112px) {
+  .recent-stories .section-content {
+    display: none;
+  }
+
+  .recent-stories .section-content--mobile {
+    display: flex;
+  }
+}
+
 @media (width <= 1092px) {
   .recent-showdowns .section-content,
   .recent-news .section-content {
@@ -421,14 +431,6 @@
 
   .popular-reviews--lists-reviewers .reviewers {
     display: none;
-  }
-
-  .recent-stories .section-content {
-    display: none;
-  }
-
-  .recent-stories .section-content--mobile {
-    display: flex;
   }
 }
 

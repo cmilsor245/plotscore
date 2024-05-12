@@ -99,7 +99,7 @@
   text-transform: uppercase;
 }
 
-@media (width <= 872px) {
+@media (width <= 1112px) {
   .recent-story {
     overflow: visible;
   }
