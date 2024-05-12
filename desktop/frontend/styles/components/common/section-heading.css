@@ -7,8 +7,8 @@
 }
 
 .section-heading {
-  --font--left-side: 1.3rem var(--font--graphik-regular);
-  --font--right-side: 1.2rem var(--font--graphik-light);
+  --font--left-side: clamp(10px, 1.3rem, 13px) var(--font--graphik-regular);
+  --font--right-side: clamp(8px, 1.2rem, 12px) var(--font--graphik-light);
   display: flex;
   flex-direction: column;
   gap: 2px;

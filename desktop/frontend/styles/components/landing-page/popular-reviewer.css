@@ -19,6 +19,7 @@
 .popular-reviewer--avatar {
   background: center / cover;
   border-radius: 50%;
+  cursor: pointer;
   height: 37px;
   width: 37px;
 }
@@ -34,6 +35,7 @@
 .popular-reviewer--username {
   --font: clamp(10px, 1.6rem, 20px) var(--font--graphik-semibold);
   color: var(--color--popular-reviewer--username);
+  cursor: pointer;
   font: var(--font);
 }
 

@@ -355,6 +355,20 @@
   }
 }
 
+@media (width <= 872px) {
+  .popular-reviews--lists-reviewers {
+    flex-direction: column;
+  }
+
+  .popular-reviews--lists-reviewers .lists {
+    width: 100%;
+  }
+
+  .popular-reviews--lists-reviewers .reviewers {
+    display: none;
+  }
+}
+
 @media (width <= 740px) {
   .usp--main-text {
     font-size: 2.8rem;

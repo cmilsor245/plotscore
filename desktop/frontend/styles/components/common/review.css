@@ -64,8 +64,9 @@
 }
 
 .horizontal-review--type-1--details--media-main-info {
-  align-items: center;
+  align-items: baseline;
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
   justify-content: flex-start;
 }
@@ -75,6 +76,7 @@
   color: var(--color--review--details--main-info--title);
   cursor: pointer;
   font: var(--font);
+  transition: .1s;
 }
 
 .horizontal-review--type-1--details--media-main-info h6 {
@@ -82,12 +84,14 @@
   color: var(--color--review--details--main-info--year);
   cursor: pointer;
   font: var(--font);
+  transition: .1s;
 }
 
 .review--without-poster--details--user-rating-and-comments,
 .horizontal-review--type-1--details--user-rating-and-comments {
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
   justify-content: flex-start;
 }
@@ -161,7 +165,7 @@
 }
 
 .horizontal-review--type-1--details--likes {
-  align-items: flex-end;
+  align-items: center;
   display: flex;
   gap: 2px;
   justify-content: flex-start;
@@ -190,4 +194,44 @@
 
 .review--without-poster--details--likes .count {
   font-family: var(--font--graphik-light);
+}
+
+@media (width <= 1248px) {
+  .horizontal-review--type-1 .media-slot:hover {
+    outline: none;
+  }
+}
+
+@media (width <= 1100px) {
+  .horizontal-review--type-1--details--media-main-info h5 {
+    font-size: clamp(10px, 2rem, 22px);
+  }
+
+  .horizontal-review--type-1--details--media-main-info h6 {
+    font-size: clamp(10px, 1.6rem, 20px);
+  }
+}
+
+@media (width <= 1000px) {
+  .horizontal-review--type-1--details--media-main-info h5 {
+    font-size: clamp(10px, 1.8rem, 20px);
+  }
+
+  .horizontal-review--type-1--details--media-main-info h6 {
+    font-size: clamp(10px, 1.4rem, 16px);
+  }
+}
+
+@media (width <= 690px) {
+  .horizontal-review--type-1--details--media-main-info h5 {
+    font-size: clamp(10px, 1.6rem, 18px);
+  }
+
+  .horizontal-review--type-1--details--media-main-info h6 {
+    font-size: clamp(10px, 1.2rem, 14px);
+  }
+
+  .horizontal-review--type-1--details--username {
+    font-size: clamp(10px, 1.2rem, 14px);
+  }
 }
