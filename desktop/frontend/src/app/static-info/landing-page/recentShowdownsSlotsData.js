@@ -15,7 +15,7 @@ const recentShowdownsSlotsData = [
 
     title: 'A Quiet Place',
 
-    text: 'Best films with limited dialogue'
+    text: 'Best content with limited dialogue'
   },
   {
     backdropLowResImgSrc: '/img/landing-page--home/recent-showdowns/3--low-res-backdrop.webp',
@@ -23,7 +23,7 @@ const recentShowdownsSlotsData = [
 
     title: 'Besties Besties Besties',
 
-    text: 'Best friendship-duo films'
+    text: 'Best friendship-duo media'
   }
 ]
 

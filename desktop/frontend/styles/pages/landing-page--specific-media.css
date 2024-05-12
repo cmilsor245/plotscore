@@ -292,6 +292,16 @@
   justify-content: flex-start;
 }
 
+.recent-stories .section-content--mobile {
+  display: none;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
 /* ---------------------------------------------------------------- */
 
 .recent-showdowns,
@@ -359,7 +369,9 @@
 @media (width <= 1092px) {
   .recent-showdowns .section-content,
   .recent-news .section-content {
-    /* grid-template-columns: repeat(2, 1fr); */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 }
 
@@ -411,8 +423,12 @@
     display: none;
   }
 
-  .recent-stories {
+  .recent-stories .section-content {
     display: none;
+  }
+
+  .recent-stories .section-content--mobile {
+    display: flex;
   }
 }
 

@@ -53,25 +53,27 @@ export default function RecentStory({
       <div className = 'recent-story--backdrop' style = { backdropStyle }></div>
 
       <section className = 'recent-story--details'>
-        <section className = 'source'>
-          <div className = 'source--avatar' style = { avatarStyle }></div>
+        <section>
+          <section className = 'source'>
+            <div className = 'source--avatar' style = { avatarStyle }></div>
 
-          <div className = 'source--name'>
-            <h2>
-              { source }
-            </h2>
-          </div>
-        </section>
+            <div className = 'source--name'>
+              <h2>
+                { source }
+              </h2>
+            </div>
+          </section>
 
-        <section className = 'title'>
-          <h3>
-            { title }
-          </h3>
-        </section>
+          <section className = 'title'>
+            <h3>
+              { title }
+            </h3>
+          </section>
 
-        <section className = 'text'>
-          {/* TODO: change this way to render the story's text once the text comes from the api */}
-          <p dangerouslySetInnerHTML = {{ __html: text }}></p>
+          <section className = 'text'>
+            {/* TODO: change this way to render the story's text once the text comes from the api */}
+            <p dangerouslySetInnerHTML = {{ __html: text }}></p>
+          </section>
         </section>
 
         <span>

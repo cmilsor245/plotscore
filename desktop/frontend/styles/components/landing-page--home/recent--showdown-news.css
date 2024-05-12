@@ -75,3 +75,10 @@
 .recent-showdown--in-progress.spanish::after {
   content: 'EN PROCESO';
 }
+
+@media (width <= 1840px) {
+  .recent--showdown-news--backdrop {
+    aspect-ratio: 16 / 9;
+    height: 100%;
+  }
+}

@@ -448,6 +448,20 @@ export default function LandingPage() {
                   )) }
                 </section>
               </section>
+
+              {/* ------------------------------------- */}
+
+              <section className = 'section-content--mobile'>
+                { recentStoriesSlotsData.map((story, index) => (
+                  <RecentStory
+                    key = { index }
+
+                    lang = { lang }
+
+                    {...story }
+                  />
+                )) }
+              </section>
             </section>
 
             
