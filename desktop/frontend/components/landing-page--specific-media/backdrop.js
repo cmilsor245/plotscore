@@ -11,7 +11,10 @@ export default function Backdrop({
 
   hasHeader,
   isInLandingPage,
-  lang
+  lang,
+
+  handleShowLoginForm,
+  handleShowSignUpForm
 }) {
   const [imageLoaded, setImageLoaded] = useState(false)
 
@@ -29,7 +32,14 @@ export default function Backdrop({
 
   return (
     <div className = 'backdrop--wrapper' style = { backdropStyle }>
-      { hasHeader && <Header lang = { lang } isInLandingPage = { isInLandingPage } /> }
+      { hasHeader &&
+        <Header
+          lang = { lang }
+          isInLandingPage = { isInLandingPage }
+          handleShowLoginForm = { handleShowLoginForm }
+          handleShowSignUpForm = { handleShowSignUpForm }
+        />
+      }
 
       <Link className = 'backdrop--media-title' href = '/'>Star Wars (1977)</Link>
     </div>

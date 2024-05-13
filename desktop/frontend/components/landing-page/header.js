@@ -24,36 +24,45 @@ const navItems = [
   {
     key: 'SIGN_IN',
     text: 'SIGN_IN',
-    icon: IconUserFilled
+    icon: IconUserFilled,
+
+    interactive: true,
   },
   {
     key: 'CREATE_ACCOUNT',
     text: 'CREATE_ACCOUNT',
-    icon: IconUserPlus
+    icon: IconUserPlus,
+
+    interactive: true,
   },
   {
     key: 'MEDIA',
     text: 'MEDIA',
-    icon: IconMovie
+    icon: IconMovie,
   },
   {
     key: 'LISTS',
     text: 'LISTS',
-    icon: IconList
+    icon: IconList,
   },
   {
     key: 'MEMBERS',
     text: 'MEMBERS',
-    icon: IconUsersGroup
+    icon: IconUsersGroup,
   },
   {
     key: 'JOURNAL',
     text: 'JOURNAL',
-    icon: IconNotes
+    icon: IconNotes,
   }
 ]
 
-export default function Header({ lang, isInLandingPage }) {
+export default function Header({
+  lang,
+  isInLandingPage,
+  handleShowLoginForm,
+  handleShowSignUpForm
+}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -64,7 +73,13 @@ export default function Header({ lang, isInLandingPage }) {
     <header>
       <section>
         <Link className = 'header--logo' href = '/'>
-          <Image className = 'header--logo-image' src = '/logo/logo.png' alt = 'plotscore logo' width = { 100 } height = { 100 } />
+          <Image
+            className = 'header--logo-image'
+            src = '/logo/logo.png'
+            alt = 'plotscore logo'
+            width = { 100 }
+            height = { 100 }
+          />
           <h1 className = 'header--logo-text'>plotscore</h1>
         </Link>
       </section>
@@ -73,7 +88,18 @@ export default function Header({ lang, isInLandingPage }) {
         <ul className = 'nav--links'>
           {
             navItems.map(item => (
-              <NavTab key = { item.key } text = { translate(lang, 'LANDING_PAGE', 'NAV', item.text) } />
+              <NavTab
+              key = { item.key }
+              text = { translate(lang, 'LANDING_PAGE', 'NAV', item.text) }
+              interactive = { item.interactive }
+              onClick = { 
+                item.text === 'SIGN_IN'
+                  ? handleShowLoginForm
+                  : item.text === 'CREATE_ACCOUNT'
+                  ? handleShowSignUpForm
+                  : null
+              }
+            />
             ))
           }
         </ul>
@@ -119,6 +145,14 @@ export default function Header({ lang, isInLandingPage }) {
                     text = { translate(lang, 'LANDING_PAGE', 'NAV', item.text) }
                     icon = { item.icon }
                     isMobile
+                    interactive = { item.interactive }
+                    onClick = { 
+                      item.text === 'SIGN_IN'
+                        ? handleShowLoginForm
+                        : item.text === 'CREATE_ACCOUNT'
+                        ? handleShowSignUpForm
+                        : null
+                    }
                   />
                 ))
               }
@@ -129,14 +163,16 @@ export default function Header({ lang, isInLandingPage }) {
                 <SideMenuButton
                   type = { 'login' }
                   text = { translate(lang, 'LANDING_PAGE', 'NAV_MOBILE', 'LOGIN_BUTTON') }
+                  onClick = { handleShowLoginForm }
                 />
                 <SideMenuButton
                   type = { 'signup' }
                   text = { translate(lang, 'LANDING_PAGE', 'NAV_MOBILE', 'CREATE_ACCOUNT_BUTTON') }
+                  onClick = { handleShowSignUpForm }
                 />
               </div>
 
-              <IconChevronsRight className = 'nav--links--search-bar--mobile--additional--close-button'  onClick = { toggleMenu } />
+              <IconChevronsRight className = 'nav--links--search-bar--mobile--additional--close-button' onClick = { toggleMenu } />
             </div>
           </nav>
 

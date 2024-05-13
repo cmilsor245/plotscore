@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default function HeaderSideMenuButton({ type, text }) {
+export default function HeaderSideMenuButton({ type, text, onClick }) {
   let conditionalClassName = 'login'
 
   if (type === 'signup') {
@@ -8,7 +8,10 @@ export default function HeaderSideMenuButton({ type, text }) {
   }
 
   return (
-    <div className = { `nav--links--search-bar--mobile--additional--button ${ conditionalClassName }` }>
+    <div
+      className = { `nav--links--search-bar--mobile--additional--button ${ conditionalClassName }` }
+      onClick = { onClick }
+    >
       <Link href = '/'>{ text }</Link>
     </div>
   )

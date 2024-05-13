@@ -1,6 +1,13 @@
 import Link from 'next/link'
 
-export default function NavTab({ text, isMobile, icon: Icon }) {
+export default function NavTab({
+  text,
+  isMobile,
+  icon: Icon,
+
+  interactive,
+  onClick
+}) {
   let conditionalClass = 'nav--link'
 
   if (isMobile) {
@@ -8,7 +15,10 @@ export default function NavTab({ text, isMobile, icon: Icon }) {
   }
 
   return (
-    <li className = { conditionalClass }>
+    <li
+      className = { conditionalClass }
+      onClick = { interactive ? onClick : null }
+    >
       <Link href = '/'>
         { text }
         { isMobile && <Icon className = 'nav--link--mobile--icon' /> }

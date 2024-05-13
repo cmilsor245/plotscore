@@ -82,6 +82,37 @@ export default function LandingPage() {
 
   /* ------------------------------ */
 
+  const handleShowLoginForm = () => {
+    document.querySelector('.account-form.login').classList.remove('hidden')
+    
+    document.querySelector('.account-form--overlay').classList.remove('hidden')
+
+    document.querySelector('.nav--links--search-bar--mobile').classList.remove('open')
+
+    // TODO: fix this line - it obligates the user to click the menu opening button twice after opening the form once
+    document.querySelector('.nav--links--search-bar--mobile--overlay').classList.toggle('hidden')
+  }
+
+  const handleShowSignUpForm = () => {
+    document.querySelector('.account-form.signup').classList.remove('hidden')
+
+    document.querySelector('.account-form--overlay').classList.remove('hidden')
+
+    document.querySelector('.nav--links--search-bar--mobile').classList.remove('open')
+
+    // TODO: fix this line - it obligates the user to click the menu opening button twice after opening the form once
+    document.querySelector('.nav--links--search-bar--mobile--overlay').classList.add('hidden')
+  }
+
+  const handleHideAccountForm = () => {
+    document.querySelector('.account-form.login').classList.add('hidden')
+
+    document.querySelector('.account-form.signup').classList.add('hidden')
+
+    document.querySelector('.account-form--overlay').classList.add('hidden')
+
+  }
+
   return (
     <>
       <div className = 'main-actions-buttons'>
@@ -109,7 +140,10 @@ export default function LandingPage() {
         type = 'login'
       />
 
-      <div className = 'account-form--overlay hidden'></div>
+      <div
+        className = 'account-form--overlay hidden'
+        onClick = { handleHideAccountForm }
+      ></div>
 
       {/* -------------------------------------------------------------------------------------------------- */}
 
@@ -121,6 +155,9 @@ export default function LandingPage() {
             hasHeader
             isInLandingPage
             lang = { lang }
+
+            handleShowLoginForm = { handleShowLoginForm }
+            handleShowSignUpForm = { handleShowSignUpForm }
           />
 
           <main>
@@ -143,7 +180,7 @@ export default function LandingPage() {
                 </span>
               </h2>
 
-              <button className = 'usp--get-started-button'>
+              <button className = 'usp--get-started-button' onClick = { handleShowSignUpForm }>
                 { translate(lang, 'LANDING_PAGE', 'USP', 'GET_STARTED_BUTTON') }
               </button>
 
