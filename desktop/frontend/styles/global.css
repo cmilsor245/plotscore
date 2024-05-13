@@ -510,7 +510,7 @@ main {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .common--content-footer {

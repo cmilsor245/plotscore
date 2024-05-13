@@ -19,7 +19,6 @@ import SideMenuButton from '/components/landing-page/header--side-menu--button.j
 import translate from '/src/app/translation.js'
 
 import '/styles/components/landing-page/header.css'
-import '/styles/global.css'
 
 const navItems = [
   {
@@ -74,7 +73,7 @@ export default function Header({ lang, isInLandingPage }) {
         <ul className = 'nav--links'>
           {
             navItems.map(item => (
-              <NavTab key = { item.key } text = { translate(lang, 'LANDING_PAGE', 'NAV', item.text) } icon = { item.icon } />
+              <NavTab key = { item.key } text = { translate(lang, 'LANDING_PAGE', 'NAV', item.text) } />
             ))
           }
         </ul>

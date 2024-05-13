@@ -19,6 +19,17 @@ const translationsES = {
 
   /* -------------------------------------------------------------------------------------------------- */
   LANDING_PAGE: {
+    ACCOUNT_FORM: {
+      SIGN_UP_TITLE: 'Crea una cuenta nueva en <span>plotscore</span>',
+      LOG_IN_TITLE: 'Inicia sesión en <span>plotscore</span>',
+
+      EMAIL: 'Correo electrónico',
+      USERNAME: 'Usuario',
+      PASSWORD: 'Contraseña',
+
+      SIGN_UP_BUTTON: 'crear cuenta',
+      LOG_IN_BUTTON: 'iniciar sesión'
+    },
     NAV: {
       SIGN_IN: 'iniciar sesión',
       CREATE_ACCOUNT: 'crear cuenta',
@@ -47,13 +58,13 @@ const translationsES = {
     PLOTSCORE_LETS_YOU: {
       SECTION_TITLE: 'plotscore te permite...',
 
-      COLUMN_1_CARD_1: 'Registrar todo el contenido que hayas visto (o empieza desde el dís de registro)',
+      COLUMN_1_CARD_1: 'Registrar todo el contenido que hayas visto (o empieza desde el día de registro)',
       COLUMN_1_CARD_2: 'Puntuar basándote en una escala de cinco estrellas (y media) para registrar y compartir tu reacción',
 
       COLUMN_2_CARD_1: 'Mostrar tu amor por tus contenidos favoritos, listas y reviews con un "like"',
-      COLUMN_2_CARD_2: 'Mantener un diario de tus visionados (y conviértete en Pro para obtener estadísticas completas)',
+      COLUMN_2_CARD_2: 'Mantener un diario de tus visionados (conviértete en Pro para obtener estadísticas completas)',
 
-      COLUMN_3_CARD_1: 'Escribir y compartir tus reviews, además de seguir a tus amigos y otros miembros para ver las suyas',
+      COLUMN_3_CARD_1: 'Escribir y compartir tus reviews, además de seguir a tus amig@s y otros miembros para ver las suyas',
       COLUMN_3_CARD_2: 'Crear y compartir listas de contenidos de cualquier género y añadir otros a Ver más tarde'
     },
     JUST_REVIEWED: {

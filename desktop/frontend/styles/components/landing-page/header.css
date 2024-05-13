@@ -9,7 +9,7 @@
   --color--mobile-search-bar--input-contrast--hover-focus: var(--color--primary--dark-90);
   --color--mobile-search-bar--input-contrast: var(--color--primary-light-40);
   --color--mobile-search-bar--list-item: var(--color--primary-light-80);
-  --color--nav-links--search-bar--mobile--overlay: rgba(20, 25, 31, 0.5);
+  --color--nav-links--search-bar--mobile--overlay: rgba(20, 25, 31, .5);
   --color--side-menu--bg: var(--color--primary-dark-70);
 }
 
@@ -24,7 +24,7 @@
   --color--mobile-search-bar--input-contrast--hover-focus: var(--color--primary--light-90);
   --color--mobile-search-bar--input-contrast: var(--color--primary-dark-40);
   --color--mobile-search-bar--list-item: var(--color--primary-dark-70);
-  --color--nav-links--search-bar--mobile--overlay: rgba(218, 221, 224, 0.5);
+  --color--nav-links--search-bar--mobile--overlay: rgba(218, 221, 224, .5);
   --color--side-menu--bg: var(--color--primary-light-80);
 }
 

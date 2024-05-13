@@ -28,6 +28,7 @@ import SectionHeading from '/components/common/section-heading.js'
 import RecentShowdownNews from '/components/landing-page--home/recent--showdown-news.js'
 import RecentStory from '/components/landing-page--home/recent-story.js'
 import Backdrop from '/components/landing-page--specific-media/backdrop.js'
+import AccountForm from '/components/landing-page/account-form.js'
 import {
   MaterialSymbolsAndroidDarkTheme,
   MaterialSymbolsAndroidLightTheme,
@@ -41,8 +42,8 @@ import justReviewedSlotsImgsSrcs from '/src/app/static-info/landing-page/justRev
 import popularListsSlotsData from '/src/app/static-info/landing-page/popularListsSlotsData.js'
 import popularReviewersSlotsData from '/src/app/static-info/landing-page/popularReviewersSlotsData.js'
 import popularReviewsSlotsData from '/src/app/static-info/landing-page/popularReviewsSlotsData.js'
-import recentShowdownsSlotsData from '/src/app/static-info/landing-page/recentShowdownsSlotsData.js'
 import recentNewsSlotsData from '/src/app/static-info/landing-page/recentNewsSlotsData.js'
+import recentShowdownsSlotsData from '/src/app/static-info/landing-page/recentShowdownsSlotsData.js'
 import recentStoriesSlotsData from '/src/app/static-info/landing-page/recentStoriesSlotsData.js'
 import translate from '/src/app/translation.js'
 
@@ -79,6 +80,8 @@ export default function LandingPage() {
     cookie.set('theme', newTheme, { expires: 365 })
   }
 
+  /* ------------------------------ */
+
   return (
     <>
       <div className = 'main-actions-buttons'>
@@ -91,6 +94,24 @@ export default function LandingPage() {
           handleClick = { handleThemeChange }
         />
       </div>
+
+      {/* -------------------------------------------------------------------------------------------------- */}
+
+      <AccountForm
+        lang = { lang }
+
+        type = 'signup'
+      />
+
+      <AccountForm
+        lang = { lang }
+
+        type = 'login'
+      />
+
+      <div className = 'account-form--overlay hidden'></div>
+
+      {/* -------------------------------------------------------------------------------------------------- */}
 
       <section className = 'common--content-footer'>
         <section className = 'common--content-footer--content'>
@@ -179,42 +200,27 @@ export default function LandingPage() {
               />
 
               <section className = 'section-content'>
-                <article className = 'plotscore-lets-you--column'>
-                  <PlotscoreLetsYouCard
-                    column = { 1 }
-                    icon = { IconEye }
-                    text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_1_CARD_1') }
-                  />
-                  <PlotscoreLetsYouCard
-                    column = { 1 }
-                    icon = { IconStarFilled }
-                    text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_1_CARD_2') }
-                  />
-                </article>
-                <article className = 'plotscore-lets-you--column'>
-                  <PlotscoreLetsYouCard
-                    column = { 2 }
-                    icon = { IconHeartFilled }
-                    text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_2_CARD_1') }
-                  />
-                  <PlotscoreLetsYouCard
-                    column = { 2 }
-                    icon = { IconCalendarMonth }
-                    text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_2_CARD_2') }
-                  />
-                </article>
-                <article className = 'plotscore-lets-you--column'>
-                  <PlotscoreLetsYouCard
-                    column = { 3 }
-                    icon = { IconAlignLeft }
-                    text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_3_CARD_1') }
-                  />
-                  <PlotscoreLetsYouCard
-                    column = { 3 }
-                    icon = { IconLayoutGridFilled }
-                    text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', 'COLUMN_3_CARD_2') }
-                  />
-                </article>
+                {[1, 2, 3].map(column => (
+                  <article key = { `column-${ column }` } className = 'plotscore-lets-you--column'>
+                    { [
+                      { icon: IconEye, textKey: 'COLUMN_1_CARD_1' },
+                      { icon: IconStarFilled, textKey: 'COLUMN_1_CARD_2' },
+                      { icon: IconHeartFilled, textKey: 'COLUMN_2_CARD_1' },
+                      { icon: IconCalendarMonth, textKey: 'COLUMN_2_CARD_2' },
+                      { icon: IconAlignLeft, textKey: 'COLUMN_3_CARD_1' },
+                      { icon: IconLayoutGridFilled, textKey: 'COLUMN_3_CARD_2' }
+                    ].map((card, index) => (
+                      column === Math.ceil((index + 1) / 2) && (
+                        <PlotscoreLetsYouCard
+                          key = { `card-${column}-${index}` }
+                          column = { column }
+                          icon = { card.icon }
+                          text = { translate(lang, 'LANDING_PAGE', 'PLOTSCORE_LETS_YOU', card.textKey) }
+                        />
+                      )
+                    )) }
+                  </article>
+                )) }
               </section>
             </section>
 

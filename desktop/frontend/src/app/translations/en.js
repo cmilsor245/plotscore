@@ -20,6 +20,17 @@ const translationsES = {
   /* -------------------------------------------------------------------------------------------------- */
 
   LANDING_PAGE: {
+    ACCOUNT_FORM: {
+      SIGN_UP_TITLE: 'Create a new <span>plotscore</span> account',
+      LOG_IN_TITLE: 'Log in to <span>plotscore</span>',
+
+      EMAIL: 'Email address',
+      USERNAME: 'Username',
+      PASSWORD: 'Password',
+
+      SIGN_UP_BUTTON: 'create account',
+      LOG_IN_BUTTON: 'log in'
+    },
     NAV: {
       SIGN_IN: 'sign in',
       CREATE_ACCOUNT: 'create account',
