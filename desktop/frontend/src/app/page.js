@@ -91,10 +91,6 @@ export default function LandingPage() {
 
     const accountFormOverlay = document.querySelector('.account-form--overlay')
     if (accountFormOverlay) accountFormOverlay.classList.remove('hidden')
-
-    // TODO: fix this line - it obligates the user to click the menu opening button twice after opening the form once
-    const navMobileOverlay = document.querySelector('.nav--links--search-bar--mobile--overlay')
-    if (navMobileOverlay) navMobileOverlay.classList.add('hidden')
   }
 
   const handleShowSignUpForm = () => {
@@ -106,18 +102,17 @@ export default function LandingPage() {
 
     const accountFormOverlay = document.querySelector('.account-form--overlay')
     if (accountFormOverlay) accountFormOverlay.classList.remove('hidden')
-
-    // TODO: fix this line - it obligates the user to click the menu opening button twice after opening the form once
-    const navMobileOverlay = document.querySelector('.nav--links--search-bar--mobile--overlay')
-    if (navMobileOverlay) navMobileOverlay.classList.add('hidden')
   }
 
   const handleHideAccountForm = () => {
-    document.querySelector('.account-form.login').classList.add('hidden')
+    const accountLoginForm = document.querySelector('.account-form.login')
+    if (accountLoginForm) accountLoginForm.classList.add('hidden')
 
-    document.querySelector('.account-form.signup').classList.add('hidden')
+    const accountSignupForm = document.querySelector('.account-form.signup')
+    if (accountSignupForm) accountSignupForm.classList.add('hidden')
 
-    document.querySelector('.account-form--overlay').classList.add('hidden')
+    const accountFormOverlay = document.querySelector('.account-form--overlay')
+    if (accountFormOverlay) accountFormOverlay.classList.add('hidden')
   }
 
   return (
