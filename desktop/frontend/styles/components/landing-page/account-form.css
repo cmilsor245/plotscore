@@ -22,12 +22,30 @@
   position: fixed;
   top: 50%;
   transform: translate(-50%, -50%);
+  transition: .2s;
+  width: fit-content;
   z-index: 9;
 }
 
 .account-form *::selection {
   background-color: var(--color--primary-light-90);
   color: var(--color--primary-main);
+}
+
+.account-form--close-button {
+  background-color: var(--color--secondary-main);
+  border-radius: 2px;
+  color: var(--color--primary-dark-90);
+  cursor: pointer;
+  padding-inline: 7px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: fit-content;
+}
+
+.account-form--close-button * {
+  cursor: pointer;
 }
 
 .signup-form, .login-form {
@@ -125,4 +143,40 @@
   top: 0;
   width: 100vw;
   z-index: 8;
+}
+
+@media (width <= 1184px) {
+  .account-form--title {
+    font-size: clamp(10px, 2.5rem, 26px);
+  }
+}
+
+@media (width <= 1006px) {
+  .account-form {
+    width: 70%;
+  }
+}
+
+@media (width <= 726px) {
+  .account-form {
+    width: 90%;
+  }
+}
+
+@media (width <= 548px) {
+  .account-form--title {
+    font-size: clamp(10px, 2rem, 20px);
+  }
+
+  .account-form--title span {
+    font-size: clamp(10px, 2.6rem, 26px);
+  }
+
+  .account-form--group label {
+    font-size: clamp(9px, 1.2rem, 15px);
+  }
+
+  .account-form--submit {
+    font-size: clamp(9px, 1.2rem, 15px);
+  }
 }

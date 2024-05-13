@@ -90,7 +90,7 @@ export default function LandingPage() {
     document.querySelector('.nav--links--search-bar--mobile').classList.remove('open')
 
     // TODO: fix this line - it obligates the user to click the menu opening button twice after opening the form once
-    document.querySelector('.nav--links--search-bar--mobile--overlay').classList.toggle('hidden')
+    document.querySelector('.nav--links--search-bar--mobile--overlay').classList.add('hidden')
   }
 
   const handleShowSignUpForm = () => {
@@ -110,7 +110,6 @@ export default function LandingPage() {
     document.querySelector('.account-form.signup').classList.add('hidden')
 
     document.querySelector('.account-form--overlay').classList.add('hidden')
-
   }
 
   return (

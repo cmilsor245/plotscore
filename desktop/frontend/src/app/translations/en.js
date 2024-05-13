@@ -27,6 +27,7 @@ const translationsES = {
       EMAIL: 'Email address',
       USERNAME: 'Username',
       PASSWORD: 'Password',
+      PASSWORD_PLACEHOLDER: '8 characters minimum',
 
       SIGN_UP_BUTTON: 'create account',
       LOG_IN_BUTTON: 'log in'

@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+
+import { IconX } from '@tabler/icons-react'
 
 import FormLabelInput from '/components/common/form--label-input.js'
 import translate from '/src/app/translation.js'
@@ -15,6 +17,16 @@ function CharacterCounter({ value, maxLength }) {
 }
 
 function SignUpForm({ lang }) {
+  const handleHideAccountForm = () => {
+    document.querySelector('.account-form.login').classList.add('hidden')
+
+    document.querySelector('.account-form.signup').classList.add('hidden')
+
+    document.querySelector('.account-form--overlay').classList.add('hidden')
+  }
+
+  /* ---------------------- */
+
   const [email, setEmail] = useState('')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -36,6 +48,10 @@ function SignUpForm({ lang }) {
 
   return (
     <div className = 'account-form signup hidden'>
+      <div className = 'account-form--close-button' onClick = { handleHideAccountForm }>
+        <IconX />
+      </div>
+
       <h2
         className = 'account-form--title'
         dangerouslySetInnerHTML = {{
@@ -52,7 +68,7 @@ function SignUpForm({ lang }) {
             maxLength = { signUpEmailMaxLength }
 
             name = 'account-form--email-address'
-            id = 'account-form--email-address'
+            id = 'account-form--signup--email-address'
 
             onChange = { handleEmailChange }
             onFocus = { e => e.target.select() }
@@ -60,6 +76,7 @@ function SignUpForm({ lang }) {
             required
             type = 'email'
             value = { email }
+            placeholder = 'example@example.com'
           />
           <CharacterCounter value = { email } maxLength = { signUpEmailMaxLength } />
         </div>
@@ -72,13 +89,14 @@ function SignUpForm({ lang }) {
             maxLength = { signUpUsernameMaxLength }
 
             name = 'account-form--username'
-            id = 'account-form--username'
+            id = 'account-form--signup--username'
 
             onChange = { handleUsernameChange }
             onFocus = { e => e.target.select() }
             required
             type = 'text'
             value = { username }
+            placeholder = 'username13'
           />
           <CharacterCounter value = { username } maxLength = { signUpUsernameMaxLength } />
         </div>
@@ -91,13 +109,14 @@ function SignUpForm({ lang }) {
             maxLength = { signUpPasswordMaxLength }
 
             name = 'account-form--password'
-            id = 'account-form--password'
+            id = 'account-form--signup--password'
 
             onChange = { handlePasswordChange }
             onFocus = { e => e.target.select() }
             required
             type = 'password'
             value = { password }
+            placeholder = { translate(lang, 'LANDING_PAGE', 'ACCOUNT_FORM', 'PASSWORD_PLACEHOLDER') }
           />
           <CharacterCounter value = { password } maxLength = { signUpPasswordMaxLength } />
         </div>
@@ -113,6 +132,16 @@ function SignUpForm({ lang }) {
 }
 
 function LoginForm({ lang }) {
+  const handleHideAccountForm = () => {
+    document.querySelector('.account-form.login').classList.add('hidden')
+
+    document.querySelector('.account-form.signup').classList.add('hidden')
+
+    document.querySelector('.account-form--overlay').classList.add('hidden')
+  }
+
+  /* ---------------------- */
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -129,6 +158,10 @@ function LoginForm({ lang }) {
 
   return (
     <div className = 'account-form login hidden'>
+      <div className = 'account-form--close-button' onClick = { handleHideAccountForm }>
+        <IconX />
+      </div>
+
       <h2
         className = 'account-form--title'
         dangerouslySetInnerHTML = {{
@@ -145,7 +178,7 @@ function LoginForm({ lang }) {
             maxLength = { loginEmailMaxLength }
 
             name = 'account-form--email-address'
-            id = 'account-form--email-address'
+            id = 'account-form--login--email-address'
 
             onChange = { handleEmailChange }
             onFocus = { e => e.target.select() }
@@ -164,7 +197,7 @@ function LoginForm({ lang }) {
             maxLength = { loginPasswordMaxLength }
 
             name = 'account-form--password'
-            id = 'account-form--password'
+            id = 'account-form--login--password'
 
             onChange = { handlePasswordChange }
             onFocus = { e => e.target.select() }
@@ -194,8 +227,6 @@ export default function AccountForm({ lang, type }) {
     case 'login':
       conditionalForm = <LoginForm lang = { lang } />
       break
-    default:
-      conditionalForm = null
   }
 
   return <>{ conditionalForm }</>
