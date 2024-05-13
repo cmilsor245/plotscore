@@ -18,11 +18,14 @@ function CharacterCounter({ value, maxLength }) {
 
 function SignUpForm({ lang }) {
   const handleHideAccountForm = () => {
-    document.querySelector('.account-form.login').classList.add('hidden')
+    const accountLoginForm = document.querySelector('.account-form.login')
+    if (accountLoginForm) accountLoginForm.classList.add('hidden')
 
-    document.querySelector('.account-form.signup').classList.add('hidden')
+    const accountSignupForm = document.querySelector('.account-form.signup')
+    if (accountSignupForm) accountSignupForm.classList.add('hidden')
 
-    document.querySelector('.account-form--overlay').classList.add('hidden')
+    const accountFormOverlay = document.querySelector('.account-form--overlay')
+    if (accountFormOverlay) accountFormOverlay.classList.add('hidden')
   }
 
   /* ---------------------- */
