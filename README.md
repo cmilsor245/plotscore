@@ -38,7 +38,7 @@ I've created a permanent deployment using ***Vercel*** just so everyone can visi
 
 #### Backend
 
-- [ ] :red_circle: Backend side of the **desktop version**
+- [ ] :yellow_circle: Backend side of the **desktop version**
 - [ ] :red_circle: Backend side of the **mobile version**
 
 #### Deployment
