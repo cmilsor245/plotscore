@@ -49,7 +49,7 @@ I've created a permanent deployment using ***Vercel*** just so everyone can visi
 - [ ] :red_circle: Deployment of the **mobile version** using an AWS EC2 instance
 - [ ] :red_circle: Automatic deployment process for the **mobile version** (frontend)
 - [ ] :red_circle: Automatic deployment process for the **mobile version** (backend)
-- [x] :green_circle: Creating a **custom domain** for the desktop version :arrow_right: [Link](http://plotscore-desktop.duckdns.org:3000/) (still using port 3000)
+- [x] :green_circle: Creating a **custom domain** for the desktop version :arrow_right: [Link](http://plotscore-desktop.duckdns.org/)
 - [ ] :red_circle: Creating a **custom domain** for the **mobile version**
 - [ ] :red_circle: Enabling **HTTPS** connections to the **desktop version**
 - [ ] :red_circle: Enabling **HTTPS** connections to the **mobile version**
@@ -134,7 +134,7 @@ He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualqui
 
 #### Backend
 
-- [ ] :red_circle: Parte backend de la **versión desktop**
+- [ ] :yellow_circle: Parte backend de la **versión desktop**
 - [ ] :red_circle: Parte backend de la **versión mobile**
 
 #### Despliegue
@@ -145,7 +145,7 @@ He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualqui
 - [ ] :red_circle: Despliegue de la **versión mobile** haciendo uso de una AWS EC2
 - [ ] :red_circle: Proceso de despliegue automático para la **versión mobile** (frontend)
 - [ ] :red_circle: Proceso de despliegue automático para la **versión mobile** (backend)
-- [x] :green_circle: Crear un **dominio personalizado** para la **versión desktop** :arrow_right: [Link](http://plotscore-desktop.duckdns.org:3000/) (todavía usa el puerto 3000)
+- [x] :green_circle: Crear un **dominio personalizado** para la **versión desktop** :arrow_right: [Link](http://plotscore-desktop.duckdns.org/)
 - [ ] :red_circle: Crear un **dominio personalizado** para la **versión mobile**
 - [ ] :red_circle: Habilitando conexiones **HTTPS** hacia la **versión desktop**
 - [ ] :red_circle: Habilitando conexiones **HTTPS** hacia la **versión mobile**
