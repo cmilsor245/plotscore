@@ -74,6 +74,5 @@
 @media (width <= 1160px) {
   .main-actions-buttons {
     right: 2vw;
-    bottom: calc(env(safe-area-inset-bottom) + 10px);
   }
 }
