@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: [self-hosted, frontend-runner]
+    runs-on: [self-hosted, plotscore-desktop-frontend]
     strategy:
       matrix:
         node-version: [22.x]
