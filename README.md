@@ -51,7 +51,7 @@ I've created a permanent deployment using ***Vercel*** just so everyone can visi
 - [ ] :red_circle: Automatic deployment process for the **mobile version** (backend)
 - [x] :green_circle: Creating a **custom domain** for the desktop version :arrow_right: [Link](http://plotscore-desktop.duckdns.org/)
 - [ ] :red_circle: Creating a **custom domain** for the **mobile version**
-- [ ] :red_circle: Enabling **HTTPS** connections to the **desktop version**
+- [x] :green_circle: Enabling **HTTPS** connections to the **desktop version**
 - [ ] :red_circle: Enabling **HTTPS** connections to the **mobile version**
 
 ##### [Back to TODO list section](#todo-list)
@@ -147,7 +147,7 @@ He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualqui
 - [ ] :red_circle: Proceso de despliegue automático para la **versión mobile** (backend)
 - [x] :green_circle: Crear un **dominio personalizado** para la **versión desktop** :arrow_right: [Link](http://plotscore-desktop.duckdns.org/)
 - [ ] :red_circle: Crear un **dominio personalizado** para la **versión mobile**
-- [ ] :red_circle: Habilitando conexiones **HTTPS** hacia la **versión desktop**
+- [x] :green_circle: Habilitando conexiones **HTTPS** hacia la **versión desktop**
 - [ ] :red_circle: Habilitando conexiones **HTTPS** hacia la **versión mobile**
 
 ##### [Volver a la sección de Lista de tareas pendientes](#lista-de-tareas-pendientes)
