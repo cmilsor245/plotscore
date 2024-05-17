@@ -67,7 +67,13 @@ class AuthController extends Controller {
       ], Response::HTTP_UNAUTHORIZED);
     }
 
-    return Auth::user();
+    $token = Auth::user() -> createToken('auth_token') -> plainTextToken;
+
+    $cookie = cookie('jwt', $token, 60 * 24);
+
+    return response([
+      'message' => 'success'
+    ]) -> withCookie($cookie);
   }
 
   public function user() {
