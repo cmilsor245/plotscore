@@ -4,9 +4,7 @@ export default function NavTab({
   text,
   isMobile,
   icon: Icon,
-
-  interactive,
-  onClick
+  link
 }) {
   let conditionalClass = 'nav--link'
 
@@ -14,12 +12,13 @@ export default function NavTab({
     conditionalClass = 'nav--link--mobile'
   }
 
+  /* ----------- */
+
+  const linkHref = link ? link : '/'
+
   return (
-    <li
-      className = { conditionalClass }
-      onClick = { interactive ? onClick : null }
-    >
-      <Link href = '/'>
+    <li className = { conditionalClass }>
+      <Link href = { linkHref }>
         { text }
         { isMobile && <Icon className = 'nav--link--mobile--icon' /> }
       </Link>

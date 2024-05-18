@@ -25,15 +25,13 @@ const navItems = [
     key: 'SIGN_IN',
     text: 'SIGN_IN',
     icon: IconUserFilled,
-
-    interactive: true,
+    link: '/login',
   },
   {
     key: 'CREATE_ACCOUNT',
     text: 'CREATE_ACCOUNT',
     icon: IconUserPlus,
-
-    interactive: true,
+    link: '/signup',
   },
   {
     key: 'MEDIA',
@@ -91,14 +89,7 @@ export default function Header({
               <NavTab
               key = { item.key }
               text = { translate(lang, 'LANDING_PAGE', 'NAV', item.text) }
-              interactive = { item.interactive }
-              onClick = { 
-                item.text === 'SIGN_IN'
-                  ? handleShowLoginForm
-                  : item.text === 'CREATE_ACCOUNT'
-                  ? handleShowSignUpForm
-                  : null
-              }
+              link = { item.link }
             />
             ))
           }
@@ -144,15 +135,8 @@ export default function Header({
                     key = { item.key }
                     text = { translate(lang, 'LANDING_PAGE', 'NAV', item.text) }
                     icon = { item.icon }
+                    link = { item.link }
                     isMobile
-                    interactive = { item.interactive }
-                    onClick = { 
-                      item.text === 'SIGN_IN'
-                        ? handleShowLoginForm
-                        : item.text === 'CREATE_ACCOUNT'
-                        ? handleShowSignUpForm
-                        : null
-                    }
                   />
                 ))
               }

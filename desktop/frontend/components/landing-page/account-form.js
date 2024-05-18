@@ -34,6 +34,8 @@ function SignUpForm({ lang }) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
+  /* ---------------------- */
+
   const handleEmailChange = (e) => setEmail(e.target.value)
   const handleUsernameChange = (e) => setUsername(e.target.value)
   const handlePasswordChange = (e) => setPassword(e.target.value)
@@ -49,6 +51,24 @@ function SignUpForm({ lang }) {
   const signUpPasswordMinLength = 8
   const signUpPasswordMaxLength = 255
 
+  /* ---------------------- */
+
+  const handleSubmit = async (e) => {
+    // e.preventDefault()
+
+    await fetch('http://localhost:8000/api/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+        username,
+        password
+      })
+    })
+  }
+
   return (
     <div className = 'account-form signup hidden'>
       <div className = 'account-form--close-button' onClick = { handleHideAccountForm }>
@@ -62,7 +82,7 @@ function SignUpForm({ lang }) {
         }}
       ></h2>
 
-      <form className = 'signup-form' method = 'post'>
+      <form className = 'signup-form' onSubmit = { handleSubmit }>
         <div className = 'account-form--group'>
           <FormLabelInput
             label = { translate(lang, 'LANDING_PAGE', 'ACCOUNT_FORM', 'EMAIL') }
@@ -97,7 +117,6 @@ function SignUpForm({ lang }) {
             onChange = { handleUsernameChange }
             onFocus = { e => e.target.select() }
             required
-            type = 'text'
             value = { username }
             placeholder = 'username13'
           />
@@ -148,6 +167,8 @@ function LoginForm({ lang }) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  /* ---------------------- */
+
   const handleEmailChange = (e) => setEmail(e.target.value)
   const handlePasswordChange = (e) => setPassword(e.target.value)
 
@@ -158,6 +179,24 @@ function LoginForm({ lang }) {
 
   const loginPasswordMinLength = 8
   const loginPasswordMaxLength = 255
+
+  /* ---------------------- */
+
+  const handleSubmit = async (e) => {
+    // e.preventDefault()
+
+    await fetch('http://localhost:8000/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify({
+        email,
+        password
+      })
+    })
+  }
 
   return (
     <div className = 'account-form login hidden'>
@@ -172,7 +211,7 @@ function LoginForm({ lang }) {
         }}
       ></h2>
 
-      <form className = 'login-form' method = 'post'>
+      <form className = 'login-form' onSubmit = { handleSubmit }>
         <div className = 'account-form--group'>
           <FormLabelInput
             label = { translate(lang, 'LANDING_PAGE', 'ACCOUNT_FORM', 'EMAIL') }

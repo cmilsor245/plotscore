@@ -28,7 +28,6 @@ import SectionHeading from '/components/common/section-heading.js'
 import RecentShowdownNews from '/components/landing-page--home/recent--showdown-news.js'
 import RecentStory from '/components/landing-page--home/recent-story.js'
 import Backdrop from '/components/landing-page--specific-media/backdrop.js'
-import AccountForm from '/components/landing-page/account-form.js'
 import {
   MaterialSymbolsAndroidDarkTheme,
   MaterialSymbolsAndroidLightTheme,
@@ -80,41 +79,6 @@ export default function LandingPage() {
     cookie.set('theme', newTheme, { expires: 365 })
   }
 
-  /* ------------------------------ */
-
-  const handleShowLoginForm = () => {
-    const accountLoginForm = document.querySelector('.account-form.login')
-    if (accountLoginForm) accountLoginForm.classList.remove('hidden')
-
-    const accountSignupForm = document.querySelector('.account-form.signup')
-    if (accountSignupForm) accountSignupForm.classList.add('hidden')
-
-    const accountFormOverlay = document.querySelector('.account-form--overlay')
-    if (accountFormOverlay) accountFormOverlay.classList.remove('hidden')
-  }
-
-  const handleShowSignUpForm = () => {
-    const accountLoginForm = document.querySelector('.account-form.login')
-    if (accountLoginForm) accountLoginForm.classList.add('hidden')
-
-    const accountSignupForm = document.querySelector('.account-form.signup')
-    if (accountSignupForm) accountSignupForm.classList.remove('hidden')
-
-    const accountFormOverlay = document.querySelector('.account-form--overlay')
-    if (accountFormOverlay) accountFormOverlay.classList.remove('hidden')
-  }
-
-  const handleHideAccountForm = () => {
-    const accountLoginForm = document.querySelector('.account-form.login')
-    if (accountLoginForm) accountLoginForm.classList.add('hidden')
-
-    const accountSignupForm = document.querySelector('.account-form.signup')
-    if (accountSignupForm) accountSignupForm.classList.add('hidden')
-
-    const accountFormOverlay = document.querySelector('.account-form--overlay')
-    if (accountFormOverlay) accountFormOverlay.classList.add('hidden')
-  }
-
   return (
     <>
       <div className = 'main-actions-buttons'>
@@ -130,25 +94,6 @@ export default function LandingPage() {
 
       {/* -------------------------------------------------------------------------------------------------- */}
 
-      <AccountForm
-        lang = { lang }
-
-        type = 'signup'
-      />
-
-      <AccountForm
-        lang = { lang }
-
-        type = 'login'
-      />
-
-      <div
-        className = 'account-form--overlay hidden'
-        onClick = { handleHideAccountForm }
-      ></div>
-
-      {/* -------------------------------------------------------------------------------------------------- */}
-
       <section className = 'common--content-footer'>
         <section className = 'common--content-footer--content'>
           <Backdrop
@@ -157,9 +102,6 @@ export default function LandingPage() {
             hasHeader
             isInLandingPage
             lang = { lang }
-
-            handleShowLoginForm = { handleShowLoginForm }
-            handleShowSignUpForm = { handleShowSignUpForm }
           />
 
           <main>
@@ -182,7 +124,7 @@ export default function LandingPage() {
                 </span>
               </h2>
 
-              <button className = 'usp--get-started-button' onClick = { handleShowSignUpForm }>
+              <button className = 'usp--get-started-button'>
                 { translate(lang, 'LANDING_PAGE', 'USP', 'GET_STARTED_BUTTON') }
               </button>
 

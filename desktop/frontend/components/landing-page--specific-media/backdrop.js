@@ -12,9 +12,6 @@ export default function Backdrop({
   hasHeader,
   isInLandingPage,
   lang,
-
-  handleShowLoginForm,
-  handleShowSignUpForm
 }) {
   const [imageLoaded, setImageLoaded] = useState(false)
 
@@ -36,8 +33,6 @@ export default function Backdrop({
         <Header
           lang = { lang }
           isInLandingPage = { isInLandingPage }
-          handleShowLoginForm = { handleShowLoginForm }
-          handleShowSignUpForm = { handleShowSignUpForm }
         />
       }
 
