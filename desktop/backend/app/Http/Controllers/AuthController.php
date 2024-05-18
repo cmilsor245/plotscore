@@ -4,35 +4,36 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
 use Symfony\Component\HttpFoundation\Response;
 
 class AuthController extends Controller {
   public function createAdmin(Request $request) {
     if ($request -> input('secret_key') !== env('ADMIN_SECRET_KEY')) {
-        return response() -> json([
-            'message' => 'unauthorized'
-        ], Response::HTTP_UNAUTHORIZED);
+      return response() -> json([
+        'message' => 'unauthorized'
+      ], Response::HTTP_UNAUTHORIZED);
     }
 
     $pronouns = $request -> input('pronouns', 'they/them');
 
     return User::create([
-        'role' => 'admin',
+      'role' => 'admin',
 
-        'username' => $request -> input('username'),
-        'given_name' => $request -> input('given_name'),
-        'family_name' => $request -> input('family_name'),
+      'username' => $request -> input('username'),
+      'given_name' => $request -> input('given_name'),
+      'family_name' => $request -> input('family_name'),
 
-        'email' => $request -> input('email'),
-        'password' => Hash::make($request -> input('password')),
+      'email' => $request -> input('email'),
+      'password' => Hash::make($request -> input('password')),
 
-        'avatar' => $request -> input('avatar'),
-        'bio' => $request -> input('bio'),
-        'pronouns' => $pronouns,
+      'avatar' => $request -> input('avatar'),
+      'bio' => $request -> input('bio'),
+      'pronouns' => $pronouns,
 
-        'location' => $request -> input('location'),
-        'website' => $request -> input('website')
+      'location' => $request -> input('location'),
+      'website' => $request -> input('website')
     ]);
 }
 
@@ -77,6 +78,14 @@ class AuthController extends Controller {
   }
 
   public function user() {
-    return 'test';
+    return Auth::user();
+  }
+
+  public function logout() {
+    $cookie = Cookie::forget('jwt');
+
+    return response([
+      'message' => 'success'
+    ]) -> withCookie($cookie);
   }
 }
