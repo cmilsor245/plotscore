@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AuthRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -9,14 +10,19 @@ use Illuminate\Support\Facades\Hash;
 use Symfony\Component\HttpFoundation\Response;
 
 class AuthController extends Controller {
-  public function createAdmin(Request $request) {
+  public function createAdmin(AuthRequest $request) {
     if ($request -> input('secret_key') !== env('ADMIN_SECRET_KEY')) {
       return response() -> json([
         'message' => 'unauthorized'
       ], Response::HTTP_UNAUTHORIZED);
     }
 
-    $pronouns = $request -> input('pronouns', 'they/them');
+    $pronouns = $request -> input('pronouns');
+    if (is_null($pronouns) || $pronouns === '') {
+      $pronouns = 'they/them';
+    }
+
+    $avatarPath = $request -> file('avatar') ? $request -> file('avatar') -> store('avatars', 'public') : null;
 
     return User::create([
       'role' => 'admin',
@@ -28,17 +34,22 @@ class AuthController extends Controller {
       'email' => $request -> input('email'),
       'password' => Hash::make($request -> input('password')),
 
-      'avatar' => $request -> input('avatar'),
+      'avatar' => $avatarPath,
       'bio' => $request -> input('bio'),
-      'pronouns' => $pronouns,
-
+      
       'location' => $request -> input('location'),
-      'website' => $request -> input('website')
+      'website' => $request -> input('website'),
+      'pronouns' => $pronouns
     ]);
 }
 
-  public function signup(Request $request) {
-    $pronouns = $request -> input('pronouns', 'they/them');
+  public function signup(AuthRequest $request) {
+    $pronouns = $request -> input('pronouns');
+    if (is_null($pronouns) || $pronouns === '') {
+      $pronouns = 'they/them';
+    }
+
+    $avatarPath = $request -> file('avatar') ? $request -> file('avatar') -> store('avatars', 'public') : null;
 
     return User::create([
       'role' => 'user',
@@ -50,12 +61,12 @@ class AuthController extends Controller {
       'email' => $request -> input('email'),
       'password' => Hash::make($request -> input('password')),
 
-      'avatar' => $request -> input('avatar'),
+      'avatar' => $avatarPath,
       'bio' => $request -> input('bio'),
-      'pronouns' => $pronouns,
-
+      
       'location' => $request -> input('location'),
-      'website' => $request -> input('website')
+      'website' => $request -> input('website'),
+      'pronouns' => $pronouns,
     ]);
   }
 

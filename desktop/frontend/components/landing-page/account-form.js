@@ -40,10 +40,10 @@ function SignUpForm({ lang }) {
 
   /* ---------------------- */
 
-  const signUpEmailMinLength = 7
+  const signUpEmailMinLength = 3
   const signUpEmailMaxLength = 255
 
-  const signUpUsernameMinLength = 4
+  const signUpUsernameMinLength = 3
   const signUpUsernameMaxLength = 50
 
   const signUpPasswordMinLength = 8
@@ -153,7 +153,7 @@ function LoginForm({ lang }) {
 
   /* ---------------------- */
 
-  const loginEmailMinLength = 7
+  const loginEmailMinLength = 3
   const loginEmailMaxLength = 255
 
   const loginPasswordMinLength = 8
