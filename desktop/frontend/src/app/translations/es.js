@@ -48,7 +48,7 @@ const translationsES = {
     USP: {
       MAIN_TEXT__FIRST_LINE: 'Lleva un registro de lo que ves.',
       MAIN_TEXT__SECOND_LINE: 'Guarda lo que quieres ver.',
-      MAIN_TEXT__THIRD_LINE: 'Recomienda lo mejor a tus amigos.',
+      MAIN_TEXT__THIRD_LINE: 'Recomienda lo mejor a tus amig@s.',
 
       MOBILE_LINE: '¡Registra, guarda y recomienda a tus amigos el mejor contenido!',
 
