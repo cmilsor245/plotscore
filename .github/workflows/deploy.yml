@@ -19,4 +19,9 @@ jobs:
         npm ci
     - name: build project
       run: |
-        pm2 start "npm run build && npm run start" --name=nextjs-app
+        cd desktop/frontend
+        npm run build
+    - name: start project
+      run: |
+        cd desktop/frontend
+        pm2 start npm --name "nextjs-app" -- start
