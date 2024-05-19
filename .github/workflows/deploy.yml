@@ -5,19 +5,23 @@ on:
     branches: ["main"]
 
 jobs:
-  build:
+  deploy-nextjs-app:
     runs-on: self-hosted
-    strategy:
-      matrix:
-        node-version: [22.x]
+    # strategy:
+    #   matrix:
+    #     node-version: [22.x]
 
     steps:
     - uses: actions/checkout@v4
 
-    - name: install dependencies
+    - name: deploy next.js app
       run: |
         cd desktop/frontend
         npm ci
+        npm run build
+        npm run start
+        cd ../..
+        pm2 start ecosystem.config.js --only nextjs-app
 
     # - name: build project
     #   run: |
