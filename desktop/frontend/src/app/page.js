@@ -2,6 +2,7 @@
 
 import cookie from 'js-cookie'
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 import {
   IconAlignLeft,
@@ -49,8 +50,7 @@ import translate from '/src/app/translation.js'
 import '/styles/global.css'
 import '/styles/pages/landing-page--specific-media.css'
 
-export default function LandingPage() {
-  const [lang, setLang] = useState('en') // default language
+export default function Index() {
   const [theme, setTheme] = useState('dark') // default color theme
 
   useEffect(() => {
@@ -67,16 +67,20 @@ export default function LandingPage() {
     }
   }, [theme])
 
-  const handleLanguageChange = () => {
-    const newLang = lang === 'en' ? 'es' : 'en'
-    setLang(newLang)
-    cookie.set('lang', newLang, { expires: 365 })
-  }
-
   const handleThemeChange = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light'
     setTheme(newTheme)
     cookie.set('theme', newTheme, { expires: 365 })
+  }
+
+  /* ------------------------------- */
+
+  const [lang, setLang] = useState('en') // default language
+
+  const handleLanguageChange = () => {
+    const newLang = lang === 'en' ? 'es' : 'en'
+    setLang(newLang)
+    cookie.set('lang', newLang, { expires: 365 })
   }
 
   return (
@@ -124,9 +128,11 @@ export default function LandingPage() {
                 </span>
               </h2>
 
-              <button className = 'usp--get-started-button'>
-                { translate(lang, 'LANDING_PAGE', 'USP', 'GET_STARTED_BUTTON') }
-              </button>
+                <button className = 'usp--get-started-button'>
+                  <Link href = '/signup'>
+                    { translate(lang, 'LANDING_PAGE', 'USP', 'GET_STARTED_BUTTON') }
+                  </Link>
+                </button>
 
               <div className = 'usp--also-available'>
                 <p>

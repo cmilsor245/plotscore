@@ -1,0 +1,191 @@
+.dark-theme {
+  --color--form-area-bg: var(--color--primary-dark-70);
+  --color--form-title: var(--color--primary-light-80);
+  --color--input-bg--hover: var(--color--primary-dark-10);
+  --color--input-bg: var(--color--primary-dark-20);
+  --color--input-content: var(--color--primary-light-80);
+  --color--input-placeholder: var(--color--primary-light-50);
+  --color--labels: var(--color--primary-light-70);
+  --color--submit-button--bg--hover: var(--color--secondary-dark-10);
+  --color--submit-button--bg: var(--color--secondary-main);
+}
+
+.light-theme {
+  --color--form-area-bg: var(--color--primary-light-80);
+  --color--form-title: var(--color--primary-dark-70);
+  --color--input-bg--hover: var(--color--primary-light-50);
+  --color--input-bg: var(--color--primary-light-60);
+  --color--input-content: var(--color--primary-dark-90);
+  --color--input-placeholder: var(--color--primary-dark-90);
+  --color--labels: var(--color--primary-dark-50);
+  --color--submit-button--bg--hover: var(--color--tertiary-dark-10);
+  --color--submit-button--bg: var(--color--tertiary-main);
+}
+
+.signup-page, .login-page {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-height: 100vh;
+}
+
+.signup-page {
+  background: center / cover;
+}
+
+.login-page {
+  background: center / cover;
+}
+
+.signup-page--content, .login-page--content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100vh;
+  justify-content: center;
+}
+
+.signup-page--content {
+  align-items: flex-start;
+}
+
+.login-page--content {
+  align-items: flex-end;
+}
+
+.signup-form--area, .login-form--area {
+  background-color: var(--color--form-area-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 25%;
+  height: 100%;
+  justify-content: flex-start;
+  justify-content: space-between;
+  position: relative;
+  width: 35%;
+}
+
+.signup-form--area {
+  box-shadow: 80px 0 80px 80px var(--color--form-area-bg);
+  padding: 9% 0 10% 3.5%;
+}
+
+.login-form--area {
+  box-shadow: -80px 0 80px 80px var(--color--form-area-bg);
+  padding: 9% 3.5% 10% 0;
+}
+
+.cancel--account-form--button {
+  background-color: var(--color--secondary-main);
+  color: var(--color--primary-dark-90);
+  cursor: pointer;
+  height: fit-content;
+  padding: 8px 15px;
+  position: absolute;
+  top: 0;
+  transition: .2s;
+  width: fit-content;
+}
+
+.cancel--account-form--button:hover {
+  background-color: var(--color--tertiary-main);
+}
+
+.cancel--account-form--button * {
+  cursor: pointer;
+}
+
+.cancel--account-form--button.signup {
+  border-radius: 0 0 2px 0;
+  left: 0;
+}
+
+.cancel--account-form--button.login {
+  border-radius: 0 0 0 2px;
+  right: 0;
+}
+
+.signup-form--area h1, .login-form--area h1 {
+  --font: clamp(25px, 4.6rem, 50px) var(--font--graphik-semibold);
+  color: var(--color--form-title);
+  font: var(--font);
+  text-align: center;
+  transition: .2s;
+  word-spacing: 3px;
+}
+
+.signup-form--area h1 span, .login-form--area h1 span {
+  --font: clamp(32px, 6.5rem, 70px) var(--font--grape-nuts);
+  color: var(--color--secondary-main);
+  font: var(--font);
+}
+
+.account-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.account-form--group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.account-form--group label {
+  --font: clamp(10px, 2rem, 24px) var(--font--graphik-medium);
+  color: var(--color--labels);
+  cursor: pointer;
+  font: var(--font);
+  transition: .2s;
+  width: fit-content;
+}
+
+.account-form--group input {
+  --font: clamp(10px, 1.7rem, 20px) var(--font--graphik-regular);
+  background-color: var(--color--input-bg);
+  border-radius: 5px;
+  border: none;
+  color: var(--color--input-content);
+  cursor: text;
+  font: var(--font);
+  outline: none;
+  padding: 8px;
+  transition: .2s;
+  width: 100%;
+}
+
+.account-form--group input:hover {
+  background-color: var(--color--input-bg--hover);
+}
+
+.account-form--group input::placeholder {
+  color: var(--color--input-placeholder);
+}
+
+.character-counter {
+  --font: clamp(8px, 1.4rem, 16px)  var(--font--grape-nuts);
+  color: var(--color--labels);
+  font-weight: bold !important;
+  font: var(--font);
+}
+
+.account-form--submit {
+  --font: clamp(10px, 2rem, 24px) var(--font--graphik-black);
+  background-color: var(--color--submit-button--bg);
+  border-radius: 4px;
+  border: none;
+  color: var(--color--primary-light-90);
+  cursor: pointer;
+  font: var(--font);
+  letter-spacing: .5px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: .2s;
+}
+
+.account-form--submit:hover {
+  background-color: var(--color--submit-button--bg--hover);
+}

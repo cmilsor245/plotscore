@@ -47,13 +47,17 @@
   background-color: var(--color--secondary-main);
   border-radius: 3px;
   border: none;
-  color: var(--color--primary-light-90);
-  cursor: pointer;
   display: flex;
   font: var(--font);
   justify-content: center;
   padding: .7rem 3rem;
   transition: .1s;
+}
+
+.usp--get-started-button * {
+  color: var(--color--primary-light-90);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .usp--get-started-button:hover {

@@ -43,7 +43,7 @@ class AuthController extends Controller {
       'website' => $request -> input('website'),
       'pronouns' => $pronouns
     ]);
-}
+  }
 
   public function signup(AuthRequest $request) {
     $pronouns = $request -> input('pronouns');
@@ -70,7 +70,7 @@ class AuthController extends Controller {
       
       'location' => $request -> input('location'),
       'website' => $request -> input('website'),
-      'pronouns' => $pronouns,
+      'pronouns' => $pronouns
     ]);
   }
 

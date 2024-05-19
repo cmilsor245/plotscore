@@ -19,10 +19,9 @@ const translationsES = {
 
   /* -------------------------------------------------------------------------------------------------- */
 
-  LANDING_PAGE: {
+  SIGNUP_PAGE: {
     ACCOUNT_FORM: {
       SIGN_UP_TITLE: 'Create a new <span>plotscore</span> account',
-      LOG_IN_TITLE: 'Log in to <span>plotscore</span>',
 
       EMAIL: 'Email address',
       USERNAME: 'Username',
@@ -30,8 +29,25 @@ const translationsES = {
       PASSWORD_PLACEHOLDER: '8 characters minimum',
 
       SIGN_UP_BUTTON: 'create account',
-      LOG_IN_BUTTON: 'log in'
-    },
+    }
+  },
+
+  /* -------------------------------------------------------------------------------------------------- */
+
+  LOGIN_PAGE: {
+    ACCOUNT_FORM: {
+      LOG_IN_TITLE: 'Log in to <span>plotscore</span>',
+
+      EMAIL: 'Email address',
+      PASSWORD: 'Password',
+
+      LOG_IN_BUTTON: 'log in',
+    }
+  },
+
+  /* -------------------------------------------------------------------------------------------------- */
+
+  LANDING_PAGE: {
     NAV: {
       SIGN_IN: 'sign in',
       CREATE_ACCOUNT: 'create account',

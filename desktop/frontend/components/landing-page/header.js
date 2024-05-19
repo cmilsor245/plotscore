@@ -58,8 +58,6 @@ const navItems = [
 export default function Header({
   lang,
   isInLandingPage,
-  handleShowLoginForm,
-  handleShowSignUpForm
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -147,12 +145,12 @@ export default function Header({
                 <SideMenuButton
                   type = { 'login' }
                   text = { translate(lang, 'LANDING_PAGE', 'NAV_MOBILE', 'LOGIN_BUTTON') }
-                  onClick = { handleShowLoginForm }
+                  link = { '/login' }
                 />
                 <SideMenuButton
                   type = { 'signup' }
                   text = { translate(lang, 'LANDING_PAGE', 'NAV_MOBILE', 'CREATE_ACCOUNT_BUTTON') }
-                  onClick = { handleShowSignUpForm }
+                  link = {'/signup'}
                 />
               </div>
 
