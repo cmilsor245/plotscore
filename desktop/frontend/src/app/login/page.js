@@ -2,6 +2,7 @@
 
 import cookie from 'js-cookie'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 import {
@@ -54,7 +55,7 @@ export default function LoginPage() {
     cookie.set('theme', newTheme, { expires: 365 })
   }
 
-  /* ------------------------------- */
+  /* -------------------- */
 
   const [lang, setLang] = useState('en') // default language
 
@@ -68,9 +69,9 @@ export default function LoginPage() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const router = useRouter()
 
   const handleEmailChange = (e) => setEmail(e.target.value)
-  const handleUsernameChange = (e) => setUsername(e.target.value)
   const handlePasswordChange = (e) => setPassword(e.target.value)
 
   const emailMinLength = 3
@@ -78,6 +79,26 @@ export default function LoginPage() {
 
   const passwordMinLength = 8
   const passwordMaxLength = 255
+
+  /* -------------------- */
+
+  const submit = async (e) => {
+    e.preventDefault()
+
+    await fetch('http://localhost:8000/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+      body: JSON.stringify({
+        email,
+        password
+      })
+    })
+
+    router.push('/')
+  }
 
   /* ---------------------------------------------------- */
 
@@ -132,7 +153,7 @@ export default function LoginPage() {
               }}
             ></h1>
 
-            <form className = 'account-form login-form'>
+            <form className = 'account-form login-form' onSubmit = { submit }>
             <div className = 'account-form--group'>
                 <FormLabelInput
                   label = { translate(lang, 'LOGIN_PAGE', 'ACCOUNT_FORM', 'EMAIL') }

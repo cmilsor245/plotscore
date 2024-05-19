@@ -1,4 +1,5 @@
 .dark-theme {
+  --color--form-area-bg-mobile: rgba(20, 25, 31, .9);
   --color--form-area-bg: var(--color--primary-dark-70);
   --color--form-title: var(--color--primary-light-80);
   --color--input-bg--hover: var(--color--primary-dark-10);
@@ -8,10 +9,10 @@
   --color--labels: var(--color--primary-light-70);
   --color--submit-button--bg--hover: var(--color--secondary-dark-10);
   --color--submit-button--bg: var(--color--secondary-main);
-  --color--form-area-bg-mobile: rgba(20, 25, 31, .9);
 }
 
 .light-theme {
+  --color--form-area-bg-mobile: rgba(218, 221, 224, .9);
   --color--form-area-bg: var(--color--primary-light-80);
   --color--form-title: var(--color--primary-dark-70);
   --color--input-bg--hover: var(--color--primary-light-50);
@@ -21,7 +22,6 @@
   --color--labels: var(--color--primary-dark-50);
   --color--submit-button--bg--hover: var(--color--tertiary-dark-10);
   --color--submit-button--bg: var(--color--tertiary-main);
-  --color--form-area-bg-mobile: rgba(218, 221, 224, .9);
 }
 
 .signup-page, .login-page {
@@ -79,7 +79,7 @@
 }
 
 .cancel--account-form--button {
-  background-color: var(--color--secondary-main);
+  background-color: var(--color--submit-button--bg);
   color: var(--color--primary-dark-90);
   cursor: pointer;
   height: fit-content;
@@ -91,7 +91,7 @@
 }
 
 .cancel--account-form--button:hover {
-  background-color: var(--color--tertiary-main);
+  background-color: var(--color--submit-button--bg--hover);
 }
 
 .cancel--account-form--button * {

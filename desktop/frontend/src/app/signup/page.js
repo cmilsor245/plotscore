@@ -1,8 +1,9 @@
 'use client'
 
 import cookie from 'js-cookie'
-import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 import {
   IconBulbFilled,
@@ -54,7 +55,7 @@ export default function SignUpPage() {
     cookie.set('theme', newTheme, { expires: 365 })
   }
 
-  /* ------------------------------- */
+  /* -------------------- */
 
   const [lang, setLang] = useState('en') // default language
 
@@ -69,6 +70,7 @@ export default function SignUpPage() {
   const [email, setEmail] = useState('')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const router = useRouter()
 
   const handleEmailChange = (e) => setEmail(e.target.value)
   const handleUsernameChange = (e) => setUsername(e.target.value)
@@ -82,6 +84,26 @@ export default function SignUpPage() {
 
   const passwordMinLength = 8
   const passwordMaxLength = 255
+
+  /* -------------------- */
+
+  const submit = async (e) => {
+    e.preventDefault()
+
+    await fetch('http://localhost:8000/api/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email,
+        username,
+        password
+      })
+    })
+
+    router.push('/login')
+  }
 
   /* ---------------------------------------------------- */
 
@@ -136,7 +158,7 @@ export default function SignUpPage() {
               }}
             ></h1>
 
-            <form className = 'account-form signup-form'>
+            <form className = 'account-form signup-form' onSubmit = { submit }>
               <div className = 'account-form--group'>
                 <FormLabelInput
                   label = { translate(lang, 'SIGNUP_PAGE', 'ACCOUNT_FORM', 'EMAIL') }
