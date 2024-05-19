@@ -8,6 +8,7 @@
   --color--labels: var(--color--primary-light-70);
   --color--submit-button--bg--hover: var(--color--secondary-dark-10);
   --color--submit-button--bg: var(--color--secondary-main);
+  --color--form-area-bg-mobile: rgba(20, 25, 31, .9);
 }
 
 .light-theme {
@@ -20,6 +21,7 @@
   --color--labels: var(--color--primary-dark-50);
   --color--submit-button--bg--hover: var(--color--tertiary-dark-10);
   --color--submit-button--bg: var(--color--tertiary-main);
+  --color--form-area-bg-mobile: rgba(218, 221, 224, .9);
 }
 
 .signup-page, .login-page {
@@ -111,6 +113,7 @@
   color: var(--color--form-title);
   font: var(--font);
   text-align: center;
+  text-wrap: balance;
   transition: .2s;
   word-spacing: 3px;
 }
@@ -189,4 +192,121 @@
 
 .account-form--submit:hover {
   background-color: var(--color--submit-button--bg--hover);
+}
+
+@media (width <= 1586px) {
+  .signup-form--area {
+    padding: 100px 20px 100px 60px;
+  }
+
+  .login-form--area {
+    padding: 100px 60px 100px 20px;
+  }
+
+  .signup-form--area h1, .login-form--area h1 {
+    font-size: clamp(20px, 4rem, 45px);
+  }
+
+  .signup-form--area h1 span, .login-form--area h1 span {
+    font-size: clamp(25px, 5.6rem, 60px);
+  }
+
+  .account-form--group label {
+    font-size: clamp(10px, 1.8rem, 20px);
+  }
+
+  .account-form--group input {
+    font-size: clamp(10px, 1.5rem, 18px);
+  }
+
+  .account-form--submit {
+    font-size: clamp(10px, 1.8rem, 20px);
+  }
+}
+
+@media (width <= 1420px) {
+  .signup-form--area, .login-form--area {
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .signup-form--area {
+    padding: 100px 20px 100px 80px;
+  }
+
+  .login-form--area {
+    padding: 100px 80px 100px 20px;
+  }
+}
+
+@media (width <= 1280px) {
+  .signup-form--area h1, .login-form--area h1 {
+    font-size: clamp(20px, 3.6rem, 40px);
+  }
+
+  .signup-form--area h1 span, .login-form--area h1 span {
+    font-size: clamp(20px, 5rem, 50px);
+  }
+
+  .account-form--group label {
+    font-size: clamp(10px, 1.6rem, 18px);
+  }
+
+  .account-form--group input {
+    font-size: clamp(10px, 1.4rem, 16px);
+  }
+
+  .account-form--submit {
+    font-size: clamp(10px, 1.6rem, 18px);
+  }
+}
+
+@media (width <= 1080px) {
+  .signup-page {
+    background-position: right;
+  }
+
+  .login-page {
+    background-position-x: calc(100% + 400px);
+  }
+
+  .signup-form--area, .login-form--area {
+    width: 50%;
+  }
+}
+
+@media (width <= 985px) {
+  .login-page {
+    background-position-x: calc(100% + 600px);
+  }
+}
+
+@media (width <= 940px) {
+  .signup-page {
+    background-position-x: calc(100% + 800px);
+  }
+}
+
+@media (width <= 733px) {
+  .signup-page {
+    background: center / cover;
+  }
+
+  .login-page {
+    background: center / cover;
+    background-position-x: calc(100% - 900px);
+  }
+
+  .signup-form--area, .login-form--area {
+    width: 100%;
+    padding-inline: 60px;
+    box-shadow: none;
+    background-color: var(--color--form-area-bg-mobile);
+  }
+}
+
+@media (width <= 400px) {
+  .signup-form--area, .login-form--area {
+    padding-inline: 20px;
+  }
 }
