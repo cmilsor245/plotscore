@@ -21,7 +21,7 @@ jobs:
       run: |
         cd desktop/frontend
         npm run build
-    - name: start
+    - name: start app
       run: |
         cd desktop/frontend
-        pm2 start npm run start --nextjs-app
+        pm2 start npm run start --name nextjs-app
