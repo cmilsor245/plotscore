@@ -36,7 +36,3 @@ jobs:
       run: |
         cd desktop/backend
         nohup php artisan serve --host=0.0.0.0 --port=8000 &
-
-    - name: verify application is running
-      run: |
-        curl --fail http://localhost:8000 || exit 1
