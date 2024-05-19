@@ -2,22 +2,17 @@ name: plotscore next.js app deployment
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
     runs-on: self-hosted
     strategy:
       matrix:
-        node-version: [ 22.x ]
+        node-version: [22.x]
 
     steps:
     - uses: actions/checkout@v4
-    # - name: use node.js ${{ matrix.node-version }}
-    #   uses: actions/setup-node@v3
-    #   with:
-    #     node-version: ${{ matrix.node-version }}
-    #     cache: 'npm'
     - name: install dependencies
       run: |
         cd desktop/frontend
