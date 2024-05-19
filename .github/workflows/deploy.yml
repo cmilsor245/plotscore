@@ -13,14 +13,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
     - name: install dependencies
       run: |
         cd desktop/frontend
         npm ci
-    - name: build project
-      run: |
-        cd desktop/frontend
-        npm run build
-    - name: start project
-      run: |
-        pm2 start ecosystem.config.js --only nextjs-app
+
+    # - name: build project
+    #   run: |
+    #     cd desktop/frontend
+    #     npm run build
+
+    # - name: start app
+    #   run: |
+    #     pm2 start ecosystem.config.js --only nextjs-app
