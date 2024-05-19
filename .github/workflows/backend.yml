@@ -40,4 +40,4 @@ jobs:
     - name: start the application with pm2
       run: |
         cd desktop/backend
-        pm2 start artisan serve --port=8000 --name laravel-app
+        pm2 start "php artisan serve" --port=8000 --name=laravel-app
