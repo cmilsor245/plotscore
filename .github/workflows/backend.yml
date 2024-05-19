@@ -32,7 +32,7 @@ jobs:
         sed -i 's/DB_PASSWORD=.*/DB_PASSWORD=${{ secrets.DB_PASSWORD }}/' .env
         sed -i 's/ADMIN_SECRET_KEY=.*/ADMIN_SECRET_KEY=${{ secrets.ADMIN_SECRET_KEY }}/' .env
 
-    - name: serve the application
+    - name: start the application with pm2
       run: |
         cd desktop/backend
-        nohup php artisan serve --host=0.0.0.0 --port=8000 &
+        pm2 start ecosystem.config.json
