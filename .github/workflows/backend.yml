@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Set up PHP
+    - name: set up php
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.2'
@@ -79,4 +79,8 @@ jobs:
     - name: serve the application
       run: |
         cd desktop/backend
-        php artisan serve --host=0.0.0.0 --port=8000
+        nohup php artisan serve --host=0.0.0.0 --port=8000 &
+
+    - name: verify application is running
+      run: |
+        curl --fail http://localhost:8000 || exit 1
