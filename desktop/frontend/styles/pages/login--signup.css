@@ -63,6 +63,7 @@
   justify-content: space-between;
   position: relative;
   width: 35%;
+  z-index: 1;
 }
 
 .signup-form--area {

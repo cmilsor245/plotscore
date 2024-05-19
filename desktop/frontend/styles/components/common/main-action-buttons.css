@@ -16,7 +16,7 @@
   right: 10vw;
   top: 87vh;
   transition: .05s;
-  z-index: 2;
+  z-index: 3;
 }
 
 .main-action-button {

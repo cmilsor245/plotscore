@@ -25,6 +25,7 @@ footer {
   padding-block: 20px 60px;
   padding-inline: var(--padding-inline--global);
   width: 100%;
+  z-index: 2;
 }
 
 .footer--top {

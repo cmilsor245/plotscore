@@ -149,7 +149,6 @@ export default function LoginPage() {
                   required
                   type = 'email'
                   value = { email }
-                  placeholder = 'example@example.com'
                 />
                 <CharacterCounter value = { email } maxLength = { emailMaxLength } />
               </div>
