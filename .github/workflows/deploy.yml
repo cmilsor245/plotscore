@@ -13,8 +13,22 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
     - name: install dependencies
       run: |
         cd desktop/frontend
         npm ci
-    - run: pm2 restart plotscore
+
+    - name: build the project
+      run: |
+        cd desktop/frontend
+        npm run build
+
+    - name: start the application with pm2
+      run: |
+        cd desktop/frontend
+        pm2 start ecosystem.config.js
