@@ -32,7 +32,12 @@ jobs:
         sed -i 's/DB_PASSWORD=.*/DB_PASSWORD=${{ secrets.DB_PASSWORD }}/' .env
         sed -i 's/ADMIN_SECRET_KEY=.*/ADMIN_SECRET_KEY=${{ secrets.ADMIN_SECRET_KEY }}/' .env
 
+    - name: run migrations
+      run: |
+        cd desktop/backend
+        php artisan migrate:refresh --seed
+
     - name: start the application with pm2
       run: |
         cd desktop/backend
-        pm2 start ecosystem.config.json
+        pm2 start artisan serve --port=8000 --laravel-app
