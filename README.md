@@ -12,7 +12,6 @@ I've created a permanent deployment using ***Vercel*** just so everyone can visi
 2. [Checkpoint video](#checkpoint-video)
 3. [Notion page](#notion-page)
 4. [Figma design](#figma-design)
-5. [CI/CD pipeline guide](#cicd-pipeline-guide)
 
 #### [Back to top](#plotscore)
 
@@ -88,14 +87,6 @@ It is possible to **navigate through the atoms and different fidelities** by **c
 
 ---
 
-### CI/CD pipeline guide
-
-Click [here](https://github.com/cmilsor245/plotscore/tree/main/.aws/guides/english/README.md) to see a basic guide on how a CI/CD pipeline with AWS EC2 was implemented for the [`plotscore`  Next.js project](https://github.com/cmilsor245/plotscore/tree/main/desktop/frontend).
-
-#### [Back to english section](#english)
-
----
-
 ---
 
 ## Español
@@ -108,7 +99,6 @@ He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualqui
 2. [Vídeo del checkpoint](#vídeo-del-checkpoint)
 3. [Notion](#notion)
 4. [Diseño en Figma](#diseño-en-figma)
-5. [Guía del pipeline CI/CD](#guía-del-pipeline-cicd)
 
 #### [Volver arriba](#plotscore)
 
@@ -179,13 +169,5 @@ Haz clic [aquí](https://www.figma.com/file/n4SCBhfrSxQZoQCxgk3bT0/plotscore---d
 Es posible **navegar entre los átomos y las diferentes fidelidades del proyecto** utilizando el **desplegable de la esquina superior izquierda**:
 
 ![navegar por las páginas de Figma](./readme-img/image.png)
-
-#### [Volver a la sección en español](#español)
-
----
-
-### Guía del pipeline CI/CD
-
-Haz clic [aquí](https://github.com/cmilsor245/plotscore/tree/main/.aws/guides/spanish/README.md) para ver una guía básica sobre cómo se implementó un pipeline CI/CD con AWS EC2 para el proyecto [`plotscore` en Next.js](https://github.com/cmilsor245/plotscore/tree/main/desktop/frontend).
 
 #### [Volver a la sección en español](#español)

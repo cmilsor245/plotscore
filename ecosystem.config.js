@@ -13,5 +13,5 @@ module.exports = {
       args: 'artisan serve',
       cwd: './desktop/backend',
     },
-  ],
+  ]
 }
