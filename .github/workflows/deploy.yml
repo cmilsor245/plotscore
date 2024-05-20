@@ -12,12 +12,6 @@ jobs:
     - name: checkout repository
       uses: actions/checkout@v4
 
-    # - name: set up node.js
-    #   uses: actions/setup-node@v3
-    #   with:
-    #     node-version: '22'
-    #     cache: 'npm'
-
     - name: deploy next.js app
       run: |
         cd desktop/frontend
