@@ -43,6 +43,9 @@ jobs:
         php artisan view:cache
         php artisan optimize
         php artisan storage:link
-        php artisan key:generate
+
+        APP_KEY=$(php artisan key:generate --show)
+        sed -i "s/APP_KEY=.*/APP_KEY=${APP_KEY}/" .env
+
         php artisan migrate:refresh --seed
         sudo nohup php artisan serve --port 8000 --host 0.0.0.0 &
