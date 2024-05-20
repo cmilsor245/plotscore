@@ -5,7 +5,7 @@ on:
     branches: ["main"]
 
 jobs:
-  deploy-nextjs-app:
+  deploy-apps:
     runs-on: self-hosted
 
     steps:
@@ -19,11 +19,6 @@ jobs:
         cd ../..
         pm2 start ecosystem.config.js --only nextjs-app
 
-  deploy-laravel-app:
-    runs-on: self-hosted
-
-    steps:
-    - uses: actions/checkout@v4
     - name: set up php
       uses: shivammathur/setup-php@v2
       with:
