@@ -7,9 +7,6 @@ on:
 jobs:
   deploy-nextjs-app:
     runs-on: self-hosted
-    # strategy:
-    #   matrix:
-    #     node-version: [22.x]
 
     steps:
     - uses: actions/checkout@v4
@@ -22,11 +19,15 @@ jobs:
         cd ../..
         pm2 start ecosystem.config.js --only nextjs-app
 
-    # - name: build project
-    #   run: |
-    #     cd desktop/frontend
-    #     npm run build
+  deploy-laravel-app:
+    runs-on: self-hosted
 
-    # - name: start app
-    #   run: |
-    #     pm2 start ecosystem.config.js --only nextjs-app
+    steps:
+    - uses: actions/checkout@v4
+    - name: deploy laravel app
+      run: |
+        cd desktop/backend
+        composer install
+        php artisan key:generate
+        php artisan migrate:refresh --seed
+        php artisan serve --port=8000
