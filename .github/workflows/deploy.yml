@@ -1,4 +1,4 @@
-name: plotscore next.js app deployment
+name: plotscore project deployment
 
 on:
   push:
