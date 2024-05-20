@@ -1,15 +1,22 @@
-name: plotscore project deployment
+name: deploy plotscore project
 
 on:
   push:
     branches: ["main"]
 
 jobs:
-  deploy-apps:
+  deploy:
     runs-on: self-hosted
 
     steps:
-    - uses: actions/checkout@v4
+    - name: checkout repository
+      uses: actions/checkout@v4
+
+    # - name: set up node.js
+    #   uses: actions/setup-node@v3
+    #   with:
+    #     node-version: '22'
+    #     cache: 'npm'
 
     - name: deploy next.js app
       run: |
@@ -17,35 +24,39 @@ jobs:
         npm ci
         npm run build
         cd ../..
-        pm2 start ecosystem.config.js --only nextjs-app
+        pm2 restart ecosystem.config.js --only nextjs-app
 
     - name: set up php
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.2'
+        tools: composer
 
     - name: deploy laravel app
       run: |
         cd desktop/backend
-        composer install
+        composer install --no-dev --optimize-autoloader
 
         cp .env.example .env
-        sed -i "s|DB_HOST=.*|DB_HOST='${{ secrets.DB_HOST }}'|" .env
-        sed -i "s|DB_PORT=.*|DB_PORT='${{ secrets.DB_PORT }}'|" .env
-        sed -i "s|DB_DATABASE=.*|DB_DATABASE='${{ secrets.DB_DATABASE }}'|" .env
-        sed -i "s|DB_USERNAME=.*|DB_USERNAME='${{ secrets.DB_USERNAME }}'|" .env
-        sed -i "s|DB_PASSWORD=.*|DB_PASSWORD='${{ secrets.DB_PASSWORD }}'|" .env
-        sed -i "s|ADMIN_SECRET_KEY=.*|ADMIN_SECRET_KEY='${{ secrets.ADMIN_SECRET_KEY }}'|" .env
+        sed -i "s|APP_ENV=.*|APP_ENV=production|" .env
+        sed -i "s|APP_DEBUG=.*|APP_DEBUG=false|" .env
+        sed -i "s|DB_HOST=.*|DB_HOST=${{ secrets.DB_HOST }}|" .env
+        sed -i "s|DB_PORT=.*|DB_PORT=${{ secrets.DB_PORT }}|" .env
+        sed -i "s|DB_DATABASE=.*|DB_DATABASE=${{ secrets.DB_DATABASE }}|" .env
+        sed -i "s|DB_USERNAME=.*|DB_USERNAME=${{ secrets.DB_USERNAME }}|" .env
+        sed -i "s|DB_PASSWORD=.*|DB_PASSWORD=${{ secrets.DB_PASSWORD }}|" .env
+        sed -i "s|ADMIN_SECRET_KEY=.*|ADMIN_SECRET_KEY=${{ secrets.ADMIN_SECRET_KEY }}|" .env
 
         APP_KEY=$(php artisan key:generate --show)
-        sed -i "s|^APP_KEY=.*|APP_KEY='${APP_KEY}'|" .env
+        sed -i "s|^APP_KEY=.*|APP_KEY=${APP_KEY}|" .env
 
         php artisan config:cache
-        php artisan event:cache
         php artisan route:cache
         php artisan view:cache
-        php artisan optimize
+        php artisan migrate:refresh --seed
         php artisan storage:link
 
-        php artisan migrate:refresh --seed
-        sudo nohup php artisan serve --port 8000 --host 0.0.0.0 &
+    - name: restart php service
+      run: |
+        sudo systemctl restart php8.2-fpm
+        sudo systemctl restart nginx
