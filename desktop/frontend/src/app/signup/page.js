@@ -92,7 +92,7 @@ export default function SignUpPage() {
   const submit = async (e) => {
     e.preventDefault()
 
-    await fetch('https://plotscore-tfg.duckdns.org/api/signup', {
+    await fetch(`${apiUrl}/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
