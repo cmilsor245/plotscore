@@ -18,6 +18,8 @@ jobs:
         npm ci
         npm run build
 
+        sed -i 's|NEXT_PUBLIC_API_URL=.*|NEXT_PUBLIC_API_URL=https://plotscore.duckdns.org/api|' .env
+
         cd ../..
         pm2 start ecosystem.config.js --only nextjs-app
         pm2 save --force
