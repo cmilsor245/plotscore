@@ -17,12 +17,13 @@ jobs:
         cd desktop/frontend
         npm ci
         npm run build
+        cd ../..
+        pm2 restart ecosystem.config.js --only nextjs-app
 
     - name: set up php
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.2'
-        tools: composer
 
     - name: deploy laravel app
       run: |
@@ -47,10 +48,3 @@ jobs:
         php artisan view:cache
         php artisan migrate --force
         php artisan storage:link
-
-    - name: start next.js app in prod mode
-      run: |
-        pm2 restart ecosystem.config.js --only nextjs-app
-
-    - name:
-      run: sudo systemctl restart apache2
