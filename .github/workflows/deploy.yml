@@ -18,18 +18,18 @@ jobs:
         npm ci
         npm run build
         cd ../..
-        pm2 restart ecosystem.config.js --only nextjs-app
+        pm2 start ecosystem.config.js --only nextjs-app
+        pm2 save --force
 
     - name: set up php
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.2'
-        tools: composer
 
     - name: deploy laravel app
       run: |
         cd desktop/backend
-        composer install --no-dev --optimize-autoloader
+        composer install
 
         cp .env.example .env
         sed -i "s|APP_ENV=.*|APP_ENV=production|" .env
@@ -47,10 +47,5 @@ jobs:
         php artisan config:cache
         php artisan route:cache
         php artisan view:cache
-        php artisan migrate:refresh --seed --force
+        php artisan migrate --force
         php artisan storage:link
-
-    - name: restart php service
-      run: |
-        sudo systemctl restart php8.2-fpm
-        sudo systemctl restart nginx
