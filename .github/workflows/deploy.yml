@@ -12,16 +12,6 @@ jobs:
     - name: checkout repository
       uses: actions/checkout@v4
 
-    - name: setup node
-      uses: actions/cache@v4
-      with:
-        path: |
-          ~/.npm
-          ${{ github.workspace }}/.next/cache
-        key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
-        restore-keys: |
-          ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
-
     - name: deploy next.js app
       run: |
         cd desktop/frontend
@@ -59,9 +49,6 @@ jobs:
         php artisan view:cache
         php artisan migrate:refresh --seed --force
         php artisan storage:link
-
-        sudo chown -R www-data:www-data storage
-        sudo chown -R www-data:www-data bootstrap/cache
 
     - name: restart php service
       run: |
