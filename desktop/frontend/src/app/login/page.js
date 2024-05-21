@@ -87,7 +87,7 @@ export default function LoginPage() {
   const submit = async (e) => {
     e.preventDefault()
 
-    await fetch(`${apiUrl}/login`, {
+    await fetch('https://plotscore-tfg.duckdns.org/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
