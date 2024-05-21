@@ -18,7 +18,8 @@ jobs:
         npm ci
         npm run build
         cd ../..
-        pm2 restart ecosystem.config.js --only nextjs-app
+        pm2 start ecosystem.config.js --only nextjs-app
+        pm2 save
 
     - name: set up php
       uses: shivammathur/setup-php@v2
