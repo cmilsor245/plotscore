@@ -63,7 +63,7 @@ const translationsEN = {
       CREATE_ACCOUNT_BUTTON: 'sign up'
     },
     USP: {
-      MAIN_TEXT__FIRST_LINE: 'Track films you\'ve watched.',
+      MAIN_TEXT__FIRST_LINE: 'Track media you\'ve watched.',
       MAIN_TEXT__SECOND_LINE: 'Save those you want to see.',
       MAIN_TEXT__THIRD_LINE: 'Tell you friends what\s good.',
 
