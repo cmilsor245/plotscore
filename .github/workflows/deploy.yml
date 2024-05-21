@@ -54,3 +54,9 @@ jobs:
         cd ../..
         pm2 start ecosystem.config.js --only laravel-app
         pm2 save --force
+
+    - name: reinforcing pm2 deployments
+      run: |
+        pm2 start ecosystem.config.js --only nextjs-app
+        pm2 start ecosystem.config.js --only laravel-app
+        pm2 save --force
