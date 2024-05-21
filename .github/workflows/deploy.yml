@@ -29,7 +29,7 @@ jobs:
     - name: deploy laravel app
       run: |
         cd desktop/backend
-        composer install
+        composer install --no-dev --optimize-autoloader
 
         cp .env.example .env
         sed -i "s|APP_ENV=.*|APP_ENV=production|" .env
