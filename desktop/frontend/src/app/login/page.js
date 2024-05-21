@@ -87,7 +87,7 @@ export default function LoginPage() {
   const submit = async (e) => {
     e.preventDefault()
 
-    await fetch(`${apiUrl}/api/login`, {
+    await fetch(`${apiUrl}/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
