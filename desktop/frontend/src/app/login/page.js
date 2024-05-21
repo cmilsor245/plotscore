@@ -82,10 +82,12 @@ export default function LoginPage() {
 
   /* -------------------- */
 
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL
+
   const submit = async (e) => {
     e.preventDefault()
 
-    await fetch('http://localhost:8000/api/login', {
+    await fetch(`${apiUrl}/api/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

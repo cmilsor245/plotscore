@@ -87,10 +87,12 @@ export default function SignUpPage() {
 
   /* -------------------- */
 
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL
+
   const submit = async (e) => {
     e.preventDefault()
 
-    await fetch('http://localhost:8000/api/signup', {
+    await fetch(`${apiUrl}/api/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
