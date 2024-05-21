@@ -13,10 +13,10 @@ class AdminSeeder extends Seeder {
       'secret_key' => 'plotscore_christian_admin_secret_key',
 
       'username' => 'plotscore',
-    
+
       'email' => 'hello@plotscore.com',
       'password' => 'password1234',
-    
+
       'location' => 'hollywood',
       'website' => 'plotscore-desktop.vercel.app'
     ]);
