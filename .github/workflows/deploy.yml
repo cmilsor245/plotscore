@@ -18,8 +18,8 @@ jobs:
         npm ci
         npm run build
 
-        cp .env.example .env
-        sed -i 's|NEXT_PUBLIC_API_URL=.*|NEXT_PUBLIC_API_URL=https://plotscore-tfg.duckdns.org/api|' .env
+        # cp .env.example .env
+        # sed -i 's|NEXT_PUBLIC_API_URL=.*|NEXT_PUBLIC_API_URL=https://plotscore-tfg.duckdns.org/api|' .env
 
         cd ../..
         pm2 start ecosystem.config.js --only nextjs-app
