@@ -17,6 +17,7 @@ jobs:
         cd desktop/frontend
         npm ci
         npm run build
+
         cd ../..
         pm2 start ecosystem.config.js --only nextjs-app
         pm2 save --force
@@ -49,3 +50,7 @@ jobs:
         php artisan view:cache
         php artisan migrate --force
         php artisan storage:link
+
+        cd ../..
+        pm2 start ecosystem.config.js --only laravel-app
+        pm2 save --force
