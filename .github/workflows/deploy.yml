@@ -39,7 +39,8 @@ jobs:
         sed -i "s|DB_PASSWORD=.*|DB_PASSWORD=${{ secrets.DB_PASSWORD }}|" .env
         sed -i "s|ADMIN_SECRET_KEY=.*|ADMIN_SECRET_KEY=${{ secrets.ADMIN_SECRET_KEY }}|" .env
 
-        php artisan key:generate --force
+        APP_KEY=$(php artisan key:generate --show)
+        sed -i "s|^APP_KEY=.*|APP_KEY=${APP_KEY}|" .env
 
         php artisan config:cache
         php artisan route:cache
@@ -47,11 +48,9 @@ jobs:
         php artisan migrate --force
         php artisan storage:link
 
-    - name: start next.js app in production mode
+    - name: start next.js app in prod mode
       run: |
-        pm2 stop all || true
-        cd desktop/frontend
-        NODE_ENV=production pm2 start npm --name "nextjs" -- start
+        pm2 restart ecosystem.config.js --only nextjs-app
 
-    - name: restart apache
+    - name:
       run: sudo systemctl restart apache2
