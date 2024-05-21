@@ -17,8 +17,6 @@ jobs:
         cd desktop/frontend
         npm ci
         npm run build
-        cd ../..
-        pm2 restart ecosystem.config.js --only nextjs-app
 
     - name: set up php
       uses: shivammathur/setup-php@v2
@@ -29,7 +27,7 @@ jobs:
     - name: deploy laravel app
       run: |
         cd desktop/backend
-        composer install --no-dev --optimize-autoloader
+        composer install
 
         cp .env.example .env
         sed -i "s|APP_ENV=.*|APP_ENV=production|" .env
@@ -41,16 +39,19 @@ jobs:
         sed -i "s|DB_PASSWORD=.*|DB_PASSWORD=${{ secrets.DB_PASSWORD }}|" .env
         sed -i "s|ADMIN_SECRET_KEY=.*|ADMIN_SECRET_KEY=${{ secrets.ADMIN_SECRET_KEY }}|" .env
 
-        APP_KEY=$(php artisan key:generate --show)
-        sed -i "s|^APP_KEY=.*|APP_KEY=${APP_KEY}|" .env
+        php artisan key:generate --force
 
         php artisan config:cache
         php artisan route:cache
         php artisan view:cache
-        php artisan migrate:refresh --seed --force
+        php artisan migrate --force
         php artisan storage:link
 
-    - name: restart php service
+    - name: start next.js app in production mode
       run: |
-        sudo systemctl restart php8.2-fpm
-        sudo systemctl restart nginx
+        pm2 stop all || true
+        cd desktop/frontend
+        NODE_ENV=production pm2 start npm --name "nextjs" -- start
+
+    - name: restart apache
+      run: sudo systemctl restart apache2
