@@ -18,7 +18,7 @@ jobs:
         npm ci
 
         cp .env.example .env
-        sed -i 's|NEXT_PUBLIC_WEB_URL=.*|NEXT_PUBLIC_WEB_URL=${{ secrets.NEXT_PUBLIC_WEB_URL }}|' .env
+        sed -i 's|NEXT_PUBLIC_API_URL=.*|NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL }}|' .env
 
         npm run build
 
