@@ -12,7 +12,7 @@ I've created a permanent deployment using ***Vercel*** just so everyone can visi
 2. [Checkpoint video](#checkpoint-video)
 3. [Notion page](#notion-page)
 4. [Figma design](#figma-design)
-5. [Desktop version CI/CD pipeline guide](#desktop-version-ci-cd-pipeline-guide)
+5. [Desktop version CI/CD pipeline guide](#desktop-version-cicd-pipeline-guide)
 
 #### [Back to top](#plotscore)
 
@@ -108,7 +108,7 @@ He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualqui
 2. [Vídeo del checkpoint](#vídeo-del-checkpoint)
 3. [Notion](#notion)
 4. [Diseño en Figma](#diseño-en-figma)
-5. [CI/CD pipeline guía para la versión desktop](#ci-cd-pipeline-guía-para-la-version-desktop)
+5. [Guía CI/CD pipeline para la versión desktop](#guía-cicd-pipeline-para-la-versión-desktop)
 
 #### [Volver arriba](#plotscore)
 
@@ -184,6 +184,6 @@ Es posible **navegar entre los átomos y las diferentes fidelidades del proyecto
 
 ---
 
-### CI/CD pipeline guía para la versión desktop
+### Guía CI/CD pipeline para la versión desktop
 
 Haz clic [aquí](https://github.com/cmilsor245/plotscore/blob/main/.aws/ci-cd--guide--desktop/README.md) para acceder a la guía del CI/CD pipeline para la **versión desktop**.

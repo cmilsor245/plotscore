@@ -176,7 +176,7 @@ export default function SignUpPage() {
                   required
                   type = 'email'
                   value = { email }
-                  placeholder = 'example@example.com'
+                  placeholder = { translate(lang, 'SIGNUP_PAGE', 'ACCOUNT_FORM', 'EMAIL_PLACEHOLDER') }
                 />
                 <CharacterCounter value = { email } maxLength = { emailMaxLength } />
               </div>
@@ -195,7 +195,7 @@ export default function SignUpPage() {
                   onFocus = { e => e.target.select() }
                   required
                   value = { username }
-                  placeholder = 'username13'
+                  placeholder = { translate(lang, 'SIGNUP_PAGE', 'ACCOUNT_FORM', 'USERNAME_PLACEHOLDER') }
                 />
                 <CharacterCounter value = { username } maxLength = { usernameMaxLength } />
               </div>

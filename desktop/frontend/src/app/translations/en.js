@@ -24,7 +24,9 @@ const translationsEN = {
       SIGN_UP_TITLE: 'Create a new <span>plotscore</span> account',
 
       EMAIL: 'Email address',
+      EMAIL_PLACEHOLDER: 'example@example.com',
       USERNAME: 'Username',
+      USERNAME_PLACEHOLDER: '3 characters minimum',
       PASSWORD: 'Password',
       PASSWORD_PLACEHOLDER: '8 characters minimum',
 
