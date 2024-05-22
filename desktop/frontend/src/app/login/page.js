@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 import {
   IconBulbFilled,
   IconBulbOff,
-  IconDeviceTvOff
+  IconX
 } from '@tabler/icons-react'
 
 import Footer from '/components/common/footer.js'
@@ -140,7 +140,7 @@ export default function LoginPage() {
         <section className = 'login-page--content'>
           <article className = 'login-form--area'>
             <Link className = 'cancel--account-form--button login' href = '/'>
-              <IconDeviceTvOff />
+              <IconX />
             </Link>
 
             <h1
