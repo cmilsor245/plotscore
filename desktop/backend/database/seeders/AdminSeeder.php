@@ -7,20 +7,26 @@ use Illuminate\Database\Seeder;
 
 class AdminSeeder extends Seeder {
   public function run(): void {
-    $authController = new AuthController();
+    try {
+      $authController = new AuthController();
 
-    $request = AuthRequest::create('create-admin', 'POST', [
-      'secret_key' => 'plotscore_christian_admin_secret_key',
+      $request = AuthRequest::create('createAdmin', 'POST', [
+        'secret_key' => 'plotscore_christian_admin_secret_key',
 
-      'username' => 'plotscore',
+        'username' => 'plotscore',
 
-      'email' => 'hello@plotscore.com',
-      'password' => 'password1234',
+        'email' => 'hello@plotscore.com',
+        'password' => 'password1234',
 
-      'location' => 'hollywood',
-      'website' => 'plotscore-desktop.vercel.app'
-    ]);
+        'location' => 'hollywood',
+        'website' => 'plotscore-desktop.vercel.app'
+      ]);
 
-    $authController -> createAdmin($request);
+      $authController -> createAdmin($request);
+
+      echo 'admin seeded!';
+    } catch (\Exception $e) {
+      echo 'failed to seed admin: ' . $e -> getMessage();
+    }
   }
 }
