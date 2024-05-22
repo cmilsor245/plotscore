@@ -10,9 +10,8 @@ We created an **automatic integration process** to be able to develop the webapp
 
 1. [New DuckDNS domain](#new-duckdns-domain)
 2. [Connecting EC2 to GitHub Actions Runners](#connecting-ec2-to-github-actions-runners)
-3. [Configuring Nginx for HTTP](#configuring-nginx)
+3. [Configuring Nginx for HTTP](#configuring-nginx-for-http)
 4. [Requesting SSL certificate](#requesting-ssl-certificate)
-5. [Configuring Nginx for HTTPS](#configuring-nginx-for-https)
 
 ### [Back to top](#ci-cd-pipeline-integration-guide)
 
@@ -184,7 +183,6 @@ Hemos creado un **proceso automático de integración** para poder desarrollar l
 2. [Conectar EC2 a GitHub Actions Runners](#conectar-ec2-a-github-actions-runners)
 3. [Configurar Nginx para HTTP](#configurar-nginx-para-http)
 4. [Solicitar certificado SSL](#solicitar-certificado-ssl)
-5. [Configurar Nginx para HTTPS](#configurar-nginx-para-https)
 
 ### [Volver arriba](#ci-cd-pipeline-integration-guide)
 
@@ -212,7 +210,7 @@ Ahora necesitas crear esas variables/secrets en el repositorio de GitHub, de man
 
 GitHub Actions necesita poder conectarse a tu instancia EC2 para ser capaz de descargar el código dentro de la propia máquina y desplegar los proyectos. Para ello, necesitarás crear un nuevo **GitHub Actions Runner**. Para conseguir que un Runner se conecte a una máquina específica, ejecuta los siguientes comandos mostrados en la Pestaña de Actions en la página de configuración de repositorio de GitHub:
 
-> ![NOTE]
+> [!NOTE]
 > Una vez que el último comando se ejecute, solo tienes que establecer el nombre del nuevo Runner y saltar las opciones restantes.
 
 ![comandos github actions runner](readme-img/image-3.png)
