@@ -4,7 +4,7 @@
 
 ## English
 
-I've created a permanent deployment using ***Vercel*** just so everyone can visit the actual production version of the **desktop version** of the **plotscore** project in any moment without having to turn on the AWS EC2 machine. :point_right: [Link](https://plotscore-tfg.vercel.app/)
+I've created a permanent deployment using ***Vercel*** just so everyone can visit the actual production version of the **desktop version** of the **plotscore** project in any moment without having to turn on the AWS EC2 machine. :point_right: [Link](https://plotscore--desktop.vercel.app/)
 
 ### Table of contents
 
@@ -48,7 +48,7 @@ I've created a permanent deployment using ***Vercel*** just so everyone can visi
 - [ ] :red_circle: Deployment of the **mobile version** using an AWS EC2 instance
 - [ ] :red_circle: Automatic deployment process for the **mobile version** (frontend)
 - [ ] :red_circle: Automatic deployment process for the **mobile version** (backend)
-- [x] :green_circle: Creating a **custom domain** for the desktop version :arrow_right: [Link](https://plotscore-tfg.duckdns.org/)
+- [x] :green_circle: Creating a **custom domain** for the desktop version :arrow_right: [Link](https://plotscore--desktop.duckdns.org/)
 - [ ] :red_circle: Creating a **custom domain** for the **mobile version**
 - [x] :green_circle: Enabling **HTTPS** connections to the **desktop version**
 - [ ] :red_circle: Enabling **HTTPS** connections to the **mobile version**
@@ -91,7 +91,7 @@ It is possible to **navigate through the atoms and different fidelities** by **c
 
 ## Español
 
-He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualquiera pueda visitar la versión de producción de la **versión desktop** de **plotscore** en cualquier momento sin necesidad de que la máquina de AWS EC2 esté encendida. :point_right: [Link](https://plotscore-tfg.vercel.app/)
+He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualquiera pueda visitar la versión de producción de la **versión desktop** de **plotscore** en cualquier momento sin necesidad de que la máquina de AWS EC2 esté encendida. :point_right: [Link](https://plotscore--desktop.vercel.app/)
 
 ### Índice
 
@@ -135,7 +135,7 @@ He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualqui
 - [ ] :red_circle: Despliegue de la **versión mobile** haciendo uso de una AWS EC2
 - [ ] :red_circle: Proceso de despliegue automático para la **versión mobile** (frontend)
 - [ ] :red_circle: Proceso de despliegue automático para la **versión mobile** (backend)
-- [x] :green_circle: Crear un **dominio personalizado** para la **versión desktop** :arrow_right: [Link](https://plotscore-tfg.duckdns.org/)
+- [x] :green_circle: Crear un **dominio personalizado** para la **versión desktop** :arrow_right: [Link](https://plotscore--desktop.duckdns.org/)
 - [ ] :red_circle: Crear un **dominio personalizado** para la **versión mobile**
 - [x] :green_circle: Habilitando conexiones **HTTPS** hacia la **versión desktop**
 - [ ] :red_circle: Habilitando conexiones **HTTPS** hacia la **versión mobile**
