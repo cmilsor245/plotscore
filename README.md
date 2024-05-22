@@ -12,6 +12,7 @@ I've created a permanent deployment using ***Vercel*** just so everyone can visi
 2. [Checkpoint video](#checkpoint-video)
 3. [Notion page](#notion-page)
 4. [Figma design](#figma-design)
+5. [Desktop version CI/CD pipeline guide](#desktop-version-ci-cd-pipeline-guide)
 
 #### [Back to top](#plotscore)
 
@@ -87,6 +88,14 @@ It is possible to **navigate through the atoms and different fidelities** by **c
 
 ---
 
+### Desktop version CI/CD pipeline guide
+
+Click [here](https://github.com/cmilsor245/plotscore/blob/main/.aws/ci-cd--guide--desktop/README.md) to access the desktop version CI/CD pipeline guide.
+
+#### [Back to english section](#english)
+
+---
+
 ---
 
 ## Español
@@ -99,6 +108,7 @@ He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualqui
 2. [Vídeo del checkpoint](#vídeo-del-checkpoint)
 3. [Notion](#notion)
 4. [Diseño en Figma](#diseño-en-figma)
+5. [CI/CD pipeline guía para la versión desktop](#ci-cd-pipeline-guía-para-la-version-desktop)
 
 #### [Volver arriba](#plotscore)
 
@@ -171,3 +181,9 @@ Es posible **navegar entre los átomos y las diferentes fidelidades del proyecto
 ![navegar por las páginas de Figma](./readme-img/image.png)
 
 #### [Volver a la sección en español](#español)
+
+---
+
+### CI/CD pipeline guía para la versión desktop
+
+Haz clic [aquí](https://github.com/cmilsor245/plotscore/blob/main/.aws/ci-cd--guide--desktop/README.md) para acceder a la guía del CI/CD pipeline para la **versión desktop**.
