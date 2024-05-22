@@ -54,10 +54,10 @@ jobs:
         php artisan view:cache
 
         # first time migrations
-        php artisan migrate:refresh --force --seed
+        # php artisan migrate:refresh --force --seed
 
         # after first time migrations
-        # php artisan migrate --force
+        php artisan migrate --force
 
         php artisan storage:link
 
