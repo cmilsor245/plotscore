@@ -1,0 +1,163 @@
+.dark-theme {
+  --color--form-area--bg-mobile: rgba(20, 25, 31, .8);
+  --color--form-area--bg: var(--color--primary-dark-70);
+  --color--go-back--button--bg--hover: var(--color--secondary-dark-10);
+  --color--go-back--button--bg: var(--color--secondary-main);
+}
+
+.light-theme {
+  --color--form-area--bg-mobile: rgba(218, 221, 224, .8);
+  --color--form-area--bg: var(--color--primary-light-80);
+  --color--go-back--button--bg--hover: var(--color--tertiary-dark-10);
+  --color--go-back--button--bg: var(--color--tertiary-main);
+}
+
+.not-found-page {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-height: 100vh;
+  background: right / cover;
+}
+
+.not-found-page--content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100vh;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.not-found-page--text-area {
+  align-items: center;
+  background-color: var(--color--form-area--bg);
+  box-shadow: 80px 0 80px 80px var(--color--form-area--bg);
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+  height: 100%;
+  justify-content: center;
+  padding: 9% 0 10% 3.5%;
+  position: relative;
+  width: 35%;
+  z-index: 1;
+}
+
+.not-found-page--go-back--button {
+  background-color: var(--color--go-back--button--bg);
+  border-radius: 0 0 2px 0;
+  color: var(--color--primary-dark-90);
+  cursor: pointer;
+  height: fit-content;
+  left: 0;
+  padding: 6px 8px;
+  position: fixed;
+  top: 0;
+  transition: .2s;
+  width: fit-content;
+}
+
+.not-found-page--go-back--button:hover {
+  background-color: var(--color--go-back--button--bg--hover);
+}
+
+.not-found-page--go-back--button * {
+  cursor: pointer;
+}
+
+.not-found-page--text-area h1 {
+  --font: 900 clamp(32px, 6.5rem, 70px) var(--font--grape-nuts);
+  color: var(--color--secondary-main);
+  font: var(--font);
+  transition: .2s;
+}
+
+.not-found-page--text-area h2 {
+  --font: 900 clamp(24px, 5rem, 50px) var(--font--grape-nuts);
+  color: var(--color--tertiary-main);
+  font: var(--font);
+  text-transform: uppercase;
+  transition: .2s;
+}
+
+@media (width <= 1660px) {
+  .not-found-page--text-area h2 {
+    font-size: clamp(32px, 4rem, 40px);
+  }
+}
+
+@media (width <= 1344px) {
+  .not-found-page--text-area h2 {
+    font-size: clamp(24px, 3rem, 30px);
+  }
+}
+
+@media (width <= 1176px) {
+  .not-found-page--text-area h1 {
+    font-size: clamp(24px, 5rem, 55px);
+  }
+}
+
+@media (width <= 1000px) {
+  .not-found-page--text-area h2 {
+    font-size: clamp(24px, 2.5rem, 25px);
+  }
+}
+
+@media (width <= 840px) {
+  .not-found-page--text-area h2 {
+    font-size: clamp(20px, 2rem, 20px);
+  }
+}
+
+@media (width <= 733px) {
+  .not-found-page--text-area {
+    background-color: var(--color--form-area--bg-mobile);
+    box-shadow: none;
+    padding-inline: 60px;
+    width: 100%;
+  }
+
+  .not-found-page--text-area h1 {
+    font-size: clamp(20px, 7rem, 80px);
+  }
+
+  .not-found-page--text-area h2 {
+    font-size: clamp(20px, 5.3rem, 55px);
+  }
+}
+
+@media (width <= 700px) {
+  .not-found-page--text-area h2 {
+    font-size: clamp(20px, 4rem, 40px);
+  }
+}
+
+@media (width <= 540px) {
+  .not-found-page--text-area h2 {
+    font-size: clamp(20px, 3rem, 30px);
+  }
+}
+
+@media (width <= 436px) {
+  .not-found-page--text-area h2 {
+    font-size: clamp(20px, 2.5rem, 25px);
+  }
+}
+
+@media (width <= 380px) {
+  .not-found-page--text-area h1 {
+    font-size: clamp(20px, 6rem, 60px);
+  }
+
+  .not-found-page--text-area h2 {
+    font-size: clamp(13px, 1.8rem, 20px);
+  }
+}
+
+@media (width <= 350px) {
+  .not-found-page--text-area {
+    padding-inline: 20px;
+  }
+}

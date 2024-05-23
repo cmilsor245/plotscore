@@ -16,7 +16,7 @@
   right: 10vw;
   top: 87vh;
   transition: .05s;
-  z-index: 7;
+  z-index: 3;
 }
 
 .main-action-button {
@@ -74,5 +74,11 @@
 @media (width <= 1160px) {
   .main-actions-buttons {
     right: 2vw;
+  }
+}
+
+@media (width <= 520px) {
+  .main-actions-buttons {
+    z-index: 2;
   }
 }

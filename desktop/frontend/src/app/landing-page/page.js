@@ -47,7 +47,6 @@ import recentShowdownsSlotsData from '/src/app/static-info/landing-page/recentSh
 import recentStoriesSlotsData from '/src/app/static-info/landing-page/recentStoriesSlotsData.js'
 import translate from '/src/app/translation.js'
 
-import '/styles/global.css'
 import '/styles/pages/landing-page--specific-media.css'
 
 export default function LandingPage() {

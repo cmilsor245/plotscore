@@ -21,7 +21,6 @@ import {
 } from '/components/common/main-action-button.js'
 import translate from '/src/app/translation.js'
 
-import '/styles/global.css'
 import '/styles/pages/login--signup.css'
 
 function CharacterCounter({ value, maxLength }) {
