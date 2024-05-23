@@ -31,6 +31,9 @@ const translationsES = {
       PASSWORD_PLACEHOLDER: '8 caracteres como mínimo',
 
       SIGN_UP_BUTTON: 'crear cuenta',
+
+      ERROR_TEXT: 'Ha ocurrido un error al crear la cuenta',
+      TRY_AGAIN_BUTTON: 'intentar de nuevo'
     }
   },
 
@@ -44,6 +47,9 @@ const translationsES = {
       PASSWORD: 'Contraseña',
 
       LOG_IN_BUTTON: 'iniciar sesión',
+
+      ERROR_TEXT: 'Ha ocurrido un error al iniciar sesión',
+      TRY_AGAIN_BUTTON: 'intentar de nuevo'
     }
   },
 

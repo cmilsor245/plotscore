@@ -70,7 +70,6 @@ export default function SignUpPage() {
   const [email, setEmail] = useState('')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const router = useRouter()
 
   const handleEmailChange = (e) => setEmail(e.target.value)
   const handleUsernameChange = (e) => setUsername(e.target.value)
@@ -87,25 +86,35 @@ export default function SignUpPage() {
 
   /* -------------------- */
 
+  const router = useRouter()
+  const [errorModalDisplayed, setErrorModalDisplayed] = useState(false)
+
   const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
   const submit = async (e) => {
     e.preventDefault()
 
-    await fetch(`${apiUrl}/signup`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        email,
-        username,
-        password
+    try {
+      await fetch(`${apiUrl}/signup`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email,
+          username,
+          password
+        })
       })
-    })
 
-    router.push('/login')
+      router.push('/login')
+    } catch (error) {
+      // TODO: improve error handling: this is not actually catching the right error from the backend
+      setErrorModalDisplayed(true)
+    }
   }
+
+  const handleWindowReload = () => window.location.reload()
 
   /* ---------------------------------------------------- */
 
@@ -128,6 +137,20 @@ export default function SignUpPage() {
 
   return (
     <>
+      <div className = 'error-modal' style = { errorModalDisplayed ? { display: 'flex' } : { display: 'none' } }>
+        <p>
+          { translate(lang, 'SIGNUP_PAGE', 'ACCOUNT_FORM', 'ERROR_TEXT') }
+        </p>
+
+        <button className = 'error-modal--close-button' onClick = { handleWindowReload }>
+          { translate(lang, 'SIGNUP_PAGE', 'ACCOUNT_FORM', 'TRY_AGAIN_BUTTON') }
+        </button>
+      </div>
+
+      <div className = 'error-modal--overlay' style = { errorModalDisplayed ? { display: 'flex' } : { display: 'none' } }></div>
+
+      {/* -------------------------------------------------------------------------------------------------- */}
+
       <div className = 'main-actions-buttons'>
         <MainActionButton
           icon = { lang === 'en' ? CircleFlagsEs : CircleFlagsUk }

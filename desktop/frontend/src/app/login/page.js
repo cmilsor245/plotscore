@@ -69,7 +69,6 @@ export default function LoginPage() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const router = useRouter()
 
   const handleEmailChange = (e) => setEmail(e.target.value)
   const handlePasswordChange = (e) => setPassword(e.target.value)
@@ -82,12 +81,15 @@ export default function LoginPage() {
 
   /* -------------------- */
 
+  const router = useRouter()
+  const [errorModalDisplayed, setErrorModalDisplayed] = useState(false)
+
   const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
   const submit = async (e) => {
     e.preventDefault()
 
-    await fetch(`${apiUrl}/login`, {
+    const response = await fetch(`${apiUrl}/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -99,8 +101,14 @@ export default function LoginPage() {
       })
     })
 
+    if (!response.ok) {
+      setErrorModalDisplayed(true)
+    }
+
     router.push('/')
   }
+
+  const handleWindowReload = () => window.location.reload()
 
   /* ---------------------------------------------------- */
 
@@ -123,6 +131,20 @@ export default function LoginPage() {
 
   return (
     <>
+      <div className = 'error-modal' style = { errorModalDisplayed ? { display: 'flex' } : { display: 'none' } }>
+        <p>
+          { translate(lang, 'LOGIN_PAGE', 'ACCOUNT_FORM', 'ERROR_TEXT') }
+        </p>
+
+        <button className = 'error-modal--close-button' onClick = { handleWindowReload }>
+          { translate(lang, 'LOGIN_PAGE', 'ACCOUNT_FORM', 'TRY_AGAIN_BUTTON') }
+        </button>
+      </div>
+
+      <div className = 'error-modal--overlay' style = { errorModalDisplayed ? { display: 'flex' } : { display: 'none' } }></div>
+
+      {/* -------------------------------------------------------------------------------------------------- */}
+
       <div className = 'main-actions-buttons'>
         <MainActionButton
           icon = { lang === 'en' ? CircleFlagsEs : CircleFlagsUk }

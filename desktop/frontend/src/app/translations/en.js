@@ -31,6 +31,9 @@ const translationsEN = {
       PASSWORD_PLACEHOLDER: '8 characters minimum',
 
       SIGN_UP_BUTTON: 'create account',
+
+      ERROR_TEXT: 'An error occurred while creating the account',
+      TRY_AGAIN_BUTTON: 'try again'
     }
   },
 
@@ -44,6 +47,9 @@ const translationsEN = {
       PASSWORD: 'Password',
 
       LOG_IN_BUTTON: 'log in',
+
+      ERROR_TEXT: 'An error occurred while logging in',
+      TRY_AGAIN_BUTTON: 'try again'
     }
   },
 
