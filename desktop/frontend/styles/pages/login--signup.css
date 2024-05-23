@@ -1,10 +1,7 @@
 .dark-theme {
   --color--error-modal--bg: var(--color--primary-dark-70);
-  --color--error-modal--box-shadow: var(--color--primary-light-80);
   --color--error-modal--button--bg--hover: var(--color--secondary-dark-10);
-  --color--error-modal--button--bg: var(--color--secondary-main);
   --color--error-modal--button--text: var(--color--secondary-light-80);
-  --color--error-modal--overlay: rgba(7, 8, 10, .8);
   --color--error-modal--text: var(--color--primary-light-80);
   --color--form-area--bg-mobile: rgba(20, 25, 31, .9);
   --color--form-area--bg: var(--color--primary-dark-70);
@@ -20,11 +17,8 @@
 
 .light-theme {
   --color--error-modal--bg: var(--color--primary-light-80);
-  --color--error-modal--box-shadow: var(--color--primary-dark-70);
   --color--error-modal--button--bg--hover: var(--color--tertiary-dark-10);
-  --color--error-modal--button--bg: var(--color--tertiary-main);
   --color--error-modal--button--text: var(--color--tertiary-light-80);
-  --color--error-modal--overlay: rgba(218, 221, 224, .8);
   --color--error-modal--text: var(--color--primary-dark-70);
   --color--form-area--bg-mobile: rgba(218, 221, 224, .9);
   --color--form-area--bg: var(--color--primary-light-80);
@@ -41,57 +35,69 @@
 .error-modal {
   align-items: center;
   background-color: var(--color--error-modal--bg);
+  border-bottom: 3px solid var(--color--error-modal--button--bg--hover);
   border-radius: 5px;
   color: var(--color--error-modal--text);
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   justify-content: center;
-  left: 50%;
-  padding: 30px;
+  padding: 10px;
   position: fixed;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 1%;
+  transition: .1s;
   width: fit-content;
   z-index: 6;
-  box-shadow: 0 0 20px 10px var(--color--error-modal--box-shadow);
+}
+
+.error-modal--signup {
+  right: .5%;
+  transform: translateX(120%);
+}
+
+.error-modal--login {
+  left: .5%;
+  transform: translateX(-120%);
+}
+
+.error-modal--displayed {
+  transform: translateX(0);
 }
 
 .error-modal p {
-  --font: clamp(14px, 2.7rem, 29px) var(--font--graphik-semibold);
+  --font: clamp(14px, 1.7rem, 24px) var(--font--graphik-semibold);
   font: var(--font);
   text-align: center;
 }
 
 .error-modal--close-button {
-  --font: clamp(12px, 18rem, 25px) var(--font--graphik-bold);
-  color: var(--color--error-modal--button--text);
-  font: var(--font);
-  text-align: center;
-  text-decoration: underline;
-  transition: .2s;
-  cursor: pointer;
-  text-transform: uppercase;
-  background-color: var(--color--error-modal--button--bg);
-  padding: 5px 10px;
-  border-radius: 2px;
-  text-decoration: none;
-  transition: .1s;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 5px;
   border: none;
+  color: var(--color--error-modal--text);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 2px 6px;
+  text-align: center;
+  text-decoration: none;
+  text-decoration: underline;
+  text-transform: uppercase;
+  transition: .1s;
+  transition: .2s;
 }
 
 .error-modal--close-button:hover {
   background-color: var(--color--error-modal--button--bg--hover);
 }
 
-.error-modal--overlay {
-  background-color: var(--color--error-modal--overlay);
-  height: 100vh;
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 100vw;
-  z-index: 5;
+.error-modal--close-button svg {
+  height: 20px;
+  width: 20px;
+}
+
+.error-modal--close-button * {
+  cursor: pointer;
 }
 
 .signup-page, .login-page {

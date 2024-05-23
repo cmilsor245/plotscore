@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 import {
   IconBulbFilled,
   IconBulbOff,
+  IconEyeCheck,
   IconX
 } from '@tabler/icons-react'
 
@@ -109,7 +110,7 @@ export default function LoginPage() {
     router.push('/')
   }
 
-  const handleWindowReload = () => window.location.reload()
+  const handleNotificationClose = () => setErrorModalDisplayed(false)
 
   /* ---------------------------------------------------- */
 
@@ -132,17 +133,15 @@ export default function LoginPage() {
 
   return (
     <>
-      <div className = 'error-modal' style = { errorModalDisplayed ? { display: 'flex' } : { display: 'none' } }>
+      <div className = { `error-modal error-modal--login ${ errorModalDisplayed ? 'error-modal--displayed' : '' }` }>
         <p>
           { translate(lang, 'LOGIN_PAGE', 'ACCOUNT_FORM', 'ERROR_TEXT') }
         </p>
 
-        <button className = 'error-modal--close-button' onClick = { handleWindowReload }>
-          { translate(lang, 'LOGIN_PAGE', 'ACCOUNT_FORM', 'TRY_AGAIN_BUTTON') }
+        <button className = 'error-modal--close-button' onClick = { handleNotificationClose }>
+          <IconEyeCheck />
         </button>
       </div>
-
-      <div className = 'error-modal--overlay' style = { errorModalDisplayed ? { display: 'flex' } : { display: 'none' } }></div>
 
       {/* -------------------------------------------------------------------------------------------------- */}
 
