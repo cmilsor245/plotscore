@@ -108,7 +108,19 @@ export default function SignUpPage() {
         })
       })
 
-      router.push('/login')
+      await fetch (`${apiUrl}/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include',
+        body: JSON.stringify({
+          email,
+          password
+        })
+      })
+
+      router.push('/')
     } catch (error) {
       // TODO: improve error handling: this is not actually catching the right error from the backend
       setErrorModalDisplayed(true)
