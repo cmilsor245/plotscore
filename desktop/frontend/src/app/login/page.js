@@ -103,6 +103,7 @@ export default function LoginPage() {
 
     if (!response.ok) {
       setErrorModalDisplayed(true)
+      return
     }
 
     router.push('/')
