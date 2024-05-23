@@ -1,0 +1,17 @@
+.dark-theme {
+  
+}
+
+.light-theme {
+  
+}
+
+.side-menu {
+  background-color: red;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 4vw;
+  z-index: 1;
+}
