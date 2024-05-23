@@ -1,12 +1,12 @@
 .dark-theme {
-  --color--form-area--bg-mobile: rgba(20, 25, 31, .8);
+  --color--form-area--bg-mobile: rgba(20, 25, 31, .7);
   --color--form-area--bg: var(--color--primary-dark-70);
   --color--go-back--button--bg--hover: var(--color--secondary-dark-10);
   --color--go-back--button--bg: var(--color--secondary-main);
 }
 
 .light-theme {
-  --color--form-area--bg-mobile: rgba(218, 221, 224, .8);
+  --color--form-area--bg-mobile: rgba(218, 221, 224, .7);
   --color--form-area--bg: var(--color--primary-light-80);
   --color--go-back--button--bg--hover: var(--color--tertiary-dark-10);
   --color--go-back--button--bg: var(--color--tertiary-main);

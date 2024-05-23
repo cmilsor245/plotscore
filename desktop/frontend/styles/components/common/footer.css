@@ -149,6 +149,12 @@ footer {
   }
 }
 
+@media (width <= 520px) {
+  footer {
+    z-index: 1;
+  }
+}
+
 @media (width <= 464px) {
   .footer--top--main-links {
     grid-template-columns: repeat(2, 1fr);
