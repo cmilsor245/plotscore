@@ -3,8 +3,6 @@
 import { useEffect, useState } from 'react'
 
 export default function Home() {
-  const [message, setMessage] = useState('')
-
   const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
   useEffect(() => {
@@ -25,7 +23,7 @@ export default function Home() {
     )()
   })
 
-  /* --------------------------- */
+  /* --------------------------------------- */
 
   const logout = async () => {
     await fetch(`${apiUrl}/logout`, {
@@ -41,8 +39,6 @@ export default function Home() {
 
   return (
     <>
-      { message }
-
       <button onClick = { logout }>
         logout
       </button>

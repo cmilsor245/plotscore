@@ -271,6 +271,15 @@
 }
 
 @media (width <= 1586px) {
+  .error-modal p {
+    font-size: clamp(12px, 1.6rem, 18px);
+  }
+
+  .error-modal--close-button svg {
+    height: 18px;
+    width: 18px;
+  }
+
   .signup-form--area {
     padding: 100px 20px 100px 60px;
   }
@@ -301,6 +310,15 @@
 }
 
 @media (width <= 1420px) {
+  .error-modal p {
+    font-size: clamp(12px, 1.4rem, 16px);
+  }
+
+  .error-modal--close-button svg {
+    height: 16px;
+    width: 16px;
+  }
+
   .signup-form--area, .login-form--area {
     gap: 30px;
     justify-content: center;
@@ -364,6 +382,28 @@
 }
 
 @media (width <= 733px) {
+  .error-modal {
+    gap: 20px;
+    left: 50%;
+    top: 1%;
+    transform: translate(-50%, -100vh);
+    width: 80%;
+  }
+
+  .error-modal--displayed {
+    display: flex;
+    transform: translate(-50%, 0);
+  }
+
+  .error-modal p {
+    font-size: clamp(14px, 2.2rem, 23px);
+  }
+
+  .error-modal--close-button svg {
+    height: 24px;
+    width: 24px;
+  }
+
   .signup-page {
     background: center / cover;
   }
@@ -381,8 +421,51 @@
   }
 }
 
+@media (width <= 592px) {
+  .error-modal p {
+    font-size: clamp(12px, 1.8rem, 18px);
+    top: 40%;
+  }
+
+  .error-modal--close-button svg {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+@media (width <= 480px) {
+  .error-modal {
+    top: 10% !important;
+    width: 95% !important;
+  }
+
+  .error-modal p {
+    font-size: clamp(12px, 1.4rem, 14px);
+  }
+
+  .error-modal--close-button svg {
+    height: 16px;
+    width: 16px;
+  }
+}
+
 @media (width <= 400px) {
   .signup-form--area, .login-form--area {
     padding-inline: 20px;
+  }
+}
+
+@media (width <= 330px) {
+  .error-modal {
+    padding: 5px;
+  }
+
+  .error-modal p {
+    font-size: clamp(12px, 1.2rem, 12px);
+  }
+
+  .error-modal--close-button svg {
+    height: 15px;
+    width: 15px;
   }
 }
