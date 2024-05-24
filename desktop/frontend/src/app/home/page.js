@@ -43,9 +43,9 @@ export default function Home() {
     <>
       {
         userData && userData.role === 'admin' ?
-          <AdminDashboard userData={userData} handleLogout={logout} />
+          <AdminDashboard userData = { userData } handleLogout = { logout } />
         :
-          <UserDashboard userData={userData} handleLogout={logout} />
+          <UserDashboard userData = { userData } handleLogout = { logout } />
       }
     </>
   )

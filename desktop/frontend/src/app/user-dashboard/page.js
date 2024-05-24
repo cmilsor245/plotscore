@@ -69,9 +69,7 @@ export default function UserDashboard({
 
       <SideMenu
         lang = { lang }
-
         userData = { userData }
-
         handleLogout = { handleLogout }
       />
 

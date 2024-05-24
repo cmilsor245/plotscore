@@ -69,9 +69,7 @@ export default function AdminDashboard({
 
       <SideMenu
         lang = { lang }
-
         userData = { userData }
-
         handleLogout = { handleLogout }
       />
 

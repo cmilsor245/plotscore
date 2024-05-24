@@ -17,14 +17,13 @@ class AuthController extends Controller {
       ], Response::HTTP_UNAUTHORIZED);
     }
 
-    $pronouns = $request -> input('pronouns');
-    if (is_null($pronouns) || $pronouns === '') {
-      $pronouns = 'they/them';
-    }
+    $pronouns = $request -> input('pronouns') ?? 'they/them';
 
-    $avatarPath = $request -> file('avatar') ? $request -> file('avatar') -> store('avatars', 'public') : null;
+    $avatarPath = $request -> file('avatar')
+      ? $request -> file('avatar') -> store('avatars', 'public')
+      : 'avatars/default.png';
 
-    $avatarUrl = $avatarPath ? asset('storage/' . $avatarPath) : null;
+    $avatarUrl = env('PUBLIC_STORAGE_PATH') . $avatarPath;
 
     return User::create([
       'role' => 'admin',
@@ -36,7 +35,7 @@ class AuthController extends Controller {
       'email' => $request -> input('email'),
       'password' => Hash::make($request -> input('password')),
 
-      'avatar' => $avatarPath,
+      'avatar' => $avatarUrl,
       'bio' => $request -> input('bio'),
 
       'location' => $request -> input('location'),
@@ -46,14 +45,13 @@ class AuthController extends Controller {
   }
 
   public function signup(AuthRequest $request) {
-    $pronouns = $request -> input('pronouns');
-    if (is_null($pronouns) || $pronouns === '') {
-      $pronouns = 'they/them';
-    }
+    $pronouns = $request -> input('pronouns') ?? 'they/them';
 
-    $avatarPath = $request -> file('avatar') ? $request -> file('avatar') -> store('avatars', 'public') : null;
+    $avatarPath = $request -> file('avatar')
+      ? $request -> file('avatar') -> store('avatars', 'public')
+      : 'avatars/default.png';
 
-    $avatarUrl = $avatarPath ? asset('storage/' . $avatarPath) : null;
+    $avatarUrl = env('PUBLIC_STORAGE_PATH') . $avatarPath;
 
     return User::create([
       'role' => 'user',
@@ -65,7 +63,7 @@ class AuthController extends Controller {
       'email' => $request -> input('email'),
       'password' => Hash::make($request -> input('password')),
 
-      'avatar' => $avatarPath,
+      'avatar' => $avatarUrl,
       'bio' => $request -> input('bio'),
 
       'location' => $request -> input('location'),

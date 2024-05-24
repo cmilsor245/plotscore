@@ -16,7 +16,7 @@ return new class extends Migration {
       $table -> string('email', 255) -> unique();
       $table -> string('password', 255);
 
-      $table -> binary('avatar') -> nullable();
+      $table -> string('avatar') -> nullable();
       $table -> integer('follower_count') -> default(0);
       $table -> text('bio') -> nullable();
 

@@ -7,8 +7,12 @@
 }
 
 .side-menu {
+  align-items: center;
   background-color: var(--color--side-menu--bg);
+  display: flex;
+  flex-direction: column;
   height: 100vh;
+  justify-content: space-between;
   left: 0;
   position: fixed;
   top: 0;
