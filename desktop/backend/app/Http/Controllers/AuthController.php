@@ -24,7 +24,7 @@ class AuthController extends Controller {
 
     $avatarPath = $request -> file('avatar') ? $request -> file('avatar') -> store('avatars', 'public') : null;
 
-    // $avatarUrl = $avatarPath ? asset('storage/' . $avatarPath) : null;
+    $avatarUrl = $avatarPath ? asset('storage/' . $avatarPath) : null;
 
     return User::create([
       'role' => 'admin',
@@ -38,7 +38,7 @@ class AuthController extends Controller {
 
       'avatar' => $avatarPath,
       'bio' => $request -> input('bio'),
-      
+
       'location' => $request -> input('location'),
       'website' => $request -> input('website'),
       'pronouns' => $pronouns
@@ -53,7 +53,7 @@ class AuthController extends Controller {
 
     $avatarPath = $request -> file('avatar') ? $request -> file('avatar') -> store('avatars', 'public') : null;
 
-    // $avatarUrl = $avatarPath ? asset('storage/' . $avatarPath) : null;
+    $avatarUrl = $avatarPath ? asset('storage/' . $avatarPath) : null;
 
     return User::create([
       'role' => 'user',
@@ -67,7 +67,7 @@ class AuthController extends Controller {
 
       'avatar' => $avatarPath,
       'bio' => $request -> input('bio'),
-      
+
       'location' => $request -> input('location'),
       'website' => $request -> input('website'),
       'pronouns' => $pronouns

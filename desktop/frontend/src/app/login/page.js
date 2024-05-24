@@ -190,6 +190,7 @@ export default function LoginPage() {
                   onChange = { handleEmailChange }
                   onFocus = { e => e.target.select() }
                   required
+                  autoFocus
                   type = 'email'
                   value = { email }
                 />

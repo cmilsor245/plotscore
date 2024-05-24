@@ -336,6 +336,8 @@ header * {
   text-transform: uppercase;
   transition: .2s;
   width: 100%;
+  text-decoration: none;
+  color: var(--color--primary-light-90);
 }
 
 .nav--links--search-bar--mobile--additional--button:active {
@@ -359,9 +361,7 @@ header * {
 }
 
 .nav--links--search-bar--mobile--additional--button * {
-  color: var(--color--primary-light-90);
   cursor: pointer;
-  text-decoration: none;
 }
 
 .nav--links--search-bar--mobile--additional--close-button {

@@ -426,6 +426,10 @@
 
   /* ----------------------------- */
 
+  --logo-header--height: 115px;
+
+  /* ----------------------------- */
+
   --media-slot--small--height: 135px;
   --media-slot--small--width: 85px;
 
@@ -520,6 +524,10 @@ main {
   min-height: 100vh;
 }
 
+.common--content--with-logo-header {
+  margin-top: calc(var(--logo-header--height) + 50px);
+}
+
 .common--content-footer--content {
   display: flex;
   flex-direction: column;
@@ -527,6 +535,12 @@ main {
   gap: 75px;
   justify-content: flex-start;
   padding-inline: var(--padding-inline--global);
+}
+
+.common--content-footer--logo-text {
+  --font: 90px var(--font--grape-nuts);
+  color: var(--color--secondary-main);
+  font: var(--font);
 }
 
 .section-with--heading-and-content {

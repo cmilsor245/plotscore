@@ -207,6 +207,7 @@ export default function SignUpPage() {
                   onChange = { handleEmailChange }
                   onFocus = { e => e.target.select() }
                   required
+                  autoFocus
                   type = 'email'
                   value = { email }
                   placeholder = { translate(lang, 'SIGNUP_PAGE', 'ACCOUNT_FORM', 'EMAIL_PLACEHOLDER') }

@@ -1,17 +1,17 @@
 .dark-theme {
-  
+  --color--side-menu--bg: var(--color--primary-dark-70);
 }
 
 .light-theme {
-  
+  --color--side-menu--bg: var(--color--primary-light-80);
 }
 
 .side-menu {
-  background-color: red;
+  background-color: var(--color--side-menu--bg);
   height: 100vh;
   left: 0;
   position: fixed;
   top: 0;
   width: 4vw;
-  z-index: 1;
+  z-index: 4;
 }

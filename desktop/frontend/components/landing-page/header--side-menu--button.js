@@ -8,10 +8,11 @@ export default function HeaderSideMenuButton({ type, text, link }) {
   }
 
   return (
-    <div
+    <Link
       className = { `nav--links--search-bar--mobile--additional--button ${ conditionalClassName }` }
+      href = { link }
     >
-      <Link href = { link }>{ text }</Link>
-    </div>
+      { text }
+    </Link>
   )
 }
