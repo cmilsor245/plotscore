@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 
 import AdminDashboard from '/src/app/admin-dashboard/page.js'
