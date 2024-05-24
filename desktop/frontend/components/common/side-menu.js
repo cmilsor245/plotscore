@@ -22,7 +22,7 @@ export default function SideMenu({
           src = { avatarSrc }
           width = { 100 }
           height = { 100 }
-          alt = { `${ userData ? userData.name : 'user' } avatar` }
+          alt = 'avatar'
         />
       </section>
 
