@@ -5,14 +5,14 @@ import { useEffect, useState } from 'react'
 
 import {
   IconPencilPlus,
+  IconUserPlus,
   IconZoom
 } from '@tabler/icons-react'
 
+import Footer from '/components/common/footer.js'
+import LogoHeader from '/components/common/logo-header.js'
 import { MainActionButton } from '/components/common/main-action-button.js'
 import SideMenu from '/components/common/side-menu.js'
-import LogoHeader from '/components/common/logo-header.js'
-import Footer from '/components/common/footer.js'
-import translate from '/src/app/translation.js'
 
 import '/styles/pages/admin-dashboard.css'
 
@@ -56,6 +56,10 @@ export default function AdminDashboard({
     <>
       <div className = 'main-actions-buttons'>
         <MainActionButton
+          icon = { IconUserPlus }
+          handleClick = { null }
+        />
+        <MainActionButton
           icon = { IconZoom }
           handleClick = { null }
         />
@@ -69,6 +73,9 @@ export default function AdminDashboard({
 
       <SideMenu
         lang = { lang }
+        handleLanguageChange = { handleLanguageChange }
+        theme = { theme }
+        handleThemeChange = { handleThemeChange }
         userData = { userData }
         handleLogout = { handleLogout }
       />

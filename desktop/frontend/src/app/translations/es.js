@@ -1,5 +1,18 @@
 const translationsES = {
   COMMON: {
+    SIDE_MENU: {
+      THEME: 'Cambiar a modo Claro/Oscuro',
+      LANGUAGE: 'Cambiar idioma',
+
+      MEDIA: 'Contenidos',
+      LISTS: 'Listas',
+      WATCHLIST: 'Ver más tarde',
+      LIKES: 'Likes',
+
+      SETTINGS: 'Configuración',
+      GO_PRO: 'Cambiarse a Pro',
+      LOGOUT: 'Cerrar sesión'
+    },
     FOOTER: {
       ABOUT: 'Sobre nosotros',
       NEWS: 'Noticias',
