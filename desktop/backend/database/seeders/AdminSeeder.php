@@ -37,7 +37,7 @@ class AdminSeeder extends Seeder {
       'email' => 'hello@plotscore.com',
       'password' => Hash::make('password1234'),
 
-      'avatar' => 'http://localhost:8000/storage/avatars/default.png',
+      'avatar' =>  env('PUBLIC_STORAGE_PATH') . 'avatars/default.png',
       'bio' => 'still not over dune: part two',
 
       'location' => 'la la land',
