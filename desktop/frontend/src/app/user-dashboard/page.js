@@ -1,3 +1,5 @@
+'use client'
+
 import cookie from 'js-cookie'
 import { useEffect, useState } from 'react'
 
