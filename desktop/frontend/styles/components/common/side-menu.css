@@ -1,5 +1,5 @@
 .dark-theme {
-  --color--icons--and--text--hover: var(--color--primary-light-50);
+  --color--icons--and--text--hover: var(--color--primary-light-40);
   --color--icons--and--text: var(--color--primary-light-80);
   --color--side-menu--bg: var(--color--primary-dark-70);
   --color--side-menu--divider: var(--color--primary-dark-30);
@@ -7,7 +7,7 @@
 }
 
 .light-theme {
-  --color--icons--and--text--hover: var(--color--primary-dark-10);
+  --color--icons--and--text--hover: var(--color--primary-light-10);
   --color--icons--and--text: var(--color--primary-dark-70);
   --color--side-menu--bg: var(--color--primary-light-80);
   --color--side-menu--divider: var(--color--primary-light-50);
@@ -52,7 +52,7 @@
 .side-menu--user span, .side-menu--option span {
   color: var(--color--icons--and--text);
   cursor: pointer;
-  transition: .2s;
+  transition: .15s;
 }
 
 .side-menu--user:hover span,
@@ -65,6 +65,7 @@
   cursor: pointer;
   filter: drop-shadow(0 2px 5px var(--color--user-avatar--shadow));
   transition: .3s;
+  border-radius: 50%;
 }
 
 .side-menu.side-menu--expanded .side-menu--user--avatar {
