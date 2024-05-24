@@ -42,11 +42,14 @@
   display: flex;
   gap: 10px;
   justify-content: flex-start;
-  width: 100%;
+}
+
+.side-menu--option {
+  width: 100%
 }
 
 .side-menu--user {
-  gap: 0;
+  gap: 15px;
 }
 
 .side-menu--user span, .side-menu--option span {
@@ -66,17 +69,20 @@
   cursor: pointer;
   filter: drop-shadow(0 2px 5px var(--color--user-avatar--shadow));
   transition: .3s;
-  border: 1px dashed red;
 }
 
 .side-menu.side-menu--expanded .side-menu--user--avatar {
-  height: 110px;
-  width: 110px;
+  height: 80px;
+  width: 80px;
 }
 
 .side-menu--user span {
   --font: clamp(28px, 3rem, 31px) var(--font--tiempos-headline-bold);
   font: var(--font);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 205px;
 }
 
 .side-menu--divider {
