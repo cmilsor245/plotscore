@@ -537,7 +537,15 @@ main {
   padding-inline: var(--padding-inline--global);
 }
 
+.common--content-footer--logo * {
+  cursor: pointer;
+}
+
 .common--content-footer--logo-text {
+  text-decoration: none;
+}
+
+.common--content-footer--logo-text h1 {
   --font: 90px var(--font--grape-nuts);
   color: var(--color--secondary-main);
   font: var(--font);

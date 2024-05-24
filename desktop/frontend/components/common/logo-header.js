@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import '/styles/components/common/logo-header.css'
@@ -24,14 +25,17 @@ export default function LogoHeader() {
 
   return (
     <div className = { `common--content-footer--logo ${ showLogo ? 'show-logo' : 'show-text' } centered` }>
-      <h1 className = 'common--content-footer--logo-text'>plotscore</h1>
-      <Image
-        className = 'header--logo-image'
-        src = '/logo/logo.png'
-        alt = 'plotscore logo'
-        width = { 130 }
-        height = { 130 }
-      />
+      <Link className = 'common--content-footer--logo-text' href = '/'>
+        <h1>plotscore</h1>
+      </Link>
+      <Link className = 'common--content-footer--logo-image' href = '/'>
+        <Image
+          src = '/logo/logo.png'
+          alt = 'plotscore logo'
+          width = { 130 }
+          height = { 130 }
+        />
+      </Link>
     </div>
   )
 }

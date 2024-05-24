@@ -14,6 +14,8 @@ import LogoHeader from '/components/common/logo-header.js'
 import Footer from '/components/common/footer.js'
 import translate from '/src/app/translation.js'
 
+import '/styles/pages/user-home.css'
+
 export default function UserDashboard({
   userData,
   handleLogout
