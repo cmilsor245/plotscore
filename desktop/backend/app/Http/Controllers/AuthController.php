@@ -19,11 +19,7 @@ class AuthController extends Controller {
 
     $pronouns = $request -> input('pronouns') ?? 'they/them';
 
-    $avatarPath = $request -> file('avatar')
-      ? $request -> file('avatar') -> store('avatars', 'public')
-      : 'avatars/default.png';
-
-    $avatarUrl = env('PUBLIC_STORAGE_PATH') . $avatarPath;
+    $avatar = $request -> input('avatar') ?? '/storage/avatars/default.png';
 
     return User::create([
       'role' => 'admin',
@@ -35,7 +31,7 @@ class AuthController extends Controller {
       'email' => $request -> input('email'),
       'password' => Hash::make($request -> input('password')),
 
-      'avatar' => $avatarUrl,
+      'avatar' => $avatar,
       'bio' => $request -> input('bio'),
 
       'location' => $request -> input('location'),
@@ -47,11 +43,7 @@ class AuthController extends Controller {
   public function signup(AuthRequest $request) {
     $pronouns = $request -> input('pronouns') ?? 'they/them';
 
-    $avatarPath = $request -> file('avatar')
-      ? $request -> file('avatar') -> store('avatars', 'public')
-      : 'avatars/default.png';
-
-    $avatarUrl = env('PUBLIC_STORAGE_PATH') . $avatarPath;
+    $avatar = $request -> input('avatar') ?? '/storage/avatars/default.png';
 
     return User::create([
       'role' => 'user',
@@ -63,7 +55,7 @@ class AuthController extends Controller {
       'email' => $request -> input('email'),
       'password' => Hash::make($request -> input('password')),
 
-      'avatar' => $avatarUrl,
+      'avatar' => $avatar,
       'bio' => $request -> input('bio'),
 
       'location' => $request -> input('location'),

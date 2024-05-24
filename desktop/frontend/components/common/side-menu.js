@@ -31,11 +31,7 @@ export default function SideMenu({
 }) {
   const publicApiStoragePath = process.env.NEXT_PUBLIC_API_STORAGE_PATH
 
-  const defaultAvatarSrc = `${ publicApiStoragePath }avatars/default.png`
-
-  const avatarSrc = userData && userData.avatar
-    ? userData.avatar
-    : defaultAvatarSrc
+  const avatarSrc = `${ publicApiStoragePath }${ userData ? userData.avatar : '/storage/avatars/default.png' }`
 
   /* ------------------------------- */
 
@@ -59,8 +55,8 @@ export default function SideMenu({
         <Image
           className = 'side-menu--user--avatar'
           src = { avatarSrc }
-          width = { 65 }
-          height = { 65 }
+          width = { 50 }
+          height = { 50 }
           alt = 'avatar'
         />
         {

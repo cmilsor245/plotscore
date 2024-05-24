@@ -29,8 +29,6 @@ class AdminSeeder extends Seeder {
 
     /* ----------------------- */
 
-    $publicStoragePath = env('PUBLIC_STORAGE_PATH');
-
     DB::table('users') -> insert([
       'role' => 'admin',
 
@@ -39,7 +37,7 @@ class AdminSeeder extends Seeder {
       'email' => 'hello@plotscore.com',
       'password' => Hash::make('password1234'),
 
-      'avatar' =>  $publicStoragePath . 'avatars/default.png',
+      'avatar' => '/storage/avatars/default.png',
       'bio' => 'still not over dune: part two',
 
       'location' => 'la la land',

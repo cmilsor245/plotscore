@@ -62,10 +62,11 @@
 }
 
 .side-menu--user--avatar {
+  border-radius: 50%;
   cursor: pointer;
   filter: drop-shadow(0 2px 5px var(--color--user-avatar--shadow));
   transition: .3s;
-  border-radius: 50%;
+  border: 1px dashed red;
 }
 
 .side-menu.side-menu--expanded .side-menu--user--avatar {
