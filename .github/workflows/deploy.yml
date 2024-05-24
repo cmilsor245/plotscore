@@ -19,7 +19,6 @@ jobs:
 
         cp .env.example .env
         sed -i 's|NEXT_PUBLIC_API_URL=.*|NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL }}|' .env
-        sed -i 's|NEXT_PUBLIC_API_STORAGE_PATH=.*|NEXT_PUBLIC_API_STORAGE_PATH=${{ secrets.NEXT_PUBLIC_API_STORAGE_PATH }}|' .env
 
         npm run build
 
@@ -46,7 +45,6 @@ jobs:
         sed -i 's|DB_USERNAME=.*|DB_USERNAME=${{ secrets.DB_USERNAME }}|' .env
         sed -i 's|DB_PASSWORD=.*|DB_PASSWORD=${{ secrets.DB_PASSWORD }}|' .env
         sed -i 's|ADMIN_SECRET_KEY=.*|ADMIN_SECRET_KEY=${{ secrets.ADMIN_SECRET_KEY }}|' .env
-        sed -i 's|PUBLIC_STORAGE_PATH=.*|PUBLIC_STORAGE_PATH=${{ secrets.PUBLIC_STORAGE_PATH }}|' .env
 
         APP_KEY=$(php artisan key:generate --show)
         sed -i "s|^APP_KEY=.*|APP_KEY=${APP_KEY}|" .env
