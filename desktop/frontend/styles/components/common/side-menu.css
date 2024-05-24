@@ -55,7 +55,9 @@
   transition: .2s;
 }
 
-.side-menu--user span:hover, .side-menu--option span:hover {
+.side-menu--user:hover span,
+.side-menu--option:hover svg,
+.side-menu--option:hover span {
   color: var(--color--icons--and--text--hover);
 }
 
