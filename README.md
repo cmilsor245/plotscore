@@ -11,7 +11,7 @@ I've created a permanent deployment using ***Vercel*** just so everyone can visi
 1. [TODO list](#todo-list)
 2. [Checkpoint video](#checkpoint-video)
 3. [Notion page](#notion-page)
-4. [Figma design](#figma-design)
+4. [Figma designs](#figma-designs)
 5. [Desktop version CI/CD pipeline guide](#desktop-version-cicd-pipeline-guide)
 
 #### [Back to top](#plotscore)
@@ -29,7 +29,7 @@ I've created a permanent deployment using ***Vercel*** just so everyone can visi
 #### Design
 
 - [x] :green_circle: **Desktop version** Figma design
-- [ ] :red_circle: **Mobile version** Figma design
+- [ ] :yellow_circle: **Mobile version** Figma design
 
 #### Frontend
 
@@ -76,9 +76,13 @@ Click [here](https://christian-millan-soria.notion.site/plotscore-7b99f56524704e
 
 ---
 
-### Figma design
+### Figma designs
 
-Click [here](https://www.figma.com/file/n4SCBhfrSxQZoQCxgk3bT0/plotscore---desktop-version?type=design&node-id=496%3A206&mode=design&t=YNZIFAdL6cYdkgz7-1) to visit the project's design (**desktop version**) on **Figma**. It is recommended to use the **playground mode** to be able to actually interact with the pages navigation or the components throughout the design.
+Click [here](https://www.figma.com/file/n4SCBhfrSxQZoQCxgk3bT0/plotscore---desktop-version?type=design&node-id=496%3A206&mode=design&t=YNZIFAdL6cYdkgz7-1) to visit the project's (**desktop version**) design on **Figma**.
+
+Click [here](hthttps://www.figma.com/design/N8xTc8yxVCcaegtkZLZu4O/plotscore---mobile-version?node-id=3001-13617&t=BMGg0CgqVIycPO6J-1) to visit the project's (**mobile version**) design on **Figma**.
+
+It is recommended to use the **playground mode** to be able to actually interact with the pages navigation or the components throughout the design.
 
 It is possible to **navigate through the atoms and different fidelities** by **clicking on the top-left icon**:
 
@@ -107,7 +111,7 @@ He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualqui
 1. [Lista de tareas pendientes](#lista-de-tareas-pendientes)
 2. [Vídeo del checkpoint](#vídeo-del-checkpoint)
 3. [Notion](#notion)
-4. [Diseño en Figma](#diseño-en-figma)
+4. [Diseños en Figma](#diseños-en-figma)
 5. [Guía CI/CD pipeline para la versión desktop](#guía-cicd-pipeline-para-la-versión-desktop)
 
 #### [Volver arriba](#plotscore)
@@ -172,9 +176,13 @@ Haz clic [aquí](https://christian-millan-soria.notion.site/plotscore-93a62f5a1a
 
 ---
 
-### Diseño en Figma
+### Diseños en Figma
 
-Haz clic [aquí](https://www.figma.com/file/n4SCBhfrSxQZoQCxgk3bT0/plotscore---desktop-version?type=design&node-id=496%3A206&mode=design&t=YNZIFAdL6cYdkgz7-1) para visitar el diseño del proyecto (**versión desktop**) en **Figma**. Se recomienda entrar en el **modo playground** para poder interactuar con la navegación entre páginas y los componentes de forma dinámica.
+Haz clic [aquí](https://www.figma.com/file/n4SCBhfrSxQZoQCxgk3bT0/plotscore---desktop-version?type=design&node-id=496%3A206&mode=design&t=YNZIFAdL6cYdkgz7-1) para visitar el diseño del proyecto (**versión desktop**) en **Figma**.
+
+Haz clic [aquí](https://www.figma.com/design/N8xTc8yxVCcaegtkZLZu4O/plotscore---mobile-version?node-id=3001-13617&t=BMGg0CgqVIycPO6J-1) para visitar el diseño del proyecto (**versión mobile**) en **Figma**.
+
+Se recomienda entrar en el **modo playground** para poder interactuar con la navegación entre páginas y los componentes de forma dinámica.
 
 Es posible **navegar entre los átomos y las diferentes fidelidades del proyecto** utilizando el **desplegable de la esquina superior izquierda**:
 
