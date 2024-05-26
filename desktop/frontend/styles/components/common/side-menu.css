@@ -15,6 +15,8 @@
 }
 
 .side-menu {
+  --size--icons--expanded: 30px;
+  --size--icons--not-expanded: 25px;
   align-items: center;
   background-color: var(--color--side-menu--bg);
   display: flex;
@@ -45,7 +47,7 @@
 }
 
 .side-menu--option {
-  width: 100%
+  width: 100%;
 }
 
 .side-menu--user {
@@ -101,6 +103,19 @@
   font: var(--font);
 }
 
+.side-menu--option--text {
+  left: calc(var(--size--icons--expanded) + 10px);
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  text-wrap: nowrap;
+}
+
+.side-menu--option--text.expanded {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .side-menu--main-actions,
 .side-menu--tabs,
 .side-menu--options {
@@ -109,6 +124,7 @@
   flex-direction: column;
   gap: 50px;
   justify-content: center;
+  position: relative;
 }
 
 .side-menu--main-actions svg,
@@ -116,9 +132,9 @@
 .side-menu--options svg {
   color: var(--color--icons--and--text);
   cursor: pointer;
-  height: 25px;
+  height: var(--size--icons--not-expanded);
   transition: .3s;
-  width: 25px;
+  width: var(--size--icons--not-expanded);
 }
 
 .side-menu--main-actions svg *,
@@ -130,6 +146,6 @@
 .side-menu.side-menu--expanded .side-menu--main-actions svg,
 .side-menu.side-menu--expanded .side-menu--tabs svg,
 .side-menu.side-menu--expanded .side-menu--options svg {
-  height: 30px;
-  width: 30px;
+  height: var(--size--icons--expanded);
+  width: var(--size--icons--expanded);
 }
