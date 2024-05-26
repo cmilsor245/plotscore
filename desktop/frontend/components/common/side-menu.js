@@ -31,7 +31,8 @@ export default function SideMenu({
 }) {
   const publicApiStoragePath = process.env.NEXT_PUBLIC_API_STORAGE_PATH
 
-  const avatarSrc = `${ publicApiStoragePath }${ userData ? userData.avatar : '/storage/avatars/default.png' }`
+  // const avatarSrc = `${ publicApiStoragePath }${ userData ? userData.avatar : '/storage/avatars/default.png' }`
+  const avatarSrc = 'https://secure.gravatar.com/avatar/98eadea62aa09a91132e66b5319c84d6?rating=PG&size=1000&border=&default=https%3A%2F%2Fs.ltrbxd.com%2Fstatic%2Fimg%2Favatar1000.a71b6e9c.png'
 
   /* ------------------------------- */
 
