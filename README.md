@@ -29,7 +29,7 @@ I've created a permanent deployment using ***Vercel*** just so everyone can visi
 #### Design
 
 - [x] :green_circle: **Desktop version** Figma design
-- [ ] :yellow_circle: **Mobile version** Figma design
+- [x] :green_circle: **Mobile version** Figma design
 
 #### Frontend
 
@@ -80,7 +80,7 @@ Click [here](https://christian-millan-soria.notion.site/plotscore-7b99f56524704e
 
 Click [here](https://www.figma.com/file/n4SCBhfrSxQZoQCxgk3bT0/plotscore---desktop-version?type=design&node-id=496%3A206&mode=design&t=YNZIFAdL6cYdkgz7-1) to visit the project's (**desktop version**) design on **Figma**.
 
-Click [here](hthttps://www.figma.com/design/N8xTc8yxVCcaegtkZLZu4O/plotscore---mobile-version?node-id=3001-13617&t=BMGg0CgqVIycPO6J-1) to visit the project's (**mobile version**) design on **Figma**.
+Click [here](https://www.figma.com/design/N8xTc8yxVCcaegtkZLZu4O/plotscore---mobile-version?node-id=3001-13617&t=BMGg0CgqVIycPO6J-1) to visit the project's (**mobile version**) design on **Figma**.
 
 It is recommended to use the **playground mode** to be able to actually interact with the pages navigation or the components throughout the design.
 
@@ -129,7 +129,7 @@ He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualqui
 #### Diseño
 
 - [x] :green_circle: Diseño en Figma de la **versión desktop**
-- [ ] :red_circle: Diseño en Figma de la **versión mobile**
+- [x] :green_circle: Diseño en Figma de la **versión mobile**
 
 #### Frontend
 
