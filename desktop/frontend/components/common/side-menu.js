@@ -63,7 +63,11 @@ export default function SideMenu({
         {
           isExpanded &&
             <span>
-              { userData.username }
+              {
+                userData
+                  ? userData.username
+                  : 'username'
+              }
             </span>
         }
       </section>
@@ -80,7 +84,11 @@ export default function SideMenu({
               : <IconBulbOff onClick = { handleThemeChange } />
           }
           <span className = { `side-menu--option--text ${ isExpanded ? 'expanded' : '' }` } onClick = { handleThemeChange }>
-            { translate(lang, 'COMMON', 'SIDE_MENU', 'THEME') }
+            {
+              theme === 'dark'
+                ? translate(lang, 'COMMON', 'SIDE_MENU', 'SWITCH_TO_LIGHT_MODE')
+                : translate(lang, 'COMMON', 'SIDE_MENU', 'SWITCH_TO_DARK_MODE')
+            }
           </span>
         </div>
         <div className = 'side-menu--option'>
@@ -90,7 +98,11 @@ export default function SideMenu({
               : <CircleFlagsUk onClick = { handleLanguageChange } />
           }
           <span className = { `side-menu--option--text ${ isExpanded ? 'expanded' : '' }` } onClick = { handleLanguageChange }>
-            { translate(lang, 'COMMON', 'SIDE_MENU', 'LANGUAGE') }
+            {
+              lang === 'en'
+                ? translate(lang, 'COMMON', 'SIDE_MENU', 'CHANGE_TO_SPANISH')
+                : translate(lang, 'COMMON', 'SIDE_MENU', 'CHANGE_TO_ENGLISH')
+            }
           </span>
         </div>
       </section>

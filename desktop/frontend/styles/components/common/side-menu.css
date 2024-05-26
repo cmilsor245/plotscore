@@ -109,11 +109,13 @@
   pointer-events: none;
   position: absolute;
   text-wrap: nowrap;
+  transform: translateX(500%);
 }
 
 .side-menu--option--text.expanded {
   opacity: 1;
   pointer-events: auto;
+  transform: translateX(0);
 }
 
 .side-menu--main-actions,

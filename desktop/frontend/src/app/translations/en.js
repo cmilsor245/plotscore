@@ -1,8 +1,11 @@
 const translationsEN = {
   COMMON: {
     SIDE_MENU: {
-      THEME: 'Toggle Light/Dark mode',
-      LANGUAGE: 'Switch language',
+      SWITCH_TO_LIGHT_MODE: 'Switch to Light Mode',
+      SWITCH_TO_DARK_MODE: 'Switch to Dark Mode',
+
+      CHANGE_TO_SPANISH: 'Translate to spanish',
+      CHANGE_TO_ENGLISH: 'Translate to english',
 
       MEDIA: 'Media',
       LISTS: 'Lists',
