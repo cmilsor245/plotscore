@@ -2,7 +2,7 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
-Route::post('create-admin', [AuthController::class, 'createAdmin']);
+Route::post('createAdmin', [AuthController::class, 'createAdmin']);
 Route::post('signup', [AuthController::class, 'signup']);
 Route::post('login', [AuthController::class, 'login']);
 

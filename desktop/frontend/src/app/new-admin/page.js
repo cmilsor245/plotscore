@@ -97,11 +97,10 @@ export default function SignUpPage() {
     e.preventDefault()
 
     try {
-      await fetch(`${ apiUrl }/create-admin`, {
+      await fetch(`${ apiUrl }/createAdmin`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
+          'Content-Type': 'application/json'
         },
         credentials: 'include',
         body: JSON.stringify({
