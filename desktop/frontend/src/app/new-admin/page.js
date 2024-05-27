@@ -102,7 +102,6 @@ export default function SignUpPage() {
         headers: {
           'Content-Type': 'application/json'
         },
-        credentials: 'include',
         body: JSON.stringify({
           email,
           username,
@@ -111,7 +110,7 @@ export default function SignUpPage() {
         })
       })
 
-      // router.push('/')
+      router.push('/')
     } catch (error) {
       // TODO: improve error handling: this is not actually catching the right error from the backend
       setErrorModalDisplayed(true)

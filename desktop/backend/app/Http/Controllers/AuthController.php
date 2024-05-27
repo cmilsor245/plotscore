@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AuthController extends Controller {
   public function createAdmin(AuthRequest $request) {
+    // ! secret key check not working when on production environment
     // if ($request -> input('secret_key') !== env('ADMIN_SECRET_KEY')) {
     //   return response() -> json([
     //     'message' => 'unauthorized'
