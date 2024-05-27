@@ -231,6 +231,10 @@
   .side-menu.active {
     transform: translateX(0);
   }
+
+  .side-menu--expanded {
+    width: fit-content;
+  }
 }
 
 @media (width <= 456px) {
