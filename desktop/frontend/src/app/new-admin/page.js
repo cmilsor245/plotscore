@@ -111,13 +111,6 @@ export default function SignUpPage() {
         })
       })
 
-      console.log([
-        email,
-        username,
-        password,
-        secretAdminKey
-      ])
-
       // router.push('/')
     } catch (error) {
       // TODO: improve error handling: this is not actually catching the right error from the backend
