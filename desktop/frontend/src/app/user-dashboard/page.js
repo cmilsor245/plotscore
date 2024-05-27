@@ -8,11 +8,10 @@ import {
   IconZoom
 } from '@tabler/icons-react'
 
+import Footer from '/components/common/footer.js'
+import LogoHeader from '/components/common/logo-header.js'
 import { MainActionButton } from '/components/common/main-action-button.js'
 import SideMenu from '/components/common/side-menu.js'
-import LogoHeader from '/components/common/logo-header.js'
-import Footer from '/components/common/footer.js'
-import translate from '/src/app/translation.js'
 
 import '/styles/pages/user-home.css'
 
@@ -76,12 +75,12 @@ export default function UserDashboard({
         handleLogout = { handleLogout }
       />
 
-      <section className = 'common--content-footer with-top-padding'>
-        <section className = 'common--content-footer--content'>
+      <section className = 'common__content-footer with-top-padding'>
+        <section className = 'common__content'>
           <main>
             <LogoHeader />
 
-            <section className = 'common--content--with-logo-header'>
+            <section className = 'content__logo-header'>
               <p>test user</p>
             </section>
           </main>

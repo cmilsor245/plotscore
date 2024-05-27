@@ -28,7 +28,7 @@ export default function Backdrop({
   }
 
   return (
-    <div className = 'backdrop--wrapper' style = { backdropStyle }>
+    <div className = 'backdrop-wrapper' style = { backdropStyle }>
       { hasHeader &&
         <Header
           lang = { lang }
@@ -36,7 +36,7 @@ export default function Backdrop({
         />
       }
 
-      <Link className = 'backdrop--media-title' href = '/'>Star Wars (1977)</Link>
+      <Link className = 'backdrop__media-title' href = '/'>Star Wars (1977)</Link>
     </div>
   )
 }

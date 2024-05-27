@@ -83,12 +83,12 @@ export default function AdminDashboard({
         handleLogout = { handleLogout }
       />
 
-      <section className = 'common--content-footer with-top-padding'>
-        <section className = 'common--content-footer--content'>
+      <section className = 'common__content-footer with-top-padding'>
+        <section className = 'common__content'>
           <main>
             <LogoHeader />
 
-            <section className = 'common--content--with-logo-header'>
+            <section className = 'content__logo-header'>
               <article className = 'database-user-list'>
                 <h1>admin dashboard</h1>
               </article>

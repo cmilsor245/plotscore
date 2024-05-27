@@ -69,7 +69,7 @@
   text-align: center;
 }
 
-.error-modal--close-button {
+.error-modal__close-button {
   align-items: center;
   background-color: transparent;
   border-radius: 5px;
@@ -84,16 +84,16 @@
   transition: .2s;
 }
 
-.error-modal--close-button:hover {
+.error-modal__close-button:hover {
   background-color: var(--color--error-modal--button--bg--hover);
 }
 
-.error-modal--close-button svg {
+.error-modal__close-button svg {
   height: 20px;
   width: 20px;
 }
 
-.error-modal--close-button * {
+.error-modal__close-button * {
   cursor: pointer;
 }
 
@@ -105,7 +105,7 @@
   background: center / cover;
 }
 
-.signup-page--content, .login-page--content {
+.signup-page__content, .login-page__content {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -113,15 +113,15 @@
   justify-content: center;
 }
 
-.signup-page--content {
+.signup-page__content {
   align-items: flex-start;
 }
 
-.login-page--content {
+.login-page__content {
   align-items: flex-end;
 }
 
-.signup-form--area, .login-form--area {
+.signup__form-area, .login__form-area {
   background-color: var(--color--form-area--bg);
   display: flex;
   flex-direction: column;
@@ -133,17 +133,17 @@
   z-index: 1;
 }
 
-.signup-form--area {
+.signup__form-area {
   box-shadow: 80px 0 80px 80px var(--color--form-area--bg);
   padding: 9% 0 10% 3.5%;
 }
 
-.login-form--area {
+.login__form-area {
   box-shadow: -80px 0 80px 80px var(--color--form-area--bg);
   padding: 9% 3.5% 10% 0;
 }
 
-.cancel--account-form--button {
+.account-form__cancel-button {
   background-color: var(--color--submit-button--bg);
   color: var(--color--primary-dark-90);
   cursor: pointer;
@@ -155,25 +155,25 @@
   width: fit-content;
 }
 
-.cancel--account-form--button:hover {
+.account-form__cancel-button:hover {
   background-color: var(--color--submit-button--bg--hover);
 }
 
-.cancel--account-form--button * {
+.account-form__cancel-button * {
   cursor: pointer;
 }
 
-.cancel--account-form--button.signup {
+.account-form__cancel-button.signup {
   border-radius: 0 0 2px 0;
   left: 0;
 }
 
-.cancel--account-form--button.login {
+.account-form__cancel-button.login {
   border-radius: 0 0 0 2px;
   right: 0;
 }
 
-.signup-form--area h1, .login-form--area h1 {
+.signup__form-area h1, .login__form-area h1 {
   --font: clamp(25px, 4.6rem, 50px) var(--font--graphik-semibold);
   color: var(--color--form-title);
   font: var(--font);
@@ -183,7 +183,7 @@
   word-spacing: 3px;
 }
 
-.signup-form--area h1 span, .login-form--area h1 span {
+.signup__form-area h1 span, .login__form-area h1 span {
   --font: clamp(32px, 6.5rem, 70px) var(--font--grape-nuts);
   color: var(--color--secondary-main);
   font: var(--font);
@@ -196,14 +196,14 @@
   width: 100%;
 }
 
-.account-form--group {
+.account-form__group {
   display: flex;
   flex-direction: column;
   gap: 5px;
   width: 100%;
 }
 
-.account-form--group label {
+.account-form__group label {
   --font: clamp(10px, 2rem, 24px) var(--font--graphik-medium);
   color: var(--color--labels);
   cursor: pointer;
@@ -212,7 +212,7 @@
   width: fit-content;
 }
 
-.account-form--group input {
+.account-form__group input {
   --font: clamp(10px, 1.7rem, 20px) var(--font--graphik-regular);
   background-color: var(--color--input--bg);
   border-radius: 5px;
@@ -226,11 +226,11 @@
   width: 100%;
 }
 
-.account-form--group input:hover {
+.account-form__group input:hover {
   background-color: var(--color--input--bg--hover);
 }
 
-.account-form--group input::placeholder {
+.account-form__group input::placeholder {
   color: var(--color--input--placeholder);
 }
 
@@ -241,7 +241,7 @@
   font: var(--font);
 }
 
-.account-form--submit {
+.account-form__submit {
   --font: clamp(10px, 2rem, 24px) var(--font--graphik-black);
   background-color: var(--color--submit-button--bg);
   border-radius: 4px;
@@ -255,7 +255,7 @@
   transition: .2s;
 }
 
-.account-form--submit:hover {
+.account-form__submit:hover {
   background-color: var(--color--submit-button--bg--hover);
 }
 
@@ -264,36 +264,36 @@
     font-size: clamp(12px, 1.6rem, 18px);
   }
 
-  .error-modal--close-button svg {
+  .error-modal__close-button svg {
     height: 18px;
     width: 18px;
   }
 
-  .signup-form--area {
+  .signup__form-area {
     padding: 100px 20px 100px 60px;
   }
 
-  .login-form--area {
+  .login__form-area {
     padding: 100px 60px 100px 20px;
   }
 
-  .signup-form--area h1, .login-form--area h1 {
+  .signup__form-area h1, .login__form-area h1 {
     font-size: clamp(20px, 4rem, 45px);
   }
 
-  .signup-form--area h1 span, .login-form--area h1 span {
+  .signup__form-area h1 span, .login__form-area h1 span {
     font-size: clamp(25px, 5.6rem, 60px);
   }
 
-  .account-form--group label {
+  .account-form__group label {
     font-size: clamp(10px, 1.8rem, 20px);
   }
 
-  .account-form--group input {
+  .account-form__group input {
     font-size: clamp(10px, 1.5rem, 18px);
   }
 
-  .account-form--submit {
+  .account-form__submit {
     font-size: clamp(10px, 1.8rem, 20px);
   }
 }
@@ -303,43 +303,43 @@
     font-size: clamp(12px, 1.4rem, 16px);
   }
 
-  .error-modal--close-button svg {
+  .error-modal__close-button svg {
     height: 16px;
     width: 16px;
   }
 
-  .signup-form--area, .login-form--area {
+  .signup__form-area, .login__form-area {
     gap: 30px;
     justify-content: center;
   }
 
-  .signup-form--area {
+  .signup__form-area {
     padding: 100px 20px 100px 80px;
   }
 
-  .login-form--area {
+  .login__form-area {
     padding: 100px 80px 100px 20px;
   }
 }
 
 @media (width <= 1280px) {
-  .signup-form--area h1, .login-form--area h1 {
+  .signup__form-area h1, .login__form-area h1 {
     font-size: clamp(20px, 3.6rem, 40px);
   }
 
-  .signup-form--area h1 span, .login-form--area h1 span {
+  .signup__form-area h1 span, .login__form-area h1 span {
     font-size: clamp(20px, 5rem, 50px);
   }
 
-  .account-form--group label {
+  .account-form__group label {
     font-size: clamp(10px, 1.6rem, 18px);
   }
 
-  .account-form--group input {
+  .account-form__group input {
     font-size: clamp(10px, 1.4rem, 16px);
   }
 
-  .account-form--submit {
+  .account-form__submit {
     font-size: clamp(10px, 1.6rem, 18px);
   }
 }
@@ -353,7 +353,7 @@
     background-position-x: calc(100% + 400px);
   }
 
-  .signup-form--area, .login-form--area {
+  .signup__form-area, .login__form-area {
     width: 50%;
   }
 }
@@ -388,7 +388,7 @@
     font-size: clamp(14px, 2.2rem, 23px);
   }
 
-  .error-modal--close-button svg {
+  .error-modal__close-button svg {
     height: 24px;
     width: 24px;
   }
@@ -402,7 +402,7 @@
     background-position-x: calc(100% - 900px);
   }
 
-  .signup-form--area, .login-form--area {
+  .signup__form-area, .login__form-area {
     background-color: var(--color--form-area--bg-mobile);
     box-shadow: none;
     padding-inline: 60px;
@@ -416,7 +416,7 @@
     top: 40%;
   }
 
-  .error-modal--close-button svg {
+  .error-modal__close-button svg {
     height: 20px;
     width: 20px;
   }
@@ -432,14 +432,14 @@
     font-size: clamp(12px, 1.4rem, 14px);
   }
 
-  .error-modal--close-button svg {
+  .error-modal__close-button svg {
     height: 16px;
     width: 16px;
   }
 }
 
 @media (width <= 400px) {
-  .signup-form--area, .login-form--area {
+  .signup__form-area, .login__form-area {
     padding-inline: 20px;
   }
 }
@@ -453,7 +453,7 @@
     font-size: clamp(12px, 1.2rem, 12px);
   }
 
-  .error-modal--close-button svg {
+  .error-modal__close-button svg {
     height: 15px;
     width: 15px;
   }

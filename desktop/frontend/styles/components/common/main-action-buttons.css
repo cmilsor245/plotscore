@@ -46,7 +46,7 @@
   cursor: pointer;
 }
 
-.main-action-button--icon {
+.main-action-button__icon {
   color: var(--color--primary-dark-90);
   height: 100%;
   width: 100%;

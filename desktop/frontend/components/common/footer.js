@@ -14,8 +14,8 @@ import '/styles/components/common/footer.css'
 export default function Footer({ lang }) {
   return (
     <footer>
-      <section className = 'footer--top'>
-        <article className = 'footer--top--main-links'>
+      <section className = 'footer__top'>
+        <article className = 'footer__main-links'>
           <h5>
             { translate(lang, 'COMMON', 'FOOTER', 'ABOUT') }
           </h5>
@@ -51,7 +51,7 @@ export default function Footer({ lang }) {
           </h5>
         </article>
 
-        <article className = 'footer--top--socials'>
+        <article className = 'footer__socials'>
           <IconBrandX />
           <IconBrandThreads />
           <IconBrandFacebook />
@@ -63,7 +63,7 @@ export default function Footer({ lang }) {
 
       {/* --------------------------------------------- */}
 
-      <section className = 'footer--bottom'>
+      <section className = 'footer__bottom'>
         <p>
           &copy; { translate(lang, 'COMMON', 'FOOTER', 'COPYRIGHT') }
         </p>

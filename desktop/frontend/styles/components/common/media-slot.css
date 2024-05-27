@@ -14,12 +14,12 @@
   --font--username: 1.3rem var(--font--graphik-semibold);
 }
 
-.media-slot--poster {
+.media-slot__poster {
   background: center / cover;
   border-radius: 3px;
 }
 
-.media-slot--poster.media-slot--poster--sharp-border {
+.media-slot__poster.media-slot__poster--sharp-border {
   border-radius: 3px 3px 0 0;
 }
 
@@ -53,7 +53,7 @@
   width: 100%;
 }
 
-.media-slot--log-info {
+.media-slot__log-info {
   align-items: left;
   display: flex;
   flex-direction: column;
@@ -61,7 +61,7 @@
   justify-content: center;
 }
 
-.media-slot--log-info--user {
+.media-slot__user {
   align-items: center;
   background-color: var(--color--log-info--user);
   border-radius: 0 0 1px 1px;
@@ -70,53 +70,53 @@
   padding: 5px;
 }
 
-.media-slot--log-info--user--avatar {
+.media-slot__avatar {
   background: center / cover;
   border-radius: 50%;
   height: 25px;
   width: 25px;
 }
 
-.media-slot--log-info--user--username {
+.media-slot__username {
   color: var(--color--username);
   font: var(--font--username);
 }
 
-.media-slot--log-info--details {
+.log__details {
   align-items: center;
   display: flex;
   justify-content: space-between;
 }
 
-.media-slot--log-info--details--left-side {
+.log__left-side {
   display: flex;
   justify-content: left;
 }
 
-.media-slot--log-info--details--stars svg, .media-slot--log-info--details--left-side--watched-before svg, .media-slot--log-info--details--left-side--review-text svg {
+.media-slot__stars svg, .log__watched-before svg, .log__review-text svg {
   height: 18px;
   width: 18px;
 }
 
-.media-slot--log-info--details--stars {
+.media-slot__stars {
   color: var(--color--accent-main);
 }
 
-.media-slot--log-info--details--stars svg {
+.media-slot__stars svg {
   filter: drop-shadow(0 1px 1px var(--shadow--star-icon));
 }
 
-.media-slot--log-info--details--left-side--watched-before svg, .media-slot--log-info--details--left-side--review-text svg {
+.log__watched-before svg, .log__review-text svg {
   color: var(--color--already-watched--and--review-with-text);
 }
 
-.media-slot--log-info--details--right-side {
+.log__right-side {
   align-items: flex-end;
   display: flex;
   justify-content: flex-end;
 }
 
-.media-slot--log-info--details--right-side--date {
+.log__date {
   color: var(--color--primary-light-20);
   --font: 1.3rem var(--font--graphik-regular);
   font: var(--font);

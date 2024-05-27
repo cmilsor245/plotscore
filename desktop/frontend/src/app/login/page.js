@@ -137,7 +137,7 @@ export default function LoginPage() {
           { translate(lang, 'LOGIN_PAGE', 'ACCOUNT_FORM', 'ERROR_TEXT') }
         </p>
 
-        <button className = 'error-modal--close-button' onClick = { handleNotificationClose }>
+        <button className = 'error-modal__close-button' onClick = { handleNotificationClose }>
           <IconEyeCheck />
         </button>
       </div>
@@ -158,14 +158,14 @@ export default function LoginPage() {
       {/* -------------------------------------------------------------------------------------------------- */}
 
       <section className = 'login-page' style = { backgroundStyle }>
-        <section className = 'login-page--content'>
-          <article className = 'login-form--area'>
-            <Link className = 'cancel--account-form--button login' href = '/'>
+        <section className = 'login-page__content'>
+          <article className = 'login__form-area'>
+            <Link className = 'account-form__cancel-button login' href = '/'>
               <IconX />
             </Link>
 
             <h1
-              className = 'account-form--title'
+              className = 'account-form__title'
               dangerouslySetInnerHTML = {{
                 __html: translate(
                   lang,
@@ -177,7 +177,7 @@ export default function LoginPage() {
             ></h1>
 
             <form className = 'account-form login-form' onSubmit = { submit }>
-            <div className = 'account-form--group'>
+            <div className = 'account-form__group'>
                 <FormLabelInput
                   label = { translate(lang, 'LOGIN_PAGE', 'ACCOUNT_FORM', 'EMAIL') }
 
@@ -185,7 +185,7 @@ export default function LoginPage() {
                   maxLength = { emailMaxLength }
 
                   name = 'account-form--email-address'
-                  id = 'account-form--signup--email-address'
+                  id = 'account-form--login__email-address'
 
                   onChange = { handleEmailChange }
                   onFocus = { e => e.target.select() }
@@ -197,7 +197,7 @@ export default function LoginPage() {
                 <CharacterCounter value = { email } maxLength = { emailMaxLength } />
               </div>
 
-              <div className = 'account-form--group'>
+              <div className = 'account-form__group'>
                 <FormLabelInput
                   label = { translate(lang, 'LOGIN_PAGE', 'ACCOUNT_FORM', 'PASSWORD') }
 
@@ -205,7 +205,7 @@ export default function LoginPage() {
                   maxLength = { passwordMaxLength }
 
                   name = 'account-form--password'
-                  id = 'account-form--signup--password'
+                  id = 'account-form--login__password'
 
                   onChange = { handlePasswordChange }
                   onFocus = { e => e.target.select() }
@@ -217,7 +217,7 @@ export default function LoginPage() {
               </div>
 
               <input
-                className = 'account-form--submit'
+                className = 'account-form__submit'
                 type = 'submit'
                 value = { translate(lang, 'LOGIN_PAGE', 'ACCOUNT_FORM', 'LOG_IN_BUTTON') }
               />

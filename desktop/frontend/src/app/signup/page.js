@@ -154,7 +154,7 @@ export default function SignUpPage() {
           { translate(lang, 'SIGNUP_PAGE', 'ACCOUNT_FORM', 'ERROR_TEXT') }
         </p>
 
-        <button className = 'error-modal--close-button' onClick = { handleNotificationClose }>
+        <button className = 'error-modal__close-button' onClick = { handleNotificationClose }>
           <IconEyeCheck />
         </button>
       </div>
@@ -175,14 +175,14 @@ export default function SignUpPage() {
       {/* -------------------------------------------------------------------------------------------------- */}
 
       <section className = 'signup-page' style = { backgroundStyle }>
-        <section className = 'signup-page--content'>
-          <article className = 'signup-form--area'>
-            <Link className = 'cancel--account-form--button signup' href = '/'>
+        <section className = 'signup-page__content'>
+          <article className = 'signup__form-area'>
+            <Link className = 'account-form__cancel-button signup' href = '/'>
               <IconX />
             </Link>
 
             <h1
-              className = 'account-form--title'
+              className = 'account-form__title'
               dangerouslySetInnerHTML = {{
                 __html: translate(
                   lang,
@@ -194,7 +194,7 @@ export default function SignUpPage() {
             ></h1>
 
             <form className = 'account-form signup-form' onSubmit = { submit }>
-              <div className = 'account-form--group'>
+              <div className = 'account-form__group'>
                 <FormLabelInput
                   label = { translate(lang, 'SIGNUP_PAGE', 'ACCOUNT_FORM', 'EMAIL') }
 
@@ -202,7 +202,7 @@ export default function SignUpPage() {
                   maxLength = { emailMaxLength }
 
                   name = 'account-form--email-address'
-                  id = 'account-form--signup--email-address'
+                  id = 'account-form--signup__email-address'
 
                   onChange = { handleEmailChange }
                   onFocus = { e => e.target.select() }
@@ -215,7 +215,7 @@ export default function SignUpPage() {
                 <CharacterCounter value = { email } maxLength = { emailMaxLength } />
               </div>
 
-              <div className = 'account-form--group'>
+              <div className = 'account-form__group'>
                 <FormLabelInput
                   label = { translate(lang, 'SIGNUP_PAGE', 'ACCOUNT_FORM', 'USERNAME') }
 
@@ -223,7 +223,7 @@ export default function SignUpPage() {
                   maxLength = { usernameMaxLength }
 
                   name = 'account-form--username'
-                  id = 'account-form--signup--username'
+                  id = 'account-form--signup__username'
 
                   onChange = { handleUsernameChange }
                   onFocus = { e => e.target.select() }
@@ -234,7 +234,7 @@ export default function SignUpPage() {
                 <CharacterCounter value = { username } maxLength = { usernameMaxLength } />
               </div>
 
-              <div className = 'account-form--group'>
+              <div className = 'account-form__group'>
                 <FormLabelInput
                   label = { translate(lang, 'SIGNUP_PAGE', 'ACCOUNT_FORM', 'PASSWORD') }
 
@@ -242,7 +242,7 @@ export default function SignUpPage() {
                   maxLength = { passwordMaxLength }
 
                   name = 'account-form--password'
-                  id = 'account-form--signup--password'
+                  id = 'account-form--signup__password'
 
                   onChange = { handlePasswordChange }
                   onFocus = { e => e.target.select() }
@@ -255,7 +255,7 @@ export default function SignUpPage() {
               </div>
 
               <input
-                className = 'account-form--submit'
+                className = 'account-form__submit'
                 type = 'submit'
                 value = { translate(lang, 'SIGNUP_PAGE', 'ACCOUNT_FORM', 'SIGN_UP_BUTTON') }
               />

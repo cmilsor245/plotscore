@@ -50,14 +50,14 @@ export default function RecentStory({
 
   return (
     <article className = 'recent-story'>
-      <div className = 'recent-story--backdrop' style = { backdropStyle }></div>
+      <div className = 'recent-story__backdrop' style = { backdropStyle }></div>
 
-      <section className = 'recent-story--details'>
+      <section className = 'recent-story__details'>
         <section>
           <section className = 'source'>
-            <div className = 'source--avatar' style = { avatarStyle }></div>
+            <div className = 'source__avatar' style = { avatarStyle }></div>
 
-            <div className = 'source--name'>
+            <div className = 'source__name'>
               <h2>
                 { source }
               </h2>

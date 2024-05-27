@@ -8,7 +8,7 @@
   --color--media-title: var(--color--primary-dark-40);
 }
 
-.backdrop--wrapper {
+.backdrop-wrapper {
   background: center / cover;
   box-shadow: 0 -100px 10px 20px var(--color--backdrop-edges) inset;
   height: 70vh;
@@ -18,7 +18,7 @@
   transition: .2s;
 }
 
-.backdrop--media-title {
+.backdrop__media-title {
   --font: 1.3rem var(--font--graphik-regular);
   color: var(--color--media-title);
   cursor: pointer;
@@ -33,7 +33,7 @@
 }
 
 @media (width <= 1420px) {
-  .backdrop--media-title {
+  .backdrop__media-title {
     left: 5rem;
     margin-top: -120px;
     top: 100%;
@@ -43,25 +43,25 @@
 }
 
 @media (width <= 1360px) {
-  .backdrop--media-title {
+  .backdrop__media-title {
     display: none;
   }
 }
 
 @media (width <= 1024px) {
-  .backdrop--wrapper {
+  .backdrop-wrapper {
     box-shadow: -1px -115px 10px 5px var(--color--backdrop-edges) inset;
   }
 }
 
 @media (width <= 764px) {
-  .backdrop--wrapper {
+  .backdrop-wrapper {
     height: 50vh;
   }
 }
 
 @media (width <= 510px) {
-  .backdrop--wrapper {
+  .backdrop-wrapper {
     background-image: none !important;
     height: fit-content;
   }

@@ -24,11 +24,11 @@ export default function LogoHeader() {
   }, [])
 
   return (
-    <div className = { `common--content-footer--logo ${ showLogo ? 'show-logo' : 'show-text' } centered` }>
-      <Link className = 'common--content-footer--logo-text' href = '/'>
+    <div className = { `common-content-footer__logo ${ showLogo ? 'show-logo' : 'show-text' } centered` }>
+      <Link className = 'common-content-footer__logo-text' href = '/'>
         <h1>plotscore</h1>
       </Link>
-      <Link className = 'common--content-footer--logo-image' href = '/'>
+      <Link className = 'common-content-footer__logo-image' href = '/'>
         <Image
           src = '/logo/logo.png'
           alt = 'plotscore logo'

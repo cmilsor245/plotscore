@@ -28,21 +28,21 @@ footer {
   z-index: 2;
 }
 
-.footer--top {
+.footer__top {
   align-items: center;
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-.footer--top--main-links {
+.footer__main-links {
   align-items: center;
   display: flex;
   gap: 18px;
   justify-content: left;
 }
 
-.footer--top--main-links h5 {
+.footer__main-links h5 {
   --font: clamp(10px, 1.6rem, 15.5px) var(--font--graphik-semibold);
   color: var(--color--main-link);
   cursor: pointer;
@@ -50,33 +50,33 @@ footer {
   transition: .1s;
 }
 
-.footer--top--main-links h5:hover {
+.footer__main-links h5:hover {
   color: var(--color--main-link--hover);
 }
 
-.footer--top--socials {
+.footer__socials {
   align-items: center;
   display: flex;
   gap: 5px;
   justify-content: flex-end;
 }
 
-.footer--top--socials svg {
+.footer__socials svg {
   color: var(--color--social-icon--copyright);
   height: 1.5rem;
   transition: .1s;
   width: 1.5rem;
 }
 
-.footer--top--socials svg:hover {
+.footer__socials svg:hover {
   color: var(--color--social-icon--copyright--hover);
 }
 
-.footer--top--socials * {
+.footer__socials * {
   cursor: pointer;
 }
 
-.footer--bottom {
+.footer__bottom {
   align-items: center;
   display: flex;
   gap: 5px;
@@ -84,11 +84,11 @@ footer {
   width: 100%;
 }
 
-.footer--bottom * {
+.footer__bottom * {
   color: var(--color--social-icon--copyright);
 }
 
-.footer--bottom p {
+.footer__bottom p {
   --font: clamp(0px, 1.3rem, 15px) var(--font--graphik-regular);
   font: var(--font);
   text-wrap: wrap;
@@ -111,16 +111,16 @@ footer {
     gap: 30px;
   }
 
-  .footer--top {
+  .footer__top {
     flex-direction: column;
     gap: 30px;
   }
 
-  .footer--bottom {
+  .footer__bottom {
     justify-content: center;
   }
 
-  .footer--bottom p {
+  .footer__bottom p {
     text-align: center;
   }
 }
@@ -132,18 +132,18 @@ footer {
 }
 
 @media (width <= 980px) {
-  .footer--top--main-links {
+  .footer__main-links {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .footer--top--main-links h5 {
+  .footer__main-links h5 {
     text-align: center;
   }
 }
 
 @media (width <= 670px) {
-  .footer--bottom {
+  .footer__bottom {
     max-width: 75%;
     align-items: flex-start;
   }
@@ -156,14 +156,14 @@ footer {
 }
 
 @media (width <= 464px) {
-  .footer--top--main-links {
+  .footer__main-links {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 50px;
   }
 }
 
 @media (width <= 350px) {
-  .footer--top--main-links {
+  .footer__main-links {
     grid-template-columns: repeat(1, 1fr);
   }
 }

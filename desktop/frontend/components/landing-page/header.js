@@ -80,8 +80,8 @@ export default function Header({
         </Link>
       </section>
 
-      <nav className = 'nav--links--search-bar'>
-        <ul className = 'nav--links'>
+      <nav className = 'nav__links--search-bar'>
+        <ul className = 'nav__links'>
           {
             navItems.map(item => (
               <NavTab
@@ -110,7 +110,7 @@ export default function Header({
             <IconMenu />
           </div>
 
-          <nav className = { `nav--links--search-bar--mobile ${ isMenuOpen ? 'open' : '' }` }>
+          <nav className = { `nav__links--search-bar--mobile ${ isMenuOpen ? 'open' : '' }` }>
             <div className = 'nav--search-bar--mobile'>
               <label htmlFor = 'nav-query-mobile' className = 'hidden'>search:</label>
               <input
@@ -126,7 +126,7 @@ export default function Header({
               </button>
             </div>
 
-            <ul className = 'nav--links--mobile'>
+            <ul className = 'nav__links--mobile'>
               {
                 navItems.map(item => (
                   <NavTab
@@ -140,8 +140,8 @@ export default function Header({
               }
             </ul>
 
-            <div className = 'nav--links--search-bar--mobile--additional'>
-              <div className = 'nav--links--search-bar--mobile--additional--buttons'>
+            <div className = 'nav__links--search-bar--mobile--additional'>
+              <div className = 'nav__links--search-bar--mobile--additional--buttons'>
                 <SideMenuButton
                   type = { 'login' }
                   text = { translate(lang, 'LANDING_PAGE', 'NAV_MOBILE', 'LOGIN_BUTTON') }
@@ -154,11 +154,11 @@ export default function Header({
                 />
               </div>
 
-              <IconChevronsRight className = 'nav--links--search-bar--mobile--additional--close-button' onClick = { toggleMenu } />
+              <IconChevronsRight className = 'nav__links--search-bar--mobile--additional--close-button' onClick = { toggleMenu } />
             </div>
           </nav>
 
-          { isMenuOpen && <div className = 'nav--links--search-bar--mobile--overlay' onClick = { toggleMenu }></div> }
+          { isMenuOpen && <div className = 'nav__links--search-bar--mobile--overlay' onClick = { toggleMenu }></div> }
         </>
       ) }
     </header>

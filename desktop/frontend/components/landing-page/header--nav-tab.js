@@ -6,10 +6,10 @@ export default function NavTab({
   icon: Icon,
   link
 }) {
-  let conditionalClass = 'nav--link'
+  let conditionalClass = 'nav__link'
 
   if (isMobile) {
-    conditionalClass = 'nav--link--mobile'
+    conditionalClass = 'nav__link--mobile'
   }
 
   /* ----------- */
@@ -20,7 +20,7 @@ export default function NavTab({
     <li className = { conditionalClass }>
       <Link href = { linkHref }>
         { text }
-        { isMobile && <Icon className = 'nav--link--mobile--icon' /> }
+        { isMobile && <Icon className = 'nav--mobile__icon' /> }
       </Link>
     </li>
   )

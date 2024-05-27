@@ -42,7 +42,7 @@ function Poster({ size, lowResImgSrc, highResImgSrc, hasLogInfo }) {
       break
   }
 
-  conditionalSizeClassName += ` media-slot--poster ${ hasLogInfo && 'media-slot--poster--sharp-border' }`
+  conditionalSizeClassName += ` media-slot__poster ${ hasLogInfo && 'media-slot__poster--sharp-border' }`
 
   return (
     <section className = { conditionalSizeClassName } style = { posterStyle }>
@@ -91,7 +91,7 @@ function LogInfo({
 
   for (let i = 0; i < fullStars; i++) {
     stars.push(
-      <span key = { i } className = 'media-slot--log-info--details--star'>
+      <span key = { i } className = 'media-slot__star'>
         <IconStarFilled />
       </span>
     )
@@ -99,44 +99,44 @@ function LogInfo({
 
   if (hasHalfStar) {
     stars.push(
-      <span key = { fullStars } className = 'media-slot--log-info--details--star-half'>
+      <span key = { fullStars } className = 'media-slot__star--half'>
         <IconMath1Divide2 />
       </span>
     )
   }
 
   return (
-    <section className = 'media-slot--log-info'>
-      <article className = 'media-slot--log-info--user'>
-        <div className = 'media-slot--log-info--user--avatar' style = { avatarStyle }></div>
-        <h6 className = 'media-slot--log-info--user--username'>{ username }</h6>
+    <section className = 'media-slot__log-info'>
+      <article className = 'media-slot__user'>
+        <div className = 'media-slot__avatar' style = { avatarStyle }></div>
+        <h6 className = 'media-slot__username'>{ username }</h6>
       </article>
 
       {/* ----------------------- */}
 
-      <article className = 'media-slot--log-info--details'>
-        <div className = 'media-slot--log-info--details--left-side'>
-          <div className = 'media-slot--log-info--details--stars'>
+      <article className = 'log__details'>
+        <div className = 'log__left-side'>
+          <div className = 'media-slot__stars'>
             { stars }
           </div>
           {
             hasWatchedBefore && (
-              <span className = 'media-slot--log-info--details--left-side--watched-before'>
+              <span className = 'log__watched-before'>
                 <IconRefresh />
               </span>
             )
           }
           {
             hasReviewText && (
-            <span className = 'media-slot--log-info--details--left-side--review-text'>
+            <span className = 'log__review-text'>
               <IconAlignJustified />
             </span>
             )
           }
         </div>
 
-        <div className = 'media-slot--log-info--details--right-side'>
-          <span className = 'media-slot--log-info--details--right-side--date'>{ date }</span>
+        <div className = 'log__right-side'>
+          <span className = 'log__date'>{ date }</span>
         </div>
       </article>
     </section>

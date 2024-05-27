@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import '/styles/components/landing-page--home/recent--showdown-news.css'
+import '/styles/components/landing-page--home/recent-showdown-news.css'
 
 export default function RecentShowdownNews({
   className,
@@ -31,14 +31,14 @@ export default function RecentShowdownNews({
   return (
     <article
       className = {
-        `recent--showdown-news
+        `recent-showdown-news
         ${ className }
         ${ lang === 'en' ? 'english' : 'spanish' }`
       }
     >
-      <div className = 'recent--showdown-news--backdrop' style = { backdropStyle }></div>
+      <div className = 'recent-showdown-news__backdrop' style = { backdropStyle }></div>
 
-      <section className = 'recent--showdown-news--details'>
+      <section className = 'recent-showdown-news__details'>
         <h2>
           { title }
         </h2>

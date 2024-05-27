@@ -21,13 +21,13 @@ export default function SectionHeading({
 
   if (title) {
     conditionalLeftSide = (
-      <h3 className = 'section-heading--title'>
+      <h3 className = 'section-heading__title'>
         { translate(lang, namespace, section, title) }
       </h3>
     )
   } else if (tabs) {
     conditionalLeftSide = (
-      <ul className = 'section-heading--tabs'>
+      <ul className = 'section-heading__tabs'>
         { tabs.map((tab, index) => (
           <li key = { index }>
             { translate(lang, namespace, section, tab) }
@@ -43,24 +43,24 @@ export default function SectionHeading({
 
   if (hasRightSideSingleText) {
     conditionalRightSide = (
-      <span className = 'section-heading--right-side--single-text'>
+      <span className = 'section-heading__single-text'>
         { translate(lang, namespace, section, hasRightSideSingleText) }
       </span>
     )
   } else if (hasRightSideIconAndText) {
     conditionalRightSide = (
-      <div className = 'section-heading--right-side--icon-and-text'>
-        <span className = 'section-heading--right-side--icon-and-text--icon'>
+      <div className = 'section-heading__icon-and-text'>
+        <span className = 'section-heading__icon'>
           { hasRightSideIconAndText[0] }
         </span>
-        <span className = 'section-heading--right-side--icon-and-text--text'>
+        <span className = 'section-heading__text'>
           { translate(lang, namespace, section, hasRightSideIconAndText[1]) }
         </span>
       </div>
     )
   } else if (filters) {
     conditionalRightSide = (
-      <ul className = 'section-heading--right-side--filters'>
+      <ul className = 'section-heading__filters'>
         { filters.map((filter, index) => (
           <li key = { index }>
             <span>
@@ -92,12 +92,12 @@ export default function SectionHeading({
 
   return (
     <section className = 'section-heading'>
-      <div className = 'section-heading--upper'>
+      <div className = 'section-heading__upper'>
         { conditionalLeftSide }
         { conditionalRightSide }
       </div>
 
-      { hasDivider && <div className = 'section-heading--divider'></div> }
+      { hasDivider && <div className = 'section-heading__divider'></div> }
     </section>
   )
 }

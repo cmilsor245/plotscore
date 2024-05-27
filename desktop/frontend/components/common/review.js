@@ -48,7 +48,7 @@ function ReviewWithoutPoster({
 
   for (let i = 0; i < fullStars; i++) {
     stars.push(
-      <span key = { i } className = 'review--without-poster--details--star'>
+      <span key = { i } className = 'review--without-poster__star'>
         <IconStarFilled />
       </span>
     )
@@ -56,7 +56,7 @@ function ReviewWithoutPoster({
 
   if (hasHalfStar) {
     stars.push(
-      <span key = { fullStars } className = 'review--without-poster--details--star-half'>
+      <span key = { fullStars } className = 'review--without-poster__star--half'>
         <IconMath1Divide2 />
       </span>
     )
@@ -64,31 +64,31 @@ function ReviewWithoutPoster({
 
   return (
     <div className = 'review--without-poster'>
-      <div className = 'review--without-poster--avatar' style = { avatarStyle }></div>
+      <div className = 'review--without-poster__avatar' style = { avatarStyle }></div>
 
-      <article className = 'review--without-poster--details'>
-        <section className = 'review--without-poster--details--user-rating-and-comments'>
-          <h6 className = 'review--without-poster--details--user'>
+      <article className = 'review--without-poster__details'>
+        <section className = 'review--without-poster__user-rating-comments'>
+          <h6 className = 'review--without-poster__user'>
             { translate(lang, 'SPECIFIC_MEDIA', 'REVIEW', 'REVIEW_BY') } <span>{ username }</span>
           </h6>
 
-          <div className = 'review--without-poster--details--rating'>
+          <div className = 'review--without-poster__rating'>
             { stars }
           </div>
 
           { commentCount > 0 && (
-            <span className = 'review--without-poster--details--comments'>
+            <span className = 'review--without-poster__comments'>
               <IconMessage />
               { commentCount }
             </span>
           ) }
         </section>
 
-        <p className = 'review--without-poster--details--text'>
+        <p className = 'review--without-poster__text'>
           { reviewText }
         </p>
 
-        <section className = 'review--without-poster--details--likes'>
+        <section className = 'review--without-poster__likes'>
           <span className = 'action'>
             <IconHeartFilled />
             { translate(lang, 'SPECIFIC_MEDIA', 'REVIEW', 'LIKE_ACTION') }
@@ -152,7 +152,7 @@ function HorizontalReviewType1({
 
   for (let i = 0; i < fullStars; i++) {
     stars.push(
-      <span key = { i } className = 'horizontal-review--type-1--details--star'>
+      <span key = { i } className = 'horizontal-review--type-1__star'>
         <IconStarFilled />
       </span>
     )
@@ -160,7 +160,7 @@ function HorizontalReviewType1({
 
   if (hasHalfStar) {
     stars.push(
-      <span key = { fullStars } className = 'horizontal-review--type-1--details--star-half'>
+      <span key = { fullStars } className = 'horizontal-review--type-1__star--half'>
         <IconMath1Divide2 />
       </span>
     )
@@ -174,8 +174,8 @@ function HorizontalReviewType1({
         highResImgSrc = { posterHighResImgSrc }
       />
 
-      <article className = 'horizontal-review--type-1--details'>
-        <section className = 'horizontal-review--type-1--details--media-main-info'>
+      <article className = 'horizontal-review--type-1__details'>
+        <section className = 'horizontal-review--type-1__main-info'>
           <h5>
             { mediaTitle }
           </h5>
@@ -184,19 +184,19 @@ function HorizontalReviewType1({
           </h6>
         </section>
 
-        <section className = 'horizontal-review--type-1--details--user-rating-and-comments'>
-          <div className = 'horizontal-review--type-1--details--avatar-and-username'>
-            <div className = 'horizontal-review--type-1--details--avatar' style = { avatarStyle }></div>
+        <section className = 'horizontal-review--type-1__user-rating-comments'>
+          <div className = 'horizontal-review--type-1__avatar-username'>
+            <div className = 'horizontal-review--type-1__avatar' style = { avatarStyle }></div>
 
-            <h6 className = 'horizontal-review--type-1--details--username'>{ username }</h6>
+            <h6 className = 'horizontal-review--type-1__username'>{ username }</h6>
           </div>
 
-          <div className = 'horizontal-review--type-1--details--rating'>
+          <div className = 'horizontal-review--type-1__rating'>
             { stars }
           </div>
 
           { commentCount > 0 && (
-            <span className = 'horizontal-review--type-1--details--comments'>
+            <span className = 'horizontal-review--type-1__comments'>
               <IconMessage />
               { commentCount }
             </span>
@@ -204,9 +204,9 @@ function HorizontalReviewType1({
         </section>
 
         {/* TODO: change this way to render the review's text once the text comes from the api */}
-        <p className = 'review--without-poster--details--text' dangerouslySetInnerHTML = {{ __html: reviewText }}></p>
+        <p className = 'review--without-poster__text' dangerouslySetInnerHTML = {{ __html: reviewText }}></p>
 
-        <section className = 'horizontal-review--type-1--details--likes'>
+        <section className = 'horizontal-review--type-1__likes'>
           <IconHeartFilled />
           <span className = 'count'>{ likeCount } likes</span>
         </section>
@@ -279,9 +279,7 @@ export default function Review({
       switch (type) {
         case 'vertical':
           conditionalReview =
-            <VerticalReview
-              
-            />
+            <VerticalReview />
           break
         case 'horizontal-1':
           conditionalReview =
@@ -308,9 +306,7 @@ export default function Review({
           break
         case 'horizontal-2':
           conditionalReview =
-            <HorizontalReviewType2
-              
-            />
+            <HorizontalReviewType2 />
           break
       }
       break

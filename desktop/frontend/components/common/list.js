@@ -41,8 +41,8 @@ function LandingPageList({
   }
 
   return (
-    <article className = 'landing-page--list'>
-      <section className = 'landing-page--list-posters'>
+    <article className = 'landing-page__list'>
+      <section className = 'landing-page__list-posters'>
         { posters.map((poster, index) => (
           index % 2 === 0 && (
             <MediaSlot
@@ -56,14 +56,14 @@ function LandingPageList({
         )) }
       </section>
 
-      <section className = 'landing-page--list-info'>
-        <h3 className = 'landing-page--list-title'>
+      <section className = 'landing-page__list-info'>
+        <h3 className = 'landing-page__list-title'>
           { title }
         </h3>
 
-        <section className = 'landing-page--list-username-and-ratings'>
-          <div className = 'landing-page--list-username'>
-            <div className = 'landing-page--list-username-avatar' style = { avatarStyle }></div>
+        <section className = 'landing-page__list-username-and-ratings'>
+          <div className = 'landing-page__list-username'>
+            <div className = 'landing-page__list-username-avatar' style = { avatarStyle }></div>
 
             <h4>
               {username}
@@ -72,7 +72,7 @@ function LandingPageList({
 
           {/* ----------- */}
 
-          <div className = 'landing-page--list-ratings'>
+          <div className = 'landing-page__list-ratings'>
             <span>
               <IconHeartFilled />
               { formatNumber(likeCount) }

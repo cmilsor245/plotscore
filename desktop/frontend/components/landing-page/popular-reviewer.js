@@ -30,14 +30,14 @@ export default function PopularReviewer({
 
   return (
     <div className = 'popular-reviewer'>
-      <div className = 'popular-reviewer--avatar' style = { avatarStyle }></div>
+      <div className = 'popular-reviewer__avatar' style = { avatarStyle }></div>
 
-      <section className = 'popular-reviewer--info'>
-        <h3 className = 'popular-reviewer--username'>
+      <section className = 'popular-reviewer__info'>
+        <h3 className = 'popular-reviewer__username'>
           { username }
         </h3>
 
-        <div className = 'popular-reviewer--counts'>
+        <div className = 'popular-reviewer__counts'>
           { watchedMediaCount } { translate(lang, 'LANDING_PAGE', 'POPULAR_REVIEWERS', 'WATCHED_MEDIA_COUNT') }, { reviewCount } reviews
         </div>
       </section>

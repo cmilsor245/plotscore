@@ -26,7 +26,7 @@ import {
 import MediaSlot from '/components/common/media-slot.js'
 import Review from '/components/common/review.js'
 import SectionHeading from '/components/common/section-heading.js'
-import RecentShowdownNews from '/components/landing-page--home/recent--showdown-news.js'
+import RecentShowdownNews from '/components/landing-page--home/recent-showdown-news.js'
 import RecentStory from '/components/landing-page--home/recent-story.js'
 import Backdrop from '/components/landing-page--specific-media/backdrop.js'
 import {
@@ -97,8 +97,8 @@ export default function LandingPage() {
 
       {/* -------------------------------------------------------------------------------------------------- */}
 
-      <section className = 'common--content-footer'>
-        <section className = 'common--content-footer--content'>
+      <section className = 'common__content-footer'>
+        <section className = 'common__content'>
           <Backdrop
             lowResImgSrc = '/img/landing-page--specific-media/low-res-backdrop.webp'
             highResImgSrc = '/img/landing-page--specific-media/high-res-backdrop.webp'
@@ -109,40 +109,40 @@ export default function LandingPage() {
 
           <main>
             <section className = 'usp'>
-              <h2 className = 'usp--main-text'>
-                <span className = 'usp--main-text--default'>
+              <h2 className = 'usp__main-text'>
+                <span className = 'usp__main-text--default'>
                   { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__FIRST_LINE') }
                 </span>
-                <span className = 'usp--main-text--default'>
+                <span className = 'usp__main-text--default'>
                   { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__SECOND_LINE') }
                 </span>
-                <span className = 'usp--main-text--default'>
+                <span className = 'usp__main-text--default'>
                   { translate(lang, 'LANDING_PAGE', 'USP', 'MAIN_TEXT__THIRD_LINE') }
                 </span>
 
                 {/* ------------------------------------------ */}
 
-                <span className = 'usp--main-text--mobile'>
+                <span className = 'usp__main-text--mobile'>
                   { translate(lang, 'LANDING_PAGE', 'USP', 'MOBILE_LINE') }
                 </span>
               </h2>
 
-                <button className = 'usp--get-started-button'>
+                <button className = 'usp__get-started-button'>
                   <Link href = '/signup'>
                     { translate(lang, 'LANDING_PAGE', 'USP', 'GET_STARTED_BUTTON') }
                   </Link>
                 </button>
 
-              <div className = 'usp--also-available'>
+              <div className = 'usp__also-available'>
                 <p>
                   { translate(lang, 'LANDING_PAGE', 'USP', 'ALSO_AVAILABLE') }
                 </p>
 
-                <div className = 'usp--also-available--icons'>
-                  <span className = 'usp--also-available--icon'>
+                <div className = 'also-available__icons'>
+                  <span className = 'also-available__icon'>
                     { theme === 'dark' ? <MdiAppleDarkTheme /> : <MdiAppleLightTheme /> }
                   </span>
-                  <span className = 'usp--also-available--icon'>
+                  <span className = 'also-available__icon'>
                     { theme === 'dark' ? <MaterialSymbolsAndroidDarkTheme /> : <MaterialSymbolsAndroidLightTheme /> }
                   </span>
                 </div>
@@ -154,7 +154,7 @@ export default function LandingPage() {
             <section className = 'featured-media'>
               {
                 featuredMediaSlotsImgsSrcs.map((slot, index) => (
-                  <div className = 'featured-media--slot' key = { index }>
+                  <div className = 'featured-media__slot' key = { index }>
                     <MediaSlot
                       size = 'normal'
                       { ...slot }
@@ -165,7 +165,7 @@ export default function LandingPage() {
 
               {
                 featuredMediaSlotsImgsSrcs.map((slot, index) => (
-                  <div className = 'featured-media--slot--mobile' key = { index }>
+                  <div className = 'featured-media__slot--mobile' key = { index }>
                     <MediaSlot
                       size = 'small'
                       { ...slot }
@@ -177,7 +177,7 @@ export default function LandingPage() {
 
             {/* ---------------------------------------------------- */}
 
-            <section className = 'section-with--heading-and-content plotscore-lets-you'>
+            <section className = 'section__heading-and-content plotscore-lets-you'>
               <SectionHeading
                 lang = { lang }
                 namespace = 'LANDING_PAGE'
@@ -187,7 +187,7 @@ export default function LandingPage() {
 
               <section className = 'section-content'>
                 {[1, 2, 3].map(column => (
-                  <article key = { `column-${ column }` } className = 'plotscore-lets-you--column'>
+                  <article key = { `column-${ column }` } className = 'plotscore-lets-you__column'>
                     { [
                       { icon: IconEye, textKey: 'COLUMN_1_CARD_1' },
                       { icon: IconStarFilled, textKey: 'COLUMN_1_CARD_2' },
@@ -212,7 +212,7 @@ export default function LandingPage() {
 
             {/* ---------------------------------------------------- */}
 
-            <section className = 'section-with--heading-and-content just-reviewed'>
+            <section className = 'section__heading-and-content just-reviewed'>
               <SectionHeading
                 lang = { lang }
                 namespace = 'LANDING_PAGE'
@@ -225,7 +225,7 @@ export default function LandingPage() {
               <section className = 'section-content'>
                 {
                   justReviewedSlotsImgsSrcs.map((slot, index) => (
-                    <div className = 'just-reviewed--slot' key = { index }>
+                    <div className = 'just-reviewed__slot' key = { index }>
                       <MediaSlot
                         size = 'small'
                         { ...slot }
@@ -239,7 +239,7 @@ export default function LandingPage() {
             {/* ---------------------------------------------------- */}
 
             <section className = 'encouraging-text'>
-              <article className = 'encouraging-text--main'>
+              <article className = 'encouraging-text__main'>
                 <h3>
                   { translate(lang, 'LANDING_PAGE', 'ENCOURAGING_TEXT', 'MAIN_TEXT__FIRST_LINE') }
                 </h3>
@@ -253,7 +253,7 @@ export default function LandingPage() {
 
               {/* ------------------------------- */}
 
-              <article className = 'encouraging-text--main--mobile'>
+              <article className = 'encouraging-text__main--mobile'>
                 <h3>
                   { translate(lang, 'LANDING_PAGE', 'ENCOURAGING_TEXT', 'MAIN_TEXT__MOBILE__FIRST_LINE') }
                 </h3>
@@ -279,8 +279,8 @@ export default function LandingPage() {
 
             {/* ---------------------------------------------------- */}
 
-            <section className = 'popular-reviews--lists-reviewers'>
-              <article className = 'section-with--heading-and-content popular-reviews'>
+            <section className = 'popular-reviews__lists-reviewers'>
+              <article className = 'section__heading-and-content popular-reviews'>
                 <SectionHeading
                   lang = { lang }
                   namespace = 'LANDING_PAGE'
@@ -307,8 +307,8 @@ export default function LandingPage() {
                 </section>
               </article>
 
-              <section className = 'popular--lists-reviewers'>
-                <article className = 'section-with--heading-and-content lists'>
+              <section className = 'popular-lists-reviewers'>
+                <article className = 'section__heading-and-content lists'>
                   <SectionHeading
                     lang = { lang }
                     namespace = 'LANDING_PAGE'
@@ -359,7 +359,7 @@ export default function LandingPage() {
 
                 {/* ------------------------ */}
 
-                <article className = 'section-with--heading-and-content reviewers'>
+                <article className = 'section__heading-and-content reviewers'>
                   <SectionHeading
                     lang = { lang }
                     namespace = 'LANDING_PAGE'
@@ -387,7 +387,7 @@ export default function LandingPage() {
 
             {/* ---------------------------------------------------- */}
 
-            <section className = 'section-with--heading-and-content recent-stories'>
+            <section className = 'section__heading-and-content recent-stories'>
               <SectionHeading
                 lang = { lang }
                 namespace = 'LANDING_PAGE'
@@ -398,7 +398,7 @@ export default function LandingPage() {
               />
 
               <section className = 'section-content'>
-                <section className = 'recent-stories--column-1'>
+                <section className = 'recent-stories__column-1'>
                   { recentStoriesSlotsData.map((story, index) => (
                     story.column === 1 && (
                       <RecentStory
@@ -412,7 +412,7 @@ export default function LandingPage() {
                   )) }
                 </section>
 
-                <section className = 'recent-stories--column-2'>
+                <section className = 'recent-stories__column-2'>
                   { recentStoriesSlotsData.map((story, index) => (
                     story.column === 2 && (
                       <RecentStory
@@ -426,7 +426,7 @@ export default function LandingPage() {
                   )) }
                 </section>
 
-                <section className = 'recent-stories--column-3'>
+                <section className = 'recent-stories__column-3'>
                   { recentStoriesSlotsData.map((story, index) => (
                     story.column === 3 && (
                       <RecentStory
@@ -459,7 +459,7 @@ export default function LandingPage() {
             
             {/* ---------------------------------------------------- */}
 
-            <section className = 'section-with--heading-and-content recent-showdowns'>
+            <section className = 'section__heading-and-content recent-showdowns'>
               <SectionHeading
                 lang = { lang }
                 namespace = 'LANDING_PAGE'
@@ -486,7 +486,7 @@ export default function LandingPage() {
 
             {/* ---------------------------------------------------- */}
 
-            <section className = 'section-with--heading-and-content recent-news'>
+            <section className = 'section__heading-and-content recent-news'>
               <SectionHeading
                 lang = { lang }
                 namespace = 'LANDING_PAGE'

@@ -3,7 +3,7 @@
   --color--review--details--main-info--title: var(--color--primary-light-90);
   --color--review--details--main-info--year: var(--color--primary-light-40);
   --color--review--details--username: var(--color--primary-light-40);
-  --color--review--without-poster--details: var(--color--primary-light-70);
+  --color--review--without-poster__details: var(--color--primary-light-70);
   --shadow--star-icon: var(--color--primary-light-80);
 }
 
@@ -12,7 +12,7 @@
   --color--review--details--main-info--title: var(--color--primary-dark-40);
   --color--review--details--main-info--year: var(--color--primary-dark-10);
   --color--review--details--username: var(--color--primary-dark-40);
-  --color--review--without-poster--details: var(--color--primary-dark-40);
+  --color--review--without-poster__details: var(--color--primary-dark-40);
   --shadow--star-icon: var(--color--primary-dark-70);
 }
 
@@ -42,7 +42,7 @@
   cursor: pointer;
 }
 
-.review--without-poster--avatar {
+.review--without-poster__avatar {
   background: center / cover;
   border-radius: 50%;
   cursor: pointer;
@@ -50,10 +50,10 @@
   width: 37px;
 }
 
-.review--without-poster--details,
-.horizontal-review--type-1--details {
+.review--without-poster__details,
+.horizontal-review--type-1__details {
   align-items: flex-start;
-  color: var(--color--review--without-poster--details);
+  color: var(--color--review--without-poster__details);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -61,13 +61,13 @@
   width: 100%;
 }
 
-.review--without-poster--details svg,
-.horizontal-review--type-1--details svg {
+.review--without-poster__details svg,
+.horizontal-review--type-1__details svg {
   height: 14px;
   width: 14px;
 }
 
-.horizontal-review--type-1--details--media-main-info {
+.horizontal-review--type-1__main-info {
   align-items: baseline;
   display: flex;
   flex-wrap: wrap;
@@ -75,7 +75,7 @@
   justify-content: flex-start;
 }
 
-.horizontal-review--type-1--details--media-main-info h5 {
+.horizontal-review--type-1__main-info h5 {
   --font: clamp(10px, 2.4rem, 30px) var(--font--tiempos-headline-semibold);
   color: var(--color--review--details--main-info--title);
   cursor: pointer;
@@ -83,7 +83,7 @@
   transition: .1s;
 }
 
-.horizontal-review--type-1--details--media-main-info h6 {
+.horizontal-review--type-1__main-info h6 {
   --font: clamp(10px, 1.8rem, 22px) var(--font--graphik-light);
   color: var(--color--review--details--main-info--year);
   cursor: pointer;
@@ -91,8 +91,8 @@
   transition: .1s;
 }
 
-.review--without-poster--details--user-rating-and-comments,
-.horizontal-review--type-1--details--user-rating-and-comments {
+.review--without-poster__user-rating-comments,
+.horizontal-review--type-1__user-rating-comments {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -100,14 +100,14 @@
   justify-content: flex-start;
 }
 
-.horizontal-review--type-1--details--avatar-and-username {
+.horizontal-review--type-1__avatar-username {
   align-items: center;
   display: flex;
   gap: 5px;
   justify-content: flex-start;
 }
 
-.horizontal-review--type-1--details--avatar {
+.horizontal-review--type-1__avatar {
   background: center / cover;
   border-radius: 50%;
   cursor: pointer;
@@ -115,34 +115,34 @@
   width: 28px;
 }
 
-.review--without-poster--details--user,
-.horizontal-review--type-1--details--username {
+.review--without-poster__user,
+.horizontal-review--type-1__username {
   --font: clamp(10px, 1.4rem, 16px) var(--font--graphik-light);
   color: var(--color--review--details--username);
   font: var(--font);
 }
 
-.review--without-poster--details--user span,
-.horizontal-review--type-1--details--username {
+.review--without-poster__user span,
+.horizontal-review--type-1__username {
   cursor: pointer;
   font-family: var(--font--graphik-semibold);
 }
 
-.review--without-poster--details--rating,
-.horizontal-review--type-1--details--rating {
+.review--without-poster__rating,
+.horizontal-review--type-1__rating {
   align-items: center;
   color: var(--color--accent-main);
   display: flex;
   gap: 2px;
 }
 
-.review--without-poster--details--rating svg,
-.horizontal-review--type-1--details--rating svg {
+.review--without-poster__rating svg,
+.horizontal-review--type-1__rating svg {
   filter: drop-shadow(0 1px 1px var(--shadow--star-icon));
 }
 
-.review--without-poster--details--comments,
-.horizontal-review--type-1--details--comments {
+.review--without-poster__comments,
+.horizontal-review--type-1__comments {
   --font: clamp(10px, 1.1rem, 14px) var(--font--graphik-light);
   align-items: center;
   display: flex;
@@ -151,8 +151,8 @@
   justify-content: flex-start;
 }
 
-.review--without-poster--details--text,
-.horizontal-review--type-1--details--text {
+.review--without-poster__text,
+.horizontal-review--type-1__details--text {
   --font: clamp(10px, 1.4rem, 16px) var(--font--tiempos-headline-regular);
   cursor: text;
   font: var(--font);
@@ -161,42 +161,42 @@
   width: 100%;
 }
 
-.review--without-poster--details--likes {
+.review--without-poster__likes {
   align-items: center;
   display: flex;
   gap: 5px;
   justify-content: flex-start;
 }
 
-.horizontal-review--type-1--details--likes {
+.horizontal-review--type-1__likes {
   align-items: center;
   display: flex;
   gap: 2px;
   justify-content: flex-start;
 }
 
-.review--without-poster--details--likes span {
+.review--without-poster__likes span {
   display: flex;
   gap: 2px;
   justify-content: flex-start;
   align-items: center;
 }
 
-.review--without-poster--details--likes .action, 
-.review--without-poster--details--likes .count {
+.review--without-poster__likes .action, 
+.review--without-poster__likes .count {
   font-size: clamp(10px, 1.2rem, 15px);
 }
 
-.review--without-poster--details--likes .action,
-.horizontal-review--type-1--details--likes {
+.review--without-poster__likes .action,
+.horizontal-review--type-1__likes {
   font-family: var(--font--graphik-medium);
 }
 
-.review--without-poster--details--likes .action * {
+.review--without-poster__likes .action * {
   cursor: pointer;
 }
 
-.review--without-poster--details--likes .count {
+.review--without-poster__likes .count {
   font-family: var(--font--graphik-light);
 }
 
@@ -207,35 +207,35 @@
 }
 
 @media (width <= 1100px) {
-  .horizontal-review--type-1--details--media-main-info h5 {
+  .horizontal-review--type-1__main-info h5 {
     font-size: clamp(10px, 2rem, 22px);
   }
 
-  .horizontal-review--type-1--details--media-main-info h6 {
+  .horizontal-review--type-1__main-info h6 {
     font-size: clamp(10px, 1.6rem, 20px);
   }
 }
 
 @media (width <= 1000px) {
-  .horizontal-review--type-1--details--media-main-info h5 {
+  .horizontal-review--type-1__main-info h5 {
     font-size: clamp(10px, 1.8rem, 20px);
   }
 
-  .horizontal-review--type-1--details--media-main-info h6 {
+  .horizontal-review--type-1__main-info h6 {
     font-size: clamp(10px, 1.4rem, 16px);
   }
 }
 
 @media (width <= 690px) {
-  .horizontal-review--type-1--details--media-main-info h5 {
+  .horizontal-review--type-1__main-info h5 {
     font-size: clamp(10px, 1.6rem, 18px);
   }
 
-  .horizontal-review--type-1--details--media-main-info h6 {
+  .horizontal-review--type-1__main-info h6 {
     font-size: clamp(10px, 1.2rem, 14px);
   }
 
-  .horizontal-review--type-1--details--username {
+  .horizontal-review--type-1__username {
     font-size: clamp(10px, 1.2rem, 14px);
   }
 }
