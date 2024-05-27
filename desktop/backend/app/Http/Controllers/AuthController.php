@@ -11,11 +11,11 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AuthController extends Controller {
   public function createAdmin(AuthRequest $request) {
-    if ($request -> input('secret_key') !== env('ADMIN_SECRET_KEY')) {
-      return response() -> json([
-        'message' => 'unauthorized'
-      ], Response::HTTP_UNAUTHORIZED);
-    }
+    // if ($request -> input('secret_key') !== env('ADMIN_SECRET_KEY')) {
+    //   return response() -> json([
+    //     'message' => 'unauthorized'
+    //   ], Response::HTTP_UNAUTHORIZED);
+    // }
 
     $pronouns = $request -> input('pronouns') ?? 'they/them';
 
