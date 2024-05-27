@@ -1,3 +1,124 @@
+/*
+project atoms
+  - color palette
+    - primary
+      light-90: #ECEEF0;
+      light-80: #DADDE0;
+      light-70: #C7CCD1;
+      light-60: #B4BBC2;
+      light-50: #A2AAB3;
+      light-40: #8F99A3;
+      light-30: #7C8894;
+      light-20: #697785;
+      light-10: #576675;
+      main: #445566;
+      dark-10: #3D4D5C;
+      dark-20: #364452;
+      dark-30: #303B47;
+      dark-40: #29333D;
+      dark-50: #222B33;
+      dark-60: #1B2229;
+      dark-70: #14191F;
+      dark-80: #0E1114;
+      dark-90: #07080A;
+
+    - secondary
+      light-90: #FFEEEB;
+      light-80: #FFDDD6;
+      light-70: #FFCDC2;
+      light-60: #FFBCAD;
+      light-50: #FFAB99;
+      light-40: #FF9A85;
+      light-30: #FF8970;
+      light-20: #FF795C;
+      light-10: #FF6847;
+      main: #FF5733;
+      dark-10: #E64E2E;
+      dark-20: #CC4629;
+      dark-30: #B33D24;
+      dark-40: #99341F;
+      dark-50: #802C1A;
+      dark-60: #662314;
+      dark-70: #4C1A0F;
+      dark-80: #33110A;
+      dark-90: #190905;
+
+    - tertiary
+      light-90: #E6F5F5;
+      light-80: #CCEBEA;
+      light-70: #B3E1E0;
+      light-60: #99D7D6;
+      light-50: #80CDCC;
+      light-40: #67C3C1;
+      light-30: #4DB9B7;
+      light-20: #34AFAD;
+      light-10: #1AA5A2;
+      main: #019B98;
+      dark-10: #018C89;
+      dark-20: #017C7A;
+      dark-30: #016D6A;
+      dark-40: #015D5B;
+      dark-50: #014E4C;
+      dark-60: #003E3D;
+      dark-70: #002E2E;
+      dark-80: #001F1E;
+      dark-90: #000F0F;
+
+    - accent
+      light-90: #FFF9E6;
+      light-80: #FFF3CC;
+      light-70: #FFEDB3;
+      light-60: #FFE799;
+      light-50: #FFE180;
+      light-40: #FFDB66;
+      light-30: #FFD54D;
+      light-20: #FFCF33;
+      light-10: #FFC91A;
+      main: #FFC300;
+      dark-10: #E6B000;
+      dark-20: #CC9C00;
+      dark-30: #B38900;
+      dark-40: #997500;
+      dark-50: #806200;
+      dark-60: #664E00;
+      dark-70: #4C3A00;
+      dark-80: #332700;
+      dark-90: #191300;
+
+    - neutral
+      light-90: #F2F2F2;
+      light-80: #E5E5E5;
+      light-70: #D9D9D9;
+      light-60: #CCCCCC;
+      light-50: #BFBFBF;
+      light-40: #B2B2B2;
+      light-30: #A5A5A5;
+      light-20: #999999;
+      light-10: #8C8C8C;
+      main: #7F7F7F;
+      dark-10: #727272;
+      dark-20: #666666;
+      dark-30: #595959;
+      dark-40: #4C4C4C;
+      dark-50: #404040;
+      dark-60: #333333;
+      dark-70: #262626;
+      dark-80: #191919;
+      dark-90: #0D0D0D;
+
+  ------------------------------------------------
+
+  - fonts
+    - grape nuts
+    - tiempos headline
+    - graphik
+
+  ------------------------------------------------
+
+  - icons
+    most of them extracted from tabler.io/icons
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
 
 /* --------------------------------------------------------------------------------------- */
