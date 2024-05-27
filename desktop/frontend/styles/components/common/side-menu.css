@@ -79,7 +79,7 @@
 .side-menu--expanded {
   align-items: flex-start;
   padding-inline: 25px 30px;
-  width: 20vw;
+  width: fit-content;
 }
 
 .side-menu--close-button {
@@ -231,10 +231,6 @@
   .side-menu.active {
     transform: translateX(0);
   }
-
-  .side-menu--expanded {
-    width: fit-content;
-  }
 }
 
 @media (width <= 456px) {
@@ -251,5 +247,14 @@
   .side-menu--button {
     height: 40px;
     width: 40px;
+  }
+}
+
+@media (width <= 374px) {
+  .side-menu--user span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 170px;
   }
 }
