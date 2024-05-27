@@ -110,19 +110,14 @@ export default function SignUpPage() {
         })
       })
 
-      await fetch (`${ apiUrl }/login`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        credentials: 'include',
-        body: JSON.stringify({
-          email,
-          password
-        })
-      })
+      console.log([
+        email,
+        username,
+        password,
+        secretAdminKey
+      ])
 
-      router.push('/')
+      // router.push('/')
     } catch (error) {
       // TODO: improve error handling: this is not actually catching the right error from the backend
       setErrorModalDisplayed(true)
