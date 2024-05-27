@@ -4,8 +4,7 @@ import {
   IconBrandThreads,
   IconBrandTiktok,
   IconBrandX,
-  IconBrandYoutube,
-  IconCopyright
+  IconBrandYoutube
 } from '@tabler/icons-react'
 
 import translate from '/src/app/translation.js'
@@ -62,7 +61,7 @@ export default function Footer({ lang }) {
         </article>
       </section>
 
-      { /* --------------------------------------------- */ }
+      {/* --------------------------------------------- */}
 
       <section className = 'footer--bottom'>
         <p>

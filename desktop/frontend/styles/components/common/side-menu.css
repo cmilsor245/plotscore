@@ -2,16 +2,59 @@
   --color--icons--and--text--hover: var(--color--primary-light-40);
   --color--icons--and--text: var(--color--primary-light-80);
   --color--side-menu--bg: var(--color--primary-dark-70);
+  --color--side-menu--button: var(--color--primary-light-80);
+  --color--side-menu--close-button--bg: var(--color--secondary-main);
   --color--side-menu--divider: var(--color--primary-dark-30);
+  --color--side-menu--overlay: rgba(7, 8, 10, .7);
   --color--user-avatar--shadow: rgba(218, 221, 224, .5);
+
 }
 
 .light-theme {
   --color--icons--and--text--hover: var(--color--primary-light-10);
   --color--icons--and--text: var(--color--primary-dark-70);
   --color--side-menu--bg: var(--color--primary-light-80);
+  --color--side-menu--button: var(--color--primary-dark-70);
+  --color--side-menu--close-button--bg: var(--color--tertiary-main);
   --color--side-menu--divider: var(--color--primary-light-50);
+  --color--side-menu--overlay: rgba(236, 238, 240, .7);
   --color--user-avatar--shadow: rgba(20, 25, 31, .5);
+}
+
+.side-menu--button {
+  align-items: center;
+  color: var(--color--side-menu--button);
+  cursor: pointer;
+  display: none;
+  height: 50px;
+  justify-content: center;
+  left: 2%;
+  position: fixed;
+  top: 5%;
+  width: 50px;
+  z-index: 3;
+}
+
+.side-menu--button svg {
+  height: 100%;
+  width: 100%;
+}
+
+.side-menu--overlay {
+  background-color: var(--color--side-menu--overlay);
+  height: 100vh;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  transition: .2s;
+  width: 100vw;
+  z-index: -1;
+}
+
+.side-menu--overlay.active {
+  opacity: 1;
+  z-index: 3;
 }
 
 .side-menu {
@@ -37,6 +80,18 @@
   align-items: flex-start;
   padding-inline: 25px 30px;
   width: 20vw;
+}
+
+.side-menu--close-button {
+  display: none;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  background-color: var(--color--side-menu--close-button--bg);
+  color: var(--color--primary-light-90);
+  top: 0;
+  right: 0;
 }
 
 .side-menu--user, .side-menu--option {
@@ -150,4 +205,51 @@
 .side-menu.side-menu--expanded .side-menu--options svg {
   height: var(--size--icons--expanded);
   width: var(--size--icons--expanded);
+}
+
+@media (width <= 1580px) {
+  .side-menu {
+    --size--icons--expanded: 25px;
+    --size--icons--not-expanded: 20px;
+  }
+
+  .side-menu--user--avatar {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+@media (width <= 1160px) {
+  .side-menu--button {
+    display: flex;
+  }
+
+  .side-menu {
+    transform: translateX(-300%);
+  }
+
+  .side-menu.active {
+    transform: translateX(0);
+  }
+
+  .side-menu--expanded {
+    width: fit-content;
+  }
+}
+
+@media (width <= 456px) {
+  .side-menu--expanded {
+    width: 100%;
+  }
+
+  .side-menu--close-button {
+    display: flex;
+  }
+}
+
+@media (width <= 424px) {
+  .side-menu--button {
+    height: 40px;
+    width: 40px;
+  }
 }

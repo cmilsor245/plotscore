@@ -86,7 +86,9 @@ export default function AdminDashboard({
             <LogoHeader />
 
             <section className = 'common--content--with-logo-header'>
-              <p>test admin</p>
+              <article className = 'database-user-list'>
+                <h1>admin dashboard</h1>
+              </article>
             </section>
           </main>
         </section>

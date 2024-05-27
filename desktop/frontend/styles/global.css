@@ -526,6 +526,7 @@ main {
 
 .common--content--with-logo-header {
   margin-top: calc(var(--logo-header--height) + 50px);
+  width: 100%;
 }
 
 .common--content-footer--content {
@@ -549,6 +550,7 @@ main {
   --font: 90px var(--font--grape-nuts);
   color: var(--color--secondary-main);
   font: var(--font);
+  transition: .1s;
 }
 
 .section-with--heading-and-content {
@@ -572,5 +574,27 @@ main {
 @media (width <= 1160px) {
   .common--content-footer--content {
     --padding-inline--global: 2%;
+  }
+
+  .common--content-footer--logo-text h1 {
+    font-size: 70px;
+  }
+}
+
+@media (width <= 800px) {
+  .common--content-footer--logo-text h1 {
+    font-size: 60px;
+  }
+}
+
+@media (width <= 424px) {
+  .common--content-footer--logo-text h1 {
+    font-size: 50px;
+  }
+}
+
+@media (width <= 350px) {
+  .common--content-footer--logo-text h1 {
+    font-size: 40px;
   }
 }

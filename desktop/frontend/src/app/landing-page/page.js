@@ -149,7 +149,7 @@ export default function LandingPage() {
               </div>
             </section>
 
-            { /* ---------------------------------------------------- */ }
+            {/* ---------------------------------------------------- */}
 
             <section className = 'featured-media'>
               {
@@ -175,7 +175,7 @@ export default function LandingPage() {
               }
             </section>
 
-            { /* ---------------------------------------------------- */ }
+            {/* ---------------------------------------------------- */}
 
             <section className = 'section-with--heading-and-content plotscore-lets-you'>
               <SectionHeading
@@ -210,7 +210,7 @@ export default function LandingPage() {
               </section>
             </section>
 
-            { /* ---------------------------------------------------- */ }
+            {/* ---------------------------------------------------- */}
 
             <section className = 'section-with--heading-and-content just-reviewed'>
               <SectionHeading

@@ -112,7 +112,7 @@ function LogInfo({
         <h6 className = 'media-slot--log-info--user--username'>{ username }</h6>
       </article>
 
-      { /* ----------------------- */ }
+      {/* ----------------------- */}
 
       <article className = 'media-slot--log-info--details'>
         <div className = 'media-slot--log-info--details--left-side'>

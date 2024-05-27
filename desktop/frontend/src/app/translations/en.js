@@ -4,8 +4,8 @@ const translationsEN = {
       SWITCH_TO_LIGHT_MODE: 'Switch to Light Mode',
       SWITCH_TO_DARK_MODE: 'Switch to Dark Mode',
 
-      CHANGE_TO_SPANISH: 'Translate to spanish',
-      CHANGE_TO_ENGLISH: 'Translate to english',
+      CHANGE_TO_SPANISH: 'Traducir al Español',
+      CHANGE_TO_ENGLISH: 'Traducir al Inglés',
 
       MEDIA: 'Media',
       LISTS: 'Lists',

@@ -9,8 +9,10 @@ import {
   IconHeartFilled,
   IconList,
   IconLogout,
+  IconMenu,
   IconMovie,
-  IconSettings
+  IconSettings,
+  IconX
 } from '@tabler/icons-react'
 
 import {
@@ -46,122 +48,145 @@ export default function SideMenu({
     setIsExpanded(false)
   }
 
+  /* ------------------------------- */
+
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+    setIsExpanded(!isExpanded)
+  }
+
   return (
-    <div
-      className = { `side-menu ${ isExpanded ? 'side-menu--expanded' : '' }` }
-      onMouseEnter = { handleMouseEnter }
-      onMouseLeave = { handleMouseLeave }
-    >
-      <section className = 'side-menu--user'>
-        <Image
-          className = 'side-menu--user--avatar'
-          src = { avatarSrc }
-          width = { 50 }
-          height = { 50 }
-          alt = 'avatar'
-        />
-        {
-          isExpanded &&
-            <span>
-              {
-                userData
-                  ? userData.username
-                  : 'username'
-              }
-            </span>
-        }
-      </section>
+    <>
+      <div className = 'side-menu--button' onClick = { toggleMenu }>
+        <IconMenu />
+      </div>
 
-      <div className = 'side-menu--divider'></div>
+      <div className = { `side-menu--overlay ${ isMobileMenuOpen ? 'active' : '' }` } onClick = { toggleMenu }></div>
 
-      {/* -------------------------------------------------------------- */}
+      <div
+        className = { `side-menu ${ isExpanded ? 'side-menu--expanded' : '' } ${ isMobileMenuOpen ? 'active' : '' }` }
+        onMouseEnter = { handleMouseEnter }
+        onMouseLeave = { handleMouseLeave }
+      >
+        <div className = 'side-menu--close-button'>
+          <IconX onClick = { toggleMenu } />
+        </div>
 
-      <section className = 'side-menu--main-actions'>
-        <div className = 'side-menu--option'>
+        {/* -------------------------------------------------------------- */}
+
+        <section className = 'side-menu--user'>
+          <Image
+            className = 'side-menu--user--avatar'
+            src = { avatarSrc }
+            width = { 50 }
+            height = { 50 }
+            alt = 'avatar'
+          />
           {
-            theme === 'dark'
-              ? <IconBulbFilled onClick = { handleThemeChange } />
-              : <IconBulbOff onClick = { handleThemeChange } />
+            isExpanded &&
+              <span>
+                {
+                  userData
+                    ? userData.username
+                    : 'username'
+                }
+              </span>
           }
-          <span className = { `side-menu--option--text ${ isExpanded ? 'expanded' : '' }` } onClick = { handleThemeChange }>
+        </section>
+
+        <div className = 'side-menu--divider'></div>
+
+        {/* -------------------------------------------------------------- */}
+
+        <section className = 'side-menu--main-actions'>
+          <div className = 'side-menu--option'>
             {
               theme === 'dark'
-                ? translate(lang, 'COMMON', 'SIDE_MENU', 'SWITCH_TO_LIGHT_MODE')
-                : translate(lang, 'COMMON', 'SIDE_MENU', 'SWITCH_TO_DARK_MODE')
+                ? <IconBulbFilled onClick = { handleThemeChange } />
+                : <IconBulbOff onClick = { handleThemeChange } />
             }
-          </span>
-        </div>
-        <div className = 'side-menu--option'>
-          {
-            lang === 'en'
-              ? <CircleFlagsEs onClick = { handleLanguageChange } />
-              : <CircleFlagsUk onClick = { handleLanguageChange } />
-          }
-          <span className = { `side-menu--option--text ${ isExpanded ? 'expanded' : '' }` } onClick = { handleLanguageChange }>
+            <span className = { `side-menu--option--text ${ isExpanded ? 'expanded' : '' }` } onClick = { handleThemeChange }>
+              {
+                theme === 'dark'
+                  ? translate(lang, 'COMMON', 'SIDE_MENU', 'SWITCH_TO_LIGHT_MODE')
+                  : translate(lang, 'COMMON', 'SIDE_MENU', 'SWITCH_TO_DARK_MODE')
+              }
+            </span>
+          </div>
+          <div className = 'side-menu--option'>
             {
               lang === 'en'
-                ? translate(lang, 'COMMON', 'SIDE_MENU', 'CHANGE_TO_SPANISH')
-                : translate(lang, 'COMMON', 'SIDE_MENU', 'CHANGE_TO_ENGLISH')
+                ? <CircleFlagsEs onClick = { handleLanguageChange } />
+                : <CircleFlagsUk onClick = { handleLanguageChange } />
             }
-          </span>
-        </div>
-      </section>
+            <span className = { `side-menu--option--text ${ isExpanded ? 'expanded' : '' }` } onClick = { handleLanguageChange }>
+              {
+                lang === 'en'
+                  ? translate(lang, 'COMMON', 'SIDE_MENU', 'CHANGE_TO_SPANISH')
+                  : translate(lang, 'COMMON', 'SIDE_MENU', 'CHANGE_TO_ENGLISH')
+              }
+            </span>
+          </div>
+        </section>
 
-      <div className = 'side-menu--divider'></div>
+        <div className = 'side-menu--divider'></div>
 
-      {/* -------------------------------------------------------------- */}
+        {/* -------------------------------------------------------------- */}
 
-      <section className = 'side-menu--tabs'>
-        <div className = 'side-menu--option'>
-          <IconMovie />
-          <span className = { `side-menu--option--text ${ isExpanded ? 'expanded' : '' }` }>
-            { translate(lang, 'COMMON', 'SIDE_MENU', 'MEDIA') }
-          </span>
-        </div>
-        <div className = 'side-menu--option'>
-          <IconList />
-          <span className = { `side-menu--option--text ${ isExpanded ? 'expanded' : '' }` }>
-            { translate(lang, 'COMMON', 'SIDE_MENU', 'LISTS') }
-          </span>
-        </div>
-        <div className = 'side-menu--option'>
-          <IconClockPlay />
-          <span className = { `side-menu--option--text ${ isExpanded ? 'expanded' : '' }` }>
-            { translate(lang, 'COMMON', 'SIDE_MENU', 'WATCHLIST') }
-          </span>
-        </div>
-        <div className = 'side-menu--option'>
-          <IconHeartFilled />
-          <span className = { `side-menu--option--text ${ isExpanded ? 'expanded' : '' }` }>
-            { translate(lang, 'COMMON', 'SIDE_MENU', 'LIKES') }
-          </span>
-        </div>
-      </section>
+        <section className = 'side-menu--tabs'>
+          <div className = 'side-menu--option'>
+            <IconMovie />
+            <span className = { `side-menu--option--text ${ isExpanded ? 'expanded' : '' }` }>
+              { translate(lang, 'COMMON', 'SIDE_MENU', 'MEDIA') }
+            </span>
+          </div>
+          <div className = 'side-menu--option'>
+            <IconList />
+            <span className = { `side-menu--option--text ${ isExpanded ? 'expanded' : '' }` }>
+              { translate(lang, 'COMMON', 'SIDE_MENU', 'LISTS') }
+            </span>
+          </div>
+          <div className = 'side-menu--option'>
+            <IconClockPlay />
+            <span className = { `side-menu--option--text ${ isExpanded ? 'expanded' : '' }` }>
+              { translate(lang, 'COMMON', 'SIDE_MENU', 'WATCHLIST') }
+            </span>
+          </div>
+          <div className = 'side-menu--option'>
+            <IconHeartFilled />
+            <span className = { `side-menu--option--text ${ isExpanded ? 'expanded' : '' }` }>
+              { translate(lang, 'COMMON', 'SIDE_MENU', 'LIKES') }
+            </span>
+          </div>
+        </section>
 
-      <div className = 'side-menu--divider'></div>
+        <div className = 'side-menu--divider'></div>
 
-      {/* -------------------------------------------------------------- */}
+        {/* -------------------------------------------------------------- */}
 
-      <section className = 'side-menu--options'>
-        <div className = 'side-menu--option'>
-          <IconSettings />
-          <span className = { `side-menu--option--text ${ isExpanded ? 'expanded' : '' }` }>
-            { translate(lang, 'COMMON', 'SIDE_MENU', 'SETTINGS') }
-          </span>
-        </div>
-        <div className = 'side-menu--option'>
-          <IconBadgeAdOff />
-          <span className = { `side-menu--option--text ${ isExpanded ? 'expanded' : '' }` }>
-            { translate(lang, 'COMMON', 'SIDE_MENU', 'GO_PRO') }
-          </span>
-        </div>
-        <div className = 'side-menu--option'>
-          <IconLogout onClick = { handleLogout } />
-          <span className = { `side-menu--option--text ${ isExpanded ? 'expanded' : '' }` } onClick = { handleLogout }>
-            { translate(lang, 'COMMON', 'SIDE_MENU', 'LOGOUT') }
-          </span>
-        </div>
-      </section>
-    </div>
+        <section className = 'side-menu--options'>
+          <div className = 'side-menu--option'>
+            <IconSettings />
+            <span className = { `side-menu--option--text ${ isExpanded ? 'expanded' : '' }` }>
+              { translate(lang, 'COMMON', 'SIDE_MENU', 'SETTINGS') }
+            </span>
+          </div>
+          <div className = 'side-menu--option'>
+            <IconBadgeAdOff />
+            <span className = { `side-menu--option--text ${ isExpanded ? 'expanded' : '' }` }>
+              { translate(lang, 'COMMON', 'SIDE_MENU', 'GO_PRO') }
+            </span>
+          </div>
+          <div className = 'side-menu--option'>
+            <IconLogout onClick = { handleLogout } />
+            <span className = { `side-menu--option--text ${ isExpanded ? 'expanded' : '' }` } onClick = { handleLogout }>
+              { translate(lang, 'COMMON', 'SIDE_MENU', 'LOGOUT') }
+            </span>
+          </div>
+        </section>
+      </div>
+    </>
   )
 }
