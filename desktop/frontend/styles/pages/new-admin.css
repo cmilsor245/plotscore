@@ -54,11 +54,6 @@
   transform: translateX(120%);
 }
 
-.error-modal--login {
-  left: .5%;
-  transform: translateX(-120%);
-}
-
 .error-modal--displayed {
   transform: translateX(0);
 }
@@ -97,15 +92,16 @@
   cursor: pointer;
 }
 
-.signup-page, .login-page {
+.new-admin-page {
   display: flex;
   flex-direction: column;
   gap: 0;
   min-height: 100vh;
-  background: center / cover;
+  background: right / cover;
 }
 
-.signup-page--content, .login-page--content {
+.new-admin-page--content {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -113,34 +109,18 @@
   justify-content: center;
 }
 
-.signup-page--content {
-  align-items: flex-start;
-}
-
-.login-page--content {
-  align-items: flex-end;
-}
-
-.signup-form--area, .login-form--area {
+.new-admin-form--area {
   background-color: var(--color--form-area--bg);
+  box-shadow: 80px 0 80px 80px var(--color--form-area--bg);
   display: flex;
   flex-direction: column;
   gap: 25%;
   height: 100%;
   justify-content: space-between;
+  padding: 9% 0 10% 3.5%;
   position: relative;
   width: 35%;
   z-index: 1;
-}
-
-.signup-form--area {
-  box-shadow: 80px 0 80px 80px var(--color--form-area--bg);
-  padding: 9% 0 10% 3.5%;
-}
-
-.login-form--area {
-  box-shadow: -80px 0 80px 80px var(--color--form-area--bg);
-  padding: 9% 3.5% 10% 0;
 }
 
 .cancel--account-form--button {
@@ -168,12 +148,7 @@
   left: 0;
 }
 
-.cancel--account-form--button.login {
-  border-radius: 0 0 0 2px;
-  right: 0;
-}
-
-.signup-form--area h1, .login-form--area h1 {
+.new-admin-form--area h1 {
   --font: clamp(25px, 4.6rem, 50px) var(--font--graphik-semibold);
   color: var(--color--form-title);
   font: var(--font);
@@ -183,7 +158,7 @@
   word-spacing: 3px;
 }
 
-.signup-form--area h1 span, .login-form--area h1 span {
+.new-admin-form--area h1 span {
   --font: clamp(32px, 6.5rem, 70px) var(--font--grape-nuts);
   color: var(--color--secondary-main);
   font: var(--font);
@@ -269,19 +244,15 @@
     width: 18px;
   }
 
-  .signup-form--area {
+  .new-admin-form--area {
     padding: 100px 20px 100px 60px;
   }
 
-  .login-form--area {
-    padding: 100px 60px 100px 20px;
-  }
-
-  .signup-form--area h1, .login-form--area h1 {
+  .new-admin-form--area h1 {
     font-size: clamp(20px, 4rem, 45px);
   }
 
-  .signup-form--area h1 span, .login-form--area h1 span {
+  .new-admin-form--area h1 span {
     font-size: clamp(25px, 5.6rem, 60px);
   }
 
@@ -308,26 +279,25 @@
     width: 16px;
   }
 
-  .signup-form--area, .login-form--area {
+  .new-admin-form--area {
     gap: 30px;
     justify-content: center;
-  }
-
-  .signup-form--area {
     padding: 100px 20px 100px 80px;
   }
+}
 
-  .login-form--area {
-    padding: 100px 80px 100px 20px;
+@media (width <= 1308px) {
+  .new-admin-page {
+    background-position-x: calc(100% + 100px);
   }
 }
 
 @media (width <= 1280px) {
-  .signup-form--area h1, .login-form--area h1 {
+  .new-admin-form--area h1 {
     font-size: clamp(20px, 3.6rem, 40px);
   }
 
-  .signup-form--area h1 span, .login-form--area h1 span {
+  .new-admin-form--area h1 span {
     font-size: clamp(20px, 5rem, 50px);
   }
 
@@ -345,28 +315,20 @@
 }
 
 @media (width <= 1080px) {
-  .signup-page {
-    background-position: right;
-  }
-
-  .login-page {
-    background-position-x: calc(100% + 400px);
-  }
-
-  .signup-form--area, .login-form--area {
+  .new-admin-form--area {
     width: 50%;
   }
 }
 
-@media (width <= 985px) {
-  .login-page {
-    background-position-x: calc(100% + 600px);
+@media (width <= 1068px) {
+  .new-admin-page {
+    background-position-x: calc(100% + 200px);
   }
 }
 
-@media (width <= 940px) {
-  .signup-page {
-    background-position-x: calc(100% + 800px);
+@media (width <= 980px) {
+  .new-admin-page {
+    background-position-x: calc(100% + 300px);
   }
 }
 
@@ -393,16 +355,11 @@
     width: 24px;
   }
 
-  .signup-page {
-    background: center / cover;
+  .new-admin-page {
+    background-position-x: calc(100% + 200px);
   }
 
-  .login-page {
-    background: center / cover;
-    background-position-x: calc(100% - 900px);
-  }
-
-  .signup-form--area, .login-form--area {
+  .new-admin-form--area {
     background-color: var(--color--form-area--bg-mobile);
     box-shadow: none;
     padding-inline: 60px;
@@ -419,6 +376,12 @@
   .error-modal--close-button svg {
     height: 20px;
     width: 20px;
+  }
+}
+
+@media (width <= 582px) {
+  .new-admin-page {
+    background-position-x: calc(100% + 300px);
   }
 }
 
@@ -439,8 +402,20 @@
 }
 
 @media (width <= 400px) {
-  .signup-form--area, .login-form--area {
+  .new-admin-form--area {
     padding-inline: 20px;
+  }
+}
+
+@media (width <= 398px) {
+  .new-admin-page {
+    background-position-x: calc(100% + 350px);
+  }
+}
+
+@media (width <= 355px) {
+  .new-admin-page {
+    background-position-x: calc(100% + 400px);
   }
 }
 

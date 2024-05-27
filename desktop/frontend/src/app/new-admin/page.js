@@ -21,7 +21,7 @@ import {
 } from '/components/common/main-action-button.js'
 import translate from '/src/app/translation.js'
 
-import '/styles/pages/login--signup.css'
+import '/styles/pages/new-admin.css'
 
 function CharacterCounter({ value, maxLength }) {
   const remainingChars = maxLength - value.length
@@ -110,7 +110,17 @@ export default function SignUpPage() {
         })
       })
 
-      console.log
+      await fetch (`${ apiUrl }/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include',
+        body: JSON.stringify({
+          email,
+          password
+        })
+      })
 
       router.push('/')
     } catch (error) {
@@ -123,8 +133,8 @@ export default function SignUpPage() {
 
   /* ---------------------------------------------------- */
 
-  const lowResImageSrc = '/img/signup-page/low-res--background.webp'
-  const highResImageSrc = '/img/signup-page/high-res--background.webp'
+  const lowResImageSrc = '/img/new-admin-page/low-res--background.webp'
+  const highResImageSrc = '/img/new-admin-page/high-res--background.webp'
 
   const [imageLoaded, setImageLoaded] = useState(false)
 
@@ -167,9 +177,9 @@ export default function SignUpPage() {
 
       {/* -------------------------------------------------------------------------------------------------- */}
 
-      <section className = 'signup-page' style = { backgroundStyle }>
-        <section className = 'signup-page--content'>
-          <article className = 'signup-form--area'>
+      <section className = 'new-admin-page' style = { backgroundStyle }>
+        <section className = 'new-admin-page--content'>
+          <article className = 'new-admin-form--area'>
             <Link className = 'cancel--account-form--button signup' href = '/'>
               <IconX />
             </Link>
@@ -186,7 +196,7 @@ export default function SignUpPage() {
               }}
             ></h1>
 
-            <form className = 'account-form signup-form' onSubmit = { submit }>
+            <form className = 'account-form new-admin-form' onSubmit = { submit }>
               <input type = 'hidden' name = 'secret_key' value = { secretAdminKey } />
 
               <div className = 'account-form--group'>
@@ -197,7 +207,7 @@ export default function SignUpPage() {
                   maxLength = { emailMaxLength }
 
                   name = 'account-form--email-address'
-                  id = 'account-form--signup--email-address'
+                  id = 'account-form--new-admin--email-address'
 
                   onChange = { handleEmailChange }
                   onFocus = { e => e.target.select() }
@@ -218,7 +228,7 @@ export default function SignUpPage() {
                   maxLength = { usernameMaxLength }
 
                   name = 'account-form--username'
-                  id = 'account-form--signup--username'
+                  id = 'account-form--new-admin--username'
 
                   onChange = { handleUsernameChange }
                   onFocus = { e => e.target.select() }
@@ -237,7 +247,7 @@ export default function SignUpPage() {
                   maxLength = { passwordMaxLength }
 
                   name = 'account-form--password'
-                  id = 'account-form--signup--password'
+                  id = 'account-form--new-admin--password'
 
                   onChange = { handlePasswordChange }
                   onFocus = { e => e.target.select() }

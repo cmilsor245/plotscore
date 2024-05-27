@@ -164,7 +164,7 @@
   pointer-events: none;
   position: absolute;
   text-wrap: nowrap;
-  transform: translateX(500%);
+  transform: translateX(50%);
 }
 
 .side-menu--option--text.expanded {
