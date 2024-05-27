@@ -15,7 +15,7 @@ export default function Index() {
       async () => {
         try {
           // ! when there's no session cookie, it produces a 500 error
-          const response = await fetch(`${apiUrl}/user`, {
+          const response = await fetch(`${ apiUrl }/user`, {
             credentials: 'include'
           })
 

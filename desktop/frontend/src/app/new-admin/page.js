@@ -91,11 +91,13 @@ export default function SignUpPage() {
 
   const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
+  const secretAdminKey = 'plotscore_christian_admin_secret_key'
+
   const submit = async (e) => {
     e.preventDefault()
 
     try {
-      await fetch(`${ apiUrl }/signup`, {
+      await fetch(`${ apiUrl }/create-admin`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -103,21 +105,12 @@ export default function SignUpPage() {
         body: JSON.stringify({
           email,
           username,
-          password
+          password,
+          secret_key: secretAdminKey
         })
       })
 
-      await fetch (`${ apiUrl }/login`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        credentials: 'include',
-        body: JSON.stringify({
-          email,
-          password
-        })
-      })
+      console.log
 
       router.push('/')
     } catch (error) {
@@ -186,14 +179,16 @@ export default function SignUpPage() {
               dangerouslySetInnerHTML = {{
                 __html: translate(
                   lang,
-                  'SIGNUP_PAGE',
+                  'NEW_ADMIN_PAGE',
                   'ACCOUNT_FORM',
-                  'SIGN_UP_TITLE'
+                  'PAGE_TITLE'
                 )
               }}
             ></h1>
 
             <form className = 'account-form signup-form' onSubmit = { submit }>
+              <input type = 'hidden' name = 'secret_key' value = { secretAdminKey } />
+
               <div className = 'account-form--group'>
                 <FormLabelInput
                   label = { translate(lang, 'SIGNUP_PAGE', 'ACCOUNT_FORM', 'EMAIL') }
@@ -257,7 +252,7 @@ export default function SignUpPage() {
               <input
                 className = 'account-form--submit'
                 type = 'submit'
-                value = { translate(lang, 'SIGNUP_PAGE', 'ACCOUNT_FORM', 'SIGN_UP_BUTTON') }
+                value = { translate(lang, 'NEW_ADMIN_PAGE', 'ACCOUNT_FORM', 'SUBMIT_BUTTON') }
               />
             </form>
           </article>

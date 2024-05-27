@@ -10,6 +10,8 @@ class AuthRequest extends FormRequest {
 
     public function rules(): array {
       return [
+        'secret_key' => 'nullable|string',
+
         'username' => 'required|string|min:3|max:100|unique:users,username',
         'given_name' => 'nullable|string|min:1|max:100',
         'family_name' => 'nullable|string|min:1|max:100',

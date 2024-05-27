@@ -1,6 +1,7 @@
 'use client'
 
 import cookie from 'js-cookie'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import {
@@ -55,10 +56,12 @@ export default function AdminDashboard({
   return (
     <>
       <div className = 'main-actions-buttons'>
-        <MainActionButton
-          icon = { IconUserPlus }
-          handleClick = { null }
-        />
+        <Link href = '/new-admin'>
+          <MainActionButton
+            icon = { IconUserPlus }
+            handleClick = { null }
+          />
+        </Link>
         <MainActionButton
           icon = { IconZoom }
           handleClick = { null }

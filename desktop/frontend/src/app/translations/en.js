@@ -35,6 +35,15 @@ const translationsEN = {
 
   /* -------------------------------------------------------------------------------------------------- */
 
+  NEW_ADMIN_PAGE: {
+    ACCOUNT_FORM: {
+      PAGE_TITLE: 'Create a new <span>plotscore</span> admin',
+      SUBMIT_BUTTON: 'create admin'
+    }
+  },
+
+  /* -------------------------------------------------------------------------------------------------- */
+
   SIGNUP_PAGE: {
     ACCOUNT_FORM: {
       SIGN_UP_TITLE: 'Create a new <span>plotscore</span> account',
