@@ -186,8 +186,8 @@ const translationsEN = {
 
       FOLLOWER_COUNT: ' followers',
 
-      PREVIOUS_PAGE: 'newer',
-      NEXT_PAGE: 'older'
+      PREVIOUS_PAGE: 'older',
+      NEXT_PAGE: 'newer'
     }
   },
 

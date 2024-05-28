@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import {
+  IconChairDirector,
   IconEdit,
   IconPencilPlus,
   IconTrash,
@@ -189,7 +190,10 @@ export default function AdminDashboard({
                             />
 
                             <div className = 'user-list__info'>
-                              <h4>{ user.username }</h4>
+                              <h4 className = { user.role === 'admin' ? 'user-list__admin-username' : null }>
+                                { user.role === 'admin' ? <IconChairDirector /> : null }
+                                { user.username }
+                              </h4>
                               <p>
                                 { user.follower_count }
                                 { translate(

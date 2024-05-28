@@ -1,4 +1,5 @@
 .dark-theme {
+  --color--admin-icon: var(--color--tertiary-main);
   --color--count: var(--color--primary-light-50);
   --color--delete-user--hover: var(--color--secondary-light-20);
   --color--edit-user-hover: var(--color--tertiary-light-20);
@@ -9,6 +10,7 @@
 }
 
 .light-theme {
+  --color--admin-icon: var(--color--secondary-main);
   --color--count: var(--color--primary-dark-30);
   --color--delete-user--hover: var(--color--secondary-dark-20);
   --color--edit-user-hover: var(--color--tertiary-dark-20);
@@ -43,7 +45,7 @@
 .user-list__attributes {
   align-items: center;
   display: flex;
-  gap: 10px;
+  gap: 15px;
   justify-content: flex-start;
 }
 
@@ -60,9 +62,26 @@
 }
 
 .user-list__info h4 {
-  --font: clamp(13px, 1.6rem, 17px) var(--font--graphik-semibold);
+  --font: clamp(13px, 1.8rem, 24px) var(--font--graphik-semibold);
   color: var(--color--username);
   font: var(--font);
+  position: relative;
+}
+
+/* .user-list__admin-username {
+  background: linear-gradient(90deg, var(--color--secondary-main), var(--color--tertiary-main));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} */
+
+.user-list__info h4 svg {
+  color: var(--color--admin-icon);
+  height: 15px;
+  left: -30%;
+  position: absolute;
+  top: -30%;
+  transform: rotate(-25deg);
+  width: 15px;
 }
 
 .user-list__info p {
