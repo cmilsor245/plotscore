@@ -2,6 +2,9 @@
   --color--count: var(--color--primary-light-50);
   --color--delete-user--hover: var(--color--secondary-light-20);
   --color--edit-user-hover: var(--color--tertiary-light-20);
+  --color--pagination-controls__button--bg--hover: var(--color--primary-dark-10);
+  --color--pagination-controls__button--bg: var(--color--primary-dark-20);
+  --color--pagination-controls__button--text: var(--color--primary-light-60);
   --color--username: var(--color--primary-light-80);
 }
 
@@ -9,6 +12,9 @@
   --color--count: var(--color--primary-dark-30);
   --color--delete-user--hover: var(--color--secondary-dark-20);
   --color--edit-user-hover: var(--color--tertiary-dark-20);
+  --color--pagination-controls__button--bg--hover: var(--color--primary-light-50);
+  --color--pagination-controls__button--bg: var(--color--primary-light-60);
+  --color--pagination-controls__button--text: var(--color--primary-dark-60);
   --color--username: var(--color--primary-dark-50);
 }
 
@@ -109,7 +115,44 @@
 }
 
 .user-list__pagination-controls {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
+  width: 100%;
+}
+
+.pagination-controls__button {
+  --font: clamp(9px, 1.4rem, 16px) var(--font--graphik-medium);
+  background-color: var(--color--pagination-controls__button--bg);
+  border-radius: 3px;
+  border: none;
+  color: var(--color--pagination-controls__button--text);
+  cursor: pointer;
+  font: var(--font);
+  padding: 7px 15px;
+  text-transform: capitalize;
+  transition: .2s;
+  width: fit-content;
+}
+
+.pagination-controls__button:hover {
+  background-color: var(--color--pagination-controls__button--bg--hover);
+}
+
+.pagination-controls__numbers {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.pagination-controls__number {
+  --font: clamp(9px, 1.5rem, 16px) var(--font--graphik-light);
+  color: var(--color--pagination-controls__button--text);
+  font: var(--font);
+  cursor: pointer;
+}
+
+.pagination-controls__number--active {
+  font-family: var(--font--graphik-semibold);
 }

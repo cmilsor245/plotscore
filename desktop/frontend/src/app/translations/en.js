@@ -184,7 +184,10 @@ const translationsEN = {
     DATABASE_USER_LIST: {
       SECTION_TITLE: 'Database user list',
 
-      FOLLOWER_COUNT: ' followers'
+      FOLLOWER_COUNT: ' followers',
+
+      PREVIOUS_PAGE: 'newer',
+      NEXT_PAGE: 'older'
     }
   },
 

@@ -221,12 +221,24 @@ export default function AdminDashboard({
                   {/* ---------------------------------- */}
 
                   <section className = 'user-list__pagination-controls'>
-                    <button onClick = { handlePreviousPage } disabled = { currentPage === 1 }>
-                      previous
+                    <button className = 'pagination-controls__button' onClick = { handlePreviousPage } disabled = { currentPage === 1 }>
+                      { translate(lang, 'ADMIN_DASHBOARD', 'DATABASE_USER_LIST', 'PREVIOUS_PAGE') }
                     </button>
-                    <span>Page { currentPage } of { totalPages }</span>
-                    <button onClick = { handleNextPage } disabled = { currentPage === totalPages }>
-                      next
+
+                    <div className = 'pagination-controls__numbers'>
+                      { [...Array(totalPages)].map((_, page) => (
+                        <h6
+                          key = { page + 1 }
+                          className = { `pagination-controls__number ${ page + 1 === currentPage ? 'pagination-controls__number--active' : '' }` }
+                          onClick = { () => setCurrentPage(page + 1) }
+                        >
+                          { page + 1 }
+                        </h6>
+                      )) }
+                    </div>
+
+                    <button className = 'pagination-controls__button' onClick = { handleNextPage } disabled = { currentPage === totalPages }>
+                      { translate(lang, 'ADMIN_DASHBOARD', 'DATABASE_USER_LIST', 'NEXT_PAGE') }
                     </button>
                   </section>
                 </section>

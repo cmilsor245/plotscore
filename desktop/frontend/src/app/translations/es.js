@@ -184,7 +184,10 @@ const translationsES = {
     DATABASE_USER_LIST: {
       SECTION_TITLE: 'Lista de usuarios de la base de datos',
 
-      FOLLOWER_COUNT: ' seguidores'
+      FOLLOWER_COUNT: ' seguidores',
+
+      PREVIOUS_PAGE: ' más nuevos',
+      NEXT_PAGE: ' más antiguos'
     }
   },
 
