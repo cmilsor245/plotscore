@@ -1,0 +1,100 @@
+.dark-theme {
+  --color--count: var(--color--primary-light-50);
+  --color--delete-user--hover: var(--color--secondary-light-20);
+  --color--edit-user-hover: var(--color--tertiary-light-20);
+  --color--username: var(--color--primary-light-80);
+}
+
+.light-theme {
+  --color--count: var(--color--primary-dark-30);
+  --color--delete-user--hover: var(--color--secondary-dark-20);
+  --color--edit-user-hover: var(--color--tertiary-dark-20);
+  --color--username: var(--color--primary-dark-50);
+}
+
+.database-user-list .section-content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: flex-start;
+}
+
+.database-user-list .section-content ul li {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-list__attributes {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.user-list__avatar {
+  border-radius: 50%;
+}
+
+.user-list__info {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+}
+
+.user-list__info h4 {
+  --font: clamp(13px, 1.6rem, 17px) var(--font--graphik-semibold);
+  color: var(--color--username);
+  font: var(--font);
+}
+
+.user-list__info p {
+  --font: clamp(9px, 1.2rem, 14px) var(--font--graphik-regular);
+  color: var(--color--count);
+  font: var(--font);
+}
+
+.list__user-actions {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+}
+
+.user-list__edit, .user-list__delete {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  gap: 5px;
+  height: 26px;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  transition: .2s;
+  width: 26px;
+}
+
+.user-list__edit {
+  color: var(--color--tertiary-main);
+}
+
+.user-list__edit:hover {
+  color: var(--color--edit-user-hover);
+}
+
+.user-list__delete {
+  color: var(--color--secondary-main);
+}
+
+.user-list__delete:hover {
+  color: var(--color--delete-user--hover);
+}
+
+.user-list__edit *, .user-list__delete * {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}

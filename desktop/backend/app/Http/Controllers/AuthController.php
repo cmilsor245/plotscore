@@ -94,4 +94,30 @@ class AuthController extends Controller {
       'message' => 'success'
     ]) -> withCookie($cookie);
   }
+
+  /* --------------------------------------------------------------------------- */
+
+  public function getAllUsers(Request $request) {
+    if (!auth() -> check()) {
+      return response() -> json([
+        'error' => 'unauthorized'
+      ], Response::HTTP_UNAUTHORIZED);
+    }
+
+    $authenticatedUser = auth() -> user();
+
+    $page = $request -> query('page', 1);
+    $perPage = 10;
+
+    $users = User::where('id', '!=', $authenticatedUser -> id)
+      -> where('id', '!=', 1)
+      -> paginate($perPage, ['*'], 'page', $page);
+
+    return response() -> json([
+      'users' => $users -> items(),
+      'currentPage' => $users -> currentPage(),
+      'totalPages' => $users -> lastPage(),
+      'totalItems' => $users -> total(),
+    ]);
+  }
 }

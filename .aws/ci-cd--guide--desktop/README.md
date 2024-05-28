@@ -13,7 +13,7 @@ We created an **automatic integration process** to be able to develop the webapp
 3. [Configuring Nginx for HTTP](#configuring-nginx-for-http)
 4. [Requesting SSL certificate](#requesting-ssl-certificate)
 
-### [Back to top](#ci-cd-pipeline-integration-guide)
+#### [Back to top](#ci-cd-pipeline-integration-guide)
 
 ### New DuckDNS domain
 
@@ -184,7 +184,7 @@ Hemos creado un **proceso automático de integración** para poder desarrollar l
 3. [Configurar Nginx para HTTP](#configurar-nginx-para-http)
 4. [Solicitar certificado SSL](#solicitar-certificado-ssl)
 
-### [Volver arriba](#ci-cd-pipeline-integration-guide)
+#### [Volver arriba](#ci-cd-pipeline-integration-guide)
 
 ### Nuevo dominio DuckDNS
 
@@ -196,7 +196,7 @@ Una vez que se creen todos los recursos, es necesario configurar el dominio para
 
 ![dominio en duckdns](readme-img/image.png)
 
-#### [Volver arriba](#español)
+#### [Volver a la sección en español](#español)
 
 ---
 
@@ -240,7 +240,7 @@ pm2 startup
 > [!NOTE]
 > El último comando generará un comando adicional que comienza por 'sudo...'. Copia dicho comando adicional y ejecúlo para que PM2 se active de manera automática una vez que la instancia se encienda.
 
-#### [Volver arriba](#español)
+#### [Volver a la sección en español](#español)
 
 ---
 
@@ -287,7 +287,7 @@ sudo systemctl restart nginx
 
 Ahora puedes acceder a tu nueva aplicación web utilizando la URL `http://plotscore--desktop.duckdns.org`.
 
-#### [Volver arriba](#español)
+#### [Volver a la sección en español](#español)
 
 ---
 
@@ -339,4 +339,4 @@ Esta configuración se asegurará de que tu aplicación web sea accesible usando
 
 Ahora puedes acceder a tu nueva aplicación web segura mediante la URL `https://plotscore--desktop.duckdns.org`.
 
-#### [Volver arriba](#español)
+#### [Volver a la sección en español](#español)

@@ -13,6 +13,7 @@ I've created a permanent deployment using ***Vercel*** just so everyone can visi
 3. [Notion page](#notion-page)
 4. [Figma designs](#figma-designs)
 5. [Desktop version CI/CD pipeline guide](#desktop-version-cicd-pipeline-guide)
+6. [Secure FTP server installation and configuration guide](#secure-ftp-server-installation-and-configuration-guide)
 
 #### [Back to top](#plotscore)
 
@@ -53,6 +54,8 @@ I've created a permanent deployment using ***Vercel*** just so everyone can visi
 - [ ] :red_circle: Creating a **custom domain** for the **mobile version**
 - [x] :green_circle: Enabling **HTTPS** connections to the **desktop version**
 - [ ] :red_circle: Enabling **HTTPS** connections to the **mobile version**
+- [x] :green_circle: Installing a **secure FTP server** for the **desktop version**
+- [ ] :red_circle: Installing a **secure FTP server** for the **mobile version**
 
 ##### [Back to TODO list section](#todo-list)
 
@@ -100,6 +103,14 @@ Click [here](https://github.com/cmilsor245/plotscore/blob/main/.aws/ci-cd--guide
 
 ---
 
+### Secure FTP server installation and configuration guide
+
+Click [here](https://github.com/cmilsor245/plotscore/blob/main/.ftp/secure-ftp-guide/README.md) to access the secure FTP server installation and configuration guide.
+
+#### [Back to english section](#english)
+
+---
+
 ---
 
 ## Español
@@ -113,6 +124,7 @@ He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualqui
 3. [Notion](#notion)
 4. [Diseños en Figma](#diseños-en-figma)
 5. [Guía CI/CD pipeline para la versión desktop](#guía-cicd-pipeline-para-la-versión-desktop)
+6. [Guía para la instalación y configuración de un servidor FTP seguro](#guía-para-la-instalación-y-configuración-de-un-servidor-ftp-seguro)
 
 #### [Volver arriba](#plotscore)
 
@@ -153,6 +165,8 @@ He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualqui
 - [ ] :red_circle: Crear un **dominio personalizado** para la **versión mobile**
 - [x] :green_circle: Habilitando conexiones **HTTPS** hacia la **versión desktop**
 - [ ] :red_circle: Habilitando conexiones **HTTPS** hacia la **versión mobile**
+- [x] :green_circle: Instalando un **servidor seguro FTP** para la **versión desktop**
+- [ ] :red_circle: Instalando un **servidor seguro FTP** para la **versión mobile**
 
 ##### [Volver a la sección de Lista de tareas pendientes](#lista-de-tareas-pendientes)
 
@@ -195,3 +209,13 @@ Es posible **navegar entre los átomos y las diferentes fidelidades del proyecto
 ### Guía CI/CD pipeline para la versión desktop
 
 Haz clic [aquí](https://github.com/cmilsor245/plotscore/blob/main/.aws/ci-cd--guide--desktop/README.md) para acceder a la guía del CI/CD pipeline para la **versión desktop**.
+
+#### [Volver a la sección en Español](#español)
+
+---
+
+### Guía para la instalación y configuración de un servidor FTP seguro
+
+Haz clic [aquí](https://github.com/cmilsor245/plotscore/blob/main/.ftp/secure-ftp-guide/README.md) para acceder a la guía del servidor FTP seguro seguro.
+
+#### [Volver a la sección en Español](#español)

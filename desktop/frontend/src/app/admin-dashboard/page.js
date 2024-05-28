@@ -1,19 +1,25 @@
 'use client'
 
 import cookie from 'js-cookie'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import {
+  IconEdit,
   IconPencilPlus,
+  IconTrash,
   IconUserPlus,
   IconZoom
 } from '@tabler/icons-react'
 
+import Divider from '/components/common/divider.js'
 import Footer from '/components/common/footer.js'
 import LogoHeader from '/components/common/logo-header.js'
 import { MainActionButton } from '/components/common/main-action-button.js'
+import SectionHeading from '/components/common/section-heading.js'
 import SideMenu from '/components/common/side-menu.js'
+import translate from '/src/app/translation.js'
 
 import '/styles/pages/admin-dashboard.css'
 
@@ -43,7 +49,7 @@ export default function AdminDashboard({
     cookie.set('theme', newTheme, { expires: 365 })
   }
 
-  /* ------------------------------- */
+  /* -------------------- */
 
   const [lang, setLang] = useState('en') // default language
 
@@ -53,13 +59,80 @@ export default function AdminDashboard({
     cookie.set('lang', newLang, { expires: 365 })
   }
 
+  /* ---------------------------------------------------- */
+
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL
+
+  const [users, setUsers] = useState([])
+  const [currentPage, setCurrentPage] = useState(1)
+  const [totalPages, setTotalPages] = useState(1)
+
+  useEffect(() => {
+    fetchUsers(currentPage)
+  }, [currentPage])
+
+  const fetchUsers = async (page) => {
+    try {
+      const response = await fetch(`${ apiUrl }/all-users?page=${ page }`, {
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'GET'
+      })
+
+      if (response.ok) {
+        const data = await response.json()
+        setUsers(data.users)
+        setTotalPages(data.totalPages)
+      } else {
+        throw new Error('failed to fetch users')
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1)
+    }
+  }
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1)
+    }
+  }
+
+  /* ---------------------------------------------------- */
+
+  const handleDeleteUser = async (id) => {
+    try {
+      const response = await fetch(`${ apiUrl }/delete-user/${ id }`, {
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'DELETE'
+      })
+
+      if (response.ok) {
+        fetchUsers(currentPage)
+      } else {
+        throw new Error('failed to delete user')
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <>
       <div className = 'main-actions-buttons'>
         <Link href = '/new-admin'>
           <MainActionButton
             icon = { IconUserPlus }
-            handleClick = { null }
           />
         </Link>
         <MainActionButton
@@ -71,8 +144,6 @@ export default function AdminDashboard({
           handleClick = { null }
         />
       </div>
-
-      {/* -------------------------------------------------------------------------------------------------- */}
 
       <SideMenu
         lang = { lang }
@@ -89,9 +160,72 @@ export default function AdminDashboard({
             <LogoHeader />
 
             <section className = 'content__logo-header'>
-              <article className = 'database-user-list'>
-                <h1>admin dashboard</h1>
-              </article>
+              <section className = 'section__heading-and-content database-user-list'>
+                <SectionHeading
+                  lang = { lang }
+                  namespace = 'ADMIN_DASHBOARD'
+                  section = 'DATABASE_USER_LIST'
+                  title = 'SECTION_TITLE'
+                  hasDivider
+                />
+
+                <section className = 'section-content'>
+                  <ul>
+                    { users.map((user, index) => (
+                      <>
+                        <li key = { user.id }>
+                          <section className = 'user-list__attributes'>
+                            <Image
+                              className = 'user-list__avatar'
+                              src = { `${ process.env.NEXT_PUBLIC_API_STORAGE_PATH }${ user.avatar }` }
+                              height = { 50 }
+                              width = { 50 }
+                              alt = 'user avatar'
+                            />
+
+                            <div className = 'user-list__info'>
+                              <h4>{ user.username }</h4>
+                              <p>
+                                { user.follower_count }
+                                { translate(
+                                  lang,
+                                  'ADMIN_DASHBOARD',
+                                  'DATABASE_USER_LIST',
+                                  'FOLLOWER_COUNT'
+                                ) }
+                              </p>
+                            </div>
+                          </section>
+
+                          <section className = 'list__user-actions'>
+                            <Link className = 'user-list__edit' href = { `/edit-user/${ user.id }` }>
+                              <IconEdit />
+                            </Link>
+
+                            <button className = 'user-list__delete'>
+                              <IconTrash onClick = { handleDeleteUser(user.id) } />
+                            </button>
+                          </section>
+                        </li>
+
+                        { index < users.length - 1 && <Divider /> }
+                      </>
+                    )) }
+                  </ul>
+
+                  {/* ---------------------------------- */}
+
+                  <section className = 'user-list__pagination-controls'>
+                    <button onClick = { handlePreviousPage } disabled = { currentPage === 1 }>
+                      previous
+                    </button>
+                    <span>Page { currentPage } of { totalPages }</span>
+                    <button onClick = { handleNextPage } disabled = { currentPage === totalPages }>
+                      next
+                    </button>
+                  </section>
+                </section>
+              </section>
             </section>
           </main>
         </section>

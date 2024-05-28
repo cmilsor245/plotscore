@@ -180,6 +180,16 @@ const translationsES = {
 
   /* -------------------------------------------------------------------------------------------------- */
 
+  ADMIN_DASHBOARD: {
+    DATABASE_USER_LIST: {
+      SECTION_TITLE: 'Lista de usuarios de la base de datos',
+
+      FOLLOWER_COUNT: ' seguidores'
+    }
+  },
+
+  /* -------------------------------------------------------------------------------------------------- */
+
   SPECIFIC_MEDIA:{
     REVIEW: {
       REVIEW_BY: 'Review por',
