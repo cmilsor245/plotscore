@@ -18,7 +18,7 @@
 
 The first step is updating your EC2 instance with the next command: `sudo apt update -y && sudo apt upgrade -y && sudo apt auto-remove -y`.
 
-We now need to switch to the **root** user using the `sudo su` command and install the **proftpd** package with the following command: `sudo apt install proftpd -y`.
+You now need to switch to the **root** user using the `sudo su` command and install the **proftpd** package with the following command: `sudo apt install proftpd -y`.
 
 #### [Back to english section](#english)
 
@@ -105,4 +105,73 @@ Save and apply the changes by restarting the server with `sudo systemctl restart
 
 ### Instalación del servidor FTP
 
+El primer paso es actualizar la instancia EC2 con la siguiente instrucción: `sudo apt update -y && sudo apt upgrade -y && sudo apt auto-remove -y`.
+
+Ahora necesitas iniciar sesión como **root** usando el comando `sudo su` y instalar el **proftpd** con la siguiente instrucción: `sudo apt install proftpd -y`.
+
 #### [Volver a la sección en español](#español)
+
+---
+
+### Configuración del servidor FTP
+
+Ejecutando el comando `sudo nano /etc/proftpd/tls.conf` puedes editar la siguiente configuración:
+
+Busca la línea `PassivePorts`, elimina el comentario de la línea y establece el valor en `49000 65000`.
+
+Ahora establece el valor de la línea `MasqueradeAddress` en la IP publica de tu instancia EC2. Elimina el comentario de la línea.
+
+Guarda y aplica los cambios con `sudo systemctl restart proftpd`.
+
+#### [Volver a la sección en Español](#español)
+
+---
+
+### Reglas de Firewall de la instancia EC2
+
+Lo siguiente es dirigirte al panel de control de la instancia EC2 en AWS. Luego, abre la pestaña **Seguridad** y haz clic en la **Editar reglas de entrada** para agregar las siguientes reglas:
+
+![inbound rules added](readme-img/image.png)
+
+Guarda esta configuración.
+
+#### [Volver a la sección en Español](#español)
+
+---
+
+### Conexión local a traves de FileZilla
+
+Antes de conectarte al servidor localmente, debes establecer una nueva contraseña para el **ubuntu** usuario en la instancia EC2 ejecutando el siguiente comando: `sudo passwd ubuntu`.
+
+Ahora puedes conectarte a tu instancia EC2 usando **FileZilla**, estableciendo la siguiente configuración para un nuevo sitio:
+
+![alt text](readme-img/image-2.png)
+
+#### [Volver a la sección en Español](#español)
+
+---
+
+### Securizando el servidor FTP
+
+El último paso consiste en convertir esta conexión en una conexión segura haciendo uso de **TLS**. Para llegar a ese punto, primero tienes que comprobar que el servidor proftpd esta habilitando la característica TLS ejecutando el comando `sudo nano /etc/proftpd/modules.conf`. Busca la línea con el siguiente contenido y elimina el comentario del principio de la misma (si existo dicho comentario): `LoadModule mod_tls.c`. Guarda los cambios y sale del archivo y ejecuta `sudo systemctl restart proftpd` para reiniciar el servidor y aplicar este cambio.
+
+Edita el archivo `/etc/proftpd/proftpd.conf` con el comando `sudo nano /etc/proftpd/proftpd.conf` y habilita la línea `Include /etc/proftpd/tls.conf` quitando el comentario de la misma. Además, dirígete al final del archivo y agrega la línea `TLSOptions  NoSessionReuseRequired`. Guarda y aplica los cambios con `sudo systemctl restart proftpd`.
+
+Finalmente, ejecuta `sudo nano /etc/proftpd/tls.conf` y agrega las siguientes lineas dentro del bloque `<IfModule mod_tls.c>`:
+
+```bash
+TLSEngine                     on
+TLSLog                        /var/log/proftpd/tls.log
+TLSProtocol                   SSLv23
+
+TLSRSACertificateFile         /etc/letsencrypt/live/plotscore--desktop.duckdns.org/fullchain.pem
+TLSRSACertificateKeyFile      /etc/letsencrypt/live/plotscore--desktop.duckdns.org/privkey.pem
+
+TLSRequired                   on
+```
+
+Guarda y aplica los cambios con `sudo systemctl restart proftpd`. Ahora tu servidor está protegido, el cual puede ser probado ejecutando una nueva conexión en FileZilla.
+
+![secured connection](readme-img/image-3.png)
+
+#### [Volver a la sección en Español](#español)
