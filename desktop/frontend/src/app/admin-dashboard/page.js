@@ -3,7 +3,7 @@
 import cookie from 'js-cookie'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import {
   IconChairDirector,
@@ -177,7 +177,7 @@ export default function AdminDashboard({
                 <section className = 'section-content'>
                   <ul>
                     { users.map((user, index) => (
-                      <>
+                      <React.Fragment key = { index }>
                         <li key = { user.id }>
                           <section className = 'user-list__attributes'>
                             <Image
@@ -212,13 +212,13 @@ export default function AdminDashboard({
                             </Link>
 
                             <button className = 'user-list__delete'>
-                              <IconTrash onClick = { handleDeleteUser(user.id) } />
+                              <IconTrash />
                             </button>
                           </section>
                         </li>
 
                         { index < users.length - 1 && <Divider /> }
-                      </>
+                      </React.Fragment>
                     )) }
                   </ul>
 

@@ -262,3 +262,11 @@
     width: 170px;
   }
 }
+
+@media (height <= 768px) {
+  .side-menu__main-actions,
+  .side-menu__tabs,
+  .side-menu__options {
+    gap: 30px;
+  }
+}
