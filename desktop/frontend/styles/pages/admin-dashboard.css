@@ -12,6 +12,15 @@
   --color--username: var(--color--primary-dark-50);
 }
 
+.database-user-list .section-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
 .database-user-list .section-content ul {
   display: flex;
   flex-direction: column;
@@ -97,4 +106,10 @@
   cursor: pointer;
   height: 100%;
   width: 100%;
+}
+
+.user-list__pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
