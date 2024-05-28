@@ -13,12 +13,11 @@
 }
 
 .database-user-list .section-content {
-  display: flex;
   align-items: center;
-  justify-content: flex-start;
+  display: flex;
   flex-direction: column;
   gap: 15px;
-  width: 100%;
+  justify-content: flex-start;
 }
 
 .database-user-list .section-content ul {
@@ -26,6 +25,7 @@
   flex-direction: column;
   gap: 15px;
   justify-content: flex-start;
+  width: 100%;
 }
 
 .database-user-list .section-content ul li {

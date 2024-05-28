@@ -127,6 +127,10 @@ export default function AdminDashboard({
     }
   }
 
+  /* ---------------------------------------------------- */
+
+  const avatarSrc = 'https://secure.gravatar.com/avatar/98eadea62aa09a91132e66b5319c84d6?rating=PG&size=1000&border=&default=https%3A%2F%2Fs.ltrbxd.com%2Fstatic%2Fimg%2Favatar1000.a71b6e9c.png'
+
   return (
     <>
       <div className = 'main-actions-buttons'>
@@ -177,7 +181,8 @@ export default function AdminDashboard({
                           <section className = 'user-list__attributes'>
                             <Image
                               className = 'user-list__avatar'
-                              src = { `${ process.env.NEXT_PUBLIC_API_STORAGE_PATH }${ user.avatar }` }
+                              // src = { `${ process.env.NEXT_PUBLIC_API_STORAGE_PATH }${ user.avatar }` }
+                              src = { avatarSrc }
                               height = { 50 }
                               width = { 50 }
                               alt = 'user avatar'
