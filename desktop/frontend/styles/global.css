@@ -658,6 +658,15 @@ main {
   width: 100%;
 }
 
+.content__logo-header.common {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
 .common__content {
   display: flex;
   flex-direction: column;
@@ -686,6 +695,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--gap--general-section);
+  width: 100%;
 }
 
 @media (width <= 1840px) {

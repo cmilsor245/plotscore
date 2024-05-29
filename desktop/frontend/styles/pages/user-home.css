@@ -1,0 +1,28 @@
+.dark-theme {
+  --color--welcome-text: var(--color--primary-light-90);
+}
+
+.light-theme {
+  --color--welcome-text: var(--color--primary-main);
+}
+
+.welcome-text {
+  --font: clamp(24px, 2.7rem, 31px) var(--font--graphik-light);
+  color: var(--color--welcome-text);
+  font: var(--font);
+  text-align: center;
+  width: 100%;
+}
+
+.welcome-text * {
+  color: inherit;
+}
+
+.welcome-text a {
+  cursor: pointer;
+  font-family: var(--font--graphik-bold);
+  text-decoration: none;
+}
+.section__heading-and-content.general-activity {
+  gap: 10px;
+}

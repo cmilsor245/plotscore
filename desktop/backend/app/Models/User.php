@@ -24,10 +24,10 @@ class User extends Authenticatable {
 
     'location',
     'website',
-    'pronouns',
+    'pronouns'
   ];
 
   protected $hidden = [
-    'password',
+    'password'
   ];
 }

@@ -1,21 +1,25 @@
 'use client'
 
 import cookie from 'js-cookie'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import {
   IconPencilPlus,
-  IconZoom
+  IconZoom,
+  IconBolt
 } from '@tabler/icons-react'
 
 import Footer from '/components/common/footer.js'
 import LogoHeader from '/components/common/logo-header.js'
 import { MainActionButton } from '/components/common/main-action-button.js'
+import SectionHeading from '/components/common/section-heading.js'
 import SideMenu from '/components/common/side-menu.js'
+import translate from '/src/app/translation.js'
 
 import '/styles/pages/user-home.css'
 
-export default function UserDashboard({
+export default function UserHome({
   userData,
   handleLogout
 }) {
@@ -80,8 +84,34 @@ export default function UserDashboard({
           <main>
             <LogoHeader />
 
-            <section className = 'content__logo-header'>
-              <p>test user</p>
+            <section className = 'content__logo-header common'>
+              <h2 className = 'welcome-text'>
+                { translate(lang, 'USER_HOME', 'WELCOME_TEXT', 'TEXT_LEFT') }
+                <Link href = '/profile'>
+                  { userData ? userData.username : '\u00A0' }
+                </Link>
+                { translate(lang, 'USER_HOME', 'WELCOME_TEXT', 'TEXT_RIGHT') }
+              </h2>
+
+              {/* ------------------------------------------------------ */}
+
+              <section className = 'section__heading-and-content general-activity'>
+                <SectionHeading
+                  lang = { lang }
+                  namespace = 'USER_HOME'
+                  section = 'GENERAL_ACTIVITY'
+                  title = 'SECTION_TITLE'
+                  hasRightSideIconAndText = {[
+                    <IconBolt stroke = { 1 } />,
+                    'ALL_ACTIVITY'
+                  ]}
+                  hasDivider
+                />
+
+                <section className = 'general-activity__logs'>
+                  
+                </section>
+              </section>
             </section>
           </main>
         </section>

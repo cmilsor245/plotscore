@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 
 import AdminDashboard from '/src/app/admin-dashboard/page.js'
-import UserDashboard from '/src/app/user-dashboard/page.js'
+import UserHome from '/src/app/user-home/page.js'
 
 export default function Home() {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL
@@ -45,7 +45,7 @@ export default function Home() {
         userData && userData.role === 'admin' ?
           <AdminDashboard userData = { userData } handleLogout = { logout } />
         :
-          <UserDashboard userData = { userData } handleLogout = { logout } />
+          <UserHome userData = { userData } handleLogout = { logout } />
       }
     </>
   )

@@ -201,6 +201,19 @@ const translationsEN = {
 
   /* -------------------------------------------------------------------------------------------------- */
 
+  USER_HOME: {
+    WELCOME_TEXT: {
+      TEXT_LEFT: 'Welcome ',
+      TEXT_RIGHT: '. Here\'s what your friends have been watching...'
+    },
+    GENERAL_ACTIVITY: {
+      SECTION_TITLE: 'new from friends',
+      ALL_ACTIVITY: 'ALL ACTIVITY'
+    }
+  },
+
+  /* -------------------------------------------------------------------------------------------------- */
+
   SPECIFIC_MEDIA:{
     REVIEW: {
       REVIEW_BY: 'Review by',
