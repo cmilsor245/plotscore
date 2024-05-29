@@ -1,8 +1,12 @@
 .dark-theme {
-  --color--admin-icon: var(--color--tertiary-main);
+  --color--admin-icon: var(--color--accent-main);
   --color--count: var(--color--primary-light-50);
   --color--delete-user--hover: var(--color--secondary-light-20);
   --color--edit-user-hover: var(--color--tertiary-light-20);
+  --color--error-modal-bg: var(--color--primary-dark-70);
+  --color--error-modal-border: var(--color--primary-dark-40);
+  --color--error-modal-overlay: rgba(7, 8, 10, .4);
+  --color--error-modal-text: var(--color--primary-light-80);
   --color--pagination-controls__button--bg--hover: var(--color--primary-dark-10);
   --color--pagination-controls__button--bg: var(--color--primary-dark-20);
   --color--pagination-controls__button--text: var(--color--primary-light-60);
@@ -14,10 +18,98 @@
   --color--count: var(--color--primary-dark-30);
   --color--delete-user--hover: var(--color--secondary-dark-20);
   --color--edit-user-hover: var(--color--tertiary-dark-20);
+  --color--error-modal-bg: var(--color--primary-light-70);
+  --color--error-modal-border: var(--color--primary-light-60);
+  --color--error-modal-overlay: rgba(236, 238, 240, .4);
+  --color--error-modal-text: var(--color--primary-dark-80);
   --color--pagination-controls__button--bg--hover: var(--color--primary-light-50);
   --color--pagination-controls__button--bg: var(--color--primary-light-60);
   --color--pagination-controls__button--text: var(--color--primary-dark-60);
   --color--username: var(--color--primary-dark-50);
+}
+
+.delete-user-modal {
+  align-items: center;
+  background-color: var(--color--error-modal-bg);
+  border-radius: 10px;
+  border: 3px solid var(--color--error-modal-border);
+  color: var(--color--error-modal-text);
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  height: fit-content;
+  justify-content: center;
+  left: 50%;
+  padding: 30px;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  z-index: 6;
+}
+
+.delete-user-modal h2 {
+  --font: clamp(13px, 2.2rem, 24px) var(--font--graphik-semibold);
+  font: var(--font);
+  text-transform: uppercase;
+}
+
+.delete-user-modal p {
+  --font: clamp(9px, 1.6rem, 18px) var(--font--graphik-regular);
+  font: var(--font);
+}
+
+.delete-user-modal p span {
+  color: var(--color--secondary-main);
+  font-family: var(--font--graphik-bold);
+  letter-spacing: 1px;
+}
+
+.delete-user-modal__buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.delete-user-modal__button {
+  --font: clamp(9px, 1.4rem, 16px) var(--font--graphik-medium);
+  background-color: var(--color--error-modal-button-bg);
+  border-radius: 3px;
+  border: none;
+  color: var(--color--error-modal-button-text);
+  cursor: pointer;
+  font: var(--font);
+  padding: 7px 15px;
+  text-transform: uppercase;
+  transition: .1s;
+  width: fit-content;
+}
+
+.delete-user-modal__button--cancel {
+  color: var(--color--tertiary-light-90);
+}
+
+.delete-user-modal__button--cancel:hover {
+  background-color: var(--color--tertiary-dark-20);
+}
+
+.delete-user-modal__button--confirm {
+  color: var(--color--secondary-light-90);
+}
+
+.delete-user-modal__button--confirm:hover {
+  background-color: var(--color--secondary-dark-20);
+}
+
+.delete-user-modal__overlay {
+  background-color: var(--color--error-modal-overlay);
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 5;
 }
 
 .database-user-list .section-content {
@@ -63,8 +155,11 @@
 
 .user-list__info h4 {
   --font: clamp(13px, 1.8rem, 24px) var(--font--graphik-semibold);
+  align-items: center;
   color: var(--color--username);
+  display: flex;
   font: var(--font);
+  gap: 5px;
   position: relative;
   z-index: -1;
 }
@@ -77,12 +172,10 @@
 
 .user-list__info h4 svg {
   color: var(--color--admin-icon);
-  height: 15px;
+  height: 25px;
   left: -15px;
-  position: absolute;
   top: -10px;
-  transform: rotate(-25deg);
-  width: 15px;
+  width: 25px;
 }
 
 .user-list__info p {
@@ -98,7 +191,7 @@
   justify-content: flex-end;
 }
 
-.user-list__edit, .user-list__delete {
+.user-actions__edit, .user-actions__delete {
   align-items: center;
   background-color: transparent;
   border: none;
@@ -112,23 +205,23 @@
   width: 26px;
 }
 
-.user-list__edit {
+.user-actions__edit {
   color: var(--color--tertiary-main);
 }
 
-.user-list__edit:hover {
+.user-actions__edit:hover {
   color: var(--color--edit-user-hover);
 }
 
-.user-list__delete {
+.user-actions__delete {
   color: var(--color--secondary-main);
 }
 
-.user-list__delete:hover {
+.user-actions__delete:hover {
   color: var(--color--delete-user--hover);
 }
 
-.user-list__edit *, .user-list__delete * {
+.user-actions__edit *, .user-actions__delete * {
   cursor: pointer;
   height: 100%;
   width: 100%;

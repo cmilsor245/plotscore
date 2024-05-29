@@ -108,6 +108,22 @@ export default function AdminDashboard({
 
   /* ---------------------------------------------------- */
 
+  const avatarSrc = 'https://secure.gravatar.com/avatar/98eadea62aa09a91132e66b5319c84d6?rating=PG&size=1000&border=&default=https%3A%2F%2Fs.ltrbxd.com%2Fstatic%2Fimg%2Favatar1000.a71b6e9c.png'
+
+  /* ---------------------------------------------------- */
+
+  const [isErrorModalDisplayed, setIsErrorModalDisplayed] = useState(false)
+  const [selectedUser, setSelectedUser] = useState(null)
+
+  const openErrorModal = (user) => {
+    setSelectedUser(user)
+    setIsErrorModalDisplayed(true)
+  }
+
+  const closeErrorModal = () => {
+    setIsErrorModalDisplayed(false)
+  }
+
   const handleDeleteUser = async (id) => {
     try {
       const response = await fetch(`${ apiUrl }/delete-user/${ id }`, {
@@ -128,9 +144,10 @@ export default function AdminDashboard({
     }
   }
 
-  /* ---------------------------------------------------- */
-
-  const avatarSrc = 'https://secure.gravatar.com/avatar/98eadea62aa09a91132e66b5319c84d6?rating=PG&size=1000&border=&default=https%3A%2F%2Fs.ltrbxd.com%2Fstatic%2Fimg%2Favatar1000.a71b6e9c.png'
+  const handleDeleteUserAndCloseModal = (id) => {
+    handleDeleteUser(id)
+    closeErrorModal()
+  }
 
   return (
     <>
@@ -149,6 +166,43 @@ export default function AdminDashboard({
           handleClick = { null }
         />
       </div>
+
+      {/* --------------------------------------------------------- */}
+
+      {
+        isErrorModalDisplayed &&
+        <>
+          <div className = 'delete-user-modal'>
+            <h2>
+              { translate(lang, 'ADMIN_DASHBOARD', 'DELETE_USER_MODAL', 'TITLE') }
+            </h2>
+
+            <p>
+              { translate(lang, 'ADMIN_DASHBOARD', 'DELETE_USER_MODAL', 'TEXT') } <span>{ selectedUser?.username }</span>?
+            </p>
+
+            <div className = 'delete-user-modal__buttons'>
+              <button
+                className = 'delete-user-modal__button delete-user-modal__button--cancel'
+                onClick = { closeErrorModal }
+              >
+                { translate(lang, 'ADMIN_DASHBOARD', 'DELETE_USER_MODAL', 'CANCEL_BUTTON') }
+              </button>
+
+              <button
+                className = 'delete-user-modal__button delete-user-modal__button--confirm'
+                onClick = { () => handleDeleteUserAndCloseModal(selectedUser?.id) }
+              >
+                { translate(lang, 'ADMIN_DASHBOARD', 'DELETE_USER_MODAL', 'CONFIRM_BUTTON') }
+              </button>
+            </div>
+          </div>
+
+          <div className = 'delete-user-modal__overlay' onClick = { closeErrorModal }></div>
+        </>
+      }
+
+      {/* --------------------------------------------------------- */}
 
       <SideMenu
         lang = { lang }
@@ -195,7 +249,7 @@ export default function AdminDashboard({
                                 { user.username }
                               </h4>
                               <p>
-                                { user.follower_count }
+                                { user.follower_count}
                                 { translate(
                                   lang,
                                   'ADMIN_DASHBOARD',
@@ -207,11 +261,11 @@ export default function AdminDashboard({
                           </section>
 
                           <section className = 'list__user-actions'>
-                            <Link className = 'user-list__edit' href = { `/edit-user/${ user.id }` }>
+                            <Link className = 'user-actions__edit' href = { `/edit-user/${user.id}` }>
                               <IconEdit />
                             </Link>
 
-                            <button className = 'user-list__delete'>
+                            <button className = 'user-actions__delete' onClick = { () => openErrorModal(user) }>
                               <IconTrash />
                             </button>
                           </section>
@@ -230,7 +284,7 @@ export default function AdminDashboard({
                     </button>
 
                     <div className = 'pagination-controls__numbers'>
-                      { [...Array(totalPages)].map((_, page) => (
+                      {[...Array(totalPages)].map((_, page) => (
                         <h6
                           key = { page + 1 }
                           className = { `pagination-controls__number ${ page + 1 === currentPage ? 'pagination-controls__number--active' : '' }` }
@@ -238,10 +292,10 @@ export default function AdminDashboard({
                         >
                           { page + 1 }
                         </h6>
-                      )) }
+                      ))}
                     </div>
 
-                    <button className = 'pagination-controls__button' onClick = { handleNextPage } disabled = { currentPage === totalPages }>
+                    <button className = 'pagination-controls__button' onClick = { handleNextPage } disabled = { currentPage === totalPages} >
                       { translate(lang, 'ADMIN_DASHBOARD', 'DATABASE_USER_LIST', 'NEXT_PAGE') }
                     </button>
                   </section>

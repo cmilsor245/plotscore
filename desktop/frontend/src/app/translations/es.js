@@ -188,6 +188,14 @@ const translationsES = {
 
       PREVIOUS_PAGE: 'más antiguos',
       NEXT_PAGE: 'más nuevos'
+    },
+
+    DELETE_USER_MODAL: {
+      TITLE: 'eliminación de usuario',
+      TEXT: '¿Seguro que quieres eliminar el usuario conocido como ',
+
+      CONFIRM_BUTTON: 'eliminar usuario',
+      CANCEL_BUTTON: 'cancelar'
     }
   },
 

@@ -38,7 +38,7 @@ class AuthController extends Controller {
       'location' => $request -> input('location'),
       'website' => $request -> input('website'),
       'pronouns' => $pronouns
-    ]);
+    ], Response::HTTP_CREATED);
   }
 
   public function signup(AuthRequest $request) {
@@ -62,7 +62,7 @@ class AuthController extends Controller {
       'location' => $request -> input('location'),
       'website' => $request -> input('website'),
       'pronouns' => $pronouns
-    ]);
+    ], Response::HTTP_CREATED);
   }
 
   public function login(Request $request) {
@@ -80,7 +80,7 @@ class AuthController extends Controller {
 
     return response([
       'message' => 'success'
-    ]) -> withCookie($cookie);
+    ], Response::HTTP_OK) -> withCookie($cookie);
   }
 
   public function user() {
@@ -92,7 +92,7 @@ class AuthController extends Controller {
 
     return response([
       'message' => 'success'
-    ]) -> withCookie($cookie);
+    ], Response::HTTP_OK) -> withCookie($cookie);
   }
 
   /* --------------------------------------------------------------------------- */
@@ -118,6 +118,68 @@ class AuthController extends Controller {
       'currentPage' => $users -> currentPage(),
       'totalPages' => $users -> lastPage(),
       'totalItems' => $users -> total(),
-    ]);
+    ], Response::HTTP_OK);
+  }
+
+  /* --------------------------------------------------------------------------- */
+
+  public function updateUser(Request $request, $id) {
+    if (!auth() -> check()) {
+      return response() -> json([
+        'error' => 'unauthorized'
+      ], Response::HTTP_UNAUTHORIZED);
+    }
+
+    $authenticatedUser = auth() -> user();
+
+    if ($authenticatedUser -> id !== $id) {
+      return response() -> json([
+        'error' => 'cannot update other users'
+      ], Response::HTTP_FORBIDDEN);
+    }
+
+    $user = User::find($id);
+
+    if (!$user) {
+      return response() -> json([
+        'error' => 'user not found'
+      ], Response::HTTP_NOT_FOUND);
+    }
+
+    $user -> update($request -> all());
+
+    return response() -> json([
+      'message' => 'success'
+    ], Response::HTTP_OK);
+  }
+
+  public function deleteUser($id) {
+    if (!auth() -> check()) {
+      return response() -> json([
+        'error' => 'unauthorized'
+      ], Response::HTTP_UNAUTHORIZED);
+    }
+
+    $authenticatedUser = auth() -> user();
+
+    if ($authenticatedUser -> id === $id) {
+      return response() -> json([
+        'error' => 'cannot delete yourself'
+      ], Response::HTTP_FORBIDDEN);
+    }
+
+    $user = User::find($id);
+
+    if (!$user) {
+      return response() -> json([
+        'error' => 'user not found'
+      ], Response::HTTP_NOT_FOUND);
+    }
+
+    $user -> delete();
+
+    return response() -> json([
+      'message' => 'success'
+    ], Response::HTTP_OK);
   }
 }

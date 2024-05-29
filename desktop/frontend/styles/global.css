@@ -117,6 +117,14 @@ project atoms
 
   - icons
     most of them extracted from tabler.io/icons
+
+  ------------------------------------------------
+
+  - spacing and sizing scales
+    mostly extensions of:
+      - base 2 (2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40, 44, 48, 50...)
+
+      - base 5 (5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100...)
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');

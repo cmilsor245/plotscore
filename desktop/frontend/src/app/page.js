@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react'
 
-import LandingPage from '/src/app/landing-page/page.js'
 import Home from '/src/app/home/page.js'
+import LandingPage from '/src/app/landing-page/page.js'
 
 export default function Index() {
   const [isLandingPage, setIsLandingPage] = useState(true)

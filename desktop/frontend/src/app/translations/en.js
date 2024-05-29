@@ -188,6 +188,14 @@ const translationsEN = {
 
       PREVIOUS_PAGE: 'older',
       NEXT_PAGE: 'newer'
+    },
+
+    DELETE_USER_MODAL: {
+      TITLE: 'delete user',
+      TEXT: 'Are you sure you want to delete the user known as ',
+
+      CONFIRM_BUTTON: 'delete user',
+      CANCEL_BUTTON: 'cancel'
     }
   },
 
