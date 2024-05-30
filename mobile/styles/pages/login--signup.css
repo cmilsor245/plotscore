@@ -2,6 +2,7 @@
   --color--account-form--footer: var(--color--primary-light-80);
   --color--account-form-input--bg: var(--color--primary-dark-60);
   --color--account-form-input--content: var(--color--primary-light-70);
+  --color--account-form-input--placeholder: var(--color--primary-light-10);
   --color--account-form-title: var(--color--primary-light-90);
   --color--backdrop-edges: var(--color--primary-dark-70);
 }
@@ -9,6 +10,7 @@
 .light-theme {
   --color--account-form-input--bg: var(--color--primary-light-70);
   --color--account-form-input--content: var(--color--primary-dark-10);
+  --color--account-form-input--placeholder: var(--color--primary-light-30);
   --color--account-form-title: var(--color--primary-dark-90);
   --color--backdrop-edges: var(--color--primary-light-80);
   --color--copyright: var(--color--primary-dark-70);
@@ -80,6 +82,7 @@
 
 .account-form__input input::placeholder {
   font-size: clamp(15px, 1.8rem, 20px);
+  color: var(--color--account-form-input--placeholder);
 }
 
 .email-input-container input[type = 'email'],
