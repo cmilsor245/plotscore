@@ -4,7 +4,10 @@
 
 ## English
 
-I've created a permanent deployment using ***Vercel*** just so everyone can visit the actual production version of the **desktop version** of the **plotscore** project in any moment without having to turn on the AWS EC2 machine. :point_right: [Link](https://plotscore--desktop.vercel.app/)
+I've created a permanent deployment using ***Vercel*** just so everyone can visit the actual production version of the **desktop version** and the **mobile version** of the **plotscore** project in any moment without having to turn on the AWS EC2 instances.
+
+- [Desktop version permanent link](https://plotscore--desktop.vercel.app/)
+- [Mobile version permanent link](https://plotscore--mobile.vercel.app/)
 
 ### Table of contents
 
@@ -115,7 +118,10 @@ Click [here](https://github.com/cmilsor245/plotscore/blob/main/.ftp/secure-ftp-g
 
 ## Español
 
-He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualquiera pueda visitar la versión de producción de la **versión desktop** de **plotscore** en cualquier momento sin necesidad de que la máquina de AWS EC2 esté encendida. :point_right: [Link](https://plotscore--desktop.vercel.app/)
+He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualquiera pueda visitar la versión de producción de la **versión desktop** y la **versión mobile** de **plotscore** en cualquier momento sin necesidad de que las máquinas de AWS EC2 estén encendidas.
+
+- [Link a la versión desktop](https://plotscore--desktop.vercel.app/)
+- [Link a la versión mobile](https://plotscore--mobile.vercel.app/)
 
 ### Índice
 
