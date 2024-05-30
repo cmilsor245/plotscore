@@ -1,0 +1,624 @@
+/*
+project atoms
+  - color palette
+    - primary
+      light-90: #ECEEF0;
+      light-80: #DADDE0;
+      light-70: #C7CCD1;
+      light-60: #B4BBC2;
+      light-50: #A2AAB3;
+      light-40: #8F99A3;
+      light-30: #7C8894;
+      light-20: #697785;
+      light-10: #576675;
+      main: #445566;
+      dark-10: #3D4D5C;
+      dark-20: #364452;
+      dark-30: #303B47;
+      dark-40: #29333D;
+      dark-50: #222B33;
+      dark-60: #1B2229;
+      dark-70: #14191F;
+      dark-80: #0E1114;
+      dark-90: #07080A;
+
+    - secondary
+      light-90: #FFEEEB;
+      light-80: #FFDDD6;
+      light-70: #FFCDC2;
+      light-60: #FFBCAD;
+      light-50: #FFAB99;
+      light-40: #FF9A85;
+      light-30: #FF8970;
+      light-20: #FF795C;
+      light-10: #FF6847;
+      main: #FF5733;
+      dark-10: #E64E2E;
+      dark-20: #CC4629;
+      dark-30: #B33D24;
+      dark-40: #99341F;
+      dark-50: #802C1A;
+      dark-60: #662314;
+      dark-70: #4C1A0F;
+      dark-80: #33110A;
+      dark-90: #190905;
+
+    - tertiary
+      light-90: #E6F5F5;
+      light-80: #CCEBEA;
+      light-70: #B3E1E0;
+      light-60: #99D7D6;
+      light-50: #80CDCC;
+      light-40: #67C3C1;
+      light-30: #4DB9B7;
+      light-20: #34AFAD;
+      light-10: #1AA5A2;
+      main: #019B98;
+      dark-10: #018C89;
+      dark-20: #017C7A;
+      dark-30: #016D6A;
+      dark-40: #015D5B;
+      dark-50: #014E4C;
+      dark-60: #003E3D;
+      dark-70: #002E2E;
+      dark-80: #001F1E;
+      dark-90: #000F0F;
+
+    - accent
+      light-90: #FFF9E6;
+      light-80: #FFF3CC;
+      light-70: #FFEDB3;
+      light-60: #FFE799;
+      light-50: #FFE180;
+      light-40: #FFDB66;
+      light-30: #FFD54D;
+      light-20: #FFCF33;
+      light-10: #FFC91A;
+      main: #FFC300;
+      dark-10: #E6B000;
+      dark-20: #CC9C00;
+      dark-30: #B38900;
+      dark-40: #997500;
+      dark-50: #806200;
+      dark-60: #664E00;
+      dark-70: #4C3A00;
+      dark-80: #332700;
+      dark-90: #191300;
+
+    - neutral
+      light-90: #F2F2F2;
+      light-80: #E5E5E5;
+      light-70: #D9D9D9;
+      light-60: #CCCCCC;
+      light-50: #BFBFBF;
+      light-40: #B2B2B2;
+      light-30: #A5A5A5;
+      light-20: #999999;
+      light-10: #8C8C8C;
+      main: #7F7F7F;
+      dark-10: #727272;
+      dark-20: #666666;
+      dark-30: #595959;
+      dark-40: #4C4C4C;
+      dark-50: #404040;
+      dark-60: #333333;
+      dark-70: #262626;
+      dark-80: #191919;
+      dark-90: #0D0D0D;
+
+  ------------------------------------------------
+
+  - fonts
+    - grape nuts
+    - tiempos headline
+    - graphik
+
+  ------------------------------------------------
+
+  - icons
+    most of them extracted from tabler.io/icons
+
+  ------------------------------------------------
+
+  - spacing and sizing scales
+    mostly extensions of:
+      - base 2 (2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40, 44, 48, 50...)
+
+      - base 5 (5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100...)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
+
+/* --------------------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'tiempos headline light';
+  src: url('../assets/fonts/tiempos-headline/light.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline light - italic';
+  src: url('../assets/fonts/tiempos-headline/light-italic.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline regular';
+  src: url('../assets/fonts/tiempos-headline/regular.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline regular - italic';
+  src: url('../assets/fonts/tiempos-headline/regular-italic.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline medium';
+  src: url('../assets/fonts/tiempos-headline/medium.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline medium - italic';
+  src: url('../assets/fonts/tiempos-headline/medium-italic.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline semibold';
+  src: url('../assets/fonts/tiempos-headline/semibold.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline semibold - italic';
+  src: url('../assets/fonts/tiempos-headline/semibold-italic.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline bold';
+  src: url('../assets/fonts/tiempos-headline/bold.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline bold - italic';
+  src: url('../assets/fonts/tiempos-headline/bold-italic.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline black';
+  src: url('../assets/fonts/tiempos-headline/black.otf');
+}
+
+@font-face {
+  font-family: 'tiempos headline black - italic';
+  src: url('../assets/fonts/tiempos-headline/black-italic.otf');
+}
+
+/* --------------------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'graphik thin';
+  src: url('../assets/fonts/graphik/thin.woff2');
+}
+
+@font-face {
+  font-family: 'graphik thin - italic';
+  src: url('../assets/fonts/graphik/thin-italic.woff2');
+}
+
+@font-face {
+  font-family: 'graphik thin - compatible';
+  src: url('../assets/fonts/graphik/thin-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik thin - italic - compatible';
+  src: url('../assets/fonts/graphik/thin-italic-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik extralight';
+  src: url('../assets/fonts/graphik/extralight.woff2');
+}
+
+@font-face {
+  font-family: 'graphik extralight - italic';
+  src: url('../assets/fonts/graphik/extralight-italic.woff2');
+}
+
+@font-face {
+  font-family: 'graphik extralight - compatible';
+  src: url('../assets/fonts/graphik/extralight-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik extralight - italic - compatible';
+  src: url('../assets/fonts/graphik/extralight-italic-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik light';
+  src: url('../assets/fonts/graphik/light.woff2');
+}
+
+@font-face {
+  font-family: 'graphik light - italic';
+  src: url('../assets/fonts/graphik/light-italic.woff2');
+}
+
+@font-face {
+  font-family: 'graphik light - compatible';
+  src: url('../assets/fonts/graphik/light-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik light - italic - compatible';
+  src: url('../assets/fonts/graphik/light-italic-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik regular';
+  src: url('../assets/fonts/graphik/regular.woff2');
+}
+
+@font-face {
+  font-family: 'graphik regular - italic';
+  src: url('../assets/fonts/graphik/regular-italic.woff2');
+}
+
+@font-face {
+  font-family: 'graphik regular - compatible';
+  src: url('../assets/fonts/graphik/regular-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik regular - italic - compatible';
+  src: url('../assets/fonts/graphik/regular-italic-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik medium';
+  src: url('../assets/fonts/graphik/medium.woff2');
+}
+
+@font-face {
+  font-family: 'graphik medium - italic';
+  src: url('../assets/fonts/graphik/medium-italic.woff2');
+}
+
+@font-face {
+  font-family: 'graphik medium - compatible';
+  src: url('../assets/fonts/graphik/medium-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik medium - italic - compatible';
+  src: url('../assets/fonts/graphik/medium-italic-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik semibold';
+  src: url('../assets/fonts/graphik/semibold.woff2');
+}
+
+@font-face {
+  font-family: 'graphik semibold - italic';
+  src: url('../assets/fonts/graphik/semibold-italic.woff2');
+}
+
+@font-face {
+  font-family: 'graphik semibold - compatible';
+  src: url('../assets/fonts/graphik/semibold-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik semibold - italic - compatible';
+  src: url('../assets/fonts/graphik/semibold-italic-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik bold';
+  src: url('../assets/fonts/graphik/bold.woff2');
+}
+
+@font-face {
+  font-family: 'graphik bold - italic';
+  src: url('../assets/fonts/graphik/bold-italic.woff2');
+}
+
+@font-face {
+  font-family: 'graphik bold - compatible';
+  src: url('../assets/fonts/graphik/bold-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik bold - italic - compatible';
+  src: url('../assets/fonts/graphik/bold-italic-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik black';
+  src: url('../assets/fonts/graphik/black.woff2');
+}
+
+@font-face {
+  font-family: 'graphik black - italic';
+  src: url('../assets/fonts/graphik/black-italic.woff2');
+}
+
+@font-face {
+  font-family: 'graphik black - compatible';
+  src: url('../assets/fonts/graphik/black-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik black - italic - compatible';
+  src: url('../assets/fonts/graphik/black-italic-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik super';
+  src: url('../assets/fonts/graphik/super.woff2');
+}
+
+@font-face {
+  font-family: 'graphik super - italic';
+  src: url('../assets/fonts/graphik/super-italic.woff2');
+}
+
+@font-face {
+  font-family: 'graphik super - compatible';
+  src: url('../assets/fonts/graphik/super-compatibility.woff');
+}
+
+@font-face {
+  font-family: 'graphik super - italic - compatible';
+  src: url('../assets/fonts/graphik/super-italic-compatibility.woff');
+}
+
+/* --------------------------------------------------------------------------------------- */
+
+:root {
+  --color--primary-light-90: #ECEEF0;
+  --color--primary-light-80: #DADDE0;
+  --color--primary-light-70: #C7CCD1;
+  --color--primary-light-60: #B4BBC2;
+  --color--primary-light-50: #A2AAB3;
+  --color--primary-light-40: #8F99A3;
+  --color--primary-light-30: #7C8894;
+  --color--primary-light-20: #697785;
+  --color--primary-light-10: #576675;
+  --color--primary-main: #445566;
+  --color--primary-dark-10: #3D4D5C;
+  --color--primary-dark-20: #364452;
+  --color--primary-dark-30: #303B47;
+  --color--primary-dark-40: #29333D;
+  --color--primary-dark-50: #222B33;
+  --color--primary-dark-60: #1B2229;
+  --color--primary-dark-70: #14191F;
+  --color--primary-dark-80: #0E1114;
+  --color--primary-dark-90: #07080A;
+
+  --color--secondary-light-90: #FFEEEB;
+  --color--secondary-light-80: #FFDDD6;
+  --color--secondary-light-70: #FFCDC2;
+  --color--secondary-light-60: #FFBCAD;
+  --color--secondary-light-50: #FFAB99;
+  --color--secondary-light-40: #FF9A85;
+  --color--secondary-light-30: #FF8970;
+  --color--secondary-light-20: #FF795C;
+  --color--secondary-light-10: #FF6847;
+  --color--secondary-main: #FF5733;
+  --color--secondary-dark-10: #E64E2E;
+  --color--secondary-dark-20: #CC4629;
+  --color--secondary-dark-30: #B33D24;
+  --color--secondary-dark-40: #99341F;
+  --color--secondary-dark-50: #802C1A;
+  --color--secondary-dark-60: #662314;
+  --color--secondary-dark-70: #4C1A0F;
+  --color--secondary-dark-80: #33110A;
+  --color--secondary-dark-90: #190905;
+
+  --color--tertiary-light-90: #E6F5F5;
+  --color--tertiary-light-80: #CCEBEA;
+  --color--tertiary-light-70: #B3E1E0;
+  --color--tertiary-light-60: #99D7D6;
+  --color--tertiary-light-50: #80CDCC;
+  --color--tertiary-light-40: #67C3C1;
+  --color--tertiary-light-30: #4DB9B7;
+  --color--tertiary-light-20: #34AFAD;
+  --color--tertiary-light-10: #1AA5A2;
+  --color--tertiary-main: #019B98;
+  --color--tertiary-dark-10: #018C89;
+  --color--tertiary-dark-20: #017C7A;
+  --color--tertiary-dark-30: #016D6A;
+  --color--tertiary-dark-40: #015D5B;
+  --color--tertiary-dark-50: #014E4C;
+  --color--tertiary-dark-60: #003E3D;
+  --color--tertiary-dark-70: #002E2E;
+  --color--tertiary-dark-80: #001F1E;
+  --color--tertiary-dark-90: #000F0F;
+
+  --color--accent-light-90: #FFF9E6;
+  --color--accent-light-80: #FFF3CC;
+  --color--accent-light-70: #FFEDB3;
+  --color--accent-light-60: #FFE799;
+  --color--accent-light-50: #FFE180;
+  --color--accent-light-40: #FFDB66;
+  --color--accent-light-30: #FFD54D;
+  --color--accent-light-20: #FFCF33;
+  --color--accent-light-10: #FFC91A;
+  --color--accent-main: #FFC300;
+  --color--accent-dark-10: #E6B000;
+  --color--accent-dark-20: #CC9C00;
+  --color--accent-dark-30: #B38900;
+  --color--accent-dark-40: #997500;
+  --color--accent-dark-50: #806200;
+  --color--accent-dark-60: #664E00;
+  --color--accent-dark-70: #4C3A00;
+  --color--accent-dark-80: #332700;
+  --color--accent-dark-90: #191300;
+
+  --color--neutral-light-90: #F2F2F2;
+  --color--neutral-light-80: #E5E5E5;
+  --color--neutral-light-70: #D9D9D9;
+  --color--neutral-light-60: #CCCCCC;
+  --color--neutral-light-50: #BFBFBF;
+  --color--neutral-light-40: #B2B2B2;
+  --color--neutral-light-30: #A5A5A5;
+  --color--neutral-light-20: #999999;
+  --color--neutral-light-10: #8C8C8C;
+  --color--neutral-main: #7F7F7F;
+  --color--neutral-dark-10: #727272;
+  --color--neutral-dark-20: #666666;
+  --color--neutral-dark-30: #595959;
+  --color--neutral-dark-40: #4C4C4C;
+  --color--neutral-dark-50: #404040;
+  --color--neutral-dark-60: #333333;
+  --color--neutral-dark-70: #262626;
+  --color--neutral-dark-80: #191919;
+  --color--neutral-dark-90: #0D0D0D;
+
+  /* -------------------------------------------------------------------------------------------------------- */
+
+  --font--grape-nuts: 'grape nuts', cursive;
+
+  /* ------------------------------- */
+
+  --font--tiempos-headline-light: 'tiempos headline light', sans-serif;
+  --font--tiempos-headline-light-italic: 'tiempos headline light - italic', sans-serif;
+
+  --font--tiempos-headline-regular: 'tiempos headline regular', sans-serif;
+  --font--tiempos-headline-regular-italic: 'tiempos headline regular - italic', sans-serif;
+
+  --font--tiempos-headline-medium: 'tiempos headline medium', sans-serif;
+  --font--tiempos-headline-medium-italic: 'tiempos headline medium - italic', sans-serif;
+
+  --font--tiempos-headline-semibold: 'tiempos headline semibold', sans-serif;
+  --font--tiempos-headline-semibold-italic: 'tiempos headline semibold - italic', sans-serif;
+
+  --font--tiempos-headline-bold: 'tiempos headline bold', sans-serif;
+  --font--tiempos-headline-bold-italic: 'tiempos headline bold - italic', sans-serif;
+
+  --font--tiempos-headline-black: 'tiempos headline black', sans-serif;
+  --font--tiempos-headline-black-italic: 'tiempos headline black - italic', sans-serif;
+
+  /* ------------------------------- */
+
+  --font--graphik-thin: 'graphik thin', sans-serif;
+  --font--graphik-thin-italic: 'graphik thin - italic', sans-serif;
+  --font--graphik-thin-compatible: 'graphik thin - compatible', sans-serif;
+  --font--graphik-thin-italic-compatible: 'graphik thin - italic - compatible', sans-serif;
+
+  --font--graphik-extralight: 'graphik extralight', sans-serif;
+  --font--graphik-extralight-italic: 'graphik extralight - italic', sans-serif;
+  --font--graphik-extralight-compatible: 'graphik extralight - compatible', sans-serif;
+  --font--graphik-extralight-italic-compatible: 'graphik extralight - italic - compatible', sans-serif;
+
+  --font--graphik-light: 'graphik light', sans-serif;
+  --font--graphik-light-italic: 'graphik light - italic', sans-serif;
+  --font--graphik-light-compatible: 'graphik light - compatible', sans-serif;
+  --font--graphik-light-italic-compatible: 'graphik light - italic - compatible', sans-serif;
+
+  --font--graphik-regular: 'graphik regular', sans-serif;
+  --font--graphik-regular-italic: 'graphik regular - italic', sans-serif;
+  --font--graphik-regular-compatible: 'graphik regular - compatible', sans-serif;
+  --font--graphik-regular-italic-compatible: 'graphik regular - italic - compatible', sans-serif;
+
+  --font--graphik-medium: 'graphik medium', sans-serif;
+  --font--graphik-medium-italic: 'graphik medium - italic', sans-serif;
+  --font--graphik-medium-compatible: 'graphik medium - compatible', sans-serif;
+  --font--graphik-medium-italic-compatible: 'graphik medium - italic - compatible', sans-serif;
+
+  --font--graphik-semibold: 'graphik semibold', sans-serif;
+  --font--graphik-semibold-italic: 'graphik semibold - italic', sans-serif;
+  --font--graphik-semibold-compatible: 'graphik semibold - compatible', sans-serif;
+  --font--graphik-semibold-italic-compatible: 'graphik semibold - italic - compatible', sans-serif;
+
+  --font--graphik-bold: 'graphik bold', sans-serif;
+  --font--graphik-bold-italic: 'graphik bold - italic', sans-serif;
+  --font--graphik-bold-compatible: 'graphik bold - compatible', sans-serif;
+  --font--graphik-bold-italic-compatible: 'graphik bold - italic - compatible', sans-serif;
+
+  --font--graphik-black: 'graphik black', sans-serif;
+  --font--graphik-black-italic: 'graphik black - italic', sans-serif;
+  --font--graphik-black-compatible: 'graphik black - compatible', sans-serif;
+  --font--graphik-black-italic-compatible: 'graphik black - italic - compatible', sans-serif;
+
+  --font--graphik-super: 'graphik super', sans-serif;
+  --font--graphik-super-italic: 'graphik super - italic', sans-serif;
+  --font--graphik-super-compatible: 'graphik super - compatible', sans-serif;
+  --font--graphik-super-italic-compatible: 'graphik super - italic - compatible', sans-serif;
+}
+
+.dark-theme {
+  --color--page-background: var(--color--primary-dark-70);
+  --color--scrollbar-background: var(--color--primary-dark-70);
+  --color--selection-background: var(--color--primary-light-90);
+  --color--selection-selected: var(--color--primary-main);
+}
+
+.light-theme {
+  --color--page-background: var(--color--primary-light-80);
+  --color--scrollbar-background: var(--color--primary-light-80);
+  --color--selection-background: var(--color--primary-main);
+  --color--selection-selected: var(--color--primary-light-90);
+}
+
+
+::selection {
+  background-color: var(--color--selection-background);
+  color: var(--color--selection-selected);
+}
+
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color--scrollbar-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color--primary-main);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color--primary-light-20);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: var(--color--primary-light-30);
+}
+
+* {
+  /* border: 1px dashed red; */
+  box-sizing: border-box;
+  cursor: default;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--color--page-background);
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  gap: 75px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+  justify-content: flex-start;
+}
+
+.hidden {
+  display: none !important;
+}

@@ -88,7 +88,7 @@ export default function UserHome({
               <h2 className = 'welcome-text'>
                 { translate(lang, 'USER_HOME', 'WELCOME_TEXT', 'TEXT_LEFT') }
                 <Link href = '/profile'>
-                  { userData ? userData.username : '\u00A0' }
+                  { userData?.given_name ? userData.given_name : userData?.username }
                 </Link>
                 { translate(lang, 'USER_HOME', 'WELCOME_TEXT', 'TEXT_RIGHT') }
               </h2>

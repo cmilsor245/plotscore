@@ -1,0 +1,22 @@
+name: deploy plotscore project - mobile version
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, plotscore--mobile]
+
+    steps:
+    - name: checkout repository
+      uses: actions/checkout@v4
+
+    - name: deploy vanilla code to apache server
+      run: |
+        cd ~/actions-runner/_work/plotscore/plotscore/mobile/
+        sudo cp -r * /var/www/html
+
+    - name: restart apache server
+      run: |
+        sudo service apache2 restart
