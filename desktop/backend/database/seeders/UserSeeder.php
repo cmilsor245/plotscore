@@ -22,7 +22,7 @@ class UserSeeder extends Seeder {
 
       'location' => 'spain',
       'website' => 'boxd.it/9yH3x',
-      'pronouns' => 'he/him',
+      'pronouns' => 'he/him'
     ]);
 
     $authController -> signup($request);

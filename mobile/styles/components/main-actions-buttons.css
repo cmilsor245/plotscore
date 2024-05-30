@@ -1,0 +1,48 @@
+.dark-theme {
+  --color--drop-shadow: var(--color--primary-light-90--main-action-button--drop-shadow);
+  --color--primary-light-90--main-action-button--drop-shadow: rgba(236, 238, 240, .5);
+}
+
+.light-theme {
+  --color--drop-shadow: var(--color--primary-dark-90--main-action-button--drop-shadow);
+  --color--primary-dark-90--main-action-button--drop-shadow: rgba(7, 8, 10, .5);
+}
+
+.main-actions-buttons {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  position: fixed;
+  right: 8vw;
+  top: 90vh;
+  transition: .05s;
+  z-index: 3;
+}
+
+.main-action-button {
+  align-items: center;
+  background-color: var(--color--accent-main);
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 1px 3px var(--color--drop-shadow);
+  cursor: pointer;
+  display: flex;
+  height: fit-content;
+  justify-content: center;
+  padding: 10px;
+  transition: .2s;
+  width: fit-content;
+}
+
+.main-action-button:active {
+  transform: scale(.9);
+}
+
+.main-action-button * {
+  cursor: pointer;
+}
+
+.main-action-button img {
+  height: 25px;
+  width: 25px;
+}
