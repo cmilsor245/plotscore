@@ -16,17 +16,25 @@
   </head>
   <body>
     <main>
-      <div class = 'landing-page__backdrop'></div>
+      <section class = 'landing-page__elements'>
+        <img class = 'landing-page__backdrop' src = 'assets/img/landing-page/high-res--backdrop.webp' alt = 'fallout entrance' />
 
-      <section class = 'landing-page__content'>
-        <h1>plotscore</h1>
+        <section class = 'landing-page__content'>
+          <div class = 'landing-page-content__main-content'>
+            <h1>plotscore</h1>
 
-        <div class = 'access-buttons'>
-          <a class = 'signup-button' href = 'pages/signup.html'></a>
-          <a class = 'login-button' href = 'pages/login.html'></a>
-        </div>
+            <div class = 'access-buttons'>
+              <a class = 'access-buttons__button signup-button' href = 'pages/signup.html'></a>
+              <a class = 'access-buttons__button login-button' href = 'pages/login.html'></a>
+            </div>
+          </div>
+
+          <p class = 'copyright'></p>
+        </section>
       </section>
     </main>
+
+    <!-- ---------------------------------------------- -->
 
     <div class = 'main-actions-buttons'>
       <button class = 'main-action-button language-button' onclick = 'changeLanguage()'>
@@ -36,6 +44,8 @@
         <img id = 'theme-icon' src = 'assets/icons/dark-mode.svg' alt = 'theme icon'>
       </button>
     </div>
+
+    <!-- ---------------------------------------------- -->
 
     <script>
       let theme = localStorage.getItem('theme') || 'dark'

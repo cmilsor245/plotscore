@@ -1,0 +1,93 @@
+.dark-theme {
+  --color--backdrop-edges: var(--color--primary-dark-70);
+  --color--copyright: var(--color--primary-light-80);
+}
+
+.light-theme {
+  --color--backdrop-edges: var(--color--primary-light-80);
+  --color--copyright: var(--color--primary-dark-70);
+}
+
+.landing-page__elements {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.landing-page__backdrop {
+  height: 400px;
+  object-fit: cover;
+}
+
+.landing-page__content {
+  align-items: center;
+  box-shadow: 0 -10px 30px 30px var(--color--backdrop-edges);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  padding-bottom: 25px;
+  width: 100%;
+}
+
+.landing-page-content__main-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: flex-start;
+  padding-inline: 2%;
+  width: 100%;
+}
+
+.landing-page-content__main-content h1 {
+  --font: 4.8rem var(--font--grape-nuts);
+  color: var(--color--secondary-main);
+  font: var(--font);
+}
+
+.access-buttons {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.access-buttons__button {
+  --font: clamp(12px, 1.8rem, 20px) var(--font--graphik-semibold);
+  align-items: center;
+  border-radius: 5px;
+  color: var(--color--primary-light-90);
+  cursor: pointer;
+  display: flex;
+  font: var(--font);
+  justify-content: center;
+  padding-block: 10px;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s;
+  width: 100%;
+}
+
+.access-buttons__button:active {
+  transform: scale(.95);
+}
+
+.signup-button {
+  background-color: var(--color--secondary-main);
+}
+
+.login-button {
+  background-color: var(--color--tertiary-main);
+}
+
+.copyright {
+  --font: clamp(8px, 1.4rem, 16px) var(--font--graphik-regular);
+  color: var(--color--copyright);
+  font: var(--font);
+}
