@@ -617,7 +617,7 @@ main {
   flex-direction: column;
   gap: 75px;
   justify-content: flex-start;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 .hidden {

@@ -44,5 +44,17 @@
 
 .main-action-button img {
   height: 25px;
+  transition: .1s;
   width: 25px;
+}
+
+@media (width <= 465px) {
+  .main-action-button {
+    border-radius: 13px;
+  }
+
+  .main-action-button img {
+    height: 20px;
+    width: 20px;
+  }
 }

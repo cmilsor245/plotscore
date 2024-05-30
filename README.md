@@ -43,7 +43,6 @@ I've created a permanent deployment using ***Vercel*** just so everyone can visi
 #### Backend
 
 - [ ] :yellow_circle: Backend side of the **desktop version**
-- [ ] :red_circle: Backend side of the **mobile version**
 
 #### Deployment
 
@@ -52,13 +51,12 @@ I've created a permanent deployment using ***Vercel*** just so everyone can visi
 - [x] :green_circle: Automatic deployment process for the **desktop version** (backend)
 - [x] :green_circle: Deployment of the **mobile version** using an AWS EC2 instance
 - [x] :green_circle: Automatic deployment process for the **mobile version** (frontend)
-- [ ] :red_circle: Automatic deployment process for the **mobile version** (backend)
 - [x] :green_circle: Creating a **custom domain** for the desktop version :arrow_right: [Link](https://plotscore--desktop.duckdns.org/)
 - [x] :green_circle: Creating a **custom domain** for the **mobile version** :arrow_right: [Link](https://plotscore--mobile.duckdns.org/)
 - [x] :green_circle: Enabling **HTTPS** connections to the **desktop version**
 - [x] :green_circle: Enabling **HTTPS** connections to the **mobile version**
 - [x] :green_circle: Installing a **secure FTP server** for the **desktop version**
-- [ ] :red_circle: Installing a **secure FTP server** for the **mobile version**
+- [x] :green_circle: Installing a **secure FTP server** for the **mobile version**
 
 ##### [Back to TODO list section](#todo-list)
 
@@ -157,7 +155,6 @@ He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualqui
 #### Backend
 
 - [ ] :yellow_circle: Parte backend de la **versión desktop**
-- [ ] :red_circle: Parte backend de la **versión mobile**
 
 #### Despliegue
 
@@ -166,13 +163,12 @@ He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualqui
 - [x] :green_circle: Proceso de despliegue automático para la **versión desktop** (backend)
 - [x] :green_circle: Despliegue de la **versión mobile** haciendo uso de una AWS EC2
 - [x] :green_circle: Proceso de despliegue automático para la **versión mobile** (frontend)
-- [ ] :red_circle: Proceso de despliegue automático para la **versión mobile** (backend)
 - [x] :green_circle: Crear un **dominio personalizado** para la **versión desktop** :arrow_right: [Link](https://plotscore--desktop.duckdns.org/)
 - [x] :green_circle: Crear un **dominio personalizado** para la **versión mobile**
 - [x] :green_circle: Habilitando conexiones **HTTPS** hacia la **versión desktop**
 - [x] :green_circle: Habilitando conexiones **HTTPS** hacia la **versión mobile**
 - [x] :green_circle: Instalando un **servidor seguro FTP** para la **versión desktop**
-- [ ] :red_circle: Instalando un **servidor seguro FTP** para la **versión mobile**
+- [x] :green_circle: Instalando un **servidor seguro FTP** para la **versión mobile**
 
 ##### [Volver a la sección de Lista de tareas pendientes](#lista-de-tareas-pendientes)
 

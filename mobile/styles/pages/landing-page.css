@@ -18,8 +18,9 @@
 }
 
 .landing-page__backdrop {
-  height: 400px;
+  height: 700px;
   object-fit: cover;
+  width: 100%;
 }
 
 .landing-page__content {
@@ -70,7 +71,7 @@
   padding-block: 10px;
   text-decoration: none;
   text-transform: capitalize;
-  transition: .2s;
+  transition: .1s;
   width: 100%;
 }
 
