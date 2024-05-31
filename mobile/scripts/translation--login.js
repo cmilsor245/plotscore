@@ -28,7 +28,7 @@ const translationsES = {
       OR: 'o',
       SIGN_IN_WITH_GOOGLE: '<img src = "../assets/icons/account-forms/google.svg" alt = "google logo" /> Iniciar sesión con Google',
 
-      FORGOT_PASSWORD: 'Has olvidado tu contraseña?',
+      FORGOT_PASSWORD: '¿Has olvidado tu contraseña?',
       SIGNUP_REDIRECT: '¿No tienes una cuenta? <a href = \'signup.html\'>Regístrate</a>'
     }
   }

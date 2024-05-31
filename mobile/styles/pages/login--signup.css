@@ -16,7 +16,7 @@
   --color--copyright: var(--color--primary-dark-70);
 }
 
-.login__elements {
+.login__elements, .signup__elements {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,13 @@
   width: 100%;
 }
 
-.login__content {
+.signup__backdrop {
+  height: 490px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.login__content, .signup__content {
   align-items: center;
   box-shadow: 0 -10px 30px 40px var(--color--backdrop-edges);
   display: flex;
@@ -42,7 +48,7 @@
   width: 100%;
 }
 
-.login-content__main-content {
+.login-content__main-content, .signup-content__main-content {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -52,7 +58,7 @@
   width: 100%;
 }
 
-.login-content__main-content h2 {
+.login-content__main-content h2, .signup-content__main-content h2 {
   --font: clamp(19px, 2.4rem, 26px) var(--font--graphik-regular);
   color: var(--color--account-form-title);
   font: var(--font);
@@ -68,46 +74,54 @@
 .account-form__input,
 .account-form__button {
   border-radius: 5px;
-  padding-block: 10px;
+  font-size: clamp(12px, 1.5rem, 16px);
+  padding-block: 3px;
   width: 100%;
-  font-size: clamp(15px, 1.8rem, 20px);
 }
 
+.username-input-container,
 .email-input-container,
-.password-input-container {
+.password-input-container,
+.confirm-password-input-container {
   display: inline-block;
   position: relative;
   width: 100%;
 }
 
 .account-form__input input::placeholder {
-  font-size: clamp(15px, 1.8rem, 20px);
+  font-size: clamp(13px, 1.5rem, 15px);
   color: var(--color--account-form-input--placeholder);
 }
 
+.username-input-container input[type = 'text'],
 .email-input-container input[type = 'email'],
-.password-input-container input[type = 'password'] {
+.password-input-container input[type = 'password'],
+.confirm-password-input-container input[type = 'password'] {
   align-items: center;
   background-color: var(--color--account-form-input--bg);
-  color: var(--color--account-form-input--content);
+  border-radius: 5px;
   border: none;
   box-sizing: border-box;
+  color: var(--color--account-form-input--content);
   display: flex;
-  font-size: clamp(15px, 1.8rem, 20px);
+  font-size: clamp(13px, 1.6rem, 15px);
   justify-content: center;
   padding-block: 10px;
   padding-left: 35px;
   width: 100%;
-  border-radius: 5px;
 }
 
+.username-input-container input[type = 'text']:focus,
 .email-input-container input[type = 'email']:focus,
-.password-input-container input[type = 'password']:focus {
+.password-input-container input[type = 'password']:focus,
+.confirm-password-input-container input[type = 'password']:focus {
   outline: none;
 }
 
+.username-input-container .username-icon,
 .email-input-container .email-icon,
-.password-input-container .password-icon {
+.password-input-container .password-icon,
+.confirm-password-input-container .confirm-password-icon {
   color: var(--color--account-form-input--content);
   left: .75rem;
   pointer-events: none;
@@ -122,6 +136,7 @@
   display: flex;
   font-family: var(--font--graphik-semibold);
   justify-content: center;
+  padding-block: 10px;
   text-decoration: none;
   text-transform: capitalize;
   transition: .1s;
@@ -133,6 +148,10 @@
 
 .login-button {
   background-color: var(--color--tertiary-main);
+}
+
+.signup-button {
+  background-color: var(--color--secondary-main);
 }
 
 .or-divider {
@@ -150,13 +169,13 @@
 }
 
 .or-divider__text {
-  --font: clamp(11px, 1.4rem, 18px) var(--font--graphik-regular);
+  --font: clamp(11px, 1.2rem, 13px) var(--font--graphik-regular);
   color: var(--color--primary-light-20);
   font: var(--font);
 }
 
 .google-button {
-  --font: clamp(15px, 1.8rem, 20px) var(--font--graphik-semibold);
+  --font: clamp(13px, 1.4rem, 16px) var(--font--graphik-semibold);
   align-items: center;
   background-color: var(--color--primary-light-90);
   border-radius: 5px;
@@ -180,21 +199,25 @@
   width: clamp(17px, 2rem, 22px);
 }
 
-.login-content__footer {
+.login-content__footer,
+.signup-content__footer {
+  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 5px;
   justify-content: center;
-  align-items: center;
 }
 
-.login-content__footer p {
+.login-content__footer p,
+.signup-content__footer p {
   --font: clamp(11px, 1.3rem, 14px) var(--font--graphik-regular);
   color: var(--color--account-form--footer);
   font: var(--font);
 }
 
-.login-content__footer p a {
+.login-content__footer p a,
+.signup-content__footer p span,
+.signup-content__footer p a {
   font-family: var(--font--graphik-bold);
   text-decoration: none;
   color: var(--color--account-form--footer);
