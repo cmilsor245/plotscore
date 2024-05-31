@@ -7,6 +7,8 @@
     <link rel = 'icon' href = 'favicon.ico' />
     <meta name = 'description' content = 'The plotscore project consists of a website based on reviews/ratings of all kinds of mainstream multimedia content, meaning content that can be consumed on major streaming platforms or in theaters or similar venues.' />
 
+    <link rel = 'stylesheet' href = 'https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css' />
+
     <script src = 'scripts/translation--landing-page.js'></script>
 
     <link rel = 'stylesheet' href = 'styles/components/main-actions-buttons.css' />
@@ -37,10 +39,10 @@
 
     <div class = 'main-actions-buttons'>
       <button class = 'main-action-button language-button' onclick = 'changeLanguage()'>
-        <img id = 'language-icon' src = 'assets/icons/english.svg' alt = 'language icon'>
+        <img id = 'language-icon' src = 'assets/icons/english.svg' alt = 'language icon' />
       </button>
       <button class = 'main-action-button theme-button' onclick = 'changeTheme()'>
-        <img id = 'theme-icon' src = 'assets/icons/dark-mode.svg' alt = 'theme icon'>
+        <i id = 'theme-icon' class = 'ti'></i>
       </button>
     </div>
 
@@ -61,7 +63,7 @@
 
       function updateThemeIcon() {
         const themeIcon = document.getElementById('theme-icon')
-        themeIcon.src = theme === 'dark' ? 'assets/icons/light-mode.svg' : 'assets/icons/dark-mode.svg'
+        themeIcon.className = theme === 'dark' ? 'ti ti-bulb-filled' : 'ti ti-bulb-off';
       }
 
       /* ------------------------------ */

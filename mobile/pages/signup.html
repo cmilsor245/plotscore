@@ -36,12 +36,12 @@
               </div>
 
               <div class = 'account-form__input password-input-container'>
-                <i class="ti ti-lock-square-rounded password-icon"></i>
+                <i class = 'ti ti-lock-square-rounded password-icon'></i>
                 <input type = 'password' id = 'signup-input--password' placeholder = 'Password' />
               </div>
 
               <div class = 'account-form__input confirm-password-input-container'>
-                <i class="ti ti-lock-square-rounded confirm-password-icon"></i>
+                <i class = 'ti ti-lock-square-rounded confirm-password-icon'></i>
                 <input type = 'password' id = 'signup-input--confirm-password' placeholder = 'Confirm password' />
               </div>
 
@@ -69,10 +69,10 @@
 
     <div class = 'main-actions-buttons'>
       <button class = 'main-action-button language-button' onclick = 'changeLanguage()'>
-        <img id = 'language-icon' src = '../assets/icons/english.svg' alt = 'language icon'>
+        <img id = 'language-icon' src = '../assets/icons/english.svg' alt = 'language icon' />
       </button>
       <button class = 'main-action-button theme-button' onclick = 'changeTheme()'>
-        <img id = 'theme-icon' src = '../assets/icons/dark-mode.svg' alt = 'theme icon'>
+        <i id = 'theme-icon' class = 'ti'></i>
       </button>
     </div>
 
@@ -93,7 +93,7 @@
 
       function updateThemeIcon() {
         const themeIcon = document.getElementById('theme-icon')
-        themeIcon.src = theme === 'dark' ? '../assets/icons/light-mode.svg' : '../assets/icons/dark-mode.svg'
+        themeIcon.className = theme === 'dark' ? 'ti ti-bulb-filled' : 'ti ti-bulb-off';
       }
 
       let lang = localStorage.getItem('lang') || 'en'

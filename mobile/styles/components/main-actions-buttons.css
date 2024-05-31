@@ -48,6 +48,11 @@
   width: 25px;
 }
 
+.main-action-button i {
+  font-size: 20px;
+  transition: .1s;
+}
+
 @media (width <= 465px) {
   .main-action-button {
     border-radius: 13px;

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+  <meta charset = 'utf-8' />
+  <meta name = 'viewport' content = 'width = device-width, initial-scale = 1.0' />
+  <title>plotscore</title>
+  <link rel = 'icon' href = '../favicon.ico' />
+  <meta name = 'description' content = 'The plotscore project consists of a website based on reviews/ratings of all kinds of mainstream multimedia content, meaning content that can be consumed on major streaming platforms or in theaters or similar venues.' />
+
+  <link rel = 'stylesheet' href = 'https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css' />
+
+  <script src = '../scripts/translation--home.js'></script>
+  <script src = '../scripts/components/control-panel.js' defer></script>
+
+  <link rel = 'stylesheet' href = '../styles/global.css' />
+  <link rel = 'stylesheet' href = '../styles/pages/home.css' />
+</head>
+
+<body>
+  <main>
+    <section class = 'home__elements'>
+      <header class = 'generic-header home__header'>
+        <img class = 'home__backdrop' src = '../assets/img/home/high-res--backdrop.webp' alt = 'mae fighting indara' />
+        <i class = 'ti ti-menu menu-icon'></i>
+      </header>
+
+      <section class = 'home__content'>
+        <section class = 'new-releases'>
+          <h3 class = 'new-releases__title'></h3>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <!-- ---------------------------------------------- -->
+
+  <div class = 'control-panel'>
+    <div class = 'dragger'>
+      <div class = 'dragger__handle'></div>
+    </div>
+
+    <section class = 'control-panel__user'>
+      <a class = 'control-panel__avatar-container' href = 'profile.html'>
+        <img class = 'control-panel__avatar' src = '../assets/img/user-avatar/high-res--avatar.webp' alt = 'user avatar' />
+        <h4 class = 'control-panel__username'>christianms13</h4>
+      </a>
+    </section>
+
+    <section class = 'control-panel__actions'>
+      <button class = 'control-panel__button control-panel__theme-button' onclick = 'changeTheme()'>
+        <i id = 'theme-icon' class = 'ti'></i>
+      </button>
+
+      <button class = 'control-panel__button control-panel__language-button' onclick = 'changeLanguage()'>
+        <img id = 'language-icon' src = '../assets/icons/english.svg' alt = 'language icon' />
+      </button>
+
+      <a class = 'control-panel__button control-panel__logout-button' href = '../index.html'>
+        <i class = 'ti ti-logout'></i>
+      </a>
+    </section>
+  </div>
+
+  <div class = 'control-panel__overlay'></div>
+
+  <!-- ---------------------------------------------- -->
+
+  <script>
+    let theme = localStorage.getItem('theme') || 'dark';
+    document.body.classList.add(theme + '-theme');
+    updateThemeIcon();
+
+    function changeTheme() {
+      theme = theme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', theme);
+      document.body.classList.toggle('dark-theme');
+      document.body.classList.toggle('light-theme');
+      updateThemeIcon();
+    }
+
+    function updateThemeIcon() {
+      const themeIcon = document.getElementById('theme-icon');
+      themeIcon.className = theme === 'dark' ? 'ti ti-bulb-filled' : 'ti ti-bulb-off';
+    }
+
+    let lang = localStorage.getItem('lang') || 'en';
+    translatePage(lang);
+    updateLanguageIcon();
+
+    function changeLanguage() {
+      lang = lang === 'en' ? 'es' : 'en';
+      localStorage.setItem('lang', lang);
+      translatePage(lang);
+      updateLanguageIcon();
+    }
+
+    function updateLanguageIcon() {
+      const languageIcon = document.getElementById('language-icon');
+      languageIcon.src = lang === 'en' ? '../assets/icons/spanish.svg' : '../assets/icons/english.svg';
+    }
+  </script>
+</body>
+
+</html>
