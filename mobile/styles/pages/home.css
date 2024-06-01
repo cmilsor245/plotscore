@@ -77,6 +77,7 @@
   justify-content: flex-start;
   overflow-x: scroll;
   scrollbar-width: none;
+  width: 100%;
 }
 
 .new-releases__title,
@@ -95,7 +96,7 @@
   display: flex;
   gap: 5px;
   justify-content: flex-start;
-  width: 150%;
+  width: fit-content;
 }
 
 .control-panel {

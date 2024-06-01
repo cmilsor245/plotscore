@@ -42,15 +42,11 @@
   cursor: pointer;
 }
 
-.main-action-button img {
+.main-action-button img, .main-action-button i {
+  font-size: 25px;
   height: 25px;
   transition: .1s;
   width: 25px;
-}
-
-.main-action-button i {
-  font-size: 20px;
-  transition: .1s;
 }
 
 @media (width <= 465px) {
