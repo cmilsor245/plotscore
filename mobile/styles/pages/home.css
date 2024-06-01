@@ -60,9 +60,11 @@
   box-shadow: 0 -10px 30px 40px var(--color--backdrop-edges);
   display: flex;
   flex-direction: column;
+  gap: 50px;
   justify-content: flex-start;
   padding-inline: 2%;
   width: 100%;
+  padding-bottom: 25px;
 }
 
 .new-releases,
@@ -73,6 +75,8 @@
   flex-direction: column;
   gap: 10px;
   justify-content: flex-start;
+  overflow-x: scroll;
+  scrollbar-width: none;
 }
 
 .new-releases__title,
@@ -91,8 +95,7 @@
   display: flex;
   gap: 5px;
   justify-content: flex-start;
-  overflow-x: scroll;
-  width: 200%;
+  width: 150%;
 }
 
 .control-panel {

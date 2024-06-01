@@ -1,11 +1,11 @@
 .dark-theme {
-  --color--episode-badge: var(--color--secondary-main);
   --color--date: var(--color--primary-light-90);
+  --color--episode-badge: var(--color--secondary-main);
 }
 
 .light-theme {
-  --color--episode-badge: var(--color--tertiary-main);
   --color--date: var(--color--primary-dark-90);
+  --color--episode-badge: var(--color--tertiary-main);
 }
 
 .new-releases__slot,
