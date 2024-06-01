@@ -2,6 +2,12 @@ const translationsEN = {
   HOME: {
     NEW_RELEASES: {
       TITLE: 'new releases'
+    },
+    DIVE_BACK_IN: {
+      TITLE: 'dive back in'
+    },
+    POPULAR_IN_PLOTSCORE: {
+      TITLE: 'popular in plotscore'
     }
   }
 }
@@ -10,6 +16,12 @@ const translationsES = {
   HOME: {
     NEW_RELEASES: {
       TITLE: 'nuevos lanzamientos'
+    },
+    DIVE_BACK_IN: {
+      TITLE: 'continúa viendo'
+    },
+    POPULAR_IN_PLOTSCORE: {
+      TITLE: 'popular en plotscore'
     }
   }
 }
@@ -27,7 +39,9 @@ function translate(lang, namespace, section, key) {
 
 function translatePage(lang) {
   const elementsToTranslate = [
-    { selector: '.new-releases__title', namespace: 'HOME', section: 'NEW_RELEASES', key: 'TITLE' }
+    { selector: '.new-releases__title', namespace: 'HOME', section: 'NEW_RELEASES', key: 'TITLE' },
+    { selector: '.dive-back-in__title', namespace: 'HOME', section: 'DIVE_BACK_IN', key: 'TITLE' },
+    { selector: '.popular-in-plotscore__title', namespace: 'HOME', section: 'POPULAR_IN_PLOTSCORE', key: 'TITLE' }
   ]
 
   elementsToTranslate.forEach(item => {

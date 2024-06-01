@@ -1,0 +1,171 @@
+.dark-theme {
+  --color--episode-badge: var(--color--secondary-main);
+  --color--date: var(--color--primary-light-90);
+}
+
+.light-theme {
+  --color--episode-badge: var(--color--tertiary-main);
+  --color--date: var(--color--primary-dark-90);
+}
+
+.new-releases__slot,
+.dive-back-in__slot,
+.popular-in-plotscore__slot {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: fit-content;
+  justify-content: flex-start;
+  width: fit-content;
+}
+
+.new-releases__slot .poster,
+.dive-back-in__slot .poster,
+.popular-in-plotscore__slot .poster {
+  background: center / cover;
+  border-radius: 2px;
+  height: 165px;
+  position: relative;
+  width: 115px;
+}
+
+.new-releases__slot .poster1 {
+  background-image: url('../../assets/img/home/new-releases/high-res--poster1.webp');
+}
+
+.new-releases__slot .poster2 {
+  background-image: url('../../assets/img/home/new-releases/high-res--poster2.webp');
+}
+
+.new-releases__slot .poster3 {
+  background-image: url('../../assets/img/home/new-releases/high-res--poster3.webp');
+}
+
+.new-releases__slot .poster4 {
+  background-image: url('../../assets/img/home/new-releases/high-res--poster4.webp');
+}
+
+.new-releases__slot .poster5 {
+  background-image: url('../../assets/img/home/new-releases/high-res--poster5.webp');
+}
+
+.new-releases__slot .poster6 {
+  background-image: url('../../assets/img/home/new-releases/high-res--poster6.webp');
+}
+
+.new-releases__slot .poster7 {
+  background-image: url('../../assets/img/home/new-releases/high-res--poster7.webp');
+}
+
+/* --------------------------------------------------------- */
+
+.dive-back-in__slot .poster1 {
+  background-image: url('../../assets/img/home/dive-back-in/high-res--poster1.webp');
+}
+
+.dive-back-in__slot .poster2 {
+  background-image: url('../../assets/img/home/dive-back-in/high-res--poster2.webp');
+}
+
+/* --------------------------------------------------------- */
+
+.popular-in-plotscore__slot .poster1 {
+  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster1.webp');
+}
+
+.popular-in-plotscore__slot .poster2 {
+  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster2.webp');
+}
+
+.popular-in-plotscore__slot .poster3 {
+  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster3.webp');
+}
+
+.popular-in-plotscore__slot .poster4 {
+  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster4.webp');
+}
+
+.popular-in-plotscore__slot .poster5 {
+  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster5.webp');
+}
+
+.popular-in-plotscore__slot .poster6 {
+  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster6.webp');
+}
+
+.popular-in-plotscore__slot .poster7 {
+  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster7.webp');
+}
+
+.popular-in-plotscore__slot .poster8 {
+  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster8.webp');
+}
+
+.popular-in-plotscore__slot .poster9 {
+  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster9.webp');
+}
+
+.popular-in-plotscore__slot .poster10 {
+  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster10.webp');
+}
+
+.popular-in-plotscore__slot .poster11 {
+  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster11.webp');
+}
+
+.popular-in-plotscore__slot .poster12 {
+  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster12.webp');
+}
+
+.popular-in-plotscore__slot .poster13 {
+  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster13.webp');
+}
+
+.popular-in-plotscore__slot .poster14 {
+  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster14.webp');
+}
+
+.popular-in-plotscore__slot .poster15 {
+  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster15.webp');
+}
+
+.new-releases__slot .episode,
+.dive-back-in__slot .episode,
+.popular-in-plotscore__slot .episode {
+  align-items: center;
+  background-color: var(--color--episode-badge);
+  border-radius: 4px;
+  bottom: 2%;
+  display: flex;
+  height: fit-content;
+  justify-content: center;
+  left: 3%;
+  padding-bottom: 4px;
+  padding: 5px;
+  position: absolute;
+  width: fit-content;
+}
+
+.new-releases__slot .episode p,
+.dive-back-in__slot .episode p,
+.popular-in-plotscore__slot .episode p {
+  --font: clamp(10px, 1.1rem, 12px) var(--font--graphik-semibold);
+  color: var(--color--primary-light-90);
+  font: var(--font);
+  text-transform: uppercase;
+}
+
+.new-releases__slot .date {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.new-releases__slot .date p {
+  --font: clamp(10px, 1.1rem, 12px) var(--font--graphik-regular);
+  color: var(--color--date);
+  font: var(--font);
+  text-transform: capitalize;
+}
