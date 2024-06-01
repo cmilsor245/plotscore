@@ -1,0 +1,62 @@
+[
+  {
+    "lowResPosterSrc": "../assets/img/home/new-releases/low-res--poster1.webp",
+    "highResPosterSrc": "../assets/img/home/new-releases/high-res--poster1.webp",
+
+    "hasEpisodeNumber": true,
+    "episodeNumber": 1,
+
+    "releaseDate": "sun, may 26"
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/new-releases/low-res--poster2.webp",
+    "highResPosterSrc": "../assets/img/home/new-releases/high-res--poster2.webp",
+
+    "hasEpisodeNumber": true,
+    "episodeNumber": 1,
+
+    "releaseDate": "tue, jun 04"
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/new-releases/low-res--poster3.webp",
+    "highResPosterSrc": "../assets/img/home/new-releases/high-res--poster3.webp",
+
+    "hasEpisodeNumber": true,
+    "episodeNumber": 1,
+
+    "releaseDate": "wed, jun 12"
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/new-releases/low-res--poster4.webp",
+    "highResPosterSrc": "../assets/img/home/new-releases/high-res--poster4.webp",
+
+    "hasEpisodeNumber": true,
+    "episodeNumber": 1,
+
+    "releaseDate": "sun, jun 16"
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/new-releases/low-res--poster5.webp",
+    "highResPosterSrc": "../assets/img/home/new-releases/high-res--poster5.webp",
+
+    "hasEpisodeNumber": false,
+
+    "releaseDate": "thu, jun 27"
+  },{
+    "lowResPosterSrc": "../assets/img/home/new-releases/low-res--poster6.webp",
+    "highResPosterSrc": "../assets/img/home/new-releases/high-res--poster6.webp",
+
+    "hasEpisodeNumber": false,
+
+    "releaseDate": "fri, jul 26"
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/new-releases/low-res--poster7.webp",
+    "highResPosterSrc": "../assets/img/home/new-releases/high-res--poster7.webp",
+
+    "hasEpisodeNumber": true,
+    "episodeNumber": 1,
+
+    "releaseDate": "wed, aug 28"
+  }
+]

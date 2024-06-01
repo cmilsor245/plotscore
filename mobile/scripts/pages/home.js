@@ -13,7 +13,5 @@ async function loadComponents(
 }
 
 window.onload = async function() {
-  await loadComponents('../components/new-releases/component.html', '.new-releases--media-slots')
-  await loadComponents('../components/dive-back-in/component.html', '.dive-back-in--media-slots')
-  await loadComponents('../components/popular-in-plotscore/component.html', '.popular-in-plotscore--media-slots')
+  
 }

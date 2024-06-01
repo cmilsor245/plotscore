@@ -30,118 +30,18 @@
   width: 115px;
 }
 
-.new-releases__slot .poster1 {
-  background-image: url('../../assets/img/home/new-releases/high-res--poster1.webp');
-}
-
-.new-releases__slot .poster2 {
-  background-image: url('../../assets/img/home/new-releases/high-res--poster2.webp');
-}
-
-.new-releases__slot .poster3 {
-  background-image: url('../../assets/img/home/new-releases/high-res--poster3.webp');
-}
-
-.new-releases__slot .poster4 {
-  background-image: url('../../assets/img/home/new-releases/high-res--poster4.webp');
-}
-
-.new-releases__slot .poster5 {
-  background-image: url('../../assets/img/home/new-releases/high-res--poster5.webp');
-}
-
-.new-releases__slot .poster6 {
-  background-image: url('../../assets/img/home/new-releases/high-res--poster6.webp');
-}
-
-.new-releases__slot .poster7 {
-  background-image: url('../../assets/img/home/new-releases/high-res--poster7.webp');
-}
-
-/* --------------------------------------------------------- */
-
-.dive-back-in__slot .poster1 {
-  background-image: url('../../assets/img/home/dive-back-in/high-res--poster1.webp');
-}
-
-.dive-back-in__slot .poster2 {
-  background-image: url('../../assets/img/home/dive-back-in/high-res--poster2.webp');
-}
-
-/* --------------------------------------------------------- */
-
-.popular-in-plotscore__slot .poster1 {
-  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster1.webp');
-}
-
-.popular-in-plotscore__slot .poster2 {
-  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster2.webp');
-}
-
-.popular-in-plotscore__slot .poster3 {
-  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster3.webp');
-}
-
-.popular-in-plotscore__slot .poster4 {
-  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster4.webp');
-}
-
-.popular-in-plotscore__slot .poster5 {
-  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster5.webp');
-}
-
-.popular-in-plotscore__slot .poster6 {
-  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster6.webp');
-}
-
-.popular-in-plotscore__slot .poster7 {
-  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster7.webp');
-}
-
-.popular-in-plotscore__slot .poster8 {
-  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster8.webp');
-}
-
-.popular-in-plotscore__slot .poster9 {
-  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster9.webp');
-}
-
-.popular-in-plotscore__slot .poster10 {
-  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster10.webp');
-}
-
-.popular-in-plotscore__slot .poster11 {
-  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster11.webp');
-}
-
-.popular-in-plotscore__slot .poster12 {
-  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster12.webp');
-}
-
-.popular-in-plotscore__slot .poster13 {
-  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster13.webp');
-}
-
-.popular-in-plotscore__slot .poster14 {
-  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster14.webp');
-}
-
-.popular-in-plotscore__slot .poster15 {
-  background-image: url('../../assets/img/home/popular-in-plotscore/high-res--poster15.webp');
-}
-
 .new-releases__slot .episode,
 .dive-back-in__slot .episode,
 .popular-in-plotscore__slot .episode {
   align-items: center;
   background-color: var(--color--episode-badge);
-  border-radius: 4px;
+  border-radius: 3px;
   bottom: 2%;
   display: flex;
   height: fit-content;
   justify-content: center;
   left: 3%;
-  padding-bottom: 4px;
+  padding-bottom: 4px !important;
   padding: 5px;
   position: absolute;
   width: fit-content;

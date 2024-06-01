@@ -1,0 +1,16 @@
+[
+  {
+    "lowResPosterSrc": "../assets/img/home/dive-back-in/high-res--poster1.webp",
+    "highResPosterSrc": "../assets/img/home/dive-back-in/low-res--poster1.webp",
+
+    "hasEpisodeNumber": true,
+    "episodeNumber": 3
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/dive-back-in/high-res--poster2.webp",
+    "highResPosterSrc": "../assets/img/home/dive-back-in/low-res--poster2.webp",
+
+    "hasEpisodeNumber": true,
+    "episodeNumber": 22
+  }
+]

@@ -1,0 +1,100 @@
+[
+  {
+    "lowResPosterSrc": "../assets/img/home/popular-in-plotscore/low-res--poster1.webp",
+    "highResPosterSrc": "../assets/img/home/popular-in-plotscore/high-res--poster1.webp",
+
+    "hasEpisodeNumber": true,
+    "episodeNumber": 8
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/popular-in-plotscore/low-res--poster2.webp",
+    "highResPosterSrc": "../assets/img/home/popular-in-plotscore/high-res--poster2.webp",
+
+    "hasEpisodeNumber": true,
+    "episodeNumber": 7
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/popular-in-plotscore/low-res--poster3.webp",
+    "highResPosterSrc": "../assets/img/home/popular-in-plotscore/high-res--poster3.webp",
+
+    "hasEpisodeNumber": false
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/popular-in-plotscore/low-res--poster4.webp",
+    "highResPosterSrc": "../assets/img/home/popular-in-plotscore/high-res--poster4.webp",
+
+    "hasEpisodeNumber": true,
+    "episodeNumber": 1
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/popular-in-plotscore/low-res--poster5.webp",
+    "highResPosterSrc": "../assets/img/home/popular-in-plotscore/high-res--poster5.webp",
+
+    "hasEpisodeNumber": true,
+    "episodeNumber": 1
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/popular-in-plotscore/low-res--poster6.webp",
+    "highResPosterSrc": "../assets/img/home/popular-in-plotscore/high-res--poster6.webp",
+
+    "hasEpisodeNumber": true,
+    "episodeNumber": 8
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/popular-in-plotscore/low-res--poster7.webp",
+    "highResPosterSrc": "../assets/img/home/popular-in-plotscore/high-res--poster7.webp",
+
+    "hasEpisodeNumber": true,
+    "episodeNumber": 7
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/popular-in-plotscore/low-res--poster8.webp",
+    "highResPosterSrc": "../assets/img/home/popular-in-plotscore/high-res--poster8.webp",
+
+    "hasEpisodeNumber": true,
+    "episodeNumber": 8
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/popular-in-plotscore/low-res--poster9.webp",
+    "highResPosterSrc": "../assets/img/home/popular-in-plotscore/high-res--poster9.webp",
+
+    "hasEpisodeNumber": false
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/popular-in-plotscore/low-res--poster10.webp",
+    "highResPosterSrc": "../assets/img/home/popular-in-plotscore/high-res--poster10.webp",
+
+    "hasEpisodeNumber": false
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/popular-in-plotscore/low-res--poster11.webp",
+    "highResPosterSrc": "../assets/img/home/popular-in-plotscore/high-res--poster11.webp",
+
+    "hasEpisodeNumber": false
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/popular-in-plotscore/low-res--poster12.webp",
+    "highResPosterSrc": "../assets/img/home/popular-in-plotscore/high-res--poster12.webp",
+
+    "hasEpisodeNumber": true,
+    "episodeNumber": 1
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/popular-in-plotscore/low-res--poster13.webp",
+    "highResPosterSrc": "../assets/img/home/popular-in-plotscore/high-res--poster13.webp",
+
+    "hasEpisodeNumber": false
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/popular-in-plotscore/low-res--poster14.webp",
+    "highResPosterSrc": "../assets/img/home/popular-in-plotscore/high-res--poster14.webp",
+
+    "hasEpisodeNumber": false
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/popular-in-plotscore/low-res--poster15.webp",
+    "highResPosterSrc": "../assets/img/home/popular-in-plotscore/high-res--poster15.webp",
+
+    "hasEpisodeNumber": false
+  }
+]
