@@ -82,7 +82,8 @@
 
 .new-releases__title,
 .dive-back-in__title,
-.popular-in-plotscore__title {
+.popular-in-plotscore__title,
+.popular-reviews__title {
   --font: clamp(22px, 2.5rem, 27px) var(--font--graphik-semibold);
   color: var(--color--section-title);
   font: var(--font);

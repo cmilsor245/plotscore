@@ -1,0 +1,56 @@
+[
+  {
+    "lowResPosterSrc": "../assets/img/home/popular-reviews/low-res--poster1.webp",
+    "highResPosterSrc": "../assets/img/home/popular-reviews/high-res--poster1.webp",
+    
+    "title": "Furiosa: A Mad Max Saga",
+    "year": "2024",
+
+    "userAvatarLowRes": "..assets/img/home/popular-reviews/avatars/low-res--avatar1.webp",
+    "userAvatarHighRes": "..assets/img/home/popular-reviews/avatars/high-res--avatar1.webp",
+    "username": "Francisco J. Ruiz",
+
+    "rating": 4,
+
+    "text": "Thoroughly cool and badass — there are few action directors who could match Miller working at 75 percent — but also a bit bloated and uneven. Some relatively simple segments are drawn out for too long, and then key narrative beats and character arcs are skimped over. I found the pacing to be a bit baffling, I must say; often killed the momentum for me.<br /><br />This has nothing to do with the Bible-like, episodic structure, which I thought was a great way to tell an entirely different type of story and distance the movie from cheap Fury Road comparisons. It just feels two cuts away from excellence.",
+
+    "likeCount": 2,
+    "commentCount": 0
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/popular-reviews/low-res--poster2.webp",
+    "highResPosterSrc": "../assets/img/home/popular-reviews/high-res--poster2.webp",
+
+    "title": "Terminator Salvation",
+    "year": "2009",
+
+    "userAvatarLowRes": "..assets/img/home/popular-reviews/avatars/low-res--avatar2.webp",
+    "userAvatarHighRes": "..assets/img/home/popular-reviews/avatars/high-res--avatar2.webp",
+    "username": "Jorge",
+
+    "rating": 3.5,
+
+    "text": "Animal I Have Become - Three Days Grace<br /><br />I can't escape this hell<br /><br />So many times I've tried<br /><br />But I'm still caged inside<br /><br />Somebody get me through this nightmare<br /><br />I can't control myself<br /><br />So what if you can see the darkest side of me?<br /><br />No one would ever change this animal I have become<br /><br />Help me believe it's not the real me<br /><br />Somebody help me tame this animal<br /><br />(This animal, this animal)<br /><br />I can't escape myself<br /><br />(I can't escape myself)<br /><br />So many times I've lied<br /><br />(So many times I've lied)<br /><br />But there's still rage inside<br /><br />Somebody get me through this nightmare<br /><br />I can't control myself",
+
+    "likeCount": 1,
+    "commentCount": 0
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/popular-reviews/low-res--poster3.webp",
+    "highResPosterSrc": "../assets/img/home/popular-reviews/high-res--poster3.webp",
+
+    "title": "The Fall Guy",
+    "year": "2024",
+
+    "userAvatarLowRes": "..assets/img/home/popular-reviews/avatars/low-res--avatar3.webp",
+    "userAvatarHighRes": "..assets/img/home/popular-reviews/avatars/high-res--avatar3.webp",
+    "username": "George Carmi",
+
+    "rating": 3.5,
+
+    "text": "This movie is funny as fuck. and all movies need to bring back the blooper reel/behind the scenes clips during the credits like Anyone But You and The Fall Guy.",
+
+    "likeCount": 445,
+    "commentCount": 8
+  }
+]
