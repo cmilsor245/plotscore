@@ -3,54 +3,91 @@
     "lowResPosterSrc": "../assets/img/home/popular-reviews/low-res--poster1.webp",
     "highResPosterSrc": "../assets/img/home/popular-reviews/high-res--poster1.webp",
     
-    "title": "Furiosa: A Mad Max Saga",
-    "year": "2024",
+    "title": "Love Lies Bleeding <span class = 'media-details__year'>2024</span>",
 
-    "userAvatarLowRes": "..assets/img/home/popular-reviews/avatars/low-res--avatar1.webp",
-    "userAvatarHighRes": "..assets/img/home/popular-reviews/avatars/high-res--avatar1.webp",
-    "username": "Francisco J. Ruiz",
+    "userAvatarLowRes": "../assets/img/home/popular-reviews/avatars/low-res--avatar1.webp",
+    "userAvatarHighRes": "../assets/img/home/popular-reviews/avatars/high-res--avatar1.webp",
+    "username": "#1 gizmo fan",
 
-    "rating": 4,
+    "rating": 4.5,
 
-    "text": "Thoroughly cool and badass — there are few action directors who could match Miller working at 75 percent — but also a bit bloated and uneven. Some relatively simple segments are drawn out for too long, and then key narrative beats and character arcs are skimped over. I found the pacing to be a bit baffling, I must say; often killed the momentum for me.<br /><br />This has nothing to do with the Bible-like, episodic structure, which I thought was a great way to tell an entirely different type of story and distance the movie from cheap Fury Road comparisons. It just feels two cuts away from excellence.",
+    "text": "some of y'all are gonna HATE this… and some of y'all are gonna be on the right side of history",
 
-    "likeCount": 2,
-    "commentCount": 0
+    "likeCount": 8050,
+    "commentCount": 3
   },
   {
     "lowResPosterSrc": "../assets/img/home/popular-reviews/low-res--poster2.webp",
     "highResPosterSrc": "../assets/img/home/popular-reviews/high-res--poster2.webp",
 
-    "title": "Terminator Salvation",
-    "year": "2009",
+    "hasEpisodeNumber": true,
+    "episodeNumber": "1",
 
-    "userAvatarLowRes": "..assets/img/home/popular-reviews/avatars/low-res--avatar2.webp",
-    "userAvatarHighRes": "..assets/img/home/popular-reviews/avatars/high-res--avatar2.webp",
+    "title": "The Lord of the Rings: The Rings of Power <span class = 'media-details__year'>2022</span>",
+
+    "userAvatarLowRes": "../assets/img/home/popular-reviews/avatars/low-res--avatar2.webp",
+    "userAvatarHighRes": "../assets/img/home/popular-reviews/avatars/high-res--avatar2.webp",
     "username": "Jorge",
 
-    "rating": 3.5,
+    "rating": 5,
 
-    "text": "Animal I Have Become - Three Days Grace<br /><br />I can't escape this hell<br /><br />So many times I've tried<br /><br />But I'm still caged inside<br /><br />Somebody get me through this nightmare<br /><br />I can't control myself<br /><br />So what if you can see the darkest side of me?<br /><br />No one would ever change this animal I have become<br /><br />Help me believe it's not the real me<br /><br />Somebody help me tame this animal<br /><br />(This animal, this animal)<br /><br />I can't escape myself<br /><br />(I can't escape myself)<br /><br />So many times I've lied<br /><br />(So many times I've lied)<br /><br />But there's still rage inside<br /><br />Somebody get me through this nightmare<br /><br />I can't control myself",
+    "text": "MORFYDD CLARK ❤️💘💗💕😍💝💞",
 
-    "likeCount": 1,
+    "likeCount": 17,
     "commentCount": 0
   },
   {
     "lowResPosterSrc": "../assets/img/home/popular-reviews/low-res--poster3.webp",
     "highResPosterSrc": "../assets/img/home/popular-reviews/high-res--poster3.webp",
 
-    "title": "The Fall Guy",
-    "year": "2024",
+    "title": "Godzilla Minus One <span class = 'media-details__year'>2022</span>",
 
-    "userAvatarLowRes": "..assets/img/home/popular-reviews/avatars/low-res--avatar3.webp",
-    "userAvatarHighRes": "..assets/img/home/popular-reviews/avatars/high-res--avatar3.webp",
-    "username": "George Carmi",
+    "userAvatarLowRes": "../assets/img/home/popular-reviews/avatars/low-res--avatar3.webp",
+    "userAvatarHighRes": "../assets/img/home/popular-reviews/avatars/high-res--avatar3.webp",
+    "username": "Mke Flanagan",
 
-    "rating": 3.5,
+    "rating": 4.5,
 
-    "text": "This movie is funny as fuck. and all movies need to bring back the blooper reel/behind the scenes clips during the credits like Anyone But You and The Fall Guy.",
+    "text": "Terrific. It is at once a nostalgic throwback to the classic Godzilla movies, while also feeling like a radical reinvention of the entire franchise. Godzilla as a metaphor has never been more eloquently handled, and the film's messages about war, peace, guilt, trauma, and wreckage - on scales both grand and intimate - are quietly, powerfully delivered. Excellent character development, set pieces, and effects. I can't really imagine a Godzilla movie possibly being better than this.",
 
-    "likeCount": 445,
-    "commentCount": 8
+    "likeCount": 3295,
+    "commentCount": 14
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/popular-reviews/low-res--poster4.webp",
+    "highResPosterSrc": "../assets/img/home/popular-reviews/high-res--poster4.webp",
+
+    "hasEpisodeNumber": true,
+    "episodeNumber": "5",
+
+    "title": "Doctor Who <span class = 'media-details__year'>2024</span>",
+
+    "userAvatarLowRes": "../assets/img/home/popular-reviews/avatars/low-res--avatar4.webp",
+    "userAvatarHighRes": "../assets/img/home/popular-reviews/avatars/high-res--avatar4.webp",
+    "username": "The_Watcher",
+
+    "rating": 4,
+
+    "text": "All of them should've been eaten, especially Lindy (Ricky was probably the only one worth saving)<br /><br />I don't think it was explained why the slugs and the dot wants to kill them in alphabetical order  but that doesn't matter because they were the ture heroes<br /><br />This episode written by Russell T Davies was pretty decent and interesting to have a Doctor and Companion-Lite episode, making them try to save someone from afar. I also did like the social commentary of white, rich and privileged kids being ignorant to the world around them<br /><br />Absolutely love Ncuti's performance as The Doctor experiencing racism towards him for the first time, that last scene really elevated the episode for me and gets a half a star, also really like Murray Gold's music during the scene <br /><br />Really like The Doctor and Ruby finally noticing the lady and my crazy theory is that the lady is his granddaughter, Susan, and Ruby is her daughter",
+
+    "likeCount": 39,
+    "commentCount": 0
+  },
+  {
+    "lowResPosterSrc": "../assets/img/home/popular-reviews/low-res--poster5.webp",
+    "highResPosterSrc": "../assets/img/home/popular-reviews/high-res--poster5.webp",
+
+    "title": "Hit Man <span class = 'media-details__year'>2023</span>",
+
+    "userAvatarLowRes": "../assets/img/home/popular-reviews/avatars/low-res--avatar5.webp",
+    "userAvatarHighRes": "../assets/img/home/popular-reviews/avatars/high-res--avatar5.webp",
+    "username": "Karst",
+
+    "rating": 4.5,
+
+    "text": "hot man",
+
+    "likeCount": 1823,
+    "commentCount": 1
   }
 ]

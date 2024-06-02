@@ -1,7 +1,172 @@
 .dark-theme {
-  
+  --color--comment-count: var(--color--primary-light-30);
+  --color--episode-badge: var(--color--secondary-main);
+  --color--like-area: var(--color--primary-light-20);
+  --color--media-title: var(--color--primary-light-90);
+  --color--review-text: var(--color--primary-light-80);
+  --color--username: var(--color--primary-light-70);
 }
 
 .light-theme {
-  
+  --color--comment-count: var(--color--primary-dark-30);
+  --color--episode-badge: var(--color--tertiary-main);
+  --color--like-area: var(--color--primary-dark-10);
+  --color--media-title: var(--color--primary-dark-90);
+  --color--review-text: var(--color--primary-dark-80);
+  --color--username: var(--color--primary-dark-50);
+}
+
+.popular-reviews__review {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.popular-review__main-info {
+  align-items: flex-end;
+  display: flex;
+  gap: 5px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.popular-review__poster {
+  background: center / cover;
+  border-radius: 3px;
+  height: 175px;
+  position: relative;
+  width: 115px;
+}
+
+.popular-review__main-info .episode {
+  align-items: center;
+  background-color: var(--color--episode-badge);
+  border-radius: 3px;
+  bottom: 2%;
+  display: flex;
+  height: fit-content;
+  justify-content: center;
+  left: 3%;
+  padding-bottom: 4px !important;
+  padding: 5px;
+  position: absolute;
+  width: fit-content;
+}
+
+.popular-review__main-info .episode p {
+  --font: clamp(10px, 1.1rem, 12px) var(--font--graphik-semibold);
+  color: var(--color--primary-light-90);
+  font: var(--font);
+  text-transform: uppercase;
+}
+
+.main-info__details {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-end;
+  width: fit-content;
+}
+
+.user-elements {
+  display: flex;
+  gap: 5px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.user-elements__avatar {
+  background: center / cover;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+
+.user-elements__username {
+  --font: clamp(13px, 1.5rem, 17px) var(--font--graphik-medium);
+  color: var(--color--username);
+  font: var(--font);
+  transition: .2s;
+}
+
+.main-info__media-details {
+  align-items: baseline;
+  display: flex;
+  gap: 2px;
+  justify-content: flex-start;
+}
+
+.main-info__media-title {
+  --font: clamp(24px, 2.6rem, 28px) var(--font--tiempos-headline-bold);
+  color: var(--color--media-title);
+  font: var(--font);
+  text-wrap: wrap;
+  transition: .2s;
+}
+
+.media-details__year {
+  --font: clamp(20px, 2rem, 24px) var(--font--graphik-light);
+  color: var(--color--media-title);
+  font: var(--font);
+  transition: .2s;
+}
+
+.main-info__rating-and-comment-count {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+
+.main-info__rating {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: var(--color--accent-main);
+  font-size: 15px;
+}
+
+.main-info__comment-count {
+  --font: clamp(13px, 1.5rem, 17px) var(--font--graphik-medium);
+  align-items: center;
+  color: var(--color--comment-count);
+  display: flex;
+  font: var(--font);
+  gap: 2px;
+  justify-content: flex-start;
+}
+
+.popular-reviews__review .review__text {
+  --font: clamp(13px, 1.5rem, 17px) var(--font--tiempos-headline-regular);
+  color: var(--color--review-text);
+  font: var(--font);
+  text-wrap: wrap;
+}
+
+.review__likes-area {
+  align-items: center;
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start;
+}
+
+.review__like-review, .review__like-count {
+  align-items: center;
+  display: flex;
+  gap: 3px;
+  justify-content: flex-start;
+  --font: clamp(13px, 1.6rem, 16px) var(--font--graphik-medium);
+  color: var(--color--like-area);
+  font: var(--font);
+}
+
+@media (width <= 730px) {
+  .popular-review__main-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

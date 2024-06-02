@@ -24,8 +24,8 @@
 .dive-back-in__slot .poster,
 .popular-in-plotscore__slot .poster {
   background: center / cover;
-  border-radius: 2px;
-  height: 165px;
+  border-radius: 3px;
+  height: 175px;
   position: relative;
   width: 115px;
 }

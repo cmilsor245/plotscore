@@ -1,0 +1,13 @@
+.dark-theme {
+  --color--divider: var(--color--primary-dark-30);
+}
+
+.light-theme {
+  --color--divider: var(--color--primary-light-50);
+}
+
+.divider {
+  background-color: var(--color--divider);
+  height: 1px;
+  width: 100%;
+}

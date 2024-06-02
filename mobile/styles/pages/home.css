@@ -69,7 +69,8 @@
 
 .new-releases,
 .dive-back-in,
-.popular-in-plotscore {
+.popular-in-plotscore,
+.popular-reviews {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -98,6 +99,14 @@
   gap: 5px;
   justify-content: flex-start;
   width: fit-content;
+}
+
+.popular-reviews__reviews {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: flex-start;
 }
 
 .control-panel {
