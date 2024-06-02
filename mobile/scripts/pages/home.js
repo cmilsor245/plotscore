@@ -1,17 +1,4 @@
-async function loadComponents(
-  path,
-  component
-) {
-  try {
-    const response = await fetch(path)
-    const html = await response.text()
-
-    document.querySelector(component).innerHTML = html
-  } catch (error) {
-    console.error(error)
-  }
-}
-
-window.onload = async function() {
-  
-}
+window.addEventListener('load', function() {
+  const backdrop = document.querySelector('.home__backdrop')
+  backdrop.src = '../assets/img/home/high-res--backdrop.webp'
+})
