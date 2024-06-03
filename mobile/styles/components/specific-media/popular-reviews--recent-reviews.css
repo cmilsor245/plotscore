@@ -1,6 +1,6 @@
 .dark-theme {
   --color--comment-count: var(--color--primary-light-50);
-  --color--likes-area--text: var(--color--primary-light-50);
+  --color--likes-area: var(--color--primary-light-50);
   --color--text: var(--color--primary-light-80);
   --color--username: var(--color--primary-light-70);
 }
