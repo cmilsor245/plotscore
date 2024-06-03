@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener('DOMContentLoaded', async () => {
   const container = document.querySelector('.popular-reviews__reviews')
 
   if (!container) {

@@ -1,0 +1,77 @@
+.dark-theme {
+  --color--like-count: var(--color--primary-light-30);
+  --color--review-text: var(--color--primary-light-80);
+  --color--title: var(--color--primary-light-90);
+}
+
+.light-theme {
+  --color--like-count: var(--color--primary-dark-30);
+  --color--review-text: var(--color--primary-dark-80);
+  --color--title: var(--color--primary-dark-90);
+}
+
+.recent-reviews__review {
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.recent-reviews__poster {
+  background: center / cover;
+  border-radius: 4px;
+  height: 190px;
+  position: relative;
+  width: 130px;
+}
+
+.recent-reviews__main-info {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.recent-reviews__title {
+  --font: clamp(19px, 2.5rem, 30px) var(--font--tiempos-headline-bold);
+  color: var(--color--title);
+  font: var(--font);
+}
+
+.recent-reviews__title span {
+  --font: clamp(18px, 2rem, 22px) var(--font--graphik-extralight);
+  color: var(--color--title);
+  font: var(--font);
+}
+
+.recent-reviews__rating {
+  align-items: center;
+  color: var(--color--accent-main);
+  display: flex;
+  font-size: 19px;
+  justify-content: flex-start;
+}
+
+.recent-reviews__text {
+  --font: clamp(15px, 1.7rem, 20px) var(--font--tiempos-headline-regular);
+  color: var(--color--review-text);
+  font: var(--font);
+}
+
+.recent-reviews__like-count {
+  --font: clamp(15px, 1.8rem, 20px) var(--font--graphik-medium);
+  align-items: center;
+  color: var(--color--like-count);
+  display: flex;
+  font: var(--font);
+  gap: 5px;
+  justify-content: flex-start;
+}
+
+@media (width <= 605px) {
+  .recent-reviews__review {
+    flex-direction: column;
+  }
+}

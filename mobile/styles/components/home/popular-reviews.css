@@ -109,7 +109,7 @@
 }
 
 .media-details__year {
-  --font: clamp(20px, 2rem, 24px) var(--font--graphik-light);
+  --font: clamp(20px, 2rem, 24px) var(--font--graphik-extralight);
   color: var(--color--media-title);
   font: var(--font);
   transition: .2s;
@@ -123,11 +123,11 @@
 }
 
 .main-info__rating {
-  display: flex;
-  justify-content: flex-start;
   align-items: center;
   color: var(--color--accent-main);
+  display: flex;
   font-size: 15px;
+  justify-content: flex-start;
 }
 
 .main-info__comment-count {

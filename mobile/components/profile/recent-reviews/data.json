@@ -1,0 +1,50 @@
+[
+  {
+    "lowResPosterSrc": "../assets/img/profile/recent-reviews/low-res--poster1.webp",
+    "highResPosterSrc": "../assets/img/profile/recent-reviews/high-res--poster1.webp",
+
+    "title": "Star Wars: The Rise of Skywalker <span class = 'media-details__year--profile'>2019</span>",
+
+    "rating": 5,
+
+    "text": "- there's been no one for so long. who are you?<br /><br />+ i'm rey.<br /><br />- rey who?<br /><br />+ rey skywalker.",
+
+    "likeCount": 1
+  },
+  {
+    "lowResPosterSrc": "../assets/img/profile/recent-reviews/low-res--poster2.webp",
+    "highResPosterSrc": "../assets/img/profile/recent-reviews/high-res--poster2.webp",
+
+    "title": "Dune: Part Two <span>2024</span>",
+
+    "rating": 5,
+
+    "text": "my thy knife chip and shatter",
+
+    "likeCount": 0
+  },
+  {
+    "lowResPosterSrc": "../assets/img/profile/recent-reviews/low-res--poster3.webp",
+    "highResPosterSrc": "../assets/img/profile/recent-reviews/high-res--poster3.webp",
+
+    "title": "Oppenheimer <span>2023</span>",
+
+    "rating": 5,
+
+    "text": "lives were changed (mine)",
+
+    "likeCount": 0
+  },
+  {
+    "lowResPosterSrc": "../assets/img/profile/recent-reviews/low-res--poster4.webp",
+    "highResPosterSrc": "../assets/img/profile/recent-reviews/high-res--poster4.webp",
+
+    "title": "La La Land <span>2016</span>",
+
+    "rating": 5,
+
+    "text": "i'm always gonna love you",
+
+    "likeCount": 0
+  }
+]

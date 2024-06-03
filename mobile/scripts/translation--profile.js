@@ -8,7 +8,8 @@ const translationsEN = {
     },
     RECENT_REVIEWS: {
       TITLE: 'recent reviews',
-      SUBTITLE: 'more'
+      SUBTITLE: 'more',
+      LIKES: 'No likes yet'
     }
   }
 }
@@ -23,7 +24,8 @@ const translationsES = {
     },
     RECENT_REVIEWS: {
       TITLE: 'reviews recientes',
-      SUBTITLE: 'ver más'
+      SUBTITLE: 'ver más',
+      LIKES: 'No hay likes aún'
     }
   }
 }
@@ -46,7 +48,9 @@ function translatePage(lang) {
     { selector: '.recent-activity__title', namespace: 'PROFILE', section: 'RECENT_ACTIVITY', key: 'TITLE' },
 
     { selector: '.recent-reviews__title', namespace: 'PROFILE', section: 'RECENT_REVIEWS', key: 'TITLE' },
-    { selector: '.recent-reviews__subtitle', namespace: 'PROFILE', section: 'RECENT_REVIEWS', key: 'SUBTITLE' }
+    { selector: '.recent-reviews__subtitle', namespace: 'PROFILE', section: 'RECENT_REVIEWS', key: 'SUBTITLE' },
+
+    { selector: '.recent-reviews__like-count-text', namespace: 'PROFILE', section: 'RECENT_REVIEWS', key: 'LIKES' }
   ]
 
   elementsToTranslate.forEach(item => {
