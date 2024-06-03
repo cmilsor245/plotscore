@@ -1,11 +1,13 @@
 .dark-theme {
+  --color--comment-count: var(--color--primary-light-50);
   --color--likes-area--text: var(--color--primary-light-50);
   --color--text: var(--color--primary-light-80);
   --color--username: var(--color--primary-light-70);
 }
 
 .light-theme {
-  --color--likes-area--text: var(--color--primary-dark-50);
+  --color--comment-count: var(--color--primary-dark-50);
+  --color--likes-area: var(--color--primary-dark-50);
   --color--text: var(--color--primary-dark-80);
   --color--username: var(--color--primary-dark-70);
 }
