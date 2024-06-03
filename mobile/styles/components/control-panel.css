@@ -119,7 +119,8 @@
 }
 
 .control-panel__theme-button i,
-.control-panel__logout-button {
+.control-panel__logout-button,
+.control-panel__back-button {
   color: var(--color--control-panel--icon);
   font-size: 40px;
 }

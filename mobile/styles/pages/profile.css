@@ -29,7 +29,7 @@
   flex-direction: column;
   gap: 40px;
   justify-content: center;
-  margin-top: 10%;
+  margin-top: var(--header-height);
   padding-inline: 2%;
   width: 100%;
 }
