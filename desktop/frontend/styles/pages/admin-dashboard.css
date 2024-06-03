@@ -1,5 +1,7 @@
 .dark-theme {
   --color--admin-icon: var(--color--accent-main);
+  --color--cancel-button: var(--color--tertiary-light-90);
+  --color--confirm-button: var(--color--secondary-light-90);
   --color--count: var(--color--primary-light-50);
   --color--delete-user--hover: var(--color--secondary-light-20);
   --color--edit-user-hover: var(--color--tertiary-light-20);
@@ -15,6 +17,8 @@
 
 .light-theme {
   --color--admin-icon: var(--color--secondary-main);
+  --color--cancel-button: var(--color--tertiary-dark-90);
+  --color--confirm-button: var(--color--secondary-dark-90);
   --color--count: var(--color--primary-dark-30);
   --color--delete-user--hover: var(--color--secondary-dark-20);
   --color--edit-user-hover: var(--color--tertiary-dark-20);
@@ -90,7 +94,7 @@
 }
 
 .delete-user-modal__button--cancel {
-  color: var(--color--tertiary-light-90);
+  color: var(--color--cancel-button);
 }
 
 .delete-user-modal__button--cancel:hover {
@@ -98,7 +102,7 @@
 }
 
 .delete-user-modal__button--confirm {
-  color: var(--color--secondary-light-90);
+  color: var(--color--confirm-button);
 }
 
 .delete-user-modal__button--confirm:hover {

@@ -10,6 +10,8 @@ class User extends Authenticatable {
   use HasFactory, Notifiable, HasApiTokens;
 
   protected $fillable = [
+    'secret_key',
+
     'role',
 
     'username',
@@ -30,4 +32,16 @@ class User extends Authenticatable {
   protected $hidden = [
     'password'
   ];
+
+  public function reviews() {
+    return $this -> hasMany(Review::class);
+  }
+
+  public function followers() {
+    return $this -> belongsToMany(User::class, 'followers', 'followed_id', 'follower_id');
+  }
+
+  public function following() {
+    return $this -> belongsToMany(User::class, 'followers', 'follower_id', 'followed_id');
+  }
 }

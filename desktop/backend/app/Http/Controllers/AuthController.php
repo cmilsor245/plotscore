@@ -95,8 +95,6 @@ class AuthController extends Controller {
     ], Response::HTTP_OK) -> withCookie($cookie);
   }
 
-  /* --------------------------------------------------------------------------- */
-
   public function getAllUsers(Request $request) {
     if (!auth() -> check()) {
       return response() -> json([
@@ -117,12 +115,11 @@ class AuthController extends Controller {
       'users' => $users -> items(),
       'currentPage' => $users -> currentPage(),
       'totalPages' => $users -> lastPage(),
-      'totalItems' => $users -> total(),
+      'totalItems' => $users -> total()
     ], Response::HTTP_OK);
   }
 
-  /* --------------------------------------------------------------------------- */
-
+  // TODO: improve logic
   public function updateUser(Request $request, $id) {
     if (!auth() -> check()) {
       return response() -> json([
