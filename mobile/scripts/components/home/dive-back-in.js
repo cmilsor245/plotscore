@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   try {
-    const response = await fetch('../components/dive-back-in/data.json')
+    const response = await fetch('../components/home/dive-back-in/data.json')
     const data = await response.json()
 
     const articles = data.map((item, index) => {

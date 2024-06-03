@@ -35,16 +35,16 @@
 
 .popular-review__poster {
   background: center / cover;
-  border-radius: 3px;
-  height: 175px;
+  border-radius: 4px;
+  height: 190px;
   position: relative;
-  width: 115px;
+  width: 130px;
 }
 
 .popular-review__main-info .episode {
   align-items: center;
   background-color: var(--color--episode-badge);
-  border-radius: 3px;
+  border-radius: 4px;
   bottom: 2%;
   display: flex;
   height: fit-content;

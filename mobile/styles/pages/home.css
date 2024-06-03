@@ -1,24 +1,10 @@
 .dark-theme {
   --color--backdrop-edges: var(--color--primary-dark-70);
-  --color--control-panel--bg: var(--color--primary-dark-50);
-  --color--control-panel--border: var(--color--primary-dark-30);
-  --color--control-panel--dragger: var(--color--primary-light-60);
-  --color--control-panel--icon: var(--color--primary-light-90);
-  --color--control-panel--overlay: rgba(7, 8, 10, .2);
-  --color--control-panel--username: var(--color--primary-light-90);
-  --color--menu-icon: var(--color--primary-light-90);
   --color--section-title: var(--color--primary-light-90);
 }
 
 .light-theme {
   --color--backdrop-edges: var(--color--primary-light-80);
-  --color--control-panel--bg: var(--color--primary-light-60);
-  --color--control-panel--border: var(--color--primary-light-30);
-  --color--control-panel--dragger: var(--color--primary-dark-40);
-  --color--control-panel--icon: var(--color--primary-dark-90);
-  --color--control-panel--overlay: rgba(236, 238, 240, .2);
-  --color--control-panel--username: var(--color--primary-main);
-  --color--menu-icon: var(--color--primary-dark-90);
   --color--section-title: var(--color--primary-dark-90);
 }
 
@@ -41,20 +27,6 @@
   width: 100%;
 }
 
-.menu-icon {
-  color: var(--color--menu-icon);
-  font-size: 50px;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  transition: .05s;
-  z-index: 2;
-}
-
-.menu-icon:active {
-  transform: scale(.9);
-}
-
 .home__content {
   align-items: flex-start;
   box-shadow: 0 -10px 30px 40px var(--color--backdrop-edges);
@@ -62,9 +34,9 @@
   flex-direction: column;
   gap: 50px;
   justify-content: flex-start;
+  padding-bottom: 25px;
   padding-inline: 2%;
   width: 100%;
-  padding-bottom: 25px;
 }
 
 .new-releases,
@@ -107,127 +79,4 @@
   flex-direction: column;
   gap: 25px;
   justify-content: flex-start;
-}
-
-.control-panel {
-  align-items: center;
-  background-color: var(--color--control-panel--bg);
-  border-radius: 20px 20px 0 0;
-  border-top: 5px solid var(--color--control-panel--border);
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  justify-content: center;
-  left: 0;
-  padding: 10px 30px;
-  position: fixed;
-  transform: translateY(100%);
-  transition: .1s;
-  width: 100%;
-  z-index: 3;
-}
-
-.control-panel.open {
-  transform: translateY(0);
-}
-
-.dragger {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: fit-content;
-}
-
-.dragger__handle {
-  background-color: var(--color--control-panel--dragger);
-  border-radius: 100px;
-  cursor: pointer;
-  height: 5px;
-  width: 20%;
-}
-
-.control-panel__user {
-  align-items: center;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  width: fit-content;
-}
-
-.control-panel__avatar-container {
-  align-items: center;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  width: 100%;
-  flex-direction: column;
-  text-decoration: none;
-}
-
-.control-panel__avatar {
-  border-radius: 50%;
-  cursor: pointer;
-  height: 120px;
-  object-fit: cover;
-  width: 120px;
-}
-
-.control-panel__username {
-  --font: clamp(10px, 2rem, 22px) var(--font--graphik-bold);
-  color: var(--color--control-panel--username);
-  cursor: pointer;
-  font: var(--font);
-}
-
-.control-panel__actions {
-  align-items: center;
-  display: flex;
-  gap: 10px;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.control-panel__button {
-  --font: clamp(12px, 1.8rem, 20px) var(--font--graphik-semibold);
-  align-items: center;
-  border-radius: 5px;
-  color: var(--color--primary-light-90);
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  width: fit-content;
-  height: fit-content;
-  border: none;
-  padding: 10px;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-.control-panel__language-button img {
-  height: 40px;
-  width: 40px;
-}
-
-.control-panel__theme-button i,
-.control-panel__logout-button {
-  font-size: 40px;
-  color: var(--color--control-panel--icon);
-}
-
-.control-panel__overlay {
-  background-color: var(--color--control-panel--overlay);
-  height: 100vh;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  z-index: 2;
-  display: none;
-}
-
-.control-panel__overlay.open {
-  display: block;
 }

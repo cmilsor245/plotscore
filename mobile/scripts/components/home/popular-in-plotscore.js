@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   try {
-    const response = await fetch('../components/popular-in-plotscore/data.json')
+    const response = await fetch('../components/home/popular-in-plotscore/data.json')
     const data = await response.json()
 
     const articles = data.map((item, index) => {

@@ -1,7 +1,126 @@
 .dark-theme {
-  
+  --color--section-heading: var(--color--primary-light-90);
+  --color--settings-icon: var(--color--primary-light-60);
+  --color--username: var(--color--primary-light-90);
 }
 
 .light-theme {
-  
+  --color--section-heading: var(--color--primary-dark-90);
+  --color--settings-icon: var(--color--primary-dark-40);
+  --color--username: var(--color--primary-main);
+}
+
+.profile__elements {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.profile__header {
+  width: 100%;
+}
+
+.profile__content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 10%;
+  padding-inline: 2%;
+  width: 100%;
+}
+
+.profile__content .main-info {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+.avatar-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.avatar-wrapper .settings-icon {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  font-size: 25px;
+  color: var(--color--settings-icon);
+}
+
+.avatar-wrapper .avatar {
+  background: url('../../assets/img/profile/low-res--avatar.webp') center / cover;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+}
+
+.profile__content .main-info h3 {
+  --font: clamp(19px, 2.5rem, 30px) var(--font--graphik-bold);
+  color: var(--color--username);
+  font: var(--font);
+}
+
+.favorite-media,
+.recent-activity,
+.recent-reviews {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+.section-heading {
+  align-items: center;
+  color: var(--color--section-heading);
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  justify-content: center;
+  width: 100%;
+}
+
+.section-heading .up {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.section-heading .up h5 {
+  --font: clamp(12px, 1.4rem, 14px) var(--font--graphik-light);
+  font: var(--font);
+  text-transform: uppercase;
+}
+
+.section-heading .up h6 {
+  --font: clamp(12px, 1.4rem, 14px) var(--font--graphik-extralight);
+  font: var(--font);
+  text-transform: uppercase;
+}
+
+.section-heading .base {
+  background-color: var(--color--section-heading);
+  height: 1px;
+  width: 100%;
+}
+
+.favorite-media__media-slots,
+.recent-activity__media-slots {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }

@@ -546,6 +546,10 @@ project atoms
   --font--graphik-super-italic: 'graphik super - italic', sans-serif;
   --font--graphik-super-compatible: 'graphik super - compatible', sans-serif;
   --font--graphik-super-italic-compatible: 'graphik super - italic - compatible', sans-serif;
+
+  /* ------------------------------------------- */
+
+  --header-height: 70px;
 }
 
 .dark-theme {
@@ -569,7 +573,7 @@ project atoms
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 0;
 }
 
 ::-webkit-scrollbar-track {

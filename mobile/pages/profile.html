@@ -9,17 +9,79 @@
 
     <link rel = 'stylesheet' href = 'https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css' />
 
+    <script src = '../scripts/components/blurry-header.js' defer></script>
     <script src = '../scripts/components/control-panel.js' defer></script>
+    <script src = '../scripts/components/profile/favorite-media.js' defer></script>
+    <script src = '../scripts/components/profile/recent-activity.js' defer></script>
     <script src = '../scripts/pages/profile.js' defer></script>
     <script src = '../scripts/translation--profile.js'></script>
 
+    <link rel = 'stylesheet' href = '../styles/components/blurry-header.css' />
+    <link rel = 'stylesheet' href = '../styles/components/control-panel.css' />
+    <link rel = 'stylesheet' href = '../styles/components/divider.css' />
+    <link rel = 'stylesheet' href = '../styles/components/profile/favorite-media--recent-activity.css' />
     <link rel = 'stylesheet' href = '../styles/global.css' />
     <link rel = 'stylesheet' href = '../styles/pages/profile.css' />
   </head>
   <body>
     <main>
       <section class = 'profile__elements'>
-        
+        <header class = 'profile__header'>
+          <div class = 'blurry-header'>
+            <i class = 'ti ti-menu menu-icon'></i>
+          </div>
+        </header>
+
+        <section class = 'page__content profile__content'>
+          <section class = 'main-info'>
+            <div class = 'avatar-wrapper'>
+              <i class = 'ti ti-settings settings-icon'></i>
+              <div class = 'avatar'></div>
+            </div>
+
+            <h3>christianms13</h3>
+          </section>
+
+          <!-- ------------------------------ -->
+
+          <section class = 'favorite-media'>
+            <div class = 'section-heading'>
+              <div class = 'up'>
+                <h5 class = 'favorite-media__title'></h5>
+              </div>
+              <div class = 'base'></div>
+            </div>
+
+            <section class = 'favorite-media__media-slots'></section>
+          </section>
+
+          <!-- ------------------------------ -->
+
+          <section class = 'recent-activity'>
+            <div class = 'section-heading'>
+              <div class = 'up'>
+                <h5 class = 'recent-activity__title'></h5>
+              </div>
+              <div class = 'base'></div>
+            </div>
+
+            <section class = 'recent-activity__media-slots'></section>
+          </section>
+
+          <!-- ------------------------------ -->
+
+          <section class = 'recent-reviews'>
+            <div class = 'section-heading'>
+              <div class = 'up'>
+                <h5 class = 'recent-reviews__title'></h5>
+                <h6 class = 'recent-reviews__subtitle'></h6>
+              </div>
+              <div class = 'base'></div>
+            </div>
+
+            <section class = 'recent-reviews__reviews-area'></section>
+          </section>
+        </section>
       </section>
     </main>
 
@@ -57,37 +119,37 @@
     <!-- ---------------------------------------------- -->
 
     <script>
-      let theme = localStorage.getItem('theme') || 'dark';
-      document.body.classList.add(theme + '-theme');
-      updateThemeIcon();
+      let theme = localStorage.getItem('theme') || 'dark'
+      document.body.classList.add(theme + '-theme')
+      updateThemeIcon()
 
       function changeTheme() {
-        theme = theme === 'dark' ? 'light' : 'dark';
-        localStorage.setItem('theme', theme);
-        document.body.classList.toggle('dark-theme');
-        document.body.classList.toggle('light-theme');
-        updateThemeIcon();
+        theme = theme === 'dark' ? 'light' : 'dark'
+        localStorage.setItem('theme', theme)
+        document.body.classList.toggle('dark-theme')
+        document.body.classList.toggle('light-theme')
+        updateThemeIcon()
       }
 
       function updateThemeIcon() {
-        const themeIcon = document.getElementById('theme-icon');
-        themeIcon.className = theme === 'dark' ? 'ti ti-bulb-filled' : 'ti ti-bulb-off';
+        const themeIcon = document.getElementById('theme-icon')
+        themeIcon.className = theme === 'dark' ? 'ti ti-bulb-filled' : 'ti ti-bulb-off'
       }
 
-      let lang = localStorage.getItem('lang') || 'en';
-      translatePage(lang);
-      updateLanguageIcon();
+      let lang = localStorage.getItem('lang') || 'en'
+      translatePage(lang)
+      updateLanguageIcon()
 
       function changeLanguage() {
-        lang = lang === 'en' ? 'es' : 'en';
-        localStorage.setItem('lang', lang);
-        translatePage(lang);
-        updateLanguageIcon();
+        lang = lang === 'en' ? 'es' : 'en'
+        localStorage.setItem('lang', lang)
+        translatePage(lang)
+        updateLanguageIcon()
       }
 
       function updateLanguageIcon() {
-        const languageIcon = document.getElementById('language-icon');
-        languageIcon.src = lang === 'en' ? '../assets/icons/spanish.svg' : '../assets/icons/english.svg';
+        const languageIcon = document.getElementById('language-icon')
+        languageIcon.src = lang === 'en' ? '../assets/icons/spanish.svg' : '../assets/icons/english.svg'
       }
     </script>
   </body>

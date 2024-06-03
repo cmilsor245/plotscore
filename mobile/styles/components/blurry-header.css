@@ -1,0 +1,38 @@
+.dark-theme {
+  --color--blurry-header--bg: rgba(20, 25, 31, .1);
+  --color--menu-icon: var(--color--primary-light-90);
+}
+
+.light-theme {
+  --color--blurry-header--bg: rgba(218, 221, 224, .1);
+  --color--menu-icon: var(--color--primary-dark-90);
+}
+
+.blurry-header {
+  align-items: center;
+  display: flex;
+  height: var(--header-height);
+  justify-content: flex-end;
+  padding-right: 10px;
+  position: fixed;
+  top: 0;
+  transition: .5s;
+  width: 100%;
+  z-index: 1;
+}
+
+.blurry-header.blurry {
+  backdrop-filter: blur(5px);
+  background-color: var(--color--blurry-header--bg);
+}
+
+.menu-icon {
+  color: var(--color--menu-icon);
+  font-size: 50px;
+  transition: .05s;
+  z-index: 2;
+}
+
+.menu-icon:active {
+  transform: scale(.9);
+}

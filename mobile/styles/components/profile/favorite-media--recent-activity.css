@@ -1,0 +1,86 @@
+.dark-theme {
+  --color--episode-badge: var(--color--secondary-main);
+}
+
+.light-theme {
+  --color--episode-badge: var(--color--tertiary-main);
+}
+
+.favorite-media__poster,
+.recent-activity__poster {
+  background: center / cover;
+  border-radius: 4px;
+  height: 190px;
+  position: relative;
+  width: 130px;
+}
+
+.recent-activity__poster .episode {
+  align-items: center;
+  background-color: var(--color--episode-badge);
+  border-radius: 4px;
+  bottom: 2%;
+  display: flex;
+  height: fit-content;
+  justify-content: center;
+  left: 3%;
+  padding-bottom: 4px !important;
+  padding: 5px;
+  position: absolute;
+  width: fit-content;
+}
+
+.recent-activity__poster .episode p {
+  --font: clamp(10px, 1.1rem, 12px) var(--font--graphik-semibold);
+  color: var(--color--primary-light-90);
+  font: var(--font);
+  text-transform: uppercase;
+}
+
+@media (width <= 568px) {
+  .favorite-media__poster,
+  .recent-activity__poster {
+    height: 180px;
+    width: 120px;
+  }
+}
+
+@media (width <= 518px) {
+  .favorite-media__poster,
+  .recent-activity__poster {
+    height: 160px;
+    width: 110px;
+  }
+}
+
+@media (width <= 478px) {
+  .favorite-media__poster,
+  .recent-activity__poster {
+    height: 145px;
+    width: 100px;
+  }
+}
+
+@media (width <= 424px) {
+  .favorite-media__poster,
+  .recent-activity__poster {
+    height: 135px;
+    width: 90px;
+  }
+}
+
+@media (width <= 388px) {
+  .favorite-media__poster,
+  .recent-activity__poster {
+    height: 125px;
+    width: 80px;
+  }
+}
+
+@media (width <= 348px) {
+  .favorite-media__poster,
+  .recent-activity__poster {
+    height: 115px;
+    width: 75px;
+  }
+}

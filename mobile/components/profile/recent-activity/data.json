@@ -1,0 +1,24 @@
+[
+  {
+    "lowResPosterSrc": "../assets/img/profile/recent-activity/low-res--poster1.webp",
+    "highResPosterSrc": "../assets/img/profile/recent-activity/high-res--poster1.webp",
+
+    "hasEpisodeNumber": true,
+    "episodeNumber": 2
+  },
+  {
+    "lowResPosterSrc": "../assets/img/profile/recent-activity/low-res--poster2.webp",
+    "highResPosterSrc": "../assets/img/profile/recent-activity/high-res--poster2.webp",
+
+    "hasEpisodeNumber": true,
+    "episodeNumber": 1
+  },
+  {
+    "lowResPosterSrc": "../assets/img/profile/recent-activity/low-res--poster3.webp",
+    "highResPosterSrc": "../assets/img/profile/recent-activity/high-res--poster3.webp"
+  },
+  {
+    "lowResPosterSrc": "../assets/img/profile/recent-activity/low-res--poster4.webp",
+    "highResPosterSrc": "../assets/img/profile/recent-activity/high-res--poster4.webp"
+  }
+]

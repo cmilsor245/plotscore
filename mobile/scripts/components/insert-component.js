@@ -13,8 +13,8 @@ async function loadComponents(
 }
 
 window.onload = async function() {
-  await loadComponents(
-    'component-file',
-    'where-to-insert'
-  )
+  // await loadComponents(
+  //   '../components/control-panel.html',
+  //   '.control-panel'
+  // )
 }
