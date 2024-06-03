@@ -164,7 +164,7 @@ He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualqui
 - [x] :green_circle: Despliegue de la **versión mobile** haciendo uso de una AWS EC2
 - [x] :green_circle: Proceso de despliegue automático para la **versión mobile** (frontend)
 - [x] :green_circle: Crear un **dominio personalizado** para la **versión desktop** :arrow_right: [Link](https://plotscore--desktop.duckdns.org/)
-- [x] :green_circle: Crear un **dominio personalizado** para la **versión mobile**
+- [x] :green_circle: Crear un **dominio personalizado** para la **versión mobile** :arrow_right: [Link](https://plotscore--mobile.duckdns.org/)
 - [x] :green_circle: Habilitando conexiones **HTTPS** hacia la **versión desktop**
 - [x] :green_circle: Habilitando conexiones **HTTPS** hacia la **versión mobile**
 - [x] :green_circle: Instalando un **servidor seguro FTP** para la **versión desktop**
