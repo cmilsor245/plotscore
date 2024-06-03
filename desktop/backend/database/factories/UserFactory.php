@@ -10,18 +10,18 @@ class UserFactory extends Factory {
 
   public function definition(): array {
     return [
-      'username' => $this->faker->unique()->userName,
-      'given_name' => $this->faker->optional()->firstName,
-      'family_name' => $this->faker->optional()->lastName,
+      'username' => $this -> faker -> unique() -> userName,
+      'given_name' => $this -> faker -> optional() -> firstName,
+      'family_name' => $this -> faker -> optional() -> lastName,
 
-      'email' => $this->faker->unique()->email,
+      'email' => $this -> faker -> unique() -> email,
       'password' => Hash::make('password'),
 
-      'bio' => $this->faker->optional()->text,
+      'bio' => $this -> faker -> optional() -> text,
 
-      'location' => $this->faker->optional()->city,
-      'website' => $this->faker->optional()->url,
-      'pronouns' => $this->faker->optional()->randomElement(['he/him', 'she/her', 'they/them'])
+      'location' => $this -> faker -> optional() -> city,
+      'website' => $this -> faker -> optional() -> url,
+      'pronouns' => $this -> faker -> optional() -> randomElement(['he/him', 'she/her', 'they/them'])
     ];
   }
 }
