@@ -38,7 +38,7 @@ I've created a permanent deployment using ***Vercel*** just so everyone can visi
 #### Frontend
 
 - [ ] :yellow_circle: Frontend side of the **desktop version**
-- [ ] :yellow_circle: Frontend side of the **mobile version**
+- [x] :green_circle: Frontend side of the **mobile version**
 
 #### Backend
 
@@ -150,7 +150,7 @@ He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualqui
 #### Frontend
 
 - [ ] :yellow_circle: Parte frontend de la **versión desktop**
-- [ ] :yellow_circle: Parte frontend de la **versión mobile**
+- [x] :green_circle: Parte frontend de la **versión mobile**
 
 #### Backend
 
