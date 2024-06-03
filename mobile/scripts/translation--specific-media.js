@@ -1,35 +1,39 @@
 const translationsEN = {
-  LOGIN_PAGE: {
-    TITLE: {
-      TEXT: 'Welcome back!'
+  SPECIFIC_MEDIA: {
+    MAIN_INFO: {
+      DIRECTED_BY: 'Directed by',
     },
-    FORM: {
-      LOG_IN_BUTTON: 'Log in',
+    SYNOPSIS: {
+      TITLE: 'A LONG TIME AGO IN A GALAXY FAR, FAR AWAY…',
+      TEXT: 'Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.'
     },
-    FALLBACK_TEXTS: {
-      OR: 'or',
-      SIGN_IN_WITH_GOOGLE: '<img src = "../assets/icons/account-forms/google.svg" alt = "google logo" /> Sign in with Google',
-
-      FORGOT_PASSWORD: 'Forgot password?',
-      SIGNUP_REDIRECT: 'Don\'t have an account? <a href = \'signup.html\'>Sign up</a>'
+    POPULAR_REVIEWS: {
+      TITLE: 'popular reviews',
+      SUBTITLE: 'more',
+    },
+    RECENT_REVIEWS: {
+      TITLE: 'recent reviews',
+      SUBTITLE: 'more',
     }
   }
 }
 
 const translationsES = {
-  LOGIN_PAGE: {
-    TITLE: {
-      TEXT: '¡Bienvenid@ de nuevo!'
+  SPECIFIC_MEDIA: {
+    MAIN_INFO: {
+      DIRECTED_BY: 'Dirigido por',
     },
-    FORM: {
-      LOG_IN_BUTTON: 'Iniciar sesión',
+    SYNOPSIS: {
+      TITLE: 'HACE MUCHO TIEMPO EN UNA GALAXIA MUY, MUY LEJANA…',
+      TEXT: 'La Princesa Leia es capturada y retenida como rehén por las malvadas fuerzas Imperiales en su esfuerzo por tomar el control del Imperio Galáctico. El aventurero Luke Skywalker y el apuesto capitán Han Solo se unen con el adorable dúo de robots R2-D2 y C-3PO para rescatar a la hermosa princesa y restaurar la paz y la justicia en el Imperio.'
     },
-    FALLBACK_TEXTS: {
-      OR: 'o',
-      SIGN_IN_WITH_GOOGLE: '<img src = "../assets/icons/account-forms/google.svg" alt = "google logo" /> Iniciar sesión con Google',
-
-      FORGOT_PASSWORD: '¿Has olvidado tu contraseña?',
-      SIGNUP_REDIRECT: '¿No tienes una cuenta? <a href = \'signup.html\'>Regístrate</a>'
+    POPULAR_REVIEWS: {
+      TITLE: 'reviews populares',
+      SUBTITLE: 'ver más',
+    },
+    RECENT_REVIEWS: {
+      TITLE: 'reviews recientes',
+      SUBTITLE: 'ver más',
     }
   }
 }
@@ -47,15 +51,16 @@ function translate(lang, namespace, section, key) {
 
 function translatePage(lang) {
   const elementsToTranslate = [
-    { selector: '.welcome-back', namespace: 'LOGIN_PAGE', section: 'TITLE', key: 'TEXT' },
+    { selector: '.directed-by', namespace: 'SPECIFIC_MEDIA', section: 'MAIN_INFO', key: 'DIRECTED_BY' },
 
-    { selector: '.login-button', namespace: 'LOGIN_PAGE', section: 'FORM', key: 'LOG_IN_BUTTON' },
+    { selector: '.synopsis-title', namespace: 'SPECIFIC_MEDIA', section: 'SYNOPSIS', key: 'TITLE' },
+    { selector: '.synopsis', namespace: 'SPECIFIC_MEDIA', section: 'SYNOPSIS', key: 'TEXT' },
 
-    { selector: '.or-divider__text', namespace: 'LOGIN_PAGE', section: 'FALLBACK_TEXTS', key: 'OR' },
-    { selector: '.sign-in-google', namespace: 'LOGIN_PAGE', section: 'FALLBACK_TEXTS', key: 'SIGN_IN_WITH_GOOGLE' },
+    { selector: '.specific-media__popular-reviews__title', namespace: 'SPECIFIC_MEDIA', section: 'POPULAR_REVIEWS', key: 'TITLE' },
+    { selector: '.popular-reviews__subtitle', namespace: 'SPECIFIC_MEDIA', section: 'POPULAR_REVIEWS', key: 'SUBTITLE' },
 
-    { selector: '.forgot-password', namespace: 'LOGIN_PAGE', section: 'FALLBACK_TEXTS', key: 'FORGOT_PASSWORD' },
-    { selector: '.signup-redirect', namespace: 'LOGIN_PAGE', section: 'FALLBACK_TEXTS', key: 'SIGNUP_REDIRECT' }
+    { selector: '.specific-media__recent-reviews__title', namespace: 'SPECIFIC_MEDIA', section: 'RECENT_REVIEWS', key: 'TITLE' },
+    { selector: '.recent-reviews__subtitle', namespace: 'SPECIFIC_MEDIA', section: 'RECENT_REVIEWS', key: 'SUBTITLE' },
   ]
 
   elementsToTranslate.forEach(item => {

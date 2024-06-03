@@ -1,0 +1,193 @@
+.dark-theme {
+  --color--section-heading: var(--color--primary-light-90);
+  --color--backdrop-edges: var(--color--primary-dark-70);
+  --color--section-title: var(--color--primary-light-90);
+  --color--media-title: var(--color--primary-light-90);
+  --color--additional-info: var(--color--primary-light-50);
+}
+
+.light-theme {
+  --color--section-heading: var(--color--primary-dark-90);
+  --color--backdrop-edges: var(--color--primary-light-80);
+  --color--section-title: var(--color--primary-dark-90);
+  --color--media-title: var(--color--primary-dark-90);
+  --color--additional-info: var(--color--primary-dark-40);
+}
+
+.specific-media__elements {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.specific-media__header {
+  width: 100%;
+}
+
+.specific-media__backdrop {
+  height: 340px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.specific-media__content {
+  align-items: flex-start;
+  box-shadow: 0 -10px 30px 40px var(--color--backdrop-edges);
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: flex-start;
+  padding-bottom: 25px;
+  padding-inline: 2%;
+  width: 100%;
+}
+
+.specific-media__content .media__main-info {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.specific-media__content .media__main-info .main-details {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.specific-media__content .media__main-info .main-details h1 {
+  --font: clamp(30px, 3.2rem, 35px) var(--font--tiempos-headline-black);
+  color: var(--color--media-title);
+  font: var(--font);
+  letter-spacing: 1px;
+}
+
+.directed-by-wrapper {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.directed-by {
+  --font: clamp(12px, 1.2rem, 14px) var(--font--graphik-light);
+  color: var(--color--additional-info);
+  font: var(--font);
+}
+
+.director {
+  --font: clamp(12px, 1.2rem, 14px) var(--font--graphik-bold);
+  color: var(--color--additional-info);
+  font: var(--font);
+}
+
+.release-year {
+  --font: clamp(12px, 1.2rem, 14px) var(--font--graphik-regular);
+  color: var(--color--additional-info);
+  font: var(--font);
+}
+
+.specific-media__poster {
+  background: url('../../assets/img/specific-media/low-res--poster.webp') center / cover;
+  border-radius: 3px;
+  max-height: 180px;
+  max-width: 120px;
+  min-height: 180px;
+  min-width: 120px;
+}
+
+.media__synopsis {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.synopsis-title {
+  --font: clamp(13px, 1.4rem, 15px) var(--font--graphik-bold);
+  color: var(--color--media-title);
+  font: var(--font);
+  text-wrap: wrap;
+}
+
+.synopsis {
+  --font: clamp(12px, 1.3rem, 14px) var(--font--graphik-regular);
+  color: var(--color--media-title);
+  font: var(--font);
+  text-wrap: balance;
+}
+
+.specific-media__popular-reviews,
+.specific-media__recent-reviews {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.section-heading {
+  align-items: center;
+  color: var(--color--section-heading);
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  justify-content: center;
+  width: 100%;
+}
+
+.section-heading .up {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.section-heading .up h5 {
+  --font: clamp(12px, 1.4rem, 14px) var(--font--graphik-light);
+  font: var(--font);
+  text-transform: uppercase;
+}
+
+.section-heading .up h6 {
+  --font: clamp(12px, 1.4rem, 14px) var(--font--graphik-extralight);
+  font: var(--font);
+  text-align: right;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.section-heading .base {
+  background-color: var(--color--section-heading);
+  height: 1px;
+  width: 100%;
+}
+
+.specific-media__popular-reviews__title,
+.specific-media__recent-reviews__title {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.popular-reviews__reviews-area,
+.recent-reviews__reviews-area {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: flex-start;
+  width: 100%;
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+  <head>
+    <meta charset = 'utf-8' />
+    <meta name = 'viewport' content = 'width = device-width, initial-scale = 1.0' />
+    <title>plotscore</title>
+    <link rel = 'icon' href = '../favicon.ico' />
+    <meta name = 'description' content = 'The plotscore project consists of a website based on reviews/ratings of all kinds of mainstream multimedia content, meaning content that can be consumed on major streaming platforms or in theaters or similar venues.' />
+
+    <link rel = 'stylesheet' href = 'https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css' />
+
+    <script src = '../scripts/components/blurry-header.js' defer></script>
+    <script src = '../scripts/components/control-panel.js' defer></script>
+    <script src = '../scripts/components/specific-media/popular-reviews.js' defer></script>
+    <script src = '../scripts/components/specific-media/recent-reviews.js' defer></script>
+    <script src = '../scripts/pages/specific-media.js' defer></script>
+    <script src = '../scripts/translation--specific-media.js'></script>
+
+    <link rel = 'stylesheet' href = '../styles/components/blurry-header.css' />
+    <link rel = 'stylesheet' href = '../styles/components/control-panel.css' />
+    <link rel = 'stylesheet' href = '../styles/components/divider.css' />
+    <link rel = 'stylesheet' href = '../styles/components/specific-media/popular-reviews--recent-reviews.css' />
+    <link rel = 'stylesheet' href = '../styles/global.css' />
+    <link rel = 'stylesheet' href = '../styles/pages/specific-media.css' />
+  </head>
+  <body>
+    <main>
+      <section class = 'specific-media__elements'>
+        <header class = 'generic-header specific-media__header'>
+          <img class = 'specific-media__backdrop' src = '../assets/img/specific-media/low-res--backdrop.webp' alt = 'luke skywalker, leia organa and han solo' />
+          <div class = 'blurry-header'>
+            <i class = 'ti ti-menu menu-icon'></i>
+          </div>
+        </header>
+
+        <section class = 'page__content specific-media__content'>
+          <section class = 'media__main-info'>
+            <section class = 'main-details'>
+              <h1>Star Wars</h1>
+              <div class = 'directed-by-wrapper'>
+                <p class = 'directed-by'></p>
+                <p class = 'director'>George Lucas</p>
+              </div>
+              <p class = 'release-year'>
+                1977
+              </p>
+            </section>
+
+            <!-- ---------------- -->
+
+            <div class = 'specific-media__poster'></div>
+          </section>
+
+          <!-- ---------------------------------------------- -->
+
+          <section class = 'media__synopsis'>
+            <h4 class = 'synopsis-title'></h4>
+            <p class = 'synopsis'></p>
+          </section>
+
+          <!-- ---------------------------------------------- -->
+
+          <section class = 'specific-media__popular-reviews'>
+            <div class = 'section-heading'>
+              <div class = 'up'>
+                <h5 class = 'specific-media__popular-reviews__title'></h5>
+                <h6 class = 'popular-reviews__subtitle'></h6>
+              </div>
+              <div class = 'base'></div>
+            </div>
+
+            <section class = 'popular-reviews__reviews-area'></section>
+          </section>
+
+          <!-- ---------------------------------------------- -->
+
+          <section class = 'specific-media__recent-reviews'>
+            <div class = 'section-heading'>
+              <div class = 'up'>
+                <h5 class = 'specific-media__recent-reviews__title'></h5>
+                <h6 class = 'recent-reviews__subtitle'></h6>
+              </div>
+              <div class = 'base'></div>
+            </div>
+
+            <section class = 'recent-reviews__reviews-area'></section>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <!-- ---------------------------------------------- -->
+
+    <div class = 'control-panel home-page'>
+      <div class = 'dragger'>
+        <div class = 'dragger__handle'></div>
+      </div>
+
+      <section class = 'control-panel__user'>
+        <a class = 'control-panel__avatar-container' href = 'profile.html'>
+          <img class = 'control-panel__avatar' src = '../assets/img/user-avatar/high-res--avatar.webp' alt = 'user avatar' />
+          <h4 class = 'control-panel__username'>christianms13</h4>
+        </a>
+      </section>
+
+      <section class = 'control-panel__actions'>
+        <button class = 'control-panel__button control-panel__theme-button' onclick = 'changeTheme()'>
+          <i id = 'theme-icon' class = 'ti'></i>
+        </button>
+
+        <button class = 'control-panel__button control-panel__language-button' onclick = 'changeLanguage()'>
+          <img id = 'language-icon' src = '../assets/icons/english.svg' alt = 'language icon' />
+        </button>
+
+        <a class = 'control-panel__button control-panel__back-button' href = 'home.html'>
+          <i class = 'ti ti-home-share'></i>
+        </a>
+
+        <a class = 'control-panel__button control-panel__logout-button' href = '../index.html'>
+          <i class = 'ti ti-logout'></i>
+        </a>
+      </section>
+    </div>
+
+    <div class = 'control-panel__overlay'></div>
+
+    <!-- ---------------------------------------------- -->
+
+    <script>
+      let theme = localStorage.getItem('theme') || 'dark'
+      document.body.classList.add(theme + '-theme')
+      updateThemeIcon()
+
+      function changeTheme() {
+        theme = theme === 'dark' ? 'light' : 'dark'
+        localStorage.setItem('theme', theme)
+        document.body.classList.toggle('dark-theme')
+        document.body.classList.toggle('light-theme')
+        updateThemeIcon()
+      }
+
+      function updateThemeIcon() {
+        const themeIcon = document.getElementById('theme-icon')
+        themeIcon.className = theme === 'dark' ? 'ti ti-bulb-filled' : 'ti ti-bulb-off'
+      }
+
+      let lang = localStorage.getItem('lang') || 'en'
+      translatePage(lang)
+      updateLanguageIcon()
+
+      function changeLanguage() {
+        lang = lang === 'en' ? 'es' : 'en'
+        localStorage.setItem('lang', lang)
+        translatePage(lang)
+        updateLanguageIcon()
+      }
+
+      function updateLanguageIcon() {
+        const languageIcon = document.getElementById('language-icon')
+        languageIcon.src = lang === 'en' ? '../assets/icons/spanish.svg' : '../assets/icons/english.svg'
+      }
+    </script>
+  </body>
+</html>

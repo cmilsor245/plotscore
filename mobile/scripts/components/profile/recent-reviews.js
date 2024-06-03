@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       const review = document.createElement('article')
       review.classList.add('recent-reviews__review')
 
-      const poster = document.createElement('div')
+      const poster = document.createElement('a')
+      poster.href = '../pages/specific-media.html'
       poster.classList.add('recent-reviews__poster', `poster${ index + 1 }`)
       poster.style.backgroundImage = `url(${ item.lowResPosterSrc })`
       poster.dataset.highResSrc = item.highResPosterSrc

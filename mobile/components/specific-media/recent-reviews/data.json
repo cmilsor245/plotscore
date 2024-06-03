@@ -1,0 +1,47 @@
+[
+  {
+    "lowResPosterSrc": "../assets/img/specific-media/recent-reviews/low-res--poster1.webp",
+    "highResPosterSrc": "../assets/img/specific-media/recent-reviews/high-res--poster1.webp",
+
+    "lowResAvatarSrc": "../assets/img/specific-media/recent-reviews/avatars/low-res--avatar1.webp",
+    "highResAvatarSrc": "../assets/img/specific-media/recent-reviews/avatars/high-res--avatar1.webp",
+    "username": "Justin Numerick",
+
+    "rating": 4.5,
+
+    "text": "First time rewatching in quite some time, and of course it still holds up incredibly well. Tells a complete story that is very satisfying, yet makes you want so much more. The world building from the jump is some of the best ever and one of the most entertaining and engaging aspects. Has a distinct feel to it immediately and becomes incredibly immersive. Something that especially stood out to me this time is just how incredible Ben Kenobi is. Having grown up with the prequel trilogy and having a lot of nostalgia for those films, and having recently come off of watching The Clone Wars series for the first time, Obi Wan is an all-time character for me. I never fully appreciated the portrayal of him in this film until now, and it works incredibly well on rewatch. An all-time film for good reason.",
+
+    "likeCount": 0,
+    "commentCount": 0
+  },
+  {
+    "lowResPosterSrc": "../assets/img/specific-media/recent-reviews/low-res--poster2.webp",
+    "highResPosterSrc": "../assets/img/specific-media/recent-reviews/high-res--poster2.webp",
+
+    "lowResAvatarSrc": "../assets/img/specific-media/recent-reviews/avatars/low-res--avatar2.webp",
+    "highResAvatarSrc": "../assets/img/specific-media/recent-reviews/avatars/high-res--avatar2.webp",
+    "username": "leightonmcbryde",
+
+    "rating": 4.5,
+
+    "text": "Rewatching makes me realize there's way more comedic bits in this than I remember",
+
+    "likeCount": 0,
+    "commentCount": 0
+  },
+  {
+    "lowResPosterSrc": "../assets/img/specific-media/recent-reviews/low-res--poster3.webp",
+    "highResPosterSrc": "../assets/img/specific-media/recent-reviews/high-res--poster3.webp",
+
+    "lowResAvatarSrc": "../assets/img/specific-media/recent-reviews/avatars/low-res--avatar3.webp",
+    "highResAvatarSrc": "../assets/img/specific-media/recent-reviews/avatars/high-res--avatar3.webp",
+    "username": "kahtsds",
+
+    "rating": 5,
+
+    "text": "te amo",
+
+    "likeCount": 0,
+    "commentCount": 0
+  }
+]

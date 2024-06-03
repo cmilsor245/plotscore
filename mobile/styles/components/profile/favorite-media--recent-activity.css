@@ -10,7 +10,7 @@
 .recent-activity__poster {
   background: center / cover;
   border-radius: 4px;
-  height: 190px;
+  height: 195px;
   position: relative;
   width: 130px;
 }
@@ -48,7 +48,8 @@
 @media (width <= 518px) {
   .favorite-media__poster,
   .recent-activity__poster {
-    height: 160px;
+    border-radius: 3px;
+    height: 165px;
     width: 110px;
   }
 }
@@ -56,7 +57,7 @@
 @media (width <= 478px) {
   .favorite-media__poster,
   .recent-activity__poster {
-    height: 145px;
+    height: 155px;
     width: 100px;
   }
 }
@@ -64,6 +65,7 @@
 @media (width <= 424px) {
   .favorite-media__poster,
   .recent-activity__poster {
+    border-radius: 2px;
     height: 135px;
     width: 90px;
   }

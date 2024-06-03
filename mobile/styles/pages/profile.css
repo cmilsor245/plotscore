@@ -109,7 +109,9 @@
 .section-heading .up h6 {
   --font: clamp(12px, 1.4rem, 14px) var(--font--graphik-extralight);
   font: var(--font);
+  text-align: right;
   text-transform: uppercase;
+  width: 100%;
 }
 
 .section-heading .base {

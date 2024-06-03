@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const data = await response.json()
 
     const articles = data.map((item, index) => {
-      const poster = document.createElement('div')
+      const poster = document.createElement('a')
+      poster.href = '../pages/specific-media.html'
       poster.classList.add('favorite-media__poster', `poster${ index + 1 }`)
       poster.style.backgroundImage = `url(${ item.lowResPosterSrc })`
       poster.dataset.highResSrc = item.highResPosterSrc

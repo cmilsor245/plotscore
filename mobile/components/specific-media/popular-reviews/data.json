@@ -1,0 +1,47 @@
+[
+  {
+    "lowResPosterSrc": "../assets/img/specific-media/popular-reviews/low-res--poster1.webp",
+    "highResPosterSrc": "../assets/img/specific-media/popular-reviews/high-res--poster1.webp",
+
+    "lowResAvatarSrc": "../assets/img/specific-media/popular-reviews/avatars/low-res--avatar1.webp",
+    "highResAvatarSrc": "../assets/img/specific-media/popular-reviews/avatars/high-res--avatar1.webp",
+    "username": "Karst",
+
+    "rating": 4.5,
+
+    "text": "would be cooler if there was a giant fucking worm",
+
+    "likeCount": 8863,
+    "commentCount": 1
+  },
+  {
+    "lowResPosterSrc": "../assets/img/specific-media/popular-reviews/low-res--poster2.webp",
+    "highResPosterSrc": "../assets/img/specific-media/popular-reviews/high-res--poster2.webp",
+
+    "lowResAvatarSrc": "../assets/img/specific-media/popular-reviews/avatars/low-res--avatar2.webp",
+    "highResAvatarSrc": "../assets/img/specific-media/popular-reviews/avatars/high-res--avatar2.webp",
+    "username": "George Carmi",
+
+    "rating": 5,
+
+    "text": "I can't even imagine what it felt like watching this in theaters for the first time in 1977. Being collectively consumed by this monumental space epic. It had to have been the coolest experience. A brand new special effects wonderland to lose yourself in. I've had some pretty amazing theater experiences but I don't know if anything will ever come close to the impact A New Hope had on that entire generation.",
+
+    "likeCount": 410,
+    "commentCount": 4
+  },
+  {
+    "lowResPosterSrc": "../assets/img/specific-media/popular-reviews/low-res--poster3.webp",
+    "highResPosterSrc": "../assets/img/specific-media/popular-reviews/high-res--poster3.webp",
+
+    "lowResAvatarSrc": "../assets/img/specific-media/popular-reviews/avatars/low-res--avatar3.webp",
+    "highResAvatarSrc": "../assets/img/specific-media/popular-reviews/avatars/high-res--avatar3.webp",
+    "username": "river",
+
+    "rating": 5,
+
+    "text": "the powerpoint transitions never get old",
+
+    "likeCount": 6966,
+    "commentCount": 14
+  }
+]

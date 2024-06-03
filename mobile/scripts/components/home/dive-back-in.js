@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const data = await response.json()
 
     const articles = data.map((item, index) => {
-      const article = document.createElement('article')
+      const article = document.createElement('a')
+      article.href = '../pages/specific-media.html'
       article.classList.add('dive-back-in__slot')
 
       const section = document.createElement('section')

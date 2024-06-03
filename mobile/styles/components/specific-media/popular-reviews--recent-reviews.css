@@ -1,0 +1,105 @@
+.dark-theme {
+  --color--likes-area--text: var(--color--primary-light-50);
+  --color--text: var(--color--primary-light-80);
+  --color--username: var(--color--primary-light-70);
+}
+
+.light-theme {
+  --color--likes-area--text: var(--color--primary-dark-50);
+  --color--text: var(--color--primary-dark-80);
+  --color--username: var(--color--primary-dark-70);
+}
+
+.popular-reviews__review,
+.recent-reviews__review {
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.popular-review__avatar,
+.recent-review__avatar {
+  background: center / cover;
+  border-radius: 50%;
+  height: 35px;
+  width: 39px;
+}
+
+.popular-review__details,
+.recent-review__details {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.popular-review__username-rating-comments,
+.recent-review__username-rating-comments {
+  align-items: baseline;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.popular-review__username,
+.recent-review__username {
+  --font: clamp(12px, 1.3rem, 14px) var(--font--graphik-light);
+  color: var(--color--username);
+  font: var(--font);
+}
+
+.popular-review__username span,
+.recent-review__username span {
+  font-family: var(--font--graphik-semibold);
+}
+
+.popular-review__rating,
+.recent-review__rating {
+  align-items: center;
+  color: var(--color--accent-main);
+  display: flex;
+  font-size: 14px;
+  justify-content: flex-start;
+}
+
+.popular-review__comment-count,
+.recent-review__comment-count {
+  --font: clamp(13px, 1.4rem, 17px) var(--font--graphik-medium);
+  align-items: baseline;
+  color: var(--color--comment-count);
+  display: flex;
+  font: var(--font);
+  gap: 2px;
+  justify-content: flex-start;
+}
+
+.popular-review__text,
+.recent-review__text {
+  --font: clamp(13px, 1.4rem, 17px) var(--font--tiempos-headline-regular);
+  color: var(--color--text);
+  font: var(--font);
+}
+
+.popular-review__likes-area,
+.recent-review__likes-area {
+  --font: clamp(13px, 1.6rem, 16px) var(--font--graphik-medium);
+  align-items: center;
+  color: var(--color--likes-area);
+  display: flex;
+  font: var(--font);
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.popular-review__like-review,
+.popular-review__like-count,
+.recent-review__like-review,
+.recent-review__like-count {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  justify-content: flex-start;
+}

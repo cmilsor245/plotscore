@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       const mainInfoSection = document.createElement('section')
       mainInfoSection.classList.add('popular-review__main-info')
 
-      const poster = document.createElement('div')
+      const poster = document.createElement('a')
+      poster.href = '../pages/specific-media.html'
       poster.classList.add('popular-review__poster', `poster${ index + 1 }`)
       poster.style.backgroundImage = `url(${ item.lowResPosterSrc })`
       poster.dataset.highResSrc = item.highResPosterSrc
@@ -95,7 +96,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       const commentCount = document.createElement('div')
       commentCount.classList.add('main-info__comment-count')
-      
+
       const commentIcon = document.createElement('i')
       commentIcon.classList.add('ti', 'ti-message')
       commentCount.appendChild(commentIcon)
