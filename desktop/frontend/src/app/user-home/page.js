@@ -57,13 +57,34 @@ export default function UserHome({
 
   /* ------------------------------------------------ */
 
-  const getFollowingList = () => {
-    try {
-      
-    } catch (error) {
-      
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL
+
+  const [followingList, setFollowingList] = useState([])
+
+  useEffect(() => {
+    const getFollowingList = async () => {
+      try {
+        const response = await fetch(`${ apiUrl }/get-following/${ userData?.id }`, {
+          method: 'GET',
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+
+        if (response.ok) {
+          const data = await response.json()
+          setFollowingList(data.following.map(follower => follower.username))
+        } else {
+          throw new Error('failed to fetch following list')
+        }
+      } catch (error) {
+        console.log(error)
+      }
     }
-  }
+
+    getFollowingList()
+  }, [userData?.id])
 
   return (
     <>
@@ -97,7 +118,7 @@ export default function UserHome({
             <section className = 'content__logo-header common'>
               <h2 className = 'welcome-text'>
                 { translate(lang, 'USER_HOME', 'WELCOME_TEXT', 'TEXT_LEFT') }
-                <Link href = '/profile'>
+                <Link href = { `/user/${ userData?.username }` }>
                   { userData?.given_name ? userData.given_name : userData?.username }
                 </Link>
                 { translate(lang, 'USER_HOME', 'WELCOME_TEXT', 'TEXT_RIGHT') }
@@ -119,7 +140,15 @@ export default function UserHome({
                 />
 
                 <section className = 'general-activity__logs'>
-                  
+                  {
+                    followingList.length > 0
+                      ? (
+                        followingList.map(username => (
+                          <p key = { username }>{ username }</p>
+                        ))
+                      )
+                      : <p>No following users yet.</p>
+                  }
                 </section>
               </section>
             </section>
