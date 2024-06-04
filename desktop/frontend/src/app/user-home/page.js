@@ -5,9 +5,9 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import {
+  IconBolt,
   IconPencilPlus,
-  IconZoom,
-  IconBolt
+  IconZoom
 } from '@tabler/icons-react'
 
 import Footer from '/components/common/footer.js'
@@ -53,6 +53,16 @@ export default function UserHome({
     const newLang = lang === 'en' ? 'es' : 'en'
     setLang(newLang)
     cookie.set('lang', newLang, { expires: 365 })
+  }
+
+  /* ------------------------------------------------ */
+
+  const getFollowingList = () => {
+    try {
+      
+    } catch (error) {
+      
+    }
   }
 
   return (

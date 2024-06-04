@@ -120,7 +120,7 @@ export default function SignUpPage() {
         })
       })
 
-      router.push('/')
+      // router.push('/')
     } catch (error) {
       // TODO: improve error handling: this is not actually catching the right error from the backend
       setErrorModalDisplayed(true)
