@@ -6,6 +6,10 @@ use Illuminate\Database\Seeder;
 
 class MediaSeeder extends Seeder {
   public function run(): void{
-    Media::factory() -> count(100) -> create();
+    $factoryCount = 100;
+
+    for ($i = 0; $i < $factoryCount; $i++) {
+      Media::factory() -> create();
+    }
   }
 }

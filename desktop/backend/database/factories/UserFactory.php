@@ -9,20 +9,18 @@ class UserFactory extends Factory {
   protected $model = User::class;
 
   public function definition(): array {
-    $uniqueId = uniqid();
-
     return [
-      'username' => 'user--' . $uniqueId,
-      'given_name' => 'given_name--' . random_int(0, 10000),
-      'family_name' => 'family_name--' . random_int(0, 10000),
+      'username' => $this -> faker -> userName,
+      'given_name' => $this -> faker -> firstName,
+      'family_name' => $this -> faker -> lastName,
 
-      'email' => 'user--' . $uniqueId . '@example.com',
+      'email' => $this -> faker -> email,
       'password' => Hash::make('password1234'),
 
-      'bio' => 'this is a generated bio for user--' . $uniqueId,
+      'bio' => $this -> faker -> sentence,
 
-      'location' => 'location--' . random_int(0, 10000),
-      'website' => 'https://website--' . random_int(0, 10000) . '.com',
+      'location' => $this -> faker -> city . ', ' . $this -> faker -> country,
+      'website' => $this -> faker -> url,
       'pronouns' => ['he/him', 'she/her', 'they/them'][array_rand(['he/him', 'she/her', 'they/them'])]
     ];
   }

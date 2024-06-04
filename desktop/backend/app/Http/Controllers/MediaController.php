@@ -8,12 +8,40 @@ use Symfony\Component\HttpFoundation\Response;
 
 class MediaController extends Controller {
   public function createMedia(MediaRequest $request) {
+    if (!auth() -> check()) {
+      return response() -> json([
+        'error' => 'unauthorized'
+      ], Response::HTTP_UNAUTHORIZED);
+    }
+
+    $authenticatedUser = auth() -> user();
+
+    if ($authenticatedUser -> role !== 'admin') {
+      return response() -> json([
+        'error' => 'cannot create any media'
+      ], Response::HTTP_FORBIDDEN);
+    }
+
     $media = Media::create($request -> all());
 
     return response() -> json($media, Response::HTTP_CREATED);
   }
 
-  public function updateMedia(MediaRequest $request, $id) {
+  public function updateMedia(Request $request, $id) {
+    if (!auth() -> check()) {
+      return response() -> json([
+        'error' => 'unauthorized'
+      ], Response::HTTP_UNAUTHORIZED);
+    }
+
+    $authenticatedUser = auth() -> user();
+
+    if ($authenticatedUser -> role !== 'admin') {
+      return response() -> json([
+        'error' => 'cannot update any media'
+      ], Response::HTTP_FORBIDDEN);
+    }
+
     $media = Media::find($id);
 
     if (!$media) {
@@ -30,6 +58,20 @@ class MediaController extends Controller {
   }
 
   public function deleteMedia($id) {
+    if (!auth() -> check()) {
+      return response() -> json([
+        'error' => 'unauthorized'
+      ], Response::HTTP_UNAUTHORIZED);
+    }
+
+    $authenticatedUser = auth() -> user();
+
+    if ($authenticatedUser -> role !== 'admin') {
+      return response() -> json([
+        'error' => 'cannot delete any media'
+      ], Response::HTTP_FORBIDDEN);
+    }
+
     $media = Media::find($id);
 
     if (!$media) {

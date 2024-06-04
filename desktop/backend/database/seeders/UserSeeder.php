@@ -27,6 +27,10 @@ class UserSeeder extends Seeder {
 
     $authController -> signup($request);
 
-    User::factory() -> count(100) -> create();
+    $factoryCount = 20;
+
+    for ($i = 0; $i < $factoryCount; $i++) {
+      User::factory() -> create();
+    }
   }
 }
