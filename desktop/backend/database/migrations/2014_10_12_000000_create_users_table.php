@@ -17,12 +17,14 @@ return new class extends Migration {
       $table -> string('password', 255);
 
       $table -> string('avatar') -> default('/storage/avatars/default.png');
-      $table -> integer('follower_count') -> default(0);
       $table -> text('bio') -> nullable();
 
-      $table -> string('location' , 255) -> nullable();
+      $table -> string('location', 255) -> nullable();
       $table -> string('website', 255) -> nullable();
       $table -> enum('pronouns', ['he/him', 'she/her', 'they/them']) -> nullable();
+
+      $table -> integer('follower_count') -> default(0);
+      $table -> integer('following_count') -> default(0);
 
       $table -> timestamps();
     });

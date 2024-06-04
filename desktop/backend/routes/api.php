@@ -46,3 +46,6 @@ Route::get('all-media', [MediaController::class, 'getAllMedia']);
 
 Route::get('review/{id}', [ReviewController::class, 'getReview']);
 Route::get('all-reviews', [ReviewController::class, 'getAllReviews']);
+
+Route::get('get-followers/{id}', [FollowController::class, 'getFollowers']);
+Route::get('get-following/{id}', [FollowController::class, 'getFollowing']);
