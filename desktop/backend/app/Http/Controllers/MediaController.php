@@ -1,18 +1,19 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MediaRequest;
 use App\Models\Media;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class MediaController extends Controller {
-  public function createMedia(Request $request) {
+  public function createMedia(MediaRequest $request) {
     $media = Media::create($request -> all());
 
     return response() -> json($media, Response::HTTP_CREATED);
   }
 
-  public function updateMedia(Request $request, $id) {
+  public function updateMedia(MediaRequest $request, $id) {
     $media = Media::find($id);
 
     if (!$media) {

@@ -120,7 +120,7 @@ class AuthController extends Controller {
   }
 
   // TODO: improve logic
-  public function updateUser(Request $request, $id) {
+  public function updateUser(AuthRequest $request, $id) {
     if (!auth() -> check()) {
       return response() -> json([
         'error' => 'unauthorized'
