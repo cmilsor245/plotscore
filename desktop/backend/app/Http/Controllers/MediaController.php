@@ -22,9 +22,41 @@ class MediaController extends Controller {
       ], Response::HTTP_FORBIDDEN);
     }
 
+    if (!$request -> title || !$request -> synopsis || !$request -> release_date || !$request -> type) {
+      return response() -> json([
+        'error' => 'title, synopsis, release_date and type are required'
+      ], Response::HTTP_BAD_REQUEST);
+    }
+
     $media = Media::create($request -> all());
 
     return response() -> json($media, Response::HTTP_CREATED);
+  }
+
+  public function getMedia($id) {
+    $media = Media::find($id);
+
+    if (!$media) {
+      return response() -> json([
+        'error' => 'media not found'
+      ], Response::HTTP_NOT_FOUND);
+    }
+
+    return response() -> json($media, Response::HTTP_OK);
+  }
+
+  public function getAllMedia(Request $request) {
+    $page = $request -> query('page', 1);
+    $perPage = 10;
+
+    $media = Media::paginate($perPage, ['*'], 'page', $page);
+
+    return response() -> json([
+      'media' => $media -> items(),
+      'currentPage' => $media -> currentPage(),
+      'totalPages' => $media -> lastPage(),
+      'totalItems' => $media -> total()
+    ], Response::HTTP_OK);
   }
 
   public function updateMedia(Request $request, $id) {
@@ -84,32 +116,6 @@ class MediaController extends Controller {
 
     return response() -> json([
       'message' => 'success'
-    ], Response::HTTP_OK);
-  }
-
-  public function getMedia($id) {
-    $media = Media::find($id);
-
-    if (!$media) {
-      return response() -> json([
-        'error' => 'media not found'
-      ], Response::HTTP_NOT_FOUND);
-    }
-
-    return response() -> json($media, Response::HTTP_OK);
-  }
-
-  public function getAllMedia(Request $request) {
-    $page = $request -> query('page', 1);
-    $perPage = 10;
-
-    $media = Media::paginate($perPage, ['*'], 'page', $page);
-
-    return response() -> json([
-      'media' => $media -> items(),
-      'currentPage' => $media -> currentPage(),
-      'totalPages' => $media -> lastPage(),
-      'totalItems' => $media -> total()
     ], Response::HTTP_OK);
   }
 }

@@ -11,8 +11,8 @@ return new class extends Migration {
       $table -> foreignId('user_id') -> constrained() -> onDelete('cascade');
       $table -> foreignId('media_id') -> constrained() -> onDelete('cascade');
 
-      $table -> integer('rating');
-      $table -> text('review_text');
+      $table -> float('rating', 2, 1) -> default(0);
+      $table -> text('review_text') -> nullable();
       $table -> boolean('spoilers_free') -> default(true);
 
       $table -> timestamps();

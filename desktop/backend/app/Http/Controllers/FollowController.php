@@ -6,6 +6,12 @@ use Symfony\Component\HttpFoundation\Response;
 
 class FollowController extends Controller {
   public function followUser($id) {
+    if (!auth() -> check()) {
+      return response() -> json([
+        'error' => 'unauthorized'
+      ], Response::HTTP_UNAUTHORIZED);
+    }
+
     $userToFollow = User::find($id);
 
     if (!$userToFollow) {
@@ -22,6 +28,12 @@ class FollowController extends Controller {
   }
 
   public function unfollowUser($id) {
+    if (!auth() -> check()) {
+      return response() -> json([
+        'error' => 'unauthorized'
+      ], Response::HTTP_UNAUTHORIZED);
+    }
+
     $userToUnfollow = User::find($id);
 
     if (!$userToUnfollow) {

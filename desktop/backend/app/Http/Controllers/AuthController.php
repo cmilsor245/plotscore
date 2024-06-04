@@ -17,8 +17,14 @@ class AuthController extends Controller {
       ], Response::HTTP_UNAUTHORIZED);
     }
 
-    $existingUsername = User::where('username', $request -> input('username')) -> exists();
-    $existingEmail = User::where('email', $request -> input('email')) -> exists();
+    if (!$request -> username  || !$request -> email || !$request -> password) {
+      return response() -> json([
+        'error' => 'username, email, and password are required'
+      ], Response::HTTP_BAD_REQUEST);
+    }
+
+    $existingUsername = User::where('username', $request -> username) -> exists();
+    $existingEmail = User::where('email', $request -> email) -> exists();
 
     if ($existingUsername || $existingEmail) {
       return response() -> json([
@@ -34,20 +40,20 @@ class AuthController extends Controller {
       ], Response::HTTP_UNAUTHORIZED);
     }
 
-    $pronouns = $request -> input('pronouns') ?? 'they/them';
-    $avatar = $request -> input('avatar') ?? '/storage/avatars/default.png';
+    $pronouns = $request -> pronouns ?? 'they/them';
+    $avatar = $request -> avatar ?? '/storage/avatars/default.png';
 
     $user = User::create([
       'role' => 'admin',
-      'username' => $request -> input('username'),
-      'given_name' => $request -> input('given_name'),
-      'family_name' => $request -> input('family_name'),
-      'email' => $request -> input('email'),
-      'password' => Hash::make($request -> input('password')),
+      'username' => $request -> username,
+      'given_name' => $request -> given_name,
+      'family_name' => $request -> family_name,
+      'email' => $request -> email,
+      'password' => Hash::make($request -> password),
       'avatar' => $avatar,
-      'bio' => $request -> input('bio'),
-      'location' => $request -> input('location'),
-      'website' => $request -> input('website'),
+      'bio' => $request -> bio,
+      'location' => $request -> location,
+      'website' => $request -> website,
       'pronouns' => $pronouns
     ]);
 
@@ -55,8 +61,14 @@ class AuthController extends Controller {
   }
 
   public function signup(AuthRequest $request) {
-    $existingUsername = User::where('username', $request -> input('username')) -> exists();
-    $existingEmail = User::where('email', $request -> input('email')) -> exists();
+    $existingUsername = User::where('username', $request -> username) -> exists();
+    $existingEmail = User::where('email', $request -> email) -> exists();
+
+    if (!$request -> username  || !$request -> email || !$request -> password) {
+      return response() -> json([
+        'error' => 'username, email, and password are required'
+      ], Response::HTTP_BAD_REQUEST);
+    }
 
     if ($existingUsername || $existingEmail) {
       return response() -> json([
@@ -64,20 +76,20 @@ class AuthController extends Controller {
       ], Response::HTTP_CONFLICT);
     }
 
-    $pronouns = $request -> input('pronouns') ?? 'they/them';
-    $avatar = $request -> input('avatar') ?? '/storage/avatars/default.png';
+    $pronouns = $request -> pronouns ?? 'they/them';
+    $avatar = $request -> avatar ?? '/storage/avatars/default.png';
 
     $user = User::create([
       'role' => 'user',
-      'username' => $request -> input('username'),
-      'given_name' => $request -> input('given_name'),
-      'family_name' => $request -> input('family_name'),
-      'email' => $request -> input('email'),
-      'password' => Hash::make($request -> input('password')),
+      'username' => $request -> username,
+      'given_name' => $request -> given_name,
+      'family_name' => $request -> family_name,
+      'email' => $request -> email,
+      'password' => Hash::make($request -> password),
       'avatar' => $avatar,
-      'bio' => $request -> input('bio'),
-      'location' => $request -> input('location'),
-      'website' => $request -> input('website'),
+      'bio' => $request -> bio,
+      'location' => $request -> location,
+      'website' => $request -> website,
       'pronouns' => $pronouns
     ]);
 
@@ -85,6 +97,12 @@ class AuthController extends Controller {
   }
 
   public function login(Request $request) {
+    if (!$request -> email || !$request -> password) {
+      return response() -> json([
+        'error' => 'email and password are required'
+      ], Response::HTTP_BAD_REQUEST);
+    }
+
     $credentials = $request -> only('email', 'password');
 
     if (!Auth::attempt($credentials)) {
@@ -99,6 +117,18 @@ class AuthController extends Controller {
     return response([
       'message' => 'success'
     ], Response::HTTP_OK) -> withCookie($cookie);
+  }
+
+  public function getUser($id) {
+    $user = User::find($id);
+
+    if (!$user) {
+      return response() -> json([
+        'error' => 'user not found'
+      ], Response::HTTP_NOT_FOUND);
+    }
+
+    return response() -> json($user, Response::HTTP_OK);
   }
 
   public function user() {
@@ -181,10 +211,10 @@ class AuthController extends Controller {
       unset($updateData['role']);
     }
 
-    $existingUsername = User::where('username', $request -> input('username'))
+    $existingUsername = User::where('username', $request -> username)
       -> where('id', '!=', $id)
       -> exists();
-    $existingEmail = User::where('email', $request -> input('email'))
+    $existingEmail = User::where('email', $request -> email)
       -> where('id', '!=', $id)
       -> exists();
 
