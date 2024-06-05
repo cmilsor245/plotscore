@@ -118,4 +118,12 @@ class ReviewController extends Controller {
       'message' => 'success'
     ], Response::HTTP_OK);
   }
+
+  /* --------------------------------------------------------------------------------- */
+
+  public function newOnPlotscore() {
+    $reviews = Review::with(['user', 'media']) -> orderBy('created_at', 'desc') -> limit(6) -> get();
+
+    return response() -> json($reviews, Response::HTTP_OK);
+  }
 }

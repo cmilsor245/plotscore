@@ -28,6 +28,8 @@ class MediaController extends Controller {
       ], Response::HTTP_BAD_REQUEST);
     }
 
+    $request -> poster ?? '/storage/posters/default.png';
+
     $media = Media::create($request -> all());
 
     return response() -> json($media, Response::HTTP_CREATED);

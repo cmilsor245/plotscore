@@ -12,6 +12,8 @@ class Media extends Model {
     'synopsis',
     'release_date',
 
+    'poster',
+
     'type'
   ];
 

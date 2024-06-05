@@ -12,6 +12,8 @@ return new class extends Migration {
       $table -> text('synopsis');
       $table -> date('release_date');
 
+      $table -> string('poster') -> default('/storage/posters/default.png');
+
       $table -> enum('type', ['movie', 'series']);
 
       $table -> timestamps();

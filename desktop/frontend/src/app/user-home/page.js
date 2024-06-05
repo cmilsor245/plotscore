@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import {
-  IconBolt,
   IconPencilPlus,
   IconZoom
 } from '@tabler/icons-react'
@@ -13,8 +12,9 @@ import {
 import Footer from '/components/common/footer.js'
 import LogoHeader from '/components/common/logo-header.js'
 import { MainActionButton } from '/components/common/main-action-button.js'
-import SectionHeading from '/components/common/section-heading.js'
 import SideMenu from '/components/common/side-menu.js'
+import NewFromFriends from '/components/user-home/active/new-from-friends.js'
+import NewOnPlotscore from '/components/user-home/no-friends/new-on-plotscore.js'
 import translate from '/src/app/translation.js'
 
 import '/styles/pages/user-home.css'
@@ -64,22 +64,24 @@ export default function UserHome({
   useEffect(() => {
     const getFollowingList = async () => {
       try {
-        const response = await fetch(`${ apiUrl }/get-following/${ userData?.id }`, {
-          method: 'GET',
-          credentials: 'include',
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
+        if (userData && userData.id) {
+          const response = await fetch(`${ apiUrl }/get-following/${ userData.id }`, {
+            method: 'GET',
+            credentials: 'include',
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          })
 
-        if (response.ok) {
-          const data = await response.json()
-          setFollowingList(data.following.map(follower => follower.username))
-        } else {
-          throw new Error('failed to fetch following list')
+          if (response.ok) {
+            const data = await response.json()
+            setFollowingList(data.following && Array.isArray(data.following) ? data.following.map(follower => follower.username) : [])
+          } else {
+            throw new Error('failed to fetch following list')
+          }
         }
       } catch (error) {
-        console.log(error)
+        console.error(error)
       }
     }
 
@@ -126,36 +128,16 @@ export default function UserHome({
 
               {/* ------------------------------------------------------ */}
 
-              <section className = 'section__heading-and-content general-activity'>
-                <SectionHeading
-                  lang = { lang }
-                  namespace = 'USER_HOME'
-                  section = 'GENERAL_ACTIVITY'
-                  title = 'SECTION_TITLE'
-                  hasRightSideIconAndText = {[
-                    <IconBolt stroke = { 1 } />,
-                    'ALL_ACTIVITY'
-                  ]}
-                  hasDivider
-                />
-
-                <section className = 'general-activity__logs'>
-                  {
-                    followingList.length > 0
-                      ? (
-                        followingList.map(username => (
-                          <p key = { username }>{ username }</p>
-                        ))
-                      )
-                      : <p>No following users yet.</p>
-                  }
-                </section>
-              </section>
+              {
+                followingList && followingList.length === 0
+                  ? <NewOnPlotscore lang = { lang } />
+                  : <NewFromFriends lang = { lang } followingList = { followingList } />
+              }
             </section>
           </main>
         </section>
 
-        <Footer lang = { lang } />
+        <Footer lang = { lang} />
       </section>
     </>
   )

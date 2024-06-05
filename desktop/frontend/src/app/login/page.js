@@ -177,7 +177,7 @@ export default function LoginPage() {
             ></h1>
 
             <form className = 'account-form login-form' onSubmit = { submit }>
-            <div className = 'account-form__group'>
+              <div className = 'account-form__group'>
                 <FormLabelInput
                   label = { translate(lang, 'LOGIN_PAGE', 'ACCOUNT_FORM', 'EMAIL') }
 

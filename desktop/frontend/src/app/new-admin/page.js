@@ -184,6 +184,7 @@ export default function SignUpPage() {
               }}
             ></h1>
 
+            {/* TODO: fix | not working */}
             <form className = 'account-form new-admin-form' onSubmit = { submit }>
               <input type = 'hidden' name = 'secret_key' value = { secretAdminKey } />
 

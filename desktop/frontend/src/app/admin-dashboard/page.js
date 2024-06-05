@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react'
 
 import {
   IconChairDirector,
+  IconDatabasePlus,
   IconEdit,
   IconPencilPlus,
   IconTrash,
@@ -152,6 +153,11 @@ export default function AdminDashboard({
   return (
     <>
       <div className = 'main-actions-buttons'>
+        <Link href = '/new-media'>
+          <MainActionButton
+            icon = { IconDatabasePlus }
+          />
+        </Link>
         <Link href = '/new-admin'>
           <MainActionButton
             icon = { IconUserPlus }
@@ -255,7 +261,14 @@ export default function AdminDashboard({
                                   'ADMIN_DASHBOARD',
                                   'DATABASE_USER_LIST',
                                   'FOLLOWER_COUNT'
+                                ) },
+                                { translate(
+                                  lang,
+                                  'ADMIN_DASHBOARD',
+                                  'DATABASE_USER_LIST',
+                                  'FOLLOWING_COUNT'
                                 ) }
+                                { user.following_count }
                               </p>
                             </div>
                           </section>

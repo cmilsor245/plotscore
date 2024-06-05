@@ -44,6 +44,29 @@ const translationsEN = {
 
   /* -------------------------------------------------------------------------------------------------- */
 
+  NEW_MEDIA_PAGE: {
+    FORM: {
+      PAGE_TITLE: 'Add new content to <span>plotscore</span>',
+      SUBMIT_BUTTON: 'add content',
+
+      TITLE_INPUT: 'Title',
+      TITLE_INPUT_PLACEHOLDER: '1 character minimum',
+      SYNOPSIS: 'Synopsis',
+      SYNOPSIS_PLACEHOLDER: '1 character minimum',
+      RELEASE_DATE: 'Release date',
+      POSTER: 'Poster',
+      TYPE: 'Content type',
+
+      MOVIE: 'Movie',
+      TV_SERIES: 'TV series',
+
+      ERROR_TEXT: 'An error occurred while adding the content',
+      TRY_AGAIN_BUTTON: 'try again'
+    }
+  },
+
+  /* -------------------------------------------------------------------------------------------------- */
+
   SIGNUP_PAGE: {
     ACCOUNT_FORM: {
       SIGN_UP_TITLE: 'Create a new <span>plotscore</span> account',
@@ -185,6 +208,7 @@ const translationsEN = {
       SECTION_TITLE: 'Database user list',
 
       FOLLOWER_COUNT: ' followers',
+      FOLLOWING_COUNT: ' following ',
 
       PREVIOUS_PAGE: 'older',
       NEXT_PAGE: 'newer'
@@ -205,6 +229,13 @@ const translationsEN = {
     WELCOME_TEXT: {
       TEXT_LEFT: 'Welcome ',
       TEXT_RIGHT: '. Here\'s what your friends have been watching...'
+    },
+
+    /* ---------------------------------------- */
+
+    NEW_ON_PLOTSCORE: {
+      SECTION_TITLE: 'new on plotscore',
+      ALL_MEDIA: 'ALL MEDIA'
     },
     GENERAL_ACTIVITY: {
       SECTION_TITLE: 'new from friends',

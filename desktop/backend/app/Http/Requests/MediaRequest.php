@@ -14,6 +14,8 @@ class MediaRequest extends FormRequest {
       'synopsis' => 'required|string|min:1|max:65535',
       'release_date' => 'required|date',
 
+      'poster' => 'nullable|file|mimes:jpeg,png,jpg,webp|max:4096',
+
       'type' => 'required|in:movie,series',
     ];
   }

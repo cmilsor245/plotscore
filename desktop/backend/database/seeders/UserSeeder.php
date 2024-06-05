@@ -3,7 +3,10 @@ namespace Database\Seeders;
 
 use App\Http\Controllers\AuthController;
 use App\Http\Requests\AuthRequest;
+use App\Models\Media;
+use App\Models\Review;
 use App\Models\User;
+use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder {
@@ -14,12 +17,9 @@ class UserSeeder extends Seeder {
       'username' => 'christianms13',
       'given_name' => 'christian',
       'family_name' => 'millán soria',
-
       'email' => 'christianmillansoria13@gmail.com',
       'password' => 'password1234',
-
       'bio' => 'can you hear the music, robert?',
-
       'location' => 'spain',
       'website' => 'boxd.it/9yH3x',
       'pronouns' => 'he/him'
@@ -27,10 +27,21 @@ class UserSeeder extends Seeder {
 
     $authController -> signup($request);
 
-    $factoryCount = 20;
+    $factoryCount = 100;
+    $users = User::factory() -> count($factoryCount) -> create();
 
-    for ($i = 0; $i < $factoryCount; $i++) {
-      User::factory() -> create();
+    $mediaIds = Media::pluck('id') -> toArray();
+
+    $faker = Faker::create();
+
+    foreach ($users as $user) {
+      $reviewCount = rand(1, 5);
+      for ($i = 0; $i < $reviewCount; $i++) {
+        Review::factory() -> create([
+          'user_id' => $user -> id,
+          'media_id' => $faker -> randomElement($mediaIds)
+        ]);
+      }
     }
   }
 }
