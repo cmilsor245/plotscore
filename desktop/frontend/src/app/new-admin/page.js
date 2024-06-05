@@ -32,7 +32,7 @@ function CharacterCounter({ value, maxLength }) {
   )
 }
 
-export default function SignUpPage() {
+export default function NewAdminPage() {
   const [theme, setTheme] = useState('dark') // default color theme
 
   useEffect(() => {

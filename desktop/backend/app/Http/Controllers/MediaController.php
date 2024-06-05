@@ -28,6 +28,26 @@ class MediaController extends Controller {
       ], Response::HTTP_BAD_REQUEST);
     }
 
+    // $filename = '';
+
+    // if ($request -> hasFile('poster')) {
+    //   $filename = $request -> getSchemaAndHttpHost() . '/assets/posters/' . time() . '.' . $request -> poster -> extension();
+
+    //   $request -> poster -> move(public_path('/assets/posters/'), $filename);
+    // }
+
+    // $media = Media::create([
+    //   'title' => $request -> title,
+    //   'synopsis' => $request -> synopsis,
+    //   'release_date' => $request -> release_date,
+
+    //   'poster' => $filename,
+
+    //   'type' => $request -> type
+    // ]);
+
+    // return redirect() -> back();
+
     $request -> poster ?? '/storage/posters/default.png';
 
     $media = Media::create($request -> all());

@@ -32,7 +32,7 @@ function CharacterCounter({ value, maxLength }) {
   )
 }
 
-export default function LoginPage() {
+export default function NewMediaPage() {
   const [theme, setTheme] = useState('dark') // default color theme
 
   useEffect(() => {
@@ -70,14 +70,23 @@ export default function LoginPage() {
   const [title, setTitle] = useState('')
   const [synopsis, setSynopsis] = useState('')
   const [releaseDate, setReleaseDate] = useState('')
-  const [poster, setPoster] = useState(null)
+  // const [poster, setPoster] = useState(null) // Poster related state
   const [type, setType] = useState('movie')
 
   const handleTitleChange = (e) => setTitle(e.target.value)
   const handleSynopsisChange = (e) => setSynopsis(e.target.value)
   const handleReleaseDateChange = (e) => setReleaseDate(e.target.value)
-  const handlePosterChange = (e) => setPoster(e.target.files[0])
-  const handleTypeChange = (e) => setType(e.target.value)
+  // const handlePosterChange = (e) => setPoster(e.target.files[0]) // Poster related handler
+  const handleTypeChange = (e) => {
+    const selectedType = e.target.value
+    let newType = selectedType
+    if (selectedType === translate(lang, 'NEW_MEDIA_PAGE', 'FORM', 'MOVIE')) {
+      newType = 'movie'
+    } else if (selectedType === translate(lang, 'NEW_MEDIA_PAGE', 'FORM', 'TV_SERIES')) {
+      newType = 'series'
+    }
+    setType(newType)
+  }
 
   const titleMinLength = 1
   const titleMaxLength = 255
@@ -95,29 +104,24 @@ export default function LoginPage() {
   const submit = async (e) => {
     e.preventDefault()
 
-    const response = await fetch(`${ apiUrl }/create-media`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      credentials: 'include',
-      body: JSON.stringify({
-        title,
-        synopsis,
-        releaseDate,
+    try {
+      const formData = new FormData()
+      formData.append('title', title)
+      formData.append('synopsis', synopsis)
+      formData.append('release_date', releaseDate)
+      // formData.append('poster', poster)
+      formData.append('type', type)
 
-        poster,
-
-        type
+      await fetch(`${ apiUrl }/create-media`, {
+        method: 'POST',
+        credentials: 'include',
+        body: formData
       })
-    })
 
-    if (!response.ok) {
+      router.push('/')
+    } catch (error) {
       setErrorModalDisplayed(true)
-      return
     }
-
-    router.push('/')
   }
 
   const handleNotificationClose = () => setErrorModalDisplayed(false)
@@ -187,7 +191,7 @@ export default function LoginPage() {
               }}
             ></h1>
 
-            <form className = 'new-media-form' onSubmit = { submit }>
+            <form className = 'new-media-form' onSubmit = { submit } encType = 'multipart/form-data'>
               <div className = 'new-media-form__group'>
                 <FormLabelInput
                   label = { translate(lang, 'NEW_MEDIA_PAGE', 'FORM', 'TITLE_INPUT') }
@@ -205,7 +209,7 @@ export default function LoginPage() {
                   autoFocus
                   value = { title }
                 />
-                <CharacterCounter value = { title } maxLength = { titleMaxLength } />
+                <CharacterCounter value = {  title } maxLength = { titleMaxLength } />
               </div>
 
               <div className = 'new-media-form__group'>
@@ -244,7 +248,7 @@ export default function LoginPage() {
                 />
               </div>
 
-              <div className = 'new-media-form__group'>
+              {/* <div className = 'new-media-form__group'>
                 <FormLabelInput
                   fieldType = 'file'
 
@@ -258,7 +262,7 @@ export default function LoginPage() {
                   onChange = { handlePosterChange }
                   required
                 />
-              </div>
+              </div> */}
 
               <div className = 'new-media-form__group'>
                 <FormLabelInput
@@ -269,14 +273,13 @@ export default function LoginPage() {
                   name = 'new-media-form--type'
                   id = 'new-media-form__type'
 
-                  options = {[
+                  options = { [
                     translate(lang, 'NEW_MEDIA_PAGE', 'FORM', 'MOVIE'),
                     translate(lang, 'NEW_MEDIA_PAGE', 'FORM', 'TV_SERIES'),
-                  ]}
+                  ] }
 
                   onChange = { handleTypeChange }
                   required
-                  value = { type }
                 />
               </div>
 
