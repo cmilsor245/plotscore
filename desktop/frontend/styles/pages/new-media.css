@@ -41,22 +41,14 @@
   display: flex;
   gap: 10px;
   justify-content: center;
+  left: .5%;
   padding: 10px;
   position: fixed;
   top: 1%;
+  transform: translateX(-120%);
   transition: .1s;
   width: fit-content;
   z-index: 6;
-}
-
-.error-modal--signup {
-  right: .5%;
-  transform: translateX(120%);
-}
-
-.error-modal--login {
-  left: .5%;
-  transform: translateX(-120%);
 }
 
 .error-modal--displayed {
@@ -102,7 +94,7 @@
   flex-direction: column;
   gap: 0;
   min-height: 100vh;
-  background: center / cover;
+  background: left / cover;
 }
 
 .new-media-page__content {
@@ -321,19 +313,15 @@
     width: 18px;
   }
 
-  .signup__form-area {
-    padding: 100px 20px 100px 60px;
-  }
-
   .new-media__form-area {
     padding: 100px 60px 100px 20px;
   }
 
-  .signup__form-area h1, .new-media__form-area h1 {
+  .new-media__form-area h1 {
     font-size: clamp(20px, 4rem, 45px);
   }
 
-  .signup__form-area h1 span, .new-media__form-area h1 span {
+  .new-media__form-area h1 span {
     font-size: clamp(25px, 5.6rem, 60px);
   }
 
@@ -360,13 +348,9 @@
     width: 16px;
   }
 
-  .signup__form-area, .new-media__form-area {
+  .new-media__form-area {
     gap: 30px;
     justify-content: center;
-  }
-
-  .signup__form-area {
-    padding: 100px 20px 100px 80px;
   }
 
   .new-media__form-area {
@@ -375,11 +359,11 @@
 }
 
 @media (width <= 1280px) {
-  .signup__form-area h1, .new-media__form-area h1 {
+  .new-media__form-area h1 {
     font-size: clamp(20px, 3.6rem, 40px);
   }
 
-  .signup__form-area h1 span, .new-media__form-area h1 span {
+  .new-media__form-area h1 span {
     font-size: clamp(20px, 5rem, 50px);
   }
 
@@ -397,28 +381,8 @@
 }
 
 @media (width <= 1080px) {
-  .signup-page {
-    background-position: right;
-  }
-
-  .login-page {
-    background-position-x: calc(100% + 400px);
-  }
-
-  .signup__form-area, .new-media__form-area {
+  .new-media__form-area {
     width: 50%;
-  }
-}
-
-@media (width <= 985px) {
-  .login-page {
-    background-position-x: calc(100% + 600px);
-  }
-}
-
-@media (width <= 940px) {
-  .signup-page {
-    background-position-x: calc(100% + 800px);
   }
 }
 
@@ -445,16 +409,7 @@
     width: 24px;
   }
 
-  .signup-page {
-    background: center / cover;
-  }
-
-  .login-page {
-    background: center / cover;
-    background-position-x: calc(100% - 900px);
-  }
-
-  .signup__form-area, .new-media__form-area {
+  .new-media__form-area {
     background-color: var(--color--form-area--bg-mobile);
     box-shadow: none;
     padding-inline: 60px;
@@ -491,8 +446,14 @@
 }
 
 @media (width <= 400px) {
-  .signup__form-area, .new-media__form-area {
+  .new-media__form-area {
     padding-inline: 20px;
+  }
+}
+
+@media (width <= 386px) {
+  .new-media-page {
+    background-position: calc(100% - 450px);
   }
 }
 
