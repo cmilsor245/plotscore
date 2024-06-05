@@ -248,6 +248,8 @@ export default function LoginPage() {
                 <FormLabelInput
                   fieldType = 'file'
 
+                  lang = { lang }
+
                   label = { translate(lang, 'NEW_MEDIA_PAGE', 'FORM', 'POSTER') }
 
                   name = 'new-media-form--poster'

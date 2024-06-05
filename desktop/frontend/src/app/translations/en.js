@@ -55,6 +55,8 @@ const translationsEN = {
       SYNOPSIS_PLACEHOLDER: '1 character minimum',
       RELEASE_DATE: 'Release date',
       POSTER: 'Poster',
+      POSTER_ERROR_TEXT_1: 'File type must be jpeg, png, jpg or webp',
+      POSTER_ERROR_TEXT_2: 'File size must not exceed 4096 KB',
       TYPE: 'Content type',
 
       MOVIE: 'Movie',

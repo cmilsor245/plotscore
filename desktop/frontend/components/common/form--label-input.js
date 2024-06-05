@@ -1,3 +1,9 @@
+import { useState } from 'react'
+
+import { IconEyeCheck } from '@tabler/icons-react'
+
+import translate from '/src/app/translation.js'
+
 function Input(props) {
   return <input { ...props } />
 }
@@ -11,6 +17,9 @@ function Date(props) {
 }
 
 function File({ onChange, ...props }) {
+  const [errorModalDisplayed, setErrorModalDisplayed] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
+
   const handleFileChange = (event) => {
     const file = event.target.files[0]
     if (file) {
@@ -18,13 +27,15 @@ function File({ onChange, ...props }) {
       const maxSize = 4096 * 1024
 
       if (!validTypes.includes(file.type)) {
-        alert('file type must be jpeg, png, jpg, or webp')
+        setErrorMessage(translate(props.lang, 'NEW_MEDIA_PAGE', 'FORM', 'POSTER_ERROR_TEXT_1'))
+        setErrorModalDisplayed(true)
         event.target.value = null
         return
       }
 
       if (file.size > maxSize) {
-        alert('file size must not exceed 4096 kb')
+        setErrorMessage(translate(props.lang, 'NEW_MEDIA_PAGE', 'FORM', 'POSTER_ERROR_TEXT_2'))
+        setErrorModalDisplayed(true)
         event.target.value = null
         return
       }
@@ -33,15 +44,29 @@ function File({ onChange, ...props }) {
     }
   }
 
+  const handleNotificationClose = () => {
+    setErrorModalDisplayed(false)
+  }
+
   return (
-    <input
-      type = 'file'
-      accept = '.jpeg,.png,.jpg,.webp'
-      onChange = { handleFileChange }
-      { ...props } 
-    />
+    <>
+      <input
+        type = 'file'
+        accept = '.jpeg,.png,.jpg,.webp'
+        onChange = { handleFileChange }
+        { ...props }
+      />
+
+      <div className = { `error-modal error-modal--login ${ errorModalDisplayed ? 'error-modal--displayed' : '' }` }>
+        <p>{ errorMessage }</p>
+        <button className = 'error-modal__close-button' onClick = { handleNotificationClose }>
+        <IconEyeCheck />
+        </button>
+      </div>
+    </>
   )
 }
+
 
 function Radio({ name, options, ...props }) {
   return (

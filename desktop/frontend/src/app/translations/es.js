@@ -55,6 +55,8 @@ const translationsES = {
       SYNOPSIS_PLACEHOLDER: '1 carácter como mínimo',
       RELEASE_DATE: 'Fecha de estreno',
       POSTER: 'Póster',
+      POSTER_ERROR_TEXT_1: 'El tipo de archivo debe ser jpeg, png, jpg o webp',
+      POSTER_ERROR_TEXT_2: 'El tamaño del archivo no debe exceder 4096 KB',
       TYPE: 'Tipo de contenido',
 
       MOVIE: 'Película',
