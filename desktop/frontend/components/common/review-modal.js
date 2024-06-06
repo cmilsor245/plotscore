@@ -1,5 +1,7 @@
-import translate from '/src/app/translation.js'
+import { useEffect, useState } from 'react'
+
 import FormLabelInput from '/components/common/form--label-input.js'
+import translate from '/src/app/translation.js'
 
 import '/styles/components/common/review-modal.css'
 
