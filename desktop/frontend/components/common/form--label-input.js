@@ -148,7 +148,7 @@ export default function FormLabelInput({
       case 'file':
         return <File id = { id } { ...props } />
       case 'radio':
-        return <Radio id = { id } { ...props } />
+        return <Radio id = { id } options = { options } { ...props } />
       case 'select':
         return <SelectWithSearch id = { id } options = { options } { ...props } />
       default:
