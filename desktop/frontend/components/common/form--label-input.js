@@ -8,13 +8,19 @@ function Input(props) {
   return <input { ...props } />
 }
 
+/* ----------------------------- */
+
 function Textarea(props) {
   return <textarea { ...props }></textarea>
 }
 
+/* ----------------------------- */
+
 function Date(props) {
   return <input type = 'date' { ...props } />
 }
+
+/* ----------------------------- */
 
 function File({ onChange, ...props }) {
   const [errorModalDisplayed, setErrorModalDisplayed] = useState(false)
@@ -60,13 +66,14 @@ function File({ onChange, ...props }) {
       <div className = { `error-modal error-modal--login ${ errorModalDisplayed ? 'error-modal--displayed' : '' }` }>
         <p>{ errorMessage }</p>
         <button className = 'error-modal__close-button' onClick = { handleNotificationClose }>
-        <IconEyeCheck />
+          <IconEyeCheck />
         </button>
       </div>
     </>
   )
 }
 
+/* ------------------------------ */
 
 function Radio({ name, options, ...props }) {
   return (
@@ -89,7 +96,49 @@ function Radio({ name, options, ...props }) {
   )
 }
 
-export default function FormLabelInput({ label, fieldType, id, ...props }) {
+/* ------------------------------ */
+
+function SelectWithSearch({ options, id, ...props }) {
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const filteredOptions = options.filter((option) =>
+    option.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+
+  const handleSearchChange = (e) => {
+    const value = e.target.value
+    setSearchTerm(value)
+  }
+
+  return (
+    <div className = 'select-input'>
+      <input
+        className = { `select__search-input ${ searchTerm && filteredOptions.length > 0 ? 'select__search-input--bordered' : '' }` }
+        onChange = { handleSearchChange }
+        autoFocus
+      />
+      <select
+        id = { id }
+        className = { searchTerm && filteredOptions.length > 0 ? 'select__list--showed' : 'select__list' }
+        { ...props }
+      >
+        { filteredOptions.map((option, index) => (
+          <option key = { index } value = { option }>
+            { option }
+          </option>
+        )) }
+      </select>
+    </div>
+  )
+}
+
+export default function FormLabelInput({
+  label,
+  fieldType,
+  id,
+  options,
+  ...props
+}) {
   const renderInput = () => {
     switch (fieldType) {
       case 'textarea':
@@ -100,6 +149,8 @@ export default function FormLabelInput({ label, fieldType, id, ...props }) {
         return <File id = { id } { ...props } />
       case 'radio':
         return <Radio id = { id } { ...props } />
+      case 'select':
+        return <SelectWithSearch id = { id } options = { options } { ...props } />
       default:
         return <Input id = { id } { ...props } />
     }
@@ -108,7 +159,7 @@ export default function FormLabelInput({ label, fieldType, id, ...props }) {
   return (
     <>
       <label htmlFor = { id }>
-        {label}
+        { label }
       </label>
       { renderInput() }
     </>

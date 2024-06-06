@@ -19,6 +19,7 @@ import Divider from '/components/common/divider.js'
 import Footer from '/components/common/footer.js'
 import LogoHeader from '/components/common/logo-header.js'
 import { MainActionButton } from '/components/common/main-action-button.js'
+import ReviewModal from '/components/common/review-modal.js'
 import SectionHeading from '/components/common/section-heading.js'
 import SideMenu from '/components/common/side-menu.js'
 import translate from '/src/app/translation.js'
@@ -230,6 +231,18 @@ export default function AdminDashboard({
     closeDeleteMediaModal()
   }
 
+  /* ---------------------------------------------------- */
+
+  const [isReviewModalDisplayed, setIsReviewModalDisplayed] = useState(false)
+
+  const openReviewModal = () => {
+    setIsReviewModalDisplayed(true)
+  }
+
+  const closeReviewModal = () => {
+    setIsReviewModalDisplayed(false)
+  }
+
   return (
     <>
       <div className = 'main-actions-buttons'>
@@ -249,7 +262,7 @@ export default function AdminDashboard({
         />
         <MainActionButton
           icon = { IconPencilPlus }
-          handleClick = { null }
+          handleClick = { openReviewModal }
         />
       </div>
 
@@ -319,6 +332,21 @@ export default function AdminDashboard({
 
           <div className = 'delete-media-modal__overlay' onClick = { closeDeleteMediaModal }></div>
         </>
+      }
+
+      {/* --------------------------------------------------------- */}
+
+      {
+        isReviewModalDisplayed &&
+          <>
+            <ReviewModal
+              lang = { lang }
+
+              closeReviewModal = { closeReviewModal }
+            />
+
+            <div className = 'review-modal__overlay' onClick = { closeReviewModal }></div>
+          </>
       }
 
       {/* --------------------------------------------------------- */}

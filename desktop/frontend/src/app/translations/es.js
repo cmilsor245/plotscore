@@ -30,6 +30,11 @@ const translationsES = {
       CONTACT: 'Contacto',
 
       COPYRIGHT: '2024 - Este proyecto está desarrollado por Christian Millán Soria con fines educativos únicamente.'
+    },
+    REVIEW_MODAL: {
+      TITLE: 'crea una nueva review...',
+
+      MEDIA_TITLE: 'Título del contenido'
     }
   },
 

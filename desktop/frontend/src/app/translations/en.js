@@ -30,6 +30,11 @@ const translationsEN = {
       CONTACT: 'Contact',
 
       COPYRIGHT: '2024 - This project is developed by Christian Millán Soria for educational purposes only.'
+    },
+    REVIEW_MODAL: {
+      TITLE: 'add to your media diary...',
+
+      MEDIA_TITLE: 'Name of media'
     }
   },
 

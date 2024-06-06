@@ -1,0 +1,111 @@
+.dark-theme {
+  --color--review-modal-overlay: rgba(7, 8, 10, .7);
+  --color--review-modal-bg: var(--color--primary-dark-70);
+}
+
+.light-theme {
+  --color--review-modal-overlay: rgba(236, 238, 240, .7)
+}
+
+.review-modal {
+  align-items: flex-start;
+  background-color: var(--color--primary-main);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: flex-start;
+  left: 50%;
+  padding: 20px 50px;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  z-index: 10;
+}
+
+.review-modal__title {
+  --font: clamp(15px, 1.7rem, 19px) var(--font--graphik-light);
+  color: var(--color--primary-light-70);
+  font: var(--font);
+  text-transform: uppercase;
+}
+
+.review-modal__form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+  width: fit-content;
+}
+
+.review-modal__form-group {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: flex-start;
+  width: fit-content;
+}
+
+.review-modal__form-group label {
+  --font: clamp(12px, 1.4rem, 17px) var(--font--graphik-regular);
+  color: var(--color--primary-light-90);
+  cursor: pointer;
+  font: var(--font);
+  width: 100%;
+}
+
+.review-modal__form-group input {
+  --font: clamp(10px, 1.7rem, 20px) var(--font--graphik-regular);
+  background-color: var(--color--primary-light-80);
+  border-radius: 3px;
+  border: none;
+  color: var(--color--input--content);
+  cursor: text;
+  font: var(--font);
+  outline: none;
+  padding: 8px;
+  transition: .2s;
+  width: 600px !important;
+}
+
+.select-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.select__search-input--bordered {
+  border-radius: 3px 3px 0 0 !important;
+}
+
+.select-input select {
+  background-color: var(--color--primary-light-80);
+  border-radius: 0 0 3px 3px;
+  border: none;
+  color: var(--color--input--content);
+  cursor: pointer;
+  font: var(--font--graphik-regular);
+  outline: none;
+  padding: 8px;
+  transition: .2s;
+  width: 100%;
+}
+
+.select__list {
+  transform: translateY(-100%);
+  transition: .2s;
+  z-index: -1;
+}
+
+.review-modal__overlay {
+  background-color: var(--color--review-modal-overlay);
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 5;
+}
