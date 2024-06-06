@@ -91,8 +91,6 @@ export default function NewAdminPage() {
 
   const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
-  const secretAdminKey = 'plotscore_christian_admin_secret_key'
-
   const submit = async (e) => {
     e.preventDefault()
 
@@ -105,8 +103,7 @@ export default function NewAdminPage() {
         body: JSON.stringify({
           email,
           username,
-          password,
-          secret_key: secretAdminKey
+          password
         })
       })
 
@@ -184,10 +181,7 @@ export default function NewAdminPage() {
               }}
             ></h1>
 
-            {/* TODO: fix | not working */}
             <form className = 'account-form new-admin-form' onSubmit = { submit }>
-              <input type = 'hidden' name = 'secret_key' value = { secretAdminKey } />
-
               <div className = 'account-form__group'>
                 <FormLabelInput
                   label = { translate(lang, 'SIGNUP_PAGE', 'ACCOUNT_FORM', 'EMAIL') }

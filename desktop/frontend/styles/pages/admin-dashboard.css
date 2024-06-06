@@ -32,7 +32,7 @@
   --color--username: var(--color--primary-dark-50);
 }
 
-.delete-user-modal {
+.delete-user-modal, .delete-media-modal {
   align-items: center;
   background-color: var(--color--error-modal-bg);
   border-radius: 10px;
@@ -52,26 +52,30 @@
   z-index: 6;
 }
 
-.delete-user-modal h2 {
+.delete-user-modal h2,
+.delete-media-modal h2 {
   --font: clamp(13px, 2.2rem, 24px) var(--font--graphik-semibold);
   font: var(--font);
   text-transform: uppercase;
 }
 
-.delete-user-modal p {
+.delete-user-modal p,
+.delete-media-modal p {
   --font: clamp(9px, 1.6rem, 18px) var(--font--graphik-regular);
   font: var(--font);
   text-align: center;
   text-wrap: wrap;
 }
 
-.delete-user-modal p span {
+.delete-user-modal p span,
+.delete-media-modal p span {
   color: var(--color--secondary-main);
   font-family: var(--font--graphik-bold);
   letter-spacing: 1px;
 }
 
-.delete-user-modal__buttons {
+.delete-user-modal__buttons,
+.delete-media-modal__buttons {
   align-items: center;
   display: flex;
   gap: 15px;
@@ -79,7 +83,8 @@
   width: 100%;
 }
 
-.delete-user-modal__button {
+.delete-user-modal__button,
+.delete-media-modal__button {
   --font: clamp(9px, 1.4rem, 16px) var(--font--graphik-medium);
   background-color: var(--color--error-modal-button-bg);
   border-radius: 3px;
@@ -93,23 +98,28 @@
   width: fit-content;
 }
 
-.delete-user-modal__button--cancel {
+.delete-user-modal__button--cancel,
+.delete-media-modal__button--cancel {
   color: var(--color--cancel-button);
 }
 
-.delete-user-modal__button--cancel:hover {
+.delete-user-modal__button--cancel:hover,
+.delete-media-modal__button--cancel:hover {
   background-color: var(--color--tertiary-dark-20);
 }
 
-.delete-user-modal__button--confirm {
+.delete-user-modal__button--confirm,
+.delete-media-modal__button--confirm {
   color: var(--color--confirm-button);
 }
 
-.delete-user-modal__button--confirm:hover {
+.delete-user-modal__button--confirm:hover,
+.delete-media-modal__button--confirm:hover {
   background-color: var(--color--secondary-dark-20);
 }
 
-.delete-user-modal__overlay {
+.delete-user-modal__overlay,
+.delete-media-modal__overlay {
   background-color: var(--color--error-modal-overlay);
   height: 100vh;
   left: 0;
@@ -119,7 +129,8 @@
   z-index: 5;
 }
 
-.database-user-list .section-content {
+.database-user-list .section-content,
+.database-media-list .section-content {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -127,7 +138,8 @@
   justify-content: flex-start;
 }
 
-.database-user-list .section-content ul {
+.database-user-list .section-content ul,
+.database-media-list .section-content ul {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -135,13 +147,15 @@
   width: 100%;
 }
 
-.database-user-list .section-content ul li {
+.database-user-list .section-content ul li,
+.database-media-list .section-content ul li {
   align-items: center;
   display: flex;
   justify-content: space-between;
 }
 
-.user-list__attributes {
+.user-list__attributes,
+.media-list__attributes {
   align-items: center;
   display: flex;
   gap: 15px;
@@ -152,7 +166,12 @@
   border-radius: 50%;
 }
 
-.user-list__info {
+.media-list__poster {
+  border-radius: 2px;
+}
+
+.user-list__info,
+.media-list__info {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -160,7 +179,8 @@
   justify-content: center;
 }
 
-.user-list__info h4 {
+.user-list__info h4,
+.media-list__info h4 {
   --font: clamp(13px, 1.8rem, 24px) var(--font--graphik-semibold);
   align-items: center;
   color: var(--color--username);
@@ -177,7 +197,8 @@
   -webkit-text-fill-color: transparent;
 } */
 
-.user-list__info h4 svg {
+.user-list__info h4 svg,
+.media-list__info h4 svg {
   color: var(--color--admin-icon);
   height: 25px;
   left: -15px;
@@ -185,20 +206,23 @@
   width: 25px;
 }
 
-.user-list__info p {
+.user-list__info p,
+.media-list__info p {
   --font: clamp(9px, 1.2rem, 14px) var(--font--graphik-regular);
   color: var(--color--count);
   font: var(--font);
 }
 
-.list__user-actions {
+.list__user-actions,
+.list__media-actions {
   align-items: center;
   display: flex;
   gap: 20px;
   justify-content: flex-end;
 }
 
-.user-actions__edit, .user-actions__delete {
+.user-actions__edit, .user-actions__delete,
+.media-actions__edit, .media-actions__delete {
   align-items: center;
   background-color: transparent;
   border: none;
@@ -212,29 +236,35 @@
   width: 26px;
 }
 
-.user-actions__edit {
+.user-actions__edit,
+.media-actions__edit {
   color: var(--color--tertiary-main);
 }
 
-.user-actions__edit:hover {
+.user-actions__edit:hover,
+.media-actions__edit:hover {
   color: var(--color--edit-user-hover);
 }
 
-.user-actions__delete {
+.user-actions__delete,
+.media-actions__delete {
   color: var(--color--secondary-main);
 }
 
-.user-actions__delete:hover {
+.user-actions__delete:hover,
+.media-actions__delete:hover {
   color: var(--color--delete-user--hover);
 }
 
-.user-actions__edit *, .user-actions__delete * {
+.user-actions__edit *, .user-actions__delete *,
+.media-actions__edit *, .media-actions__delete * {
   cursor: pointer;
   height: 100%;
   width: 100%;
 }
 
-.user-list__pagination-controls {
+.user-list__pagination-controls,
+.media-list__pagination-controls {
   align-items: center;
   display: flex;
   justify-content: space-between;

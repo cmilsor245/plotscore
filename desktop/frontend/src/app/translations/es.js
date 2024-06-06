@@ -222,6 +222,28 @@ const translationsES = {
 
       CONFIRM_BUTTON: 'eliminar usuario',
       CANCEL_BUTTON: 'cancelar'
+    },
+
+    DATABASE_MEDIA_LIST: {
+      SECTION_TITLE: 'Lista de contenidos de la base de datos',
+
+      TYPE: 'Tipo de contenido: ',
+
+      MOVIE: 'Película',
+      TV_SERIES: 'Serie de TV',
+
+      RELEASED_ON: ' fecha de estreno: ',
+
+      PREVIOUS_PAGE: 'más antiguos',
+      NEXT_PAGE: 'más nuevos'
+    },
+
+    DELETE_MEDIA_MODAL: {
+      TITLE: 'eliminación de contenido',
+      TEXT: '¿Seguro que quieres eliminar el contenido cuyo título es ',
+
+      CONFIRM_BUTTON: 'eliminar contenido',
+      CANCEL_BUTTON: 'cancelar'
     }
   },
 

@@ -11,12 +11,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AuthController extends Controller {
   public function createAdmin(AuthRequest $request) {
-    if (!auth() -> check()) {
-      return response() -> json([
-        'message' => 'unauthorized'
-      ], Response::HTTP_UNAUTHORIZED);
-    }
-
     if (!$request -> username  || !$request -> email || !$request -> password) {
       return response() -> json([
         'error' => 'username, email, and password are required'
@@ -30,14 +24,6 @@ class AuthController extends Controller {
       return response() -> json([
         'error' => 'username or email already in use'
       ], Response::HTTP_CONFLICT);
-    }
-
-    $authenticatedUser = auth() -> user();
-
-    if ($authenticatedUser -> role !== 'admin') {
-      return response() -> json([
-        'message' => 'unauthorized'
-      ], Response::HTTP_UNAUTHORIZED);
     }
 
     $pronouns = $request -> pronouns ?? 'they/them';

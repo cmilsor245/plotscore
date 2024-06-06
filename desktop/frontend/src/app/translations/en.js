@@ -222,6 +222,28 @@ const translationsEN = {
 
       CONFIRM_BUTTON: 'delete user',
       CANCEL_BUTTON: 'cancel'
+    },
+
+    DATABASE_MEDIA_LIST: {
+      SECTION_TITLE: 'Database media list',
+
+      TYPE: 'Media type: ',
+
+      MOVIE: 'Movie',
+      TV_SERIES: 'TV series',
+
+      RELEASED_ON: ' released on: ',
+
+      PREVIOUS_PAGE: 'older',
+      NEXT_PAGE: 'newer'
+    },
+
+    DELETE_MEDIA_MODAL: {
+      TITLE: 'delete media',
+      TEXT: 'Are you sure you want to delete the media known as ',
+
+      CONFIRM_BUTTON: 'delete media',
+      CANCEL_BUTTON: 'cancel'
     }
   },
 
