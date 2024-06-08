@@ -16,7 +16,10 @@ class ReviewFactory extends Factory {
 
       'rating' => $this -> faker -> randomElement([0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]),
       'review_text' => $this -> faker -> optional() -> text(),
-      'spoilers_free' => $this -> faker -> boolean()
+      'spoilers_free' => $this -> faker -> boolean(),
+
+      'watched_on' => $this -> faker -> date(),
+      'watched_before' => $this -> faker -> boolean()
     ];
   }
 }

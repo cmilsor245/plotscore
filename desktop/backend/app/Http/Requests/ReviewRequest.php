@@ -23,7 +23,10 @@ class ReviewRequest extends FormRequest {
         }
       ],
       'review_text' => 'nullable|string|min:1|max:65535',
-      'spoilers_free' => 'boolean'
+      'spoilers_free' => 'boolean',
+
+      'watched_on' => 'required|date',
+      'watched_before' => 'required|boolean'
     ];
   }
 }

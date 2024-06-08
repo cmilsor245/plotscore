@@ -15,6 +15,11 @@ return new class extends Migration {
       $table -> text('review_text') -> nullable();
       $table -> boolean('spoilers_free') -> default(true);
 
+      $dateTodayWithoutTime = date('Y-m-d');
+
+      $table -> date('watched_on') -> default($dateTodayWithoutTime);
+      $table -> boolean('watched_before') -> default(false);
+
       $table -> timestamps();
     });
   }

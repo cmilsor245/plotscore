@@ -13,7 +13,10 @@ class Review extends Model {
 
     'rating',
     'review_text',
-    'spoilers_free'
+    'spoilers_free',
+
+    'watched_on',
+    'watched_before'
   ];
 
   public function user() {
