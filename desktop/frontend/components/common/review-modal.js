@@ -6,39 +6,40 @@ import translate from '/src/app/translation.js'
 import '/styles/components/common/review-modal.css'
 
 export default function ReviewModal({ lang, closeReviewModal }) {
-  // const options = ['Opción 1', 'Opción 2', 'Opción 3', 'Opción 4', 'Opción 5']
-
   const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
-  const [options, setOptions] = useState([])
+  // ! not working
+  // const [options, setOptions] = useState([])
 
-  useEffect(() => {
-    const fetchOptions = async () => {
-      try {
-        const response = await fetch(`${ apiUrl }/all-media`, {
-          method: 'GET',
-          credentials: 'include',
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
+  // useEffect(() => {
+  //   const fetchOptions = async () => {
+  //     try {
+  //       const response = await fetch(`${ apiUrl }/get-media-for-review`, {
+  //         method: 'GET',
+  //         credentials: 'include',
+  //         headers: {
+  //           'Content-Type': 'application/json'
+  //         }
+  //       })
 
-        if (response.ok) {
-          const data = await response.json()
-          setOptions(data)
-        } else {
-          throw new Error('failed to fetch options')
-        }
-      } catch (error) {
-        console.log(error)
-      }
-    }
-  })
+  //       if (response.ok) {
+  //         const data = await response.json()
+  //         setOptions(data)
+  //       } else {
+  //         throw new Error('failed to fetch options')
+  //       }
+  //     } catch (error) {
+  //       console.log(error)
+  //     }
+  //   }
+
+  //   fetchOptions()
+  // }, [])
 
   return (
     <div className = 'review-modal'>
       <h2 className = 'review-modal__title'>
-        {translate(lang, 'COMMON', 'REVIEW_MODAL', 'TITLE')}
+        { translate(lang, 'COMMON', 'REVIEW_MODAL', 'TITLE') }
       </h2>
 
       <form className = 'review-modal__form'>
@@ -51,7 +52,7 @@ export default function ReviewModal({ lang, closeReviewModal }) {
             name = { null }
             id = { null }
 
-            options = { options }
+            // options = { options }
           />
         </div>
       </form>

@@ -81,6 +81,12 @@ class MediaController extends Controller {
     ], Response::HTTP_OK);
   }
 
+  public function getMediaForReview() {
+    $media = Media::all();
+
+    return response() -> json($media, Response::HTTP_OK);
+  }
+
   public function updateMedia(Request $request, $id) {
     if (!auth() -> check()) {
       return response() -> json([

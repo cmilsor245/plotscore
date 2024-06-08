@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { IconEyeCheck } from '@tabler/icons-react'
 
@@ -98,11 +98,84 @@ function Radio({ name, options, ...props }) {
 
 /* ------------------------------ */
 
-function SelectWithSearch({ options, id, ...props }) {
+function BasicSelect({ id, ...props }) {
+  const [options, setOptions] = useState([])
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL
+
+  useEffect(() => {
+    const fetchOptions = async () => {
+      try {
+        const response = await fetch(`${ apiUrl }/get-media-for-review`, {
+          method: 'GET',
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+
+        if (response.ok) {
+          const data = await response.json()
+          setOptions(data)
+        } else {
+          console.log('failed to fetch options:', response.statusText)
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchOptions()
+  }, [])
+
+  return (
+    <div className = 'select-input'>
+      <select
+        id = { id }
+        { ...props }
+      >
+        {
+          options.map((option, index) => (
+            <option key = { index } value = { option }>
+              { option.title }
+            </option>
+          ))
+        }
+      </select>
+    </div>
+  )
+}
+
+function SelectWithSearch({ id, ...props }) {
+  const [options, setOptions] = useState([])
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL
+
+  useEffect(() => {
+    const fetchOptions = async () => {
+      try {
+        const response = await fetch(`${ apiUrl }/get-media-for-review`, {
+          method: 'GET',
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+
+        if (response.ok) {
+          const data = await response.json()
+          setOptions(data)
+        } else {
+          console.log('failed to fetch options:', response.statusText)
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchOptions()
+  }, [])
+
   const [searchTerm, setSearchTerm] = useState('')
 
   const filteredOptions = options.filter((option) =>
-    option.toLowerCase().includes(searchTerm.toLowerCase())
+    option.title.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
   const handleSearchChange = (e) => {
@@ -124,7 +197,7 @@ function SelectWithSearch({ options, id, ...props }) {
       >
         { filteredOptions.map((option, index) => (
           <option key = { index } value = { option }>
-            { option }
+            { option.title }
           </option>
         )) }
       </select>
@@ -150,7 +223,8 @@ export default function FormLabelInput({
       case 'radio':
         return <Radio id = { id } options = { options } { ...props } />
       case 'select':
-        return <SelectWithSearch id = { id } options = { options } { ...props } />
+        // return <BasicSelect id = { id } { ...props } />
+        return <SelectWithSearch id = { id } { ...props } />
       default:
         return <Input id = { id } { ...props } />
     }

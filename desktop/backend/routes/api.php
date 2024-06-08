@@ -22,6 +22,7 @@ Route::middleware('auth:sanctum')->group(function () {
   Route::post('create-media', [MediaController::class, 'createMedia']);
 
   Route::get('media/{id}', [MediaController::class, 'getMedia']);
+  Route::get('get-media-for-review', [MediaController::class, 'getMediaForReview']);
 
   Route::put('update-media/{id}', [MediaController::class, 'updateMedia']);
   Route::delete('delete-media/{id}', [MediaController::class, 'deleteMedia']);
