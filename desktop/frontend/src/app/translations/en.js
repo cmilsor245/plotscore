@@ -34,7 +34,16 @@ const translationsEN = {
     REVIEW_MODAL: {
       TITLE: 'add to your media diary...',
 
-      MEDIA_TITLE: 'Name of media'
+      MEDIA_TITLE: 'Name of media',
+
+      WATCHED_ON: 'Watched on ',
+      WATCHED_BEFORE: 'I\'ve watched this content before',
+
+      RATING: 'Rating',
+      LIKE: 'Like',
+
+      REVIEW_TEXT: 'Your thoughts',
+      SPOILERS_FREE: 'Contains spoilers'
     }
   },
 

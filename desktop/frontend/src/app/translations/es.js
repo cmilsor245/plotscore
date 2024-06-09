@@ -34,7 +34,16 @@ const translationsES = {
     REVIEW_MODAL: {
       TITLE: 'crea una nueva review...',
 
-      MEDIA_TITLE: 'Título del contenido'
+      MEDIA_TITLE: 'Título del contenido',
+
+      WATCHED_ON: 'Contenido visto el ',
+      WATCHED_BEFORE: 'He visto este contenido antes',
+
+      RATING: 'Puntuación',
+      LIKE: 'Marcar como Me Gusta',
+
+      REVIEW_TEXT: 'Tu opinión',
+      SPOILERS_FREE: 'Contiene spoilers'
     }
   },
 

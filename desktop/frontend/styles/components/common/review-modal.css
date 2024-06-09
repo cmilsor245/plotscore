@@ -1,6 +1,5 @@
 .dark-theme {
   --color--review-modal-overlay: rgba(7, 8, 10, .7);
-  --color--review-modal-bg: var(--color--primary-dark-70);
 }
 
 .light-theme {
@@ -20,8 +19,28 @@
   position: fixed;
   top: 50%;
   transform: translate(-50%, -50%);
+  transition: .1s;
   width: fit-content;
   z-index: 10;
+}
+
+.review-modal__close {
+  color: var(--color--primary-light-60);
+  cursor: pointer;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transition: .1s;
+  width: 30px;
+}
+
+.review-modal__close:hover {
+  color: var(--color--primary-light-90);
+}
+
+.review-modal__close * {
+  cursor: pointer;
 }
 
 .review-modal__title {
@@ -49,6 +68,20 @@
   width: fit-content;
 }
 
+.review-modal__form-group.watched-inputs,
+.review-modal__form-group.rating-and-like {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  flex-direction: row !important;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.review-modal__form-group.watched-inputs input {
+  width: 300px !important;
+}
+
 .review-modal__form-group label {
   --font: clamp(12px, 1.4rem, 17px) var(--font--graphik-regular);
   color: var(--color--primary-light-90);
@@ -68,7 +101,7 @@
   outline: none;
   padding: 8px;
   transition: .2s;
-  width: 600px !important;
+  width: 620px !important;
 }
 
 .select-input {
@@ -98,6 +131,201 @@
   transform: translateY(-100%);
   transition: .2s;
   z-index: -1;
+}
+
+.review-modal__form-group:has(.watched-on-input) .review-modal__form-group {
+  flex-direction: row;
+  gap: 0;
+  justify-content: flex-start;
+  width: fit-content !important;
+}
+
+.review-modal__form-group:has(.watched-on-input) .review-modal__form-group:first-of-type label {
+  text-align: right;
+  width: fit-content !important;
+}
+
+.review-modal__form-group:has(.watched-on-input) .review-modal__form-group:first-of-type input {
+  align-items: center;
+  background-color: transparent;
+  color: var(--color--primary-light-70);
+  display: flex;
+  font-size: clamp(12px, 1.4rem, 17px);
+  justify-content: flex-start;
+  position: relative;
+  transition: .2s;
+  width: fit-content !important;
+}
+
+.review-modal__form-group:has(.watched-on-input) .review-modal__form-group:first-of-type input:hover {
+  color: var(--color--primary-light-90);
+}
+
+.review-modal__form-group:has(.watched-on-input) .review-modal__form-group:first-of-type input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(1);
+  position: absolute;
+  right: 5px;
+}
+
+.review-modal__form-group:has(.watched-on-input) .review-modal__form-group:nth-of-type(2) {
+  flex-direction: row;
+  gap: 5px;
+  justify-content: flex-end;
+  width: fit-content !important;
+}
+
+.review-modal__form-group input[type = 'checkbox'] {
+  position: absolute;
+  opacity: 0;
+}
+
+.review-modal__form-group input[type = 'checkbox'] + label {
+  cursor: pointer;
+  position: relative;
+}
+
+#review-modal__watched-before {
+  pointer-events: none;
+}
+
+.review-modal__form-group input[type = 'checkbox'] + label:before {
+  background-color: var(--color--primary-light-80);
+  border-radius: 3px;
+  content: '';
+  height: 20px;
+  left: -25px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: .3s;
+  width: 20px;
+}
+
+.review-modal__form-group input[type = 'checkbox']:checked + label:before {
+  background-color: transparent;
+}
+
+.review-modal__form-group input[type = 'checkbox']:checked + label:after {
+  color: var(--color--primary-light-90);
+  content: '🔄️';
+  font-size: 19px;
+  left: -15px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -60%);
+}
+
+.review-modal__form-group.text-and-spoilers {
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+}
+
+#review-modal__spoilers-free {
+  pointer-events: none;
+}
+
+.review-modal__form-group.text-and-spoilers textarea {
+  --font: clamp(10px, 1.7rem, 20px) var(--font--graphik-regular);
+  background-color: var(--color--primary-light-80);
+  border-radius: 3px;
+  border-radius: 3px;
+  border: none;
+  color: var(--color--input--content);
+  cursor: text;
+  font: var(--font);
+  height: 200px !important;
+  outline: none;
+  padding: 8px;
+  padding: 8px;
+  resize: none;
+  transition: .2s;
+  width: 450px;
+}
+
+.review-modal__form-group.text-and-spoilers input[type = 'checkbox']:checked + label:after {
+  content: '✅';
+}
+
+.review-modal__form-group.rating-and-like {
+  align-items: flex-end;
+  gap: 10px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.review-modal__form-group.rating-and-like .review-modal__form-group .rating {
+  display: flex;
+  gap: 1px;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.review-modal__form-group.rating-and-like .review-modal__form-group .rating svg {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+
+.review-modal__form-group.rating-and-like .review-modal__form-group .rating svg * {
+  cursor: pointer;
+}
+
+.star-empty {
+  color: var(--color--primary-dark-30) !important;
+}
+
+.star-filled {
+  color: var(--color--accent-main) !important;
+}
+
+.clear-rating-button {
+  color: var(--color--primary-light-60) !important;
+  cursor: pointer;
+  height: 20px !important;
+  position: absolute;
+  right: -15%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px !important;
+}
+
+.clear-rating-button:hover {
+  color: var(--color--primary-light-80) !important;
+}
+
+.clear-rating-button * {
+  cursor: pointer;
+}
+
+.review-modal__form-group.like {
+  justify-content: flex-end;
+}
+
+.review-modal__form-group.like label {
+  display: none;
+}
+
+.review-modal__form-group.rating-and-like .review-modal__form-group .like-empty svg,
+.review-modal__form-group.rating-and-like .review-modal__form-group .like-filled svg {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+
+.review-modal__form-group.rating-and-like .review-modal__form-group .like-empty svg *,
+.review-modal__form-group.rating-and-like .review-modal__form-group .like-filled svg * {
+  cursor: pointer;
+}
+
+.like-empty {
+  color: var(--color--primary-dark-70) !important;
+}
+
+.like-filled {
+  color: red !important;
 }
 
 .review-modal__overlay {
