@@ -345,7 +345,7 @@ export default function AdminDashboard({
               closeReviewModal = { closeReviewModal }
             />
 
-            <div className = 'review-modal__overlay' onClick = { closeReviewModal }></div>
+            <div className = 'review-modal__overlay'></div>
           </>
       }
 

@@ -251,7 +251,7 @@
 
 .review-modal__form-group.rating-and-like {
   align-items: flex-end;
-  gap: 10px;
+  gap: 25px;
   justify-content: flex-start;
   width: 100%;
 }

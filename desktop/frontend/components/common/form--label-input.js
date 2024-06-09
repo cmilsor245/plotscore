@@ -143,7 +143,7 @@ function BasicSelect({ id, ...props }) {
       <select id = { id } {...props }>
         { options.map((option, index) => (
           <option key = { index } value = { option }>
-            { option.title} 
+            { option.title } 
           </option>
         )) }
       </select>
@@ -151,21 +151,24 @@ function BasicSelect({ id, ...props }) {
   )
 }
 
-function SelectWithSearch({ id, ...props }) {
+/* ------------------------------ */
+
+function SelectWithSearch({ id, value, onChange, ...props }) {
   const [options, setOptions] = useState([])
+  const [searchTerm, setSearchTerm] = useState('')
   const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
   useEffect(() => {
     const fetchOptions = async () => {
       try {
-        const response = await fetch(`${ apiUrl }/get-media-for-review`, {
+        const response = await fetch(`${apiUrl}/get-media-for-review`, {
           method: 'GET',
           credentials: 'include',
           headers: {
-            'Content-Type': 'application/json'
-          }
+            'Content-Type': 'application/json',
+          },
         })
-
+          
         if (response.ok) {
           const data = await response.json()
           setOptions(data)
@@ -176,10 +179,9 @@ function SelectWithSearch({ id, ...props }) {
         console.log(error)
       }
     }
+
     fetchOptions()
   }, [])
-
-  const [searchTerm, setSearchTerm] = useState('')
 
   const filteredOptions = options.filter((option) =>
     option.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -190,28 +192,39 @@ function SelectWithSearch({ id, ...props }) {
     setSearchTerm(value)
   }
 
+  const handleSelectChange = (e) => {
+    const selectedValue = e.target.value
+    onChange && onChange({ target: { value: selectedValue } })
+  }
+
   return (
-    <div className = 'select-input'>
+    <div className="select-input">
       <input
-        disabled = { props.value !== '' }
+        disabled = { value !== '' }
         className = { `select__search-input ${ searchTerm && filteredOptions.length > 0 ? 'select__search-input--bordered' : '' }` }
         onChange = { handleSearchChange }
         autoFocus
       />
       <select
-        id = { id }
+        disabled = { value !== '' }
+        id = { id}
         className = { searchTerm && filteredOptions.length > 0 ? 'select__list--shown' : 'select__list' }
-        { ...props }
+        value = { value }
+        onChange = { handleSelectChange }
+        { ...props } 
       >
-        { filteredOptions.map((option, index) => (
-          <option key = { index } value = { option }>
-            { option.title }
+        {filteredOptions.map((option, index) => (
+          <option key = { index } value = { option.title }>
+            { `${ option.title } - ${ option.release_date }` }
           </option>
-        )) }
+        ))}
       </select>
     </div>
   )
 }
+
+
+/* ------------------------------ */
 
 function Checkbox(props) {
   return <input type = 'checkbox' { ...props } />

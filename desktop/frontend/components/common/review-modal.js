@@ -37,8 +37,8 @@ export default function ReviewModal({ lang, closeReviewModal }) {
           <FormLabelInput
             fieldType = 'select'
             label = { translate(lang, 'COMMON', 'REVIEW_MODAL', 'MEDIA_TITLE') }
-            name = { null }
-            id = { null }
+            name = 'review-modal--media-title'
+            id = 'review-modal--media-title'
             onChange = { handleSelectChange }
             value = { selectedOption }
           />
@@ -64,7 +64,7 @@ export default function ReviewModal({ lang, closeReviewModal }) {
                   label = { translate(lang, 'COMMON', 'REVIEW_MODAL', 'WATCHED_BEFORE') }
 
                   name = 'review-modal--watched-before'
-                  id = 'review-modal__watched-before'
+                  id = 'review-modal--watched-before'
                 />
               </div>
             </div>
@@ -79,7 +79,7 @@ export default function ReviewModal({ lang, closeReviewModal }) {
                   label = { translate(lang, 'COMMON', 'REVIEW_MODAL', 'REVIEW_TEXT') }
 
                   name = 'review-modal--text'
-                  id = 'review-modal__text'
+                  id = 'review-modal--text'
                 />
               </div>
               <div className = 'review-modal__form-group'>
@@ -89,7 +89,7 @@ export default function ReviewModal({ lang, closeReviewModal }) {
                   label = { translate(lang, 'COMMON', 'REVIEW_MODAL', 'SPOILERS_FREE') }
 
                   name = 'review-modal--spoilers-free'
-                  id = 'review-modal__spoilers-free'
+                  id = 'review-modal--spoilers-free'
                 />
               </div>
             </div>
@@ -115,7 +115,7 @@ export default function ReviewModal({ lang, closeReviewModal }) {
                   fieldType = 'like'
 
                   name = 'review-modal--like'
-                  id = 'review-modal__like'
+                  id = 'review-modal--like'
 
                   onChange = { handleLikeChange }
                   value = { like }
