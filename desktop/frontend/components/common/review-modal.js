@@ -179,7 +179,7 @@ export default function ReviewModal({
                 <FormLabelInput
                   fieldType = 'checkbox'
 
-                  label = { translate(lang, 'COMMON', 'REVIEW_MODAL', 'contains_spoilers') }
+                  label = { translate(lang, 'COMMON', 'REVIEW_MODAL', 'CONTAINS_SPOILERS') }
 
                   name = 'contains_spoilers'
                   id = 'review-modal--spoilers-free'

@@ -181,7 +181,7 @@ export default function UserHome({
             <section className = 'content__logo-header common'>
               <h2 className = 'welcome-text'>
                 { translate(lang, 'USER_HOME', 'WELCOME_TEXT', 'TEXT_LEFT') }
-                <Link href = { `/user/${ userData?.username }` }>
+                <Link href = { `/${ userData?.username }` }>
                   { userData?.given_name ? userData.given_name : userData?.username }
                 </Link>
                 { translate(lang, 'USER_HOME', 'WELCOME_TEXT', 'TEXT_RIGHT') }

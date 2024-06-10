@@ -386,3 +386,84 @@
   width: 100vw;
   z-index: 5;
 }
+
+@media (width <= 788px) {
+  .review-modal__form-group input {
+    width: 550px !important;
+  }
+
+  .review-modal__form-group.text-and-spoilers textarea {
+    width: 380px !important;
+  }
+}
+
+@media (width <= 700px) {
+  .review-modal__form-group input {
+    width: 480px !important;
+  }
+
+  .review-modal__form-group.text-and-spoilers textarea {
+    width: 300px !important;
+  }
+}
+
+@media (width <= 586px) {
+  .review-modal {
+    justify-content: center;
+    padding: 20px;
+    width: 99vw;
+  }
+
+  .review-modal__form {
+    gap: 20px;
+  }
+
+  .review-modal__form-group label {
+    text-align: right;
+  }
+
+  .review-modal__form-group input {
+    width: calc(100vw - 40px) !important;
+  }
+
+  .review-modal__form-group.watched-inputs,
+  .review-modal__form-group.text-and-spoilers {
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    gap: 20px;
+  }
+
+  .review-modal__form-group.text-and-spoilers textarea {
+    width: calc(100vw - 40px) !important;
+    height: 100px !important;
+  }
+
+  .review-modal__form-group input[type = 'checkbox'] + label:before {
+    height: 17px;
+    width: 17px;
+  }
+
+  .review-modal__form-group.rating-and-like {
+    align-items: flex-end;
+    flex-direction: column !important;
+    gap: 0;
+  }
+
+  .review-modal__form-group.rating-and-like .review-modal__form-group:first-of-type {
+    align-items: flex-end !important;
+  }
+
+  .clear-rating-button {
+    left: -15%;
+  }
+}
+
+@media (width <= 504px) {
+  .review-modal__creation-notification.showed {
+    right: 50%;
+    text-align: center;
+    text-wrap: wrap;
+    transform: translateX(50%);
+    width: 95%;
+  }
+}
