@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 
 import {
-  IconX,
   IconEyeCheck,
   IconHeart,
   IconHeartFilled,
   IconStar,
   IconStarFilled,
-  IconStarHalfFilled
+  IconStarHalfFilled,
+  IconX
 } from '@tabler/icons-react'
 
 import translate from '/src/app/translation.js'
@@ -161,7 +161,7 @@ function SelectWithSearch({ id, value, onChange, ...props }) {
   useEffect(() => {
     const fetchOptions = async () => {
       try {
-        const response = await fetch(`${apiUrl}/get-media-for-review`, {
+        const response = await fetch(`${ apiUrl }/get-media-for-review`, {
           method: 'GET',
           credentials: 'include',
           headers: {
@@ -207,17 +207,17 @@ function SelectWithSearch({ id, value, onChange, ...props }) {
       />
       <select
         disabled = { value !== '' }
-        id = { id}
+        id = { id }
         className = { searchTerm && filteredOptions.length > 0 ? 'select__list--shown' : 'select__list' }
         value = { value }
         onChange = { handleSelectChange }
         { ...props } 
       >
-        {filteredOptions.map((option, index) => (
+        { filteredOptions.map((option, index) => (
           <option key = { index } value = { option.id }>
             { `${ option.title } - ${ option.release_date }` }
           </option>
-        ))}
+        )) }
       </select>
     </div>
   )
@@ -273,7 +273,7 @@ function Rating({ name, value = 0, onChange }) {
         onMouseLeave = { handleMouseLeave }
         className = { filled || halfFilled ? 'star-filled' : 'star-empty' }
       >
-        {filled ? <IconStarFilled /> : halfFilled ? <IconStarHalfFilled /> : <IconStar />}
+        { filled ? <IconStarFilled /> : halfFilled ? <IconStarHalfFilled /> : <IconStar /> }
       </span>
     )
   }

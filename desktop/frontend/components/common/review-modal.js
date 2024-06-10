@@ -25,7 +25,7 @@ export default function ReviewModal({
   const [like, setLike] = useState(false)
 
   const [reviewText, setReviewText] = useState('')
-  const [spoilersFree, setSpoilersFree] = useState(false)
+  const [containsSpoilers, setContainsSpoilers] = useState(false)
 
   const handleSelectChange = (e) => {
     setSelectedOption(e.target.value)
@@ -52,8 +52,8 @@ export default function ReviewModal({
     setReviewText(e.target.value)
   }
 
-  const handleSpoilersFreeChange = (e) => {
-    setSpoilersFree(e.target.checked)
+  const handleContainsSpoilersChange = (e) => {
+    setContainsSpoilers(e.target.checked)
   }
 
   /* ----------------------------------------------- */
@@ -68,12 +68,15 @@ export default function ReviewModal({
     const bodyData = {
       user_id: userID,
       media_id: selectedOption,
+
       watched_on: watchedOn,
       watched_before: watchedBefore,
+
       rating: rating,
       liked_media: like,
+
       review_text: reviewText,
-      contains_spoilers: spoilersFree
+      contains_spoilers: containsSpoilers
     }
 
     try {
@@ -181,8 +184,8 @@ export default function ReviewModal({
                   name = 'contains_spoilers'
                   id = 'review-modal--spoilers-free'
 
-                  onChange = { handleSpoilersFreeChange }
-                  value = { spoilersFree }
+                  onChange = { handleContainsSpoilersChange }
+                  value = { containsSpoilers }
                 />
               </div>
             </div>

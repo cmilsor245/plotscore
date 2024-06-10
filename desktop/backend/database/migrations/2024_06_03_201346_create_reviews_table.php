@@ -15,7 +15,7 @@ return new class extends Migration {
       $table -> boolean('watched_before') -> default(false);
 
       $table -> text('review_text') -> nullable();
-      $table -> boolean('contains_spoilers') -> default(true);
+      $table -> boolean('contains_spoilers') -> default(false);
 
       $table -> float('rating', 2, 1) -> default(0);
       $table -> boolean('liked_media') -> default(false);
