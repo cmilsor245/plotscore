@@ -15,6 +15,7 @@ import { MainActionButton } from '/components/common/main-action-button.js'
 import SideMenu from '/components/common/side-menu.js'
 import NewFromFriends from '/components/user-home/active/new-from-friends.js'
 import NewOnPlotscore from '/components/user-home/no-friends/new-on-plotscore.js'
+import ReviewModal from '/components/common/review-modal.js'
 import translate from '/src/app/translation.js'
 
 import '/styles/pages/user-home.css'
@@ -88,6 +89,42 @@ export default function UserHome({
     getFollowingList()
   }, [userData?.id])
 
+  /* -------------------------------------------------------- */
+
+  const [isReviewModalDisplayed, setIsReviewModalDisplayed] = useState(false)
+
+  const openReviewModal = () => {
+    setIsReviewModalDisplayed(true)
+  }
+
+  const closeReviewModal = () => {
+    setIsReviewModalDisplayed(false)
+  }
+
+  /* ---------------------------------------------------------- */
+
+  const [isReviewCreationNotificationDisplayed, setIsReviewCreationNotificationDisplayed] = useState(false)
+  const [mediaTitleForNotification, setMediaTitleForNotification] = useState('')
+  const [sluggedMediaTitle, setSluggedMediaTitle] = useState('')
+
+  const convertToSlug = (text) => {
+    return text
+      .toLowerCase()
+      .replace(/[^\w ]+/g, '')
+      .replace(/ +/g, '-')
+  }
+
+  const handleReviewCreatedNotification = (mediaTitle) => {
+    setIsReviewCreationNotificationDisplayed(true)
+    setMediaTitleForNotification(mediaTitle)
+    setSluggedMediaTitle(convertToSlug(mediaTitle))
+    closeReviewModal()
+    setTimeout(() => {
+      setIsReviewCreationNotificationDisplayed(false)
+      setMediaTitleForNotification('')
+    }, 3000)
+  }
+
   return (
     <>
       <div className = 'main-actions-buttons'>
@@ -97,8 +134,32 @@ export default function UserHome({
         />
         <MainActionButton
           icon = { IconPencilPlus }
-          handleClick = { null }
+          handleClick = { openReviewModal }
         />
+      </div>
+
+      {/* ---------------------------------------------------------------------------------------------- */}
+
+      {
+        isReviewModalDisplayed &&
+          <>
+            <ReviewModal
+              lang = { lang }
+
+              userData = { userData }
+
+              closeReviewModal = { closeReviewModal }
+              handleReviewCreatedNotification = { handleReviewCreatedNotification }
+            />
+
+            <div className = 'review-modal__overlay'></div>
+          </>
+      }
+
+      <div className = { `review-modal__creation-notification ${ isReviewCreationNotificationDisplayed ? 'showed' : '' }` }>
+        { translate(lang, 'COMMON', 'REVIEW_MODAL', 'REVIEW_CREATED_1') }
+        <Link href = { `/media/${ sluggedMediaTitle }` }>{ mediaTitleForNotification }</Link>
+        { translate(lang, 'COMMON', 'REVIEW_MODAL', 'REVIEW_CREATED_2') }
       </div>
 
       {/* -------------------------------------------------------------------------------------------------- */}
