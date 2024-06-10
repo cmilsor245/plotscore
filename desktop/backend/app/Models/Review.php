@@ -3,20 +3,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Sanctum\HasApiTokens;
 
 class Review extends Model {
-  use HasFactory;
+  use HasFactory, HasApiTokens;
 
   protected $fillable = [
     'user_id',
     'media_id',
 
-    'rating',
-    'review_text',
-    'spoilers_free',
-
     'watched_on',
-    'watched_before'
+    'watched_before',
+
+    'rating',
+    'liked_media',
+
+    'review_text',
+    'contains_spoilers'
   ];
 
   public function user() {

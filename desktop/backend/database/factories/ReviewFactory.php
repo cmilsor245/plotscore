@@ -14,12 +14,14 @@ class ReviewFactory extends Factory {
       'user_id' => User::factory(),
       'media_id' => Media::factory(),
 
-      'rating' => $this -> faker -> randomElement([0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]),
-      'review_text' => $this -> faker -> optional() -> text(),
-      'spoilers_free' => $this -> faker -> boolean(),
-
       'watched_on' => $this -> faker -> date(),
-      'watched_before' => $this -> faker -> boolean()
+      'watched_before' => $this -> faker -> boolean(),
+
+      'rating' => $this -> faker -> randomElement([0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]),
+      'liked_media' => $this -> faker -> boolean(),
+
+      'review_text' => $this -> faker -> optional() -> text(),
+      'contains_spoilers' => $this -> faker -> boolean()
     ];
   }
 }

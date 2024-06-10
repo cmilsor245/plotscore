@@ -14,9 +14,9 @@ class ReviewController extends Controller {
       ], Response::HTTP_UNAUTHORIZED);
     }
 
-    if (!$request -> user_id || !$request -> media_id || $request -> spoilers_free === null) {
+    if (!$request -> user_id || !$request -> media_id) {
       return response() -> json([
-        'error' => 'user_id, media_id and spoilers_free are required'
+        'error' => 'user_id, media_id and contains_spoilers are required'
       ], Response::HTTP_BAD_REQUEST);
     }
 

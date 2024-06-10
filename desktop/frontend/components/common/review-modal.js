@@ -7,11 +7,25 @@ import translate from '/src/app/translation.js'
 
 import '/styles/components/common/review-modal.css'
 
-export default function ReviewModal({ lang, closeReviewModal }) {
+export default function ReviewModal({
+  lang,
+
+  userData,
+
+  closeReviewModal,
+  handleReviewCreatedNotification
+}) {
   const [isSelectAltered, setIsSelectAltered] = useState(false)
   const [selectedOption, setSelectedOption] = useState('')
+
+  const [watchedOn, setWatchedOn] = useState('')
+  const [watchedBefore, setWatchedBefore] = useState(false)
+
   const [rating, setRating] = useState(0)
   const [like, setLike] = useState(false)
+
+  const [reviewText, setReviewText] = useState('')
+  const [spoilersFree, setSpoilersFree] = useState(false)
 
   const handleSelectChange = (e) => {
     setSelectedOption(e.target.value)
@@ -26,19 +40,85 @@ export default function ReviewModal({ lang, closeReviewModal }) {
     setLike(e.target.value)
   }
 
+  const handleWatchedOnChange = (e) => {
+    setWatchedOn(e.target.value)
+  }
+
+  const handleWatchedBeforeChange = (e) => {
+    setWatchedBefore(e.target.checked)
+  }
+
+  const handleReviewTextChange = (e) => {
+    setReviewText(e.target.value)
+  }
+
+  const handleSpoilersFreeChange = (e) => {
+    setSpoilersFree(e.target.checked)
+  }
+
+  /* ----------------------------------------------- */
+
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL
+
+  const submit = async (e) => {
+    e.preventDefault()
+
+    const userID = userData.id
+
+    const bodyData = {
+      user_id: userID,
+      media_id: selectedOption,
+      watched_on: watchedOn,
+      watched_before: watchedBefore,
+      rating: rating,
+      liked_media: like,
+      review_text: reviewText,
+      contains_spoilers: spoilersFree
+    }
+
+    try {
+      await fetch(`${ apiUrl }/create-review`, {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(bodyData)
+      })
+
+      const selectedMediaTitle = await fetch (`${ apiUrl }/media/${ selectedOption }`, {
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'GET'
+      })
+
+      const data = await selectedMediaTitle.json()
+
+      handleReviewCreatedNotification(data.title)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   return (
     <div className = 'review-modal'>
       <IconX className = 'review-modal__close' onClick = { closeReviewModal } />
       <h2 className = 'review-modal__title'>
         { translate(lang, 'COMMON', 'REVIEW_MODAL', 'TITLE') }
       </h2>
-      <form className = 'review-modal__form'>
+      <form className = 'review-modal__form' onSubmit = { submit }>
         <div className = 'review-modal__form-group'>
           <FormLabelInput
             fieldType = 'select'
+
             label = { translate(lang, 'COMMON', 'REVIEW_MODAL', 'MEDIA_TITLE') }
-            name = 'review-modal--media-title'
+
+            name = 'media_id'
             id = 'review-modal--media-title'
+            required
+
             onChange = { handleSelectChange }
             value = { selectedOption }
           />
@@ -53,8 +133,12 @@ export default function ReviewModal({ lang, closeReviewModal }) {
 
                   label = { translate(lang, 'COMMON', 'REVIEW_MODAL', 'WATCHED_ON') }
 
-                  name = 'review-modal--watched-on'
+                  name = 'watched_on'
                   id = 'review-modal__watched-on'
+                  required
+
+                  onChange = { handleWatchedOnChange }
+                  value = { watchedOn }
                 />
               </div>
               <div className = 'review-modal__form-group'>
@@ -63,8 +147,11 @@ export default function ReviewModal({ lang, closeReviewModal }) {
 
                   label = { translate(lang, 'COMMON', 'REVIEW_MODAL', 'WATCHED_BEFORE') }
 
-                  name = 'review-modal--watched-before'
+                  name = 'watched_before'
                   id = 'review-modal--watched-before'
+
+                  onChange = { handleWatchedBeforeChange }
+                  value = { watchedBefore }
                 />
               </div>
             </div>
@@ -78,18 +165,24 @@ export default function ReviewModal({ lang, closeReviewModal }) {
 
                   label = { translate(lang, 'COMMON', 'REVIEW_MODAL', 'REVIEW_TEXT') }
 
-                  name = 'review-modal--text'
+                  name = 'review_text'
                   id = 'review-modal--text'
+
+                  onChange = { handleReviewTextChange }
+                  value = { reviewText }
                 />
               </div>
               <div className = 'review-modal__form-group'>
                 <FormLabelInput
                   fieldType = 'checkbox'
 
-                  label = { translate(lang, 'COMMON', 'REVIEW_MODAL', 'SPOILERS_FREE') }
+                  label = { translate(lang, 'COMMON', 'REVIEW_MODAL', 'contains_spoilers') }
 
-                  name = 'review-modal--spoilers-free'
+                  name = 'contains_spoilers'
                   id = 'review-modal--spoilers-free'
+
+                  onChange = { handleSpoilersFreeChange }
+                  value = { spoilersFree }
                 />
               </div>
             </div>
@@ -103,7 +196,7 @@ export default function ReviewModal({ lang, closeReviewModal }) {
 
                   label = { translate(lang, 'COMMON', 'REVIEW_MODAL', 'RATING') }
 
-                  name = 'review-modal--rating'
+                  name = 'rating'
                   id = 'review-modal__rating'
 
                   onChange = { handleRatingChange }
@@ -114,7 +207,7 @@ export default function ReviewModal({ lang, closeReviewModal }) {
                 <FormLabelInput
                   fieldType = 'like'
 
-                  name = 'review-modal--like'
+                  name = 'liked_media'
                   id = 'review-modal--like'
 
                   onChange = { handleLikeChange }
@@ -122,6 +215,10 @@ export default function ReviewModal({ lang, closeReviewModal }) {
                 />
               </div>
             </div>
+
+            <button type = 'submit' className = 'review-modal__submit'>
+              { translate(lang, 'COMMON', 'REVIEW_MODAL', 'SUBMIT_BUTTON') }
+            </button>
           </>
         ) }
       </form>

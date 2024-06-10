@@ -3,7 +3,35 @@
 }
 
 .light-theme {
-  --color--review-modal-overlay: rgba(236, 238, 240, .7)
+  --color--review-modal-overlay: rgba(236, 238, 240, .7);
+}
+
+.review-modal__creation-notification {
+  --font: clamp(12px, 1.4rem, 15px) var(--font--graphik-semibold);
+  background-color: var(--color--accent-main);
+  border-radius: 2px;
+  color: var(--color--primary-dark-70);
+  font: var(--font);
+  height: fit-content;
+  padding: 10px 15px;
+  position: fixed;
+  right: -100%;
+  top: 10px;
+  transition: .2s;
+  width: fit-content;
+  z-index: 10;
+}
+
+.review-modal__creation-notification a {
+  --font: clamp(15px, 1.6rem, 17px) var(--font--graphik-regular);
+  color: var(--color--primary-dark-70);
+  cursor: pointer;
+  font: var(--font);
+  text-decoration: underline;
+}
+
+.review-modal__creation-notification.showed {
+  right: 10px;
 }
 
 .review-modal {
@@ -51,7 +79,7 @@
 }
 
 .review-modal__form {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -185,8 +213,9 @@
   position: relative;
 }
 
-#review-modal__watched-before {
+#review-modal--watched-before {
   pointer-events: none;
+  display: none;
 }
 
 .review-modal__form-group input[type = 'checkbox'] + label:before {
@@ -243,6 +272,11 @@
   resize: none;
   transition: .2s;
   width: 450px;
+}
+
+#review-modal--spoilers-free {
+  pointer-events: none;
+  display: none;
 }
 
 .review-modal__form-group.text-and-spoilers input[type = 'checkbox']:checked + label:after {
@@ -326,6 +360,21 @@
 
 .like-filled {
   color: red !important;
+}
+
+.review-modal__submit {
+  --font: clamp(12px, 1.5rem, 17px) var(--font--graphik-semibold);
+  background-color: var(--color--secondary-main);
+  border-radius: 3px;
+  border: none;
+  color: var(--color--primary-light-90);
+  cursor: pointer;
+  font: var(--font);
+  letter-spacing: 0.1em;
+  margin-top: 20px;
+  outline: none;
+  padding: 5px;
+  text-transform: uppercase;
 }
 
 .review-modal__overlay {

@@ -214,7 +214,7 @@ function SelectWithSearch({ id, value, onChange, ...props }) {
         { ...props } 
       >
         {filteredOptions.map((option, index) => (
-          <option key = { index } value = { option.title }>
+          <option key = { index } value = { option.id }>
             { `${ option.title } - ${ option.release_date }` }
           </option>
         ))}

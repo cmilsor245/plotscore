@@ -11,14 +11,14 @@ return new class extends Migration {
       $table -> foreignId('user_id') -> constrained() -> onDelete('cascade');
       $table -> foreignId('media_id') -> constrained() -> onDelete('cascade');
 
-      $table -> float('rating', 2, 1) -> default(0);
-      $table -> text('review_text') -> nullable();
-      $table -> boolean('spoilers_free') -> default(true);
-
-      $dateTodayWithoutTime = date('Y-m-d');
-
-      $table -> date('watched_on') -> default($dateTodayWithoutTime);
+      $table -> date('watched_on');
       $table -> boolean('watched_before') -> default(false);
+
+      $table -> text('review_text') -> nullable();
+      $table -> boolean('contains_spoilers') -> default(true);
+
+      $table -> float('rating', 2, 1) -> default(0);
+      $table -> boolean('liked_media') -> default(false);
 
       $table -> timestamps();
     });

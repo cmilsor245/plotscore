@@ -43,7 +43,12 @@ const translationsES = {
       LIKE: 'Marcar como Me Gusta',
 
       REVIEW_TEXT: 'Tu opinión',
-      SPOILERS_FREE: 'Contiene spoilers'
+      contains_spoilers: 'Contiene spoilers',
+
+      SUBMIT_BUTTON: 'crear registro',
+
+      REVIEW_CREATED_1: '¡Tu review sobre ',
+      REVIEW_CREATED_2: ' ha sido registrada!'
     }
   },
 

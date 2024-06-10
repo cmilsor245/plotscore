@@ -43,7 +43,12 @@ const translationsEN = {
       LIKE: 'Like',
 
       REVIEW_TEXT: 'Your thoughts',
-      SPOILERS_FREE: 'Contains spoilers'
+      contains_spoilers: 'Contains spoilers',
+
+      SUBMIT_BUTTON: 'create log',
+
+      REVIEW_CREATED_1: 'Your review about ',
+      REVIEW_CREATED_2: ' has been created!'
     }
   },
 

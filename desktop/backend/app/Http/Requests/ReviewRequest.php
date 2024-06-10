@@ -13,6 +13,9 @@ class ReviewRequest extends FormRequest {
       'user_id' => 'required|exists:users,id',
       'media_id' => 'required|exists:media,id',
 
+      'watched_on' => 'required|date',
+      'watched_before' => 'required|boolean',
+
       'rating' => [
         'nullable',
         'numeric',
@@ -22,11 +25,10 @@ class ReviewRequest extends FormRequest {
           }
         }
       ],
-      'review_text' => 'nullable|string|min:1|max:65535',
-      'spoilers_free' => 'boolean',
+      'liked_media' => 'boolean',
 
-      'watched_on' => 'required|date',
-      'watched_before' => 'required|boolean'
+      'review_text' => 'nullable|string|min:1|max:65535',
+      'contains_spoilers' => 'boolean'
     ];
   }
 }
