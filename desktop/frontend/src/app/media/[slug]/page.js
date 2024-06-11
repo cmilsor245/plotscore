@@ -157,6 +157,7 @@ export default function Media() {
         { translate(lang, 'COMMON', 'REVIEW_MODAL', 'REVIEW_CREATED_2') }
       </div>
 
+      { userData && (
         <SideMenu
           lang = { lang }
           handleLanguageChange = { handleLanguageChange }
@@ -165,6 +166,7 @@ export default function Media() {
           userData = { userData }
           handleLogout = { logout }
         />
+      ) }
     </>
   )
 }

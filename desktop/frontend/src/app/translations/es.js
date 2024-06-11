@@ -300,7 +300,7 @@ const translationsES = {
 
       /* ---------------- */
 
-      TOTAL_WATCHES: 'contenidos',
+      TOTAL_WATCHES: 'visto',
       TOTAL_WATCHES_THIS_YEAR: 'este año',
       FOLLOWING: 'siguiendo',
       FOLLOWERS: 'seguidores',

@@ -103,16 +103,16 @@
 
 .dots__option-wrapper {
   align-items: flex-start;
+  background-color: var(--color--primary-light-10);
+  border-radius: 3px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  left: 50%;
-  padding-block: 5px; 
+  left: 100%;
+  padding-block: 3px; 
   position: absolute;
   top: 20px;
   z-index: 5;
-  background-color: var(--color--primary-light-10);
-  border-radius: 3px;
 }
 
 .dots__option {

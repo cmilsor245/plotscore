@@ -7,6 +7,8 @@ import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 import {
+  IconBulbFilled,
+  IconBulbOff,
   IconCopy,
   IconDots,
   IconLink,
@@ -17,7 +19,11 @@ import {
 
 import ButtonGeneral from '/components/common/button--general.js'
 import LogoHeader from '/components/common/logo-header.js'
-import { MainActionButton } from '/components/common/main-action-button'
+import {
+  CircleFlagsEs,
+  CircleFlagsUk,
+  MainActionButton
+} from '/components/common/main-action-button'
 import ReviewModal from '/components/common/review-modal.js'
 import SideMenu from '/components/common/side-menu.js'
 import VerticalDivider from '/components/common/vertical-divider.js'
@@ -124,37 +130,70 @@ export default function Profile() {
   const [totalOtherReviews, setTotalOtherReviews] = useState(0)
   const [totalMediaThisYearForOtherUser, setTotalMediaThisYearForOtherUser] = useState(0)
 
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const ownUserResponse = await fetch(`${ apiUrl }/user`, {
-          credentials: 'include'
-        })
+        try {
+          const ownUserResponse = await fetch(`${ apiUrl }/user`, {
+            credentials: 'include'
+          })
 
-        const ownUserData = await ownUserResponse.json()
-        setOwnUserData(ownUserData)
+          const ownUserData = await ownUserResponse.json()
+          setOwnUserData(ownUserData)
 
-        /* ------- */
+          /* ------- */
 
-        const totalOwnReviewsResponse = await fetch(`${ apiUrl }/get-all-reviews-for-user/${ ownUserData.id }`, {
-          credentials: 'include'
-        })
+          const totalOwnReviewsResponse = await fetch(`${ apiUrl }/get-all-reviews-for-user/${ ownUserData.id }`, {
+            credentials: 'include'
+          })
 
-        const totalOwnReviewsData = await totalOwnReviewsResponse.json()
-        setTotalOwnReviews(totalOwnReviewsData.totalReviews)
+          const totalOwnReviewsData = await totalOwnReviewsResponse.json()
+          setTotalOwnReviews(totalOwnReviewsData.totalReviews)
 
-        /* ------- */
+          /* ------- */
 
-        const totalMediaThisYearForOwnUserResponse = await fetch(`${ apiUrl }/get-this-year-reviews-for-user/${ ownUserData.id }`, {
-          credentials: 'include'
-        })
+          const totalMediaThisYearForOwnUserResponse = await fetch(`${ apiUrl }/get-this-year-reviews-for-user/${ ownUserData.id }`, {
+            credentials: 'include'
+          })
 
-        const totalMediaThisYearForOwnUserData = await totalMediaThisYearForOwnUserResponse.json()
-        setTotalMediaThisYearForOwnUser(totalMediaThisYearForOwnUserData.totalReviews)
+          const totalMediaThisYearForOwnUserData = await totalMediaThisYearForOwnUserResponse.json()
+          setTotalMediaThisYearForOwnUser(totalMediaThisYearForOwnUserData.totalReviews)
 
-        if (ownUserData.username === usernameInUrl) {
-          setIsOwnProfilePage(true)
-        } else {
+          if (ownUserData.username === usernameInUrl) {
+            setIsOwnProfilePage(true)
+          } else {
+            setIsOwnProfilePage(false)
+
+            const otherUserResponse = await fetch(`${ apiUrl }/get-user-by-username/${ usernameInUrl }`, {
+              credentials: 'include'
+            })
+
+            const otherUserData = await otherUserResponse.json()
+            setOtherUserData(otherUserData)
+
+            /* ------ */
+
+            const totalOtherReviewsResponse = await fetch(`${ apiUrl }/get-all-reviews-for-user/${ otherUserData.id }`, {
+              credentials: 'include'
+            })
+
+            const totalOtherReviewsData = await totalOtherReviewsResponse.json()
+            setTotalOtherReviews(totalOtherReviewsData.totalReviews)
+
+            /* ------ */
+
+            const totalMediaThisYearForOtherUserResponse = await fetch(`${ apiUrl }/get-this-year-reviews-for-user/${ otherUserData.id }`, {
+              credentials: 'include'
+            })
+
+            const totalMediaThisYearForOtherUserData = await totalMediaThisYearForOtherUserResponse.json()
+            setTotalMediaThisYearForOtherUser(totalMediaThisYearForOtherUserData.totalReviews)
+          }
+        } catch (error) {
+          setIsLoggedIn(false)
+
           setIsOwnProfilePage(false)
 
           const otherUserResponse = await fetch(`${ apiUrl }/get-user-by-username/${ usernameInUrl }`, {
@@ -180,7 +219,7 @@ export default function Profile() {
           })
 
           const totalMediaThisYearForOtherUserData = await totalMediaThisYearForOtherUserResponse.json()
-          setTotalMediaThisYearForOtherUser(totalMediaThisYearForOtherUserData.totalMediaThisYear)
+          setTotalMediaThisYearForOtherUser(totalMediaThisYearForOtherUserData.totalReviews)
         }
       } catch (error) {
         console.error('error fetching user data:', error)
@@ -237,14 +276,28 @@ export default function Profile() {
   return (
     <>
       <div className = 'main-actions-buttons'>
-        <MainActionButton
-          icon = { IconZoom }
-          handleClick = { null }
-        />
-        <MainActionButton
-          icon = { IconPencilPlus }
-          handleClick = { openReviewModal }
-        />
+        { isLoggedIn ? (
+          <>
+            <MainActionButton
+              icon = { IconZoom }
+              handleClick = { null }
+            />
+            <MainActionButton
+              icon = { IconPencilPlus }
+              handleClick = { openReviewModal }
+            />
+          </>
+        ) : (
+          <>
+            <MainActionButton
+              icon = { lang === 'en' ? CircleFlagsEs : CircleFlagsUk }
+              handleClick = { handleLanguageChange }
+            />
+            <MainActionButton
+              icon = { theme === 'dark' ? IconBulbFilled : IconBulbOff }
+              handleClick = { handleThemeChange }
+            /></>
+        ) }
       </div>
 
       { isReviewModalDisplayed && ownUserData && (
