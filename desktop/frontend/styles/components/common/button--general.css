@@ -1,0 +1,37 @@
+.dark-theme {
+  --color--button--highlighted__bg--hover: var(--color--secondary-dark-20);
+  --color--button--highlighted__bg: var(--color--secondary-main);
+}
+
+.light-theme {
+  --color--button--highlighted__bg--hover: var(--color--tertiary-dark-20);
+  --color--button--highlighted__bg: var(--color--tertiary-main);
+}
+
+.button--general {
+  --font: clamp(11px, 1.2rem, 14px) var(--font--graphik-semibold);
+  align-items: center;
+  background-color: var(--color--primary-light-10);
+  border-radius: 2px;
+  border: none;
+  color: var(--color--primary-light-80);
+  cursor: pointer;
+  display: flex;
+  font: var(--font);
+  justify-content: center;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  transition: .2s;
+}
+
+.button--general:hover {
+  background-color: var(--color--primary-main);
+}
+
+.button--general.highlighted {
+  background-color: var(--color--button--highlighted__bg);
+}
+
+.button--general.highlighted:hover {
+  background-color: var(--color--button--highlighted__bg--hover);
+}

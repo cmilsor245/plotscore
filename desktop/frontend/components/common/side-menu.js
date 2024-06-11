@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 
 import {
@@ -74,7 +75,7 @@ export default function SideMenu({
 
         {/* -------------------------------------------------------------- */}
 
-        <section className = 'side-menu__user'>
+        <Link className = 'side-menu__user' href = { `/user/${ userData?.username }` }>
           <Image
             className = 'side-menu__avatar'
             src = { avatarSrc }
@@ -92,7 +93,7 @@ export default function SideMenu({
                 }
               </span>
           }
-        </section>
+        </Link>
 
         <div className = 'side-menu__divider'></div>
 
@@ -165,12 +166,12 @@ export default function SideMenu({
         {/* -------------------------------------------------------------- */}
 
         <section className = 'side-menu__options'>
-          <div className = 'side-menu__option'>
+          <Link className = 'side-menu__option' href = '/settings'>
             <IconSettings />
             <span className = { `side-menu__text ${ isExpanded ? 'expanded' : '' }` }>
               { translate(lang, 'COMMON', 'SIDE_MENU', 'SETTINGS') }
             </span>
-          </div>
+          </Link>
           <div className = 'side-menu__option'>
             <IconBadgeAdOff />
             <span className = { `side-menu__text ${ isExpanded ? 'expanded' : '' }` }>

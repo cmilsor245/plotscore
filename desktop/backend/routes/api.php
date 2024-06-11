@@ -41,11 +41,14 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 
 Route::get('user/{id}', [AuthController::class, 'getUser']);
+Route::get('get-user-by-username/{username}', [AuthController::class, 'getUserByUsername']);
 
 Route::get('all-media', [MediaController::class, 'getAllMedia']);
 
 Route::get('review/{id}', [ReviewController::class, 'getReview']);
 Route::get('all-reviews', [ReviewController::class, 'getAllReviews']);
+Route::get('get-all-reviews-for-user/{id}', [ReviewController::class, 'getAllReviewsForUser']);
+Route::get('get-this-year-reviews-for-user/{id}', [ReviewController::class, 'getThisYearReviewsForUser']);
 
 Route::get('get-followers/{id}', [FollowController::class, 'getFollowers']);
 Route::get('get-following/{id}', [FollowController::class, 'getFollowing']);

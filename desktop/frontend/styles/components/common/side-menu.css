@@ -1,11 +1,11 @@
 .dark-theme {
   --color--icons--and--text--hover: var(--color--primary-light-40);
   --color--icons--and--text: var(--color--primary-light-80);
-  --color--side-menu--bg: var(--color--primary-dark-70);
   --color--side-menu__button: var(--color--primary-light-80);
-  --color--side-menu--close-button--bg: var(--color--secondary-main);
   --color--side-menu__divider: var(--color--primary-dark-30);
   --color--side-menu__overlay: rgba(7, 8, 10, .7);
+  --color--side-menu--bg: var(--color--primary-dark-70);
+  --color--side-menu--close-button--bg: var(--color--secondary-main);
   --color--user-avatar--shadow: rgba(218, 221, 224, .5);
 
 }
@@ -13,11 +13,11 @@
 .light-theme {
   --color--icons--and--text--hover: var(--color--primary-light-10);
   --color--icons--and--text: var(--color--primary-dark-70);
-  --color--side-menu--bg: var(--color--primary-light-80);
   --color--side-menu__button: var(--color--primary-dark-70);
-  --color--side-menu--close-button--bg: var(--color--tertiary-main);
   --color--side-menu__divider: var(--color--primary-light-50);
   --color--side-menu__overlay: rgba(236, 238, 240, .7);
+  --color--side-menu--bg: var(--color--primary-light-80);
+  --color--side-menu--close-button--bg: var(--color--tertiary-main);
   --color--user-avatar--shadow: rgba(20, 25, 31, .5);
 }
 
@@ -107,6 +107,7 @@
 
 .side-menu__user {
   gap: 15px;
+  text-decoration: none !important;
 }
 
 .side-menu__user span, .side-menu__option span {
@@ -137,6 +138,7 @@
   --font: clamp(28px, 3rem, 31px) var(--font--tiempos-headline-bold);
   font: var(--font);
   overflow: hidden;
+  text-decoration: none !important;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 205px;

@@ -1,0 +1,504 @@
+'use client'
+
+import cookie from 'js-cookie'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
+
+import {
+  IconCopy,
+  IconDots,
+  IconLink,
+  IconMapPin,
+  IconPencilPlus,
+  IconZoom
+} from '@tabler/icons-react'
+
+import ButtonGeneral from '/components/common/button--general.js'
+import LogoHeader from '/components/common/logo-header.js'
+import { MainActionButton } from '/components/common/main-action-button'
+import ReviewModal from '/components/common/review-modal.js'
+import SideMenu from '/components/common/side-menu.js'
+import VerticalDivider from '/components/common/vertical-divider.js'
+import translate from '/src/app/translation.js'
+
+import '/styles/pages/user-profile.css'
+
+export default function Profile() {
+  const [theme, setTheme] = useState('dark') // default color theme
+
+  useEffect(() => {
+    const storedLang = cookie.get('lang')
+    const storedTheme = cookie.get('theme')
+
+    if (storedLang) setLang(storedLang)
+    if (storedTheme) setTheme(storedTheme)
+
+    document.body.classList.add(theme + '-theme')
+
+    return () => {
+      document.body.classList.remove(theme + '-theme')
+    }
+  }, [theme])
+
+  const handleThemeChange = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light'
+    setTheme(newTheme)
+    cookie.set('theme', newTheme, { expires: 365 })
+  }
+
+  /* ------------------------------- */
+
+  const [lang, setLang] = useState('en') // default language
+
+  const handleLanguageChange = () => {
+    const newLang = lang === 'en' ? 'es' : 'en'
+    setLang(newLang)
+    cookie.set('lang', newLang, { expires: 365 })
+  }
+
+  /* ------------------------------- */
+
+  const [isReviewModalDisplayed, setIsReviewModalDisplayed] = useState(false)
+
+  const openReviewModal = () => {
+    setIsReviewModalDisplayed(true)
+  }
+
+  const closeReviewModal = () => {
+    setIsReviewModalDisplayed(false)
+  }
+
+  /* ------------------------------- */
+
+  const [isReviewCreationNotificationDisplayed, setIsReviewCreationNotificationDisplayed] = useState(false)
+  const [mediaTitleForNotification, setMediaTitleForNotification] = useState('')
+  const [sluggedMediaTitle, setSluggedMediaTitle] = useState('')
+
+  const convertToSlug = (text) => {
+    return text
+      .toLowerCase()
+      .replace(/[^\w ]+/g, '')
+      .replace(/ +/g, '-')
+  }
+
+  const handleReviewCreatedNotification = (mediaTitle) => {
+    setIsReviewCreationNotificationDisplayed(true)
+    setMediaTitleForNotification(mediaTitle)
+    setSluggedMediaTitle(convertToSlug(mediaTitle))
+    closeReviewModal()
+    setTimeout(() => {
+      setIsReviewCreationNotificationDisplayed(false)
+      setMediaTitleForNotification('')
+    }, 3000)
+  }
+
+  /* ------------------------------- */
+
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL
+
+  const [usernameInUrl, setUsernameInUrl] = useState('')
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setUsernameInUrl(window.location.pathname.split('/').pop())
+    }
+  }, [])
+
+  const [isOwnProfilePage, setIsOwnProfilePage] = useState(false)
+
+  const [ownUserData, setOwnUserData] = useState(null)
+  const [totalOwnReviews, setTotalOwnReviews] = useState(0)
+  const [totalMediaThisYearForOwnUser, setTotalMediaThisYearForOwnUser] = useState(0)
+
+  const [otherUserData, setOtherUserData] = useState(null)
+  const [totalOtherReviews, setTotalOtherReviews] = useState(0)
+  const [totalMediaThisYearForOtherUser, setTotalMediaThisYearForOtherUser] = useState(0)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const ownUserResponse = await fetch(`${ apiUrl }/user`, {
+          credentials: 'include'
+        })
+
+        const ownUserData = await ownUserResponse.json()
+        setOwnUserData(ownUserData)
+
+        /* ------- */
+
+        const totalOwnReviewsResponse = await fetch(`${ apiUrl }/get-all-reviews-for-user/${ ownUserData.id }`, {
+          credentials: 'include'
+        })
+
+        const totalOwnReviewsData = await totalOwnReviewsResponse.json()
+        setTotalOwnReviews(totalOwnReviewsData.totalReviews)
+
+        /* ------- */
+
+        const totalMediaThisYearForOwnUserResponse = await fetch(`${ apiUrl }/get-this-year-reviews-for-user/${ ownUserData.id }`, {
+          credentials: 'include'
+        })
+
+        const totalMediaThisYearForOwnUserData = await totalMediaThisYearForOwnUserResponse.json()
+        setTotalMediaThisYearForOwnUser(totalMediaThisYearForOwnUserData.totalMediaThisYear)
+
+        if (ownUserData.username === usernameInUrl) {
+          setIsOwnProfilePage(true)
+        } else {
+          setIsOwnProfilePage(false)
+
+          const otherUserResponse = await fetch(`${ apiUrl }/get-user-by-username/${ usernameInUrl }`, {
+            credentials: 'include'
+          })
+
+          const otherUserData = await otherUserResponse.json()
+          setOtherUserData(otherUserData)
+
+          /* ------ */
+
+          const totalOtherReviewsResponse = await fetch(`${ apiUrl }/get-all-reviews-for-user/${ otherUserData.id }`, {
+            credentials: 'include'
+          })
+
+          const totalOtherReviewsData = await totalOtherReviewsResponse.json()
+          setTotalOtherReviews(totalOtherReviewsData.totalReviews)
+
+          /* ------ */
+
+          const totalMediaThisYearForOtherUserResponse = await fetch(`${ apiUrl }/get-this-year-reviews-for-user/${ otherUserData.id }`, {
+            credentials: 'include'
+          })
+
+          const totalMediaThisYearForOtherUserData = await totalMediaThisYearForOtherUserResponse.json()
+          setTotalMediaThisYearForOtherUser(totalMediaThisYearForOtherUserData.totalMediaThisYear)
+        }
+      } catch (error) {
+        console.error('error fetching user data:', error)
+      }
+    }
+
+    if (usernameInUrl) {
+      fetchData()
+    }
+  }, [usernameInUrl, apiUrl])
+
+  /* ------------------------------- */
+
+  const router = useRouter()
+
+  const logout = async () => {
+    await fetch(`${ apiUrl }/logout`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include'
+    })
+
+    router.push('/')
+  }
+
+  /* ------------------------------ */
+
+  // const avatarSrc = `${ process.env.NEXT_PUBLIC_API_STORAGE_PATH }${ userData ? userData.avatar : '/storage/avatars/default.png' }`
+  const avatarSrc = 'https://secure.gravatar.com/avatar/98eadea62aa09a91132e66b5319c84d6?rating=PG&size=1000&border=&default=https%3A%2F%2Fs.ltrbxd.com%2Fstatic%2Fimg%2Favatar1000.a71b6e9c.png'
+
+  /* ------------------------------ */
+
+  const [isDotsButtonOptionDisplayed, setIsDotsButtonOptionDisplayed] = useState(false)
+  const [isLinkCopiedNotificationDisplayed, setIsLinkCopiedNotificationDisplayed] = useState(false)
+
+  const displayDotsButtonOption = () => {
+    setIsDotsButtonOptionDisplayed(true)
+  }
+
+  const closeDotsButtonOption = () => {
+    setIsDotsButtonOptionDisplayed(false)
+  }
+
+  const notifyProfileLinkCopied = () => {
+    setIsLinkCopiedNotificationDisplayed(true)
+    setTimeout(() => {
+      setIsLinkCopiedNotificationDisplayed(false)
+    }, 2000)
+  }
+
+  const copyUserProfileLink = () => {
+    navigator.clipboard.writeText(window.location.href)
+    notifyProfileLinkCopied()
+  }
+
+  return (
+    <>
+      <div className = 'main-actions-buttons'>
+        <MainActionButton
+          icon = { IconZoom }
+          handleClick = { null }
+        />
+        <MainActionButton
+          icon = { IconPencilPlus }
+          handleClick = { openReviewModal }
+        />
+      </div>
+
+      { isReviewModalDisplayed && ownUserData && (
+        <>
+          <ReviewModal
+            lang = { lang }
+            userData = { ownUserData }
+            closeReviewModal = { closeReviewModal }
+            handleReviewCreatedNotification = { handleReviewCreatedNotification }
+          />
+          <div className = 'review-modal__overlay'></div>
+        </>
+      ) }
+
+      <div className = { `review-modal__creation-notification ${ isReviewCreationNotificationDisplayed ? 'showed' : '' }` }>
+        { translate(lang, 'COMMON', 'REVIEW_MODAL', 'REVIEW_CREATED_1') }
+        <Link href = { `/media/${ sluggedMediaTitle }` }>{ mediaTitleForNotification }</Link>
+        { translate(lang, 'COMMON', 'REVIEW_MODAL', 'REVIEW_CREATED_2') }
+      </div>
+
+      { ownUserData && (
+        <SideMenu
+          lang = { lang }
+          handleLanguageChange = { handleLanguageChange }
+          theme = { theme }
+          handleThemeChange = { handleThemeChange }
+          userData = { ownUserData }
+          handleLogout = { logout }
+        />
+      ) }
+
+      <section className = 'common__content-footer with-top-padding'>
+        <section className = 'common__content'>
+          <main>
+            <LogoHeader />
+
+            <section className = 'content__logo-header common'>
+              <section className = 'main-info-and-stats'>
+                <div className = 'details'>
+                  <Image
+                    className = 'profile__avatar'
+                    src = { avatarSrc }
+                    width = { 120 }
+                    height = { 120 }
+                    alt = 'avatar'
+                  />
+
+                  <div className = 'details__attributes'>
+                    <div className = 'first-row'>
+                      <h2>
+                        { isOwnProfilePage
+                          ? ownUserData?.username
+                          : otherUserData?.username
+                        }
+                      </h2>
+                      { isOwnProfilePage ? (
+                        <Link href = '/settings'>
+                          <ButtonGeneral
+                            text = { translate(lang, 'PROFILE', 'USER_DETAILS', 'PRIMARY_BUTTON__EDIT_PROFILE') }
+                          />
+                        </Link>
+                      ) : (
+                        <button>
+                          { translate(lang, 'PROFILE', 'USER_DETAILS', 'PRIMARY_BUTTON__FOLLOW') }
+                        </button>
+                      ) }
+                      <div className = 'dots' onClick = { displayDotsButtonOption }>
+                        <IconDots />
+
+                        { isDotsButtonOptionDisplayed && (
+                            <>
+                              <div className = 'dots__option-wrapper'>
+                                <div className = 'dots__option' onClick = { copyUserProfileLink }>
+                                  <IconCopy />
+                                  <span>
+                                    { translate(lang, 'PROFILE', 'USER_DETAILS', 'PRIMARY_BUTTON__COPY_PROFILE_LINK') }
+                                  </span>
+
+                                  { isLinkCopiedNotificationDisplayed &&
+                                      <div className = 'dots__option__notification'>
+                                        { translate(lang, 'PROFILE', 'USER_DETAILS', 'PRIMARY_BUTTON__LINK_COPIED') }
+                                      </div>
+                                  }
+                                </div>
+                              </div>
+
+                              <div className = 'dots-option__overlay' onClick = { closeDotsButtonOption }></div>
+                            </>
+                          )
+                        }
+                      </div>
+                    </div>
+
+                    {/* ------------- */}
+
+                    <div className = 'second-row'>
+                      { isOwnProfilePage
+                        ? ownUserData?.bio
+                        : otherUserData?.bio
+                      }
+                    </div>
+
+                    {/* ------------- */}
+
+                    <div className = 'third-row'>
+                      { isOwnProfilePage
+                        ? (
+                          <>
+                            { ownUserData?.location &&
+                              <div>
+                                <IconMapPin stroke = { 1.5 } />
+                                <span>
+                                  { ownUserData.location }
+                                </span>
+                              </div>
+                            }
+                            { ownUserData?.website &&
+                              <div>
+                                <IconLink stroke = { 1.5 } />
+                                <Link
+                                  href = { ownUserData.website.startsWith('http') || ownUserData.website.startsWith('https') ? ownUserData.website : `https://${ ownUserData.website }` }
+                                  target = '_blank'
+                                  rel = 'noopener noreferrer'
+                                >
+                                  { ownUserData.website }
+                                </Link>
+                              </div>
+                            }
+                          </>
+                        ) : (
+                          <>
+                            { otherUserData?.location &&
+                              <div>
+                                <IconMapPin />
+                                <span>
+                                  { otherUserData.location }
+                                </span>
+                              </div>
+                            }
+                            { otherUserData?.website &&
+                              <div>
+                                <IconLink />
+                                <a
+                                  href = { otherUserData.website.startsWith('http') || otherUserData.website.startsWith('https') ? otherUserData.website : `https://${ otherUserData.website }` }
+                                  target = '_blank'
+                                  rel = 'noopener noreferrer'
+                                >
+                                  { otherUserData.website }
+                                </a>
+                              </div>
+                            }
+                          </>
+                        )
+                      }
+                    </div>
+                  </div>
+                </div>
+
+                {/* --------------------------------------- */}
+
+                <div className = 'stats'>
+                  { isOwnProfilePage
+                    ? (
+                      <>
+                        <div className = 'total-watched'>
+                          <span>
+                            { totalOwnReviews || 0 }
+                          </span>
+                          <span>
+                            { translate(lang, 'PROFILE', 'USER_DETAILS', 'TOTAL_WATCHES') }
+                          </span>
+                        </div>
+
+                        <VerticalDivider />
+
+                        <div className = 'total-this-year'>
+                          <span>
+                            { totalMediaThisYearForOwnUser || 0 }
+                          </span>
+                          <span>
+                            { translate(lang, 'PROFILE', 'USER_DETAILS', 'TOTAL_WATCHES_THIS_YEAR') }
+                          </span>
+                        </div>
+
+                        <VerticalDivider />
+
+                        <div className = 'following_count'>
+                          <span>
+                            { ownUserData?.following_count || 0 }
+                          </span>
+                          <span>
+                            { translate(lang, 'PROFILE', 'USER_DETAILS', 'FOLLOWING') }
+                          </span>
+                        </div>
+
+                        <VerticalDivider />
+
+                        <div className = 'followers_count'>
+                          <span>
+                            { ownUserData?.follower_count || 0 }
+                          </span>
+                          <span>
+                            { translate(lang, 'PROFILE', 'USER_DETAILS', 'FOLLOWERS') }
+                          </span>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className = 'total-watched'>
+                          <span>
+                            { totalOtherReviews || 0 }
+                          </span>
+                          <span>
+                            { translate(lang, 'PROFILE', 'USER_DETAILS', 'TOTAL_WATCHES') }
+                          </span>
+                        </div>
+
+                        <VerticalDivider />
+
+                        <div className = 'total-this-year'>
+                          <span>
+                            { totalMediaThisYearForOtherUser || 0 }
+                          </span>
+                          <span>
+                            { translate(lang, 'PROFILE', 'USER_DETAILS', 'TOTAL_WATCHES_THIS_YEAR') }
+                          </span>
+                        </div>
+
+                        <VerticalDivider />
+
+                        <div className = 'following_count'>
+                          <span>
+                            { otherUserData?.following_count || 0 }
+                          </span>
+                          <span>
+                            { translate(lang, 'PROFILE', 'USER_DETAILS', 'FOLLOWING') }
+                          </span>
+                        </div>
+
+                        <VerticalDivider />
+
+                        <div className = 'followers_count'>
+                          <span>
+                            { otherUserData?.follower_count || 0 }
+                          </span>
+                          <span>
+                            { translate(lang, 'PROFILE', 'USER_DETAILS', 'FOLLOWERS') }
+                          </span>
+                        </div>
+                      </>
+                    )
+                  }
+                </div>
+              </section>
+            </section>
+          </main>
+        </section>
+      </section>
+    </>
+  )
+}

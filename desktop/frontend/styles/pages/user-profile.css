@@ -1,0 +1,200 @@
+.dark-theme {
+  --color--bio-and-third-row: var(--color--primary-light-40);
+  --color--third-row--hover: var(--color--primary-light-90);
+  --color--username: var(--color--primary-light-90);
+}
+
+.light-theme {
+  --color--bio-and-third-row: var(--color--primary-dark-40);
+  --color--third-row--hover: var(--color--primary-dark-90);
+  --color--username: var(--color--primary-dark-90);
+}
+
+.main-info-and-stats {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-info-and-stats .details {
+  align-items: center;
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start;
+}
+
+.main-info-and-stats .details .profile__avatar {
+  border-radius: 50%;
+}
+
+.main-info-and-stats .details .details__attributes {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.details__attributes .first-row, 
+.details__attributes .second-row,
+.details__attributes .third-row {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.details__attributes .third-row {
+  gap: 10px;
+}
+
+.first-row h2 {
+  --font: clamp(19px, 2.4rem, 25px) var(--font--graphik-semibold);
+  color: var(--color--username);
+  font: var(--font);
+}
+
+.first-row .dots {
+  align-items: center;
+  background-color: var(--color--primary-light-10);
+  border-radius: 50%;
+  color: var(--color--primary-light-80);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 2px;
+  position: relative;
+}
+
+.first-row .dots * {
+  cursor: pointer;
+}
+
+.dots svg {
+  height: 16px;
+  width: 16px;
+}
+
+.dots__option-wrapper {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  left: 50%;
+  position: absolute;
+  top: 20px;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.dots__option {
+  align-items: center;
+  background-color: var(--color--primary-light-10);
+  border-radius: 4px;
+  color: var(--color--primary-light-80);
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  padding: 10px;
+  position: relative;
+}
+
+.dots__option > span {
+  --font: clamp(13px, 1.5rem, 17px) var(--font--graphik-medium);
+  color: var(--color--primary-light-80);
+  font: var(--font);
+  text-wrap: nowrap;
+}
+
+.dots-option__overlay {
+  cursor: default !important;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 4;
+}
+
+.details__attributes .second-row {
+  --font: clamp(13px, 1.5rem, 17px) var(--font--graphik-medium);
+  color: var(--color--bio-and-third-row);
+  font: var(--font);
+}
+
+.details__attributes .third-row {
+  --font: clamp(13px, 1.5rem, 17px) var(--font--graphik-regular);
+  color: var(--color--bio-and-third-row);
+  font: var(--font);
+}
+
+.third-row div {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  justify-content: flex-start;
+}
+
+.third-row div:first-of-type span {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.third-row div:nth-of-type(2) a {
+  max-width: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.third-row div:nth-of-type(2) a:visited {
+  color: var(--color--bio-and-third-row);
+}
+
+.third-row div:nth-of-type(2) * {
+  cursor: pointer;
+}
+
+.third-row div:nth-of-type(2) *:hover {
+  color: var(--color--third-row--hover) !important;
+}
+
+.third-row svg {
+  height: 21px;
+  width: 21px;
+}
+
+.main-info-and-stats .stats {
+  align-items: flex-start;
+  display: flex;
+  gap: 15px;
+  height: fit-content;
+  justify-content: flex-end;
+}
+
+.stats div {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 50px;
+  justify-content: flex-start;
+}
+
+.stats div span:first-of-type {
+  --font: clamp(20px, 2.3rem, 25px) var(--font--tiempos-headline-semibold);
+  color: var(--color--username);
+  font: var(--font);
+}
+
+.stats div span:nth-of-type(2) {
+  --font: clamp(11px, 1.2rem, 15px) var(--font--graphik-light);
+  color: var(--color--bio-and-third-row);
+  font: var(--font);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

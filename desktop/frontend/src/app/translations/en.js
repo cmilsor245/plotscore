@@ -288,6 +288,32 @@ const translationsEN = {
 
   /* -------------------------------------------------------------------------------------------------- */
 
+  PROFILE: {
+    USER_DETAILS: {
+      PRIMARY_BUTTON__EDIT_PROFILE: 'edit profile',
+
+      /* --------------- */
+
+      PRIMARY_BUTTON__FOLLOW: 'follow',
+      PRIMARY_BUTTON__FOLLOWING: 'following',
+      PRIMARY_BUTTON__UNFOLLOW: 'unfollow',
+
+      /* ---------------- */
+
+      TOTAL_WATCHES: 'media',
+      TOTAL_WATCHES_THIS_YEAR: 'this year',
+      FOLLOWING: 'following',
+      FOLLOWERS: 'followers',
+
+      /* ---------------- */
+
+      PRIMARY_BUTTON__COPY_PROFILE_LINK: 'copy profile link',
+      PRIMARY_BUTTON__LINK_COPIED: 'copied!'
+    }
+  },
+
+  /* -------------------------------------------------------------------------------------------------- */
+
   SPECIFIC_MEDIA:{
     REVIEW: {
       REVIEW_BY: 'Review by',

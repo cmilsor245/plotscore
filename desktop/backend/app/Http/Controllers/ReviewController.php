@@ -45,6 +45,40 @@ class ReviewController extends Controller {
     return response() -> json($review, Response::HTTP_OK);
   }
 
+  public function getAllReviewsForUser($id) {
+    $reviews = Review::where('user_id', $id) -> get();
+
+    if (!$reviews) {
+      return response() -> json([
+        'error' => 'reviews not found'
+      ], Response::HTTP_NOT_FOUND);
+    }
+
+    $totalReviews = $reviews -> count();
+
+    return response() -> json([
+      'reviews' => $reviews,
+      'totalReviews' => $totalReviews
+    ], Response::HTTP_OK);
+  }
+
+  public function getThisYearReviewsForUser($id) {
+    $reviews = Review::where('user_id', $id) -> whereYear('watched_on', date('Y')) -> get();
+
+    if (!$reviews) {
+      return response() -> json([
+        'error' => 'reviews not found'
+      ], Response::HTTP_NOT_FOUND);
+    }
+
+    $totalReviews = $reviews -> count();
+
+    return response() -> json([
+      'reviews' => $reviews,
+      'totalReviews' => $totalReviews
+    ], Response::HTTP_OK);
+  }
+
   public function getAllReviews(Request $request) {
     $page = $request -> query('page', 1);
     $perPage = 10;

@@ -18,7 +18,9 @@ export default function NewFromFriends({ lang, followingList }) {
       />
 
       <section className = 'general-activity__logs'>
-        { followingList.map(username => <p>{ username }</p>) }
+        { followingList.map((username, index) => {
+          <p key = { index }>{ username }</p>
+        }) }
       </section>
     </section>
   )

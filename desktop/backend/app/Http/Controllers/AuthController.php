@@ -117,6 +117,18 @@ class AuthController extends Controller {
     return response() -> json($user, Response::HTTP_OK);
   }
 
+  public function getUserByUsername($username) {
+    $user = User::where('username', $username) -> first();
+
+    if (!$user) {
+      return response() -> json([
+        'error' => 'user not found'
+      ], Response::HTTP_NOT_FOUND);
+    }
+
+    return response() -> json($user, Response::HTTP_OK);
+  }
+
   public function user() {
     if (!auth() -> check()) {
       return response() -> json([
