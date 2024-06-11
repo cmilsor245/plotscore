@@ -13,9 +13,8 @@ import { MainActionButton } from '/components/common/main-action-button'
 import ReviewModal from '/components/common/review-modal.js'
 import SideMenu from '/components/common/side-menu.js'
 import translate from '/src/app/translation.js'
-import LogoHeader from '/components/common/logo-header.js'
 
-export default function Settings() {
+export default function Media() {
   const [theme, setTheme] = useState('dark') // default color theme
 
   useEffect(() => {
@@ -158,26 +157,14 @@ export default function Settings() {
         { translate(lang, 'COMMON', 'REVIEW_MODAL', 'REVIEW_CREATED_2') }
       </div>
 
-      <SideMenu
-        lang = { lang }
-        handleLanguageChange = { handleLanguageChange }
-        theme = { theme }
-        handleThemeChange = { handleThemeChange }
-        userData = { userData }
-        handleLogout = { logout }
-      />
-
-      <section className = 'common__content-footer with-top-padding'>
-        <section className = 'common__content'>
-          <main>
-            <LogoHeader />
-
-            <section className = 'content__logo-header common'>
-              
-            </section>
-          </main>
-        </section>
-      </section>
+        <SideMenu
+          lang = { lang }
+          handleLanguageChange = { handleLanguageChange }
+          theme = { theme }
+          handleThemeChange = { handleThemeChange }
+          userData = { userData }
+          handleLogout = { logout }
+        />
     </>
   )
 }

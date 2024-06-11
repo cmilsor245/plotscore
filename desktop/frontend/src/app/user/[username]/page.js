@@ -74,7 +74,7 @@ export default function Profile() {
 
   const [isReviewCreationNotificationDisplayed, setIsReviewCreationNotificationDisplayed] = useState(false)
   const [mediaTitleForNotification, setMediaTitleForNotification] = useState('')
-  const [sluggedMediaTitle, setSluggedMediaTitle] = useState('')
+  const [mediaSlug, setMediaSlug] = useState('')
 
   const convertToSlug = (text) => {
     return text
@@ -83,10 +83,18 @@ export default function Profile() {
       .replace(/ +/g, '-')
   }
 
-  const handleReviewCreatedNotification = (mediaTitle) => {
+  const handleReviewCreatedNotification = (mediaTitle, releaseDate) => {
     setIsReviewCreationNotificationDisplayed(true)
     setMediaTitleForNotification(mediaTitle)
-    setSluggedMediaTitle(convertToSlug(mediaTitle))
+
+    const sluggedTitle = convertToSlug(mediaTitle)
+    const mediaYear = releaseDate.substring(0, 4)
+
+    console.log(sluggedTitle, mediaYear)
+
+    const mediaSlug = sluggedTitle + '-' + mediaYear
+
+    setMediaSlug(mediaSlug)
     closeReviewModal()
     setTimeout(() => {
       setIsReviewCreationNotificationDisplayed(false)
@@ -211,18 +219,14 @@ export default function Profile() {
   const [isLinkCopiedNotificationDisplayed, setIsLinkCopiedNotificationDisplayed] = useState(false)
 
   const displayDotsButtonOption = () => {
-    setIsDotsButtonOptionDisplayed(true)
-  }
-
-  const closeDotsButtonOption = () => {
-    setIsDotsButtonOptionDisplayed(false)
+    setIsDotsButtonOptionDisplayed(!isDotsButtonOptionDisplayed)
   }
 
   const notifyProfileLinkCopied = () => {
     setIsLinkCopiedNotificationDisplayed(true)
     setTimeout(() => {
       setIsLinkCopiedNotificationDisplayed(false)
-    }, 2000)
+    }, 1500)
   }
 
   const copyUserProfileLink = () => {
@@ -257,7 +261,7 @@ export default function Profile() {
 
       <div className = { `review-modal__creation-notification ${ isReviewCreationNotificationDisplayed ? 'showed' : '' }` }>
         { translate(lang, 'COMMON', 'REVIEW_MODAL', 'REVIEW_CREATED_1') }
-        <Link href = { `/media/${ sluggedMediaTitle }` }>{ mediaTitleForNotification }</Link>
+        <Link href = { `/media/${ mediaSlug }` }>{ mediaTitleForNotification }</Link>
         { translate(lang, 'COMMON', 'REVIEW_MODAL', 'REVIEW_CREATED_2') }
       </div>
 
@@ -271,6 +275,10 @@ export default function Profile() {
           handleLogout = { logout }
         />
       ) }
+
+        <div className = { `dots__option__notification ${ isLinkCopiedNotificationDisplayed ? 'showed' : '' }` }>
+          { translate(lang, 'PROFILE', 'USER_DETAILS', 'PRIMARY_BUTTON__LINK_COPIED') }
+        </div>
 
       <section className = 'common__content-footer with-top-padding'>
         <section className = 'common__content'>
@@ -318,19 +326,12 @@ export default function Profile() {
                                   <span>
                                     { translate(lang, 'PROFILE', 'USER_DETAILS', 'PRIMARY_BUTTON__COPY_PROFILE_LINK') }
                                   </span>
-
-                                  { isLinkCopiedNotificationDisplayed &&
-                                      <div className = 'dots__option__notification'>
-                                        { translate(lang, 'PROFILE', 'USER_DETAILS', 'PRIMARY_BUTTON__LINK_COPIED') }
-                                      </div>
-                                  }
                                 </div>
                               </div>
 
-                              <div className = 'dots-option__overlay' onClick = { closeDotsButtonOption }></div>
+                              <div className = 'dots-option__overlay'></div>
                             </>
-                          )
-                        }
+                        ) }
                       </div>
                     </div>
 

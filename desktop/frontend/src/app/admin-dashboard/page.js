@@ -392,7 +392,7 @@ export default function AdminDashboard({
 
       <div className = { `review-modal__creation-notification ${ isReviewCreationNotificationDisplayed ? 'showed' : '' }` }>
         { translate(lang, 'COMMON', 'REVIEW_MODAL', 'REVIEW_CREATED_1') }
-        <Link href = { `/media/${ mediaSlug ? mediaSlug : null }` }>{ mediaTitleForNotification }</Link>
+        <Link href = { `/media/${ mediaSlug }` }>{ mediaTitleForNotification }</Link>
         { translate(lang, 'COMMON', 'REVIEW_MODAL', 'REVIEW_CREATED_2') }
       </div>
 

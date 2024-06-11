@@ -308,7 +308,7 @@ const translationsEN = {
       /* ---------------- */
 
       PRIMARY_BUTTON__COPY_PROFILE_LINK: 'copy profile link',
-      PRIMARY_BUTTON__LINK_COPIED: 'copied!'
+      PRIMARY_BUTTON__LINK_COPIED: 'User\'s link copied!'
     }
   },
 
