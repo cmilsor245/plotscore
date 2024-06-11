@@ -11,7 +11,7 @@ class MediaRequest extends FormRequest {
   public function rules(): array {
     return [
       'title' => 'required|string|min:1|max:255',
-      'synopsis' => 'required|string|min:1|max:65535',
+      'synopsis' => 'required|string|min:1|max:255',
       'release_date' => 'required|date',
 
       'poster' => 'nullable|file|mimes:jpeg,png,jpg,webp|max:4096',

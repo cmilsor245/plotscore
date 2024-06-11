@@ -17,7 +17,7 @@ return new class extends Migration {
       $table -> string('password', 255);
 
       $table -> string('avatar') -> default('/storage/avatars/default.png');
-      $table -> text('bio') -> nullable();
+      $table -> string('bio', 255) -> nullable();
 
       $table -> string('location', 255) -> nullable();
       $table -> string('website', 255) -> nullable();

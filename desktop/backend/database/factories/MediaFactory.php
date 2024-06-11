@@ -10,7 +10,7 @@ class MediaFactory extends Factory {
   public function definition() {
     $type = $this -> faker -> randomElement(['movie', 'series']);
     $title = $type === 'movie' ? $this -> faker -> unique() -> catchPhrase : $this -> faker -> unique() -> sentence(4);
-    $synopsis = $this -> faker -> paragraphs(3, true);
+    $synopsis = $this -> faker -> sentence;
     $releaseDate = $this -> faker -> dateTimeBetween('-100 years', 'now');
 
     return [

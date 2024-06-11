@@ -303,9 +303,9 @@ export default function Profile() {
                           />
                         </Link>
                       ) : (
-                        <button>
-                          { translate(lang, 'PROFILE', 'USER_DETAILS', 'PRIMARY_BUTTON__FOLLOW') }
-                        </button>
+                        <ButtonGeneral
+                          text = { translate(lang, 'PROFILE', 'USER_DETAILS', 'PRIMARY_BUTTON__FOLLOW') }
+                        />
                       ) }
                       <div className = 'dots' onClick = { displayDotsButtonOption }>
                         <IconDots />
@@ -336,66 +336,73 @@ export default function Profile() {
 
                     {/* ------------- */}
 
-                    <div className = 'second-row'>
-                      { isOwnProfilePage
-                        ? ownUserData?.bio
-                        : otherUserData?.bio
-                      }
-                    </div>
+                    { isOwnProfilePage ? (
+                      ownUserData?.bio && (
+                        <div className = 'second-row'>
+                          <span dangerouslySetInnerHTML = {{ __html: ownUserData?.bio }}></span>
+                        </div>
+                      )
+                    ) : (
+                      otherUserData?.bio && (
+                        <div className = 'second-row'>
+                          <span dangerouslySetInnerHTML = {{ __html: otherUserData?.bio }}></span>
+                        </div>
+                      )
+                    ) }
 
                     {/* ------------- */}
 
-                    <div className = 'third-row'>
-                      { isOwnProfilePage
-                        ? (
-                          <>
-                            { ownUserData?.location &&
-                              <div>
-                                <IconMapPin stroke = { 1.5 } />
-                                <span>
-                                  { ownUserData.location }
-                                </span>
-                              </div>
-                            }
-                            { ownUserData?.website &&
-                              <div>
-                                <IconLink stroke = { 1.5 } />
-                                <Link
-                                  href = { ownUserData.website.startsWith('http') || ownUserData.website.startsWith('https') ? ownUserData.website : `https://${ ownUserData.website }` }
-                                  target = '_blank'
-                                  rel = 'noopener noreferrer'
-                                >
-                                  { ownUserData.website }
-                                </Link>
-                              </div>
-                            }
-                          </>
-                        ) : (
-                          <>
-                            { otherUserData?.location &&
-                              <div>
-                                <IconMapPin />
-                                <span>
-                                  { otherUserData.location }
-                                </span>
-                              </div>
-                            }
-                            { otherUserData?.website &&
-                              <div>
-                                <IconLink />
-                                <a
-                                  href = { otherUserData.website.startsWith('http') || otherUserData.website.startsWith('https') ? otherUserData.website : `https://${ otherUserData.website }` }
-                                  target = '_blank'
-                                  rel = 'noopener noreferrer'
-                                >
-                                  { otherUserData.website }
-                                </a>
-                              </div>
-                            }
-                          </>
-                        )
-                      }
-                    </div>
+                    { isOwnProfilePage ? (
+                      (ownUserData?.location || ownUserData?.website) && (
+                        <div className = 'third-row'>
+                          { ownUserData?.location &&
+                            <div>
+                              <IconMapPin stroke = { 1.5 } />
+                              <span>
+                                { ownUserData.location }
+                              </span>
+                            </div>
+                          }
+                          { ownUserData?.website &&
+                            <div>
+                              <IconLink stroke = { 1.5 } />
+                              <Link
+                                href = { ownUserData.website.startsWith('http') || ownUserData.website.startsWith('https') ? ownUserData.website : `https://${ ownUserData.website }` }
+                                target = '_blank'
+                                rel = 'noopener noreferrer'
+                              >
+                                { ownUserData.website }
+                              </Link>
+                            </div>
+                          }
+                        </div>
+                      )
+                    ) : (
+                      (otherUserData?.location || otherUserData?.website) && (
+                        <div className = 'third-row'>
+                          { otherUserData?.location &&
+                            <div>
+                              <IconMapPin />
+                              <span>
+                                { otherUserData.location }
+                              </span>
+                            </div>
+                          }
+                          { otherUserData?.website &&
+                            <div>
+                              <IconLink />
+                              <a
+                                href = { otherUserData.website.startsWith('http') || otherUserData.website.startsWith('https') ? otherUserData.website : `https://${ otherUserData.website }` }
+                                target = '_blank'
+                                rel = 'noopener noreferrer'
+                              >
+                                { otherUserData.website }
+                              </a>
+                            </div>
+                          }
+                        </div>
+                      )
+                    ) }
                   </div>
                 </div>
 

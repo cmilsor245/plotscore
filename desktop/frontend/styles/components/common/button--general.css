@@ -12,7 +12,7 @@
   --font: clamp(11px, 1.2rem, 14px) var(--font--graphik-semibold);
   align-items: center;
   background-color: var(--color--primary-light-10);
-  border-radius: 2px;
+  border-radius: 3px;
   border: none;
   color: var(--color--primary-light-80);
   cursor: pointer;

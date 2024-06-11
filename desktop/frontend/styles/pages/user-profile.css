@@ -17,7 +17,7 @@
 }
 
 .main-info-and-stats .details {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   gap: 15px;
   justify-content: flex-start;
@@ -28,10 +28,12 @@
 }
 
 .main-info-and-stats .details .details__attributes {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
+  gap: 20px;
   height: 100%;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .details__attributes .first-row, 
@@ -51,6 +53,11 @@
   --font: clamp(19px, 2.4rem, 25px) var(--font--graphik-semibold);
   color: var(--color--username);
   font: var(--font);
+  max-width: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: fit-content;
 }
 
 .first-row .dots {
@@ -122,6 +129,14 @@
   font: var(--font);
 }
 
+.second-row span {
+  max-width: 620px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: fit-content;
+}
+
 .details__attributes .third-row {
   --font: clamp(13px, 1.5rem, 17px) var(--font--graphik-regular);
   color: var(--color--bio-and-third-row);
@@ -143,12 +158,20 @@
   width: fit-content;
 }
 
+.third-row div:first-of-type span:hover {
+  max-width: 200px;
+}
+
 .third-row div:nth-of-type(2) a {
   max-width: 400px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: fit-content;
+}
+
+.third-row div:nth-of-type(2) a:hover {
+  max-width: 490px;
 }
 
 .third-row div:nth-of-type(2) a:visited {

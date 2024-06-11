@@ -20,7 +20,7 @@ class AuthRequest extends FormRequest {
         'password' => 'required|string|min:8|max:255',
 
         'avatar' => 'nullable|file|mimes:jpeg,png,jpg,webp|max:4096',
-        'bio' => 'nullable|string|min:1|max:65535',
+        'bio' => 'nullable|string|min:1|max:255',
 
         'location' => 'nullable|string|min:1|max:255',
         'website' => 'nullable|string|max:255',

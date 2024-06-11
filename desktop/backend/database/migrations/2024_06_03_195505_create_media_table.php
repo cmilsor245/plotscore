@@ -9,7 +9,7 @@ return new class extends Migration {
       $table -> id();
 
       $table -> string('title', 255);
-      $table -> text('synopsis');
+      $table -> string('synopsis', 255);
       $table -> date('release_date');
 
       $table -> string('poster') -> default('/storage/posters/default.png');
