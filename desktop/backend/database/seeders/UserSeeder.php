@@ -35,12 +35,14 @@ class UserSeeder extends Seeder {
     $faker = Faker::create();
 
     foreach ($users as $user) {
-      $reviewCount = rand(1, 5);
-      for ($i = 0; $i < $reviewCount; $i++) {
-        Review::factory() -> create([
-          'user_id' => $user -> id,
-          'media_id' => $faker -> randomElement($mediaIds)
-        ]);
+      if (rand(0, 1)) {
+        $reviewCount = rand(1, 5);
+        for ($i = 0; $i < $reviewCount; $i++) {
+          Review::factory() -> create([
+            'user_id' => $user -> id,
+            'media_id' => $faker -> randomElement($mediaIds)
+          ]);
+        }
       }
     }
   }

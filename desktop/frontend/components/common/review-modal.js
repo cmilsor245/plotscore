@@ -99,7 +99,7 @@ export default function ReviewModal({
 
       const data = await selectedMediaTitle.json()
 
-      handleReviewCreatedNotification(data.title)
+      handleReviewCreatedNotification(data.title, data.release_date)
     } catch (error) {
       console.error(error)
     }

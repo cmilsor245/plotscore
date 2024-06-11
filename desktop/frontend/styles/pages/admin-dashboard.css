@@ -162,12 +162,32 @@
   justify-content: flex-start;
 }
 
+.media-list__attributes {
+  height: 120px;
+}
+
+.user-list__profile-link {
+  cursor: pointer;
+}
+
+.user-list__profile-link * {
+  cursor: pointer;
+}
+
 .user-list__avatar {
   border-radius: 50%;
 }
 
 .media-list__poster {
   border-radius: 2px;
+}
+
+.media-list__media-link {
+  cursor: pointer;
+}
+
+.media-list__media-link * {
+  cursor: pointer;
 }
 
 .user-list__info,
@@ -177,6 +197,11 @@
   flex-direction: column;
   gap: 5px;
   justify-content: center;
+}
+
+.media-list__info {
+  height: 100%;
+  justify-content: flex-start;
 }
 
 .user-list__info h4,

@@ -142,7 +142,7 @@ export default function Profile() {
         })
 
         const totalMediaThisYearForOwnUserData = await totalMediaThisYearForOwnUserResponse.json()
-        setTotalMediaThisYearForOwnUser(totalMediaThisYearForOwnUserData.totalMediaThisYear)
+        setTotalMediaThisYearForOwnUser(totalMediaThisYearForOwnUserData.totalReviews)
 
         if (ownUserData.username === usernameInUrl) {
           setIsOwnProfilePage(true)
@@ -371,7 +371,7 @@ export default function Profile() {
                                 target = '_blank'
                                 rel = 'noopener noreferrer'
                               >
-                                { ownUserData.website }
+                                { ownUserData.website.startsWith('http') || ownUserData.website.startsWith('https') ? ownUserData.website.split('://')[1].replace('www.', '') : ownUserData.website.replace('www.', '') }
                               </Link>
                             </div>
                           }
@@ -396,7 +396,7 @@ export default function Profile() {
                                 target = '_blank'
                                 rel = 'noopener noreferrer'
                               >
-                                { otherUserData.website }
+                                { otherUserData.website.startsWith('http') || otherUserData.website.startsWith('https')? otherUserData.website.split('://')[1].replace('www.', '') : otherUserData.website.replace('www.', '') }
                               </a>
                             </div>
                           }

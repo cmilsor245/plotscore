@@ -247,7 +247,7 @@ export default function AdminDashboard({
 
   const [isReviewCreationNotificationDisplayed, setIsReviewCreationNotificationDisplayed] = useState(false)
   const [mediaTitleForNotification, setMediaTitleForNotification] = useState('')
-  const [sluggedMediaTitle, setSluggedMediaTitle] = useState('')
+  const [mediaSlug, setMediaSlug] = useState('')
 
   const convertToSlug = (text) => {
     return text
@@ -256,15 +256,32 @@ export default function AdminDashboard({
       .replace(/ +/g, '-')
   }
 
-  const handleReviewCreatedNotification = (mediaTitle) => {
+  const handleReviewCreatedNotification = (mediaTitle, releaseDate) => {
     setIsReviewCreationNotificationDisplayed(true)
     setMediaTitleForNotification(mediaTitle)
-    setSluggedMediaTitle(convertToSlug(mediaTitle))
+
+    const sluggedTitle = convertToSlug(mediaTitle)
+    const mediaYear = releaseDate.substring(0, 4)
+
+    console.log(sluggedTitle, mediaYear)
+
+    const mediaSlug = sluggedTitle + '-' + mediaYear
+
+    setMediaSlug(mediaSlug)
     closeReviewModal()
     setTimeout(() => {
       setIsReviewCreationNotificationDisplayed(false)
       setMediaTitleForNotification('')
     }, 3000)
+  }
+
+  /* ---------------------------------------------------- */
+
+  const generateListMediaSlug = (media) => {
+    const sluggedTitle = convertToSlug(media.title)
+    const mediaYear = media.release_date.substring(0, 4)
+
+    return sluggedTitle + '-' + mediaYear
   }
 
   return (
@@ -292,8 +309,7 @@ export default function AdminDashboard({
 
       {/* --------------------------------------------------------- */}
 
-      {
-        isDeleteUserModalDisplayed &&
+      { isDeleteUserModalDisplayed &&
         <>
           <div className = 'delete-user-modal'>
             <h2>
@@ -325,8 +341,7 @@ export default function AdminDashboard({
         </>
       }
 
-      {
-        isDeleteMediaModalDisplayed &&
+      { isDeleteMediaModalDisplayed &&
         <>
           <div className = 'delete-media-modal'>
             <h2>
@@ -360,8 +375,7 @@ export default function AdminDashboard({
 
       {/* --------------------------------------------------------- */}
 
-      {
-        isReviewModalDisplayed &&
+      { isReviewModalDisplayed &&
           <>
             <ReviewModal
               lang = { lang }
@@ -378,7 +392,7 @@ export default function AdminDashboard({
 
       <div className = { `review-modal__creation-notification ${ isReviewCreationNotificationDisplayed ? 'showed' : '' }` }>
         { translate(lang, 'COMMON', 'REVIEW_MODAL', 'REVIEW_CREATED_1') }
-        <Link href = { `/media/${ sluggedMediaTitle }` }>{ mediaTitleForNotification }</Link>
+        <Link href = { `/media/${ mediaSlug ? mediaSlug : null }` }>{ mediaTitleForNotification }</Link>
         { translate(lang, 'COMMON', 'REVIEW_MODAL', 'REVIEW_CREATED_2') }
       </div>
 
@@ -414,20 +428,24 @@ export default function AdminDashboard({
                       <React.Fragment key = { index }>
                         <li key = { user.id }>
                           <section className = 'user-list__attributes'>
-                            <Image
-                              className = 'user-list__avatar'
-                              // src = { `${ process.env.NEXT_PUBLIC_API_STORAGE_PATH }${ user.avatar }` }
-                              src = { avatarSrc }
-                              height = { 50 }
-                              width = { 50 }
-                              alt = 'user avatar'
-                            />
+                            <Link className = 'user-list__profile-link' href = { `/user/${ user.username }` }>
+                              <Image
+                                className = 'user-list__avatar'
+                                // src = { `${ process.env.NEXT_PUBLIC_API_STORAGE_PATH }${ user.avatar }` }
+                                src = { avatarSrc }
+                                height = { 50 }
+                                width = { 50 }
+                                alt = 'user avatar'
+                              />
+                            </Link>
 
                             <div className = 'user-list__info'>
-                              <h4 className = { user.role === 'admin' ? 'user-list__admin-username' : null }>
-                                { user.role === 'admin' ? <IconChairDirector /> : null }
-                                { user.username }
-                              </h4>
+                              <Link className = 'user-list__profile-link' href = { `/user/${ user.username }` }>
+                                <h4 className = { user.role === 'admin' ? 'user-list__admin-username' : null }>
+                                  { user.role === 'admin' ? <IconChairDirector /> : null }
+                                  { user.username }
+                                </h4>
+                              </Link>
                               <p>
                                 { user.follower_count}
                                 { translate(
@@ -502,46 +520,50 @@ export default function AdminDashboard({
 
                 <section className = 'section-content'>
                   <ul>
-                    { media.map((media, index) => (
+                    { media.map((mediaItem, index) => (
                       <React.Fragment key = { index }>
-                        <li key = { media.id }>
+                        <li key = { mediaItem.id }>
                           <section className = 'media-list__attributes'>
-                            <Image
-                              className = 'media-list__poster'
-                              // src = { `${ process.env.NEXT_PUBLIC_API_STORAGE_PATH }${ media.poster }` }
-                              src = { posterSrc }
-                              height = { 120 }
-                              width = { 80 }
-                              alt = 'media poster'
-                            />
+                            <Link href = { `/media/${ generateListMediaSlug(mediaItem) }` } className = 'media-list__media-link'>
+                              <Image
+                                className = 'media-list__poster'
+                                // src = { `${ process.env.NEXT_PUBLIC_API_STORAGE_PATH }${ mediaItem.poster }` }
+                                src = { posterSrc }
+                                height = { 120 }
+                                width = { 80 }
+                                alt = 'media poster'
+                              />
+                            </Link>
 
                             <div className = 'media-list__info'>
-                              <h4>
-                                { media.title }
-                              </h4>
+                              <Link href = { `/media/${ generateListMediaSlug(mediaItem) }` } className = 'media-list__media-link'>
+                                <h4>
+                                  { mediaItem.title }
+                                </h4>
+                              </Link>
                               <p>
                                 {
                                   translate(lang, 'ADMIN_DASHBOARD', 'DATABASE_MEDIA_LIST', 'TYPE')
                                 }
                                 {
-                                  media.type === 'movie' && translate(lang, 'ADMIN_DASHBOARD', 'DATABASE_MEDIA_LIST', 'MOVIE')
+                                  mediaItem.type === 'movie' && translate(lang, 'ADMIN_DASHBOARD', 'DATABASE_MEDIA_LIST', 'MOVIE')
                                 }
                                 {
-                                  media.type === 'series' && translate(lang, 'ADMIN_DASHBOARD', 'DATABASE_MEDIA_LIST', 'TV_SERIES')
+                                  mediaItem.type === 'series' && translate(lang, 'ADMIN_DASHBOARD', 'DATABASE_MEDIA_LIST', 'TV_SERIES')
                                 }
                                 ,
                                 {
                                   translate(lang, 'ADMIN_DASHBOARD', 'DATABASE_MEDIA_LIST', 'RELEASED_ON')
                                 }
                                 {
-                                  media.release_date
+                                  mediaItem.release_date
                                 }
                               </p>
                             </div>
                           </section>
 
                           <section className = 'list__media-actions'>
-                            <Link className = 'media-actions__edit' href = { `/admin-dashboard/edit-media/${ media.id }` }>
+                            <Link className = 'media-actions__edit' href = { `` }>
                               <IconEdit />
                             </Link>
 
@@ -551,7 +573,6 @@ export default function AdminDashboard({
                           </section>
                         </li>
 
-                        {/* ! not working */}
                         { index < media.length - 1 && <Divider /> }
                       </React.Fragment>
                     )) }

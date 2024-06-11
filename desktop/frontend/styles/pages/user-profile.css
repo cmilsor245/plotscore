@@ -159,7 +159,7 @@
 }
 
 .third-row div:first-of-type span:hover {
-  max-width: 200px;
+  max-width: 150px;
 }
 
 .third-row div:nth-of-type(2) a {
@@ -171,7 +171,7 @@
 }
 
 .third-row div:nth-of-type(2) a:hover {
-  max-width: 490px;
+  max-width: 440px;
 }
 
 .third-row div:nth-of-type(2) a:visited {
@@ -215,7 +215,7 @@
 }
 
 .stats div span:nth-of-type(2) {
-  --font: clamp(11px, 1.2rem, 15px) var(--font--graphik-light);
+  --font: clamp(11px, 1.2rem, 12px) var(--font--graphik-light);
   color: var(--color--bio-and-third-row);
   font: var(--font);
   text-transform: uppercase;

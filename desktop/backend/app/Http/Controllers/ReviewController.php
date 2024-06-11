@@ -63,9 +63,11 @@ class ReviewController extends Controller {
   }
 
   public function getThisYearReviewsForUser($id) {
-    $reviews = Review::where('user_id', $id) -> whereYear('watched_on', date('Y')) -> get();
+    $reviews = Review::where('user_id', $id)
+      -> whereYear('watched_on', date('Y'))
+      -> get();
 
-    if (!$reviews) {
+    if ($reviews -> isEmpty()) {
       return response() -> json([
         'error' => 'reviews not found'
       ], Response::HTTP_NOT_FOUND);
@@ -78,6 +80,7 @@ class ReviewController extends Controller {
       'totalReviews' => $totalReviews
     ], Response::HTTP_OK);
   }
+
 
   public function getAllReviews(Request $request) {
     $page = $request -> query('page', 1);
