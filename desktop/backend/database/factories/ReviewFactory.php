@@ -10,9 +10,18 @@ class ReviewFactory extends Factory {
   protected $model = Review::class;
 
   public function definition(): array {
+    $user = User::factory() -> create();
+    $media = Media::factory() -> create();
+
     return [
-      'user_id' => User::factory(),
-      'media_id' => Media::factory(),
+      'user_id' => $user -> id,
+      'user_username' => $user -> username,
+      'user_avatar' => $user -> avatar,
+
+      'media_id' => $media -> id,
+      'media_title' => $media -> title,
+      'media_release_date' => $media -> release_date,
+      'media_poster' => $media -> poster,
 
       'watched_on' => $this -> faker -> date(),
       'watched_before' => $this -> faker -> boolean(),

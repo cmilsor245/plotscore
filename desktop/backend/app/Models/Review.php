@@ -23,10 +23,10 @@ class Review extends Model {
   ];
 
   public function user() {
-    return $this -> belongsTo(User::class);
+    return $this -> belongsTo(User::class) -> select(['id', 'username', 'avatar']);
   }
 
   public function media() {
-    return $this -> belongsTo(Media::class);
+    return $this -> belongsTo(Media::class) -> select(['id', 'title', 'release_date', 'poster']);
   }
 }

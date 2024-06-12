@@ -9,7 +9,13 @@ return new class extends Migration {
       $table -> id();
 
       $table -> foreignId('user_id') -> constrained() -> onDelete('cascade');
+      $table -> string('user_username');
+      $table -> string('user_avatar');
+
       $table -> foreignId('media_id') -> constrained() -> onDelete('cascade');
+      $table -> string('media_title');
+      $table -> string('media_release_date');
+      $table -> string('media_poster');
 
       $table -> date('watched_on');
       $table -> boolean('watched_before') -> default(false);

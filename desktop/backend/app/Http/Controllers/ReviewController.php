@@ -62,49 +62,49 @@ class ReviewController extends Controller {
     ], Response::HTTP_OK);
   }
 
-  public function getUserLinkedToReview($reviewId) {
-    $review = Review::find($reviewId);
+  // public function getUserLinkedToReview($reviewId) {
+  //   $review = Review::find($reviewId);
 
-    if (!$review) {
-      return response() -> json([
-        'error' => 'review not found'
-      ], Response::HTTP_NOT_FOUND);
-    }
+  //   if (!$review) {
+  //     return response() -> json([
+  //       'error' => 'review not found'
+  //     ], Response::HTTP_NOT_FOUND);
+  //   }
 
-    $userId = $review -> user_id;
+  //   $userId = $review -> user_id;
 
-    $user = User::find($userId);
+  //   $user = User::find($userId);
 
-    if (!$user) {
-      return response() -> json([
-        'error' => 'user not found'
-      ], Response::HTTP_NOT_FOUND);
-    }
+  //   if (!$user) {
+  //     return response() -> json([
+  //       'error' => 'user not found'
+  //     ], Response::HTTP_NOT_FOUND);
+  //   }
 
-    return response() -> json($user, Response::HTTP_OK);
-  }
+  //   return response() -> json($user, Response::HTTP_OK);
+  // }
 
-  public function getMediaLinkedToReview($reviewId) {
-    $review = Review::find($reviewId);
+  // public function getMediaLinkedToReview($reviewId) {
+  //   $review = Review::find($reviewId);
 
-    if (!$review) {
-      return response() -> json([
-        'error' => 'review not found'
-      ], Response::HTTP_NOT_FOUND);
-    }
+  //   if (!$review) {
+  //     return response() -> json([
+  //       'error' => 'review not found'
+  //     ], Response::HTTP_NOT_FOUND);
+  //   }
 
-    $mediaId = $review -> media_id;
+  //   $mediaId = $review -> media_id;
 
-    $media = Media::find($mediaId);
+  //   $media = Media::find($mediaId);
 
-    if (!$media) {
-      return response() -> json([
-        'error' => 'media not found'
-      ], Response::HTTP_NOT_FOUND);
-    }
+  //   if (!$media) {
+  //     return response() -> json([
+  //       'error' => 'media not found'
+  //     ], Response::HTTP_NOT_FOUND);
+  //   }
 
-    return response() -> json($media, Response::HTTP_OK);
-  }
+  //   return response() -> json($media, Response::HTTP_OK);
+  // }
 
   public function getThisYearReviewsForUser($id) {
     $reviews = Review::where('user_id', $id)

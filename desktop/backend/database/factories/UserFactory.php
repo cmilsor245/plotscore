@@ -17,6 +17,7 @@ class UserFactory extends Factory {
       'email' => $this -> faker -> email,
       'password' => Hash::make('password1234'),
 
+      'avatar' => '/storage/avatars/default.png',
       'bio' => $this -> faker -> sentence,
 
       'location' => $this -> faker -> city . ', ' . $this -> faker -> country,

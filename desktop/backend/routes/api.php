@@ -49,8 +49,8 @@ Route::get('all-media', [MediaController::class, 'getAllMedia']);
 Route::get('review/{id}', [ReviewController::class, 'getReview']);
 Route::get('all-reviews', [ReviewController::class, 'getAllReviews']);
 Route::get('get-all-reviews-for-user/{id}', [ReviewController::class, 'getAllReviewsForUser']);
-Route::get('get-user-linked-to-review/{id}', [ReviewController::class, 'getUserLinkedToReview']);
-Route::get('get-media-linked-to-review/{id}', [ReviewController::class, 'getMediaLinkedToReview']);
+// Route::get('get-user-linked-to-review/{id}', [ReviewController::class, 'getUserLinkedToReview']);
+// Route::get('get-media-linked-to-review/{id}', [ReviewController::class, 'getMediaLinkedToReview']);
 Route::get('get-this-year-reviews-for-user/{id}', [ReviewController::class, 'getThisYearReviewsForUser']);
 
 Route::get('get-followers/{id}', [FollowController::class, 'getFollowers']);

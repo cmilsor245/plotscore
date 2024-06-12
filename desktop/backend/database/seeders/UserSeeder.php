@@ -14,25 +14,23 @@ class UserSeeder extends Seeder {
     $authController = new AuthController();
 
     $request = AuthRequest::create('signup', 'POST', [
-      'username' => 'christianms13',
-      'given_name' => 'christian',
-      'family_name' => 'millán soria',
-      'email' => 'christianmillansoria13@gmail.com',
-      'password' => 'password1234',
-      'bio' => 'can you hear the music, robert?',
-      'location' => 'spain',
-      'website' => 'boxd.it/9yH3x',
-      'pronouns' => 'he/him'
+        'username' => 'christianms13',
+        'given_name' => 'christian',
+        'family_name' => 'millán soria',
+        'email' => 'christianmillansoria13@gmail.com',
+        'password' => 'password1234',
+        'bio' => 'can you hear the music, robert?',
+        'location' => 'spain',
+        'website' => 'boxd.it/9yH3x',
+        'pronouns' => 'he/him'
     ]);
 
     $authController -> signup($request);
 
-    $factoryCount = 100;
+    $factoryCount = 50;
     $users = User::factory() -> count($factoryCount) -> create();
 
     $mediaIds = Media::pluck('id') -> toArray();
-
-    $faker = Faker::create();
 
     foreach ($users as $user) {
       if (rand(0, 1)) {
@@ -40,7 +38,7 @@ class UserSeeder extends Seeder {
         for ($i = 0; $i < $reviewCount; $i++) {
           Review::factory() -> create([
             'user_id' => $user -> id,
-            'media_id' => $faker -> randomElement($mediaIds)
+            'media_id' => Faker::create() -> randomElement($mediaIds)
           ]);
         }
       }

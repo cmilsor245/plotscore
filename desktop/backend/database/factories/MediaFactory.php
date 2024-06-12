@@ -18,7 +18,9 @@ class MediaFactory extends Factory {
       'synopsis' => $synopsis,
       'release_date' => $releaseDate,
 
-      'type' => $type,
+      'poster' => '/storage/posters/default.png',
+
+      'type' => $type
     ];
   }
 }
