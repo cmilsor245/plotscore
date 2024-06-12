@@ -223,7 +223,6 @@ function SelectWithSearch({ id, value, onChange, ...props }) {
   )
 }
 
-
 /* ------------------------------ */
 
 function Checkbox(props) {

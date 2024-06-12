@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { IconX } from '@tabler/icons-react'
 
@@ -58,16 +58,42 @@ export default function ReviewModal({
 
   /* ----------------------------------------------- */
 
+  const [mediaSelected, setMediaSelected] = useState('')
+
   const apiUrl = process.env.NEXT_PUBLIC_API_URL
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${ apiUrl }/media/${ selectedOption }`, {
+        credentials: 'include'
+      })
+
+      const data = await response.json()
+      setMediaSelected(data)
+    }
+
+    if (selectedOption) {
+      fetchData()
+    }
+  })
+
+  /* ----------------------------------------------- */
 
   const submit = async (e) => {
     e.preventDefault()
 
     const userID = userData.id
+    const userUsername = userData.username
+    const userAvatar = userData.avatar
 
     const bodyData = {
       user_id: userID,
+      user_username: userUsername,
+      user_avatar: userAvatar,
+
       media_id: selectedOption,
+      media_title: mediaSelected.title,
+      media_release_date: mediaSelected.release_date,
+      media_poster: mediaSelected.poster,
 
       watched_on: watchedOn,
       watched_before: watchedBefore,
@@ -89,17 +115,7 @@ export default function ReviewModal({
         body: JSON.stringify(bodyData)
       })
 
-      const selectedMediaTitle = await fetch (`${ apiUrl }/media/${ selectedOption }`, {
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        method: 'GET'
-      })
-
-      const data = await selectedMediaTitle.json()
-
-      handleReviewCreatedNotification(data.title, data.release_date)
+      handleReviewCreatedNotification(mediaSelected.title, mediaSelected.release_date)
     } catch (error) {
       console.error(error)
     }

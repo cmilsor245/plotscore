@@ -10,7 +10,13 @@ class Review extends Model {
 
   protected $fillable = [
     'user_id',
+    'user_username',
+    'user_avatar',
+
     'media_id',
+    'media_title',
+    'media_release_date',
+    'media_poster',
 
     'watched_on',
     'watched_before',
