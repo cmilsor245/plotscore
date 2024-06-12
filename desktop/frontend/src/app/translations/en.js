@@ -309,6 +309,17 @@ const translationsEN = {
 
       PRIMARY_BUTTON__COPY_PROFILE_LINK: 'copy profile link',
       PRIMARY_BUTTON__LINK_COPIED: 'User\'s link copied!'
+    },
+    TABS: {
+      PROFILE: 'profile',
+      ACTIVITY: 'activity',
+      MEDIA: 'media',
+      REVIEWS: 'reviews',
+      WATCHLIST: 'watchlist',
+      LISTS: 'lists',
+      LIKES: 'likes',
+      TAGS: 'tags',
+      NETWORK: 'network'
     }
   },
 

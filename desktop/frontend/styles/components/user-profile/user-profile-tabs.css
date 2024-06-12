@@ -1,0 +1,38 @@
+.dark-theme {
+  --color--tabs-border: var(--color--primary-dark-20);
+  --color--tabs-text: var(--color--primary-light-80);
+}
+
+.light-theme {
+  --color--tabs-border: var(--color--primary-light-30);
+  --color--tabs-text: var(--color--primary-dark-70);
+}
+
+.user-profile__tabs {
+  --font: clamp(16px, 1.9rem, 20px) var(--font--graphik-regular);
+  align-items: baseline;
+  border: 1px solid var(--color--tabs-border);
+  color: var(--color--tabs-text);
+  display: flex;
+  font: var(--font);
+  justify-content: space-around;
+  list-style: none;
+  padding: 6px 100px 5px 100px;
+  text-transform: capitalize;
+  width: 100%;
+}
+
+.user-profile__tabs li {
+  cursor: pointer;
+}
+
+.user-profile__tab.active {
+  font-family: var(--font--graphik-semibold);
+}
+
+.user-profile__tab-indicator {
+  background-color: var(--color--tabs-text);
+  height: 2px;
+  margin-top: 2px;
+  width: 100%;
+}

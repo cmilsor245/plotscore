@@ -18,6 +18,7 @@ import {
 } from '@tabler/icons-react'
 
 import ButtonGeneral from '/components/common/button--general.js'
+import Footer from '/components/common/footer'
 import LogoHeader from '/components/common/logo-header.js'
 import {
   CircleFlagsEs,
@@ -27,6 +28,7 @@ import {
 import ReviewModal from '/components/common/review-modal.js'
 import SideMenu from '/components/common/side-menu.js'
 import VerticalDivider from '/components/common/vertical-divider.js'
+import UserProfileTabs from '/components/user-profile/user-profile-tabs.js'
 import translate from '/src/app/translation.js'
 
 import '/styles/pages/user-profile.css'
@@ -272,6 +274,10 @@ export default function Profile() {
     navigator.clipboard.writeText(window.location.href)
     notifyProfileLinkCopied()
   }
+
+  /* ----------------------------- */
+
+  const [activeTab, setActiveTab] = useState('profile')
 
   return (
     <>
@@ -556,9 +562,19 @@ export default function Profile() {
                   }
                 </div>
               </section>
+
+              {/* --------------------------------------- */}
+
+              <UserProfileTabs
+                lang = { lang }
+                activeTab = { activeTab }
+                setActiveTab = { setActiveTab }
+              />
             </section>
           </main>
         </section>
+
+        <Footer lang = { lang } />
       </section>
     </>
   )
