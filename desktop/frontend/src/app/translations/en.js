@@ -314,12 +314,29 @@ const translationsEN = {
       PROFILE: 'profile',
       ACTIVITY: 'activity',
       MEDIA: 'media',
+      DIARY: 'diary',
       REVIEWS: 'reviews',
       WATCHLIST: 'watchlist',
       LISTS: 'lists',
       LIKES: 'likes',
       TAGS: 'tags',
       NETWORK: 'network'
+    }
+  },
+
+  /* -------------------------------------------------------------------------------------------------- */
+
+  PROFILE_TAB: {
+    FAVORITE_MEDIA: {
+      SECTION_TITLE: 'favorite media'
+    },
+    RECENT_REVIEWS: {
+      SECTION_TITLE: 'recent reviews',
+      MORE: 'MORE'
+    },
+    DIARY: {
+      SECTION_TITLE: 'diary',
+      NO_REVIEWS: 'No reviews yet!'
     }
   },
 

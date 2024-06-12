@@ -14,7 +14,8 @@ function Poster({
   size,
   lowResImgSrc,
   highResImgSrc,
-  hasLogInfo
+  hasLogInfo,
+  username
 }) {
   const [imageLoaded, setImageLoaded] = useState(false)
 
@@ -52,12 +53,10 @@ function Poster({
       break
   }
 
-  conditionalSizeClassName += ` media-slot__poster ${ hasLogInfo && 'media-slot__poster--sharp-border' }`
+  conditionalSizeClassName += ` media-slot__poster ${ (hasLogInfo && username) && 'media-slot__poster--sharp-border' }`
 
   return (
-    <section className = { conditionalSizeClassName } style = { posterStyle }>
-      <Link href = '/' />
-    </section>
+    <section className = { conditionalSizeClassName } style = { posterStyle }></section>
   )
 }
 
@@ -117,14 +116,16 @@ function LogInfo({
 
   return (
     <section className = 'media-slot__log-info'>
-      <article className = 'media-slot__user'>
-        <div className = 'media-slot__avatar' style = { avatarStyle }></div>
-        <h6 className = 'media-slot__username'>{ username }</h6>
-      </article>
+      { username &&
+        <article className = 'media-slot__user'>
+          <div className = 'media-slot__avatar' style = { avatarStyle }></div>
+          <h6 className = 'media-slot__username'>{ username }</h6>
+        </article>
+      }
 
       {/* ----------------------- */}
 
-      <article className = 'log__details'>
+      <article className = { `log__details ${ !username && 'with-margin' }` }>
         <div className = 'log__left-side'>
           <div className = 'media-slot__stars'>
             { stars }
@@ -176,6 +177,7 @@ export default function MediaSlot({
         lowResImgSrc = { lowResImgSrc }
         highResImgSrc = { highResImgSrc }
         hasLogInfo = { hasLogInfo }
+        username = { username }
       />
       <LogInfo
         hasLogInfo = { hasLogInfo }

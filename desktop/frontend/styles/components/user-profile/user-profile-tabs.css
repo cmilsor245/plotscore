@@ -23,7 +23,12 @@
 }
 
 .user-profile__tabs li {
+  align-items: center;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  justify-content: flex-start;
 }
 
 .user-profile__tab.active {
@@ -33,6 +38,14 @@
 .user-profile__tab-indicator {
   background-color: var(--color--tabs-text);
   height: 2px;
-  margin-top: 2px;
+  width: 100%;
+}
+
+.user-profile__tab-content,
+.user-profile__tab-content > div {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   width: 100%;
 }

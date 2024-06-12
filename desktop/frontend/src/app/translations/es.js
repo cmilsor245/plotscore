@@ -314,6 +314,7 @@ const translationsES = {
       PROFILE: 'perfil',
       ACTIVITY: 'actividad',
       MEDIA: 'contenidos',
+      DIARY: 'diario',
       REVIEWS: 'reviews',
       WATCHLIST: 'ver más tarde',
       LISTS: 'listas',
@@ -323,6 +324,21 @@ const translationsES = {
     }
   },
 
+  /* -------------------------------------------------------------------------------------------------- */
+
+  PROFILE_TAB: {
+    FAVORITE_MEDIA: {
+      SECTION_TITLE: 'contenidos favoritos'
+    },
+    RECENT_REVIEWS: {
+      SECTION_TITLE: 'reviews recientes',
+      MORE: 'VER MÁS'
+    },
+    DIARY: {
+      SECTION_TITLE: 'diario',
+      NO_REVIEWS: '¡Aún no hay reviews!'
+    }
+  },
   /* -------------------------------------------------------------------------------------------------- */
 
   SETTINGS: {

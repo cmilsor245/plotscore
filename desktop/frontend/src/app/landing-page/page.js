@@ -218,7 +218,7 @@ export default function LandingPage() {
                 namespace = 'LANDING_PAGE'
                 section = 'JUST_REVIEWED'
                 title = 'SECTION_TITLE'
-                hasRightSideSingleText = 'MORE'
+                hasRightSideSingleText = { translate(lang, 'LANDING_PAGE', 'JUST_REVIEWED', 'MORE') }
                 hasDivider
               />
 
@@ -286,7 +286,7 @@ export default function LandingPage() {
                   namespace = 'LANDING_PAGE'
                   section = 'POPULAR_REVIEWS'
                   title = 'SECTION_TITLE'
-                  hasRightSideSingleText = 'MORE'
+                  hasRightSideSingleText = { translate(lang, 'LANDING_PAGE', 'POPULAR_REVIEWS', 'MORE') }
                   hasDivider
                 />
 
@@ -314,7 +314,7 @@ export default function LandingPage() {
                     namespace = 'LANDING_PAGE'
                     section = 'POPULAR_LISTS'
                     title = 'SECTION_TITLE'
-                    hasRightSideSingleText = 'MORE'
+                    hasRightSideSingleText = { translate(lang, 'LANDING_PAGE', 'POPULAR_LISTS', 'MORE') }
                     hasDivider
                   />
 
@@ -365,7 +365,7 @@ export default function LandingPage() {
                     namespace = 'LANDING_PAGE'
                     section = 'POPULAR_REVIEWERS'
                     title = 'SECTION_TITLE'
-                    hasRightSideSingleText = 'MORE'
+                    hasRightSideSingleText = { translate(lang, 'LANDING_PAGE', 'POPULAR_REVIEWERS', 'MORE') }
                     hasDivider
                   />
 
@@ -393,7 +393,7 @@ export default function LandingPage() {
                 namespace = 'LANDING_PAGE'
                 section = 'RECENT_STORIES'
                 title = 'SECTION_TITLE'
-                hasRightSideSingleText = 'MORE'
+                hasRightSideSingleText = { translate(lang, 'LANDING_PAGE', 'RECENT_STORIES', 'MORE') }
                 hasDivider
               />
 
@@ -465,7 +465,7 @@ export default function LandingPage() {
                 namespace = 'LANDING_PAGE'
                 section = 'RECENT_SHOWDOWNS'
                 title = 'SECTION_TITLE'
-                hasRightSideSingleText = 'MORE'
+                hasRightSideSingleText = { translate(lang, 'LANDING_PAGE', 'RECENT_SHOWDOWNS', 'MORE') }
                 hasDivider
               />
 
@@ -492,7 +492,7 @@ export default function LandingPage() {
                 namespace = 'LANDING_PAGE'
                 section = 'RECENT_NEWS'
                 title = 'SECTION_TITLE'
-                hasRightSideSingleText = 'MORE'
+                hasRightSideSingleText = { translate(lang, 'LANDING_PAGE', 'RECENT_NEWS', 'MORE') }
                 hasDivider
               />
 

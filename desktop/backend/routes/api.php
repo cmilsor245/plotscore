@@ -22,7 +22,6 @@ Route::middleware('auth:sanctum')->group(function () {
 
   Route::post('create-media', [MediaController::class, 'createMedia']);
 
-  Route::get('media/{id}', [MediaController::class, 'getMedia']);
   Route::get('get-media-for-review', [MediaController::class, 'getMediaForReview']);
 
   Route::put('update-media/{id}', [MediaController::class, 'updateMedia']);
@@ -44,11 +43,13 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::get('user/{id}', [AuthController::class, 'getUser']);
 Route::get('get-user-by-username/{username}', [AuthController::class, 'getUserByUsername']);
 
+Route::get('media/{id}', [MediaController::class, 'getMedia']);
 Route::get('all-media', [MediaController::class, 'getAllMedia']);
 
 Route::get('review/{id}', [ReviewController::class, 'getReview']);
 Route::get('all-reviews', [ReviewController::class, 'getAllReviews']);
 Route::get('get-all-reviews-for-user/{id}', [ReviewController::class, 'getAllReviewsForUser']);
+Route::get('get-media-linked-to-review/{id}', [ReviewController::class, 'getMediaLinkedToReview']);
 Route::get('get-this-year-reviews-for-user/{id}', [ReviewController::class, 'getThisYearReviewsForUser']);
 
 Route::get('get-followers/{id}', [FollowController::class, 'getFollowers']);

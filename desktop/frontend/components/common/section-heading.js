@@ -44,7 +44,7 @@ export default function SectionHeading({
   if (hasRightSideSingleText) {
     conditionalRightSide = (
       <span className = 'section-heading__single-text'>
-        { translate(lang, namespace, section, hasRightSideSingleText) }
+        { hasRightSideSingleText }
       </span>
     )
   } else if (hasRightSideIconAndText) {

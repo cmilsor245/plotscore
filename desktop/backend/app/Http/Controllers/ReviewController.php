@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ReviewRequest;
+use App\Models\Media;
 use App\Models\Review;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -48,18 +49,38 @@ class ReviewController extends Controller {
   public function getAllReviewsForUser($id) {
     $reviews = Review::where('user_id', $id) -> get();
 
-    if (!$reviews) {
-      return response() -> json([
-        'error' => 'reviews not found'
-      ], Response::HTTP_NOT_FOUND);
+    if ($reviews -> count() === 0) {
+      $totalReviews = 0;
+    } else {
+      $totalReviews = $reviews -> count();
     }
-
-    $totalReviews = $reviews -> count();
 
     return response() -> json([
       'reviews' => $reviews,
       'totalReviews' => $totalReviews
     ], Response::HTTP_OK);
+  }
+
+  public function getMediaLinkedToReview($reviewId) {
+    $review = Review::find($reviewId);
+
+    if (!$review) {
+      return response() -> json([
+        'error' => 'review not found'
+      ], Response::HTTP_NOT_FOUND);
+    }
+
+    $mediaId = $review -> media_id;
+
+    $media = Media::find($mediaId);
+
+    if (!$media) {
+      return response() -> json([
+        'error' => 'media not found'
+      ], Response::HTTP_NOT_FOUND);
+    }
+
+    return response() -> json($media, Response::HTTP_OK);
   }
 
   public function getThisYearReviewsForUser($id) {
@@ -68,19 +89,16 @@ class ReviewController extends Controller {
       -> get();
 
     if ($reviews -> isEmpty()) {
-      return response() -> json([
-        'error' => 'reviews not found'
-      ], Response::HTTP_NOT_FOUND);
+      $totalReviews = 0;
+    } else {
+      $totalReviews = $reviews -> count();
     }
-
-    $totalReviews = $reviews -> count();
 
     return response() -> json([
       'reviews' => $reviews,
       'totalReviews' => $totalReviews
     ], Response::HTTP_OK);
   }
-
 
   public function getAllReviews(Request $request) {
     $page = $request -> query('page', 1);

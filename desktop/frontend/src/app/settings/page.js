@@ -374,7 +374,7 @@ export default function SettingsPage() {
                     'STORES_STREAMING',
                     'DATA'
                   ] }
-                  hasRightSideSingleText = 'DEACTIVATE_ACCOUNT'
+                  hasRightSideSingleText = { translate(lang, 'SETTINGS', 'MAIN_HEADING', 'DEACTIVATE_ACCOUNT') }
                   hasDivider
                 />
 
@@ -478,7 +478,7 @@ export default function SettingsPage() {
                           <FormLabelInput
                             label = { translate(lang, 'SETTINGS', 'MAIN_FORM', 'LOCATION_LABEL') }
 
-                            minLength = { emailMinLength }
+                            minLength = { locationMinLength }
                             maxLength = { locationMaxLength }
 
                             placeholder = { userData?.location }
@@ -618,7 +618,7 @@ export default function SettingsPage() {
                         namespace = 'SETTINGS'
                         section = 'MAIN_FORM_RIGHT_SIDE'
                         title = 'FAVORITE_MEDIA'
-                        hasRightSideSingleText = 'DRAG_TO_REORDER'
+                        hasRightSideSingleText = { translate(lang, 'SETTINGS', 'MAIN_FORM_RIGHT_SIDE', 'DRAG_TO_REORDER') }
                       />
 
                       <section className = 'section-content'>

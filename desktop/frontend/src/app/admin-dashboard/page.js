@@ -263,8 +263,6 @@ export default function AdminDashboard({
     const sluggedTitle = convertToSlug(mediaTitle)
     const mediaYear = releaseDate.substring(0, 4)
 
-    console.log(sluggedTitle, mediaYear)
-
     const mediaSlug = sluggedTitle + '-' + mediaYear
 
     setMediaSlug(mediaSlug)

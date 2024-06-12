@@ -1,0 +1,83 @@
+.dark-theme {
+  --color--diary: var(--color--primary-light-70);
+  --color--media--outline: var(--color--secondary-main);
+}
+
+.light-theme {
+  --color--diary: var(--color--primary-dark-40);
+  --color--media--outline: var(--color--tertiary-main);
+}
+
+.user-profile__tab {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.user-profile__tab .left-side {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+  width: 100%;
+}
+
+.favorite-media > .section-content,
+.recent-reviews > .section-content {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-profile__tab .right-side {
+  width: fit-content;
+  gap: 30px;
+}
+
+.right-side .diary .section-content {
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  width: fit-content;
+}
+
+.right-side .diary .left-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.right-side .diary .left-column svg {
+  color: var(--color--diary);
+  height: 60px;
+  width: 60px;
+}
+
+.right-side .diary .right-column {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  width: fit-content;
+}
+
+.right-side .diary .right-column > p {
+  --font: clamp(11px, 1.2rem, 14px) var(--font--graphik-semibold);
+  align-items: center;
+  color: var(--color--diary);
+  display: flex;
+  font: var(--font);
+  gap: 10px;
+  justify-content: flex-start;
+  text-wrap: nowrap;
+  width: fit-content;
+}
+
+.right-side .diary .right-column > p span:first-of-type {
+  font-family: var(--font--graphik-regular);
+}
