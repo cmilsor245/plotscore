@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 
 import { IconCalendarMonth } from '@tabler/icons-react'
 
+import Review from '/components/common/review.js'
 import Divider from '/components/common/divider.js'
 import MediaSlot from '/components/common/media-slot.js'
 import SectionHeading from "/components/common/section-heading.js"
@@ -21,11 +22,13 @@ export default function ProfileTab({ lang }) {
   const [ownUserData, setOwnUserData] = useState(null)
   const [totalOwnReviews, setTotalOwnReviews] = useState(0)
   const [fourLatestOwnReviews, setFourLatestOwnReviews] = useState([])
+  const [fourLatestOwnReviewWithText, setFourLatestOwnReviewWithText] = useState([])
   const [ownMediaData, setOwnMediaData] = useState({})
 
   const [otherUserData, setOtherUserData] = useState(null)
   const [totalOtherReviews, setTotalOtherReviews] = useState(0)
   const [fourLatestOtherReviews, setFourLatestOtherReviews] = useState([])
+  const [fourLatestOtherReviewWithText, setFourLatestOtherReviewWithText] = useState([])
   const [otherMediaData, setOtherMediaData] = useState({})
 
   const [isLoggedIn, setIsLoggedIn] = useState(true)
@@ -39,16 +42,19 @@ export default function ProfileTab({ lang }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const ownUserResponse = await fetch(`${apiUrl}/user`, { credentials: 'include' })
+        const ownUserResponse = await fetch(`${ apiUrl }/user`, { credentials: 'include' })
         const ownUserData = await ownUserResponse.json()
         setOwnUserData(ownUserData)
 
-        const totalOwnReviewsResponse = await fetch(`${apiUrl}/get-all-reviews-for-user/${ownUserData.id}`, { credentials: 'include' })
+        const totalOwnReviewsResponse = await fetch(`${ apiUrl }/get-all-reviews-for-user/${ ownUserData.id }`, { credentials: 'include' })
         const totalOwnReviewsData = await totalOwnReviewsResponse.json()
         setTotalOwnReviews(totalOwnReviewsData.totalReviews)
 
         const sortedOwnReviews = totalOwnReviewsData.reviews.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
         setFourLatestOwnReviews(sortedOwnReviews.slice(0, 4))
+
+        const validReviewsWithText = sortedOwnReviews.filter(review => review.review_text)
+        setFourLatestOwnReviewWithText(validReviewsWithText.slice(0, 4))
 
         if (ownUserData.username === usernameInUrl) {
           setIsOwnProfilePage(true)
@@ -56,16 +62,20 @@ export default function ProfileTab({ lang }) {
           setOwnMediaData(ownMediaData)
         } else {
           setIsOwnProfilePage(false)
-          const otherUserResponse = await fetch(`${apiUrl}/get-user-by-username/${usernameInUrl}`, { credentials: 'include' })
+          const otherUserResponse = await fetch(`${ apiUrl }/get-user-by-username/${ usernameInUrl }`, { credentials: 'include' })
           const otherUserData = await otherUserResponse.json()
           setOtherUserData(otherUserData)
 
-          const totalOtherReviewsResponse = await fetch(`${apiUrl}/get-all-reviews-for-user/${otherUserData.id}`, { credentials: 'include' })
+          const totalOtherReviewsResponse = await fetch(`${ apiUrl }/get-all-reviews-for-user/${ otherUserData.id }`, { credentials: 'include' })
           const totalOtherReviewsData = await totalOtherReviewsResponse.json()
           setTotalOtherReviews(totalOtherReviewsData.totalReviews)
 
           const sortedOtherReviews = totalOtherReviewsData.reviews.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
           setFourLatestOtherReviews(sortedOtherReviews.slice(0, 4))
+
+          const otherValidReviewsWithText = sortedOtherReviews.filter(review => review.review_text)
+          setFourLatestOtherReviewWithText(otherValidReviewsWithText.slice(0, 4))
+
           const otherMediaData = await fetchMediaData(sortedOtherReviews)
           setOtherMediaData(otherMediaData)
         }
@@ -73,16 +83,20 @@ export default function ProfileTab({ lang }) {
         setIsLoggedIn(false)
         setIsOwnProfilePage(false)
 
-        const otherUserResponse = await fetch(`${apiUrl}/get-user-by-username/${usernameInUrl}`, { credentials: 'include' })
+        const otherUserResponse = await fetch(`${ apiUrl }/get-user-by-username/${ usernameInUrl }`, { credentials: 'include' })
         const otherUserData = await otherUserResponse.json()
         setOtherUserData(otherUserData)
 
-        const totalOtherReviewsResponse = await fetch(`${apiUrl}/get-all-reviews-for-user/${otherUserData.id}`, { credentials: 'include' })
+        const totalOtherReviewsResponse = await fetch(`${ apiUrl }/get-all-reviews-for-user/${ otherUserData.id }`, { credentials: 'include' })
         const totalOtherReviewsData = await totalOtherReviewsResponse.json()
         setTotalOtherReviews(totalOtherReviewsData.totalReviews)
 
         const sortedOtherReviews = totalOtherReviewsData.reviews.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
         setFourLatestOtherReviews(sortedOtherReviews.slice(0, 4))
+
+        const otherValidReviewsWithText = sortedOtherReviews.filter(review => review.review_text)
+        setFourLatestOtherReviewWithText(otherValidReviewsWithText.slice(0, 4))
+
         const otherMediaData = await fetchMediaData(sortedOtherReviews)
         setOtherMediaData(otherMediaData)
       }
@@ -96,7 +110,7 @@ export default function ProfileTab({ lang }) {
   const fetchMediaData = async (reviews) => {
     const mediaDataMap = {}
     for (const review of reviews) {
-      const mediaResponse = await fetch(`${apiUrl}/get-media-linked-to-review/${review.media_id}`, { credentials: 'include' })
+      const mediaResponse = await fetch(`${ apiUrl }/get-media-linked-to-review/${ review.media_id }`, { credentials: 'include' })
       const mediaData = await mediaResponse.json()
       mediaDataMap[review.media_id] = mediaData
     }
@@ -116,7 +130,7 @@ export default function ProfileTab({ lang }) {
     const sluggedTitle = convertToSlug(media.title)
     const mediaYear = media.release_date.substring(0, 4)
 
-    return `${sluggedTitle}-${mediaYear}`
+    return `${ sluggedTitle }-${ mediaYear }`
   }
 
   const getMediaLinkedToReview = (review) => {
@@ -139,76 +153,78 @@ export default function ProfileTab({ lang }) {
   const posterSrc = 'https://image.tmdb.org/t/p/original/x5KZT5LYLvkCb3mxgOYXuPIuzs7.jpg'
 
   return (
-    <section className='user-profile__tab'>
-      <section className='left-side'>
-        <section className='section__heading-and-content favorite-media'>
+    <section className = 'user-profile__tab'>
+      <section className = 'left-side'>
+        <section className = 'section__heading-and-content favorite-media'>
           <SectionHeading
-            lang={lang}
-            namespace='PROFILE_TAB'
-            section='FAVORITE_MEDIA'
-            title='SECTION_TITLE'
+            lang = { lang }
+            namespace = 'PROFILE_TAB'
+            section = 'FAVORITE_MEDIA'
+            title = 'SECTION_TITLE'
             hasDivider
           />
 
-          <section className='section-content'>
-            {favoriteMediaSlotsImgsSrcs.map((imgSrc, index) => (
+          <section className = 'section-content'>
+            { favoriteMediaSlotsImgsSrcs.map((imgSrc, index) => (
               <MediaSlot
-                key={index}
-                size='normal'
-                lowResImgSrc={imgSrc.lowResImgSrc}
-                highResImgSrc={imgSrc.highResImgSrc}
+                key = { index }
+                size = 'normal'
+                lowResImgSrc = { imgSrc.lowResImgSrc }
+                highResImgSrc = { imgSrc.highResImgSrc }
               />
-            ))}
+            )) }
           </section>
         </section>
 
-        <section className='section__heading-and-content recent-reviews'>
+        {/* -------------------------------------------- */}
+
+        <section className = 'section__heading-and-content recent-activity'>
           <SectionHeading
-            lang={lang}
-            namespace='PROFILE_TAB'
-            section='RECENT_REVIEWS'
-            title='SECTION_TITLE'
-            hasRightSideSingleText={translate(lang, 'PROFILE_TAB', 'RECENT_REVIEWS', 'MORE')}
+            lang = { lang }
+            namespace = 'PROFILE_TAB'
+            section = 'RECENT_ACTIVITY'
+            title = 'SECTION_TITLE'
+            hasRightSideSingleText = { translate(lang, 'PROFILE_TAB', 'RECENT_ACTIVITY', 'MORE') }
             hasDivider
           />
 
-          <section className='section-content'>
-            {isOwnProfilePage ? (
+          <section className = 'section-content'>
+            { isOwnProfilePage ? (
               fourLatestOwnReviews.length < 4 ? (
                 <>
-                  {fourLatestOwnReviews.map((review, index) => {
+                  { fourLatestOwnReviews.map((review, index) => {
                     const linkedMediaData = getMediaLinkedToReview(review)
                     return (
-                      <Link href={`/media/${generateMediaSlug(linkedMediaData)}`} key={index}>
+                      <Link href = { `/media/${ generateMediaSlug(linkedMediaData) }` } key = { index }>
                         <MediaSlot
-                          size='normal'
-                          lowResImgSrc={posterSrc}
-                          highResImgSrc={posterSrc}
+                          size = 'normal'
+                          lowResImgSrc = { posterSrc }
+                          highResImgSrc = { posterSrc }
                           hasLogInfo
-                          rating={review.rating}
-                          hasWatchedBefore={review.watched_before === 0 ? true : false}
-                          hasReviewText={review.review_text ? true : false}
+                          rating = { review.rating }
+                          hasWatchedBefore = { review.watched_before === 0 ? true : false }
+                          hasReviewText = { review.review_text ? true : false }
                         />
                       </Link>
                     )
-                  })}
-                  {fourLatestOwnReviews.length < 4 && [...Array(4 - fourLatestOwnReviews.length)].map((_, index) => (
-                    <div className='media-slot__placeholder normal' key={index}></div>
-                  ))}
+                  }) }
+                  { fourLatestOwnReviews.length < 4 && [...Array(4 - fourLatestOwnReviews.length)].map((_, index) => (
+                    <div className = 'media-slot__placeholder normal' key = { index }></div>
+                  )) }
                 </>
               ) : (
                 fourLatestOwnReviews.map((review, index) => {
                   const linkedMediaData = getMediaLinkedToReview(review)
                   return (
-                    <Link href={`/media/${generateMediaSlug(linkedMediaData)}`} key={index}>
+                    <Link href = { `/media/${ generateMediaSlug(linkedMediaData) }` } key = { index }>
                       <MediaSlot
-                        size='normal'
-                        lowResImgSrc={posterSrc}
-                        highResImgSrc={posterSrc}
+                        size = 'normal'
+                        lowResImgSrc = { posterSrc }
+                        highResImgSrc = { posterSrc }
                         hasLogInfo
-                        rating={review.rating}
-                        hasWatchedBefore={review.watched_before === 0 ? true : false}
-                        hasReviewText={review.review_text ? true : false}
+                        rating = { review.rating }
+                        hasWatchedBefore = { review.watched_before === 0 ? true : false }
+                        hasReviewText = { review.review_text ? true : false }
                       />
                     </Link>
                   )
@@ -217,74 +233,111 @@ export default function ProfileTab({ lang }) {
             ) : (
               fourLatestOtherReviews.length < 4 ? (
                 <>
-                  {fourLatestOtherReviews.map((review, index) => {
+                  { fourLatestOtherReviews.map((review, index) => {
                     const linkedMediaData = getMediaLinkedToReview(review)
                     return (
-                      <Link href={`/media/${generateMediaSlug(linkedMediaData)}`} key={index}>
+                      <Link href = { `/media/${ generateMediaSlug(linkedMediaData) }` } key = { index }>
                         <MediaSlot
-                          size='normal'
-                          lowResImgSrc={posterSrc}
-                          highResImgSrc={posterSrc}
+                          size = 'normal'
+                          lowResImgSrc = { posterSrc }
+                          highResImgSrc = { posterSrc }
                           hasLogInfo
-                          rating={review.rating}
-                          hasWatchedBefore={review.watched_before === 0 ? true : false}
-                          hasReviewText={review.review_text ? true : false}
+                          rating = { review.rating }
+                          hasWatchedBefore = { review.watched_before === 0 ? true : false }
+                          hasReviewText = { review.review_text ? true : false }
                         />
                       </Link>
                     )
-                  })}
-                  {fourLatestOtherReviews.length < 4 && [...Array(4 - fourLatestOtherReviews.length)].map((_, index) => (
-                    <div className='media-slot__placeholder normal' key={index}></div>
-                  ))}
+                  }) }
+                  { fourLatestOtherReviews.length < 4 && [...Array(4 - fourLatestOtherReviews.length)].map((_, index) => (
+                    <div className = 'media-slot__placeholder normal' key = { index }></div>
+                  )) }
                 </>
               ) : (
                 fourLatestOtherReviews.map((review, index) => {
                   const linkedMediaData = getMediaLinkedToReview(review)
                   return (
-                    <Link href={`/media/${generateMediaSlug(linkedMediaData)}`} key={index}>
+                    <Link href = { `/media/${ generateMediaSlug(linkedMediaData) }` } key = { index }>
                       <MediaSlot
-                        size='normal'
-                        lowResImgSrc={posterSrc}
-                        highResImgSrc={posterSrc}
+                        size = 'normal'
+                        lowResImgSrc = { posterSrc }
+                        highResImgSrc = { posterSrc }
                         hasLogInfo
-                        rating={review.rating}
-                        hasWatchedBefore={review.watched_before === 0 ? true : false}
-                        hasReviewText={review.review_text ? true : false}
+                        rating = { review.rating }
+                        hasWatchedBefore = { review.watched_before === 0 ? true : false }
+                        hasReviewText = { review.review_text ? true : false }
                       />
                     </Link>
                   )
                 })
               )
-            )}
+            ) }
+          </section>
+        </section>
+
+        {/* -------------------------------------------- */}
+
+        <section className = 'section__heading-and-content recent-reviews'>
+          <SectionHeading
+            lang = { lang }
+            namespace = 'PROFILE_TAB'
+            section = 'RECENT_REVIEWS'
+            title = 'SECTION_TITLE'
+            hasRightSideSingleText = { translate(lang, 'PROFILE_TAB', 'RECENT_REVIEWS', 'MORE') }
+            hasDivider
+          />
+
+          <section className = 'section-content'>
+            { isOwnProfilePage ? (
+              <>
+                { fourLatestOwnReviewWithText.map((review, index) => {
+                  <Review
+                    key = { index }
+
+                    lang = { lang }
+
+                    hasPoster
+                    { ...review }
+
+                    type = 'horizontal-2'
+                  />,
+                  index !== fourLatestOwnReviewWithText.length - 1 && <Divider />
+                }) }
+              </>
+            ) : (
+              <>
+                
+              </>
+            ) }
           </section>
         </section>
       </section>
 
-      <section className='right-side'>
-        <section className='section__heading-and-content diary'>
+      <section className = 'right-side'>
+        <section className = 'section__heading-and-content diary'>
           <SectionHeading
-            lang={lang}
-            namespace='PROFILE_TAB'
-            section='DIARY'
-            title='SECTION_TITLE'
-            hasRightSideSingleText={isOwnProfilePage ? (totalOwnReviews || '0') : (totalOtherReviews || '0')}
+            lang = { lang }
+            namespace = 'PROFILE_TAB'
+            section = 'DIARY'
+            title = 'SECTION_TITLE'
+            hasRightSideSingleText = { isOwnProfilePage  ? (totalOwnReviews || '0') : (totalOtherReviews || '0') }
             hasDivider
           />
 
-          <section className='section-content'>
-            <div className='left-column'>
+          <section className = 'section-content'>
+            <div className = 'left-column'>
               <IconCalendarMonth />
             </div>
-            <div className='right-column'>
-              {staticTenLatestReviews.map((review, index) => (
-                <React.Fragment key={index}>
+            <div className = 'right-column'>
+              { staticTenLatestReviews.map((review, index) => (
+                <React.Fragment key = { index }>
                   <p>
-                    <span>{review.date}</span>
-                    <span>{review.title}</span>
+                    <span>{ review.date }</span>
+                    <span>{ review.title }</span>
                   </p>
-                  {index !== staticTenLatestReviews.length - 1 && <Divider />}
+                  { index !== staticTenLatestReviews.length - 1 && <Divider /> }
                 </React.Fragment>
-              ))}
+              )) }
             </div>
           </section>
         </section>

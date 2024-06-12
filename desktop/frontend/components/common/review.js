@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
 
 import {
+  IconHeartFilled,
   IconMath1Divide2,
-  IconStarFilled,
   IconMessage,
-  IconHeartFilled
+  IconStarFilled
 } from '@tabler/icons-react'
 
-import translate from '/src/app/translation.js'
 import MediaSlot from '/components/common/media-slot.js'
+import translate from '/src/app/translation.js'
 
 import '/styles/components/common/review.css'
 
@@ -306,7 +306,11 @@ export default function Review({
           break
         case 'horizontal-2':
           conditionalReview =
-            <HorizontalReviewType2 />
+            <HorizontalReviewType
+              lang = { lang }
+
+              
+            />
           break
       }
       break

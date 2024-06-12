@@ -25,7 +25,7 @@
 }
 
 .favorite-media > .section-content,
-.recent-reviews > .section-content {
+.recent-activity > .section-content {
   align-items: flex-start;
   display: flex;
   justify-content: space-between;

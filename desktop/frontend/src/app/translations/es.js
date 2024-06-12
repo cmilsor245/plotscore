@@ -330,6 +330,10 @@ const translationsES = {
     FAVORITE_MEDIA: {
       SECTION_TITLE: 'contenidos favoritos'
     },
+    RECENT_ACTIVITY: {
+      SECTION_TITLE: 'actividad reciente',
+      MORE: 'VER MÁS'
+    },
     RECENT_REVIEWS: {
       SECTION_TITLE: 'reviews recientes',
       MORE: 'VER MÁS'

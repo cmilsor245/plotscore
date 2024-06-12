@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ReviewRequest;
 use App\Models\Media;
 use App\Models\Review;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -59,6 +60,28 @@ class ReviewController extends Controller {
       'reviews' => $reviews,
       'totalReviews' => $totalReviews
     ], Response::HTTP_OK);
+  }
+
+  public function getUserLinkedToReview($reviewId) {
+    $review = Review::find($reviewId);
+
+    if (!$review) {
+      return response() -> json([
+        'error' => 'review not found'
+      ], Response::HTTP_NOT_FOUND);
+    }
+
+    $userId = $review -> user_id;
+
+    $user = User::find($userId);
+
+    if (!$user) {
+      return response() -> json([
+        'error' => 'user not found'
+      ], Response::HTTP_NOT_FOUND);
+    }
+
+    return response() -> json($user, Response::HTTP_OK);
   }
 
   public function getMediaLinkedToReview($reviewId) {
