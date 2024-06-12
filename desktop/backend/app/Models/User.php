@@ -26,7 +26,12 @@ class User extends Authenticatable {
 
     'location',
     'website',
-    'pronouns'
+    'pronouns',
+
+    'posters_config',
+    'replies',
+    'include_in_members',
+    'adult_content'
   ];
 
   protected $hidden = [

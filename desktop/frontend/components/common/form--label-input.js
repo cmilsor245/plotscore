@@ -315,6 +315,153 @@ function Like({ name, value = false, onChange }) {
 
 /* ------------------------------ */
 
+function Email(props) {
+  return <input type = 'email' { ...props } />
+}
+
+/* ------------------------------ */
+
+function Pronouns(props) {
+  const [userSelectedPronoun, setUserSelectedPronoun] = useState('they/them')
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL
+
+  useEffect(() => {
+    const fetchPronouns = async () => {
+      try {
+        const response = await fetch(`${ apiUrl }/user`, {
+          credentials: 'include'
+        })
+
+        if (response.ok) {
+          const data = await response.json()
+          setUserSelectedPronoun(data.pronouns)
+        } else {
+          console.error('failed to fetch pronouns:', response.statusText)
+        }
+      } catch (error) {
+        console.error('error fetching pronouns:', error)
+      }
+    }
+
+    fetchPronouns()
+  }, [apiUrl])
+
+  const handlePronounChange = (event) => {
+    setUserSelectedPronoun(event.target.value)
+  }
+
+  const pronouns = [
+    'he/him',
+    'she/her',
+    'they/them'
+  ]
+
+  return (
+    <select value = { userSelectedPronoun } onChange = { handlePronounChange } { ...props }>
+      { pronouns.map((pronoun) => (
+        <option key = { pronoun } value = { pronoun }>
+          { pronoun }
+        </option>
+      )) }
+    </select>
+  )
+}
+
+/* ------------------------------ */
+
+function Posters(props) {
+  const [postersConfiguration, setPostersConfiguration] = useState('any')
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL
+
+  useEffect(() => {
+    const fetchPosters = async () => {
+      try {
+        const response = await fetch(`${ apiUrl }/user`, {
+          credentials: 'include'
+        })
+
+        if (response.ok) {
+          const data = await response.json()
+          setPostersConfiguration(data.posters_configuration)
+        } else {
+          console.error('failed to fetch posters:', response.statusText)
+        }
+      } catch (error) {
+        console.error('error fetching posters:', error)
+      }
+    }
+
+    fetchPosters()
+  }, [apiUrl])
+
+  const options = [
+    'any',
+    'only their',
+    'only your',
+    'no'
+  ]
+
+  const handlePostersChange = (event) => {
+    setPostersConfiguration(event.target.value)
+  }
+  return (
+    <select value = { postersConfiguration } onChange = { handlePostersChange } { ...props }>
+      { options.map((option) => (
+        <option key = { option } value = { option }>
+          { option }
+        </option>
+      )) }
+    </select>
+  )
+}
+
+/* ------------------------------ */
+
+function Replies(props) {
+  const [repliesConfiguration, setRepliesConfiguration] = useState('any')
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL
+
+  useEffect(() => {
+    const fetchReplies = async () => {
+      try {
+        const response = await fetch(`${ apiUrl }/user`, {
+          credentials: 'include'
+        })
+
+        if (response.ok) {
+          const data = await response.json()
+          setRepliesConfiguration(data.replies_configuration)
+        } else {
+          console.error('failed to fetch replies:', response.statusText)
+        }
+      } catch (error) {
+        console.error('error fetching replies:', error)
+      }
+    }
+
+    fetchReplies()
+  }, [apiUrl])
+
+  const options = [
+    'anyone',
+    'friends',
+    'you'
+  ]
+
+  const handleRepliesChange = (event) => {
+    setRepliesConfiguration(event.target.value)
+  }
+  return (
+    <select value = { repliesConfiguration } onChange = { handleRepliesChange } { ...props }>
+      { options.map((option) => (
+        <option key = { option } value = { option }>
+          { option }
+        </option>
+      )) }
+    </select>
+  )
+}
+
 export default function FormLabelInput({
   label,
   fieldType,
@@ -334,7 +481,7 @@ export default function FormLabelInput({
         return <File id = { id } {...props } />
       case 'radio':
         return <Radio id = { id } options = { options } {...props } />
-      case 'select':
+      case 'media-for-review':
         // return <BasicSelect id = { id  } { ...props  } />
         return <SelectWithSearch id = { id } {...props } />
       case 'checkbox':
@@ -343,6 +490,14 @@ export default function FormLabelInput({
         return <Rating {...props } />
       case 'like':
         return <Like id = { id } {...props } />
+      case 'email':
+        return <Email id = { id } {...props } />
+      case 'pronouns':
+        return <Pronouns id = { id } {...props } />
+      case 'posters':
+        return <Posters id = { id } {...props } />
+      case 'replies':
+        return <Replies id = { id } {...props } />
       default:
         return <Input id = { id } {...props } />
     }
@@ -353,7 +508,7 @@ export default function FormLabelInput({
       { fieldType !== 'checkbox' ? (
         <>
           <label htmlFor = { id }>
-            { label }
+            <span dangerouslySetInnerHTML = {{ __html: label }}></span>
           </label>
           { renderInput() }
         </>
@@ -361,7 +516,7 @@ export default function FormLabelInput({
         <>
           { renderInput() }
           <label htmlFor = { id }>
-            { label }
+            <span dangerouslySetInnerHTML = {{ __html: label }}></span>
           </label>
         </>
       ) }

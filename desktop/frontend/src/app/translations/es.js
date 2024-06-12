@@ -312,6 +312,62 @@ const translationsES = {
     }
   },
 
+  /* -------------------------------------------------------------------------------------------------- */
+
+  SETTINGS: {
+    MAIN_HEADING: {
+      TITLE: 'configuración de cuenta',
+
+      UPGRADE_MESSAGE: 'Upgrade to <span>PRO</span> for additional features',
+      UPGRADE_MESSAGE: 'Suscríbete a <span>PRO</span> para obtener todas las funciones adicionales',
+      BUTTON: 'suscribirse',
+
+      PROFILE: 'perfil',
+      AUTH: 'autenticación',
+      AVATAR: 'avatar',
+      CONNECTIONS: 'conexiones',
+      NOTIFICATIONS: 'notificaciones',
+      STORES_STREAMING: 'plataformas y streaming',
+      DATA: 'datos',
+
+      DEACTIVATE_ACCOUNT: 'Desactivar cuenta'
+    },
+    SAVED_CHANGES_NOTIFICATION: {
+      TEXT: '¡Tus cambios se han guardado con éxito!'
+    },
+    MAIN_FORM: {
+      SUBTITLE: 'perfil',
+
+      USERNAME_LABEL: 'Usuario',
+      GIVEN_NAME_LABEL: 'Nombre',
+      FAMILY_NAME_LABEL: 'Apellidos',
+
+      EMAIL_LABEL: 'Email',
+
+      LOCATION_LABEL: 'Ubicación',
+      WEBSITE_LABEL: 'Web',
+
+      BIO_LABEL: 'Biografía',
+      PRONOUNS_LABEL: 'Pronombres',
+
+      PRONOUN_HE: 'él/su',
+      PRONOUN_SHE: 'ella/su',
+      PRONOUN_THEY: 'elle/su',
+
+      POSTERS_LABEL: 'Pósteres',
+      REPLIES_LABEL: 'Respuestas',
+
+      MEMBERS_LABEL: 'Incluir perfil en la sección de <span>Miembros</span>',
+      ADULT_CONTENT_LABEL: 'Contenido para adultos',
+
+      SUBMIT_BUTTON: 'guardar cambios'
+    },
+    MAIN_FORM_RIGHT_SIDE: {
+      FAVORITE_MEDIA: 'Contenido favorito',
+      DRAG_TO_REORDER: 'Arrastra para reordenar'
+    }
+  },
+
   /* ---------------------------------------------------------------------------------- */
 
   SPECIFIC_MEDIA:{

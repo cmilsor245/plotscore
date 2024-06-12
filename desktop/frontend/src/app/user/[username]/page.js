@@ -353,8 +353,8 @@ export default function Profile() {
                     <div className = 'first-row'>
                       <h2>
                         { isOwnProfilePage
-                          ? ownUserData?.username
-                          : otherUserData?.username
+                          ? ownUserData?.given_name ? ownUserData?.given_name : ownUserData?.username
+                          : otherUserData?.given_name ? otherUserData?.given_name : otherUserData?.username
                         }
                       </h2>
                       { isOwnProfilePage ? (

@@ -118,6 +118,10 @@
   width: 100%;
 }
 
+.review-modal__form-group label * {
+  cursor: pointer;
+}
+
 .review-modal__form-group input {
   --font: clamp(10px, 1.7rem, 20px) var(--font--graphik-regular);
   background-color: var(--color--primary-light-80);

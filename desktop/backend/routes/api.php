@@ -14,6 +14,7 @@ Route::middleware('auth:sanctum')->group(function () {
   Route::post('logout', [AuthController::class, 'logout']);
 
   Route::get('all-users', [AuthController::class, 'getAllUsers']);
+
   Route::put('update-user/{id}', [AuthController::class, 'updateUser']);
   Route::delete('delete-user/{id}', [AuthController::class, 'deleteUser']);
 

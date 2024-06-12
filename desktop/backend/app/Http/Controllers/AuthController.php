@@ -200,10 +200,7 @@ class AuthController extends Controller {
       ], Response::HTTP_NOT_FOUND);
     }
 
-    $updateData = $request -> only([
-      'username', 'given_name', 'family_name', 'email', 'avatar', 
-      'bio', 'location', 'website', 'pronouns'
-    ]);
+    $updateData = $request -> all();
 
     if (isset($updateData['role'])) {
       unset($updateData['role']);

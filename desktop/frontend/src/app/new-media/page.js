@@ -92,7 +92,7 @@ export default function NewMediaPage() {
   const titleMaxLength = 255
 
   const synopsisMinLength = 1
-  const synopsisMaxLength = 65535
+  const synopsisMaxLength = 255
 
   /* -------------------- */
 

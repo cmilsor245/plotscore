@@ -114,7 +114,7 @@ export default function ReviewModal({
       <form className = 'review-modal__form' onSubmit = { submit }>
         <div className = 'review-modal__form-group'>
           <FormLabelInput
-            fieldType = 'select'
+            fieldType = 'media-for-review'
 
             label = { translate(lang, 'COMMON', 'REVIEW_MODAL', 'MEDIA_TITLE') }
 

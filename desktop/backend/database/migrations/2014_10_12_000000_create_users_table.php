@@ -26,6 +26,11 @@ return new class extends Migration {
       $table -> integer('follower_count') -> default(0);
       $table -> integer('following_count') -> default(0);
 
+      $table -> enum('posters_config', ['any', 'only their', 'only your', 'no']) -> default('any');
+      $table -> enum('replies', ['anyone', 'friends', 'you']) -> default('anyone');
+      $table -> boolean('include_in_members') -> default(false);
+      $table -> boolean('adult_content') -> default(false);
+
       $table -> timestamps();
     });
   }

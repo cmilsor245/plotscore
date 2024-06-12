@@ -2,6 +2,7 @@
 
 import cookie from 'js-cookie'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 import {
@@ -114,6 +115,8 @@ export default function Media() {
 
   /* ------------------------------- */
 
+  const router = useRouter()
+
   const logout = async () => {
     await fetch(`${ apiUrl }/logout`, {
       method: 'POST',
@@ -123,7 +126,7 @@ export default function Media() {
       credentials: 'include'
     })
 
-    window.location.reload()
+    router.push('/')
   }
 
   return (

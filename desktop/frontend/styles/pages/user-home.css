@@ -23,6 +23,3 @@
   font-family: var(--font--graphik-semibold);
   text-decoration: none;
 }
-.section__heading-and-content.general-activity {
-  gap: 10px;
-}

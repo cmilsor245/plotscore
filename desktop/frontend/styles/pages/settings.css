@@ -1,0 +1,306 @@
+.dark-theme {
+  --color--input-background--hover: var(--color--primary-dark-60);
+  --color--input-background: var(--color--primary-dark-40);
+  --color--input-border: var(--color--primary-light-10);
+  --color--input-content: var(--color--primary-light-60);
+  --color--input-placeholder: var(--color--primary-light-10);
+  --color--title: var(--color--primary-light-80);
+  --color--upgrade-button--border: var(--color--primary-light-10);
+  --color--upgrade-button--text: var(--color--primary-light-60);
+  --color--upgrade-message: var(--color--primary-light-60);
+  --select-arrow--url: url('/icons/settings/selector--dark-mode.svg');
+}
+
+.light-theme {
+  --color--input-background--hover: var(--color--primary-light-40);
+  --color--input-background: var(--color--primary-light-60);
+  --color--input-border: var(--color--primary-light-20);
+  --color--input-content: var(--color--primary-dark-80);
+  --color--input-placeholder: var(--color--primary-light-10);
+  --color--title: var(--color--primary-dark-70);
+  --color--upgrade-button--border: var(--color--primary-light-20);
+  --color--upgrade-button--text: var(--color--primary-dark-30);
+  --color--upgrade-message: var(--color--primary-dark-30);
+  --select-arrow--url: url('/icons/settings/selector--light-mode.svg');
+}
+
+.saved-changes-notification {
+  --font: clamp(12px, 1.4rem, 15px) var(--font--graphik-semibold);
+  background-color: var(--color--accent-main);
+  border-radius: 2px;
+  color: var(--color--primary-dark-70);
+  font: var(--font);
+  height: fit-content;
+  padding: 10px 15px;
+  position: fixed;
+  right: -100%;
+  top: 10px;
+  transition: .2s;
+  width: fit-content;
+  z-index: 10;
+}
+
+.saved-changes-notification.showed {
+  right: 10px;
+}
+
+.title-and-upgrade-message {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.title-and-upgrade-message h1 {
+  --font: clamp(25px, 2.8rem, 30px) var(--font--graphik-semibold);
+  color: var(--color--title);
+  font: var(--font);
+  text-transform: capitalize;
+}
+
+.upgrade-message-section {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  justify-content: flex-end;
+}
+
+.upgrade-message-section p {
+  --font: clamp(12px, 1.7rem, 17px) var(--font--graphik-regular);
+  color: var(--color--upgrade-message);
+  font: var(--font);
+}
+
+.upgrade-message-section p span {
+  font-family: var(--font--graphik-bold);
+  text-transform: uppercase;
+}
+
+.upgrade-message-section button {
+  --font: clamp(11px, 1.2rem, 14px) var(--font--graphik-semibold);
+  align-items: center;
+  background-color: transparent;
+  border-radius: 3px;
+  border: none;
+  color: var(--color--upgrade-button--text);
+  cursor: pointer;
+  display: flex;
+  font: var(--font);
+  justify-content: center;
+  border: 1px solid var(--color--upgrade-button--border);
+  padding: 5px 10px 4px 10px;
+  text-transform: uppercase;
+  transition: .2s;
+}
+
+.section__heading-and-content.settings-form--main-info {
+  gap: 20px;
+}
+
+.section__heading-and-content.settings-form--main-info .section-content {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.section__heading-and-content.settings-form--main-info .section-content > h2 {
+  --font: clamp(16px, 1.8rem, 20px) var(--font--graphik-medium);
+  color: var(--color--title);
+  font: var(--font);
+  text-transform: capitalize;
+}
+
+.account-settings__form {
+  align-items: flex-start;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.account-settings__form .left-side {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.account-settings__form-group {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.account-settings__form-group label {
+  --font: clamp(15px, 1.6rem, 17px) var(--font--graphik-regular);
+  color: var(--color--title);
+  font: var(--font);
+  cursor: pointer;
+}
+
+.account-settings__form-group label * {
+  cursor: pointer;
+}
+
+.account-settings__form-group input {
+  --font: clamp(16px, 1.7rem, 18px) var(--font--graphik-regular);
+  border-bottom: 2px solid var(--color--input-border) !important;
+  border: none;
+  color: var(--color--input-content);
+  background-color: var(--color--input-background);
+  font: var(--font);
+  padding: 5px 0;
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: text;
+  transition: .2s;
+}
+
+.account-settings__form-group input:hover {
+  background-color: var(--color--input-background--hover);
+}
+
+.account-settings__form-group input::placeholder {
+  color: var(--color--input-placeholder);
+}
+
+.account-settings__form-group:first-of-type {
+  position: relative;
+}
+
+.account-settings__form-group input:first-of-type:disabled {
+  cursor: not-allowed;
+  opacity: .6;
+}
+
+.character-counter {
+  --font: clamp(8px, 1.4rem, 16px)  var(--font--grape-nuts);
+  color: var(--color--title);
+  font-weight: bold !important;
+  font: var(--font);
+}
+
+.account-settings__form-group:first-of-type .edit-username__button {
+  color: var(--color--title);
+  cursor: pointer;
+  height: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20px;
+}
+
+.account-settings__form-group--double {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.account-settings__form-group textarea {
+  --font: clamp(16px, 1.7rem, 18px) var(--font--graphik-regular);
+  background-color: var(--color--input-background);
+  border-radius: 4px;
+  border: none;
+  color: var(--color--input-content);
+  cursor: text;
+  font: var(--font);
+  height: 150px;
+  max-height: 300px;
+  outline: none;
+  padding: 8px;
+  resize: vertical;
+  transition: .2s;
+  width: 100%;
+}
+
+.account-settings__form-group textarea:hover {
+  background-color: var(--color--input-background--hover);
+}
+
+.account-settings__form-group textarea::placeholder {
+  color: var(--color--input-placeholder);
+}
+
+.account-settings__form-group select {
+  --font: clamp(16px, 1.7rem, 18px) var(--font--graphik-regular);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--color--input-background);
+  background-image: var(--select-arrow--url);
+  background-position: right 5px center;
+  background-repeat: no-repeat;
+  background-size: 17px;
+  border-radius: 4px;
+  border: none;
+  color: var(--color--input-content);
+  cursor: pointer;
+  font: var(--font);
+  outline: none;
+  padding-right: 30px !important;
+  padding: 8px;
+  text-transform: capitalize;
+  transition: .2s;
+  width: fit-content;
+}
+
+.account-settings__form-group select:hover {
+  background-color: var(--color--input-background--hover);
+}
+
+.account-settings__form-group:has(input[type = 'checkbox']) {
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.account-settings__form-group input[type = 'checkbox'] {
+  --font: clamp(16px, 1.7rem, 18px) var(--font--graphik-regular);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--color--input-background);
+  border-radius: 4px;
+  border: none;
+  color: var(--color--input-content);
+  cursor: pointer;
+  font: var(--font);
+  outline: none;
+  padding: 8px;
+  text-transform: capitalize;
+  transition: .2s;
+  width: fit-content;
+}
+
+.account-settings__form-group input[type = 'checkbox']:checked {
+  background-color: var(--color--accent-main);
+}
+
+.account-settings__form .right-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap--general-section);
+  width: fit-content;
+}
+
+.account-settings__form .right-side .section-content {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: flex-end;
+  width: fit-content;
+}

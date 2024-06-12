@@ -17,6 +17,7 @@
 .media-slot__poster {
   background: center / cover;
   border-radius: 3px;
+  z-index: -1;
 }
 
 .media-slot__poster.media-slot__poster--sharp-border {

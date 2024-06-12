@@ -314,6 +314,57 @@ const translationsEN = {
 
   /* -------------------------------------------------------------------------------------------------- */
 
+  SETTINGS: {
+    MAIN_HEADING: {
+      TITLE: 'account settings',
+
+      UPGRADE_MESSAGE: 'Upgrade to <span>PRO</span> for additional features',
+      BUTTON: 'subscribe',
+
+      PROFILE: 'profile',
+      AUTH: 'auth',
+      AVATAR: 'avatar',
+      CONNECTIONS: 'connections',
+      NOTIFICATIONS: 'notifications',
+      STORES_STREAMING: 'stores & streaming',
+      DATA: 'data',
+
+      DEACTIVATE_ACCOUNT: 'Deactivate account'
+    },
+    SAVED_CHANGES_NOTIFICATION: {
+      TEXT: 'Your changes have been saved successfully!'
+    },
+    MAIN_FORM: {
+      SUBTITLE: 'profile',
+
+      USERNAME_LABEL: 'Username',
+      GIVEN_NAME_LABEL: 'Given name',
+      FAMILY_NAME_LABEL: 'Family name',
+
+      EMAIL_LABEL: 'Email',
+
+      LOCATION_LABEL: 'Location',
+      WEBSITE_LABEL: 'Website',
+
+      BIO_LABEL: 'Bio',
+      PRONOUNS_LABEL: 'Pronoun',
+
+      POSTERS_LABEL: 'Posters',
+      REPLIES_LABEL: 'Replies',
+
+      MEMBERS_LABEL: 'Include profile in the <span>Members</span> section',
+      ADULT_CONTENT_LABEL: 'Adult content',
+
+      SUBMIT_BUTTON: 'save changes'
+    },
+    MAIN_FORM_RIGHT_SIDE: {
+      FAVORITE_MEDIA: 'Favorite media',
+      DRAG_TO_REORDER: 'Drag to reorder'
+    }
+  },
+
+  /* -------------------------------------------------------------------------------------------------- */
+
   SPECIFIC_MEDIA:{
     REVIEW: {
       REVIEW_BY: 'Review by',

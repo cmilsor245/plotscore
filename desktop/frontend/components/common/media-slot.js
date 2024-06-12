@@ -1,11 +1,21 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-import { IconAlignJustified, IconMath1Divide2, IconRefresh, IconStarFilled } from '@tabler/icons-react'
+import {
+  IconAlignJustified,
+  IconMath1Divide2,
+  IconRefresh,
+  IconStarFilled
+} from '@tabler/icons-react'
 
 import '/styles/components/common/media-slot.css'
 
-function Poster({ size, lowResImgSrc, highResImgSrc, hasLogInfo }) {
+function Poster({
+  size,
+  lowResImgSrc,
+  highResImgSrc,
+  hasLogInfo
+}) {
   const [imageLoaded, setImageLoaded] = useState(false)
 
   useEffect(() => {

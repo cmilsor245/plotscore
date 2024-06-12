@@ -212,6 +212,10 @@
   width: fit-content;
 }
 
+.account-form__group label * {
+  cursor: pointer;
+}
+
 .account-form__group input {
   --font: clamp(10px, 1.7rem, 20px) var(--font--graphik-regular);
   background-color: var(--color--input--bg);
