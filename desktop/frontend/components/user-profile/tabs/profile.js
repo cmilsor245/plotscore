@@ -23,13 +23,11 @@ export default function ProfileTab({ lang }) {
   const [totalOwnReviews, setTotalOwnReviews] = useState(0)
   const [fourLatestOwnReviews, setFourLatestOwnReviews] = useState([])
   const [fourLatestOwnReviewWithText, setFourLatestOwnReviewWithText] = useState([])
-  const [ownMediaData, setOwnMediaData] = useState({})
 
   const [otherUserData, setOtherUserData] = useState(null)
   const [totalOtherReviews, setTotalOtherReviews] = useState(0)
   const [fourLatestOtherReviews, setFourLatestOtherReviews] = useState([])
   const [fourLatestOtherReviewWithText, setFourLatestOtherReviewWithText] = useState([])
-  const [otherMediaData, setOtherMediaData] = useState({})
 
   const [isLoggedIn, setIsLoggedIn] = useState(true)
 
@@ -58,8 +56,6 @@ export default function ProfileTab({ lang }) {
 
         if (ownUserData.username === usernameInUrl) {
           setIsOwnProfilePage(true)
-          const ownMediaData = await fetchMediaData(sortedOwnReviews)
-          setOwnMediaData(ownMediaData)
         } else {
           setIsOwnProfilePage(false)
           const otherUserResponse = await fetch(`${ apiUrl }/get-user-by-username/${ usernameInUrl }`, { credentials: 'include' })
@@ -75,9 +71,6 @@ export default function ProfileTab({ lang }) {
 
           const otherValidReviewsWithText = sortedOtherReviews.filter(review => review.review_text)
           setFourLatestOtherReviewWithText(otherValidReviewsWithText.slice(0, 4))
-
-          const otherMediaData = await fetchMediaData(sortedOtherReviews)
-          setOtherMediaData(otherMediaData)
         }
       } catch (error) {
         setIsLoggedIn(false)
@@ -96,9 +89,6 @@ export default function ProfileTab({ lang }) {
 
         const otherValidReviewsWithText = sortedOtherReviews.filter(review => review.review_text)
         setFourLatestOtherReviewWithText(otherValidReviewsWithText.slice(0, 4))
-
-        const otherMediaData = await fetchMediaData(sortedOtherReviews)
-        setOtherMediaData(otherMediaData)
       }
     }
 
@@ -106,16 +96,6 @@ export default function ProfileTab({ lang }) {
       fetchData()
     }
   }, [usernameInUrl, apiUrl])
-
-  const fetchMediaData = async (reviews) => {
-    const mediaDataMap = {}
-    for (const review of reviews) {
-      const mediaResponse = await fetch(`${ apiUrl }/get-media-linked-to-review/${ review.media_id }`, { credentials: 'include' })
-      const mediaData = await mediaResponse.json()
-      mediaDataMap[review.media_id] = mediaData
-    }
-    return mediaDataMap
-  }
 
   const convertToSlug = (text) => {
     if (typeof text !== 'string') return ''
@@ -125,16 +105,12 @@ export default function ProfileTab({ lang }) {
       .replace(/ +/g, '-')
   }
 
-  const generateMediaSlug = (media) => {
-    if (!media.title || !media.release_date) return ''
-    const sluggedTitle = convertToSlug(media.title)
-    const mediaYear = media.release_date.substring(0, 4)
+  const generateMediaSlug = (mediaTitle, mediaYear) => {
+    if (!mediaTitle || !mediaYear) return ''
+    const sluggedTitle = convertToSlug(mediaTitle)
+    const mediaYearConverted = mediaYear.substring(0, 4)
 
-    return `${ sluggedTitle }-${ mediaYear }`
-  }
-
-  const getMediaLinkedToReview = (review) => {
-    return ownMediaData[review.media_id] || otherMediaData[review.media_id] || {}
+    return `${ sluggedTitle }-${ mediaYearConverted }`
   }
 
   const staticTenLatestReviews = [
@@ -193,9 +169,8 @@ export default function ProfileTab({ lang }) {
               fourLatestOwnReviews.length < 4 ? (
                 <>
                   { fourLatestOwnReviews.map((review, index) => {
-                    const linkedMediaData = getMediaLinkedToReview(review)
                     return (
-                      <Link href = { `/media/${ generateMediaSlug(linkedMediaData) }` } key = { index }>
+                      <Link href = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` } key = { index }>
                         <MediaSlot
                           size = 'normal'
                           lowResImgSrc = { posterSrc }
@@ -214,9 +189,8 @@ export default function ProfileTab({ lang }) {
                 </>
               ) : (
                 fourLatestOwnReviews.map((review, index) => {
-                  const linkedMediaData = getMediaLinkedToReview(review)
                   return (
-                    <Link href = { `/media/${ generateMediaSlug(linkedMediaData) }` } key = { index }>
+                    <Link href = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` } key = { index }>
                       <MediaSlot
                         size = 'normal'
                         lowResImgSrc = { posterSrc }
@@ -234,9 +208,8 @@ export default function ProfileTab({ lang }) {
               fourLatestOtherReviews.length < 4 ? (
                 <>
                   { fourLatestOtherReviews.map((review, index) => {
-                    const linkedMediaData = getMediaLinkedToReview(review)
                     return (
-                      <Link href = { `/media/${ generateMediaSlug(linkedMediaData) }` } key = { index }>
+                      <Link href = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` } key = { index }>
                         <MediaSlot
                           size = 'normal'
                           lowResImgSrc = { posterSrc }
@@ -255,9 +228,8 @@ export default function ProfileTab({ lang }) {
                 </>
               ) : (
                 fourLatestOtherReviews.map((review, index) => {
-                  const linkedMediaData = getMediaLinkedToReview(review)
                   return (
-                    <Link href = { `/media/${ generateMediaSlug(linkedMediaData) }` } key = { index }>
+                    <Link href = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` } key = { index }>
                       <MediaSlot
                         size = 'normal'
                         lowResImgSrc = { posterSrc }
