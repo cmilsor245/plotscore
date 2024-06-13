@@ -5,9 +5,9 @@ import React, { useEffect, useState } from 'react'
 
 import { IconCalendarMonth } from '@tabler/icons-react'
 
-import Review from '/components/common/review.js'
 import Divider from '/components/common/divider.js'
 import MediaSlot from '/components/common/media-slot.js'
+import Review from '/components/common/review.js'
 import SectionHeading from "/components/common/section-heading.js"
 import favoriteMediaSlotsImgsSrcs from '/src/app/static-info/settings/favoriteMediaSlotsImgsSrcs.js'
 import translate from '/src/app/translation.js'
@@ -168,28 +168,42 @@ export default function ProfileTab({ lang }) {
             { isOwnProfilePage ? (
               fourLatestOwnReviews.length < 4 ? (
                 <>
-                  { fourLatestOwnReviews.map((review, index) => {
-                    return (
-                      <Link href = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` } key = { index }>
-                        <MediaSlot
-                          size = 'normal'
-                          lowResImgSrc = { posterSrc }
-                          highResImgSrc = { posterSrc }
-                          hasLogInfo
-                          rating = { review.rating }
-                          hasWatchedBefore = { review.watched_before === 0 ? true : false }
-                          hasReviewText = { review.review_text ? true : false }
-                        />
-                      </Link>
-                    )
-                  }) }
+                  { fourLatestOwnReviews.map((review, index) => (
+                    <Link href = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` } key = { index }>
+                      <MediaSlot
+                        size = 'normal'
+                        lowResImgSrc = { posterSrc }
+                        highResImgSrc = { posterSrc }
+                        hasLogInfo
+                        rating = { review.rating }
+                        hasWatchedBefore = { review.watched_before === 0 ? true : false }
+                        hasReviewText = { review.review_text ? true : false }
+                      />
+                    </Link>
+                  )) }
                   { fourLatestOwnReviews.length < 4 && [...Array(4 - fourLatestOwnReviews.length)].map((_, index) => (
                     <div className = 'media-slot__placeholder normal' key = { index }></div>
                   )) }
                 </>
               ) : (
-                fourLatestOwnReviews.map((review, index) => {
-                  return (
+                fourLatestOwnReviews.map((review, index) => (
+                  <Link href = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` } key = { index }>
+                    <MediaSlot
+                      size = 'normal'
+                      lowResImgSrc = { posterSrc }
+                      highResImgSrc = { posterSrc }
+                      hasLogInfo
+                      rating = { review.rating }
+                      hasWatchedBefore = { review.watched_before === 0 ? true : false }
+                      hasReviewText = { review.review_text ? true : false }
+                    />
+                  </Link>
+                ))
+              )
+            ) : (
+              fourLatestOtherReviews.length < 4 ? (
+                <>
+                  { fourLatestOtherReviews.map((review, index) => (
                     <Link href = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` } key = { index }>
                       <MediaSlot
                         size = 'normal'
@@ -201,47 +215,25 @@ export default function ProfileTab({ lang }) {
                         hasReviewText = { review.review_text ? true : false }
                       />
                     </Link>
-                  )
-                })
-              )
-            ) : (
-              fourLatestOtherReviews.length < 4 ? (
-                <>
-                  { fourLatestOtherReviews.map((review, index) => {
-                    return (
-                      <Link href = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` } key = { index }>
-                        <MediaSlot
-                          size = 'normal'
-                          lowResImgSrc = { posterSrc }
-                          highResImgSrc = { posterSrc }
-                          hasLogInfo
-                          rating = { review.rating }
-                          hasWatchedBefore = { review.watched_before === 0 ? true : false }
-                          hasReviewText = { review.review_text ? true : false }
-                        />
-                      </Link>
-                    )
-                  }) }
+                  )) }
                   { fourLatestOtherReviews.length < 4 && [...Array(4 - fourLatestOtherReviews.length)].map((_, index) => (
                     <div className = 'media-slot__placeholder normal' key = { index }></div>
                   )) }
                 </>
               ) : (
-                fourLatestOtherReviews.map((review, index) => {
-                  return (
-                    <Link href = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` } key = { index }>
-                      <MediaSlot
-                        size = 'normal'
-                        lowResImgSrc = { posterSrc }
-                        highResImgSrc = { posterSrc }
-                        hasLogInfo
-                        rating = { review.rating }
-                        hasWatchedBefore = { review.watched_before === 0 ? true : false }
-                        hasReviewText = { review.review_text ? true : false }
-                      />
-                    </Link>
-                  )
-                })
+                fourLatestOtherReviews.map((review, index) => (
+                  <Link href = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` } key = { index }>
+                    <MediaSlot
+                      size = 'normal'
+                      lowResImgSrc = { posterSrc }
+                      highResImgSrc = { posterSrc }
+                      hasLogInfo
+                      rating = { review.rating }
+                      hasWatchedBefore = { review.watched_before === 0 ? true : false }
+                      hasReviewText = { review.review_text ? true : false }
+                    />
+                  </Link>
+                ))
               )
             ) }
           </section>
@@ -263,17 +255,26 @@ export default function ProfileTab({ lang }) {
             { isOwnProfilePage ? (
               <>
                 { fourLatestOwnReviewWithText.map((review, index) => {
-                  <Review
-                    key = { index }
+                  // let reviewCompleteInfo = []
 
-                    lang = { lang }
+                  // reviewCompleteInfo.push(...review)
 
-                    hasPoster
-                    { ...review }
+                  // reviewCompleteInfo.push({ key: posterLowResImgSrc, value: posterSrc })
+                  // reviewCompleteInfo.push({ key: posterHighResImgSrc, value: posterSrc })
 
-                    type = 'horizontal-2'
-                  />,
-                  index !== fourLatestOwnReviewWithText.length - 1 && <Divider />
+                  return (
+                    <Review
+                      key = { index }
+
+                      lang = { lang }
+
+                      hasPoster
+                      { ...review }
+
+                      type = 'horizontal-2'
+                    />,
+                    index !== fourLatestOwnReviewWithText.length - 1 && <Divider />
+                  )
                 }) }
               </>
             ) : (

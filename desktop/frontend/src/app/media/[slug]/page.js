@@ -7,7 +7,8 @@ import { useEffect, useState } from 'react'
 
 import {
   IconPencilPlus,
-  IconZoom
+  IconZoom,
+  IconHome
 } from '@tabler/icons-react'
 
 import { MainActionButton } from '/components/common/main-action-button'
@@ -140,6 +141,11 @@ export default function Media() {
           icon = { IconPencilPlus }
           handleClick = { openReviewModal }
         />
+        <Link href = '/'>
+          <MainActionButton
+            icon = { IconHome }
+          />
+        </Link>
       </div>
 
       { isReviewModalDisplayed && userData && (

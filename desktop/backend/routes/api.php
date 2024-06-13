@@ -38,6 +38,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
   Route::post('follow/{id}', [FollowController::class, 'followUser']);
   Route::delete('unfollow/{id}', [FollowController::class, 'unfollowUser']);
+  Route::get('check-if-following/{id}', [FollowController::class, 'checkIfFollowing']);
 });
 
 Route::get('user/{id}', [AuthController::class, 'getUser']);
@@ -52,8 +53,7 @@ Route::get('get-all-reviews-for-user/{id}', [ReviewController::class, 'getAllRev
 // Route::get('get-user-linked-to-review/{id}', [ReviewController::class, 'getUserLinkedToReview']);
 // Route::get('get-media-linked-to-review/{id}', [ReviewController::class, 'getMediaLinkedToReview']);
 Route::get('get-this-year-reviews-for-user/{id}', [ReviewController::class, 'getThisYearReviewsForUser']);
+Route::get('new-on-plotscore', [ReviewController::class, 'newOnPlotscore']);
 
 Route::get('get-followers/{id}', [FollowController::class, 'getFollowers']);
 Route::get('get-following/{id}', [FollowController::class, 'getFollowing']);
-
-Route::get('new-on-plotscore', [ReviewController::class, 'newOnPlotscore']);

@@ -279,6 +279,79 @@ export default function Profile() {
 
   const [activeTab, setActiveTab] = useState('profile')
 
+  /* ----------------------------- */
+
+  const [isOtherUserFollowed, setIsOtherUserFollowed] = useState(false)
+
+  useEffect(() => {
+    const checkIfOtherUserIsFollowed = async () => {
+      try {
+        const response = await fetch(`${ apiUrl }/check-if-following/${ otherUserData.id }`, {
+          credentials: 'include'
+        })
+
+        if (response.ok) {
+          const data = await response.json()
+          setIsOtherUserFollowed(data.isFollowing)
+        }
+      } catch (error) {
+        console.error('error checking if other user is followed:', error)
+      }
+    }
+
+    if (otherUserData && otherUserData.id) {
+      checkIfOtherUserIsFollowed()
+    }
+  })
+
+  const unfollowUser = async () => {
+    try {
+      const response = await fetch(`${ apiUrl }/unfollow/${ otherUserData.id }`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include'
+      })
+
+      if (response.ok) {
+        setIsOtherUserFollowed(false)
+      }
+    } catch (error) {
+      console.error('error unfollowing user:', error)
+    }
+  }
+
+  const followUser = async () => {
+    try {
+      const response = await fetch(`${ apiUrl }/follow/${ otherUserData.id }`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include'
+      })
+
+      if (response.ok) {
+        setIsOtherUserFollowed(true)
+      }
+    } catch (error) {
+      console.error('error following user:', error)
+    }
+  }
+
+  /* ----------------------------- */
+
+  const [mainButtonHovered, setMainButtonHovered] = useState(false)
+
+  const handleMainButtonHover = () => {
+    setMainButtonHovered(true)
+  }
+
+  const handleMainButtonLeave = () => {
+    setMainButtonHovered(false)
+  }
+
   return (
     <>
       <div className = 'main-actions-buttons'>
@@ -370,9 +443,24 @@ export default function Profile() {
                           />
                         </Link>
                       ) : (
-                        <ButtonGeneral
-                          text = { translate(lang, 'PROFILE', 'USER_DETAILS', 'PRIMARY_BUTTON__FOLLOW') }
-                        />
+                        isOtherUserFollowed
+                        ? (
+                          <ButtonGeneral
+                            className = { `${ mainButtonHovered ? 'unfollow' : 'following' }` }
+                            text = { !mainButtonHovered
+                              ? translate(lang, 'PROFILE', 'USER_DETAILS', 'PRIMARY_BUTTON__FOLLOWING')
+                              : translate(lang, 'PROFILE', 'USER_DETAILS', 'PRIMARY_BUTTON__UNFOLLOW')
+                            }
+                            onMouseEnter = { handleMainButtonHover }
+                            onMouseLeave = { handleMainButtonLeave }
+                            onClick = { unfollowUser }
+                          />
+                        ) : (
+                          <ButtonGeneral
+                            text = { translate(lang, 'PROFILE', 'USER_DETAILS', 'PRIMARY_BUTTON__FOLLOW') }
+                            onClick = { followUser }
+                          />
+                        )
                       ) }
                       <div className = 'dots' onClick = { displayDotsButtonOption }>
                         <IconDots />

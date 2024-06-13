@@ -42,11 +42,15 @@ class User extends Authenticatable {
     return $this -> hasMany(Review::class);
   }
 
+  public function likedReviews() {
+    return $this -> belongsToMany(Review::class, 'likes', 'user_id', 'review_id') -> withTimestamps();
+  }
+
   public function followers() {
-    return $this -> belongsToMany(User::class, 'followers', 'followed_id', 'follower_id');
+    return $this -> belongsToMany(User::class, 'followers', 'followed_id', 'follower_id') -> withTimestamps();
   }
 
   public function following() {
-    return $this -> belongsToMany(User::class, 'followers', 'follower_id', 'followed_id');
+    return $this -> belongsToMany(User::class, 'followers', 'follower_id', 'followed_id') -> withTimestamps();
   }
 }

@@ -26,6 +26,9 @@ return new class extends Migration {
       $table -> float('rating', 2, 1) -> default(0);
       $table -> boolean('liked_media') -> default(false);
 
+      $table -> integer('like_count') -> default(0);
+      $table -> integer('comment_count') -> default(0);
+
       $table -> timestamps();
     });
   }

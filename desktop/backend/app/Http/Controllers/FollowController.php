@@ -91,6 +91,21 @@ class FollowController extends Controller {
     ], Response::HTTP_OK);
   }
 
+  public function checkIfFollowing($id) {
+    if (!auth() -> check()) {
+      return response() -> json([
+        'error' => 'unauthorized'
+      ], Response::HTTP_UNAUTHORIZED);
+    }
+
+    $user = auth() -> user();
+    $isFollowing = $user -> following() -> where('followed_id', $id) -> exists();
+
+    return response() -> json([
+      'isFollowing' => $isFollowing
+    ], Response::HTTP_OK);
+  }
+
   public function getFollowers($id) {
     $user = User::find($id);
 
