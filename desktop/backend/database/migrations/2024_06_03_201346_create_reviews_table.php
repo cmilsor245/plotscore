@@ -14,7 +14,7 @@ return new class extends Migration {
 
       $table -> foreignId('media_id') -> constrained() -> onDelete('cascade');
       $table -> string('media_title');
-      $table -> string('media_release_date');
+      $table -> date('media_release_date') -> default(now());
       $table -> string('media_poster');
 
       $table -> date('watched_on');
