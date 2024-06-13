@@ -36,7 +36,7 @@ export default function Backdrop({
         />
       }
 
-      <Link className = 'backdrop__media-title' href = '/'>Star Wars (1977)</Link>
+      <Link className = 'backdrop__media-title' href = '/media/star-wars-1977'>Star Wars (1977)</Link>
     </div>
   )
 }

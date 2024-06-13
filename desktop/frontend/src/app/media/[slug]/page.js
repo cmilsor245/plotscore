@@ -6,12 +6,18 @@ import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 import {
+  IconBulbFilled,
+  IconBulbOff,
+  IconHome,
   IconPencilPlus,
-  IconZoom,
-  IconHome
+  IconZoom
 } from '@tabler/icons-react'
 
-import { MainActionButton } from '/components/common/main-action-button'
+import {
+  CircleFlagsEs,
+  CircleFlagsUk,
+  MainActionButton
+} from '/components/common/main-action-button'
 import ReviewModal from '/components/common/review-modal.js'
 import SideMenu from '/components/common/side-menu.js'
 import translate from '/src/app/translation.js'
@@ -99,15 +105,22 @@ export default function Media() {
 
   const [userData, setUserData] = useState(null)
 
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
+
   useEffect(() => {
     const fetchUserData = async () => {
-      const response = await fetch(`${ apiUrl }/user`, {
-        credentials: 'include'
-      })
+      try {
+        const response = await fetch(`${ apiUrl }/user`, {
+          credentials: 'include'
+        })
 
-      if (response.ok) {
-        const data = await response.json()
-        setUserData(data)
+        if (response.ok) {
+          const data = await response.json()
+          setUserData(data)
+        }
+      } catch (error) {
+        setIsLoggedIn(false)
+        console.error(error)
       }
     }
 
@@ -133,19 +146,34 @@ export default function Media() {
   return (
     <>
       <div className = 'main-actions-buttons'>
-        <MainActionButton
-          icon = { IconZoom }
-          handleClick = { null }
-        />
-        <MainActionButton
-          icon = { IconPencilPlus }
-          handleClick = { openReviewModal }
-        />
-        <Link href = '/'>
-          <MainActionButton
-            icon = { IconHome }
-          />
-        </Link>
+        { !isLoggedIn ? (
+          <>
+            <MainActionButton
+              icon = { IconZoom }
+              handleClick = { null }
+            />
+            <MainActionButton
+              icon = { IconPencilPlus }
+              handleClick = { openReviewModal }
+            />
+          </>
+        ) : (
+          <>
+            <MainActionButton
+              icon = { lang === 'en' ? CircleFlagsEs : CircleFlagsUk }
+              handleClick = { handleLanguageChange }
+            />
+            <MainActionButton
+              icon = { theme === 'dark' ? IconBulbFilled : IconBulbOff }
+              handleClick = { handleThemeChange }
+            />
+            <Link href = '/'>
+              <MainActionButton
+                icon = { IconHome }
+              />
+            </Link>
+          </>
+        ) }
       </div>
 
       { isReviewModalDisplayed && userData && (

@@ -389,7 +389,8 @@ export default function Profile() {
             <MainActionButton
               icon = { theme === 'dark' ? IconBulbFilled : IconBulbOff }
               handleClick = { handleThemeChange }
-            /></>
+            />
+          </>
         ) }
       </div>
 
