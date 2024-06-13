@@ -37,6 +37,8 @@ import {
 } from '/components/landing-page/also-available.js'
 import PlotscoreLetsYouCard from '/components/landing-page/plotscore-lets-you--card.js'
 import PopularReviewer from '/components/landing-page/popular-reviewer.js'
+import backdropSrc from '/src/app/static-info/common/backdrop-srcs.js'
+import posterSrc from '/src/app/static-info/common/poster-srcs.js'
 import featuredMediaSlotsImgsSrcs from '/src/app/static-info/landing-page/featuredMediaSlotsImgsSrcs.js'
 import justReviewedSlotsImgsSrcs from '/src/app/static-info/landing-page/justReviewedSlotsImgsSrcs.js'
 import popularListsSlotsData from '/src/app/static-info/landing-page/popularListsSlotsData.js'
@@ -100,8 +102,8 @@ export default function LandingPage() {
       <section className = 'common__content-footer'>
         <section className = 'common__content'>
           <Backdrop
-            lowResImgSrc = '/img/landing-page--specific-media/low-res-backdrop.webp'
-            highResImgSrc = '/img/landing-page--specific-media/high-res-backdrop.webp'
+            lowResImgSrc = { backdropSrc[Math.floor(Math.random() * backdropSrc.length)] }
+            highResImgSrc = { backdropSrc[Math.floor(Math.random() * backdropSrc.length)] }
             hasHeader
             isInLandingPage
             lang = { lang }
@@ -158,6 +160,8 @@ export default function LandingPage() {
                     <MediaSlot
                       size = 'normal'
                       { ...slot }
+                      lowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                      highResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
                     />
                   </div>
                 ))
@@ -169,6 +173,8 @@ export default function LandingPage() {
                     <MediaSlot
                       size = 'small'
                       { ...slot }
+                      lowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                      highResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
                     />
                   </div>
                 ))
@@ -229,6 +235,8 @@ export default function LandingPage() {
                       <MediaSlot
                         size = 'small'
                         { ...slot }
+                        lowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                        highResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
                       />
                     </div>
                   ))

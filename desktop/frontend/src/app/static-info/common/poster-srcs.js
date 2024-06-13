@@ -58,6 +58,7 @@ const posterSrc = [
   'https://image.tmdb.org/t/p/original/xul6SG8rar3wkHPY8YusUtxcdlZ.jpg',
   'https://image.tmdb.org/t/p/original/eU1i6eHXlzMOlEq0ku1Rzq7Y4wA.jpg',
   'https://image.tmdb.org/t/p/original/mztdt3y6GBsJR69zHtszFezTCLT.jpg',
+  'https://image.tmdb.org/t/p/original/35V6fO68rkKfs03cjdly6eyFxFm.jpg',
 
   /* ------------------------------ */
 
