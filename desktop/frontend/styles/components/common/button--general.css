@@ -21,7 +21,6 @@
   justify-content: center;
   padding: 5px 10px;
   text-transform: uppercase;
-  transition: .2s;
 }
 
 .button--general:hover {
@@ -34,4 +33,13 @@
 
 .button--general.highlighted:hover {
   background-color: var(--color--button--highlighted__bg--hover);
+}
+
+.button--general.following {
+  background-color: #00ac1c;
+  color: var(--color--primary-light-90);
+}
+
+.button--general.unfollow {
+  background-color: var(--color--secondary-main);
 }
