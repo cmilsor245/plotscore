@@ -20,6 +20,7 @@ import {
   CircleFlagsEs,
   CircleFlagsUk
 } from '/components/common/main-action-button.js'
+import avatarSrc from '/src/app/static-info/common/avatar-srcs.js'
 import translate from '/src/app/translation.js'
 
 import '/styles/components/common/side-menu.css'
@@ -32,11 +33,6 @@ export default function SideMenu({
   userData,
   handleLogout
 }) {
-  // const avatarSrc = `${ process.env.NEXT_PUBLIC_API_STORAGE_PATH }${ userData ? userData.avatar : '/storage/avatars/default.png' }`
-  const avatarSrc = 'https://secure.gravatar.com/avatar/98eadea62aa09a91132e66b5319c84d6?rating=PG&size=1000&border=&default=https%3A%2F%2Fs.ltrbxd.com%2Fstatic%2Fimg%2Favatar1000.a71b6e9c.png'
-
-  /* ------------------------------- */
-
   const [isExpanded, setIsExpanded] = useState(false)
 
   const handleMouseEnter = () => {
@@ -78,7 +74,7 @@ export default function SideMenu({
         <Link className = 'side-menu__user' href = { `/user/${ userData?.username }` }>
           <Image
             className = 'side-menu__avatar'
-            src = { avatarSrc }
+            src = { avatarSrc[Math.floor(Math.random() * avatarSrc.length)] }
             width = { 50 }
             height = { 50 }
             alt = 'avatar'

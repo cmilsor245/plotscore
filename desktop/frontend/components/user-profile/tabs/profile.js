@@ -9,6 +9,7 @@ import Divider from '/components/common/divider.js'
 import MediaSlot from '/components/common/media-slot.js'
 import Review from '/components/common/review.js'
 import SectionHeading from "/components/common/section-heading.js"
+import posterSrc from '/src/app/static-info/common/poster-srcs.js'
 import favoriteMediaSlotsImgsSrcs from '/src/app/static-info/settings/favoriteMediaSlotsImgsSrcs.js'
 import translate from '/src/app/translation.js'
 
@@ -126,8 +127,6 @@ export default function ProfileTab({ lang }) {
     { date: '06-20', title: 'The Godfather' }
   ]
 
-  const posterSrc = 'https://image.tmdb.org/t/p/original/x5KZT5LYLvkCb3mxgOYXuPIuzs7.jpg'
-
   const [isAlreadyLiked, setIsAlreadyLiked] = useState(false)
 
   const handleAddLike = async () => {
@@ -182,8 +181,8 @@ export default function ProfileTab({ lang }) {
                     <Link href = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` } key = { index }>
                       <MediaSlot
                         size = 'normal'
-                        lowResImgSrc = { posterSrc }
-                        highResImgSrc = { posterSrc }
+                        lowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                        highResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
                         hasLogInfo
                         rating = { review.rating }
                         hasWatchedBefore = { review.watched_before === 0 ? false : true }
@@ -200,8 +199,8 @@ export default function ProfileTab({ lang }) {
                   <Link href = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` } key = { index }>
                     <MediaSlot
                       size = 'normal'
-                      lowResImgSrc = { posterSrc }
-                      highResImgSrc = { posterSrc }
+                      lowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                      highResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
                       hasLogInfo
                       rating = { review.rating }
                       hasWatchedBefore = { review.watched_before === 0 ? false : true }
@@ -217,8 +216,8 @@ export default function ProfileTab({ lang }) {
                     <Link href = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` } key = { index }>
                       <MediaSlot
                         size = 'normal'
-                        lowResImgSrc = { posterSrc }
-                        highResImgSrc = { posterSrc }
+                        lowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                        highResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
                         hasLogInfo
                         rating = { review.rating }
                         hasWatchedBefore = { review.watched_before === 0 ? false : true }
@@ -235,8 +234,8 @@ export default function ProfileTab({ lang }) {
                   <Link href = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` } key = { index }>
                     <MediaSlot
                       size = 'normal'
-                      lowResImgSrc = { posterSrc }
-                      highResImgSrc = { posterSrc }
+                      lowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                      highResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
                       hasLogInfo
                       rating = { review.rating }
                       hasWatchedBefore = { review.watched_before === 0 ? false : true }
@@ -270,8 +269,8 @@ export default function ProfileTab({ lang }) {
                       lang = { lang }
 
                       hasPoster
-                      posterLowResImgSrc = { posterSrc }
-                      posterHighResImgSrc = { posterSrc }
+                      posterLowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                      posterHighResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
 
                       mediaTitle = { review.media_title }
                       mediaYear = { review.media_release_date }
@@ -307,8 +306,8 @@ export default function ProfileTab({ lang }) {
                       lang = { lang }
 
                       hasPoster
-                      posterLowResImgSrc = { posterSrc }
-                      posterHighResImgSrc = { posterSrc }
+                      posterLowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                      posterHighResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
 
                       mediaTitle = { review.media_title }
                       mediaYear = { review.media_release_date }

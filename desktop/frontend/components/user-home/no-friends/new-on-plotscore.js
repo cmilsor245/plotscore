@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { IconBolt } from '@tabler/icons-react'
 
+import MediaSlot from '/components/common/media-slot.js'
 import SectionHeading from '/components/common/section-heading.js'
 
 export default function NewOnPlotscore({ lang }) {
@@ -50,12 +51,12 @@ export default function NewOnPlotscore({ lang }) {
 
       <section className = 'new-on-plotscore__logs'>
         { newOnPlotscore.map((log, index) => (
-          <div key = { index }>
-            <p>{ log.rating }</p>
-            <p>{ log.review_text }</p>
-            <p>{ log.user.username }</p>
-            <p>{ log.media.title }</p>
-          </div>
+          <MediaSlot
+            key = { index }
+            size = 'normal'
+            lowResImgSrc = { log.media.poster_src }
+            highResImgSrc = { log.media.poster_src }
+          />
         )) }
       </section>
     </section>

@@ -22,6 +22,8 @@ import { MainActionButton } from '/components/common/main-action-button.js'
 import ReviewModal from '/components/common/review-modal.js'
 import SectionHeading from '/components/common/section-heading.js'
 import SideMenu from '/components/common/side-menu.js'
+import avatarSrc from '/src/app/static-info/common/avatar-srcs.js'
+import posterSrc from '/src/app/static-info/common/poster-srcs.js'
 import translate from '/src/app/translation.js'
 
 import '/styles/pages/admin-dashboard.css'
@@ -149,11 +151,6 @@ export default function AdminDashboard({
       setCurrentMediaPage(currentMediaPage + 1)
     }
   }
-
-  /* ---------------------------------------------------- */
-
-  const avatarSrc = 'https://secure.gravatar.com/avatar/98eadea62aa09a91132e66b5319c84d6?rating=PG&size=1000&border=&default=https%3A%2F%2Fs.ltrbxd.com%2Fstatic%2Fimg%2Favatar1000.a71b6e9c.png'
-  const posterSrc = 'https://image.tmdb.org/t/p/original/x5KZT5LYLvkCb3mxgOYXuPIuzs7.jpg'
 
   /* ---------------------------------------------------- */
 
@@ -430,7 +427,7 @@ export default function AdminDashboard({
                               <Image
                                 className = 'user-list__avatar'
                                 // src = { `${ process.env.NEXT_PUBLIC_API_STORAGE_PATH }${ user.avatar }` }
-                                src = { avatarSrc }
+                                src = { avatarSrc[Math.floor(Math.random() * avatarSrc.length)] }
                                 height = { 50 }
                                 width = { 50 }
                                 alt = 'user avatar'
@@ -526,7 +523,7 @@ export default function AdminDashboard({
                               <Image
                                 className = 'media-list__poster'
                                 // src = { `${ process.env.NEXT_PUBLIC_API_STORAGE_PATH }${ mediaItem.poster }` }
-                                src = { posterSrc }
+                                src = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
                                 height = { 120 }
                                 width = { 80 }
                                 alt = 'media poster'

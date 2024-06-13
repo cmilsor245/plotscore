@@ -29,6 +29,7 @@ import ReviewModal from '/components/common/review-modal.js'
 import SideMenu from '/components/common/side-menu.js'
 import VerticalDivider from '/components/common/vertical-divider.js'
 import UserProfileTabs from '/components/user-profile/user-profile-tabs.js'
+import avatarSrc from '/src/app/static-info/common/avatar-srcs.js'
 import translate from '/src/app/translation.js'
 
 import '/styles/pages/user-profile.css'
@@ -251,11 +252,6 @@ export default function Profile() {
 
   /* ------------------------------ */
 
-  // const avatarSrc = `${ process.env.NEXT_PUBLIC_API_STORAGE_PATH }${ userData ? userData.avatar : '/storage/avatars/default.png' }`
-  const avatarSrc = 'https://secure.gravatar.com/avatar/98eadea62aa09a91132e66b5319c84d6?rating=PG&size=1000&border=&default=https%3A%2F%2Fs.ltrbxd.com%2Fstatic%2Fimg%2Favatar1000.a71b6e9c.png'
-
-  /* ------------------------------ */
-
   const [isDotsButtonOptionDisplayed, setIsDotsButtonOptionDisplayed] = useState(false)
   const [isLinkCopiedNotificationDisplayed, setIsLinkCopiedNotificationDisplayed] = useState(false)
 
@@ -440,7 +436,7 @@ export default function Profile() {
                 <div className = 'details'>
                   <Image
                     className = 'profile__avatar'
-                    src = { avatarSrc }
+                    src = { avatarSrc[Math.floor(Math.random() * avatarSrc.length)] }
                     width = { 120 }
                     height = { 120 }
                     alt = 'avatar'
