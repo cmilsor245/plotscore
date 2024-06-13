@@ -437,7 +437,7 @@ export default function Profile() {
                 <div className = 'details'>
                   <Image
                     className = 'profile__avatar'
-                    src = { avatarSrc[Math.floor(Math.random() * avatarSrc.length)] }
+                    src = { avatarSrc[0] }
                     width = { 120 }
                     height = { 120 }
                     alt = 'avatar'

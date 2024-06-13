@@ -427,7 +427,7 @@ export default function AdminDashboard({
                               <Image
                                 className = 'user-list__avatar'
                                 // src = { `${ process.env.NEXT_PUBLIC_API_STORAGE_PATH }${ user.avatar }` }
-                                src = { avatarSrc[Math.floor(Math.random() * avatarSrc.length)] }
+                                src = { avatarSrc[0] }
                                 height = { 50 }
                                 width = { 50 }
                                 alt = 'user avatar'
@@ -523,7 +523,7 @@ export default function AdminDashboard({
                               <Image
                                 className = 'media-list__poster'
                                 // src = { `${ process.env.NEXT_PUBLIC_API_STORAGE_PATH }${ mediaItem.poster }` }
-                                src = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                                src = { posterSrc[0] }
                                 height = { 120 }
                                 width = { 80 }
                                 alt = 'media poster'

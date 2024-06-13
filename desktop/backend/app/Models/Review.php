@@ -35,4 +35,8 @@ class Review extends Model {
   public function media() {
     return $this -> belongsTo(Media::class) -> select(['id', 'title', 'release_date', 'poster']);
   }
+
+  public function likedBy() {
+    return $this -> belongsToMany(User::class, 'liked_reviews', 'review_id', 'user_id');
+  }
 }

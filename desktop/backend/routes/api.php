@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FollowController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,11 @@ Route::middleware('auth:sanctum')->group(function () {
 
   /* ------------------------------------------------ */
 
+  Route::post('like-review/{id}', [LikeController::class, 'likeReview']);
+  Route::delete('unlike-review/{id}', [LikeController::class, 'unlikeReview']);
+
+  /* ------------------------------------------------ */
+
   Route::post('follow/{id}', [FollowController::class, 'followUser']);
   Route::delete('unfollow/{id}', [FollowController::class, 'unfollowUser']);
   Route::get('check-if-following/{id}', [FollowController::class, 'checkIfFollowing']);
@@ -54,6 +60,8 @@ Route::get('get-all-reviews-for-user/{id}', [ReviewController::class, 'getAllRev
 // Route::get('get-media-linked-to-review/{id}', [ReviewController::class, 'getMediaLinkedToReview']);
 Route::get('get-this-year-reviews-for-user/{id}', [ReviewController::class, 'getThisYearReviewsForUser']);
 Route::get('new-on-plotscore', [ReviewController::class, 'newOnPlotscore']);
+
+Route::get('check-if-already-liked/{id}', [LikeController::class, 'checkIfAlreadyLiked']);
 
 Route::get('get-followers/{id}', [FollowController::class, 'getFollowers']);
 Route::get('get-following/{id}', [FollowController::class, 'getFollowing']);

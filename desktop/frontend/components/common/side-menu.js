@@ -74,7 +74,7 @@ export default function SideMenu({
         <Link className = 'side-menu__user' href = { `/user/${ userData?.username }` }>
           <Image
             className = 'side-menu__avatar'
-            src = { avatarSrc[Math.floor(Math.random() * avatarSrc.length)] }
+            src = { avatarSrc[0] }
             width = { 50 }
             height = { 50 }
             alt = 'avatar'

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import {
@@ -220,28 +221,91 @@ function HorizontalReviewType1({
 
 function HorizontalReviewType2({
   lang,
-
+  reviewId,
   posterLowResImgSrc,
   posterHighResImgSrc,
-
   mediaTitle,
   mediaYear,
-
   rating,
-
   reviewText,
-
   likeCount,
-
   watchedOn,
   hasWatchedBefore,
-
   isInOwnProfile,
-  isAlreadyLiked,
-
-  handleRemoveLike,
-  handleAddLike
+  mediaLink,
+  userId
 }) {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL
+
+  const [isAlreadyLiked, setIsAlreadyLiked] = useState(false)
+
+  // ! not working
+  // useEffect(() => {
+  //   const fetchLikeStatus = async () => {
+  //     try {
+  //       const response = await fetch(`${ apiUrl }/check-if-already-liked/${ reviewId }`, {
+  //         method: 'GET',
+  //         credentials: 'include'
+  //       })
+
+  //       if (response.ok) {
+  //         const data = await response.json()
+  //         if (data.status === 200) {
+  //           setIsAlreadyLiked(true)
+  //         }
+  //       } else {
+  //         setIsAlreadyLiked(false)
+  //       }
+  //     } catch (error) {
+  //       console.error('error fetching like status:', error)
+  //     }
+  //   }
+
+  //   fetchLikeStatus()
+  // }, [reviewId, userId, apiUrl])
+
+  const handleAddLike = async (reviewId) => {
+    try {
+      const response = await fetch(`${ apiUrl }/like-review/${ reviewId }`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include'
+      })
+
+      if (response.ok) {
+        setIsAlreadyLiked(true)
+      } else {
+        const errorData = await response.json()
+        console.error('error adding like:', errorData)
+      }
+    } catch (error) {
+      console.error('network error:', error)
+    }
+  }
+
+  const handleRemoveLike = (reviewId) => async () => {
+    try {
+      const response = await fetch(`${ apiUrl }/unlike-review/${ reviewId }`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include'
+      })
+
+      if (response.ok) {
+        setIsAlreadyLiked(false)
+      } else {
+        const errorData = await response.json()
+        console.error('error removing like:', errorData)
+      }
+    } catch (error) {
+      console.error('network error:', error)
+    }
+  }
+
   const fullStars = Math.floor(rating)
   const hasHalfStar = rating % 1 !== 0
   const stars = []
@@ -261,8 +325,6 @@ function HorizontalReviewType2({
       </span>
     )
   }
-
-  /* ----------------------------- */
 
   const [watchedOnConverted, setWatchedOnConverted] = useState('')
 
@@ -312,33 +374,33 @@ function HorizontalReviewType2({
         break
     }
 
-    const formattedDate = `${ day } ${ monthText } ${ year }`
+    const formattedDate = `${day} ${monthText} ${year}`
 
     setWatchedOnConverted(formattedDate)
-  })
+  }, [watchedOn, lang])
 
   return (
     <div className = 'horizontal-review--type-2'>
-      <MediaSlot
-        size = 'small'
-        lowResImgSrc = { posterLowResImgSrc }
-        highResImgSrc = { posterHighResImgSrc }
-      />
+      <Link href = { mediaLink}>
+        <MediaSlot
+          size = 'small'
+          lowResImgSrc = { posterLowResImgSrc}
+          highResImgSrc = { posterHighResImgSrc}
+        />
+      </Link>
 
       <article className = 'horizontal-review--type-2__details'>
         <section className = 'horizontal-review--type-2__main-info'>
-          <h5>
-            { mediaTitle }
-          </h5>
-          <h6>
-            { mediaYear.slice(0, 4) }
-          </h6>
+          <Link href = { mediaLink }>
+            <h5>{ mediaTitle }</h5>
+          </Link>
+          <h6>{ mediaYear.slice(0, 4) }</h6>
         </section>
 
         <section className = 'horizontal-review--type-2__rating-and-watched-before'>
           { rating > 0 && (
             <div className = 'horizontal-review--type-2__rating'>
-              { stars }
+              {stars}
             </div>
           ) }
 
@@ -354,23 +416,20 @@ function HorizontalReviewType2({
           <p className = 'horizontal-review--type-2__text' dangerouslySetInnerHTML = {{ __html: reviewText }}></p>
         </section>
 
-        <section className = 'horizontal-review--type-2__like'>
+        <section className = 'horizontal-review--type-2__likes'>
           <div className = 'horizontal-review--type-2__like-count'>
             { !isInOwnProfile && (
-              !isAlreadyLiked
-              ? (
-                <span onClick = { handleRemoveLike }>
-                  <IconHeartFilled stroke = { 2 } /> { translate(lang, 'COMMON', 'REVIEW', 'LIKED') }
-                </span>
-              ) : (
-                <span onClick = { handleAddLike }>
-                  <IconHeart stroke = { 2 } /> { translate(lang, 'COMMON', 'REVIEW', 'LIKE') }
-                </span>
-              )
+              isAlreadyLiked
+                ? (
+                  <span onClick = { () => handleRemoveLike(reviewId) }>
+                    <IconHeartFilled /> { translate(lang, 'COMMON', 'REVIEW', 'LIKED') }
+                  </span>
+                ) : (
+                  <span onClick = { () => handleAddLike(reviewId) }>
+                    <IconHeart /> { translate(lang, 'COMMON', 'REVIEW', 'LIKE') }
+                  </span>
+                )
             ) }
-
-            {/* -------- */}
-
             { likeCount > 0
               ? `${ likeCount } likes`
               : `${ translate(lang, 'COMMON', 'REVIEW', 'NO_LIKES') }`
@@ -386,35 +445,25 @@ function HorizontalReviewType2({
 
 export default function Review({
   lang,
-
+  reviewId,
   hasPoster,
   posterLowResImgSrc,
   posterHighResImgSrc,
-
   mediaTitle,
   mediaYear,
-
   avatarLowResImgSrc,
   avatarHighResImgSrc,
   username,
-
   rating,
-
   reviewText,
-
   commentCount,
   likeCount,
-
   watchedOn,
   hasWatchedBefore,
-
   isInOwnProfile,
-  isAlreadyLiked,
-
-  handleRemoveLike,
-  handleAddLike,
-
-  type
+  mediaLink,
+  type,
+  userId // New prop for user ID
 }) {
   let conditionalReview
 
@@ -423,21 +472,15 @@ export default function Review({
       conditionalReview =
         <ReviewWithoutPoster
           lang = { lang }
-
           avatarLowResImgSrc = { avatarLowResImgSrc }
           avatarHighResImgSrc = { avatarHighResImgSrc }
           username = { username }
-
           rating = { rating }
-
           reviewText = { reviewText }
-
           commentCount = { commentCount }
           likeCount = { likeCount }
         />
       break
-
-      /* ------------------------------------------ */
 
     case true:
       switch (type) {
@@ -449,21 +492,15 @@ export default function Review({
           conditionalReview =
             <HorizontalReviewType1
               lang = { lang }
-
               posterLowResImgSrc = { posterLowResImgSrc }
               posterHighResImgSrc = { posterHighResImgSrc }
-
               mediaTitle = { mediaTitle }
               mediaYear = { mediaYear }
-
               avatarLowResImgSrc = { avatarLowResImgSrc }
               avatarHighResImgSrc = { avatarHighResImgSrc }
               username = { username }
-
               rating = { rating }
-
               reviewText = { reviewText }
-
               commentCount = { commentCount }
               likeCount = { likeCount }
             />
@@ -472,27 +509,19 @@ export default function Review({
           conditionalReview =
             <HorizontalReviewType2
               lang = { lang }
-
+              reviewId = { reviewId }
               posterLowResImgSrc = { posterLowResImgSrc }
               posterHighResImgSrc = { posterHighResImgSrc }
-
               mediaTitle = { mediaTitle }
               mediaYear = { mediaYear }
-
               rating = { rating }
-
               reviewText = { reviewText }
-
               likeCount = { likeCount }
-
               watchedOn = { watchedOn }
               hasWatchedBefore = { hasWatchedBefore }
-
               isInOwnProfile = { isInOwnProfile }
-              isAlreadyLiked = { isAlreadyLiked }
-
-              handleRemoveLike = { handleRemoveLike }
-              handleAddLike = { handleAddLike }
+              mediaLink = { mediaLink }
+              userId = { userId }
             />
           break
       }
@@ -505,3 +534,4 @@ export default function Review({
     </>
   )
 }
+

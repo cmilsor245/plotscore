@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Review;
+use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class LikeController extends Controller {
@@ -72,6 +73,29 @@ class LikeController extends Controller {
 
     return response() -> json([
       'message' => 'like removed successfully'
+    ], Response::HTTP_OK);
+  }
+
+  // ! not working
+  public function checkIfAlreadyLiked($reviewId) {
+    $user = auth() -> user();
+
+    $review = Review::find($reviewId);
+
+    if (!$review) {
+      return response() -> json([
+        'error' => 'review not found'
+      ], Response::HTTP_NOT_FOUND);
+    }
+
+    if ($user -> likedReviews() -> where('review_id', $reviewId) -> exists()) {
+      return response() -> json([
+        'liked' => true
+      ], Response::HTTP_OK);
+    }
+
+    return response() -> json([
+      'liked' => false
     ], Response::HTTP_OK);
   }
 }

@@ -41,11 +41,11 @@ export default function ProfileTab({ lang }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const ownUserResponse = await fetch(`${ apiUrl }/user`, { credentials: 'include' })
+        const ownUserResponse = await fetch(`${apiUrl}/user`, { credentials: 'include' })
         const ownUserData = await ownUserResponse.json()
         setOwnUserData(ownUserData)
 
-        const totalOwnReviewsResponse = await fetch(`${ apiUrl }/get-all-reviews-for-user/${ ownUserData.id }`, { credentials: 'include' })
+        const totalOwnReviewsResponse = await fetch(`${apiUrl}/get-all-reviews-for-user/${ownUserData.id}`, { credentials: 'include' })
         const totalOwnReviewsData = await totalOwnReviewsResponse.json()
         setTotalOwnReviews(totalOwnReviewsData.totalReviews)
 
@@ -59,11 +59,11 @@ export default function ProfileTab({ lang }) {
           setIsOwnProfilePage(true)
         } else {
           setIsOwnProfilePage(false)
-          const otherUserResponse = await fetch(`${ apiUrl }/get-user-by-username/${ usernameInUrl }`, { credentials: 'include' })
+          const otherUserResponse = await fetch(`${apiUrl}/get-user-by-username/${usernameInUrl}`, { credentials: 'include' })
           const otherUserData = await otherUserResponse.json()
           setOtherUserData(otherUserData)
 
-          const totalOtherReviewsResponse = await fetch(`${ apiUrl }/get-all-reviews-for-user/${ otherUserData.id }`, { credentials: 'include' })
+          const totalOtherReviewsResponse = await fetch(`${apiUrl}/get-all-reviews-for-user/${otherUserData.id}`, { credentials: 'include' })
           const totalOtherReviewsData = await totalOtherReviewsResponse.json()
           setTotalOtherReviews(totalOtherReviewsData.totalReviews)
 
@@ -77,11 +77,11 @@ export default function ProfileTab({ lang }) {
         setIsLoggedIn(false)
         setIsOwnProfilePage(false)
 
-        const otherUserResponse = await fetch(`${ apiUrl }/get-user-by-username/${ usernameInUrl }`, { credentials: 'include' })
+        const otherUserResponse = await fetch(`${apiUrl}/get-user-by-username/${usernameInUrl}`, { credentials: 'include' })
         const otherUserData = await otherUserResponse.json()
         setOtherUserData(otherUserData)
 
-        const totalOtherReviewsResponse = await fetch(`${ apiUrl }/get-all-reviews-for-user/${ otherUserData.id }`, { credentials: 'include' })
+        const totalOtherReviewsResponse = await fetch(`${apiUrl}/get-all-reviews-for-user/${otherUserData.id}`, { credentials: 'include' })
         const totalOtherReviewsData = await totalOtherReviewsResponse.json()
         setTotalOtherReviews(totalOtherReviewsData.totalReviews)
 
@@ -111,7 +111,7 @@ export default function ProfileTab({ lang }) {
     const sluggedTitle = convertToSlug(mediaTitle)
     const mediaYearConverted = mediaYear.substring(0, 4)
 
-    return `${ sluggedTitle }-${ mediaYearConverted }`
+    return `${sluggedTitle}-${mediaYearConverted}`
   }
 
   const staticTenLatestReviews = [
@@ -127,16 +127,6 @@ export default function ProfileTab({ lang }) {
     { date: '06-20', title: 'The Godfather' }
   ]
 
-  const [isAlreadyLiked, setIsAlreadyLiked] = useState(false)
-
-  const handleAddLike = async () => {
-    setIsAlreadyLiked(true)
-  }
-
-  const handleRemoveLike = async () => {
-    setIsAlreadyLiked(false)
-  }
-
   return (
     <section className = 'user-profile__tab'>
       <section className = 'left-side'>
@@ -150,14 +140,14 @@ export default function ProfileTab({ lang }) {
           />
 
           <section className = 'section-content'>
-            { favoriteMediaSlotsImgsSrcs.map((imgSrc, index) => (
+            {favoriteMediaSlotsImgsSrcs.map((imgSrc, index) => (
               <MediaSlot
                 key = { index }
                 size = 'normal'
                 lowResImgSrc = { imgSrc.lowResImgSrc }
                 highResImgSrc = { imgSrc.highResImgSrc }
               />
-            )) }
+            ))}
           </section>
         </section>
 
@@ -174,15 +164,15 @@ export default function ProfileTab({ lang }) {
           />
 
           <section className = 'section-content'>
-            { isOwnProfilePage ? (
+            {isOwnProfilePage ? (
               fourLatestOwnReviews.length < 4 ? (
                 <>
                   { fourLatestOwnReviews.map((review, index) => (
                     <Link href = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` } key = { index }>
                       <MediaSlot
                         size = 'normal'
-                        lowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
-                        highResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                        lowResImgSrc = { posterSrc[0] }
+                        highResImgSrc = { posterSrc[0] }
                         hasLogInfo
                         rating = { review.rating }
                         hasWatchedBefore = { review.watched_before === 0 ? false : true }
@@ -190,7 +180,9 @@ export default function ProfileTab({ lang }) {
                       />
                     </Link>
                   )) }
-                  { fourLatestOwnReviews.length < 4 && [...Array(4 - fourLatestOwnReviews.length)].map((_, index) => (
+                  {fourLatestOwnReviews.length < 4 && [...Array(4 - fourLatestOwnReviews.length)].map((_, index
+
+) => (
                     <div className = 'media-slot__placeholder normal' key = { index }></div>
                   )) }
                 </>
@@ -199,8 +191,8 @@ export default function ProfileTab({ lang }) {
                   <Link href = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` } key = { index }>
                     <MediaSlot
                       size = 'normal'
-                      lowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
-                      highResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                      lowResImgSrc = { posterSrc[0] }
+                      highResImgSrc = { posterSrc[0] }
                       hasLogInfo
                       rating = { review.rating }
                       hasWatchedBefore = { review.watched_before === 0 ? false : true }
@@ -213,11 +205,11 @@ export default function ProfileTab({ lang }) {
               fourLatestOtherReviews.length < 4 ? (
                 <>
                   { fourLatestOtherReviews.map((review, index) => (
-                    <Link href = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` } key = { index }>
+                    <Link href = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` } key = { index } >
                       <MediaSlot
                         size = 'normal'
-                        lowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
-                        highResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                        lowResImgSrc = { posterSrc[0] }
+                        highResImgSrc = { posterSrc[0] }
                         hasLogInfo
                         rating = { review.rating }
                         hasWatchedBefore = { review.watched_before === 0 ? false : true }
@@ -234,8 +226,8 @@ export default function ProfileTab({ lang }) {
                   <Link href = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` } key = { index }>
                     <MediaSlot
                       size = 'normal'
-                      lowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
-                      highResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                      lowResImgSrc = { posterSrc[0] }
+                      highResImgSrc = { posterSrc[0] }
                       hasLogInfo
                       rating = { review.rating }
                       hasWatchedBefore = { review.watched_before === 0 ? false : true }
@@ -244,7 +236,7 @@ export default function ProfileTab({ lang }) {
                   </Link>
                 ))
               )
-            ) }
+            )}
           </section>
         </section>
 
@@ -264,13 +256,15 @@ export default function ProfileTab({ lang }) {
             { isOwnProfilePage ? (
               fourLatestOwnReviewWithText.map((review, index) => {
                 return (
-                  <React.Fragment key = { index }>
+                  <React.Fragment key = { index} >
                     <Review
                       lang = { lang }
 
+                      reviewId = {review.id}
+
                       hasPoster
-                      posterLowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
-                      posterHighResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                      posterLowResImgSrc = { posterSrc[0] }
+                      posterHighResImgSrc = { posterSrc[0] }
 
                       mediaTitle = { review.media_title }
                       mediaYear = { review.media_release_date }
@@ -285,10 +279,8 @@ export default function ProfileTab({ lang }) {
                       hasWatchedBefore = { review.watched_before === 0 ? false : true }
 
                       isInOwnProfile = { isOwnProfilePage }
-                      isAlreadyLiked = { isAlreadyLiked }
 
-                      handleRemoveLike = { handleRemoveLike }
-                      handleAddLike = { handleAddLike }
+                      mediaLink = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` }
 
                       type = 'horizontal-2'
                     />
@@ -297,17 +289,20 @@ export default function ProfileTab({ lang }) {
                     }
                   </React.Fragment>
                 )
-              })
+              } )
             ) : (
               fourLatestOtherReviewWithText.map((review, index) => {
                 return (
-                  <React.Fragment key = { index }>
+                  <React.Fragment key = { index} >
                     <Review
                       lang = { lang }
 
+                      reviewId = {review.id}
+                      userId = { review.user_id }
+
                       hasPoster
-                      posterLowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
-                      posterHighResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                      posterLowResImgSrc = { posterSrc[0] }
+                      posterHighResImgSrc = { posterSrc[0] }
 
                       mediaTitle = { review.media_title }
                       mediaYear = { review.media_release_date }
@@ -321,8 +316,9 @@ export default function ProfileTab({ lang }) {
                       watchedOn = { review.watched_on }
                       hasWatchedBefore = { review.watched_before === 0 ? false : true }
 
-                      handleRemoveLike = { handleRemoveLike }
-                      handleAddLike = { handleAddLike }
+                      isInOwnProfile = { isOwnProfilePage }
+
+                      mediaLink = { `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }` }
 
                       type = 'horizontal-2'
                     />
@@ -344,7 +340,7 @@ export default function ProfileTab({ lang }) {
             namespace = 'PROFILE_TAB'
             section = 'DIARY'
             title = 'SECTION_TITLE'
-            hasRightSideSingleText = { isOwnProfilePage  ? (totalOwnReviews || '0') : (totalOtherReviews || '0') }
+            hasRightSideSingleText = { isOwnProfilePage ? (totalOwnReviews || '0') : (totalOtherReviews || '0') }
             hasDivider
           />
 
@@ -354,7 +350,7 @@ export default function ProfileTab({ lang }) {
             </div>
             <div className = 'right-column'>
               { staticTenLatestReviews.map((review, index) => (
-                <React.Fragment key = { index }>
+                <React.Fragment key = { index} >
                   <p>
                     <span>{ review.date }</span>
                     <span>{ review.title }</span>
