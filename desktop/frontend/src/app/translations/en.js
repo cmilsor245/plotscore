@@ -31,6 +31,27 @@ const translationsEN = {
 
       COPYRIGHT: '2024 - This project is developed by Christian Millán Soria for educational purposes only.'
     },
+    REVIEW: {
+      WATCHED_BEFORE: 'Rewatched',
+      WATCHED_FIRST_TIME: 'Watched',
+
+      JAN: 'Jan',
+      FEB: 'Feb',
+      MAR: 'Mar',
+      APR: 'Apr',
+      MAY: 'May',
+      JUN: 'Jun',
+      JUL: 'Jul',
+      AUG: 'Aug',
+      SEP: 'Sep',
+      OCT: 'Oct',
+      NOV: 'Nov',
+      DEC: 'Dec',
+
+      LIKED: 'Already Liked',
+      LIKE: 'Like review',
+      NO_LIKES: 'No Likes yet'
+    },
     REVIEW_MODAL: {
       TITLE: 'add to your media diary...',
 

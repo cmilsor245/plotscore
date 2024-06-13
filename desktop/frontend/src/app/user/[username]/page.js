@@ -317,12 +317,23 @@ export default function Profile() {
       if (response.ok) {
         setIsOtherUserFollowed(false)
       }
+
+      const otherUserResponse = await fetch(`${ apiUrl }/get-user-by-username/${ usernameInUrl }`, {
+        credentials: 'include'
+      })
+
+      const otherUserDataUpdated = await otherUserResponse.json()
+      setOtherUserData(otherUserDataUpdated)
     } catch (error) {
       console.error('error unfollowing user:', error)
     }
   }
 
   const followUser = async () => {
+    if (!isLoggedIn) {
+      router.push('/login')
+    }
+
     try {
       const response = await fetch(`${ apiUrl }/follow/${ otherUserData.id }`, {
         method: 'POST',
@@ -335,6 +346,13 @@ export default function Profile() {
       if (response.ok) {
         setIsOtherUserFollowed(true)
       }
+
+      const otherUserResponse = await fetch(`${ apiUrl }/get-user-by-username/${ usernameInUrl }`, {
+        credentials: 'include'
+      })
+
+      const otherUserDataUpdated = await otherUserResponse.json()
+      setOtherUserData(otherUserDataUpdated)
     } catch (error) {
       console.error('error following user:', error)
     }

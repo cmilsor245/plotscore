@@ -31,6 +31,27 @@ const translationsES = {
 
       COPYRIGHT: '2024 - Este proyecto está desarrollado por Christian Millán Soria con fines educativos únicamente.'
     },
+    REVIEW: {
+      WATCHED_BEFORE: 'Revisionado',
+      WATCHED_FIRST_TIME: 'Primer visionado',
+
+      JAN: 'Ene',
+      FEB: 'Feb',
+      MAR: 'Mar',
+      APR: 'Abr',
+      MAY: 'May',
+      JUN: 'Jun',
+      JUL: 'Jul',
+      AUG: 'Ago',
+      SEP: 'Sep',
+      OCT: 'Oct',
+      NOV: 'Nov',
+      DEC: 'Dic',
+
+      LIKED: 'Me Gusta',
+      LIKE: 'Dar Like',
+      NO_LIKES: 'No hay Likes todavía'
+    },
     REVIEW_MODAL: {
       TITLE: 'crea una nueva review...',
 

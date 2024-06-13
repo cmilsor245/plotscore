@@ -58,9 +58,12 @@ export default function ReviewModal({
 
   /* ----------------------------------------------- */
 
+  const currentPath = window.location.pathname
+
   const [mediaSelected, setMediaSelected] = useState('')
 
   const apiUrl = process.env.NEXT_PUBLIC_API_URL
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(`${ apiUrl }/media/${ selectedOption }`, {
@@ -115,7 +118,13 @@ export default function ReviewModal({
         body: JSON.stringify(bodyData)
       })
 
-      handleReviewCreatedNotification(mediaSelected.title, mediaSelected.release_date)
+      handleReviewCreatedNotification(mediaSelected.title, mediaSelected.release_date);
+
+      // if (currentPath.startsWith(`/user/${ userUsername }`)) {
+      //   setTimeout(() => {
+      //     window.location.reload();
+      //   }, 3000);
+      // }
     } catch (error) {
       console.error(error)
     }

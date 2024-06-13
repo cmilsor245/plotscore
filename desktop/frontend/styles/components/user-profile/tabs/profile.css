@@ -31,6 +31,14 @@
   justify-content: space-between;
 }
 
+.recent-reviews > .section-content {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
 .user-profile__tab .right-side {
   width: fit-content;
   gap: 30px;

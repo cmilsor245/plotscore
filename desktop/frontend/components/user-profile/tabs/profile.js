@@ -128,6 +128,16 @@ export default function ProfileTab({ lang }) {
 
   const posterSrc = 'https://image.tmdb.org/t/p/original/x5KZT5LYLvkCb3mxgOYXuPIuzs7.jpg'
 
+  const [isAlreadyLiked, setIsAlreadyLiked] = useState(false)
+
+  const handleAddLike = async () => {
+    setIsAlreadyLiked(true)
+  }
+
+  const handleRemoveLike = async () => {
+    setIsAlreadyLiked(false)
+  }
+
   return (
     <section className = 'user-profile__tab'>
       <section className = 'left-side'>
@@ -176,7 +186,7 @@ export default function ProfileTab({ lang }) {
                         highResImgSrc = { posterSrc }
                         hasLogInfo
                         rating = { review.rating }
-                        hasWatchedBefore = { review.watched_before === 0 ? true : false }
+                        hasWatchedBefore = { review.watched_before === 0 ? false : true }
                         hasReviewText = { review.review_text ? true : false }
                       />
                     </Link>
@@ -194,7 +204,7 @@ export default function ProfileTab({ lang }) {
                       highResImgSrc = { posterSrc }
                       hasLogInfo
                       rating = { review.rating }
-                      hasWatchedBefore = { review.watched_before === 0 ? true : false }
+                      hasWatchedBefore = { review.watched_before === 0 ? false : true }
                       hasReviewText = { review.review_text ? true : false }
                     />
                   </Link>
@@ -211,7 +221,7 @@ export default function ProfileTab({ lang }) {
                         highResImgSrc = { posterSrc }
                         hasLogInfo
                         rating = { review.rating }
-                        hasWatchedBefore = { review.watched_before === 0 ? true : false }
+                        hasWatchedBefore = { review.watched_before === 0 ? false : true }
                         hasReviewText = { review.review_text ? true : false }
                       />
                     </Link>
@@ -229,7 +239,7 @@ export default function ProfileTab({ lang }) {
                       highResImgSrc = { posterSrc }
                       hasLogInfo
                       rating = { review.rating }
-                      hasWatchedBefore = { review.watched_before === 0 ? true : false }
+                      hasWatchedBefore = { review.watched_before === 0 ? false : true }
                       hasReviewText = { review.review_text ? true : false }
                     />
                   </Link>
@@ -253,34 +263,76 @@ export default function ProfileTab({ lang }) {
 
           <section className = 'section-content'>
             { isOwnProfilePage ? (
-              <>
-                { fourLatestOwnReviewWithText.map((review, index) => {
-                  // let reviewCompleteInfo = []
-
-                  // reviewCompleteInfo.push(...review)
-
-                  // reviewCompleteInfo.push({ key: posterLowResImgSrc, value: posterSrc })
-                  // reviewCompleteInfo.push({ key: posterHighResImgSrc, value: posterSrc })
-
-                  return (
+              fourLatestOwnReviewWithText.map((review, index) => {
+                return (
+                  <React.Fragment key = { index }>
                     <Review
-                      key = { index }
-
                       lang = { lang }
 
                       hasPoster
-                      { ...review }
+                      posterLowResImgSrc = { posterSrc }
+                      posterHighResImgSrc = { posterSrc }
+
+                      mediaTitle = { review.media_title }
+                      mediaYear = { review.media_release_date }
+
+                      rating = { review.rating }
+
+                      reviewText = { review.review_text }
+
+                      likeCount = { review.like_count }
+
+                      watchedOn = { review.watched_on }
+                      hasWatchedBefore = { review.watched_before === 0 ? false : true }
+
+                      isInOwnProfile = { isOwnProfilePage }
+                      isAlreadyLiked = { isAlreadyLiked }
+
+                      handleRemoveLike = { handleRemoveLike }
+                      handleAddLike = { handleAddLike }
 
                       type = 'horizontal-2'
-                    />,
-                    index !== fourLatestOwnReviewWithText.length - 1 && <Divider />
-                  )
-                }) }
-              </>
+                    />
+                    {
+                      index !== fourLatestOwnReviewWithText.length - 1 && <Divider />
+                    }
+                  </React.Fragment>
+                )
+              })
             ) : (
-              <>
-                
-              </>
+              fourLatestOtherReviewWithText.map((review, index) => {
+                return (
+                  <React.Fragment key = { index }>
+                    <Review
+                      lang = { lang }
+
+                      hasPoster
+                      posterLowResImgSrc = { posterSrc }
+                      posterHighResImgSrc = { posterSrc }
+
+                      mediaTitle = { review.media_title }
+                      mediaYear = { review.media_release_date }
+
+                      rating = { review.rating }
+
+                      reviewText = { review.review_text }
+
+                      likeCount = { review.like_count }
+
+                      watchedOn = { review.watched_on }
+                      hasWatchedBefore = { review.watched_before === 0 ? false : true }
+
+                      handleRemoveLike = { handleRemoveLike }
+                      handleAddLike = { handleAddLike }
+
+                      type = 'horizontal-2'
+                    />
+                    {
+                      index !== fourLatestOtherReviewWithText.length - 1 && <Divider />
+                    }
+                  </React.Fragment>
+                )
+              })
             ) }
           </section>
         </section>
