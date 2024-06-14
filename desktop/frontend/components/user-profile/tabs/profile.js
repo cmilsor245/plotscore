@@ -256,7 +256,7 @@ export default function ProfileTab({ lang }) {
             { isOwnProfilePage ? (
               fourLatestOwnReviewWithText.map((review, index) => {
                 return (
-                  <React.Fragment key = { index} >
+                  <React.Fragment key = { index }>
                     <Review
                       lang = { lang }
 
@@ -293,7 +293,7 @@ export default function ProfileTab({ lang }) {
             ) : (
               fourLatestOtherReviewWithText.map((review, index) => {
                 return (
-                  <React.Fragment key = { index} >
+                  <React.Fragment key = { index }>
                     <Review
                       lang = { lang }
 

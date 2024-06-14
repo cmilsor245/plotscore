@@ -130,7 +130,9 @@ function HorizontalReviewType1({
   reviewText,
 
   commentCount,
-  likeCount
+  likeCount,
+
+  mediaLink
 }) {
   const [avatarLoaded, setAvatarLoaded] = useState(false)
 
@@ -170,17 +172,21 @@ function HorizontalReviewType1({
 
   return (
     <div className = 'horizontal-review--type-1'>
-      <MediaSlot
-        size = 'small'
-        lowResImgSrc = { posterLowResImgSrc }
-        highResImgSrc = { posterHighResImgSrc }
-      />
+      <Link href = { mediaLink ? mediaLink : '/' }>
+        <MediaSlot
+          size = 'small'
+          lowResImgSrc = { posterLowResImgSrc }
+          highResImgSrc = { posterHighResImgSrc }
+        />
+      </Link>
 
       <article className = 'horizontal-review--type-1__details'>
         <section className = 'horizontal-review--type-1__main-info'>
-          <h5>
-            { mediaTitle }
-          </h5>
+          <Link href = { mediaLink ? mediaLink : '/' }>
+            <h5>
+              { mediaTitle }
+            </h5>
+          </Link>
           <h6>
             { mediaYear }
           </h6>
@@ -232,7 +238,7 @@ function HorizontalReviewType2({
   watchedOn,
   hasWatchedBefore,
   isInOwnProfile,
-  mediaLink,
+  mediaLink ,
   userId
 }) {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL
@@ -381,7 +387,7 @@ function HorizontalReviewType2({
 
   return (
     <div className = 'horizontal-review--type-2'>
-      <Link href = { mediaLink}>
+      <Link href = { mediaLink }>
         <MediaSlot
           size = 'small'
           lowResImgSrc = { posterLowResImgSrc}
@@ -503,6 +509,7 @@ export default function Review({
               reviewText = { reviewText }
               commentCount = { commentCount }
               likeCount = { likeCount }
+              mediaLink = { mediaLink }
             />
           break
         case 'horizontal-2':

@@ -118,10 +118,19 @@ export default function UserHome({
   const [sluggedMediaTitle, setSluggedMediaTitle] = useState('')
 
   const convertToSlug = (text) => {
+    if (typeof text !== 'string') return ''
     return text
       .toLowerCase()
       .replace(/[^\w ]+/g, '')
       .replace(/ +/g, '-')
+  }
+
+  const generateMediaSlug = (mediaTitle, mediaYear) => {
+    if (!mediaTitle || !mediaYear) return ''
+    const sluggedTitle = convertToSlug(mediaTitle)
+    const mediaYearConverted = mediaYear.substring(0, 4)
+
+    return `${sluggedTitle}-${mediaYearConverted}`
   }
 
   const handleReviewCreatedNotification = (mediaTitle) => {
@@ -239,7 +248,7 @@ export default function UserHome({
 
               {/* ------------------------------------------------------ */}
 
-              <section className = 'section__heading-and-content popular-reviews'>
+              <section className = 'section__heading-and-content popular-reviews--home'>
                 <SectionHeading
                   lang = { lang }
                   namespace = 'USER_HOME'
@@ -251,64 +260,76 @@ export default function UserHome({
 
                 <section className = 'section-content'>
                   <div className = 'left-column'>
-                    { sixLatestReviews.filter((_, index) => index % 2 === 0).map((review, index, array) => (
-                      <React.Fragment key = { index }>
-                        <Review
-                          lang = { lang }
+                    { sixLatestReviews.filter((_, index) => index % 2 === 0).map((review, index, array) => {
+                      const mediaLink = `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }`
 
-                          hasPoster
-                          posterLowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
-                          posterHighResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                      return(
+                        <React.Fragment key = { index }>
+                          <Review
+                            lang = { lang }
 
-                          mediaTitle = { review.media_title }
-                          mediaYear = { review.media_release_date.slice(0, 4) }
+                            hasPoster
+                            posterLowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                            posterHighResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
 
-                          avatarLowResImgSrc = { avatarSrc[0] }
-                          avatarHighResImgSrc = { avatarSrc[0] }
-                          username = { review.user_username }
+                            mediaTitle = { review.media_title }
+                            mediaYear = { review.media_release_date.slice(0, 4) }
 
-                          rating = { review.rating }
+                            avatarLowResImgSrc = { avatarSrc[0] }
+                            avatarHighResImgSrc = { avatarSrc[0] }
+                            username = { review.user_username }
 
-                          reviewText = { review.review_text }
+                            rating = { review.rating }
 
-                          commentCount = { review.comment_count }
-                          likeCount = { review.like_count }
+                            reviewText = { review.review_text }
 
-                          type = 'horizontal-1'
-                        />
-                        { index !== array.length - 1 && <Divider /> }
-                      </React.Fragment>
-                    )) }
+                            commentCount = { review.comment_count }
+                            likeCount = { review.like_count }
+
+                            mediaLink = { mediaLink }
+
+                            type = 'horizontal-1'
+                          />
+                          { index !== array.length - 1 && <Divider /> }
+                        </React.Fragment>
+                      )
+                    }) }
                   </div>
                   <div className = 'right-column'>
-                    { sixLatestReviews.filter((_, index) => index % 2 !== 0).map((review, index, array) => (
-                      <React.Fragment key = { index }>
-                        <Review
-                          lang = { lang }
+                    { sixLatestReviews.filter((_, index) => index % 2 !== 0).map((review, index, array) => {
+                      const mediaLink = `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }`
 
-                          hasPoster
-                          posterLowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
-                          posterHighResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                      return (
+                        <React.Fragment key = { index }>
+                          <Review
+                            lang = { lang }
 
-                          mediaTitle = { review.media_title }
-                          mediaYear = { review.media_release_date.slice(0, 4) }
+                            hasPoster
+                            posterLowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                            posterHighResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
 
-                          avatarLowResImgSrc = { avatarSrc[0] }
-                          avatarHighResImgSrc = { avatarSrc[0] }
-                          username = { review.user_username }
+                            mediaTitle = { review.media_title }
+                            mediaYear = { review.media_release_date.slice(0, 4) }
 
-                          rating = { review.rating }
+                            avatarLowResImgSrc = { avatarSrc[0] }
+                            avatarHighResImgSrc = { avatarSrc[0] }
+                            username = { review.user_username }
 
-                          reviewText = { review.review_text }
+                            rating = { review.rating }
 
-                          commentCount = { review.comment_count }
-                          likeCount = { review.like_count }
+                            reviewText = { review.review_text }
 
-                          type = 'horizontal-1'
-                        />
-                        { index !== array.length - 1 && <Divider /> }
-                      </React.Fragment>
-                    )) }
+                            commentCount = { review.comment_count }
+                            likeCount = { review.like_count }
+
+                            mediaLink = { mediaLink }
+
+                            type = 'horizontal-1'
+                          />
+                          { index !== array.length - 1 && <Divider /> }
+                        </React.Fragment>
+                      )
+                    }) }
                   </div>
                 </section>
               </section>

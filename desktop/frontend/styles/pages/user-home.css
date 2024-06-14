@@ -24,13 +24,13 @@
   text-decoration: none;
 }
 
-.section__heading-and-content.popular-reviews .section-content {
+.section__heading-and-content.popular-reviews--home .section-content {
   display: grid;
   gap: 30px;
   grid-template-columns: repeat(2, 1fr);
 }
 
-.section__heading-and-content.popular-reviews .section-content > div {
+.section__heading-and-content.popular-reviews--home .section-content > div {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -61,6 +61,12 @@
 @media (width <= 728px) {
   .welcome-text a {
     max-width: 500px;
+  }
+}
+
+@media (width <= 720px) {
+  .section__heading-and-content.popular-reviews--home .section-content {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
