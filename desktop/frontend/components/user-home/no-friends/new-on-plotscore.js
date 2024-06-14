@@ -6,6 +6,7 @@ import MediaSlot from '/components/common/media-slot.js'
 import SectionHeading from '/components/common/section-heading.js'
 import avatarSrc from '/src/app/static-info/common/avatar-srcs.js'
 import posterSrc from '/src/app/static-info/common/poster-srcs.js'
+import translate from '/src/app/translation.js'
 
 export default function NewOnPlotscore({ lang }) {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL
@@ -64,7 +65,7 @@ export default function NewOnPlotscore({ lang }) {
         title = 'SECTION_TITLE'
         hasRightSideIconAndText = { [
           <IconBolt stroke = { 1 } />,
-          'ALL_ACTIVITY'
+          translate(lang, 'USER_HOME', 'GENERAL_ACTIVITY', 'ALL_ACTIVITY')
         ] }
         hasDivider
       />

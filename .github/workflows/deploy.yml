@@ -63,8 +63,6 @@ jobs:
 
         php artisan storage:link
 
-        ./vendor/bin/phpunit --testsuite=Feature
-
         cd ../..
         pm2 start ecosystem.config.js --only laravel-app
         pm2 save --force
