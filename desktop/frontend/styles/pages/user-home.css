@@ -24,6 +24,12 @@
   text-decoration: none;
 }
 
+.section__heading-and-content.new-on-plotscore > .section-content {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+}
+
 .section__heading-and-content.popular-reviews--home .section-content {
   display: grid;
   gap: 30px;
@@ -38,6 +44,16 @@
   height: 100%;
   justify-content: flex-start;
   width: 100%;
+}
+
+@media (width <= 1236px) {
+  .section__heading-and-content.new-on-plotscore > .section-content {
+    gap: 10px;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    width: 100%;
+  }
 }
 
 @media (width <= 860px) {

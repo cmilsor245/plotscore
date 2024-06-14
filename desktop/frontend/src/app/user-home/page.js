@@ -19,12 +19,12 @@ import SectionHeading from '/components/common/section-heading.js'
 import SideMenu from '/components/common/side-menu.js'
 import RecentShowdownNews from '/components/landing-page--home/recent-showdown-news.js'
 import RecentStory from '/components/landing-page--home/recent-story.js'
-import posterSrc from '/src/app/static-info/common/poster-srcs.js'
 import NewFromFriends from '/components/user-home/active/new-from-friends.js'
 import NewOnPlotscore from '/components/user-home/no-friends/new-on-plotscore.js'
+import avatarSrc from '/src/app/static-info/common/avatar-srcs.js'
+import posterSrc from '/src/app/static-info/common/poster-srcs.js'
 import recentNewsSlotsData from '/src/app/static-info/landing-page/recentNewsSlotsData.js'
 import recentShowdownsSlotsData from '/src/app/static-info/landing-page/recentShowdownsSlotsData.js'
-import avatarSrc from '/src/app/static-info/common/avatar-srcs.js'
 import recentStoriesSlotsData from '/src/app/static-info/landing-page/recentStoriesSlotsData.js'
 import translate from '/src/app/translation.js'
 
@@ -240,11 +240,11 @@ export default function UserHome({
 
               {/* ------------------------------------------------------ */}
 
-              {/* {
+              {
                 followingList && followingList.length === 0
                   ? <NewOnPlotscore lang = { lang } />
                   : <NewFromFriends lang = { lang } followingList = { followingList } />
-              } */}
+              }
 
               {/* ------------------------------------------------------ */}
 

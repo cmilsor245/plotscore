@@ -15,7 +15,8 @@ function Poster({
   lowResImgSrc,
   highResImgSrc,
   hasLogInfo,
-  username
+  username,
+  mediaLink
 }) {
   const [imageLoaded, setImageLoaded] = useState(false)
 
@@ -56,7 +57,9 @@ function Poster({
   conditionalSizeClassName += ` media-slot__poster ${ (hasLogInfo && username) && 'media-slot__poster--sharp-border' }`
 
   return (
-    <section className = { conditionalSizeClassName } style = { posterStyle }></section>
+    <Link href = { mediaLink ? mediaLink : '/' }>
+      <section className = { conditionalSizeClassName } style = { posterStyle }></section>
+    </Link>
   )
 }
 
@@ -168,7 +171,9 @@ export default function MediaSlot({
   rating,
   hasWatchedBefore,
   hasReviewText,
-  date
+  date,
+
+  mediaLink
 }) {
   return (
     <div className = 'media-slot'>
@@ -178,6 +183,7 @@ export default function MediaSlot({
         highResImgSrc = { highResImgSrc }
         hasLogInfo = { hasLogInfo }
         username = { username }
+        mediaLink = { mediaLink }
       />
       <LogInfo
         hasLogInfo = { hasLogInfo }
