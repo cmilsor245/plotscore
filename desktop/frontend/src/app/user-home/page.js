@@ -9,13 +9,22 @@ import {
   IconZoom
 } from '@tabler/icons-react'
 
+import Divider from '/components/common/divider.js'
 import Footer from '/components/common/footer.js'
 import LogoHeader from '/components/common/logo-header.js'
 import { MainActionButton } from '/components/common/main-action-button.js'
+import ReviewModal from '/components/common/review-modal.js'
+import Review from '/components/common/review.js'
+import SectionHeading from '/components/common/section-heading.js'
 import SideMenu from '/components/common/side-menu.js'
+import RecentShowdownNews from '/components/landing-page--home/recent-showdown-news.js'
+import RecentStory from '/components/landing-page--home/recent-story.js'
 import NewFromFriends from '/components/user-home/active/new-from-friends.js'
 import NewOnPlotscore from '/components/user-home/no-friends/new-on-plotscore.js'
-import ReviewModal from '/components/common/review-modal.js'
+import popularReviewsSlotsData from '/src/app/static-info/landing-page/popularReviewsSlotsData.js'
+import recentNewsSlotsData from '/src/app/static-info/landing-page/recentNewsSlotsData.js'
+import recentShowdownsSlotsData from '/src/app/static-info/landing-page/recentShowdownsSlotsData.js'
+import recentStoriesSlotsData from '/src/app/static-info/landing-page/recentStoriesSlotsData.js'
 import translate from '/src/app/translation.js'
 
 import '/styles/pages/user-home.css'
@@ -194,6 +203,159 @@ export default function UserHome({
                   ? <NewOnPlotscore lang = { lang } />
                   : <NewFromFriends lang = { lang } followingList = { followingList } />
               }
+
+              {/* ------------------------------------------------------ */}
+
+              <section className = 'popular-reviews__lists-reviewers'>
+                <article className = 'section__heading-and-content popular-reviews'>
+                  <SectionHeading
+                    lang = { lang }
+                    namespace = 'LANDING_PAGE'
+                    section = 'POPULAR_REVIEWS'
+                    title = 'SECTION_TITLE'
+                    hasRightSideSingleText = { translate(lang, 'LANDING_PAGE', 'POPULAR_REVIEWS', 'MORE') }
+                    hasDivider
+                  />
+
+                  <section className = 'section-content'>
+                    { popularReviewsSlotsData.map((review, index) => [
+                      <Review
+                        key = { index }
+
+                        lang = { lang }
+
+                        hasPoster
+                        { ...review }
+
+                        type = 'horizontal-1'
+                      />,
+                      index !== popularReviewsSlotsData.length - 1 && <Divider key = { `divider-${ index }` } />
+                    ]) }
+                  </section>
+                </article>
+              </section>
+
+              {/* ------------------------------------------------------ */}
+
+              <section className = 'section__heading-and-content recent-stories'>
+                <SectionHeading
+                  lang = { lang }
+                  namespace = 'LANDING_PAGE'
+                  section = 'RECENT_STORIES'
+                  title = 'SECTION_TITLE'
+                  hasRightSideSingleText = { translate(lang, 'LANDING_PAGE', 'RECENT_STORIES', 'MORE') }
+                  hasDivider
+                />
+
+                <section className = 'section-content'>
+                  <section className = 'recent-stories__column-1'>
+                    { recentStoriesSlotsData.map((story, index) => (
+                      story.column === 1 && (
+                        <RecentStory
+                          key = { index }
+
+                          lang = { lang }
+
+                          { ...story }
+                        />
+                      )
+                    )) }
+                  </section>
+
+                  <section className = 'recent-stories__column-2'>
+                    { recentStoriesSlotsData.map((story, index) => (
+                      story.column === 2 && (
+                        <RecentStory
+                          key = { index }
+
+                          lang = { lang }
+
+                          { ...story }
+                        />
+                      )
+                    )) }
+                  </section>
+
+                  <section className = 'recent-stories__column-3'>
+                    { recentStoriesSlotsData.map((story, index) => (
+                      story.column === 3 && (
+                        <RecentStory
+                          key = { index }
+
+                          lang = { lang }
+
+                          { ...story }
+                        />
+                      )
+                    )) }
+                  </section>
+                </section>
+
+                {/* ------------------------------------- */}
+
+                <section className = 'section-content--mobile'>
+                  { recentStoriesSlotsData.map((story, index) => (
+                    <RecentStory
+                      key = { index }
+
+                      lang = { lang }
+
+                      {...story }
+                    />
+                  )) }
+                </section>
+              </section>
+
+              
+              {/* ---------------------------------------------------- */}
+
+              <section className = 'section__heading-and-content recent-showdowns'>
+                <SectionHeading
+                  lang = { lang }
+                  namespace = 'LANDING_PAGE'
+                  section = 'RECENT_SHOWDOWNS'
+                  title = 'SECTION_TITLE'
+                  hasRightSideSingleText = { translate(lang, 'LANDING_PAGE', 'RECENT_SHOWDOWNS', 'MORE') }
+                  hasDivider
+                />
+
+                <section className = 'section-content'>
+                  { recentShowdownsSlotsData.map((showdown, index) => (
+                    <RecentShowdownNews
+                      className = { showdown.inProgress ? 'recent-showdown--in-progress' : '' }
+
+                      key = { index }
+
+                      lang = { lang }
+
+                      { ...showdown }
+                    />
+                  )) }
+                </section>
+              </section>
+
+              {/* ---------------------------------------------------- */}
+
+              <section className = 'section__heading-and-content recent-news'>
+                <SectionHeading
+                  lang = { lang }
+                  namespace = 'LANDING_PAGE'
+                  section = 'RECENT_NEWS'
+                  title = 'SECTION_TITLE'
+                  hasRightSideSingleText = { translate(lang, 'LANDING_PAGE', 'RECENT_NEWS', 'MORE') }
+                  hasDivider
+                />
+
+                <section className = 'section-content'>
+                  { recentNewsSlotsData.map((news, index) => (
+                    <RecentShowdownNews
+                      key = { index }
+
+                      { ...news }
+                    />
+                  )) }
+                </section>
+              </section>
             </section>
           </main>
         </section>
