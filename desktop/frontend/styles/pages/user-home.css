@@ -23,3 +23,39 @@
   font-family: var(--font--graphik-semibold);
   text-decoration: none;
 }
+
+@media (width <= 860px) {
+  .welcome-text {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+
+  .welcome-text a {
+    max-width: 700px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: fit-content;
+  }
+}
+
+@media (width <= 728px) {
+  .welcome-text a {
+    max-width: 500px;
+  }
+}
+
+@media (width <= 532px) {
+  .welcome-text a {
+    max-width: 350px;
+  }
+}
+
+@media (width <= 398px) {
+  .welcome-text a {
+    max-width: 250px;
+  }
+}
