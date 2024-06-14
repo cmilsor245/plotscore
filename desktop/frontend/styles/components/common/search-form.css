@@ -27,7 +27,13 @@
 
 .character-counter {
   --font: clamp(8px, 1.4rem, 16px)  var(--font--grape-nuts);
-  color: var(--color--labels);
+  color: var(--color--primary-light-70);
   font-weight: bold !important;
   font: var(--font);
+}
+
+@media (width <= 586px) {
+  .search-form__input {
+    width: calc(100vw - 45px) !important;
+  }
 }
