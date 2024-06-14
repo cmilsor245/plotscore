@@ -73,7 +73,9 @@ function LogInfo({
   rating,
   hasWatchedBefore,
   hasReviewText,
-  date
+  date,
+
+  userLink
 }) {
   if (!hasLogInfo) {
     return null
@@ -122,7 +124,9 @@ function LogInfo({
       { username &&
         <article className = 'media-slot__user'>
           <div className = 'media-slot__avatar' style = { avatarStyle }></div>
-          <h6 className = 'media-slot__username'>{ username }</h6>
+          <Link href = { userLink ? userLink : '/' }>
+            <h6 className = 'media-slot__username'>{ username }</h6>
+          </Link>
         </article>
       }
 
@@ -173,7 +177,8 @@ export default function MediaSlot({
   hasReviewText,
   date,
 
-  mediaLink
+  mediaLink,
+  userLink
 }) {
   return (
     <div className = 'media-slot'>
@@ -194,6 +199,7 @@ export default function MediaSlot({
         hasWatchedBefore = { hasWatchedBefore }
         hasReviewText = { hasReviewText }
         date = { date }
+        userLink = { userLink }
       />
     </div>
   )

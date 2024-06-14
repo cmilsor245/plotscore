@@ -72,6 +72,7 @@ export default function NewOnPlotscore({ lang }) {
       <section className = 'section-content new-on-plotscore__logs'>
         { newOnPlotscore.map((log, index) => {
           const mediaLink = `/media/${ generateMediaSlug(log.media_title, log.media_release_date) }`
+          const userLink = `/user/${ log.user_username }`
 
           return (
             <MediaSlot
@@ -91,6 +92,7 @@ export default function NewOnPlotscore({ lang }) {
               date = { log.created_at.slice(5, 10) }
 
               mediaLink = { mediaLink }
+              userLink = { userLink }
             />
           )
         }) }
