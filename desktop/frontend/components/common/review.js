@@ -132,7 +132,8 @@ function HorizontalReviewType1({
   commentCount,
   likeCount,
 
-  mediaLink
+  mediaLink,
+  userLink
 }) {
   const [avatarLoaded, setAvatarLoaded] = useState(false)
 
@@ -196,7 +197,9 @@ function HorizontalReviewType1({
           <div className = 'horizontal-review--type-1__avatar-username'>
             <div className = 'horizontal-review--type-1__avatar' style = { avatarStyle }></div>
 
-            <h6 className = 'horizontal-review--type-1__username'>{ username }</h6>
+            <Link href = { userLink ? userLink : '/' }>
+              <h6 className = 'horizontal-review--type-1__username'>{ username }</h6>
+            </Link>
           </div>
 
           <div className = 'horizontal-review--type-1__rating'>
@@ -468,8 +471,9 @@ export default function Review({
   hasWatchedBefore,
   isInOwnProfile,
   mediaLink,
+  userLink,
   type,
-  userId // New prop for user ID
+  userId
 }) {
   let conditionalReview
 
@@ -510,6 +514,7 @@ export default function Review({
               commentCount = { commentCount }
               likeCount = { likeCount }
               mediaLink = { mediaLink }
+              userLink = { userLink }
             />
           break
         case 'horizontal-2':

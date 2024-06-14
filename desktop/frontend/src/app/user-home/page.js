@@ -262,6 +262,7 @@ export default function UserHome({
                   <div className = 'left-column'>
                     { sixLatestReviews.filter((_, index) => index % 2 === 0).map((review, index, array) => {
                       const mediaLink = `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }`
+                      const userLink = `/user/${ review.user_username }`
 
                       return(
                         <React.Fragment key = { index }>
@@ -287,6 +288,7 @@ export default function UserHome({
                             likeCount = { review.like_count }
 
                             mediaLink = { mediaLink }
+                            userLink = { userLink }
 
                             type = 'horizontal-1'
                           />
@@ -298,6 +300,7 @@ export default function UserHome({
                   <div className = 'right-column'>
                     { sixLatestReviews.filter((_, index) => index % 2 !== 0).map((review, index, array) => {
                       const mediaLink = `/media/${ generateMediaSlug(review.media_title, review.media_release_date) }`
+                      const userLink = `/user/${ review.user_username }`
 
                       return (
                         <React.Fragment key = { index }>
@@ -323,6 +326,7 @@ export default function UserHome({
                             likeCount = { review.like_count }
 
                             mediaLink = { mediaLink }
+                            userLink = { userLink }
 
                             type = 'horizontal-1'
                           />
