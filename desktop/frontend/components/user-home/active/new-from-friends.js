@@ -1,6 +1,7 @@
 import { IconBolt } from '@tabler/icons-react'
 
 import SectionHeading from '/components/common/section-heading.js'
+import translate from '/src/app/translation.js'
 
 export default function NewFromFriends({ lang, followingList }) {
   return (
@@ -12,7 +13,7 @@ export default function NewFromFriends({ lang, followingList }) {
         title = 'SECTION_TITLE'
         hasRightSideIconAndText = { [
           <IconBolt stroke = { 1 } />,
-          'ALL_ACTIVITY'
+          translate(lang, 'USER_HOME', 'GENERAL_ACTIVITY', 'ALL_ACTIVITY')
         ] }
         hasDivider
       />
