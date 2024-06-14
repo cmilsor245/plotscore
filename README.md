@@ -13,11 +13,13 @@ I've created a permanent deployment using ***Vercel*** just so everyone can visi
 
 1. [TODO list](#todo-list)
 2. [General documentation](#general-documentation)
-3. [Checkpoint video](#checkpoint-video)
-4. [Notion page](#notion-page)
-5. [Figma designs](#figma-designs)
-6. [Desktop version CI/CD pipeline guide](#desktop-version-cicd-pipeline-guide)
-7. [Secure FTP server installation and configuration guide](#secure-ftp-server-installation-and-configuration-guide)
+3. [Final check video](#final-check-video)
+4. [Checkpoint video](#checkpoint-video)
+5. [Notion page](#notion-page)
+6. [Figma designs](#figma-designs)
+7. [Swagger documentation](#swagger-documentation)
+8. [Desktop version CI/CD pipeline guide](#desktop-version-cicd-pipeline-guide)
+9. [Secure FTP server installation and configuration guide](#secure-ftp-server-installation-and-configuration-guide)
 
 #### [Back to top](#plotscore)
 
@@ -73,6 +75,14 @@ Click [here](https://christian-millan-soria.notion.site/plotscore-documentation-
 
 ---
 
+### Final check video
+
+Click [here]() to watch the final check video.
+
+#### [Back to english section](#english)
+
+---
+
 ### Checkpoint video
 
 Click [here](https://youtu.be/hsr6cpZhtYg) to watch the checkpoint video.
@@ -100,6 +110,16 @@ It is recommended to use the **playground mode** to be able to actually interact
 It is possible to **navigate through the atoms and different fidelities** by **clicking on the top-left icon**:
 
 ![navigate through figma pages](./readme-img/image.png)
+
+#### [Back to english section](#english)
+
+---
+
+### Swagger documentation
+
+Click [here](https://app.swaggerhub.com/apis/A2019CF1CMILLAN/plotscore/1.0.0) to access the Swagger documentation.
+
+Click [here]() to access the YAML Swagger file.
 
 #### [Back to english section](#english)
 
@@ -134,11 +154,13 @@ He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualqui
 
 1. [Lista de tareas pendientes](#lista-de-tareas-pendientes)
 2. [Documentación general](#documentación-general)
-3. [Vídeo del checkpoint](#vídeo-del-checkpoint)
-4. [Notion](#notion)
-5. [Diseños en Figma](#diseños-en-figma)
-6. [Guía CI/CD pipeline para la versión desktop](#guía-cicd-pipeline-para-la-versión-desktop)
-7. [Guía para la instalación y configuración de un servidor FTP seguro](#guía-para-la-instalación-y-configuración-de-un-servidor-ftp-seguro)
+3. [Vídeo checkpoint final](#vídeo-checkpoint-final)
+4. [Vídeo del checkpoint](#vídeo-del-checkpoint)
+5. [Notion](#notion)
+6. [Diseños en Figma](#diseños-en-figma)
+7. [Documentación Swagger](#documentación-swagger)
+8. [Guía CI/CD pipeline para la versión desktop](#guía-cicd-pipeline-para-la-versión-desktop)
+9. [Guía para la instalación y configuración de un servidor FTP seguro](#guía-para-la-instalación-y-configuración-de-un-servidor-ftp-seguro)
 
 #### [Volver arriba](#plotscore)
 
@@ -194,6 +216,14 @@ Haz clic [aquí](https://christian-millan-soria.notion.site/plotscore-documentac
 
 ---
 
+### Vídeo checkpoint final
+
+Haz clic [aquí]() para ver el video final del checkpoint.
+
+#### [Volver a la sección en Español](#español)
+
+---
+
 ### Vídeo del checkpoint
 
 Haz clic [aquí](https://youtu.be/hsr6cpZhtYg) para ver el video del checkpoint.
@@ -223,6 +253,14 @@ Es posible **navegar entre los átomos y las diferentes fidelidades del proyecto
 ![navegar por las páginas de Figma](./readme-img/image.png)
 
 #### [Volver a la sección en español](#español)
+
+---
+
+### Documentación Swagger
+
+Haz clic [aquí](https://app.swaggerhub.com/apis/A2019CF1CMILLAN/plotscore/1.0.0) para acceder a la documentación Swagger.
+
+Haz clic [aquí]() para acceder al archivo YAML de Swagger.
 
 ---
 

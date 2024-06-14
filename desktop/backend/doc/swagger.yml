@@ -1,0 +1,804 @@
+openapi: 3.0.0
+info:
+  title: plotscore api
+  description: rest api for managing users, media, reviews, likes, followers, and search in plotscore
+  version: 1.0.0
+tags:
+  - name: users
+    description: operations related to users
+  - name: media
+    description: operations related to media
+  - name: reviews
+    description: operations related to reviews
+  - name: likes
+    description: operations related to likes
+  - name: followers
+    description: operations related to followers
+  - name: search
+    description: operations related to search
+paths:
+  /api/create-admin:
+    post:
+      tags:
+        - users
+      summary: create an admin
+      operationId: createAdmin
+      responses:
+        '201':
+          description: admin created successfully
+
+  /api/signup:
+    post:
+      tags:
+        - users
+      summary: register a new user
+      operationId: signup
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/userInput'
+      responses:
+        '201':
+          description: user registered successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+
+  /api/login:
+    post:
+      tags:
+        - users
+      summary: user login
+      operationId: login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/loginInput'
+      responses:
+        '200':
+          description: login successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: welcome message
+                  access_token:
+                    type: string
+                    description: access token
+                    example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                  token_type:
+                    type: string
+                    description: token type
+                    example: "Bearer"
+        '401':
+          description: invalid credentials
+
+  /api/user:
+    get:
+      tags:
+        - users
+      summary: get current user
+      operationId: getCurrentUser
+      responses:
+        '200':
+          description: current user retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+
+  /api/logout:
+    post:
+      tags:
+        - users
+      summary: logout user
+      operationId: logout
+      responses:
+        '200':
+          description: user logged out successfully
+
+  /api/all-users:
+    get:
+      tags:
+        - users
+      summary: get all users
+      operationId: getAllUsers
+      responses:
+        '200':
+          description: all users retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/user'
+
+  /api/update-user/{id}:
+    put:
+      tags:
+        - users
+      summary: update a user
+      operationId: updateUser
+      parameters:
+        - name: id
+          in: path
+          description: user id to update
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/userInput'
+      responses:
+        '200':
+          description: user updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+        '404':
+          description: user not found
+
+  /api/delete-user/{id}:
+    delete:
+      tags:
+        - users
+      summary: delete a user
+      operationId: deleteUser
+      parameters:
+        - name: id
+          in: path
+          description: user id to delete
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: user deleted successfully
+        '404':
+          description: user not found
+
+  /api/create-media:
+    post:
+      tags:
+        - media
+      summary: create media
+      operationId: createMedia
+      responses:
+        '201':
+          description: media created successfully
+
+  /api/get-media-for-review:
+    get:
+      tags:
+        - media
+      summary: get media for review
+      operationId: getMediaForReview
+      responses:
+        '200':
+          description: media for review retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/media'
+
+  /api/update-media/{id}:
+    put:
+      tags:
+        - media
+      summary: update media
+      operationId: updateMedia
+      parameters:
+        - name: id
+          in: path
+          description: media id to update
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mediaInput'
+      responses:
+        '200':
+          description: media updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/media'
+        '404':
+          description: media not found
+
+  /api/delete-media/{id}:
+    delete:
+      tags:
+        - media
+      summary: delete media
+      operationId: deleteMedia
+      parameters:
+        - name: id
+          in: path
+          description: media id to delete
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: media deleted successfully
+        '404':
+          description: media not found
+
+  /api/create-review:
+    post:
+      tags:
+        - reviews
+      summary: create a review
+      operationId: createReview
+      responses:
+        '201':
+          description: review created successfully
+
+  /api/update-review/{id}:
+    put:
+      tags:
+        - reviews
+      summary: update a review
+      operationId: updateReview
+      parameters:
+        - name: id
+          in: path
+          description: review id to update
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/reviewInput'
+      responses:
+        '200':
+          description: review updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/review'
+        '404':
+          description: review not found
+
+  /api/delete-review/{id}:
+    delete:
+      tags:
+        - reviews
+      summary: delete a review
+      operationId: deleteReview
+      parameters:
+        - name: id
+          in: path
+          description: review id to delete
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: review deleted successfully
+        '404':
+          description: review not found
+
+  /api/like-review/{id}:
+    post:
+      tags:
+        - likes
+      summary: like a review
+      operationId: likeReview
+      parameters:
+        - name: id
+          in: path
+          description: review id to like
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: review liked successfully
+
+  /api/unlike-review/{id}:
+    delete:
+      tags:
+        - likes
+      summary: unlike a review
+      operationId: unlikeReview
+      parameters:
+        - name: id
+          in: path
+          description: review id to unlike
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: review unliked successfully
+
+  /api/follow/{id}:
+    post:
+      tags:
+        - followers
+      summary: follow a user
+      operationId: followUser
+      parameters:
+        - name: id
+          in: path
+          description: user id to follow
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: user followed successfully
+
+  /api/unfollow/{id}:
+    delete:
+      tags:
+        - followers
+      summary: unfollow a user
+      operationId: unfollowUser
+      parameters:
+        - name: id
+          in: path
+          description: user id to unfollow
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: user unfollowed successfully
+
+  /api/check-if-following/{id}:
+    get:
+      tags:
+        - followers
+      summary: check if following a user
+      operationId: checkIfFollowing
+      parameters:
+        - name: id
+          in: path
+          description: user id to check if following
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: follow status retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  isFollowing:
+                    type: boolean
+
+  /api/user/{id}:
+    get:
+      tags:
+        - users
+      summary: get a user by id
+      operationId: getUserById
+      parameters:
+        - name: id
+          in: path
+          description: user id to retrieve
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: user retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+        '404':
+          description: user not found
+
+  /api/get-user-by-username/{username}:
+    get:
+      tags:
+        - users
+      summary: get a user by username
+      operationId: getUserByUsername
+      parameters:
+        - name: username
+          in: path
+          description: username to retrieve
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: user retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+        '404':
+          description: user not found
+
+  /api/media/{id}:
+    get:
+      tags:
+        - media
+      summary: get media by id
+      operationId: getMediaById
+      parameters:
+        - name: id
+          in: path
+          description: media id to retrieve
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: media retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/media'
+        '404':
+          description: media not found
+
+  /api/all-media:
+    get:
+      tags:
+        - media
+      summary: get all media
+      operationId: getAllMedia
+      responses:
+        '200':
+          description: all media retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/media'
+
+  /api/review/{id}:
+    get:
+      tags:
+        - reviews
+      summary: get review by id
+      operationId: getReviewById
+      parameters:
+        - name: id
+          in: path
+          description: review id to retrieve
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: review retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/review'
+        '404':
+          description: review not found
+
+  /api/all-reviews:
+    get:
+      tags:
+        - reviews
+      summary: get all reviews
+      operationId: getAllReviews
+      responses:
+        '200':
+          description: all reviews retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/review'
+
+  /api/get-all-reviews-for-user/{id}:
+    get:
+      tags:
+        - reviews
+      summary: get all reviews for a user
+      operationId: getAllReviewsForUser
+      parameters:
+        - name: id
+          in: path
+          description: user id to retrieve reviews for
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: reviews retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/review'
+
+  /api/get-this-year-reviews-for-user/{id}:
+    get:
+      tags:
+        - reviews
+      summary: get this year's reviews for a user
+      operationId: getThisYearReviewsForUser
+      parameters:
+        - name: id
+          in: path
+          description: user id to retrieve reviews for
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: reviews retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/review'
+
+  /api/new-on-plotscore:
+    get:
+      tags:
+        - reviews
+      summary: get new reviews on plotscore
+      operationId: newOnPlotscore
+      responses:
+        '200':
+          description: new reviews retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/review'
+
+  /api/check-if-already-liked/{id}:
+    get:
+      tags:
+        - likes
+      summary: check if review is already liked
+      operationId: checkIfAlreadyLiked
+      parameters:
+        - name: id
+          in: path
+          description: review id to check if liked
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: like status retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  isLiked:
+                    type: boolean
+
+  /api/get-followers/{id}:
+    get:
+      tags:
+        - followers
+      summary: get followers for a user
+      operationId: getFollowers
+      parameters:
+        - name: id
+          in: path
+          description: user id to retrieve followers for
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: followers retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/user'
+
+  /api/get-following/{id}:
+    get:
+      tags:
+        - followers
+      summary: get following for a user
+      operationId: getFollowing
+      parameters:
+        - name: id
+          in: path
+          description: user id to retrieve following for
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: following retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/user'
+
+  /api/get-user-and-or-media/{searchTerm}:
+    get:
+      tags:
+        - search
+      summary: search for users or media
+      operationId: getUserAndOrMedia
+      parameters:
+        - name: searchTerm
+          in: path
+          description: term to search for users or media
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: search results retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    users:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/user'
+                    media:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/media'
+
+components:
+  schemas:
+    user:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        email:
+          type: string
+      example:
+        id: 1
+        name: "testuser"
+        email: "test@test.com"
+    userInput:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        name: "testuser"
+        email: "test@test.com"
+        password: "test"
+    loginInput:
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: "test@test.com"
+        password: "test"
+    media:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        title:
+          type: string
+        description:
+          type: string
+      example:
+        id: 1
+        title: "media title"
+        description: "media description"
+    mediaInput:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+      example:
+        title: "new media title"
+        description: "new media description"
+    review:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        content:
+          type: string
+        user_id:
+          type: integer
+          format: int64
+        media_id:
+          type: integer
+          format: int64
+      example:
+        id: 1
+        content: "review content"
+        user_id: 1
+        media_id: 1
+    reviewInput:
+      type: object
+      properties:
+        content:
+          type: string
+        user_id:
+          type: integer
+          format: int64
+        media_id:
+          type: integer
+          format: int64
+      example:
+        content: "new review content"
+        user_id: 1
+        media_id: 1
+servers:
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/A2019CF1CMILLAN/plotscore/1.0.0
+  - description: plotscore api
+    url: https://api.plotscore.com

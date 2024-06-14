@@ -143,6 +143,18 @@ export default function Media() {
     router.push('/')
   }
 
+  /* ------------------------------ */
+
+  const [isSearchFormDisplayed, setIsSearchFormDisplayed] = useState(false)
+
+  const openSearchForm = () => {
+    setIsSearchFormDisplayed(true)
+  }
+
+  const closeSearchForm = () => {
+    setIsSearchFormDisplayed(false)
+  }
+
   return (
     <>
       <div className = 'main-actions-buttons'>
@@ -150,7 +162,7 @@ export default function Media() {
           <>
             <MainActionButton
               icon = { IconZoom }
-              handleClick = { null }
+              handleClick = { openSearchForm }
             />
             <MainActionButton
               icon = { IconPencilPlus }
@@ -175,6 +187,22 @@ export default function Media() {
           </>
         ) }
       </div>
+
+      {/* --------------------------------------------------------- */}
+
+      { isSearchFormDisplayed &&
+        <>
+          <SearchForm
+            lang = { lang }
+
+            userData = { userData }
+          />
+
+          <div className = 'review-modal__overlay' onClick = { closeSearchForm }></div>
+        </>
+      }
+
+      {/* --------------------------------------------------------- */}
 
       { isReviewModalDisplayed && userData && (
         <>

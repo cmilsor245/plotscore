@@ -8,7 +8,7 @@ import { IconCalendarMonth } from '@tabler/icons-react'
 import Divider from '/components/common/divider.js'
 import MediaSlot from '/components/common/media-slot.js'
 import Review from '/components/common/review.js'
-import SectionHeading from "/components/common/section-heading.js"
+import SectionHeading from '/components/common/section-heading.js'
 import posterSrc from '/src/app/static-info/common/poster-srcs.js'
 import favoriteMediaSlotsImgsSrcs from '/src/app/static-info/settings/favoriteMediaSlotsImgsSrcs.js'
 import translate from '/src/app/translation.js'

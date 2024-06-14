@@ -1,0 +1,33 @@
+.search-form__group {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: flex-start;
+  width: fit-content;
+}
+
+.search-form__input {
+  --font: clamp(10px, 1.7rem, 20px) var(--font--graphik-regular);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--color--primary-light-80);
+  border-radius: 3px;
+  border: none;
+  color: var(--color--input--content);
+  cursor: text;
+  font: var(--font);
+  outline: none;
+  padding: 8px;
+  resize: none;
+  transition: .2s;
+  width: 450px;
+}
+
+.character-counter {
+  --font: clamp(8px, 1.4rem, 16px)  var(--font--grape-nuts);
+  color: var(--color--labels);
+  font-weight: bold !important;
+  font: var(--font);
+}

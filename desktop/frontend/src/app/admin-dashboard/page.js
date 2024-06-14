@@ -325,7 +325,7 @@ export default function AdminDashboard({
             userData = { userData }
           />
 
-          <div className = 'search-form__overlay' onClick = { closeSearchForm }></div>
+          <div className = 'review-modal__overlay' onClick = { closeSearchForm }></div>
         </>
       }
 

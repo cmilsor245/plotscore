@@ -461,6 +461,14 @@ function Replies(props) {
   )
 }
 
+/* ------------------------------ */
+
+function Search(props) {
+  return <input type = 'search' { ...props } />
+}
+
+/* ------------------------------ */
+
 export default function FormLabelInput({
   label,
   fieldType,
@@ -497,6 +505,8 @@ export default function FormLabelInput({
         return <Posters id = { id } {...props } />
       case 'replies':
         return <Replies id = { id } {...props } />
+      case 'search':
+        return <Search id = { id } {...props } />
       default:
         return <Input id = { id } {...props } />
     }

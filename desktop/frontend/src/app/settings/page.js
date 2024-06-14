@@ -297,18 +297,42 @@ export default function SettingsPage() {
     }
   }
 
+  /* ----------------------------------------------- */
+
+  const [isSearchFormDisplayed, setIsSearchFormDisplayed] = useState(false)
+
+  const openSearchForm = () => {
+    setIsSearchFormDisplayed(true)
+  }
+
+  const closeSearchForm = () => {
+    setIsSearchFormDisplayed(false)
+  }
+
   return (
     <>
       <div className = 'main-actions-buttons'>
         <MainActionButton
           icon = { IconZoom }
-          handleClick = { null }
+          handleClick = { openSearchForm }
         />
         <MainActionButton
           icon = { IconPencilPlus }
           handleClick = { openReviewModal }
         />
       </div>
+
+      { isSearchFormDisplayed &&
+        <>
+          <SearchForm
+            lang = { lang }
+
+            userData = { userData }
+          />
+
+          <div className = 'review-modal__overlay' onClick = { closeSearchForm }></div>
+        </>
+      }
 
       <div className = { `saved-changes-notification ${ isSaveChangesNotificationDisplayed ? 'showed' : '' }` }>
         { translate(lang, 'SETTINGS', 'SAVED_CHANGES_NOTIFICATION', 'TEXT') }

@@ -366,6 +366,18 @@ export default function Profile() {
     setMainButtonHovered(false)
   }
 
+  /* ------------------------------ */
+
+  const [isSearchFormDisplayed, setIsSearchFormDisplayed] = useState(false)
+
+  const openSearchForm = () => {
+    setIsSearchFormDisplayed(true)
+  }
+
+  const closeSearchForm = () => {
+    setIsSearchFormDisplayed(false)
+  }
+
   return (
     <>
       <div className = 'main-actions-buttons'>
@@ -373,7 +385,7 @@ export default function Profile() {
           <>
             <MainActionButton
               icon = { IconZoom }
-              handleClick = { null }
+              handleClick = { openSearchForm }
             />
             <MainActionButton
               icon = { IconPencilPlus }
@@ -405,6 +417,18 @@ export default function Profile() {
           <div className = 'review-modal__overlay'></div>
         </>
       ) }
+
+      { isSearchFormDisplayed &&
+        <>
+          <SearchForm
+            lang = { lang }
+
+            userData = { userData }
+          />
+
+          <div className = 'review-modal__overlay' onClick = { closeSearchForm }></div>
+        </>
+      }
 
       <div className = { `review-modal__creation-notification ${ isReviewCreationNotificationDisplayed ? 'showed' : '' }` }>
         { translate(lang, 'COMMON', 'REVIEW_MODAL', 'REVIEW_CREATED_1') }

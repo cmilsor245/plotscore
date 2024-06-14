@@ -70,6 +70,10 @@ const translationsES = {
 
       REVIEW_CREATED_1: '¡Tu review sobre ',
       REVIEW_CREATED_2: ' ha sido registrada!'
+    },
+    SEARCH_FORM: {
+      PLACEHOLDER: 'Buscar usuario/contenido...',
+      SUBMIT_BUTTON: 'Buscar'
     }
   },
 
