@@ -140,14 +140,14 @@ export default function ProfileTab({ lang }) {
           />
 
           <section className = 'section-content'>
-            {favoriteMediaSlotsImgsSrcs.map((imgSrc, index) => (
+            { favoriteMediaSlotsImgsSrcs.map((imgSrc, index) => (
               <MediaSlot
                 key = { index }
                 size = 'normal'
                 lowResImgSrc = { imgSrc.lowResImgSrc }
                 highResImgSrc = { imgSrc.highResImgSrc }
               />
-            ))}
+            )) }
           </section>
         </section>
 

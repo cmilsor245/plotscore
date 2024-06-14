@@ -351,3 +351,30 @@
     font-size: clamp(10px, 1.2rem, 14px);
   }
 }
+
+@media (width <= 450px) {
+  .horizontal-review--type-2__main-info h5 {
+    font-size: clamp(10px, 1.4rem, 16px);
+  }
+
+  .horizontal-review--type-2__main-info h6 {
+    font-size: clamp(10px, 1.2rem, 14px);
+  }
+
+  .horizontal-review--type-2__like-count {
+    font-size: clamp(10px, 1.2rem, 14px);
+  }
+
+  .horizontal-review--type-2__like-count svg {
+    height: 12px;
+    width: 12px;
+  }
+}
+
+@media (width <= 402px) {
+  .horizontal-review--type-2__rating-and-watched-before {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

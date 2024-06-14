@@ -428,7 +428,7 @@ export default function Profile() {
         </div>
 
       <section className = 'common__content-footer with-top-padding'>
-        <section className = 'common__content'>
+        <section className = 'common__content profile-page'>
           <main>
             <LogoHeader />
 

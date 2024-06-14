@@ -75,7 +75,7 @@
 }
 
 .right-side .diary .right-column > p {
-  --font: clamp(11px, 1.2rem, 14px) var(--font--graphik-semibold);
+  --font: clamp(11px, 1.2rem, 12px) var(--font--graphik-semibold);
   align-items: center;
   color: var(--color--diary);
   display: flex;
@@ -88,4 +88,36 @@
 
 .right-side .diary .right-column > p span:first-of-type {
   font-family: var(--font--graphik-regular);
+}
+
+@media (width <= 1454px) {
+  .left-column {
+    display: none !important;
+  }
+}
+
+@media (width <= 1352px) {
+  .favorite-media > .section-content .media-slot .media-slot__poster,
+  .recent-activity > .section-content .media-slot .media-slot__poster,
+  .media-slot__placeholder.normal {
+    height: var(--media-slot--medium--height) !important;
+    width: var(--media-slot--medium--width) !important;
+  }
+}
+
+@media (width <= 978px) {
+  .right-side {
+    display: none;
+  }
+}
+
+@media (width <= 638px) {
+  .favorite-media > .section-content,
+  .recent-activity > .section-content {
+    gap: 10px;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    width: 100%;
+  }
 }
