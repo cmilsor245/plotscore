@@ -20,6 +20,7 @@ import Footer from '/components/common/footer.js'
 import LogoHeader from '/components/common/logo-header.js'
 import { MainActionButton } from '/components/common/main-action-button.js'
 import ReviewModal from '/components/common/review-modal.js'
+import SearchForm from '/components/common/search-form.js'
 import SectionHeading from '/components/common/section-heading.js'
 import SideMenu from '/components/common/side-menu.js'
 import avatarSrc from '/src/app/static-info/common/avatar-srcs.js'
@@ -279,6 +280,18 @@ export default function AdminDashboard({
     return sluggedTitle + '-' + mediaYear
   }
 
+  /* ---------------------------------------------------- */
+
+  const [isSearchFormDisplayed, setIsSearchFormDisplayed] = useState(false)
+
+  const openSearchForm = () => {
+    setIsSearchFormDisplayed(true)
+  }
+
+  const closeSearchForm = () => {
+    setIsSearchFormDisplayed(false)
+  }
+
   return (
     <>
       <div className = 'main-actions-buttons'>
@@ -294,13 +307,27 @@ export default function AdminDashboard({
         </Link>
         <MainActionButton
           icon = { IconZoom }
-          handleClick = { null }
+          handleClick = { openSearchForm }
         />
         <MainActionButton
           icon = { IconPencilPlus }
           handleClick = { openReviewModal }
         />
       </div>
+
+      {/* --------------------------------------------------------- */}
+
+      { isSearchFormDisplayed &&
+        <>
+          <SearchForm
+            lang = { lang }
+
+            userData = { userData }
+          />
+
+          <div className = 'search-form__overlay' onClick = { closeSearchForm }></div>
+        </>
+      }
 
       {/* --------------------------------------------------------- */}
 

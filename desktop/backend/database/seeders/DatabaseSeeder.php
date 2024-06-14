@@ -10,7 +10,7 @@ class DatabaseSeeder extends Seeder {
       MediaSeeder::class,
       UserSeeder::class,
       FollowsSeeder::class,
-      LikesSeeder::class
+      // LikesSeeder::class
     ]);
   }
 }

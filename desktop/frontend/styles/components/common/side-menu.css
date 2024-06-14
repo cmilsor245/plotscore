@@ -32,6 +32,7 @@
   position: fixed;
   top: 5%;
   width: 50px;
+  z-index: 5;
 }
 
 .side-menu__button svg {
@@ -53,7 +54,7 @@
 
 .side-menu__overlay.active {
   opacity: 1;
-  z-index: 3;
+  z-index: 6;
 }
 
 .side-menu {
@@ -72,7 +73,7 @@
   top: 0;
   transition: .3s;
   width: 4vw;
-  z-index: 5;
+  z-index: 7;
 }
 
 .side-menu--expanded {
