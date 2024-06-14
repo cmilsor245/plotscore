@@ -77,7 +77,7 @@ Click [here](https://christian-millan-soria.notion.site/plotscore-documentation-
 
 ### Final check video
 
-Click [here]() to watch the final check video.
+Click [here](https://youtu.be/c47qdKnAKzw) to watch the final check video.
 
 #### [Back to english section](#english)
 
@@ -218,7 +218,7 @@ Haz clic [aquí](https://christian-millan-soria.notion.site/plotscore-documentac
 
 ### Vídeo checkpoint final
 
-Haz clic [aquí]() para ver el video final del checkpoint.
+Haz clic [aquí](https://youtu.be/c47qdKnAKzw) para ver el video final del checkpoint.
 
 #### [Volver a la sección en Español](#español)
 
