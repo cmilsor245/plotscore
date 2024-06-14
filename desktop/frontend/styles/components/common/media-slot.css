@@ -22,8 +22,8 @@
   background: center / cover;
   border-radius: 3px;
   cursor: pointer;
-  z-index: -1;
   transition: .04s;
+  z-index: 2;
 }
 
 .media-slot__poster * {

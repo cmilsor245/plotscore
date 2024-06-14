@@ -7,6 +7,7 @@
   position: fixed;
   transition: .2s;
   width: 100%;
+  z-index: 4;
 }
 
 .common-content-footer__logo-text {

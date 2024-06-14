@@ -34,7 +34,7 @@ jobs:
 
         cp .env.example .env
         sed -i 's|APP_ENV=.*|APP_ENV=testing|' .env
-        sed -i 's|DB_DATABASE=.*|DB_DATABASE=${{ secrets.DB_DATABASE }}_testing|' .env
+        sed -i 's|DB_DATABASE=.*|DB_DATABASE=${{ secrets.DB_DATABASE }}|' .env
         sed -i 's|DB_USERNAME=.*|DB_USERNAME=${{ secrets.DB_USERNAME }}|' .env
         sed -i 's|DB_PASSWORD=.*|DB_PASSWORD=${{ secrets.DB_PASSWORD }}|' .env
 
