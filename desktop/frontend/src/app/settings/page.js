@@ -18,6 +18,7 @@ import LogoHeader from '/components/common/logo-header.js'
 import { MainActionButton } from '/components/common/main-action-button'
 import MediaSlot from '/components/common/media-slot'
 import ReviewModal from '/components/common/review-modal.js'
+import SearchForm from '/components/common/search-form.js'
 import SectionHeading from '/components/common/section-heading'
 import SideMenu from '/components/common/side-menu.js'
 import favoriteMediaSlotsImgsSrcs from '/src/app/static-info/settings/favoriteMediaSlotsImgsSrcs.js'
@@ -326,8 +327,6 @@ export default function SettingsPage() {
         <>
           <SearchForm
             lang = { lang }
-
-            userData = { userData }
           />
 
           <div className = 'review-modal__overlay' onClick = { closeSearchForm }></div>

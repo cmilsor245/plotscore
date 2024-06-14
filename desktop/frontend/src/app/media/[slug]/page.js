@@ -19,6 +19,7 @@ import {
   MainActionButton
 } from '/components/common/main-action-button'
 import ReviewModal from '/components/common/review-modal.js'
+import SearchForm from '/components/common/search-form.js'
 import SideMenu from '/components/common/side-menu.js'
 import translate from '/src/app/translation.js'
 
@@ -194,8 +195,6 @@ export default function Media() {
         <>
           <SearchForm
             lang = { lang }
-
-            userData = { userData }
           />
 
           <div className = 'review-modal__overlay' onClick = { closeSearchForm }></div>

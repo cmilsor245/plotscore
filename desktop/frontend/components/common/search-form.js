@@ -14,7 +14,7 @@ function CharacterCounter({ value, maxLength }) {
   )
 }
 
-export default function SearchForm({ lang, userData }) {
+export default function SearchForm({ lang }) {
   const searchTermMinLength = 1
   const searchTermMaxLength = 255
 

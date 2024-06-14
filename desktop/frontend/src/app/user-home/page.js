@@ -15,6 +15,7 @@ import LogoHeader from '/components/common/logo-header.js'
 import { MainActionButton } from '/components/common/main-action-button.js'
 import ReviewModal from '/components/common/review-modal.js'
 import Review from '/components/common/review.js'
+import SearchForm from '/components/common/search-form.js'
 import SectionHeading from '/components/common/section-heading.js'
 import SideMenu from '/components/common/side-menu.js'
 import RecentShowdownNews from '/components/landing-page--home/recent-showdown-news.js'
@@ -237,8 +238,6 @@ export default function UserHome({
         <>
           <SearchForm
             lang = { lang }
-
-            userData = { userData }
           />
 
           <div className = 'review-modal__overlay' onClick = { closeSearchForm }></div>

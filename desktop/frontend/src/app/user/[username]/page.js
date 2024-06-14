@@ -26,6 +26,7 @@ import {
   MainActionButton
 } from '/components/common/main-action-button'
 import ReviewModal from '/components/common/review-modal.js'
+import SearchForm from '/components/common/search-form.js'
 import SideMenu from '/components/common/side-menu.js'
 import VerticalDivider from '/components/common/vertical-divider.js'
 import UserProfileTabs from '/components/user-profile/user-profile-tabs.js'
@@ -422,8 +423,6 @@ export default function Profile() {
         <>
           <SearchForm
             lang = { lang }
-
-            userData = { userData }
           />
 
           <div className = 'review-modal__overlay' onClick = { closeSearchForm }></div>
