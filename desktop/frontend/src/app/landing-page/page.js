@@ -160,8 +160,8 @@ export default function LandingPage() {
                     <MediaSlot
                       size = 'normal'
                       { ...slot }
-                      lowResImgSrc = { posterSrc[0] }
-                      highResImgSrc = { posterSrc[0] }
+                      lowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                      highResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
                     />
                   </div>
                 ))
@@ -173,8 +173,8 @@ export default function LandingPage() {
                     <MediaSlot
                       size = 'small'
                       { ...slot }
-                      lowResImgSrc = { posterSrc[0] }
-                      highResImgSrc = { posterSrc[0] }
+                      lowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                      highResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
                     />
                   </div>
                 ))
@@ -235,8 +235,8 @@ export default function LandingPage() {
                       <MediaSlot
                         size = 'small'
                         { ...slot }
-                        lowResImgSrc = { posterSrc[0] }
-                        highResImgSrc = { posterSrc[0] }
+                        lowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                        highResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
                       />
                     </div>
                   ))
