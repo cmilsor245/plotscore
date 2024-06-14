@@ -51,8 +51,6 @@ jobs:
         APP_KEY=$(php artisan key:generate --show)
         sed -i "s|^APP_KEY=.*|APP_KEY=${APP_KEY}|" .env
 
-        php artisan test --parallel
-
         php artisan config:cache
         php artisan route:cache
         php artisan view:cache
@@ -64,6 +62,8 @@ jobs:
         # php artisan migrate --force
 
         php artisan storage:link
+
+        php artisan test
 
         cd ../..
         pm2 start ecosystem.config.js --only laravel-app
