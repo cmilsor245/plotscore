@@ -119,7 +119,7 @@ It is possible to **navigate through the atoms and different fidelities** by **c
 
 Click [here](https://app.swaggerhub.com/apis/A2019CF1CMILLAN/plotscore/1.0.0) to access the Swagger documentation.
 
-Click [here]() to access the YAML Swagger file.
+Click [here](https://github.com/cmilsor245/plotscore/blob/main/desktop/backend/doc/swagger.yml) to access the YAML Swagger file.
 
 #### [Back to english section](#english)
 
@@ -260,7 +260,7 @@ Es posible **navegar entre los átomos y las diferentes fidelidades del proyecto
 
 Haz clic [aquí](https://app.swaggerhub.com/apis/A2019CF1CMILLAN/plotscore/1.0.0) para acceder a la documentación Swagger.
 
-Haz clic [aquí]() para acceder al archivo YAML de Swagger.
+Haz clic [aquí](https://github.com/cmilsor245/plotscore/blob/main/desktop/backend/doc/swagger.yml) para acceder al archivo YAML de Swagger.
 
 ---
 
