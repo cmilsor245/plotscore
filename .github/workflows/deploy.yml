@@ -27,10 +27,22 @@ jobs:
         pm2 start ecosystem.config.js --only nextjs-app
         pm2 save --force
 
-    - name: set up php
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.3'
+    - name: run laravel tests
+      run: |
+        cd desktop/backend
+        composer install --no-dev --optimize-autoloader
+
+        cp .env.example .env
+        sed -i 's|APP_ENV=.*|APP_ENV=testing|' .env
+        sed -i 's|DB_DATABASE=.*|DB_DATABASE=${{ secrets.DB_DATABASE }}_testing|' .env
+        sed -i 's|DB_USERNAME=.*|DB_USERNAME=${{ secrets.DB_USERNAME }}|' .env
+        sed -i 's|DB_PASSWORD=.*|DB_PASSWORD=${{ secrets.DB_PASSWORD }}|' .env
+
+        php artisan migrate --database=testing --force
+        php artisan test
+
+      env:
+        APP_KEY: ${{ secrets.APP_KEY }}
 
     - name: deploy laravel app
       run: |
