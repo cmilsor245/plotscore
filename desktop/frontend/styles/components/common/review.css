@@ -163,8 +163,13 @@
   cursor: text;
   font: var(--font);
   line-height: 1.5;
+  max-width: 100%;
+  overflow-wrap: anywhere !important;
+  overflow-wrap: break-word;
   text-wrap: wrap;
+  white-space: pre-wrap;
   width: 100%;
+  word-wrap: break-word;
 }
 
 .review--without-poster__likes {

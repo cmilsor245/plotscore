@@ -297,7 +297,7 @@ export default function ProfileTab({ lang }) {
                     <Review
                       lang = { lang }
 
-                      reviewId = {review.id}
+                      reviewId = { review.id }
                       userId = { review.user_id }
 
                       hasPoster

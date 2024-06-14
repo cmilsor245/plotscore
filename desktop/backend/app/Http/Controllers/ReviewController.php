@@ -124,17 +124,25 @@ class ReviewController extends Controller {
   }
 
   public function getAllReviews(Request $request) {
-    $page = $request -> query('page', 1);
-    $perPage = 10;
+    // $page = $request -> query('page', 1);
+    // $perPage = 10;
 
-    $reviews = Review::paginate($perPage, ['*'], 'page', $page);
+    // $reviews = Review::paginate($perPage, ['*'], 'page', $page);
+
+    // return response() -> json([
+    //   'reviews' => $reviews -> items(),
+    //   'currentPage' => $reviews -> currentPage(),
+    //   'totalPages' => $reviews -> lastPage(),
+    //   'totalItems' => $reviews -> total()
+    // ], Response::HTTP_OK);
+
+    $reviewsWithoutPagination = Review::all();
 
     return response() -> json([
-      'reviews' => $reviews -> items(),
-      'currentPage' => $reviews -> currentPage(),
-      'totalPages' => $reviews -> lastPage(),
-      'totalItems' => $reviews -> total(),
+      'reviews' => $reviewsWithoutPagination
     ], Response::HTTP_OK);
+
+    return response() -> json($reviewsWithoutPagination, Response::HTTP_OK);
   }
 
   public function updateReview(Request $request, $id) {
@@ -163,7 +171,7 @@ class ReviewController extends Controller {
     $review -> update($request -> all());
 
     return response() -> json([
-      'message' => 'success',
+      'message' => 'success'
     ], Response::HTTP_OK);
   }
 

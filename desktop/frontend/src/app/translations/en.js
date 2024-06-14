@@ -304,6 +304,13 @@ const translationsEN = {
     GENERAL_ACTIVITY: {
       SECTION_TITLE: 'new from friends',
       ALL_ACTIVITY: 'ALL ACTIVITY'
+    },
+
+    /* ---------------------------------------- */
+
+    POPULAR_REVIEWS: {
+      SECTION_TITLE: 'popular reviews',
+      MORE: 'MORE'
     }
   },
 

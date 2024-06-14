@@ -2,7 +2,7 @@
 
 import cookie from 'js-cookie'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import {
   IconPencilPlus,
@@ -19,11 +19,12 @@ import SectionHeading from '/components/common/section-heading.js'
 import SideMenu from '/components/common/side-menu.js'
 import RecentShowdownNews from '/components/landing-page--home/recent-showdown-news.js'
 import RecentStory from '/components/landing-page--home/recent-story.js'
+import posterSrc from '/src/app/static-info/common/poster-srcs.js'
 import NewFromFriends from '/components/user-home/active/new-from-friends.js'
 import NewOnPlotscore from '/components/user-home/no-friends/new-on-plotscore.js'
-import popularReviewsSlotsData from '/src/app/static-info/landing-page/popularReviewsSlotsData.js'
 import recentNewsSlotsData from '/src/app/static-info/landing-page/recentNewsSlotsData.js'
 import recentShowdownsSlotsData from '/src/app/static-info/landing-page/recentShowdownsSlotsData.js'
+import avatarSrc from '/src/app/static-info/common/avatar-srcs.js'
 import recentStoriesSlotsData from '/src/app/static-info/landing-page/recentStoriesSlotsData.js'
 import translate from '/src/app/translation.js'
 
@@ -134,6 +135,38 @@ export default function UserHome({
     }, 3000)
   }
 
+  /* ---------------------------------------------------------- */
+
+  const [sixLatestReviews, setSixLatestReviews] = useState([])
+
+  useEffect(() => {
+    const getSixLatestReviews = async () => {
+      try {
+        const response = await fetch(`${ apiUrl }/all-reviews`, {
+          method: 'GET',
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+
+        if (response.ok) {
+          const data = await response.json()
+
+          const sortedReviews = data.reviews.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+
+          setSixLatestReviews(sortedReviews.slice(0, 6))
+        } else {
+          throw new Error('failed to fetch six latest reviews')
+        }
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
+    getSixLatestReviews()
+  }, [apiUrl])
+
   return (
     <>
       <div className = 'main-actions-buttons'>
@@ -198,41 +231,86 @@ export default function UserHome({
 
               {/* ------------------------------------------------------ */}
 
-              {
+              {/* {
                 followingList && followingList.length === 0
                   ? <NewOnPlotscore lang = { lang } />
                   : <NewFromFriends lang = { lang } followingList = { followingList } />
-              }
+              } */}
 
               {/* ------------------------------------------------------ */}
 
-              <section className = 'popular-reviews__lists-reviewers'>
-                <article className = 'section__heading-and-content popular-reviews'>
-                  <SectionHeading
-                    lang = { lang }
-                    namespace = 'LANDING_PAGE'
-                    section = 'POPULAR_REVIEWS'
-                    title = 'SECTION_TITLE'
-                    hasRightSideSingleText = { translate(lang, 'LANDING_PAGE', 'POPULAR_REVIEWS', 'MORE') }
-                    hasDivider
-                  />
+              <section className = 'section__heading-and-content popular-reviews'>
+                <SectionHeading
+                  lang = { lang }
+                  namespace = 'USER_HOME'
+                  section = 'POPULAR_REVIEWS'
+                  title = 'SECTION_TITLE'
+                  hasRightSideSingleText = { translate(lang, 'USER_HOME', 'POPULAR_REVIEWS', 'MORE') }
+                  hasDivider
+                />
 
-                  <section className = 'section-content'>
-                    { popularReviewsSlotsData.map((review, index) => [
-                      <Review
-                        key = { index }
+                <section className = 'section-content'>
+                  <div className = 'left-column'>
+                    { sixLatestReviews.filter((_, index) => index % 2 === 0).map((review, index, array) => (
+                      <React.Fragment key = { index }>
+                        <Review
+                          lang = { lang }
 
-                        lang = { lang }
+                          hasPoster
+                          posterLowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                          posterHighResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
 
-                        hasPoster
-                        { ...review }
+                          mediaTitle = { review.media_title }
+                          mediaYear = { review.media_release_date.slice(0, 4) }
 
-                        type = 'horizontal-1'
-                      />,
-                      index !== popularReviewsSlotsData.length - 1 && <Divider key = { `divider-${ index }` } />
-                    ]) }
-                  </section>
-                </article>
+                          avatarLowResImgSrc = { avatarSrc[0] }
+                          avatarHighResImgSrc = { avatarSrc[0] }
+                          username = { review.user_username }
+
+                          rating = { review.rating }
+
+                          reviewText = { review.review_text }
+
+                          commentCount = { review.comment_count }
+                          likeCount = { review.like_count }
+
+                          type = 'horizontal-1'
+                        />
+                        { index !== array.length - 1 && <Divider /> }
+                      </React.Fragment>
+                    )) }
+                  </div>
+                  <div className = 'right-column'>
+                    { sixLatestReviews.filter((_, index) => index % 2 !== 0).map((review, index, array) => (
+                      <React.Fragment key = { index }>
+                        <Review
+                          lang = { lang }
+
+                          hasPoster
+                          posterLowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+                          posterHighResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+
+                          mediaTitle = { review.media_title }
+                          mediaYear = { review.media_release_date.slice(0, 4) }
+
+                          avatarLowResImgSrc = { avatarSrc[0] }
+                          avatarHighResImgSrc = { avatarSrc[0] }
+                          username = { review.user_username }
+
+                          rating = { review.rating }
+
+                          reviewText = { review.review_text }
+
+                          commentCount = { review.comment_count }
+                          likeCount = { review.like_count }
+
+                          type = 'horizontal-1'
+                        />
+                        { index !== array.length - 1 && <Divider /> }
+                      </React.Fragment>
+                    )) }
+                  </div>
+                </section>
               </section>
 
               {/* ------------------------------------------------------ */}

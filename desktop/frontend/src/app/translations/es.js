@@ -304,6 +304,13 @@ const translationsES = {
     GENERAL_ACTIVITY: {
       SECTION_TITLE: 'actividad de amig@s',
       ALL_ACTIVITY: 'TODA LA ACTIVIDAD'
+    },
+
+    /* ---------------------------------------- */
+
+    POPULAR_REVIEWS: {
+      SECTION_TITLE: 'reviews populares',
+      MORE: 'VER MÁS'
     }
   },
 

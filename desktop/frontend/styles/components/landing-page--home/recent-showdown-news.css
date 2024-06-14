@@ -15,8 +15,9 @@
   flex-direction: column;
   gap: 0;
   overflow: hidden;
-  width: 100%;
   position: relative;
+  width: 100%;
+  z-index: -1;
 }
 
 .recent-showdown-news__backdrop {
