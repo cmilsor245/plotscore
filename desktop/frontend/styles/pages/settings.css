@@ -304,3 +304,110 @@
   justify-content: flex-end;
   width: fit-content;
 }
+
+@media (width <= 1058px) {
+  .title-and-upgrade-message h1 {
+    font-size: clamp(20px, 1.8rem, 22px) !important;
+  }
+
+  .upgrade-message-section p {
+    font-size: clamp(14px, 1.4rem, 18px) !important;
+  }
+}
+
+@media (width <= 1038px) {
+  .account-settings__form .left-side {
+    width: fit-content;
+  }
+
+  .account-settings__form-group input:not([type = 'checkbox']) {
+    width: 100%;
+    min-width: 250px !important;
+  }
+
+  .account-settings__form .right-side .section-content {
+    justify-content: flex-start;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    width: 100%;
+    gap: 10px;
+  }
+}
+
+@media (width <= 954px) {
+  .account-settings__form {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .account-settings__form .left-side {
+    width: 100%;
+  }
+
+  .account-settings__form-group input:not([type = 'checkbox']) {
+    width: 100%;
+  }
+}
+
+@media (width <= 922px) {
+  .section-heading__tabs {
+    width: 600px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+  }
+
+  .section-heading__tabs li {
+    text-wrap: nowrap;
+  }
+}
+
+@media (width <= 836px) {
+  .upgrade-message-section p {
+    display: none;
+  }
+}
+
+@media (width <= 752px) {
+  .section-heading__tabs {
+    width: 500px;
+  }
+}
+
+@media (width <= 644px) {
+  .section-heading__tabs {
+    width: 400px;
+  }
+}
+
+@media (width <= 636px) {
+  .account-settings__form .right-side {
+    width: 100%;
+  }
+}
+
+@media (width <= 540px) {
+  .account-settings__form-group--double {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+}
+
+@media (width <= 538px) {
+  .section-heading__tabs {
+    width: 300px;
+  }
+}
+
+@media (width <= 428px) {
+  .section-heading__tabs {
+    width: 200px;
+  }
+}
+
+@media (width <= 386px) {
+  .title-and-upgrade-message h1 {
+    font-size: clamp(16px, 1.6rem, 18px) !important;
+  }
+}
