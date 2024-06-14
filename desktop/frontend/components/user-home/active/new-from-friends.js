@@ -38,37 +38,35 @@ export default function NewFromFriends({ lang, followingListReviews }) {
       />
 
       <section className = 'section-content general-activity__logs'>
-      { followingListReviews.map((log, index) => {
+        { followingListReviews.map((log, index) => {
           const mediaLink = `/media/${ generateMediaSlug(log.media_title, log.media_release_date) }`
           const userLink = `/user/${ log.user_username }`
 
           return (
-            <>
-              <MediaSlot
-                key = { index }
-                size = 'normal'
-                lowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
-                highResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+            <MediaSlot
+              key = { index }
+              size = 'normal'
+              lowResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
+              highResImgSrc = { posterSrc[Math.floor(Math.random() * posterSrc.length)] }
 
-                hasLogInfo
-                avatarLowResImgSrc = { avatarSrc[Math.floor(Math.random() * avatarSrc.length)] }
-                avatarHighResImgSrc = { avatarSrc[Math.floor(Math.random() * avatarSrc.length)] }
-                username = { log.user_username }
+              hasLogInfo
+              avatarLowResImgSrc = { avatarSrc[Math.floor(Math.random() * avatarSrc.length)] }
+              avatarHighResImgSrc = { avatarSrc[Math.floor(Math.random() * avatarSrc.length)] }
+              username = { log.user_username }
 
-                rating = { log.rating }
-                hasWatchedBefore = { log.has_watched_before ? true : false }
-                hasReviewText = { log.has_review_text ? true : false }
-                date = { log.created_at.slice(5, 10) }
+              rating = { log.rating }
+              hasWatchedBefore = { log.watched_before ? true : false }
+              hasReviewText = { log.review_text ? true : false }
+              date = { log.created_at.slice(5, 10) }
 
-                mediaLink = { mediaLink }
-                userLink = { userLink }
-              />
-              { followingListReviews.length < 6 && [...Array(6 - followingListReviews.length)].map((_, index) => (
-                <div className = 'media-slot__placeholder empty-activity' key = { index }></div>
-              )) }
-            </>
+              mediaLink = { mediaLink }
+              userLink = { userLink }
+            />
           )
         }) }
+        { followingListReviews.length < 6 && [...Array(6 - followingListReviews.length)].map((_, index) => (
+          <div className = 'media-slot__placeholder empty-activity' key = { index }></div>
+        )) }
       </section>
     </section>
   )

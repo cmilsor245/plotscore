@@ -4,6 +4,7 @@ use App\Http\Controllers\FollowController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('create-admin', [AuthController::class, 'createAdmin']);
@@ -65,3 +66,5 @@ Route::get('check-if-already-liked/{id}', [LikeController::class, 'checkIfAlread
 
 Route::get('get-followers/{id}', [FollowController::class, 'getFollowers']);
 Route::get('get-following/{id}', [FollowController::class, 'getFollowing']);
+
+Route::get('get-user-and-or-media/{searchTerm}', [SearchController::class, 'getUserAndOrMedia']);

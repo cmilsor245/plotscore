@@ -88,8 +88,8 @@ export default function NewOnPlotscore({ lang }) {
               username = { log.user_username }
 
               rating = { log.rating }
-              hasWatchedBefore = { log.has_watched_before ? true : false }
-              hasReviewText = { log.has_review_text ? true : false }
+              hasWatchedBefore = { log.watched_before ? true : false }
+              hasReviewText = { log.review_text ? true : false }
               date = { log.created_at.slice(5, 10) }
 
               mediaLink = { mediaLink }
