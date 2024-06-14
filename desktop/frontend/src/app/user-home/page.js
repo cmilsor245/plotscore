@@ -71,6 +71,7 @@ export default function UserHome({
   const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
   const [followingList, setFollowingList] = useState([])
+  const [followingListReviews, setFollowingListReviews] = useState([])
 
   useEffect(() => {
     const getFollowingList = async () => {
@@ -84,12 +85,8 @@ export default function UserHome({
             }
           })
 
-          if (response.ok) {
-            const data = await response.json()
-            setFollowingList(data.following && Array.isArray(data.following) ? data.following.map(follower => follower.username) : [])
-          } else {
-            throw new Error('failed to fetch following list')
-          }
+          const data = await response.json()
+          setFollowingList(data.following)
         }
       } catch (error) {
         console.error(error)
@@ -98,6 +95,39 @@ export default function UserHome({
 
     getFollowingList()
   }, [userData?.id])
+
+  useEffect(() => {
+    if (followingList.length > 0) {
+      const getFollowingListReviews = async () => {
+        try {
+          let reviewsArray = []
+
+          for (const user of followingList) {
+            const response = await fetch(`${ apiUrl }/get-all-reviews-for-user/${ user.id }`, {
+              method: 'GET',
+              credentials: 'include',
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            })
+
+            if (response.ok) {
+              const data = await response.json()
+              reviewsArray = [...reviewsArray, ...data.reviews]
+            } else {
+              throw new Error(`failed to fetch reviews for user ${ user.id }`)
+            }
+          }
+
+          setFollowingListReviews(reviewsArray)
+        } catch (error) {
+          console.error(error)
+        }
+      }
+
+      getFollowingListReviews()
+    }
+  }, [followingList, apiUrl])
 
   /* -------------------------------------------------------- */
 
@@ -240,10 +270,9 @@ export default function UserHome({
 
               {/* ------------------------------------------------------ */}
 
-              {
-                followingList && followingList.length === 0
-                  ? <NewOnPlotscore lang = { lang } />
-                  : <NewFromFriends lang = { lang } followingList = { followingList } />
+              { followingList && followingList.length === 0
+                ? <NewOnPlotscore lang = { lang } />
+                : <NewFromFriends lang = { lang } followingListReviews = { followingListReviews } />
               }
 
               {/* ------------------------------------------------------ */}

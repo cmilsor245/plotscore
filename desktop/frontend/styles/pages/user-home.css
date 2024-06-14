@@ -24,10 +24,16 @@
   text-decoration: none;
 }
 
-.section__heading-and-content.new-on-plotscore > .section-content {
+.section__heading-and-content.new-on-plotscore > .section-content,
+.section__heading-and-content.general-activity > .section-content {
   align-items: flex-start;
   display: flex;
   justify-content: space-between;
+}
+
+.media-slot__placeholder.empty-activity {
+  height: 337px !important;
+  width: 180px !important;
 }
 
 .section__heading-and-content.popular-reviews--home .section-content {
@@ -47,7 +53,8 @@
 }
 
 @media (width <= 1236px) {
-  .section__heading-and-content.new-on-plotscore > .section-content {
+  .section__heading-and-content.new-on-plotscore > .section-content,
+  .section__heading-and-content.general-activity > .section-content {
     gap: 10px;
     justify-content: flex-start;
     overflow-x: scroll;

@@ -173,13 +173,12 @@ function HorizontalReviewType1({
 
   return (
     <div className = 'horizontal-review--type-1'>
-      <Link href = { mediaLink ? mediaLink : '/' }>
-        <MediaSlot
-          size = 'small'
-          lowResImgSrc = { posterLowResImgSrc }
-          highResImgSrc = { posterHighResImgSrc }
-        />
-      </Link>
+      <MediaSlot
+        size = 'small'
+        lowResImgSrc = { posterLowResImgSrc }
+        highResImgSrc = { posterHighResImgSrc }
+        mediaLink = { mediaLink }
+      />
 
       <article className = 'horizontal-review--type-1__details'>
         <section className = 'horizontal-review--type-1__main-info'>

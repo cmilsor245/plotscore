@@ -124,9 +124,9 @@ function LogInfo({
       { username &&
         <article className = 'media-slot__user'>
           <div className = 'media-slot__avatar' style = { avatarStyle }></div>
-          {/* <Link href = { userLink ? userLink : '/' }> */}
+          <Link href = { userLink ? userLink : '/' }>
             <h6 className = 'media-slot__username'>{ username }</h6>
-          {/* </Link> */}
+          </Link>
         </article>
       }
 
