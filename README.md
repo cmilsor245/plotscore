@@ -12,11 +12,12 @@ I've created a permanent deployment using ***Vercel*** just so everyone can visi
 ### Table of contents
 
 1. [TODO list](#todo-list)
-2. [Checkpoint video](#checkpoint-video)
-3. [Notion page](#notion-page)
-4. [Figma designs](#figma-designs)
-5. [Desktop version CI/CD pipeline guide](#desktop-version-cicd-pipeline-guide)
-6. [Secure FTP server installation and configuration guide](#secure-ftp-server-installation-and-configuration-guide)
+2. [General documentation](#general-documentation)
+3. [Checkpoint video](#checkpoint-video)
+4. [Notion page](#notion-page)
+5. [Figma designs](#figma-designs)
+6. [Desktop version CI/CD pipeline guide](#desktop-version-cicd-pipeline-guide)
+7. [Secure FTP server installation and configuration guide](#secure-ftp-server-installation-and-configuration-guide)
 
 #### [Back to top](#plotscore)
 
@@ -59,6 +60,14 @@ I've created a permanent deployment using ***Vercel*** just so everyone can visi
 - [x] :green_circle: Installing a **secure FTP server** for the **mobile version**
 
 ##### [Back to TODO list section](#todo-list)
+
+#### [Back to english section](#english)
+
+---
+
+### General documentation
+
+Click [here](https://christian-millan-soria.notion.site/plotscore-documentation-9d6a1b30f96d4efa8e1ef500fea2c8f4) to access the general documentation.
 
 #### [Back to english section](#english)
 
@@ -124,11 +133,12 @@ He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualqui
 ### Índice
 
 1. [Lista de tareas pendientes](#lista-de-tareas-pendientes)
-2. [Vídeo del checkpoint](#vídeo-del-checkpoint)
-3. [Notion](#notion)
-4. [Diseños en Figma](#diseños-en-figma)
-5. [Guía CI/CD pipeline para la versión desktop](#guía-cicd-pipeline-para-la-versión-desktop)
-6. [Guía para la instalación y configuración de un servidor FTP seguro](#guía-para-la-instalación-y-configuración-de-un-servidor-ftp-seguro)
+2. [Documentación general](#documentación-general)
+3. [Vídeo del checkpoint](#vídeo-del-checkpoint)
+4. [Notion](#notion)
+5. [Diseños en Figma](#diseños-en-figma)
+6. [Guía CI/CD pipeline para la versión desktop](#guía-cicd-pipeline-para-la-versión-desktop)
+7. [Guía para la instalación y configuración de un servidor FTP seguro](#guía-para-la-instalación-y-configuración-de-un-servidor-ftp-seguro)
 
 #### [Volver arriba](#plotscore)
 
@@ -173,6 +183,14 @@ He creado un despliegue permanente haciendo uso de ***Vercel*** para que cualqui
 ##### [Volver a la sección de Lista de tareas pendientes](#lista-de-tareas-pendientes)
 
 #### [Volver a la sección en español](#español)
+
+---
+
+### Documentación general
+
+Haz clic [aquí](https://christian-millan-soria.notion.site/plotscore-documentaci-n-ce084f7198734b02920f9ea21043234d) para acceder a la documentación general.
+
+#### [Volver a la sección en Español](#español)
 
 ---
 
