@@ -277,3 +277,4 @@ Haz clic [aquí](https://github.com/cmilsor245/plotscore/blob/main/.aws/ci-cd--g
 Haz clic [aquí](https://github.com/cmilsor245/plotscore/blob/main/.ftp/secure-ftp-guide/README.md) para acceder a la guía del servidor FTP seguro seguro.
 
 #### [Volver a la sección en Español](#español)
+# plotscore
